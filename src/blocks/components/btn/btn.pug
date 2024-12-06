@@ -1,0 +1,45 @@
+-
+    const defaultBtnProps = {
+        classes: '',
+        name: 'Кнопка',
+        cMode: 'red',
+        size: 'full',
+        type: 'link',
+        link: 'javascript:void(0)',
+        buttonType: 'button',
+        icon: '',
+        iconPos: 'left'
+    }
+
+mixin btn(props = defaultBtnProps)
+    -
+        const checkProps = {
+            classes: props.classes ? props.classes : defaultBtnProps.classes,
+            name: props.name ? props.name : defaultBtnProps.name,
+            cMode: props.cMode ? props.cMode : defaultBtnProps.cMode,
+            size: props.size ? props.size : defaultBtnProps.size,
+            type: props.type ? props.type : defaultBtnProps.type,
+            link: props.link ? props.link : defaultBtnProps.link,
+            buttonType: props.buttonType ? props.buttonType : defaultBtnProps.buttonType,
+            icon: props.icon ? props.icon : defaultBtnProps.icon,
+            iconPos: props.iconPos ? props.iconPos : defaultBtnProps.iconPos
+        }
+
+        let colorClass = ` btn--${checkProps.cMode}`
+        let sizeClass = ` btn--${checkProps.size}`
+
+    - if(checkProps.type == 'link')
+        a.btn(class=checkProps.classes + colorClass + sizeClass href= checkProps.link)&attributes(attributes)
+            -if(checkProps.icon.length > 0)
+                svg
+                    use(xlink:href=`img/sprites/sprite.svg#${checkProps.icon}`)
+            span!= checkProps.name
+    - else if(checkProps.type == 'button')
+        button.btn(class=checkProps.classes + colorClass type= checkProps.buttonType)&attributes(attributes)
+            -if(checkProps.icon.length > 0)
+                svg
+                    use(xlink:href=`img/sprites/sprite.svg#${checkProps.icon}`)
+            span!= checkProps.name
+    - else 
+        | ошибка: type кнопки не найден!
+

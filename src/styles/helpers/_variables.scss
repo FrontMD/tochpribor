@@ -1,16 +1,27 @@
-//TODO: заменить шрифт на свой
-$mainFont:  'Mulish', sans-serif;
+:root {
+    --c-accent: #CA0001;
+    --c-text: #141414;
+}
 
-/*$inter:"Inter", sans-serif;
-$sfui: "SF UI Display", sans-serif;
-$muller-font: "Muller", sans-serif;
-$montserrat: "Montserrat", sans-serif;*/
+// шрифты
+$ff-main: 'Nagel', Arial, Helvetica, sans-serif;
 
-
-/* media */
+// media
 $media-list: (
-    'xs': 480,
-    'sm': 640,
-    'md': 960,
-    'lg': 1200,
+    'xs': 500,
+    'mobile': 768,
+    'tablet': 1023,
+    'laptop': 1340,
+    'large': 1800,
 );
+
+// Цвета
+$c-white: #fff;
+$c-black: #000;
+$c-accent: var(--c-accent);
+$c-accent-hover: #8E0001;
+$c-text: var(--c-text);
+$c-border: #E9E9E9;
+
+// переходы
+$tr-time: .3s;

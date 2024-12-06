@@ -1,0 +1,33 @@
+-
+    const defaultTitleProps = {
+        tag: 'h2',
+        size: '83',
+        text: 'Заголовок',
+        cMode: 'dark', //dark - на светлом фоне, light - на тёмном фоне
+        classes: '',
+    }
+
+mixin title(props = defaultTitleProps)
+    -
+        const checkProps = {
+            tag: props.tag ? props.tag : defaultTitleProps.tag,
+            size: props.size ? props.size : defaultTitleProps.size,
+            text: props.text ? props.text : defaultTitleProps.text,
+            cMode: props.cMode ? props.cMode : defaultTitleProps.cMode,
+            classes: props.classes ? props.classes : defaultTitleProps.classes
+        }
+
+
+    case checkProps.tag
+        when 'h1'
+            .title(class=checkProps.classes + ` title--${checkProps.size} title--${checkProps.cMode}`)
+                h1!= checkProps.text
+        when 'h2'
+            .title(class=checkProps.classes + ` title--${checkProps.size} title--${checkProps.cMode}`)
+                h2!= checkProps.text
+        when 'h3'
+            .title(class=checkProps.classes + ` title--${checkProps.size} title--${checkProps.cMode}`)
+                h3!= checkProps.text
+        when 'p'
+            .title(class=checkProps.classes + ` title--${checkProps.size} title--${checkProps.cMode}`)
+                p!= checkProps.text

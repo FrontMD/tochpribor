@@ -89,8 +89,8 @@ a {
 	color: inherit;
 }
 
-ul[role='list'],
-ol[role='list'] {
+ul,
+ol {
 	list-style: none;
 }
 
@@ -98,118 +98,28 @@ body {
 	display: flex;
 	flex-direction: column;
 	margin: 0;
-
-	font-family: $mainFont;
+	min-height: 100%;
+	-webkit-font-smoothing: antialiased;
+	-moz-font-smoothing: antialiased;
+	-o-font-smoothing: antialiased;
+	-webkit-locale: auto;
+	white-space: normal;
+	font-family: $ff-main;
 	font-size: 16px;
-	line-height: 1.2;
+	font-weight: 400;
+	line-height: 1.4em;
+}
+
+body.no-scroll {
+	overflow: hidden;
 }
 
 .main {
 	flex-grow: 1;
 }
 
-html,
-body {
-	height: 100%;
-}
-
-.container {
-	box-sizing: border-box;
-	width: 1472px;
-	max-width: 95%;
-	max-width: calc(100% - 64px * 2);
-	margin: 0 auto;
-
-	@include max(lg) {
-		max-width: calc(100% - 30px * 2);
-
-	}
-
-	@include max(md) {
-		max-width: calc(100% - 16px * 2);
-	}
-
-
-
-}
-
-
-.half-container {
-	box-sizing: border-box;
-	width: calc(50% + 736px);
-	max-width: 95%;
-	max-width: calc(100% - 64px);
-	margin-left: auto;
-	margin-right: 0;
-
-	@include max(lg) {
-		max-width: calc(100% - 30px);
-	}
-
-	@include max(md) {
-		max-width: calc(100% - 16px);
-	}
-
-	&--invert {
-		margin-left: 0;
-		margin-right: auto;
-	}
-
-}
-
-
-.half-container__sub-container {
-	box-sizing: border-box;
-	width: 1472px;
-	max-width: 100%;
-	max-width: calc(100% - 64px);
-	margin-left: auto;
-	margin-right: 0;
-
-	@include max(lg) {
-		max-width: calc(100% - 30px);
-	}
-
-	@include max(md) {
-		max-width: calc(100% - 16px);
-	}
-
-	&--invert {
-		margin-left: 0;
-		margin-right: auto;
-	}
-}
-
-
-#jGrowl {
-	z-index: 999999;
-}
-
-*:focus {
-	outline: none;
-}
-
-.hide {
-	display: none;
-}
-
-body {
-	display: flex;
-	flex-direction: column;
-	min-height: 100%;
-	-webkit-font-smoothing: antialiased;
-	-moz-font-smoothing: antialiased;
-	-o-font-smoothing: antialiased;
-
-	-webkit-locale: auto;
-	white-space: normal;
-
-	&.compensate-for-scrollbar {
-		overflow: hidden;
-	}
-}
-
 html {
+	scroll-behavior: smooth;
 	-moz-text-size-adjust: 100%;
 	-ms-text-size-adjust: 100%;
 	-o-text-size-adjust: 100%;
@@ -217,28 +127,35 @@ html {
 	text-size-adjust: 100%;
 }
 
+html,
+body {
+	height: 100%;
+}
+
+.m-container {
+	width: 100%;
+	margin: 0 auto;
+	padding: 0 40px;
+
+	@include max(laptop) {
+		padding: 0 20px;
+	}
+
+	@include max(tablet) {
+		padding: 0 15px;
+	}
+
+}
+
+*:focus {
+	outline: none;
+}
+
 .site-main {
 	width: 100%;
 	flex-grow: 1;
 }
 
-
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-
-
-[data-fancybox] {
-	cursor: pointer;
-}
-
-//значения данных переменных задаются в js. Если не нужно - можете удалять тут и в js соотв код
-html {
-	--js-scrollbar-width: 0px;
-	--js-real-vw: 1vw;
-}
-
-.d-n-i {
-	display: none !important;
+.page {
+	overflow: hidden;
 }

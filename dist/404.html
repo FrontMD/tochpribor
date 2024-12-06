@@ -20,13 +20,81 @@
     <link rel="apple-touch-icon" sizes="120x120" href="img/favicons/apple-touch-icon-120x120.png">
     <link rel="apple-touch-icon" sizes="144x144" href="img/favicons/apple-touch-icon-144x144.png">
     <link rel="apple-touch-icon" sizes="152x152" href="img/favicons/apple-touch-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="167x167" href="img/favicons/apple-touch-icon-167x167.png">
     <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon-180x180.png">
     <link rel="apple-touch-icon" sizes="1024x1024" href="img/favicons/apple-touch-icon-1024x1024.png">
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/main.min.css">
   </head>
   <body>
-    <header class="site-header"> header</header>
+    <header class="site-header">
+      <div class="site-header__container">
+        <div class="site-header__logo"><img src="img/logo_full.svg" alt="логотип"></div>
+        <div class="site-header__burger site-header__block">
+          <svg>
+            <use xlink:href="img/sprites/sprite.svg#burger"></use>
+          </svg>
+        </div>
+        <div class="site-header__location site-header__block">
+          <svg>
+            <use xlink:href="img/sprites/sprite.svg#location"></use>
+          </svg><span>Санкт-Петербург</span>
+        </div>
+        <nav class="site-header__menu site-header__block">
+          <ul class="nav-menu">
+            <li class="nav-menu__item"><a class="nav-menu__link" href="javascript:void(0)">Каталог продукции </a></li>
+            <li class="nav-menu__item"><a class="nav-menu__link" href="javascript:void(0)">Производство</a></li>
+            <li class="nav-menu__item"><a class="nav-menu__link" href="javascript:void(0)">
+                 Услуги
+                <svg>
+                  <use xlink:href="img/sprites/sprite.svg#arrow_angle"></use>
+                </svg></a>
+              <div class="nav-menu__sublist"><a class="nav-menu__link" href="javascript:void(0)">Услуга 1</a><a class="nav-menu__link" href="javascript:void(0)">Услуга 2</a><a class="nav-menu__link" href="javascript:void(0)">Услуга 3</a><a class="nav-menu__link" href="javascript:void(0)">Услуга 4</a><a class="nav-menu__link" href="javascript:void(0)">Услуга 5</a></div>
+            </li>
+          </ul>
+        </nav>
+        <div class="site-header__contacts">
+          <ul class="nav-menu">
+            <li class="nav-menu__item"><a class="nav-menu__link" href="mailto:info@tochpribor-nw.ru">
+                 info@tochpribor-nw.ru
+                <svg>
+                  <use xlink:href="img/sprites/sprite.svg#arrow_angle"></use>
+                </svg></a>
+              <div class="nav-menu__sublist"><a class="nav-menu__link" href="mailto:info@tochpribor-nw.ru">info@tochpribor-nw.ru</a></div>
+            </li>
+            <li class="nav-menu__item"><a class="nav-menu__link" href="tel:+78126123003">
+                 +7 (812) 612-30-03
+                <svg>
+                  <use xlink:href="img/sprites/sprite.svg#arrow_angle"></use>
+                </svg></a>
+              <div class="nav-menu__sublist"><a class="nav-menu__link" href="tel:+78126123003">+7 (812) 612-30-03</a></div>
+            </li>
+          </ul>
+        </div>
+        <div class="site-header__socials socials"><a class="socials__item" href="https://telegram.org/">
+            <svg>
+              <use xlink:href="img/sprites/sprite.svg#tg"></use>
+            </svg></a><a class="socials__item" href="https://vk.com/">
+            <svg>
+              <use xlink:href="img/sprites/sprite.svg#vk"></use>
+            </svg></a></div>
+        <div class="site-header__search search">
+          <div class="search__open">
+            <svg>
+              <use xlink:href="img/sprites/sprite.svg#search"></use>
+            </svg>
+          </div>
+        </div>
+        <div class="site-header__shop site-header__block shop"> <a class="shop__item" href="javascript:void(0)">
+            <svg>
+              <use xlink:href="img/sprites/sprite.svg#compare"></use>
+            </svg><span>5</span></a><a class="shop__item" href="javascript:void(0)">
+            <svg>
+              <use xlink:href="img/sprites/sprite.svg#basket"></use>
+            </svg><span>5</span></a></div><a class="btn  btn--red btn--content" href="javascript:void(0)">
+              <svg>
+                <use xlink:href="img/sprites/sprite.svg#arrow_angle"></use>
+              </svg><span>Заказать звонок</span></a>
+      </div>
+    </header>
     <main class="site-main">
       <section class="not-found">
         <div class="container">
@@ -44,6 +112,6 @@
         <!--код модалок сюда-->
       </div>
     </noindex>
-    <script src="js/main.js"></script>
+    <script src="js/main.min.js"></script>
   </body>
 </html>

@@ -1,2 +1,84 @@
 header.site-header
-	|  header
+	.site-header__container
+		.site-header__logo
+			img(src="img/logo_full.svg" alt="логотип")
+		.site-header__burger.site-header__block
+			svg
+				use(xlink:href=`img/sprites/sprite.svg#burger`)
+		.site-header__location.site-header__block
+			svg
+				use(xlink:href=`img/sprites/sprite.svg#location`)
+			span Санкт-Петербург
+		nav.site-header__menu.site-header__block
+			ul.nav-menu
+				li.nav-menu__item
+					a.nav-menu__link(href="javascript:void(0)") Каталог продукции 
+				li.nav-menu__item
+					a.nav-menu__link(href="javascript:void(0)") Производство
+				li.nav-menu__item
+					a.nav-menu__link(href="javascript:void(0)") 
+						| Услуги
+						svg
+							use(xlink:href=`img/sprites/sprite.svg#arrow_angle`)
+					.nav-menu__sublist
+						a.nav-menu__link(href="javascript:void(0)") Услуга 1
+						a.nav-menu__link(href="javascript:void(0)") Услуга 2
+						a.nav-menu__link(href="javascript:void(0)") Услуга 3
+						a.nav-menu__link(href="javascript:void(0)") Услуга 4
+						a.nav-menu__link(href="javascript:void(0)") Услуга 5
+
+		.site-header__contacts
+			ul.nav-menu
+				li.nav-menu__item
+					a.nav-menu__link(href="mailto:info@tochpribor-nw.ru") 
+						| info@tochpribor-nw.ru
+						svg
+							use(xlink:href=`img/sprites/sprite.svg#arrow_angle`)
+					.nav-menu__sublist
+						a.nav-menu__link(href="mailto:info@tochpribor-nw.ru") info@tochpribor-nw.ru
+				li.nav-menu__item
+					a.nav-menu__link(href="tel:+78126123003") 
+						| +7 (812) 612-30-03
+						svg
+							use(xlink:href=`img/sprites/sprite.svg#arrow_angle`)
+					.nav-menu__sublist
+						a.nav-menu__link(href="tel:+78126123003") +7 (812) 612-30-03
+
+		.site-header__socials.socials
+			a.socials__item(href="https://telegram.org/")
+				svg
+					use(xlink:href=`img/sprites/sprite.svg#tg`)
+			a.socials__item(href="https://vk.com/")
+				svg
+					use(xlink:href=`img/sprites/sprite.svg#vk`)
+
+		.site-header__search.search
+			.search__open
+				svg
+					use(xlink:href=`img/sprites/sprite.svg#search`)
+
+		.site-header__shop.site-header__block.shop 
+			a.shop__item(href="javascript:void(0)")
+				svg
+					use(xlink:href=`img/sprites/sprite.svg#compare`)
+				span 5
+
+			a.shop__item(href="javascript:void(0)")
+				svg
+					use(xlink:href=`img/sprites/sprite.svg#basket`)
+				span 5
+
+		+btn({
+			classes: '',
+			size: "content",
+			name: 'Заказать звонок',
+			icon: 'arrow_angle',
+		})
+
+
+
+
+
+
+
+

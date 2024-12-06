@@ -1,0 +1,47 @@
+.title {
+    color: $c-text;
+    font-weight: 400;
+    line-height: 1em;
+    letter-spacing: -0.03em;
+
+    &--light {
+        color: $c-white;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: inherit;
+        line-height: inherit;
+        font-size: inherit;
+        letter-spacing: inherit;
+        font-weight: inherit;
+        text-wrap: inherit;
+    }
+
+    &--83 {
+        font-size: 83px;
+
+        @include max(laptop) {}
+
+        @include max(tablet) {}
+
+        @include max(mobile) {}
+    }
+
+    &--67 {
+        font-size: 67px;
+    }
+
+    &--53 {
+        font-size: 53px;
+    }
+
+    &--43 {
+        font-size: 43px;
+    }
+
+}

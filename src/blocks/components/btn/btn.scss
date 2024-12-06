@@ -1,0 +1,32 @@
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.4em;
+    padding: 15px;
+    border-radius: 2px;
+    cursor: pointer;
+
+    svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    &--red {
+        color: $c-white;
+        background-color: $c-accent;
+        transition: all $tr-time;
+
+        &:hover {
+            background-color: $c-accent-hover;
+        }
+    }
+
+    &--content {
+        width: fit-content;
+    }
+}
