@@ -29,4 +29,10 @@
     &--content {
         width: fit-content;
     }
+
+    &--big {
+        min-width: 310px;
+        min-height: 160px;
+        width: fit-content;
+    }
 }

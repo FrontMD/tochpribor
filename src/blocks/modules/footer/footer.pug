@@ -1,98 +1,101 @@
 footer.site-footer
-	.m-container.site-footer__container
-		+btn({
-			classes: '',
-			size: "big",
-			name: 'Оставить заявку',
-			icon: 'arrow_enter',
-		})
-		.site-footer__docs
-			a.site-footer__doc(href="javascript:void()") Пользовательское соглашение
-			a.site-footer__doc(href="javascript:void()") Политика обработки персональных данных и конфиденциальности
+    .m-container.site-footer__container
+        .site-footer__word
+            | производство
+            svg
+                use(xlink:href=`img/sprites/sprite.svg#arrow_classic`)
+            | модернизация
+            svg
+                use(xlink:href=`img/sprites/sprite.svg#arrow_classic`)
+            | ремонт
+        +btn({
+            classes: '',
+            size: "big",
+            name: 'Оставить заявку',
+            icon: 'arrow_enter',
+        })
+        .site-footer__docs
+            a.site-footer__doc(href="javascript:void()") Пользовательское соглашение
+            a.site-footer__doc(href="javascript:void()") Политика обработки персональных данных и конфиденциальности
 
-		.site-footer__menu.big-menu
-			.big-menu__section
-				.big-menu__title Каталог
-				ul.big-menu__list
-					li.big-menu__item
-						a(href="javascript:void(0)") Разрывные машины
-					li.big-menu__item
-						a(href="javascript:void(0)") Твердомеры
-					li.big-menu__item
-						a(href="javascript:void(0)") Меры твердости
-					li.big-menu__item
-						a(href="javascript:void(0)") Приборы для измерения цвета
-					li.big-menu__item
-						a(href="javascript:void(0)") Микроскопы
-					//-
-						li.big-menu__item
-							a.big-menu__link(href="javascript:void(0)") Динамометры
-						li.big-menu__item
-							a.big-menu__link(href="javascript:void(0)") Разрывные машины
-						li.big-menu__item
-							a.big-menu__link(href="javascript:void(0)") Твердомеры
-						li.big-menu__item
-							a.big-menu__link(href="javascript:void(0)") Меры твердости
-						li.big-menu__item
-							a.big-menu__link(href="javascript:void(0)") Приборы для измерения цвета
-						li.big-menu__item
-							a.big-menu__link(href="javascript:void(0)") Микроскопы
+        .site-footer__menu
+            .big-menu
+                .big-menu__section
+                    .big-menu__title Каталог
+                    .big-menu__list(data-js="bigMenuList")
+                        ul.big-menu__items(data-js="bigMenuItems")
+                            li.big-menu__item(data-js="bigMenuItem")
+                                a(href="javascript:void(0)") Разрывные машины
+                            li.big-menu__item(data-js="bigMenuItem")
+                                a(href="javascript:void(0)") Твердомеры
+                            li.big-menu__item(data-js="bigMenuItem")
+                                a(href="javascript:void(0)") Меры твердости
+                            li.big-menu__item(data-js="bigMenuItem")
+                                a(href="javascript:void(0)") Приборы для измерения цвета
+                            li.big-menu__item(data-js="bigMenuItem")
+                                a(href="javascript:void(0)") Микроскопы						
+                            li.big-menu__item(data-js="bigMenuItem")
+                                a.big-menu__link(href="javascript:void(0)") Динамометры
+                            li.big-menu__item(data-js="bigMenuItem")
+                                a.big-menu__link(href="javascript:void(0)") Разрывные машины
+                            li.big-menu__item(data-js="bigMenuItem")
+                                a.big-menu__link(href="javascript:void(0)") Твердомеры
+                            li.big-menu__item(data-js="bigMenuItem")
+                                a.big-menu__link(href="javascript:void(0)") Меры твердости
+                            li.big-menu__item(data-js="bigMenuItem")
+                                a.big-menu__link(href="javascript:void(0)") Приборы для измерения цвета
+                            li.big-menu__item(data-js="bigMenuItem")
+                                a.big-menu__link(href="javascript:void(0)") Микроскопы
 
-			.big-menu__section
-				.big-menu__title О компании
-				ul.big-menu__list
-					li.big-menu__item
-						a(href="javascript:void(0)") Производство
-					li.big-menu__item
-						a(href="javascript:void(0)") Услуги
-					li.big-menu__item
-						a(href="javascript:void(0)") Документы
-					li.big-menu__item
-						a(href="javascript:void(0)") Карьера в Точприбор
-					li.big-menu__item
-						a(href="javascript:void(0)") Наша команда
+                .big-menu__section
+                    .big-menu__title О компании
+                    .big-menu__list(data-js="bigMenuList")
+                        ul.big-menu__items(data-js="bigMenuItems")
+                            li.big-menu__item(data-js="bigMenuItem")
+                                a(href="javascript:void(0)") Производство
+                            li.big-menu__item(data-js="bigMenuItem")
+                                a(href="javascript:void(0)") Услуги
+                            li.big-menu__item(data-js="bigMenuItem")
+                                a(href="javascript:void(0)") Документы
+                            li.big-menu__item(data-js="bigMenuItem")
+                                a(href="javascript:void(0)") Карьера в Точприбор
+                            li.big-menu__item(data-js="bigMenuItem")
+                                a(href="javascript:void(0)") Наша команда
 
-			.big-menu__section
-				.big-menu__title Еще
-				ul.big-menu__list
-					li.big-menu__item
-						a(href="javascript:void(0)") Контакты
-					li.big-menu__item
-						a(href="javascript:void(0)") Новости
-					li.big-menu__item
-						a(href="javascript:void(0)") Вопросы и ответы (FAQ)
-					li.big-menu__item
-						a(href="javascript:void(0)") Карта сайта
+                .big-menu__section
+                    .big-menu__title Еще
+                    .big-menu__list(data-js="bigMenuList")
+                        ul.big-menu__items(data-js="bigMenuItems")
+                            li.big-menu__item(data-js="bigMenuItem")
+                                a(href="javascript:void(0)") Контакты
+                            li.big-menu__item(data-js="bigMenuItem")
+                                a(href="javascript:void(0)") Новости
+                            li.big-menu__item(data-js="bigMenuItem")
+                                a(href="javascript:void(0)") Вопросы и ответы (FAQ)
+                            li.big-menu__item(data-js="bigMenuItem")
+                                a(href="javascript:void(0)") Карта сайта
 
-			.big-menu__section
-				.big-menu__title Связаться
-				ul.big-menu__list
-					li.big-menu__item
-						a(href="mailto:info@tochpribor.ru") info@tochpribor.ru
-					li.big-menu__item
-						a(href="tel:+74922521233") +7 (4922) 52-12-33
-					li.big-menu__item
-						span Головной офис: 190121, г. Санкт-Петербург, пер. Дровяной, д. 20, пом. 4-Н Вопросы и ответы (FAQ)
+                .big-menu__section
+                    .big-menu__title Связаться
+                    .big-menu__list(data-js="bigMenuList")
+                        ul.big-menu__items(data-js="bigMenuItems")
+                            li.big-menu__item(data-js="bigMenuItem")
+                                a(href="mailto:info@tochpribor.ru") info@tochpribor.ru
+                            li.big-menu__item(data-js="bigMenuItem")
+                                a(href="tel:+74922521233") +7 (4922) 52-12-33
+                            li.big-menu__item(data-js="bigMenuItem")
+                                span Головной офис: 190121, г. Санкт-Петербург, пер. Дровяной, д. 20, пом. 4-Н Вопросы и ответы (FAQ)
 
-			.big-menu__footer
-				.socials
-					a.socials__item(href="https://telegram.org/")
-						svg
-							use(xlink:href=`img/sprites/sprite.svg#tg`)
-					a.socials__item(href="https://vk.com/")
-						svg
-							use(xlink:href=`img/sprites/sprite.svg#vk`)
-					a.socials__item(href="https://vkvideo.ru/")
-						svg
-							use(xlink:href=`img/sprites/sprite.svg#vk_video`)
-				.big-menu__copyright © 2010—2024 Точприбор
-
-	.site-footer__word
-		| производство
-		svg
-			use(xlink:href=`img/sprites/sprite.svg#arrow_classic`)
-		| модернизация
-		svg
-			use(xlink:href=`img/sprites/sprite.svg#arrow_classic`)
-		| ремонт
+                .big-menu__footer
+                    .socials
+                        a.socials__item(href="https://telegram.org/")
+                            svg
+                                use(xlink:href=`img/sprites/sprite.svg#tg`)
+                        a.socials__item(href="https://vk.com/")
+                            svg
+                                use(xlink:href=`img/sprites/sprite.svg#vk`)
+                        a.socials__item(href="https://vkvideo.ru/")
+                            svg
+                                use(xlink:href=`img/sprites/sprite.svg#vk_video`)
+                    .big-menu__copyright © 2010—2024 Точприбор
 
