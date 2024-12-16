@@ -9,9 +9,29 @@
     background-color: $c-white;
     z-index: 20;
 
+    &__overlay {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: $c-text;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.5s linear;
+        z-index: -1;
+
+        &.active {
+            opacity: 0.3;
+            visibility: visible;
+        }
+    }
+
     &__container {
+        position: relative;
         display: flex;
         align-items: stretch;
+        z-index: 3;
     }
 
     &__block {
@@ -38,6 +58,11 @@
         cursor: pointer;
         transition: color $tr-time linear;
 
+        @include max(mobile) {
+            border-left: none;
+            margin-left: auto;
+        }
+
         &:hover {
             color: $c-accent-hover;
         }
@@ -51,6 +76,7 @@
     &__location {
         gap: 6px;
         width: fit-content;
+        margin-right: auto;
         font-size: 14px;
         cursor: pointer;
         transition: color $tr-time linear;
@@ -66,6 +92,12 @@
 
         span {
             white-space: nowrap;
+        }
+    }
+
+    &__menu {
+        @include max(laptop) {
+            display: none;
         }
     }
 
@@ -141,14 +173,12 @@
     }
 
     &__contacts {
-        margin-left: auto;
         display: flex;
         align-items: center;
-    }
 
-    &__socials {
-        padding: 12px;
-        flex: 0 0 auto;
+        @include max(laptop) {
+            display: none;
+        }
     }
 
     .socials {
@@ -170,16 +200,20 @@
         }
     }
 
-    &__search {
-        padding-right: 12px;
+    &__socials.socials {
+        padding: 12px;
         flex: 0 0 auto;
+
+        @include max(laptop) {
+            display: none;
+        }
     }
 
     .search {
-        position: relative;
         display: flex;
         align-items: center;
         justify-content: center;
+        z-index: 1;
 
         &__open {
             cursor: pointer;
@@ -193,7 +227,40 @@
         &__open svg {
             width: 24px;
             height: 24px;
+        }
 
+        &__content {
+            position: fixed;
+            right: 0;
+            top: 0;
+            width: calc(100% - 251px);
+            padding: 12px 0;
+            background-color: $c-white;
+            visibility: hidden;
+            opacity: 0;
+            transition: all 0.5s linear;
+
+            &.active {
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+
+        &__form {
+            display: flex;
+            align-items: center;
+            height: 100%;
+            padding-right: 40px;
+        }
+
+    }
+
+    &__search.search {
+        padding-right: 12px;
+        flex: 0 0 auto;
+
+        @include max(mobile) {
+            display: none;
         }
     }
 
@@ -229,6 +296,14 @@
             font-size: 12px;
             border-radius: 100%;
 
+        }
+    }
+
+    &__location,
+    &__shop.shop,
+    &__callback {
+        @include max(mobile) {
+            display: none;
         }
     }
 

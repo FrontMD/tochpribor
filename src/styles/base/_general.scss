@@ -137,7 +137,7 @@ body {
 	margin: 0 auto;
 	padding: 0 40px;
 
-	@include max(laptop) {
+	@include max(large) {
 		padding: 0 20px;
 	}
 
@@ -154,6 +154,15 @@ body {
 .site-main {
 	width: 100%;
 	flex-grow: 1;
+	padding-top: 80px;
+
+	@include max(laptop) {
+		padding-top: 75px;
+	}
+
+	@include max(mobile) {
+		padding-top: 61px;
+	}
 }
 
 .page {

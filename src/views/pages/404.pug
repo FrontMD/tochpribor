@@ -6,10 +6,18 @@ block variables
 
 block content
 	section.not-found
-		.container
-			.not-found-info
-				.not-found-info__text1 Вы попали на пустынный континент…
-				.not-found-info__text2 Нужной страницы&nbsp;тут нет
-				.not-found-info__btn
-					a.btn(href="")
-						span Вернуться на главную
+		.m-container
+			+title({
+				tag: 'h1',
+				size: '67',
+				text: 'Такой страницы не <br>существует'
+			})
+			.not-found__text Возможно ошибка в адресе
+			.not-found__img
+				img(src="img/404/404.webp" alt="страница не найдена")
+			+btn({
+				classes: '',
+				size: "big",
+				name: 'На главную',
+				icon: 'arrow_enter',
+			})

@@ -11,7 +11,7 @@ $media-list: (
     'xs': 500,
     'mobile': 768,
     'tablet': 1023,
-    'laptop': 1340,
+    'laptop': 1420,
     'large': 1800,
 );
 
@@ -22,6 +22,7 @@ $c-accent: var(--c-accent);
 $c-accent-hover: #8E0001;
 $c-text: var(--c-text);
 $c-border: #E9E9E9;
+$c-input-bg: #F4F4F4;
 
 // переходы
 $tr-time: .3s;

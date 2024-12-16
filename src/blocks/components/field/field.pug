@@ -1,0 +1,62 @@
+-
+    const defaultFieldProps = {
+        classes: '',
+        tag: 'input',
+        type: 'text',
+        title: '',
+        placeholder: '',
+        inputAttr: {},
+        resetBtn: false,
+        isRequired: false,
+        selectOptions: [
+            "вариант 1",
+            "вариант 2"
+        ],
+    }
+
+mixin field(props = defaultFieldProps)
+    -
+        const checkProps = {
+            classes: props.classes ? props.classes : defaultFieldProps.classes,
+            tag: props.tag ? props.tag : defaultFieldProps.tag,
+            type: props.type ? props.type : defaultFieldProps.type,
+            title: props.title ? props.title : defaultFieldProps.title,
+            placeholder: props.placeholder ? props.placeholder : defaultFieldProps.placeholder,
+            inputAttr: props.inputAttr ? props.inputAttr : defaultFieldProps.inputAttr,
+            resetBtn: props.resetBtn ? props.resetBtn : defaultFieldProps.resetBtn,
+            isRequired: props.isRequired ? props.isRequired : defaultFieldProps.isRequired,
+            selectOptions: props.selectOptions ? props.selectOptions : defaultFieldProps.selectOptions,
+        }
+
+    label.field(class= `${checkProps.classes} ${checkProps.resetBtn ? "field--reset" : ""} ${checkProps.type === 'radio' ? 'field--radio' : ''} ${checkProps.type === 'checkbox' ? 'field--checkbox' : ''}` data-js='formField')&attributes(attributes)
+        - if(checkProps.title)
+            span.field__title
+                != checkProps.title
+                - if(checkProps.isRequired)
+                    span!= "*"
+        - if(checkProps.tag === 'input')
+            input.field__input(type=checkProps.type placeholder=checkProps.placeholder)&attributes(checkProps.inputAttr)
+            - if(checkProps.type === 'radio')
+                span.fake-radio
+            - else if(checkProps.type === 'checkbox')
+                span.fake-checkbox
+                span.field__error(data-js='fieldError') Нужно обязательно ознакомиться и согласиться
+            - else
+                - if(checkProps.resetBtn)
+                    span.field__reset(data-js='fieldResetBtn')
+                        svg 
+                            use(xlink:href=`img/sprites/sprite.svg#close`)
+                span.field__error(data-js='fieldError')
+        - if(checkProps.tag === 'textarea')
+            textarea.field__textarea(rows="7" placeholder=checkProps.placeholder)&attributes(checkProps.inputAttr)
+            span.field__error(data-js='fieldError')
+        - if(checkProps.tag === 'select')
+            select.field__select(placeholder=checkProps.placeholder data-js='formSelect')&attributes(checkProps.inputAttr)
+                - let optionCount = 0
+                - while (optionCount < checkProps.selectOptions.length)
+                    - if(checkProps.selectOptions[optionCount].length > 0)
+                        option(value=checkProps.selectOptions[optionCount])!= checkProps.selectOptions[optionCount]
+                    - else
+                        option!= checkProps.selectOptions[optionCount]
+                    - optionCount++
+            span.field__error(data-js='fieldError')

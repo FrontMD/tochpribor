@@ -34,6 +34,18 @@
 
     &--67 {
         font-size: 67px;
+
+        @include max(laptop) {
+            font-size: 53px;
+        }
+
+        @include max(mobile) {
+            font-size: 40px;
+        }
+
+        @include max(xs) {
+            font-size: 32px;
+        }
     }
 
     &--53 {

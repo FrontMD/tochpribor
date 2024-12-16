@@ -1,0 +1,8 @@
+.main-burger(data-js='mainBurger')
+    .main-burger__overlay(data-js='mainBurgerClose')
+    .main-burger__content
+        .main-burger__close(data-js='mainBurgerClose')
+            svg 
+                use(xlink:href=`img/sprites/sprite.svg#close`)
+        .main-burger__menu
+            +big-menu

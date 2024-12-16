@@ -10,8 +10,9 @@
 @import "base/fonts";
 @import "base/general";
 
-
-
 // БЭМ-блоки
 @import "../blocks/components/components";
 @import "../blocks/modules/modules";
+
+//страницы
+@import "pages/404";
