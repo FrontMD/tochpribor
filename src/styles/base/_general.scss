@@ -134,17 +134,6 @@ body {
 
 .m-container {
 	width: 100%;
-	margin: 0 auto;
-	padding: 0 40px;
-
-	@include max(large) {
-		padding: 0 20px;
-	}
-
-	@include max(tablet) {
-		padding: 0 15px;
-	}
-
 }
 
 *:focus {
@@ -154,14 +143,54 @@ body {
 .site-main {
 	width: 100%;
 	flex-grow: 1;
-	padding-top: 80px;
+}
+
+.page-layout {
+	background-color: $c-main-bg;
+	padding: 80px 40px 20px;
+
+	@include max(large) {
+		padding: 80px 20px 20px;
+	}
 
 	@include max(laptop) {
-		padding-top: 75px;
+		padding: 75px 20px 20px;
 	}
 
 	@include max(mobile) {
-		padding-top: 61px;
+		padding: 61px 15px 0;
+	}
+
+	&--white {
+		background-color: $c-white;
+
+		@include max(mobile) {
+			padding: 61px 15px 20px;
+		}
+	}
+
+	.section+.section {
+		margin-top: 16px;
+	}
+}
+
+.breadcrumbs-section {
+	padding: 16px 0;
+
+	@include max(mobile) {
+		display: none;
+	}
+}
+
+.section {
+	padding: 24px;
+	background-color: $c-white;
+	border-radius: 4px;
+
+	@include max(mobile) {
+		margin-left: -15px;
+		margin-right: -15px;
+		padding: 24px 15px;
 	}
 }
 

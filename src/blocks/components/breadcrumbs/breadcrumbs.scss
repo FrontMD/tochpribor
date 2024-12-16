@@ -1,0 +1,66 @@
+.breadcrumbs {
+    position: relative;
+    z-index: 3;
+    overflow: hidden;
+
+    @include max(mobile) {
+        display: none;
+    }
+
+    &__list {
+        list-style-type: none;
+        display: flex;
+        gap: 2px;
+        font-size: 12px;
+        color: #919191;
+        overflow-x: auto;
+        overflow-y: hidden;
+
+        &::-webkit-scrollbar {
+            width: 3px;
+            height: 3px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background-color: transparent;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: $c-accent;
+            border-radius: 1px;
+        }
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        gap: 2px;
+        white-space: nowrap;
+
+        a {
+            transition: color $tr-time;
+            cursor: pointer;
+            color: inherit;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: $c-accent;
+        }
+    }
+
+    &__item--current {
+        color: #919191;
+        pointer-events: none;
+    }
+
+    &__separator {
+        color: #919191;
+    }
+}
+
+.breadcrumbs {
+    &--light &__list {
+        color: white;
+    }
+}

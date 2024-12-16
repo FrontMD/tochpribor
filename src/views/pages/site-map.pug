@@ -1,0 +1,105 @@
+extends ../layouts/default
+include ../helpers/mixins
+
+block variables
+	- const title = "Карта сайта"
+
+block content
+	.page-layout
+		.breadcrumbs-section
+			+breadcrumbs()
+		section.section.site-map
+			+title({
+				tag: 'h1',
+				size: '67',
+				text: 'Карта сайта'
+			})
+			.site-map__content
+				.site-map__left
+					a.site-map__item(href="javascript:void(0)") Главная
+					a.site-map__item(href="javascript:void(0)") О компании
+					a.site-map__item(href="javascript:void(0)") Производство
+					a.site-map__item(href="javascript:void(0)") Сравнение товаров
+					a.site-map__item(href="javascript:void(0)") Корзина
+					a.site-map__item(href="javascript:void(0)") Референции
+					a.site-map__item(href="javascript:void(0)") Карьера в Точприбор 
+					a.site-map__item(href="javascript:void(0)") Команда
+					a.site-map__item(href="javascript:void(0)") Услуги по металлообработке
+					a.site-map__item(href="javascript:void(0)") Поверка средств измерений
+					a.site-map__item(href="javascript:void(0)") Пуско-наладка
+					a.site-map__item(href="javascript:void(0)") Наладка средств измерений
+					a.site-map__item(href="javascript:void(0)") Оборудование в Лизинг
+					a.site-map__item(href="javascript:void(0)") Безопасность изделия
+					a.site-map__item(href="javascript:void(0)") Документы
+					a.site-map__item(href="javascript:void(0)") Глоссарий
+					a.site-map__item(href="javascript:void(0)") Вопросы и ответы (FAQ)
+					a.site-map__item(href="javascript:void(0)") Новости
+					a.site-map__item(href="javascript:void(0)") Контакты
+
+				.site-map__right
+					a.site-map__item(href="javascript:void(0)") Каталог
+
+					.site-map__block
+						a.site-map__subtitle(href="javascript:void(0)") Универсальные испытательные машины (разрывные машины)
+						.site-map__sublist
+							a.site-map__subitem(href="javascript:void(0)") Серия ТРМ / универсальные испытательные машины (производство «ЗИП»)
+							a.site-map__subitem(href="javascript:void(0)") Серия ТРМЦ / машины для динамических испытаний (производство «ЗИП»)
+							a.site-map__subitem(href="javascript:void(0)") Серия ТРМП-Э, ТРМП-П / машины на длительную прочность (ползучесть) (производство «ЗИП»)
+							a.site-map__subitem(href="javascript:void(0)") Серия DVT / универсальные испытательные машины (производство «Devotrans»)
+							a.site-map__subitem(href="javascript:void(0)") Серия ИР / универсальные испытательные машины
+							a.site-map__subitem(href="javascript:void(0)") Серия МИП / машины для испытания пружин
+					.site-map__block
+						a.site-map__subtitle(href="javascript:void(0)") Аксессуары для испытательных машин
+					.site-map__block
+						a.site-map__subtitle(href="javascript:void(0)") Копры маятниковые и вертикальные
+						.site-map__sublist
+							a.site-map__subitem(href="javascript:void(0)") Маятниковые
+							a.site-map__subitem(href="javascript:void(0)") Вертикальные
+							a.site-map__subitem(href="javascript:void(0)") Аксессуары для копров
+					.site-map__block
+						a.site-map__subtitle(href="javascript:void(0)") Приборы для измерения твердости (твердомеры)
+					.site-map__block
+						a.site-map__subtitle(href="javascript:void(0)") Меры твердости эталонные
+					.site-map__block
+						a.site-map__subtitle(href="javascript:void(0)") Динамометры
+						.site-map__sublist
+							a.site-map__subitem(href="javascript:void(0)") Механические
+							a.site-map__subitem(href="javascript:void(0)") Электронные
+					.site-map__block
+						a.site-map__subtitle(href="javascript:void(0)") Оборудование для пробоподготовки (металлография и т.д.)
+						.site-map__sublist
+							a.site-map__subitem(href="javascript:void(0)") Шлифовальные станки
+							a.site-map__subitem(href="javascript:void(0)") Полировальные станки
+							a.site-map__subitem(href="javascript:void(0)") Шлифовально-полировальные станки
+							a.site-map__subitem(href="javascript:void(0)") Станки для запрессовки
+					.site-map__block
+						a.site-map__subtitle(href="javascript:void(0)") Оборудование для технологических испытаний
+					.site-map__block
+						a.site-map__subtitle(href="javascript:void(0)") Системы температурных испытаний
+						.site-map__sublist
+							a.site-map__subitem(href="javascript:void(0)") Для испытательных машин
+							a.site-map__subitem(href="javascript:void(0)") Для копров
+					.site-map__block
+						a.site-map__subtitle(href="javascript:void(0)") Машины трения (для испытания на трение и износ)
+					.site-map__block
+						a.site-map__subtitle(href="javascript:void(0)") Испытательные пресса
+						.site-map__sublist
+							a.site-map__subitem(href="javascript:void(0)") Электромеханические
+					.site-map__block
+						a.site-map__subtitle(href="javascript:void(0)") Экстензометры
+					.site-map__block
+						a.site-map__subtitle(href="javascript:void(0)") Видеоизмерительные системы Girmax
+					.site-map__block
+						a.site-map__subtitle(href="javascript:void(0)") Приборы для измерения цвета
+						.site-map__sublist
+							a.site-map__subitem(href="javascript:void(0)") Спектрофотометры
+							a.site-map__subitem(href="javascript:void(0)") Блескомеры
+							a.site-map__subitem(href="javascript:void(0)") Портативные
+							a.site-map__subitem(href="javascript:void(0)") Колориметры
+							a.site-map__subitem(href="javascript:void(0)") Мутномеры
+							a.site-map__subitem(href="javascript:void(0)") Спектральные колориметры
+					.site-map__block
+						a.site-map__subtitle(href="javascript:void(0)") Микроскопы
+						.site-map__sublist
+							a.site-map__subitem(href="javascript:void(0)") Биологические
+							a.site-map__subitem(href="javascript:void(0)") Металографические

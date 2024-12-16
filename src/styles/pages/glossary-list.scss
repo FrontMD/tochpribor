@@ -1,0 +1,68 @@
+.glossary-list {
+    &__header {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 32px;
+        margin-bottom: 60px;
+    }
+
+    &__desc {
+        flex: 0 0 555px;
+        font-size: 14px;
+        color: $c-text-light;
+    }
+
+    &__block {
+        display: flex;
+        align-items: stretch;
+        margin-top: 12px;
+        padding: 16px 0 12px;
+        border-top: 1px solid $c-border;
+    }
+
+    &__radios {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 14px;
+
+        &--letters {
+            gap: 10px;
+        }
+    }
+
+    &__radio {
+        span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            width: fit-content;
+            padding: 8px 16px;
+            border: 1px solid $c-border;
+            border-radius: 2px;
+        }
+
+        input {
+            position: absolute;
+            width: 0;
+            height: 0;
+            visibility: hidden;
+            opacity: 0;
+        }
+
+        input:checked+span {
+            background-color: $c-text;
+            color: $c-white;
+        }
+
+        &--letter {
+            span {
+                width: 48px;
+                height: 48px;
+                padding: 5px;
+            }
+        }
+    }
+}

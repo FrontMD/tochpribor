@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Страницы</title>
+    <title>Карта сайта</title>
     <meta name="theme-color" content="#fff">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -116,143 +116,56 @@
       </div>
     </header>
     <main class="site-main">
-      <style type="text/css">
-        .pages-list {
-            padding: 150px 0 60px;
-        }
-        
-        .pages-list__links {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            grid-gap: 20px;
-            margin-top: 30px;
-        }
-        
-        .pages-list__subtitle {
-            margin-top: 60px;
-            font-size: 32px !important;
-        }
-        
-        .pages-list__link {
-            position: relative;
-            font-size: 26px;
-            text-decoration: none;
-            color: var(--c-text);
-            transition: color 0.3s linear;
-            line-height: 1.02em;
-            min-height: 3.06em;
-            padding-right: 160px;
-        
-            span {
-                font-size: 0.7em;
-                opacity: 0.7;
-            }
-        }
-        
-        .pages-list__link:after {
-            content: '';
-            position: absolute;
-            right: 0;
-            top: 0;
-            font-size: 14px;
-            line-height: 1.02em;
-            padding: 5px 10px;
-            border-radius: 3px;
-            width: fit-content;
-        }
-        
-        .pages-list__link--check {
-            padding-right: 155px;
-        }
-        
-        .pages-list__link--check:after {
-            content: "проверка / правки";
-            background-color: #ffffcc;
-            color: #ff6a00;
-        }
-        
-        
-        .pages-list__link--postponed:after {
-            content: "отложено / очередь";
-            background-color: #dedede;
-            color: #212121;
-        }
-        
-        .pages-list__link--work {
-            padding-right: 85px;
-        }
-        
-        .pages-list__link--work:after {
-            content: "в работе";
-            background-color: #9FC5F8;
-            color: #000044;
-        }
-        
-        .pages-list__link--ready {
-            padding-right: 85px;
-        }
-        
-        .pages-list__link--ready:after {
-            content: "натяжка";
-            background-color: #93C47D;
-            color: var(--c-accent)
-        }
-        
-        .pages-list__link:hover {
-            color: var(--c-accent);
-        }
-        
-        @media (max-width: 1800px) {
-            .pages-list__link {
-                padding-right: 0;
-                padding-top: 30px;
-            }
-        
-            .pages-list__link:after {
-                left: 0;
-                right: auto;
-            }
-        }
-        
-        @media (max-width: 1340px) {
-            .pages-list {
-                padding: 180px 0 50px 70px;
-            }
-        
-            .pages-list__links {
-                grid-gap: 15px;
-                margin-top: 40px;
-            }
-        
-            .pages-list__link {
-                font-size: 20px;
-            }
-        }
-        
-        @media (max-width: 1023px) {
-            .pages-list {
-                padding: 85px 0 50px;
-            }
-        
-            .pages-list__links {
-                grid-template-columns: 1fr;
-                grid-gap: 20px;
-                margin-top: 40px;
-            }
-        
-            .pages-list__link {
-                min-height: auto;
-            }
-        }
-        
-      </style>
-      <div class="page-layout page-layout--white">
-        <section class="section pages-list">
-          <div class="m-container">
-                <div class="title pages-list__title title--83 title--dark">
-                  <h1>Страницы</h1>
-                </div>
-            <div class="pages-list__links"><a class="pages-list__link pages-list__link--check" href="404.html" target="_blank">404</a><a class="pages-list__link pages-list__link--work" href="glossary-list.html" target="_blank">Глоссарий (раздел)</a><a class="pages-list__link pages-list__link--check" href="site-map.html" target="_blank">Карта сайта</a></div>
+      <div class="page-layout">
+        <div class="breadcrumbs-section">
+              <div class="breadcrumbs  breadcrumbs--dark">
+                <ul class="breadcrumbs__list">
+                  <li class="breadcrumbs__item"><a href="javascript:void(0);">Главная</a><span class="breadcrumbs__separator">/</span>
+                  </li>
+                  <li class="breadcrumbs__item breadcrumbs__item--current"><span>Карта сайта</span>
+                  </li>
+                </ul>
+              </div>
+        </div>
+        <section class="section site-map">
+              <div class="title  title--67 title--dark">
+                <h1>Карта сайта</h1>
+              </div>
+          <div class="site-map__content">
+            <div class="site-map__left"><a class="site-map__item" href="javascript:void(0)">Главная</a><a class="site-map__item" href="javascript:void(0)">О компании</a><a class="site-map__item" href="javascript:void(0)">Производство</a><a class="site-map__item" href="javascript:void(0)">Сравнение товаров</a><a class="site-map__item" href="javascript:void(0)">Корзина</a><a class="site-map__item" href="javascript:void(0)">Референции</a><a class="site-map__item" href="javascript:void(0)">Карьера в Точприбор </a><a class="site-map__item" href="javascript:void(0)">Команда</a><a class="site-map__item" href="javascript:void(0)">Услуги по металлообработке</a><a class="site-map__item" href="javascript:void(0)">Поверка средств измерений</a><a class="site-map__item" href="javascript:void(0)">Пуско-наладка</a><a class="site-map__item" href="javascript:void(0)">Наладка средств измерений</a><a class="site-map__item" href="javascript:void(0)">Оборудование в Лизинг</a><a class="site-map__item" href="javascript:void(0)">Безопасность изделия</a><a class="site-map__item" href="javascript:void(0)">Документы</a><a class="site-map__item" href="javascript:void(0)">Глоссарий</a><a class="site-map__item" href="javascript:void(0)">Вопросы и ответы (FAQ)</a><a class="site-map__item" href="javascript:void(0)">Новости</a><a class="site-map__item" href="javascript:void(0)">Контакты</a></div>
+            <div class="site-map__right"><a class="site-map__item" href="javascript:void(0)">Каталог</a>
+              <div class="site-map__block"><a class="site-map__subtitle" href="javascript:void(0)">Универсальные испытательные машины (разрывные машины)</a>
+                <div class="site-map__sublist"><a class="site-map__subitem" href="javascript:void(0)">Серия ТРМ / универсальные испытательные машины (производство «ЗИП»)</a><a class="site-map__subitem" href="javascript:void(0)">Серия ТРМЦ / машины для динамических испытаний (производство «ЗИП»)</a><a class="site-map__subitem" href="javascript:void(0)">Серия ТРМП-Э, ТРМП-П / машины на длительную прочность (ползучесть) (производство «ЗИП»)</a><a class="site-map__subitem" href="javascript:void(0)">Серия DVT / универсальные испытательные машины (производство «Devotrans»)</a><a class="site-map__subitem" href="javascript:void(0)">Серия ИР / универсальные испытательные машины</a><a class="site-map__subitem" href="javascript:void(0)">Серия МИП / машины для испытания пружин</a></div>
+              </div>
+              <div class="site-map__block"><a class="site-map__subtitle" href="javascript:void(0)">Аксессуары для испытательных машин</a></div>
+              <div class="site-map__block"><a class="site-map__subtitle" href="javascript:void(0)">Копры маятниковые и вертикальные</a>
+                <div class="site-map__sublist"><a class="site-map__subitem" href="javascript:void(0)">Маятниковые</a><a class="site-map__subitem" href="javascript:void(0)">Вертикальные</a><a class="site-map__subitem" href="javascript:void(0)">Аксессуары для копров</a></div>
+              </div>
+              <div class="site-map__block"><a class="site-map__subtitle" href="javascript:void(0)">Приборы для измерения твердости (твердомеры)</a></div>
+              <div class="site-map__block"><a class="site-map__subtitle" href="javascript:void(0)">Меры твердости эталонные</a></div>
+              <div class="site-map__block"><a class="site-map__subtitle" href="javascript:void(0)">Динамометры</a>
+                <div class="site-map__sublist"><a class="site-map__subitem" href="javascript:void(0)">Механические</a><a class="site-map__subitem" href="javascript:void(0)">Электронные</a></div>
+              </div>
+              <div class="site-map__block"><a class="site-map__subtitle" href="javascript:void(0)">Оборудование для пробоподготовки (металлография и т.д.)</a>
+                <div class="site-map__sublist"><a class="site-map__subitem" href="javascript:void(0)">Шлифовальные станки</a><a class="site-map__subitem" href="javascript:void(0)">Полировальные станки</a><a class="site-map__subitem" href="javascript:void(0)">Шлифовально-полировальные станки</a><a class="site-map__subitem" href="javascript:void(0)">Станки для запрессовки</a></div>
+              </div>
+              <div class="site-map__block"><a class="site-map__subtitle" href="javascript:void(0)">Оборудование для технологических испытаний</a></div>
+              <div class="site-map__block"><a class="site-map__subtitle" href="javascript:void(0)">Системы температурных испытаний</a>
+                <div class="site-map__sublist"><a class="site-map__subitem" href="javascript:void(0)">Для испытательных машин</a><a class="site-map__subitem" href="javascript:void(0)">Для копров</a></div>
+              </div>
+              <div class="site-map__block"><a class="site-map__subtitle" href="javascript:void(0)">Машины трения (для испытания на трение и износ)</a></div>
+              <div class="site-map__block"><a class="site-map__subtitle" href="javascript:void(0)">Испытательные пресса</a>
+                <div class="site-map__sublist"><a class="site-map__subitem" href="javascript:void(0)">Электромеханические</a></div>
+              </div>
+              <div class="site-map__block"><a class="site-map__subtitle" href="javascript:void(0)">Экстензометры</a></div>
+              <div class="site-map__block"><a class="site-map__subtitle" href="javascript:void(0)">Видеоизмерительные системы Girmax</a></div>
+              <div class="site-map__block"><a class="site-map__subtitle" href="javascript:void(0)">Приборы для измерения цвета</a>
+                <div class="site-map__sublist"><a class="site-map__subitem" href="javascript:void(0)">Спектрофотометры</a><a class="site-map__subitem" href="javascript:void(0)">Блескомеры</a><a class="site-map__subitem" href="javascript:void(0)">Портативные</a><a class="site-map__subitem" href="javascript:void(0)">Колориметры</a><a class="site-map__subitem" href="javascript:void(0)">Мутномеры</a><a class="site-map__subitem" href="javascript:void(0)">Спектральные колориметры</a></div>
+              </div>
+              <div class="site-map__block"><a class="site-map__subtitle" href="javascript:void(0)">Микроскопы</a>
+                <div class="site-map__sublist"><a class="site-map__subitem" href="javascript:void(0)">Биологические</a><a class="site-map__subitem" href="javascript:void(0)">Металографические</a></div>
+              </div>
+            </div>
           </div>
         </section>
       </div>

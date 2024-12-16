@@ -7,7 +7,7 @@ block content
 
     style(type="text/css").
         .pages-list {
-            padding: 237px 0 60px;
+            padding: 150px 0 60px;
         }
 
         .pages-list__links {
@@ -134,7 +134,7 @@ block content
             }
         }
 
-    .page
+    .page-layout.page-layout--white
         section.section.pages-list
             .m-container
                 +title({
@@ -144,4 +144,6 @@ block content
                 })
 
                 .pages-list__links
-                    a.pages-list__link.pages-list__link--postponed(href="404.html" target="_blank") 404
+                    a.pages-list__link.pages-list__link--check(href="404.html" target="_blank") 404
+                    a.pages-list__link.pages-list__link--work(href="glossary-list.html" target="_blank") Глоссарий (раздел)
+                    a.pages-list__link.pages-list__link--check(href="site-map.html" target="_blank") Карта сайта
