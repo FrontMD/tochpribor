@@ -85,21 +85,30 @@
           </div>
           <div class="search__content" data-js="headerSearchContent">
             <form class="search__form">
-                  <label class="field  field--reset  " data-js="formField">
-                    <input class="field__input" type="text" placeholder="Поиск" data-js="headerSearchInput"><span class="field__reset" data-js="fieldResetBtn">
+                  <div class="field  field--search field--reset  " data-js="formField">
+                    <button class="field__search" type="submit">
+                      <svg> 
+                        <use xlink:href="img/sprites/sprite.svg#search"></use>
+                      </svg>
+                    </button>
+                    <label>
+                      <input class="field__input" type="text" placeholder="Поиск" data-js="headerSearchInput"><span class="field__error" data-js="fieldError"></span>
+                    </label><span class="field__reset" data-js="fieldResetBtn">
                       <svg> 
                         <use xlink:href="img/sprites/sprite.svg#close"></use>
-                      </svg></span><span class="field__error" data-js="fieldError"></span>
-                  </label>
-                  <label class="field    " data-js="formField">
+                      </svg></span>
+                  </div>
+                  <div class="field     " data-js="formField">
+                    <label>
+                    </label>
                     <select class="field__select" placeholder="" data-js="formSelect">
                       <option value="По сайту">По сайту</option>
                       <option value="По каталогу">По каталогу</option>
                     </select><span class="field__error" data-js="fieldError"></span>
-                  </label><a class="btn  btn--red btn--content" href="javascript:void(0)">
+                  </div><a class="btn  btn--red btn--content" href="javascript:void(0)">
                     <svg>
                       <use xlink:href="img/sprites/sprite.svg#arrow_enter"></use>
-                    </svg><span>Поиск</span></a>
+                    </svg><span class="btn__text">Поиск</span></a>
             </form>
           </div>
         </div>
@@ -112,7 +121,7 @@
             </svg><span>5</span></a></div><a class="btn site-header__callback btn--red btn--content" href="javascript:void(0)">
               <svg>
                 <use xlink:href="img/sprites/sprite.svg#arrow_enter"></use>
-              </svg><span>Заказать звонок</span></a>
+              </svg><span class="btn__text">Заказать звонок</span></a>
       </div>
     </header>
     <main class="site-main">
@@ -257,308 +266,320 @@
             <div class="glossary-list__block">
               <div class="glossary-list__left">
                 <div class="glossary-list__search">
-                      <label class="field  field--reset  " data-js="formField">
-                        <input class="field__input" type="text" placeholder="Поиск"><span class="field__reset" data-js="fieldResetBtn">
+                      <div class="field  field--search field--reset  " data-js="formField">
+                        <button class="field__search" type="submit">
+                          <svg> 
+                            <use xlink:href="img/sprites/sprite.svg#search"></use>
+                          </svg>
+                        </button>
+                        <label>
+                          <input class="field__input" type="text" placeholder="Поиск"><span class="field__error" data-js="fieldError"></span>
+                        </label><span class="field__reset" data-js="fieldResetBtn">
                           <svg> 
                             <use xlink:href="img/sprites/sprite.svg#close"></use>
-                          </svg></span><span class="field__error" data-js="fieldError"></span>
-                      </label>
-                  <div class="glossary-list__radios">
-                    <div class="glossary-list__tabs">
-                      <div class="glossary-list__radio glossary-list__radio--letter">
-                        <label> 
-                          <input type="radio" name="glossary-list-letter" value="Все"><span>Все</span>
-                        </label>
+                          </svg></span>
                       </div>
-                      <div class="glossary-list__radio glossary-list__radio--letter">
-                        <label> 
-                          <input type="radio" name="glossary-list-letter" value="А"><span>А</span>
-                        </label>
-                      </div>
-                      <div class="glossary-list__radio glossary-list__radio--letter">
-                        <label> 
-                          <input type="radio" name="glossary-list-letter" value="Б" checked><span>Б</span>
-                        </label>
-                      </div>
-                      <div class="glossary-list__radio glossary-list__radio--letter">
-                        <label> 
-                          <input type="radio" name="glossary-list-letter" value="В"><span>В</span>
-                        </label>
-                      </div>
-                      <div class="glossary-list__radio glossary-list__radio--letter">
-                        <label> 
-                          <input type="radio" name="glossary-list-letter" value="Г"><span>Г</span>
-                        </label>
-                      </div>
-                      <div class="glossary-list__radio glossary-list__radio--letter">
-                        <label> 
-                          <input type="radio" name="glossary-list-letter" value="Д"><span>Д</span>
-                        </label>
-                      </div>
-                      <div class="glossary-list__radio glossary-list__radio--letter">
-                        <label> 
-                          <input type="radio" name="glossary-list-letter" value="Е"><span>Е</span>
-                        </label>
-                      </div>
-                      <div class="glossary-list__radio glossary-list__radio--letter">
-                        <label> 
-                          <input type="radio" name="glossary-list-letter" value="Ж"><span>Ж</span>
-                        </label>
-                      </div>
-                      <div class="glossary-list__radio glossary-list__radio--letter">
-                        <label> 
-                          <input type="radio" name="glossary-list-letter" value="З"><span>З</span>
-                        </label>
-                      </div>
-                      <div class="glossary-list__radio glossary-list__radio--letter">
-                        <label> 
-                          <input type="radio" name="glossary-list-letter" value="И"><span>И</span>
-                        </label>
-                      </div>
-                      <div class="glossary-list__radio glossary-list__radio--letter">
-                        <label> 
-                          <input type="radio" name="glossary-list-letter" value="К"><span>К</span>
-                        </label>
-                      </div>
-                      <div class="glossary-list__radio glossary-list__radio--letter">
-                        <label> 
-                          <input type="radio" name="glossary-list-letter" value="Л"><span>Л</span>
-                        </label>
-                      </div>
-                      <div class="glossary-list__radio glossary-list__radio--letter">
-                        <label> 
-                          <input type="radio" name="glossary-list-letter" value="М"><span>М</span>
-                        </label>
-                      </div>
-                      <div class="glossary-list__radio glossary-list__radio--letter">
-                        <label> 
-                          <input type="radio" name="glossary-list-letter" value="Н"><span>Н</span>
-                        </label>
-                      </div>
-                      <div class="glossary-list__radio glossary-list__radio--letter">
-                        <label> 
-                          <input type="radio" name="glossary-list-letter" value="О"><span>О</span>
-                        </label>
-                      </div>
-                      <div class="glossary-list__radio glossary-list__radio--letter">
-                        <label> 
-                          <input type="radio" name="glossary-list-letter" value="П"><span>П</span>
-                        </label>
-                      </div>
-                      <div class="glossary-list__radio glossary-list__radio--letter">
-                        <label> 
-                          <input type="radio" name="glossary-list-letter" value="Р"><span>Р</span>
-                        </label>
-                      </div>
-                      <div class="glossary-list__radio glossary-list__radio--letter">
-                        <label> 
-                          <input type="radio" name="glossary-list-letter" value="С"><span>С</span>
-                        </label>
-                      </div>
-                      <div class="glossary-list__radio glossary-list__radio--letter">
-                        <label> 
-                          <input type="radio" name="glossary-list-letter" value="Т"><span>Т</span>
-                        </label>
-                      </div>
-                      <div class="glossary-list__radio glossary-list__radio--letter">
-                        <label> 
-                          <input type="radio" name="glossary-list-letter" value="У"><span>У</span>
-                        </label>
-                      </div>
-                      <div class="glossary-list__radio glossary-list__radio--letter">
-                        <label> 
-                          <input type="radio" name="glossary-list-letter" value="Ф"><span>Ф</span>
-                        </label>
-                      </div>
-                      <div class="glossary-list__radio glossary-list__radio--letter">
-                        <label> 
-                          <input type="radio" name="glossary-list-letter" value="Х"><span>Х</span>
-                        </label>
-                      </div>
-                      <div class="glossary-list__radio glossary-list__radio--letter">
-                        <label> 
-                          <input type="radio" name="glossary-list-letter" value="Ц"><span>Ц</span>
-                        </label>
-                      </div>
-                      <div class="glossary-list__radio glossary-list__radio--letter">
-                        <label> 
-                          <input type="radio" name="glossary-list-letter" value="Ч"><span>Ч</span>
-                        </label>
-                      </div>
-                      <div class="glossary-list__radio glossary-list__radio--letter">
-                        <label> 
-                          <input type="radio" name="glossary-list-letter" value="Ш"><span>Ш</span>
-                        </label>
-                      </div>
-                      <div class="glossary-list__radio glossary-list__radio--letter">
-                        <label> 
-                          <input type="radio" name="glossary-list-letter" value="Э"><span>Э</span>
-                        </label>
-                      </div>
-                      <div class="glossary-list__radio glossary-list__radio--letter">
-                        <label> 
-                          <input type="radio" name="glossary-list-letter" value="Ю"><span>Ю</span>
-                        </label>
-                      </div>
-                      <div class="glossary-list__radio glossary-list__radio--letter">
-                        <label> 
-                          <input type="radio" name="glossary-list-letter" value="Я"><span>Я</span>
-                        </label>
-                      </div>
-                      <div class="glossary-list__radio glossary-list__radio--letter">
-                        <label> 
-                          <input type="radio" name="glossary-list-letter" value="0-9"><span>0-9</span>
-                        </label>
-                      </div>
-                    </div>
-                    <div class="glossary-list__tabs">
-                      <div class="glossary-list__radio glossary-list__radio--letter">
-                        <label>
-                          <input type="radio" name="glossary-list-letter" value="A"><span>A</span>
-                        </label>
-                      </div>
-                      <div class="glossary-list__radio glossary-list__radio--letter">
-                        <label>
-                          <input type="radio" name="glossary-list-letter" value="B"><span>B</span>
-                        </label>
-                      </div>
-                      <div class="glossary-list__radio glossary-list__radio--letter">
-                        <label>
-                          <input type="radio" name="glossary-list-letter" value="C"><span>C</span>
-                        </label>
-                      </div>
-                      <div class="glossary-list__radio glossary-list__radio--letter">
-                        <label>
-                          <input type="radio" name="glossary-list-letter" value="D"><span>D</span>
-                        </label>
-                      </div>
-                      <div class="glossary-list__radio glossary-list__radio--letter">
-                        <label>
-                          <input type="radio" name="glossary-list-letter" value="E"><span>E</span>
-                        </label>
-                      </div>
-                      <div class="glossary-list__radio glossary-list__radio--letter">
-                        <label>
-                          <input type="radio" name="glossary-list-letter" value="F"><span>F</span>
-                        </label>
-                      </div>
-                      <div class="glossary-list__radio glossary-list__radio--letter">
-                        <label>
-                          <input type="radio" name="glossary-list-letter" value="G"><span>G</span>
-                        </label>
-                      </div>
-                      <div class="glossary-list__radio glossary-list__radio--letter">
-                        <label>
-                          <input type="radio" name="glossary-list-letter" value="H"><span>H</span>
-                        </label>
-                      </div>
-                      <div class="glossary-list__radio glossary-list__radio--letter">
-                        <label>
-                          <input type="radio" name="glossary-list-letter" value="I"><span>I</span>
-                        </label>
-                      </div>
-                      <div class="glossary-list__radio glossary-list__radio--letter">
-                        <label>
-                          <input type="radio" name="glossary-list-letter" value="J"><span>J</span>
-                        </label>
-                      </div>
-                      <div class="glossary-list__radio glossary-list__radio--letter">
-                        <label>
-                          <input type="radio" name="glossary-list-letter" value="K"><span>K</span>
-                        </label>
-                      </div>
-                      <div class="glossary-list__radio glossary-list__radio--letter">
-                        <label>
-                          <input type="radio" name="glossary-list-letter" value="L"><span>L</span>
-                        </label>
-                      </div>
-                      <div class="glossary-list__radio glossary-list__radio--letter">
-                        <label>
-                          <input type="radio" name="glossary-list-letter" value="V"><span>V</span>
-                        </label>
-                      </div>
-                      <div class="glossary-list__radio glossary-list__radio--letter">
-                        <label>
-                          <input type="radio" name="glossary-list-letter" value="N"><span>N</span>
-                        </label>
-                      </div>
-                      <div class="glossary-list__radio glossary-list__radio--letter">
-                        <label>
-                          <input type="radio" name="glossary-list-letter" value="O"><span>O</span>
-                        </label>
-                      </div>
-                      <div class="glossary-list__radio glossary-list__radio--letter">
-                        <label>
-                          <input type="radio" name="glossary-list-letter" value="P"><span>P</span>
-                        </label>
-                      </div>
-                      <div class="glossary-list__radio glossary-list__radio--letter">
-                        <label>
-                          <input type="radio" name="glossary-list-letter" value="Q"><span>Q</span>
-                        </label>
-                      </div>
-                      <div class="glossary-list__radio glossary-list__radio--letter">
-                        <label>
-                          <input type="radio" name="glossary-list-letter" value="R"><span>R</span>
-                        </label>
-                      </div>
-                      <div class="glossary-list__radio glossary-list__radio--letter">
-                        <label>
-                          <input type="radio" name="glossary-list-letter" value="S"><span>S</span>
-                        </label>
-                      </div>
-                      <div class="glossary-list__radio glossary-list__radio--letter">
-                        <label>
-                          <input type="radio" name="glossary-list-letter" value="T"><span>T</span>
-                        </label>
-                      </div>
-                      <div class="glossary-list__radio glossary-list__radio--letter">
-                        <label>
-                          <input type="radio" name="glossary-list-letter" value="U"><span>U</span>
-                        </label>
-                      </div>
-                      <div class="glossary-list__radio glossary-list__radio--letter">
-                        <label>
-                          <input type="radio" name="glossary-list-letter" value="V"><span>V</span>
-                        </label>
-                      </div>
-                      <div class="glossary-list__radio glossary-list__radio--letter">
-                        <label>
-                          <input type="radio" name="glossary-list-letter" value="W"><span>W</span>
-                        </label>
-                      </div>
-                      <div class="glossary-list__radio glossary-list__radio--letter">
-                        <label>
-                          <input type="radio" name="glossary-list-letter" value="X"><span>X</span>
-                        </label>
-                      </div>
-                      <div class="glossary-list__radio glossary-list__radio--letter">
-                        <label>
-                          <input type="radio" name="glossary-list-letter" value="Y"><span>Y</span>
-                        </label>
-                      </div>
-                      <div class="glossary-list__radio glossary-list__radio--letter">
-                        <label>
-                          <input type="radio" name="glossary-list-letter" value="Z"><span>Z</span>
-                        </label>
-                      </div>
-                    </div>
+                </div>
+                <div class="glossary-list__radios glossary-list__radios--letters">
+                  <div class="glossary-list__radio glossary-list__radio--letter">
+                    <label> 
+                      <input type="radio" name="glossary-list-letter" value="Все"><span>Все</span>
+                    </label>
+                  </div>
+                  <div class="glossary-list__radio glossary-list__radio--letter">
+                    <label> 
+                      <input type="radio" name="glossary-list-letter" value="А"><span>А</span>
+                    </label>
+                  </div>
+                  <div class="glossary-list__radio glossary-list__radio--letter">
+                    <label> 
+                      <input type="radio" name="glossary-list-letter" value="Б" checked><span>Б</span>
+                    </label>
+                  </div>
+                  <div class="glossary-list__radio glossary-list__radio--letter">
+                    <label> 
+                      <input type="radio" name="glossary-list-letter" value="В"><span>В</span>
+                    </label>
+                  </div>
+                  <div class="glossary-list__radio glossary-list__radio--letter">
+                    <label> 
+                      <input type="radio" name="glossary-list-letter" value="Г"><span>Г</span>
+                    </label>
+                  </div>
+                  <div class="glossary-list__radio glossary-list__radio--letter">
+                    <label> 
+                      <input type="radio" name="glossary-list-letter" value="Д"><span>Д</span>
+                    </label>
+                  </div>
+                  <div class="glossary-list__radio glossary-list__radio--letter">
+                    <label> 
+                      <input type="radio" name="glossary-list-letter" value="Е"><span>Е</span>
+                    </label>
+                  </div>
+                  <div class="glossary-list__radio glossary-list__radio--letter">
+                    <label> 
+                      <input type="radio" name="glossary-list-letter" value="Ж"><span>Ж</span>
+                    </label>
+                  </div>
+                  <div class="glossary-list__radio glossary-list__radio--letter">
+                    <label> 
+                      <input type="radio" name="glossary-list-letter" value="З"><span>З</span>
+                    </label>
+                  </div>
+                  <div class="glossary-list__radio glossary-list__radio--letter">
+                    <label> 
+                      <input type="radio" name="glossary-list-letter" value="И"><span>И</span>
+                    </label>
+                  </div>
+                  <div class="glossary-list__radio glossary-list__radio--letter">
+                    <label> 
+                      <input type="radio" name="glossary-list-letter" value="К"><span>К</span>
+                    </label>
+                  </div>
+                  <div class="glossary-list__radio glossary-list__radio--letter">
+                    <label> 
+                      <input type="radio" name="glossary-list-letter" value="Л"><span>Л</span>
+                    </label>
+                  </div>
+                  <div class="glossary-list__radio glossary-list__radio--letter">
+                    <label> 
+                      <input type="radio" name="glossary-list-letter" value="М"><span>М</span>
+                    </label>
+                  </div>
+                  <div class="glossary-list__radio glossary-list__radio--letter">
+                    <label> 
+                      <input type="radio" name="glossary-list-letter" value="Н"><span>Н</span>
+                    </label>
+                  </div>
+                  <div class="glossary-list__radio glossary-list__radio--letter">
+                    <label> 
+                      <input type="radio" name="glossary-list-letter" value="О"><span>О</span>
+                    </label>
+                  </div>
+                  <div class="glossary-list__radio glossary-list__radio--letter">
+                    <label> 
+                      <input type="radio" name="glossary-list-letter" value="П"><span>П</span>
+                    </label>
+                  </div>
+                  <div class="glossary-list__radio glossary-list__radio--letter">
+                    <label> 
+                      <input type="radio" name="glossary-list-letter" value="Р"><span>Р</span>
+                    </label>
+                  </div>
+                  <div class="glossary-list__radio glossary-list__radio--letter">
+                    <label> 
+                      <input type="radio" name="glossary-list-letter" value="С"><span>С</span>
+                    </label>
+                  </div>
+                  <div class="glossary-list__radio glossary-list__radio--letter">
+                    <label> 
+                      <input type="radio" name="glossary-list-letter" value="Т"><span>Т</span>
+                    </label>
+                  </div>
+                  <div class="glossary-list__radio glossary-list__radio--letter">
+                    <label> 
+                      <input type="radio" name="glossary-list-letter" value="У"><span>У</span>
+                    </label>
+                  </div>
+                  <div class="glossary-list__radio glossary-list__radio--letter">
+                    <label> 
+                      <input type="radio" name="glossary-list-letter" value="Ф"><span>Ф</span>
+                    </label>
+                  </div>
+                  <div class="glossary-list__radio glossary-list__radio--letter">
+                    <label> 
+                      <input type="radio" name="glossary-list-letter" value="Х"><span>Х</span>
+                    </label>
+                  </div>
+                  <div class="glossary-list__radio glossary-list__radio--letter">
+                    <label> 
+                      <input type="radio" name="glossary-list-letter" value="Ц"><span>Ц</span>
+                    </label>
+                  </div>
+                  <div class="glossary-list__radio glossary-list__radio--letter">
+                    <label> 
+                      <input type="radio" name="glossary-list-letter" value="Ч"><span>Ч</span>
+                    </label>
+                  </div>
+                  <div class="glossary-list__radio glossary-list__radio--letter">
+                    <label> 
+                      <input type="radio" name="glossary-list-letter" value="Ш"><span>Ш</span>
+                    </label>
+                  </div>
+                  <div class="glossary-list__radio glossary-list__radio--letter">
+                    <label> 
+                      <input type="radio" name="glossary-list-letter" value="Э"><span>Э</span>
+                    </label>
+                  </div>
+                  <div class="glossary-list__radio glossary-list__radio--letter">
+                    <label> 
+                      <input type="radio" name="glossary-list-letter" value="Ю"><span>Ю</span>
+                    </label>
+                  </div>
+                  <div class="glossary-list__radio glossary-list__radio--letter">
+                    <label> 
+                      <input type="radio" name="glossary-list-letter" value="Я"><span>Я</span>
+                    </label>
+                  </div>
+                  <div class="glossary-list__radio glossary-list__radio--letter">
+                    <label> 
+                      <input type="radio" name="glossary-list-letter" value="0-9"><span>0-9</span>
+                    </label>
+                  </div>
+                </div>
+                <div class="glossary-list__radios glossary-list__radios--letters">
+                  <div class="glossary-list__radio glossary-list__radio--letter">
+                    <label>
+                      <input type="radio" name="glossary-list-letter" value="A"><span>A</span>
+                    </label>
+                  </div>
+                  <div class="glossary-list__radio glossary-list__radio--letter">
+                    <label>
+                      <input type="radio" name="glossary-list-letter" value="B"><span>B</span>
+                    </label>
+                  </div>
+                  <div class="glossary-list__radio glossary-list__radio--letter">
+                    <label>
+                      <input type="radio" name="glossary-list-letter" value="C"><span>C</span>
+                    </label>
+                  </div>
+                  <div class="glossary-list__radio glossary-list__radio--letter">
+                    <label>
+                      <input type="radio" name="glossary-list-letter" value="D"><span>D</span>
+                    </label>
+                  </div>
+                  <div class="glossary-list__radio glossary-list__radio--letter">
+                    <label>
+                      <input type="radio" name="glossary-list-letter" value="E"><span>E</span>
+                    </label>
+                  </div>
+                  <div class="glossary-list__radio glossary-list__radio--letter">
+                    <label>
+                      <input type="radio" name="glossary-list-letter" value="F"><span>F</span>
+                    </label>
+                  </div>
+                  <div class="glossary-list__radio glossary-list__radio--letter">
+                    <label>
+                      <input type="radio" name="glossary-list-letter" value="G"><span>G</span>
+                    </label>
+                  </div>
+                  <div class="glossary-list__radio glossary-list__radio--letter">
+                    <label>
+                      <input type="radio" name="glossary-list-letter" value="H"><span>H</span>
+                    </label>
+                  </div>
+                  <div class="glossary-list__radio glossary-list__radio--letter">
+                    <label>
+                      <input type="radio" name="glossary-list-letter" value="I"><span>I</span>
+                    </label>
+                  </div>
+                  <div class="glossary-list__radio glossary-list__radio--letter">
+                    <label>
+                      <input type="radio" name="glossary-list-letter" value="J"><span>J</span>
+                    </label>
+                  </div>
+                  <div class="glossary-list__radio glossary-list__radio--letter">
+                    <label>
+                      <input type="radio" name="glossary-list-letter" value="K"><span>K</span>
+                    </label>
+                  </div>
+                  <div class="glossary-list__radio glossary-list__radio--letter">
+                    <label>
+                      <input type="radio" name="glossary-list-letter" value="L"><span>L</span>
+                    </label>
+                  </div>
+                  <div class="glossary-list__radio glossary-list__radio--letter">
+                    <label>
+                      <input type="radio" name="glossary-list-letter" value="V"><span>V</span>
+                    </label>
+                  </div>
+                  <div class="glossary-list__radio glossary-list__radio--letter">
+                    <label>
+                      <input type="radio" name="glossary-list-letter" value="N"><span>N</span>
+                    </label>
+                  </div>
+                  <div class="glossary-list__radio glossary-list__radio--letter">
+                    <label>
+                      <input type="radio" name="glossary-list-letter" value="O"><span>O</span>
+                    </label>
+                  </div>
+                  <div class="glossary-list__radio glossary-list__radio--letter">
+                    <label>
+                      <input type="radio" name="glossary-list-letter" value="P"><span>P</span>
+                    </label>
+                  </div>
+                  <div class="glossary-list__radio glossary-list__radio--letter">
+                    <label>
+                      <input type="radio" name="glossary-list-letter" value="Q"><span>Q</span>
+                    </label>
+                  </div>
+                  <div class="glossary-list__radio glossary-list__radio--letter">
+                    <label>
+                      <input type="radio" name="glossary-list-letter" value="R"><span>R</span>
+                    </label>
+                  </div>
+                  <div class="glossary-list__radio glossary-list__radio--letter">
+                    <label>
+                      <input type="radio" name="glossary-list-letter" value="S"><span>S</span>
+                    </label>
+                  </div>
+                  <div class="glossary-list__radio glossary-list__radio--letter">
+                    <label>
+                      <input type="radio" name="glossary-list-letter" value="T"><span>T</span>
+                    </label>
+                  </div>
+                  <div class="glossary-list__radio glossary-list__radio--letter">
+                    <label>
+                      <input type="radio" name="glossary-list-letter" value="U"><span>U</span>
+                    </label>
+                  </div>
+                  <div class="glossary-list__radio glossary-list__radio--letter">
+                    <label>
+                      <input type="radio" name="glossary-list-letter" value="V"><span>V</span>
+                    </label>
+                  </div>
+                  <div class="glossary-list__radio glossary-list__radio--letter">
+                    <label>
+                      <input type="radio" name="glossary-list-letter" value="W"><span>W</span>
+                    </label>
+                  </div>
+                  <div class="glossary-list__radio glossary-list__radio--letter">
+                    <label>
+                      <input type="radio" name="glossary-list-letter" value="X"><span>X</span>
+                    </label>
+                  </div>
+                  <div class="glossary-list__radio glossary-list__radio--letter">
+                    <label>
+                      <input type="radio" name="glossary-list-letter" value="Y"><span>Y</span>
+                    </label>
+                  </div>
+                  <div class="glossary-list__radio glossary-list__radio--letter">
+                    <label>
+                      <input type="radio" name="glossary-list-letter" value="Z"><span>Z</span>
+                    </label>
                   </div>
                 </div>
               </div>
-              <div class="glossary-list__error">
-                <div class="glossary-list__subtitle">Нашли ошибку? Есть слова которых нет в глоссарии?</div>
-                <div class="glossary-list__text">Напишите нам</div><a class="btn  btn--red btn--content" href="javascript:void(0)">
-                      <svg>
-                        <use xlink:href="img/sprites/sprite.svg#arrow_enter"></use>
-                      </svg><span>Написать в тех поддержку</span></a>
+              <div class="glossary-list__error banner">
+                <div class="banner__bg"><img src="img/glossary/glossary_support.webp" alt=""></div>
+                <div class="banner__content">
+                  <div class="banner__title title--26">Нашли ошибку? Есть слова которых нет в глоссарии?</div>
+                  <div class="banner__text">Напишите нам</div><a class="btn  btn--red btn--content" href="javascript:void(0)">
+                        <svg>
+                          <use xlink:href="img/sprites/sprite.svg#arrow_enter"></use>
+                        </svg><span class="btn__text">Написать в тех поддержку</span></a>
+                </div>
               </div>
             </div>
           </form>
         </section>
         <section class="section glossary-list__letters">
           <div class="glossary-list__result">
-            <div class="glossary-list__letter">Б</div>
+            <div class="glossary-list__letter title--67">Б</div>
+            <div class="glossary-list__links"><a class="glossary-list__link" href="javascript:void(0)">Баги</a><a class="glossary-list__link" href="javascript:void(0)">Бадди</a><a class="glossary-list__link" href="javascript:void(0)">Баден-Баден</a><a class="glossary-list__link" href="javascript:void(0)">База (для рассылок)</a><a class="glossary-list__link" href="javascript:void(0)">База данных (БД)</a><a class="glossary-list__link" href="javascript:void(0)">База ретаргетинга</a><a class="glossary-list__link" href="javascript:void(0)">Базовая динамика</a><a class="glossary-list__link" href="javascript:void(0)">Базовая частотность</a><a class="glossary-list__link" href="javascript:void(0)">Базовые классы</a><a class="glossary-list__link" href="javascript:void(0)">Базовые классы движка</a><a class="glossary-list__link" href="javascript:void(0)">Базовые компоненты Игровой Механики </a><a class="glossary-list__link" href="javascript:void(0)">Базовые моды</a><a class="glossary-list__link" href="javascript:void(0)">Базовые типы переменных</a><a class="glossary-list__link" href="javascript:void(0)">Базовые функции</a><a class="glossary-list__link" href="javascript:void(0)">Баланс</a><a class="glossary-list__link" href="javascript:void(0)">Баланс (BS)</a><a class="glossary-list__link" href="javascript:void(0)">Баланс игровой экономики</a><a class="glossary-list__link" href="javascript:void(0)">Баланс игры</a><a class="glossary-list__link" href="javascript:void(0)">Балансировать игру</a><a class="glossary-list__link" href="javascript:void(0)">Балансируемые сущности</a><a class="glossary-list__link" href="javascript:void(0)">Балансные значения</a><a class="glossary-list__link" href="javascript:void(0)">Балансные таблицы</a><a class="glossary-list__link" href="javascript:void(0)">Балансный</a><a class="glossary-list__link" href="javascript:void(0)">Бан</a><a class="glossary-list__link" href="javascript:void(0)">Банковская тайна</a><a class="glossary-list__link" href="javascript:void(0)">Баннер</a><a class="glossary-list__link" href="javascript:void(0)">Баннерная реклама</a><a class="glossary-list__link" href="javascript:void(0)">Баннерная слепота</a><a class="glossary-list__link" href="javascript:void(0)">Баннерообменная сеть</a><a class="glossary-list__link" href="javascript:void(0)">Барьер</a><a class="glossary-list__link" href="javascript:void(0)">Батл-пасс</a><a class="glossary-list__link" href="javascript:void(0)">Бегун</a><a class="glossary-list__link" href="javascript:void(0)">Безанкорные ссылки</a><a class="glossary-list__link" href="javascript:void(0)">Безопасность АС (автоматизированных систем)</a><a class="glossary-list__link" href="javascript:void(0)">Безопасность СВТ (средств вычислительной техники)</a><a class="glossary-list__link" href="javascript:void(0)">Безштамбовые деревья</a><a class="glossary-list__link" href="javascript:void(0)">Бейдж</a><a class="glossary-list__link" href="javascript:void(0)">Беседка</a><a class="glossary-list__link" href="javascript:void(0)">Бета-версия игры</a><a class="glossary-list__link" href="javascript:void(0)">Бета-тестирование</a><a class="glossary-list__link" href="javascript:void(0)">Библиотека (library)</a><a class="glossary-list__link" href="javascript:void(0)">Библиотека Scikit-learn (Sklearn)</a><a class="glossary-list__link" href="javascript:void(0)">Библия героев (паспорт персонажей)</a><a class="glossary-list__link" href="javascript:void(0)">Библия мира</a><a class="glossary-list__link" href="javascript:void(0)">Бид (Bid)</a><a class="glossary-list__link" href="javascript:void(0)">Бизнес-архитектура</a><a class="glossary-list__link" href="javascript:void(0)">Бизнес-модель</a><a class="glossary-list__link" href="javascript:void(0)">Бизнес-проблема</a><a class="glossary-list__link" href="javascript:void(0)">Бизнес-процесс</a><a class="glossary-list__link" href="javascript:void(0)">Бизнес-процессы</a><a class="glossary-list__link" href="javascript:void(0)">Бизнес-стратегия</a><a class="glossary-list__link" href="javascript:void(0)">Бизнес-эффект</a><a class="glossary-list__link" href="javascript:void(0)">Биллинг</a><a class="glossary-list__link" href="javascript:void(0)">Бинарный оператор</a><a class="glossary-list__link" href="javascript:void(0)">Биометрические персональные данные (биометрические ПДн)</a><a class="glossary-list__link" href="javascript:void(0)">Биометрия</a><a class="glossary-list__link" href="javascript:void(0)">Биоразнообразие</a><a class="glossary-list__link" href="javascript:void(0)">Биржа ссылок</a><a class="glossary-list__link" href="javascript:void(0)">Битмэт (Bitmap)</a><a class="glossary-list__link" href="javascript:void(0)">Битые ссылки</a><a class="glossary-list__link" href="javascript:void(0)">Блендинг (Blending)</a><a class="glossary-list__link" href="javascript:void(0)">Блог</a><a class="glossary-list__link" href="javascript:void(0)">Блог-платформа</a><a class="glossary-list__link" href="javascript:void(0)">Блогохостинг</a><a class="glossary-list__link" href="javascript:void(0)">Блок (в визуальном конструкторе)</a><a class="glossary-list__link" href="javascript:void(0)">Блок-схемы</a><a class="glossary-list__link" href="javascript:void(0)">Блокаут</a><a class="glossary-list__link" href="javascript:void(0)">Блокинг</a><a class="glossary-list__link" href="javascript:void(0)">Блокирование персональных данных</a><a class="glossary-list__link" href="javascript:void(0)">Блочная верстка</a><a class="glossary-list__link" href="javascript:void(0)">Блочная структура</a><a class="glossary-list__link" href="javascript:void(0)">Блочный тег</a><a class="glossary-list__link" href="javascript:void(0)">Блуперсы</a><a class="glossary-list__link" href="javascript:void(0)">Боковая панель, sidebar</a><a class="glossary-list__link" href="javascript:void(0)">Бокс Гача</a><a class="glossary-list__link" href="javascript:void(0)">Большая идея бренда или рекламной кампании</a><a class="glossary-list__link" href="javascript:void(0)">Большие значения</a><a class="glossary-list__link" href="javascript:void(0)">Бонус</a><a class="glossary-list__link" href="javascript:void(0)">Бот</a><a class="glossary-list__link" href="javascript:void(0)">Бот (сокращение от «робот»)</a><a class="glossary-list__link" href="javascript:void(0)">Браузер</a><a class="glossary-list__link" href="javascript:void(0)">Браузерные события</a><a class="glossary-list__link" href="javascript:void(0)">Бренд</a><a class="glossary-list__link" href="javascript:void(0)">Бренд-код</a><a class="glossary-list__link" href="javascript:void(0)">Бренд-лайн</a><a class="glossary-list__link" href="javascript:void(0)">Бренд-менеджер</a><a class="glossary-list__link" href="javascript:void(0)">Бренд-стратегия (стратегия бренда)</a><a class="glossary-list__link" href="javascript:void(0)">Бренд-трекинг, трекинг здоровья бренда</a><a class="glossary-list__link" href="javascript:void(0)">Брендбук</a><a class="glossary-list__link" href="javascript:void(0)">Брендинг</a><a class="glossary-list__link" href="javascript:void(0)">Брендированный трафик</a><a class="glossary-list__link" href="javascript:void(0)">Брендовые запросы</a><a class="glossary-list__link" href="javascript:void(0)">Бритком</a><a class="glossary-list__link" href="javascript:void(0)">Бриф</a><a class="glossary-list__link" href="javascript:void(0)">Бриф (логлайн)</a><a class="glossary-list__link" href="javascript:void(0)">Бриф (от англ. brief — задание)</a></div>
+          </div>
+          <div class="glossary-list__result">
+            <div class="glossary-list__letter title--67">Б</div>
             <div class="glossary-list__links"><a class="glossary-list__link" href="javascript:void(0)">Баги</a><a class="glossary-list__link" href="javascript:void(0)">Бадди</a><a class="glossary-list__link" href="javascript:void(0)">Баден-Баден</a><a class="glossary-list__link" href="javascript:void(0)">База (для рассылок)</a><a class="glossary-list__link" href="javascript:void(0)">База данных (БД)</a><a class="glossary-list__link" href="javascript:void(0)">База ретаргетинга</a><a class="glossary-list__link" href="javascript:void(0)">Базовая динамика</a><a class="glossary-list__link" href="javascript:void(0)">Базовая частотность</a><a class="glossary-list__link" href="javascript:void(0)">Базовые классы</a><a class="glossary-list__link" href="javascript:void(0)">Базовые классы движка</a><a class="glossary-list__link" href="javascript:void(0)">Базовые компоненты Игровой Механики </a><a class="glossary-list__link" href="javascript:void(0)">Базовые моды</a><a class="glossary-list__link" href="javascript:void(0)">Базовые типы переменных</a><a class="glossary-list__link" href="javascript:void(0)">Базовые функции</a><a class="glossary-list__link" href="javascript:void(0)">Баланс</a><a class="glossary-list__link" href="javascript:void(0)">Баланс (BS)</a><a class="glossary-list__link" href="javascript:void(0)">Баланс игровой экономики</a><a class="glossary-list__link" href="javascript:void(0)">Баланс игры</a><a class="glossary-list__link" href="javascript:void(0)">Балансировать игру</a><a class="glossary-list__link" href="javascript:void(0)">Балансируемые сущности</a><a class="glossary-list__link" href="javascript:void(0)">Балансные значения</a><a class="glossary-list__link" href="javascript:void(0)">Балансные таблицы</a><a class="glossary-list__link" href="javascript:void(0)">Балансный</a><a class="glossary-list__link" href="javascript:void(0)">Бан</a><a class="glossary-list__link" href="javascript:void(0)">Банковская тайна</a><a class="glossary-list__link" href="javascript:void(0)">Баннер</a><a class="glossary-list__link" href="javascript:void(0)">Баннерная реклама</a><a class="glossary-list__link" href="javascript:void(0)">Баннерная слепота</a><a class="glossary-list__link" href="javascript:void(0)">Баннерообменная сеть</a><a class="glossary-list__link" href="javascript:void(0)">Барьер</a><a class="glossary-list__link" href="javascript:void(0)">Батл-пасс</a><a class="glossary-list__link" href="javascript:void(0)">Бегун</a><a class="glossary-list__link" href="javascript:void(0)">Безанкорные ссылки</a><a class="glossary-list__link" href="javascript:void(0)">Безопасность АС (автоматизированных систем)</a><a class="glossary-list__link" href="javascript:void(0)">Безопасность СВТ (средств вычислительной техники)</a><a class="glossary-list__link" href="javascript:void(0)">Безштамбовые деревья</a><a class="glossary-list__link" href="javascript:void(0)">Бейдж</a><a class="glossary-list__link" href="javascript:void(0)">Беседка</a><a class="glossary-list__link" href="javascript:void(0)">Бета-версия игры</a><a class="glossary-list__link" href="javascript:void(0)">Бета-тестирование</a><a class="glossary-list__link" href="javascript:void(0)">Библиотека (library)</a><a class="glossary-list__link" href="javascript:void(0)">Библиотека Scikit-learn (Sklearn)</a><a class="glossary-list__link" href="javascript:void(0)">Библия героев (паспорт персонажей)</a><a class="glossary-list__link" href="javascript:void(0)">Библия мира</a><a class="glossary-list__link" href="javascript:void(0)">Бид (Bid)</a><a class="glossary-list__link" href="javascript:void(0)">Бизнес-архитектура</a><a class="glossary-list__link" href="javascript:void(0)">Бизнес-модель</a><a class="glossary-list__link" href="javascript:void(0)">Бизнес-проблема</a><a class="glossary-list__link" href="javascript:void(0)">Бизнес-процесс</a><a class="glossary-list__link" href="javascript:void(0)">Бизнес-процессы</a><a class="glossary-list__link" href="javascript:void(0)">Бизнес-стратегия</a><a class="glossary-list__link" href="javascript:void(0)">Бизнес-эффект</a><a class="glossary-list__link" href="javascript:void(0)">Биллинг</a><a class="glossary-list__link" href="javascript:void(0)">Бинарный оператор</a><a class="glossary-list__link" href="javascript:void(0)">Биометрические персональные данные (биометрические ПДн)</a><a class="glossary-list__link" href="javascript:void(0)">Биометрия</a><a class="glossary-list__link" href="javascript:void(0)">Биоразнообразие</a><a class="glossary-list__link" href="javascript:void(0)">Биржа ссылок</a><a class="glossary-list__link" href="javascript:void(0)">Битмэт (Bitmap)</a><a class="glossary-list__link" href="javascript:void(0)">Битые ссылки</a><a class="glossary-list__link" href="javascript:void(0)">Блендинг (Blending)</a><a class="glossary-list__link" href="javascript:void(0)">Блог</a><a class="glossary-list__link" href="javascript:void(0)">Блог-платформа</a><a class="glossary-list__link" href="javascript:void(0)">Блогохостинг</a><a class="glossary-list__link" href="javascript:void(0)">Блок (в визуальном конструкторе)</a><a class="glossary-list__link" href="javascript:void(0)">Блок-схемы</a><a class="glossary-list__link" href="javascript:void(0)">Блокаут</a><a class="glossary-list__link" href="javascript:void(0)">Блокинг</a><a class="glossary-list__link" href="javascript:void(0)">Блокирование персональных данных</a><a class="glossary-list__link" href="javascript:void(0)">Блочная верстка</a><a class="glossary-list__link" href="javascript:void(0)">Блочная структура</a><a class="glossary-list__link" href="javascript:void(0)">Блочный тег</a><a class="glossary-list__link" href="javascript:void(0)">Блуперсы</a><a class="glossary-list__link" href="javascript:void(0)">Боковая панель, sidebar</a><a class="glossary-list__link" href="javascript:void(0)">Бокс Гача</a><a class="glossary-list__link" href="javascript:void(0)">Большая идея бренда или рекламной кампании</a><a class="glossary-list__link" href="javascript:void(0)">Большие значения</a><a class="glossary-list__link" href="javascript:void(0)">Бонус</a><a class="glossary-list__link" href="javascript:void(0)">Бот</a><a class="glossary-list__link" href="javascript:void(0)">Бот (сокращение от «робот»)</a><a class="glossary-list__link" href="javascript:void(0)">Браузер</a><a class="glossary-list__link" href="javascript:void(0)">Браузерные события</a><a class="glossary-list__link" href="javascript:void(0)">Бренд</a><a class="glossary-list__link" href="javascript:void(0)">Бренд-код</a><a class="glossary-list__link" href="javascript:void(0)">Бренд-лайн</a><a class="glossary-list__link" href="javascript:void(0)">Бренд-менеджер</a><a class="glossary-list__link" href="javascript:void(0)">Бренд-стратегия (стратегия бренда)</a><a class="glossary-list__link" href="javascript:void(0)">Бренд-трекинг, трекинг здоровья бренда</a><a class="glossary-list__link" href="javascript:void(0)">Брендбук</a><a class="glossary-list__link" href="javascript:void(0)">Брендинг</a><a class="glossary-list__link" href="javascript:void(0)">Брендированный трафик</a><a class="glossary-list__link" href="javascript:void(0)">Брендовые запросы</a><a class="glossary-list__link" href="javascript:void(0)">Бритком</a><a class="glossary-list__link" href="javascript:void(0)">Бриф</a><a class="glossary-list__link" href="javascript:void(0)">Бриф (логлайн)</a><a class="glossary-list__link" href="javascript:void(0)">Бриф (от англ. brief — задание)</a></div>
           </div>
         </section>
@@ -577,7 +598,7 @@
         <div class="site-footer__left"><a class="btn  btn--red btn--big" href="javascript:void(0)">
                 <svg>
                   <use xlink:href="img/sprites/sprite.svg#arrow_enter"></use>
-                </svg><span>Оставить заявку</span></a>
+                </svg><span class="btn__text">Оставить заявку</span></a>
           <div class="site-footer__docs"><a class="site-footer__doc" href="javascript:void()">Пользовательское соглашение</a><a class="site-footer__doc" href="javascript:void()">Политика обработки персональных данных и конфиденциальности</a></div>
           <div class="site-footer__copyright">© 2010—2024 Точприбор</div>
         </div>

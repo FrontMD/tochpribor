@@ -12,7 +12,7 @@
         display: flex;
         gap: 2px;
         font-size: 12px;
-        color: #919191;
+        color: $c-text-breadcrumbs;
         overflow-x: auto;
         overflow-y: hidden;
 
@@ -50,12 +50,12 @@
     }
 
     &__item--current {
-        color: #919191;
+        color: $c-text-breadcrumbs;
         pointer-events: none;
     }
 
     &__separator {
-        color: #919191;
+        color: $c-text-breadcrumbs;
     }
 }
 

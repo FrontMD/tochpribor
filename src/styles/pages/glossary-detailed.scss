@@ -1,0 +1,14 @@
+.glossary-detailed {
+    &__btns {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 10px;
+        margin-top: 85px;
+    }
+
+    &__body {
+        padding-left: 108px;
+        padding-right: 108px;
+    }
+}

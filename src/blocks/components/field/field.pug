@@ -8,6 +8,7 @@
         inputAttr: {},
         resetBtn: false,
         isRequired: false,
+        isSearch: false,
         selectOptions: [
             "вариант 1",
             "вариант 2"
@@ -25,27 +26,29 @@ mixin field(props = defaultFieldProps)
             inputAttr: props.inputAttr ? props.inputAttr : defaultFieldProps.inputAttr,
             resetBtn: props.resetBtn ? props.resetBtn : defaultFieldProps.resetBtn,
             isRequired: props.isRequired ? props.isRequired : defaultFieldProps.isRequired,
+            isSearch: props.isSearch ? props.isSearch : defaultFieldProps.isSearch,
             selectOptions: props.selectOptions ? props.selectOptions : defaultFieldProps.selectOptions,
         }
 
-    label.field(class= `${checkProps.classes} ${checkProps.resetBtn ? "field--reset" : ""} ${checkProps.type === 'radio' ? 'field--radio' : ''} ${checkProps.type === 'checkbox' ? 'field--checkbox' : ''}` data-js='formField')&attributes(attributes)
-        - if(checkProps.title)
-            span.field__title
-                != checkProps.title
-                - if(checkProps.isRequired)
-                    span!= "*"
-        - if(checkProps.tag === 'input')
-            input.field__input(type=checkProps.type placeholder=checkProps.placeholder)&attributes(checkProps.inputAttr)
-            - if(checkProps.type === 'radio')
-                span.fake-radio
-            - else if(checkProps.type === 'checkbox')
-                span.fake-checkbox
-                span.field__error(data-js='fieldError') Нужно обязательно ознакомиться и согласиться
-            - else
-                - if(checkProps.resetBtn)
-                    span.field__reset(data-js='fieldResetBtn')
-                        svg 
-                            use(xlink:href=`img/sprites/sprite.svg#close`)
+    .field(class= `${checkProps.classes} ${checkProps.isSearch ? "field--search" : ""} ${checkProps.resetBtn ? "field--reset" : ""} ${checkProps.type === 'radio' ? 'field--radio' : ''} ${checkProps.type === 'checkbox' ? 'field--checkbox' : ''}` data-js='formField')&attributes(attributes)
+        - if(checkProps.isSearch)
+            button.field__search(type='submit')
+                svg 
+                    use(xlink:href=`img/sprites/sprite.svg#search`)
+        label
+            - if(checkProps.title)
+                span.field__title
+                    != checkProps.title
+                    - if(checkProps.isRequired)
+                        span!= "*"
+            - if(checkProps.tag === 'input')
+                input.field__input(type=checkProps.type placeholder=checkProps.placeholder)&attributes(checkProps.inputAttr)
+                - if(checkProps.type === 'radio')
+                    span.fake-radio
+                - else if(checkProps.type === 'checkbox')
+                    span.fake-checkbox
+                    span.field__error(data-js='fieldError') Нужно обязательно ознакомиться и согласиться
+                - else
                 span.field__error(data-js='fieldError')
         - if(checkProps.tag === 'textarea')
             textarea.field__textarea(rows="7" placeholder=checkProps.placeholder)&attributes(checkProps.inputAttr)
@@ -60,3 +63,8 @@ mixin field(props = defaultFieldProps)
                         option!= checkProps.selectOptions[optionCount]
                     - optionCount++
             span.field__error(data-js='fieldError')
+
+        - if(checkProps.resetBtn)
+            span.field__reset(data-js='fieldResetBtn')
+                svg 
+                    use(xlink:href=`img/sprites/sprite.svg#close`)

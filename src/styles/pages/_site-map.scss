@@ -40,16 +40,11 @@
     }
 
     &__item {
-        font-size: 26px;
         line-height: 1em;
         letter-spacing: -0.02em;
         transition: color $tr-time linear;
         width: fit-content;
         max-width: 100%;
-
-        @include max(tablet) {
-            font-size: 22px;
-        }
 
         &:hover {
             color: $c-accent-hover;
@@ -74,6 +69,10 @@
 
     &__subtitle {
         font-size: 18px;
+
+        @include max(xs) {
+            font-size: 16px;
+        }
     }
 
     &__sublist {
@@ -90,5 +89,10 @@
     &__subitem {
         color: $c-text-light;
         font-size: 16px;
+
+        @include max(xs) {
+            font-size: 14px;
+        }
     }
+
 }

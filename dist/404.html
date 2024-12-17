@@ -85,21 +85,30 @@
           </div>
           <div class="search__content" data-js="headerSearchContent">
             <form class="search__form">
-                  <label class="field  field--reset  " data-js="formField">
-                    <input class="field__input" type="text" placeholder="Поиск" data-js="headerSearchInput"><span class="field__reset" data-js="fieldResetBtn">
+                  <div class="field  field--search field--reset  " data-js="formField">
+                    <button class="field__search" type="submit">
+                      <svg> 
+                        <use xlink:href="img/sprites/sprite.svg#search"></use>
+                      </svg>
+                    </button>
+                    <label>
+                      <input class="field__input" type="text" placeholder="Поиск" data-js="headerSearchInput"><span class="field__error" data-js="fieldError"></span>
+                    </label><span class="field__reset" data-js="fieldResetBtn">
                       <svg> 
                         <use xlink:href="img/sprites/sprite.svg#close"></use>
-                      </svg></span><span class="field__error" data-js="fieldError"></span>
-                  </label>
-                  <label class="field    " data-js="formField">
+                      </svg></span>
+                  </div>
+                  <div class="field     " data-js="formField">
+                    <label>
+                    </label>
                     <select class="field__select" placeholder="" data-js="formSelect">
                       <option value="По сайту">По сайту</option>
                       <option value="По каталогу">По каталогу</option>
                     </select><span class="field__error" data-js="fieldError"></span>
-                  </label><a class="btn  btn--red btn--content" href="javascript:void(0)">
+                  </div><a class="btn  btn--red btn--content" href="javascript:void(0)">
                     <svg>
                       <use xlink:href="img/sprites/sprite.svg#arrow_enter"></use>
-                    </svg><span>Поиск</span></a>
+                    </svg><span class="btn__text">Поиск</span></a>
             </form>
           </div>
         </div>
@@ -112,7 +121,7 @@
             </svg><span>5</span></a></div><a class="btn site-header__callback btn--red btn--content" href="javascript:void(0)">
               <svg>
                 <use xlink:href="img/sprites/sprite.svg#arrow_enter"></use>
-              </svg><span>Заказать звонок</span></a>
+              </svg><span class="btn__text">Заказать звонок</span></a>
       </div>
     </header>
     <main class="site-main">
@@ -125,7 +134,7 @@
           <div class="not-found__img"><img src="img/404/404.webp" alt="страница не найдена"></div><a class="btn  btn--red btn--big" href="javascript:void(0)">
                 <svg>
                   <use xlink:href="img/sprites/sprite.svg#arrow_enter"></use>
-                </svg><span>На главную</span></a>
+                </svg><span class="btn__text">На главную</span></a>
         </section>
       </div>
     </main>
@@ -142,7 +151,7 @@
         <div class="site-footer__left"><a class="btn  btn--red btn--big" href="javascript:void(0)">
                 <svg>
                   <use xlink:href="img/sprites/sprite.svg#arrow_enter"></use>
-                </svg><span>Оставить заявку</span></a>
+                </svg><span class="btn__text">Оставить заявку</span></a>
           <div class="site-footer__docs"><a class="site-footer__doc" href="javascript:void()">Пользовательское соглашение</a><a class="site-footer__doc" href="javascript:void()">Политика обработки персональных данных и конфиденциальности</a></div>
           <div class="site-footer__copyright">© 2010—2024 Точприбор</div>
         </div>

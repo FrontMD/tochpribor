@@ -1,24 +1,61 @@
 .glossary-list {
+
     &__header {
         display: flex;
         align-items: flex-start;
         justify-content: space-between;
         gap: 32px;
         margin-bottom: 60px;
+
+        @include max(tablet) {
+            flex-direction: column;
+            gap: 24px;
+            margin-bottom: 32px;
+        }
     }
 
     &__desc {
         flex: 0 0 555px;
         font-size: 14px;
         color: $c-text-light;
+
+        @include max(tablet) {
+            flex-basis: auto;
+        }
     }
 
     &__block {
         display: flex;
         align-items: stretch;
+        gap: 20px;
         margin-top: 12px;
         padding: 16px 0 12px;
         border-top: 1px solid $c-border;
+
+        @include max(tablet) {
+            flex-direction: column;
+        }
+    }
+
+    &__left {
+        flex: 1 1 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    &__error {
+        flex: 0 0 315px;
+        max-height: 326px;
+
+        @include max(xs) {
+            max-height: 300px;
+        }
+    }
+
+    .banner__bg img {
+        object-position: bottom right;
+        object-fit: cover;
     }
 
     &__radios {
@@ -28,6 +65,10 @@
         gap: 14px;
 
         &--letters {
+            gap: 10px;
+        }
+
+        @include max(tablet) {
             gap: 10px;
         }
     }
@@ -42,6 +83,15 @@
             padding: 8px 16px;
             border: 1px solid $c-border;
             border-radius: 2px;
+            background-color: transparent;
+            transition: all $tr-time linear;
+            cursor: pointer;
+            color: $c-text;
+
+            @include max(tablet) {
+                font-size: 12px;
+                padding: 4px 8px;
+            }
         }
 
         input {
@@ -52,7 +102,8 @@
             opacity: 0;
         }
 
-        input:checked+span {
+        input:checked+span,
+        span:hover {
             background-color: $c-text;
             color: $c-white;
         }
@@ -62,7 +113,74 @@
                 width: 48px;
                 height: 48px;
                 padding: 5px;
+
+                @include max(tablet) {
+                    width: 38px;
+                    height: 38px;
+                }
             }
+        }
+    }
+
+    &__letters {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    &__result {
+        display: flex;
+        align-items: flex-start;
+        gap: 20px;
+
+        @include max(tablet) {
+            flex-direction: column;
+        }
+    }
+
+    &__letter {
+        flex: 0 0 200px;
+        color: $c-text;
+        line-height: 1em;
+        letter-spacing: -0.03em;
+
+        @include max(laptop) {
+            flex-basis: 130px;
+        }
+
+        @include max(tablet) {
+            flex-basis: auto;
+        }
+
+    }
+
+    &__links {
+        columns: auto 220px;
+        gap: 84px;
+        width: 100%;
+
+        @include max(laptop) {
+            gap: 40px;
+        }
+
+        @include max(tablet) {
+            gap: 20px;
+        }
+    }
+
+    &__link {
+        display: block;
+        width: fit-content;
+        margin-bottom: 16px;
+        color: $c-text;
+        transition: color $tr-time linear;
+
+        @include max(mobile) {
+            margin-bottom: 8px;
+        }
+
+        &:hover {
+            color: $c-accent-hover;
         }
     }
 }

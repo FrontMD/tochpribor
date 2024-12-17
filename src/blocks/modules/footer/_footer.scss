@@ -4,6 +4,10 @@
     min-height: calc(100vh - 80px);
     max-height: calc(100vh - 80px);
     background-color: $c-text;
+    background-image: url(../img/footer_bg.svg);
+    background-size: 100%;
+    background-position: top left;
+    background-repeat: no-repeat;
     padding: 16px 0;
     color: $c-white;
 
