@@ -3,6 +3,7 @@
         tag: 'h2',
         size: '83',
         text: 'Заголовок',
+        sup: '',
         cMode: 'dark', //dark - на светлом фоне, light - на тёмном фоне
         classes: '',
     }
@@ -13,6 +14,7 @@ mixin title(props = defaultTitleProps)
             tag: props.tag ? props.tag : defaultTitleProps.tag,
             size: props.size ? props.size : defaultTitleProps.size,
             text: props.text ? props.text : defaultTitleProps.text,
+            sup: props.sup ? props.sup : defaultTitleProps.sup,
             cMode: props.cMode ? props.cMode : defaultTitleProps.cMode,
             classes: props.classes ? props.classes : defaultTitleProps.classes
         }
@@ -22,12 +24,20 @@ mixin title(props = defaultTitleProps)
         when 'h1'
             .title(class=checkProps.classes + ` title--${checkProps.size} title--${checkProps.cMode}`)
                 h1!= checkProps.text
+                    -if(checkProps.sup)
+                        span.title__sup!= checkProps.sup
         when 'h2'
             .title(class=checkProps.classes + ` title--${checkProps.size} title--${checkProps.cMode}`)
                 h2!= checkProps.text
+                    -if(checkProps.sup)
+                        span.title__sup!= checkProps.sup
         when 'h3'
             .title(class=checkProps.classes + ` title--${checkProps.size} title--${checkProps.cMode}`)
                 h3!= checkProps.text
+                    -if(checkProps.sup)
+                        span.title__sup!= checkProps.sup
         when 'p'
             .title(class=checkProps.classes + ` title--${checkProps.size} title--${checkProps.cMode}`)
                 p!= checkProps.text
+                    -if(checkProps.sup)
+                        span.title__sup!= checkProps.sup

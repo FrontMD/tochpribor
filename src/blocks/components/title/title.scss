@@ -50,10 +50,34 @@
 
     &--53 {
         font-size: 53px;
+
+        @include max(laptop) {
+            font-size: 40px;
+        }
+
+        @include max(mobile) {
+            font-size: 32px;
+        }
+
+        @include max(xs) {
+            font-size: 28px;
+        }
     }
 
-    &--43 {
-        font-size: 43px;
+    &--32 {
+        font-size: 32px;
+
+        @include max(laptop) {
+            font-size: 28px;
+        }
+
+        @include max(mobile) {
+            font-size: 26px;
+        }
+
+        @include max(xs) {
+            font-size: 24px;
+        }
     }
 
     &--26 {

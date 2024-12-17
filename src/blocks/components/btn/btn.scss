@@ -32,9 +32,8 @@
         border: 1px solid $c-border;
         transition: all $tr-time;
         border-radius: 4px;
-        padding: 9px 16px;
 
-        .btn__text span,
+        .btn__note,
         svg {
             color: $c-text-breadcrumbs;
             transition: all $tr-time;
@@ -45,12 +44,46 @@
             color: $c-white;
             border-color: $c-accent;
 
-            .btn__text span,
+            .btn__note,
             svg {
                 color: $c-white;
                 opacity: 0.7;
             }
         }
+    }
+
+    &--grey {
+        color: $c-text;
+        background-color: $c-border;
+        transition: all $tr-time;
+        border-radius: 4px;
+
+        .btn__note,
+        svg {
+            color: $c-text-breadcrumbs;
+            transition: all $tr-time;
+        }
+
+        &:hover {
+            background-color: $c-accent;
+            color: $c-white;
+
+            .btn__note,
+            svg {
+                color: $c-white;
+                opacity: 0.7;
+            }
+        }
+    }
+
+    &--182 {
+        padding: 9px 16px;
+        min-width: 182px;
+    }
+
+    &--246 {
+        min-height: 48px;
+        min-width: 246px;
     }
 
     &--content {

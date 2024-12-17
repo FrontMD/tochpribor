@@ -1,6 +1,7 @@
 @@include("../../blocks/modules/header/header.js")
 @@include("../../blocks/modules/footer/footer.js")
 @@include("../../blocks/modules/main-burger/main-burger.js")
+@@include("../../blocks/modules/comments/comments.js")
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -10,4 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
     bigMenuHeight()
     // управляет бургером
     mainBurger()
+    // добавляет кнопку "Смотреть все" в комментарии, если их больше 5. Вызвать нужно до анимации
+    commentsHeight()
 })

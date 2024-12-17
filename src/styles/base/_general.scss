@@ -94,6 +94,10 @@ ol {
 	list-style: none;
 }
 
+table {
+	border-spacing: 0;
+}
+
 body {
 	display: flex;
 	flex-direction: column;
@@ -272,6 +276,13 @@ body {
 		border-bottom: 1px solid $c-border;
 	}
 
+	h3 {
+		display: block;
+		font-size: 20px;
+		line-height: 1.4em;
+		margin-bottom: 16px;
+	}
+
 	p {
 		margin-bottom: 1.4em;
 	}
@@ -280,6 +291,65 @@ body {
 	video,
 	iframe {
 		max-width: 100%;
+		margin: 32px auto;
+	}
+
+	table {
+		min-width: 100%;
+		border-color: red;
+		border-radius: 40px;
+		margin-bottom: 32px;
+
+		th,
+		td {
+			text-align: left;
+			font-size: 14px;
+			padding: 10px 12px;
+			border-width: 0 1px 1px 0;
+			border-color: $c-border;
+			border-style: solid;
+		}
+
+		th {
+			background-color: $c-main-bg;
+			color: $c-text-breadcrumbs;
+		}
+
+		tr:first-child>th,
+		tr:first-child>td {
+			border-top-width: 1px;
+		}
+
+		tr>th:first-child,
+		tr>td:first-child {
+			border-left-width: 1px;
+		}
+
+		tr:first-child>th:first-child,
+		tr:first-child>td:first-child {
+			border-top-left-radius: 4px;
+		}
+
+		tr:first-child>th:last-child,
+		tr:first-child>td:last-child {
+			border-top-right-radius: 4px;
+		}
+
+		tr:last-child>th:last-child,
+		tr:last-child>td:last-child {
+			border-bottom-right-radius: 4px;
+		}
+
+		tr:last-child>th:first-child,
+		tr:last-child>td:first-child {
+			border-bottom-left-radius: 4px;
+		}
+
+		table th,
+		table td {
+			border-width: 0 !important;
+		}
+
 	}
 
 	.text-flex-block {
@@ -294,6 +364,7 @@ body {
 
 			img {
 				width: 100%;
+				margin: 0;
 			}
 		}
 
@@ -305,6 +376,7 @@ body {
 	.text-note {
 		display: flex;
 		align-items: flex-start;
+		gap: 16px;
 		margin-bottom: 16px;
 		padding: 16px 18px;
 		background-color: $c-accent-light2;
