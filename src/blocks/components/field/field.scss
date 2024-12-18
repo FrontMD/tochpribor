@@ -7,10 +7,14 @@
     label {
         display: flex;
         flex-direction: column;
-        gap: 6px;
+        gap: 8px;
         width: 100%;
         padding: 0;
         border: none;
+
+        @include max(tablet) {
+            gap: 4px;
+        }
     }
 
     &--invalid {
@@ -19,58 +23,36 @@
         }
     }
 
-    /*&__title {
+    &__title {
         position: relative;
         width: fit-content;
-        font-size: 12px;
-        font-weight: 400;
-        line-height: 1em;
-        color: white;
-
-        span {
-            position: absolute;
-            right: -8px;
-            top: 10px;
-            font-size: 20px;
-            font-weight: 700;
-            line-height: 0;
-            color: $c-accent;
-
-            @include max(tablet) {
-                font-size: 20px;
-                right: -8px;
-                top: 10px;
-            }
-
-            @include max(mobile) {
-                font-size: 20px;
-                right: -8px;
-                top: 10px;
-            }
-        }
+        color: $c-text;
+        font-size: 16px;
+        line-height: 1.4em;
 
         @include max(tablet) {
-            font-size: 13px;
+            font-size: 14px;
         }
-
-        @include max(mobile) {
-            font-size: 13px;
-        }
-    }*/
+    }
 
     &__input,
     &__textarea {
         width: 100%;
-        padding: 13px 12px;
+        padding: 16px 20px;
         font-family: $ff-main;
         font-size: 16px;
         font-weight: 400;
         line-height: 1.4em;
-        background-color: $c-input-bg;
+        background-color: $c-white;
         outline: none;
         color: $c-text-breadcrumbs;
-        border: 1px solid transparent;
+        border: 1px solid $c-border;
         border-radius: 4px;
+
+        @include max(tablet) {
+            padding: 10px 12px;
+            font-size: 14px;
+        }
 
         &::placeholder {
             color: $c-text-breadcrumbs;
@@ -81,7 +63,7 @@
     &--invalid &__input,
     &--invalid &__textarea,
     &--invalid .select2 {
-        border-color: $c-accent !important;
+        border-color: $c-erorr !important;
     }
 
     &__textarea {
@@ -90,13 +72,12 @@
 
     &__error {
         position: absolute;
-        top: calc(100% + 2px);
+        top: calc(100% + 4px);
         left: 0;
         width: 100%;
         font-size: 12px;
-        font-weight: 400;
-        line-height: 1em;
-        color: $c-accent;
+        line-height: 1.4em;
+        color: $c-erorr;
         display: none;
     }
 
@@ -145,7 +126,10 @@
     }
 
     &--search &__input {
+        padding: 13px 12px;
         padding-left: 44px;
+        background-color: $c-input-bg;
+        border-color: transparent;
     }
 }
 

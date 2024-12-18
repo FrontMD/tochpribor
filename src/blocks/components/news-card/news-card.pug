@@ -1,0 +1,39 @@
+-
+    const defaultNewsCardProps = {
+        classes: '',
+        vMode: 'horizontal',
+        media: '',
+        mediaType: 'img',
+        title: '',
+        text: '',
+        category: '',
+        date: ''
+    }
+
+mixin news-card(props = defaultNewsCardProps)
+    -
+        const checkProps = {
+            classes: props.classes ? props.classes : defaultNewsCardProps.classes,
+            vMode: props.vMode ? props.vMode : defaultNewsCardProps.vMode,
+            media: props.media ? props.media : defaultNewsCardProps.media,
+            mediaType: props.mediaType ? props.mediaType : defaultNewsCardProps.mediaType,
+            title: props.title ? props.title : defaultNewsCardProps.title,
+            text: props.text ? props.text : defaultNewsCardProps.text,
+            category: props.category ? props.category : defaultNewsCardProps.category,
+            date: props.date ? props.date : defaultNewsCardProps.date,
+        }
+
+        let vModeClass = `news-card--${checkProps.vMode}`
+
+    .news-card(class= checkProps.classes + vModeClass)&attributes(attributes)
+        .news-card__media
+            -if(checkProps.mediaType === 'img' && checkProps.media.length > 0)
+                img(src= checkProps.media)
+            -if(checkProps.mediaType === 'video')
+                | тут видео
+        .news-card__content
+            .news-card__title!= checkProps.title
+            .news-card__text!= checkProps.text
+            .news-card__tags
+                .news-card__category!= checkProps.category
+                .news-card__date!= checkProps.date

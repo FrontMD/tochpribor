@@ -7,7 +7,6 @@
         placeholder: '',
         inputAttr: {},
         resetBtn: false,
-        isRequired: false,
         isSearch: false,
         selectOptions: [
             "вариант 1",
@@ -25,7 +24,6 @@ mixin field(props = defaultFieldProps)
             placeholder: props.placeholder ? props.placeholder : defaultFieldProps.placeholder,
             inputAttr: props.inputAttr ? props.inputAttr : defaultFieldProps.inputAttr,
             resetBtn: props.resetBtn ? props.resetBtn : defaultFieldProps.resetBtn,
-            isRequired: props.isRequired ? props.isRequired : defaultFieldProps.isRequired,
             isSearch: props.isSearch ? props.isSearch : defaultFieldProps.isSearch,
             selectOptions: props.selectOptions ? props.selectOptions : defaultFieldProps.selectOptions,
         }
@@ -39,8 +37,6 @@ mixin field(props = defaultFieldProps)
             - if(checkProps.title)
                 span.field__title
                     != checkProps.title
-                    - if(checkProps.isRequired)
-                        span!= "*"
             - if(checkProps.tag === 'input')
                 input.field__input(type=checkProps.type placeholder=checkProps.placeholder)&attributes(checkProps.inputAttr)
                 - if(checkProps.type === 'radio')
@@ -50,9 +46,9 @@ mixin field(props = defaultFieldProps)
                     span.field__error(data-js='fieldError') Нужно обязательно ознакомиться и согласиться
                 - else
                 span.field__error(data-js='fieldError')
-        - if(checkProps.tag === 'textarea')
-            textarea.field__textarea(rows="7" placeholder=checkProps.placeholder)&attributes(checkProps.inputAttr)
-            span.field__error(data-js='fieldError')
+            - if(checkProps.tag === 'textarea')
+                textarea.field__textarea(rows="8" placeholder=checkProps.placeholder)&attributes(checkProps.inputAttr)
+                span.field__error(data-js='fieldError')
         - if(checkProps.tag === 'select')
             select.field__select(placeholder=checkProps.placeholder data-js='formSelect')&attributes(checkProps.inputAttr)
                 - let optionCount = 0

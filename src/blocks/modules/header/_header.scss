@@ -18,7 +18,7 @@
         background-color: $c-text;
         opacity: 0;
         visibility: hidden;
-        transition: all 0.5s linear;
+        transition: all $tr-time-long linear;
         z-index: -1;
 
         &.active {
@@ -249,7 +249,7 @@
             background-color: $c-white;
             visibility: hidden;
             opacity: 0;
-            transition: all 0.5s linear;
+            transition: all $tr-time-long linear;
 
             &.active {
                 visibility: visible;

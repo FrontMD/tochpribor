@@ -1,47 +1,47 @@
 function commentsHeight() {
-    const commentsBlock = document.querySelectorAll('[data-js="comments"]');
+    const commentsBlock = document.querySelector('[data-js="comments"]');
 
     if(!commentsBlock) return
 
-    const showMoreLayout =  `
-                            <span class="btn__text">
-                                Смотреть все 
-                            <span class="btn__note" data-js="commentsCount"></span>
-                            </span>
+    const commentsItems = commentsBlock.querySelectorAll('[data-js="commentsItem"]');
+    
+    if(commentsItems.length > 5) {
 
-                            <button class="btn btn--grey btn--246" type="button" data-js="commentsMore"></button>
-                            `
-
-
-    bigMenuLists.forEach(bigMenuList => {
-        const bigMenuListItems = bigMenuList.querySelectorAll('[data-js="bigMenuItem"]');
-
-        if(bigMenuListItems.length > 5) {
-            let itemsBlock = bigMenuList.querySelector('[data-js="bigMenuItems"]');
-            let fullHeight = itemsBlock.offsetHeight;
-            let shortHeight = 40
-            let showHideBtn = document.createElement('button');
-
-            for(let i = 0; i < 5; i++) {
-                shortHeight += bigMenuListItems[i].offsetHeight
-            }
-
-            showHideBtn.setAttribute('type', 'button');
-            showHideBtn.classList.add('big-menu__show');
-            showHideBtn.innerHTML = showMoreLayout
-
-            bigMenuList.appendChild(showHideBtn)
-            itemsBlock.style.maxHeight = shortHeight + 'px'
-
-            showHideBtn.addEventListener('click', function(e) {
-                if(this.classList.contains('big-menu__show--opened')) {
-                    this.classList.remove('big-menu__show--opened')
-                    itemsBlock.style.maxHeight = shortHeight + 'px'
-                } else {
-                    this.classList.add('big-menu__show--opened')
-                    itemsBlock.style.maxHeight = fullHeight + 'px'
-                }
-            })
+        const showMoreLayout =  `
+                                <span class="btn__text">
+                                    <span class="show">Смотреть все</span>
+                                    <span class="hide">Скрыть</span>
+                                <span class="btn__note" data-js="commentsCount">(${commentsItems.length - 5})</span>
+                                </span>
+                                `
+        let itemsBlock = commentsBlock.querySelector('[data-js="commentsList"]');
+        let fullHeight = itemsBlock.offsetHeight;
+        let shortHeight = 120
+        if(window.innerWidth < 769) {
+            shortHeight = 80 
         }
-    })
+        let showHideBtn = document.createElement('button');
+
+        for(let i = 0; i < 5; i++) {
+            shortHeight += commentsItems[i].offsetHeight
+        }
+
+        showHideBtn.setAttribute('type', 'button');
+        showHideBtn.setAttribute('class', 'btn btn--grey btn--246 comments-list__show');
+        showHideBtn.setAttribute('data-js', 'commentsMore');
+        showHideBtn.innerHTML = showMoreLayout
+
+        commentsBlock.appendChild(showHideBtn)
+        itemsBlock.style.maxHeight = shortHeight + 'px'
+
+        showHideBtn.addEventListener('click', function(e) {
+            if(this.classList.contains('opened')) {
+                this.classList.remove('opened')
+                itemsBlock.style.maxHeight = shortHeight + 'px'
+            } else {
+                this.classList.add('opened')
+                itemsBlock.style.maxHeight = fullHeight + 'px'
+            }
+        })
+    }
 }

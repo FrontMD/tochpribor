@@ -192,3 +192,21 @@ block content
                 include ../../blocks/modules/comments/comments
 
             .sidebar-layout__sidebar
+                .section.tags
+                    .tags__title Ключевые слова
+                    .tags__list
+                        .tags__tag Определение твердости по Бринеллю HBW
+                        .tags__tag Измерение твердости по Бринеллю HBW
+
+                .glossary-detailed__error.banner
+                    .banner__bg
+                        img(src="img/glossary/glossary_support.webp" alt="")
+                    .banner__content
+                        .banner__title.title--26 Нашли ошибку? Есть слова которых нет в глоссарии?
+                        .banner__text Напишите нам
+                        +btn({
+                            classes: '',
+                            size: "content",
+                            name: 'Написать в тех поддержку',
+                            icon: 'arrow_enter',
+                        })

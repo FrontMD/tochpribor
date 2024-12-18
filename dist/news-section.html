@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Новости</title>
+    <meta name="theme-color" content="#fff">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="shortcut icon" href="img/favicons/favicon.ico" type="image/x-icon">
+    <link rel="icon" sizes="16x16" href="img/favicons/favicon-16x16.png" type="image/png">
+    <link rel="icon" sizes="32x32" href="img/favicons/favicon-32x32.png" type="image/png">
+    <link rel="apple-touch-icon-precomposed" href="img/favicons/apple-touch-icon-precomposed.png">
+    <link rel="apple-touch-icon" href="img/favicons/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="img/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="img/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="img/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="img/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="img/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon-180x180.png">
+    <link rel="apple-touch-icon" sizes="1024x1024" href="img/favicons/apple-touch-icon-1024x1024.png">
+    <link rel="stylesheet" href="styles/main.min.css">
+  </head>
+  <body>
+    <header class="site-header" data-js="siteHeader">
+      <div class="site-header__overlay"></div>
+      <div class="site-header__container m-container">
+        <div class="site-header__logo"><img src="img/logo_full.svg" alt="логотип"></div>
+        <div class="site-header__burger site-header__block" data-js="mainBurgerOpen">
+          <svg>
+            <use xlink:href="img/sprites/sprite.svg#burger"></use>
+          </svg>
+        </div>
+        <div class="site-header__location site-header__block">
+          <svg>
+            <use xlink:href="img/sprites/sprite.svg#location"></use>
+          </svg><span>Санкт-Петербург</span>
+        </div>
+        <nav class="site-header__menu site-header__block">
+          <ul class="nav-menu">
+            <li class="nav-menu__item"><a class="nav-menu__link" href="javascript:void(0)">Каталог продукции </a></li>
+            <li class="nav-menu__item"><a class="nav-menu__link" href="javascript:void(0)">Производство</a></li>
+            <li class="nav-menu__item"><a class="nav-menu__link" href="javascript:void(0)">
+                 Услуги
+                <svg>
+                  <use xlink:href="img/sprites/sprite.svg#arrow_angle"></use>
+                </svg></a>
+              <div class="nav-menu__sublist"><a class="nav-menu__link" href="javascript:void(0)">Услуга 1</a><a class="nav-menu__link" href="javascript:void(0)">Услуга 2</a><a class="nav-menu__link" href="javascript:void(0)">Услуга 3</a><a class="nav-menu__link" href="javascript:void(0)">Услуга 4</a><a class="nav-menu__link" href="javascript:void(0)">Услуга 5</a></div>
+            </li>
+          </ul>
+        </nav>
+        <div class="site-header__contacts">
+          <ul class="nav-menu">
+            <li class="nav-menu__item"><a class="nav-menu__link" href="mailto:info@tochpribor-nw.ru">
+                 info@tochpribor-nw.ru
+                <svg>
+                  <use xlink:href="img/sprites/sprite.svg#arrow_angle"></use>
+                </svg></a>
+              <div class="nav-menu__sublist"><a class="nav-menu__link" href="mailto:info@tochpribor-nw.ru">info@tochpribor-nw.ru</a></div>
+            </li>
+            <li class="nav-menu__item"><a class="nav-menu__link" href="tel:+78126123003">
+                 +7 (812) 612-30-03
+                <svg>
+                  <use xlink:href="img/sprites/sprite.svg#arrow_angle"></use>
+                </svg></a>
+              <div class="nav-menu__sublist"><a class="nav-menu__link" href="tel:+78126123003">+7 (812) 612-30-03</a></div>
+            </li>
+          </ul>
+        </div>
+        <div class="site-header__socials socials"><a class="socials__item" href="https://telegram.org/">
+            <svg>
+              <use xlink:href="img/sprites/sprite.svg#tg"></use>
+            </svg></a><a class="socials__item" href="https://vk.com/">
+            <svg>
+              <use xlink:href="img/sprites/sprite.svg#vk"></use>
+            </svg></a></div>
+        <div class="site-header__search search">
+          <div class="search__open" data-js="headerSearchOpen">
+            <svg>
+              <use xlink:href="img/sprites/sprite.svg#search"></use>
+            </svg>
+          </div>
+          <div class="search__content" data-js="headerSearchContent">
+            <form class="search__form">
+                  <div class="field  field--search field--reset  " data-js="formField">
+                    <button class="field__search" type="submit">
+                      <svg> 
+                        <use xlink:href="img/sprites/sprite.svg#search"></use>
+                      </svg>
+                    </button>
+                    <label>
+                      <input class="field__input" type="text" placeholder="Поиск" data-js="headerSearchInput"><span class="field__error" data-js="fieldError"></span>
+                    </label><span class="field__reset" data-js="fieldResetBtn">
+                      <svg> 
+                        <use xlink:href="img/sprites/sprite.svg#close"></use>
+                      </svg></span>
+                  </div>
+                  <div class="field     " data-js="formField">
+                    <label>
+                    </label>
+                    <select class="field__select" placeholder="" data-js="formSelect">
+                      <option value="По сайту">По сайту</option>
+                      <option value="По каталогу">По каталогу</option>
+                    </select><span class="field__error" data-js="fieldError"></span>
+                  </div><a class="btn  btn--red btn--content" href="javascript:void(0)">
+                    <svg>
+                      <use xlink:href="img/sprites/sprite.svg#arrow_enter"></use>
+                    </svg><span class="btn__text">Поиск</span></a>
+            </form>
+          </div>
+        </div>
+        <div class="site-header__shop site-header__block shop"> <a class="shop__item" href="javascript:void(0)">
+            <svg>
+              <use xlink:href="img/sprites/sprite.svg#compare"></use>
+            </svg><span>5</span></a><a class="shop__item" href="javascript:void(0)">
+            <svg>
+              <use xlink:href="img/sprites/sprite.svg#basket"></use>
+            </svg><span>5</span></a></div><a class="btn site-header__callback btn--red btn--content" href="javascript:void(0)">
+              <svg>
+                <use xlink:href="img/sprites/sprite.svg#arrow_enter"></use>
+              </svg><span class="btn__text">Заказать звонок</span></a>
+      </div>
+    </header>
+    <main class="site-main">
+      <div class="page-layout">
+        <div class="breadcrumbs-section">
+              <div class="breadcrumbs  breadcrumbs--dark">
+                <ul class="breadcrumbs__list">
+                  <li class="breadcrumbs__item"><a href="javascript:void(0);">Главная</a><span class="breadcrumbs__separator">/</span>
+                  </li>
+                  <li class="breadcrumbs__item breadcrumbs__item--current"><span>Новости</span>
+                  </li>
+                </ul>
+              </div>
+        </div>
+        <section class="section s-news-intro">
+              <div class="title  title--67 title--dark">
+                <h1>Новости
+                </h1>
+              </div>
+          <div class="s-news-intro__top">
+            <div class="s-news-intro__left">
+                  <div class="news-card news-card--left">
+                    <div class="news-card__media"><img src="img/news/news_1.webp">
+                    </div>
+                    <div class="news-card__content">
+                      <div class="news-card__title">Перспективы развития "Завод испытательных приборов" на встрече с губернатором - Точприбор</div>
+                      <div class="news-card__text">В четверг, 8 августа, губернатор Ивановской области Станислав Воскресенский посетил предприятие, обсудил с руководством компании перспективы дальнейшего развития и встретился с трудовым коллективом.</div>
+                      <div class="news-card__tags">
+                        <div class="news-card__category">Мы в СМИ</div>
+                        <div class="news-card__date">20.10.2024</div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            <div class="s-news-intro__right">
+                  <div class="news-card news-card--horizontal">
+                    <div class="news-card__media"><img src="img/news/news_2.webp">
+                    </div>
+                    <div class="news-card__content">
+                      <div class="news-card__title">Открытие предприятия "Завод испытательных приборов" - Точприбор</div>
+                      <div class="news-card__text"></div>
+                      <div class="news-card__tags">
+                        <div class="news-card__category">Новости</div>
+                        <div class="news-card__date">20.10.2024</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="news-card news-card--horizontal">
+                    <div class="news-card__media"><img src="img/news/news_3.webp">
+                    </div>
+                    <div class="news-card__content">
+                      <div class="news-card__title">Возрождение уникального ивановского завода - Точприбор</div>
+                      <div class="news-card__text"></div>
+                      <div class="news-card__tags">
+                        <div class="news-card__category">Новости</div>
+                        <div class="news-card__date">20.10.2024</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="news-card news-card--horizontal">
+                    <div class="news-card__media"><img src="img/news/news_4.webp">
+                    </div>
+                    <div class="news-card__content">
+                      <div class="news-card__title">Поставлена испытательная машина ИР 5145-500-11 для нужд инженерно-технического центра завода</div>
+                      <div class="news-card__text"></div>
+                      <div class="news-card__tags">
+                        <div class="news-card__category">Новости</div>
+                        <div class="news-card__date">20.10.2024</div>
+                      </div>
+                    </div>
+                  </div><a class="btn  btn--transparent btn--full" href="javascript:void(0)">
+                    <svg>
+                      <use xlink:href="img/sprites/sprite.svg#arrow_enter"></use>
+                    </svg><span class="btn__text">Смотреть все</span></a>
+            </div>
+          </div>
+          <div class="s-news-intro__bottom">
+                <div class="news-card news-card--small">
+                  <div class="news-card__media">
+                  </div>
+                  <div class="news-card__content">
+                    <div class="news-card__title">РВ Иванове полиция накрыла подпольный цех по производству поддельных измерительных приборов</div>
+                    <div class="news-card__text"></div>
+                    <div class="news-card__tags">
+                      <div class="news-card__category">Про устройства</div>
+                      <div class="news-card__date">20.10.2024</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="news-card news-card--small">
+                  <div class="news-card__media">
+                  </div>
+                  <div class="news-card__content">
+                    <div class="news-card__title">РВ Иванове полиция накрыла подпольный цех по производству поддельных измерительных приборов</div>
+                    <div class="news-card__text"></div>
+                    <div class="news-card__tags">
+                      <div class="news-card__category">Про устройства</div>
+                      <div class="news-card__date">20.10.2024</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="news-card news-card--small">
+                  <div class="news-card__media">
+                  </div>
+                  <div class="news-card__content">
+                    <div class="news-card__title">РВ Иванове полиция накрыла подпольный цех по производству поддельных измерительных приборов</div>
+                    <div class="news-card__text"></div>
+                    <div class="news-card__tags">
+                      <div class="news-card__category">Про устройства</div>
+                      <div class="news-card__date">20.10.2024</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="news-card news-card--small">
+                  <div class="news-card__media">
+                  </div>
+                  <div class="news-card__content">
+                    <div class="news-card__title">РВ Иванове полиция накрыла подпольный цех по производству поддельных измерительных приборов</div>
+                    <div class="news-card__text"></div>
+                    <div class="news-card__tags">
+                      <div class="news-card__category">Про устройства</div>
+                      <div class="news-card__date">20.10.2024</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="news-card news-card--small">
+                  <div class="news-card__media">
+                  </div>
+                  <div class="news-card__content">
+                    <div class="news-card__title">РВ Иванове полиция накрыла подпольный цех по производству поддельных измерительных приборов</div>
+                    <div class="news-card__text"></div>
+                    <div class="news-card__tags">
+                      <div class="news-card__category">Про устройства</div>
+                      <div class="news-card__date">20.10.2024</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="news-card news-card--small">
+                  <div class="news-card__media">
+                  </div>
+                  <div class="news-card__content">
+                    <div class="news-card__title">РВ Иванове полиция накрыла подпольный цех по производству поддельных измерительных приборов</div>
+                    <div class="news-card__text"></div>
+                    <div class="news-card__tags">
+                      <div class="news-card__category">Про устройства</div>
+                      <div class="news-card__date">20.10.2024</div>
+                    </div>
+                  </div>
+                </div>
+          </div>
+        </section>
+      </div>
+    </main>
+    <footer class="site-footer">
+      <div class="m-container site-footer__container">
+        <div class="site-footer__word">производство
+          <svg>
+            <use xlink:href="img/sprites/sprite.svg#arrow_classic"></use>
+          </svg>модернизация
+          <svg>
+            <use xlink:href="img/sprites/sprite.svg#arrow_classic"></use>
+          </svg>ремонт
+        </div>
+        <div class="site-footer__left"><a class="btn  btn--red btn--big" href="javascript:void(0)">
+                <svg>
+                  <use xlink:href="img/sprites/sprite.svg#arrow_enter"></use>
+                </svg><span class="btn__text">Оставить заявку</span></a>
+          <div class="site-footer__docs"><a class="site-footer__doc" href="javascript:void()">Пользовательское соглашение</a><a class="site-footer__doc" href="javascript:void()">Политика обработки персональных данных и конфиденциальности</a></div>
+          <div class="site-footer__copyright">© 2010—2024 Точприбор</div>
+        </div>
+        <div class="site-footer__menu">
+              <div class="big-menu">
+                <div class="big-menu__section">
+                  <div class="big-menu__title">Каталог</div>
+                  <div class="big-menu__list" data-js="bigMenuList">
+                    <ul class="big-menu__items" data-js="bigMenuItems">
+                      <li class="big-menu__item" data-js="bigMenuItem"><a href="javascript:void(0)">Разрывные машины</a></li>
+                      <li class="big-menu__item" data-js="bigMenuItem"><a href="javascript:void(0)">Твердомеры</a></li>
+                      <li class="big-menu__item" data-js="bigMenuItem"><a href="javascript:void(0)">Меры твердости</a></li>
+                      <li class="big-menu__item" data-js="bigMenuItem"><a href="javascript:void(0)">Приборы для измерения цвета</a></li>
+                      <li class="big-menu__item" data-js="bigMenuItem"><a href="javascript:void(0)">Микроскопы						</a></li>
+                      <li class="big-menu__item" data-js="bigMenuItem"><a class="big-menu__link" href="javascript:void(0)">Динамометры</a></li>
+                      <li class="big-menu__item" data-js="bigMenuItem"><a class="big-menu__link" href="javascript:void(0)">Разрывные машины</a></li>
+                      <li class="big-menu__item" data-js="bigMenuItem"><a class="big-menu__link" href="javascript:void(0)">Твердомеры</a></li>
+                      <li class="big-menu__item" data-js="bigMenuItem"><a class="big-menu__link" href="javascript:void(0)">Меры твердости</a></li>
+                      <li class="big-menu__item" data-js="bigMenuItem"><a class="big-menu__link" href="javascript:void(0)">Приборы для измерения цвета</a></li>
+                      <li class="big-menu__item" data-js="bigMenuItem"><a class="big-menu__link" href="javascript:void(0)">Микроскопы</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="big-menu__section">
+                  <div class="big-menu__title">О компании</div>
+                  <div class="big-menu__list" data-js="bigMenuList">
+                    <ul class="big-menu__items" data-js="bigMenuItems">
+                      <li class="big-menu__item" data-js="bigMenuItem"><a href="javascript:void(0)">Производство</a></li>
+                      <li class="big-menu__item" data-js="bigMenuItem"><a href="javascript:void(0)">Услуги</a></li>
+                      <li class="big-menu__item" data-js="bigMenuItem"><a href="javascript:void(0)">Документы</a></li>
+                      <li class="big-menu__item" data-js="bigMenuItem"><a href="javascript:void(0)">Карьера в Точприбор</a></li>
+                      <li class="big-menu__item" data-js="bigMenuItem"><a href="javascript:void(0)">Наша команда</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="big-menu__section">
+                  <div class="big-menu__title">Еще</div>
+                  <div class="big-menu__list" data-js="bigMenuList">
+                    <ul class="big-menu__items" data-js="bigMenuItems">
+                      <li class="big-menu__item" data-js="bigMenuItem"><a href="javascript:void(0)">Контакты</a></li>
+                      <li class="big-menu__item" data-js="bigMenuItem"><a href="javascript:void(0)">Новости</a></li>
+                      <li class="big-menu__item" data-js="bigMenuItem"><a href="javascript:void(0)">Вопросы и ответы (FAQ)</a></li>
+                      <li class="big-menu__item" data-js="bigMenuItem"><a href="javascript:void(0)">Карта сайта</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="big-menu__section">
+                  <div class="big-menu__title">Связаться</div>
+                  <div class="big-menu__list" data-js="bigMenuList">
+                    <ul class="big-menu__items" data-js="bigMenuItems">
+                      <li class="big-menu__item" data-js="bigMenuItem"><a href="mailto:info@tochpribor.ru">info@tochpribor.ru</a></li>
+                      <li class="big-menu__item" data-js="bigMenuItem"><a href="tel:+74922521233">+7 (4922) 52-12-33</a></li>
+                      <li class="big-menu__item" data-js="bigMenuItem"><span>Головной офис: 190121, г. Санкт-Петербург, пер. Дровяной, д. 20, пом. 4-Н Вопросы и ответы (FAQ)</span></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="big-menu__footer">
+                  <div class="socials"><a class="socials__item" href="https://telegram.org/">
+                      <svg>
+                        <use xlink:href="img/sprites/sprite.svg#tg"></use>
+                      </svg></a><a class="socials__item" href="https://vk.com/">
+                      <svg>
+                        <use xlink:href="img/sprites/sprite.svg#vk"></use>
+                      </svg></a><a class="socials__item" href="https://vkvideo.ru/">
+                      <svg>
+                        <use xlink:href="img/sprites/sprite.svg#vk_video"></use>
+                      </svg></a></div>
+                  <div class="big-menu__copyright">© 2010—2024 Точприбор</div>
+                </div>
+              </div>
+        </div>
+      </div>
+    </footer>
+    <div class="main-burger" data-js="mainBurger">
+      <div class="main-burger__overlay" data-js="mainBurgerClose"></div>
+      <div class="main-burger__content">
+        <div class="main-burger__close" data-js="mainBurgerClose">
+          <svg> 
+            <use xlink:href="img/sprites/sprite.svg#close"></use>
+          </svg>
+        </div>
+        <div class="main-burger__menu">
+              <div class="big-menu">
+                <div class="big-menu__section">
+                  <div class="big-menu__title">Каталог</div>
+                  <div class="big-menu__list" data-js="bigMenuList">
+                    <ul class="big-menu__items" data-js="bigMenuItems">
+                      <li class="big-menu__item" data-js="bigMenuItem"><a href="javascript:void(0)">Разрывные машины</a></li>
+                      <li class="big-menu__item" data-js="bigMenuItem"><a href="javascript:void(0)">Твердомеры</a></li>
+                      <li class="big-menu__item" data-js="bigMenuItem"><a href="javascript:void(0)">Меры твердости</a></li>
+                      <li class="big-menu__item" data-js="bigMenuItem"><a href="javascript:void(0)">Приборы для измерения цвета</a></li>
+                      <li class="big-menu__item" data-js="bigMenuItem"><a href="javascript:void(0)">Микроскопы						</a></li>
+                      <li class="big-menu__item" data-js="bigMenuItem"><a class="big-menu__link" href="javascript:void(0)">Динамометры</a></li>
+                      <li class="big-menu__item" data-js="bigMenuItem"><a class="big-menu__link" href="javascript:void(0)">Разрывные машины</a></li>
+                      <li class="big-menu__item" data-js="bigMenuItem"><a class="big-menu__link" href="javascript:void(0)">Твердомеры</a></li>
+                      <li class="big-menu__item" data-js="bigMenuItem"><a class="big-menu__link" href="javascript:void(0)">Меры твердости</a></li>
+                      <li class="big-menu__item" data-js="bigMenuItem"><a class="big-menu__link" href="javascript:void(0)">Приборы для измерения цвета</a></li>
+                      <li class="big-menu__item" data-js="bigMenuItem"><a class="big-menu__link" href="javascript:void(0)">Микроскопы</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="big-menu__section">
+                  <div class="big-menu__title">О компании</div>
+                  <div class="big-menu__list" data-js="bigMenuList">
+                    <ul class="big-menu__items" data-js="bigMenuItems">
+                      <li class="big-menu__item" data-js="bigMenuItem"><a href="javascript:void(0)">Производство</a></li>
+                      <li class="big-menu__item" data-js="bigMenuItem"><a href="javascript:void(0)">Услуги</a></li>
+                      <li class="big-menu__item" data-js="bigMenuItem"><a href="javascript:void(0)">Документы</a></li>
+                      <li class="big-menu__item" data-js="bigMenuItem"><a href="javascript:void(0)">Карьера в Точприбор</a></li>
+                      <li class="big-menu__item" data-js="bigMenuItem"><a href="javascript:void(0)">Наша команда</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="big-menu__section">
+                  <div class="big-menu__title">Еще</div>
+                  <div class="big-menu__list" data-js="bigMenuList">
+                    <ul class="big-menu__items" data-js="bigMenuItems">
+                      <li class="big-menu__item" data-js="bigMenuItem"><a href="javascript:void(0)">Контакты</a></li>
+                      <li class="big-menu__item" data-js="bigMenuItem"><a href="javascript:void(0)">Новости</a></li>
+                      <li class="big-menu__item" data-js="bigMenuItem"><a href="javascript:void(0)">Вопросы и ответы (FAQ)</a></li>
+                      <li class="big-menu__item" data-js="bigMenuItem"><a href="javascript:void(0)">Карта сайта</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="big-menu__section">
+                  <div class="big-menu__title">Связаться</div>
+                  <div class="big-menu__list" data-js="bigMenuList">
+                    <ul class="big-menu__items" data-js="bigMenuItems">
+                      <li class="big-menu__item" data-js="bigMenuItem"><a href="mailto:info@tochpribor.ru">info@tochpribor.ru</a></li>
+                      <li class="big-menu__item" data-js="bigMenuItem"><a href="tel:+74922521233">+7 (4922) 52-12-33</a></li>
+                      <li class="big-menu__item" data-js="bigMenuItem"><span>Головной офис: 190121, г. Санкт-Петербург, пер. Дровяной, д. 20, пом. 4-Н Вопросы и ответы (FAQ)</span></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="big-menu__footer">
+                  <div class="socials"><a class="socials__item" href="https://telegram.org/">
+                      <svg>
+                        <use xlink:href="img/sprites/sprite.svg#tg"></use>
+                      </svg></a><a class="socials__item" href="https://vk.com/">
+                      <svg>
+                        <use xlink:href="img/sprites/sprite.svg#vk"></use>
+                      </svg></a><a class="socials__item" href="https://vkvideo.ru/">
+                      <svg>
+                        <use xlink:href="img/sprites/sprite.svg#vk_video"></use>
+                      </svg></a></div>
+                  <div class="big-menu__copyright">© 2010—2024 Точприбор</div>
+                </div>
+              </div>
+        </div>
+      </div>
+    </div>
+    <noindex>
+      <div style="display:none;">
+        <!--код модалок сюда-->
+      </div>
+    </noindex>
+    <script src="js/main.min.js"></script>
+  </body>
+</html>

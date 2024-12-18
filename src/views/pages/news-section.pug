@@ -1,0 +1,102 @@
+extends ../layouts/default
+include ../helpers/mixins
+
+block variables
+    - const title = "Новости"
+
+block content
+    .page-layout
+        .breadcrumbs-section
+            +breadcrumbs({
+                items: [
+                    {
+                        name: 'Главная',
+                        link: 'javascript:void(0);'
+                    },
+                    {
+                        name: 'Новости',
+                        link: 'javascript:void(0);'
+                    }
+                ],
+            })
+
+        section.section.s-news-intro
+            +title({
+                tag: 'h1',
+                size: '67',
+                text: 'Новости'
+            })
+
+            .s-news-intro__top
+                .s-news-intro__left
+                    +news-card({
+                        vMode: 'left',
+                        media: 'img/news/news_1.webp',
+                        title: 'Перспективы развития "Завод испытательных приборов" на встрече с губернатором - Точприбор',
+                        text: 'В четверг, 8 августа, губернатор Ивановской области Станислав Воскресенский посетил предприятие, обсудил с руководством компании перспективы дальнейшего развития и встретился с трудовым коллективом.',
+                        category: 'Мы в СМИ',
+                        date: '20.10.2024'
+                    })
+                .s-news-intro__right
+                    +news-card({
+                        media: 'img/news/news_2.webp',
+                        title: 'Открытие предприятия "Завод испытательных приборов" - Точприбор',
+                        category: 'Новости',
+                        date: '20.10.2024'
+                    })
+                    +news-card({
+                        media: 'img/news/news_3.webp',
+                        title: 'Возрождение уникального ивановского завода - Точприбор',
+                        category: 'Новости',
+                        date: '20.10.2024'
+                    })
+                    +news-card({
+                        media: 'img/news/news_4.webp',
+                        title: 'Поставлена испытательная машина ИР 5145-500-11 для нужд инженерно-технического центра завода',
+                        category: 'Новости',
+                        date: '20.10.2024'
+                    })
+
+                    +btn({
+                        name: 'Смотреть все',
+                        size: 'full',
+                        icon: 'arrow_enter',
+                        cMode: 'transparent'
+                    })
+            .s-news-intro__bottom
+                +news-card({
+                    vMode: 'small',
+                    title: 'РВ Иванове полиция накрыла подпольный цех по производству поддельных измерительных приборов',
+                    category: 'Про устройства',
+                    date: '20.10.2024'
+                })
+                +news-card({
+                    vMode: 'small',
+                    title: 'РВ Иванове полиция накрыла подпольный цех по производству поддельных измерительных приборов',
+                    category: 'Про устройства',
+                    date: '20.10.2024'
+                })
+                +news-card({
+                    vMode: 'small',
+                    title: 'РВ Иванове полиция накрыла подпольный цех по производству поддельных измерительных приборов',
+                    category: 'Про устройства',
+                    date: '20.10.2024'
+                })
+                +news-card({
+                    vMode: 'small',
+                    title: 'РВ Иванове полиция накрыла подпольный цех по производству поддельных измерительных приборов',
+                    category: 'Про устройства',
+                    date: '20.10.2024'
+                })
+                +news-card({
+                    vMode: 'small',
+                    title: 'РВ Иванове полиция накрыла подпольный цех по производству поддельных измерительных приборов',
+                    category: 'Про устройства',
+                    date: '20.10.2024'
+                })
+                +news-card({
+                    vMode: 'small',
+                    title: 'РВ Иванове полиция накрыла подпольный цех по производству поддельных измерительных приборов',
+                    category: 'Про устройства',
+                    date: '20.10.2024'
+                })

@@ -1,7 +1,13 @@
 .comments-list {
 
     &__list {
-        padding-bottom: 32px;
+        margin-bottom: 32px;
+        overflow: hidden;
+        transition: max-height $tr-time-long linear;
+
+        @include max(mobile) {
+            margin-bottom: 24px;
+        }
     }
 
     &__item {
@@ -9,12 +15,26 @@
         padding-top: 24px;
         border-top: 1px solid $c-border;
         color: $c-text;
+
+        @include max(mobile) {
+            margin-top: 16px;
+            padding-top: 16px;
+        }
     }
 
     &__header {
         display: flex;
         align-items: center;
         gap: 16px;
+
+        @include max(mobile) {
+            gap: 8px;
+        }
+
+        @include max(xs) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
     }
 
     &__photo {
@@ -23,6 +43,7 @@
         justify-content: center;
         flex: 0 0 48px;
         height: 48px;
+        width: 48px;
         border-radius: 100%;
         font-size: 20px;
         line-height: 1em;
@@ -30,6 +51,12 @@
         color: $c-accent-light;
         background-color: $c-accent-light2;
         overflow: hidden;
+
+        @include max(tablet) {
+            flex: 0 0 38px;
+            height: 38px;
+            width: 38px;
+        }
 
         &--reply {
             color: $c-text-light;
@@ -47,17 +74,36 @@
         display: flex;
         align-items: center;
         margin-left: auto;
+        line-height: 1.4em;
         gap: 7px;
+        flex-shrink: 0;
+
+        @include max(mobile) {
+            font-size: 12px;
+        }
+
+        @include max(xs) {
+            margin-left: 0;
+        }
 
         svg {
             color: $c-bg;
-            width: 14px;
-            height: 16px;
+            width: 11px;
+            height: 12px;
+
+            @include max(mobile) {
+                font-size: 12px;
+            }
         }
     }
 
     &__text {
         margin-top: 24px;
+
+        @include max(mobile) {
+            margin-top: 16px;
+            font-size: 14px;
+        }
     }
 
     &__replies {
@@ -69,6 +115,11 @@
         position: relative;
         padding-left: 57px;
         margin-top: 24px;
+
+        @include max(mobile) {
+            margin-top: 16px;
+            padding-left: 25px;
+        }
     }
 
     &__icon {
@@ -76,9 +127,48 @@
         top: 0;
         left: 16px;
 
+        @include max(mobile) {
+            left: 2px;
+        }
+
         svg {
             width: 25px;
             height: 32px;
+
+            @include max(mobile) {
+                width: 20px;
+                height: 26px;
+            }
         }
     }
+
+    &__show {
+        .btn__text {
+            display: flex;
+            align-items: center;
+            gap: 3px;
+        }
+
+        .show {
+            display: block;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        &.opened {
+            .show {
+                display: none;
+            }
+
+            .hide {
+                display: block;
+            }
+        }
+    }
+}
+
+.comments-form__form {
+    margin-top: 24px;
 }

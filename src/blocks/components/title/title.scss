@@ -8,6 +8,12 @@
         color: $c-white;
     }
 
+    &__sup {
+        vertical-align: super;
+        color: $c-text-breadcrumbs;
+        font-size: 0.56em;
+    }
+
     h1,
     h2,
     h3,

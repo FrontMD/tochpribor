@@ -7,7 +7,7 @@
     z-index: 30;
     visibility: hidden;
     opacity: 0.9;
-    transition: all 0.5s linear;
+    transition: all $tr-time-long linear;
     color: $c-text;
 
     &__overlay {
@@ -18,7 +18,7 @@
         height: 100%;
         opacity: 0;
         background-color: $c-text;
-        transition: opacity 0.5s linear;
+        transition: opacity $tr-time-long linear;
     }
 
 
@@ -30,7 +30,7 @@
         align-items: center;
         color: $c-text;
         cursor: pointer;
-        transition: color 0.5s;
+        transition: color $tr-time-long;
 
         @include max(xs) {
             right: 15px;
@@ -55,7 +55,7 @@
         max-width: 460px;
         height: 100vh;
         overflow: hidden;
-        transition: left 0.5s;
+        transition: left $tr-time-long;
         background-color: $c-white;
     }
 

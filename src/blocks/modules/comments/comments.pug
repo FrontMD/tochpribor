@@ -1,9 +1,9 @@
-section.section.comments-list(data-js="comments")
+section.section.comments-list(id="comments" data-js="comments")
     +title({
         tag: 'h2',
         size: '32',
         text: 'Комментарии',
-        sup: '(13)'
+        sup: ' (13)'
     })
 
     .comments-list__list(data-js="commentsList")
@@ -170,13 +170,41 @@ section.section.comments-list(data-js="comments")
                     span 10.04.2024
             .comments-list__text Особый интерес у посетителей вызвал новый миниатюрный твердомер MET-MINI, который был выпущен нашей компанией в этом году!
 
-    +btn({
-        classes: '',
-        name: 'Смотреть все <span class="btn__note" data-js="commentsCount">(9)</span>',
-        cMode: 'grey',
-        size: '246',
-        type: 'button'
-    })(data-js="commentsMore")
-
-
 section.section.comments-form
+    +title({
+        tag: 'h2',
+        size: '32',
+        text: 'Добавить комментарий'
+    })
+
+    +form({
+        classes: 'comments-form__form',
+        btnText: 'Отправить',
+        innerThanks: true,
+        privacyText: 'Согласен на обработку моих персональных данных в соответствии с <a href="#" target="_blank">Политикой в отношении обработки персональных данных</a>',
+        successTitle: 'Ваш комментарий отправлен.',
+        successText: 'С Вами свяжется ответственный сотрудник по&nbsp;указанным контактным данным.' 
+    })
+        .form__flex
+            +field({
+                title: 'Имя',
+                inputAttr: {
+                    'required': '',
+                    'data-type': 'letters'
+                },
+            })
+            +field({
+                title: 'e-mail',
+                inputAttr: {
+                    'required': '',
+                    'data-v-name': 'email'
+                },
+            })
+
+        +field({
+            tag: 'textarea',
+            title: 'Комментарий',
+            inputAttr: {
+                'required': ''
+            },
+        })
