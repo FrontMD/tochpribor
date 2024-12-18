@@ -338,6 +338,13 @@ body {
 		}
 	}
 
+	hr {
+		margin: 32px 0;
+		height: 0;
+		border: none;
+		border-top: 1px solid $c-border;
+	}
+
 	table {
 		min-width: 100%;
 		border-color: red;
@@ -441,6 +448,7 @@ body {
 		&__right {
 			flex: 1 1 auto;
 		}
+
 	}
 
 	.text-note {

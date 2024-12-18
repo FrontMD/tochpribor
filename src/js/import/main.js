@@ -1,3 +1,8 @@
+document.addEventListener('DOMContentLoaded', () => {
+    newsSmiSliderInit()
+})
+
+// Блокировка скролла при открытии модалок
 function lockBody() {
 	$('body').addClass('no-scroll');
 
@@ -26,4 +31,18 @@ function getScrollbarWidth() {
     div.remove();
 
     return scrollWidth
+}
+
+// Слайдер новостей
+function newsSmiSliderInit() {
+    const sliders = document.querySelectorAll('[data-js="newsSmiSlider"]')
+
+    if(sliders.length < 1) return
+
+    sliders.forEach(slider => {
+        let sliderEx = new Swiper(slider, {
+            slidesPerView: 'auto',
+            spaceBetween: 16
+        })
+    })
 }

@@ -29,11 +29,10 @@ mixin news-card(props = defaultNewsCardProps)
         .news-card__media
             -if(checkProps.mediaType === 'img' && checkProps.media.length > 0)
                 img(src= checkProps.media)
-            -if(checkProps.mediaType === 'video')
-                | тут видео
         .news-card__content
-            .news-card__title!= checkProps.title
-            .news-card__text!= checkProps.text
+            a.news-card__title(href="javascript:void(0)")!= checkProps.title
+            -if(checkProps.text.length > 0)
+                .news-card__text!= checkProps.text
             .news-card__tags
                 .news-card__category!= checkProps.category
                 .news-card__date!= checkProps.date
