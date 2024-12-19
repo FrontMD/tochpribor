@@ -3,6 +3,7 @@
         classes: '',
         vMode: 'horizontal',
         media: '',
+        poster: '',
         mediaType: 'img',
         title: '',
         text: '',
@@ -16,6 +17,7 @@ mixin news-card(props = defaultNewsCardProps)
             classes: props.classes ? props.classes : defaultNewsCardProps.classes,
             vMode: props.vMode ? props.vMode : defaultNewsCardProps.vMode,
             media: props.media ? props.media : defaultNewsCardProps.media,
+            poster: props.poster ? props.poster : defaultNewsCardProps.poster,
             mediaType: props.mediaType ? props.mediaType : defaultNewsCardProps.mediaType,
             title: props.title ? props.title : defaultNewsCardProps.title,
             text: props.text ? props.text : defaultNewsCardProps.text,
@@ -26,23 +28,31 @@ mixin news-card(props = defaultNewsCardProps)
         let vModeClass = `news-card--${checkProps.vMode}`
 
     .news-card(class= checkProps.classes + vModeClass)&attributes(attributes)
-        .news-card__media
-            -if(checkProps.mediaType === 'img' && checkProps.media.length > 0)
+        -if(checkProps.mediaType === 'img' && checkProps.media.length > 0)
+            .news-card__media
                 img(src= checkProps.media)
+        -if(checkProps.mediaType === 'video' && checkProps.media.length > 0)
+            .news-card__media
+                +video({
+                    video: checkProps.media,
+                    poster: checkProps.poster,
+                })
+
         .news-card__content
             a.news-card__title(href="javascript:void(0)")!= checkProps.title
             -if(checkProps.text.length > 0)
                 .news-card__text!= checkProps.text
-            .news-card__tags
-                -if(checkProps.category.length > 0)
-                    a.news-card__category(href="javascript:void(0)")!= checkProps.category
-                -if(checkProps.date.length > 0)
-                    .news-card__date!= checkProps.date
-                -if(checkProps.vMode === 'right')
-                    +btn({
-                        classes: 'news-card__btn',
-                        name: 'Подробнее',
-                        size: '182',
-                        icon: 'arrow_enter',
-                        cMode: 'transparent-red'
-                    })
+            -if(checkProps.category.length > 0 || checkProps.date.length > 0 || checkProps.vMode === 'right')
+                .news-card__tags
+                    -if(checkProps.category.length > 0)
+                        a.news-card__category(href="javascript:void(0)")!= checkProps.category
+                    -if(checkProps.date.length > 0)
+                        .news-card__date!= checkProps.date
+                    -if(checkProps.vMode === 'right')
+                        +btn({
+                            classes: 'news-card__btn',
+                            name: 'Подробнее',
+                            size: '182',
+                            icon: 'arrow_enter',
+                            cMode: 'transparent-red'
+                        })

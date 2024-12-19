@@ -166,6 +166,10 @@ body {
 	.section+.section {
 		margin-top: 16px;
 	}
+
+	.section--full+.section--full {
+		margin-top: 0;
+	}
 }
 
 .breadcrumbs-section.section {

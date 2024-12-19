@@ -1,0 +1,76 @@
+.video {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+
+    &__video {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+
+    &__img,
+    &__frame {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+
+        img,
+        iframe,
+        video {
+            width: 100%;
+            height: 100%;
+        }
+
+        img,
+        video {
+            object-fit: cover;
+        }
+    }
+
+    &__img {
+        position: relative;
+
+        &::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+
+        img {
+            object-fit: cover;
+        }
+    }
+
+    &__btn {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        padding-left: 1%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 14.47%;
+        aspect-ratio: 1 / 1;
+        background-color: rgba(255, 255, 255, 0.24);
+        backdrop-filter: blur(7.5px);
+        border-radius: 100%;
+        cursor: pointer;
+        color: $c-white;
+        transition: background-color $tr-time;
+
+        svg {
+            width: 57%;
+            aspect-ratio: 1 / 1;
+        }
+
+        &:hover {
+            background-color: $c-accent-hover;
+        }
+    }
+}

@@ -340,3 +340,66 @@ block content
                         category: 'Новости',
                         date: '20.10.2024'
                     })
+
+        section.section.section--full.s-news-videos
+            .section__container.s-news-videos__container
+                .s-news__header
+                    +title({
+                        tag: 'h2',
+                        size: '53',
+                        text: 'Видео с производства',
+                        cMode: 'light'
+                    })
+                    +btn({
+                        name: 'Смотреть все',
+                        size: '182',
+                        icon: 'arrow_enter',
+                        cMode: 'white'
+                    })
+                .s-news-videos__content
+                    .s-news-videos__left
+                        +news-card({
+                            vMode: 'video',
+                            mediaType: 'video',
+                            poster: 'img/news/news_11.webp',
+                            media: '<iframe src="https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1" width="1280" height="720" allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" frameborder="0" allowfullscreen></iframe>',
+                            title: 'Испытательный пресс ТЭП 100',
+                            text: `
+                                <ul>
+                                    <li>Обзор изделия</li>
+                                    <li>Испытание на растяжку</li>
+                                    <li>Фрагмент процесса изготовления детали</li>
+                                </ul>`
+                        })
+                    .s-news-videos__right
+                        +news-card({
+                            vMode: 'video-h',
+                            mediaType: 'video',
+                            poster: 'img/news/news_12.webp',
+                            media: '<iframe src="https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239096&hd=3&autoplay=1" width="1280" height="720" allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" frameborder="0" allowfullscreen></iframe>',
+                            title: 'Твердомер Роквелла ТР 5018 ПАС',
+                            text: `
+                                <ul>
+                                    <li>Обзор изделия</li>
+                                    <li>Испытание на прочность</li>
+                                    <li>Фрагмент процесса изготовления детали</li>
+                                </ul>`
+                        })
+
+                        +news-card({
+                            vMode: 'video-h',
+                            mediaType: 'video',
+                            poster: 'img/news/news_13.webp',
+                            media: '<iframe width="1280" height="720" src="https://rutube.ru/play/embed/d13dd6ddcc81e7c4329dae177a8e35ff/?skinColor=e53935" frameBorder="0" allow="clipboard-write; autoplay" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>',
+                            title: 'Металообработка (корпусные и токарные участки)',
+                            text: `Показываем процесс изготовления корпусов и крупногабаритных деталей для производимого оборудования`
+                        })
+
+                        +news-card({
+                            vMode: 'video-h',
+                            mediaType: 'video',
+                            poster: 'img/news/news_14.webp',
+                            media: 'video/news.mp4',
+                            title: 'Конструкторский отдел',
+                            text: `Разбираем пример ТЗ заказчика и рассказываем о подготовке предприятия к производству новой продукции`
+                        })

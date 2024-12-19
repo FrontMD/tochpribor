@@ -45,6 +45,25 @@
             margin-right: 4px;
         }
 
+        ul {
+            margin-bottom: 1.4em;
+        }
+
+        ul li {
+            position: relative;
+            padding: 0 0 0 21px;
+        }
+
+        ul li:before {
+            content: '';
+            position: absolute;
+            left: 8px;
+            top: 8px;
+            width: 4px;
+            height: 4px;
+            border-radius: 100%;
+        }
+
     }
 
     &__tags {
@@ -280,31 +299,99 @@
         line-height: 1em;
         letter-spacing: -0.02em;
     }
+}
 
-    /*&--slider &__content {
-        position: relative;
-        justify-content: flex-end;
-        gap: 10px;
+.news-card {
+    &--video {
+        background-color: $c-bg-dark2;
+        flex-direction: column;
+        gap: 0;
+        border-radius: 4px;
     }
 
+    &--video &__media {
+        width: 100%;
 
-
-    &--slider &__tags {
-        display: contents;
     }
 
-    &--slider &__category {
-        order: -1;
-        padding: 4px 12px;
-        background-color: $c-accent;
+    &--video &__media::after {
+        content: none;
+    }
+
+    &--video &__content {
+        padding: 16px 20px 25px;
+    }
+
+    &--video &__title {
+        color: $c-white;
+        font-size: 26px;
+        line-height: 1em;
+        letter-spacing: -0.02em;
 
         &:hover {
-            background-color: $c-accent-hover;
+            color: $c-accent-hover;
         }
     }
 
-    &--slider &__date {
-        padding: 0;
-        background-color: transparent;
-    }*/
+    &--video &__text {
+        font-size: 18px;
+        color: $c-bg;
+        margin-top: 8px;
+    }
+
+    &--video ul li {
+        padding-left: 27px;
+    }
+
+    &--video ul li:before {
+        background-color: $c-bg;
+        top: 10px;
+        left: 10px;
+        width: 6px;
+        height: 6px;
+    }
+}
+
+.news-card {
+    &--video-h {
+        gap: 0;
+        background-color: $c-bg-dark2;
+        border-radius: 4px;
+    }
+
+    &--video-h &__media {
+        flex: 0 0 52%;
+    }
+
+    &--video-h &__media::after {
+        content: none;
+    }
+
+    &--video-h &__content {
+        flex: 1 1 auto;
+        width: 48%;
+        justify-content: flex-start;
+        padding: 12px 16px 16px 20px;
+        background-color: $c-bg-dark2;
+    }
+
+    &--video-h &__title {
+        color: $c-white;
+        font-size: 20px;
+        line-height: 1.1em;
+        letter-spacing: -0.01em;
+
+        &:hover {
+            color: $c-accent-hover;
+        }
+    }
+
+    &--video-h &__text {
+        margin-top: 14px;
+        color: $c-bg;
+    }
+
+    &--video-h ul li:before {
+        background-color: $c-bg;
+    }
 }

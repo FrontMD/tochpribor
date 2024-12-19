@@ -23,10 +23,21 @@
     &--red {
         color: $c-white;
         background-color: $c-accent;
-        transition: all $tr-time;
+        transition: all $tr-time linear;
 
         &:hover {
             background-color: $c-accent-hover;
+        }
+    }
+
+    &--white {
+        color: $c-accent;
+        background-color: $c-white;
+        transition: all $tr-time linear;
+
+        &:hover {
+            background-color: $c-accent-hover;
+            color: $c-white;
         }
     }
 
