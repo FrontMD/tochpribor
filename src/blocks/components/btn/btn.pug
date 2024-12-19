@@ -33,13 +33,15 @@ mixin btn(props = defaultBtnProps)
             -if(checkProps.icon.length > 0)
                 svg
                     use(xlink:href=`img/sprites/sprite.svg#${checkProps.icon}`)
-            span.btn__text!= checkProps.name
+            -if(checkProps.size !== 'icon')
+                span.btn__text!= checkProps.name
     - else if(checkProps.type == 'button')
         button.btn(class=checkProps.classes + colorClass + sizeClass type= checkProps.buttonType)&attributes(attributes)
             -if(checkProps.icon.length > 0)
                 svg
                     use(xlink:href=`img/sprites/sprite.svg#${checkProps.icon}`)
-            span.btn__text!= checkProps.name
+            -if(checkProps.size !== 'icon')
+                span.btn__text!= checkProps.name
     - else 
         | ошибка: type кнопки не найден!
 

@@ -34,5 +34,15 @@ mixin news-card(props = defaultNewsCardProps)
             -if(checkProps.text.length > 0)
                 .news-card__text!= checkProps.text
             .news-card__tags
-                .news-card__category!= checkProps.category
-                .news-card__date!= checkProps.date
+                -if(checkProps.category.length > 0)
+                    a.news-card__category(href="javascript:void(0)")!= checkProps.category
+                -if(checkProps.date.length > 0)
+                    .news-card__date!= checkProps.date
+                -if(checkProps.vMode === 'right')
+                    +btn({
+                        classes: 'news-card__btn',
+                        name: 'Подробнее',
+                        size: '182',
+                        icon: 'arrow_enter',
+                        cMode: 'transparent-red'
+                    })

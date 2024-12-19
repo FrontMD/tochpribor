@@ -1,5 +1,21 @@
 .not-found {
-    padding-top: 40px;
+
+    .section__container {
+        padding-top: 40px;
+        padding-bottom: 0;
+
+        @include max(large) {
+            padding-bottom: 0;
+        }
+
+        @include max(laptop) {
+            padding-bottom: 0;
+        }
+
+        @include max(mobile) {
+            padding-bottom: 0;
+        }
+    }
 
     &__text {
         color: $c-text;

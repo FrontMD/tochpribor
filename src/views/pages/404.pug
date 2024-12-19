@@ -6,18 +6,19 @@ block variables
 
 block content
 	.page-layout.page-layout--white
-		section.not-found
-			+title({
-				tag: 'h1',
-				size: '67',
-				text: 'Такой страницы не <br>существует'
-			})
-			.not-found__text Возможно ошибка в адресе
-			.not-found__img
-				img(src="img/404/404.webp" alt="страница не найдена")
-			+btn({
-				classes: '',
-				size: "big",
-				name: 'На главную',
-				icon: 'arrow_enter',
-			})
+		section.section.section--full.not-found
+			.section__container
+				+title({
+					tag: 'h1',
+					size: '67',
+					text: 'Такой страницы не <br>существует'
+				})
+				.not-found__text Возможно ошибка в адресе
+				.not-found__img
+					img(src="img/404/404.webp" alt="страница не найдена")
+				+btn({
+					classes: '',
+					size: "big",
+					name: 'На главную',
+					icon: 'arrow_enter',
+				})

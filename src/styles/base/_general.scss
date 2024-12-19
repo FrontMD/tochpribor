@@ -134,10 +134,6 @@ body {
 	height: 100%;
 }
 
-.m-container {
-	width: 100%;
-}
-
 *:focus {
 	outline: none;
 }
@@ -149,36 +145,38 @@ body {
 
 .page-layout {
 	background-color: $c-main-bg;
-	padding: 80px 40px 20px;
-
-	@include max(large) {
-		padding: 80px 20px 20px;
-	}
+	padding: 80px 0 20px;
 
 	@include max(laptop) {
-		padding: 75px 20px 20px;
+		padding: 61px 0 20px;
 	}
 
 	@include max(mobile) {
-		padding: 61px 15px 0;
+		padding: 61px 0 0;
 	}
 
 	&--white {
 		background-color: $c-white;
 
 		@include max(mobile) {
-			padding: 61px 15px 20px;
+			padding: 61px 0 20px;
 		}
 	}
 
 	.section+.section {
 		margin-top: 16px;
-
 	}
 }
 
-.breadcrumbs-section {
-	padding: 16px 0;
+.breadcrumbs-section.section {
+
+	.section__container {
+		padding: 16px 0;
+	}
+
+	&+.section {
+		margin-top: 0;
+	}
 
 	@include max(mobile) {
 		display: none;
@@ -186,17 +184,60 @@ body {
 }
 
 .section {
-	padding: 24px;
-	background-color: $c-white;
-	border-radius: 4px;
 
-	@include max(tablet) {
-		padding: 20px 15px;
+	padding: 0 40px;
+
+	@include max(large) {
+		padding: 0 20px;
 	}
 
 	@include max(mobile) {
-		margin-left: -15px;
-		margin-right: -15px;
+		padding: 0;
+	}
+
+	&__container {
+		padding: 24px;
+		background-color: $c-white;
+		border-radius: 4px;
+
+		@include max(tablet) {
+			padding: 20px 15px;
+		}
+	}
+
+	&--transparent &__container {
+		background-color: transparent;
+		border-radius: 0;
+		padding: 24px 0 0;
+
+		@include max(tablet) {
+			padding: 20px 0 0;
+		}
+
+		@include max(mobile) {
+			padding: 20px 15px 0;
+		}
+	}
+
+	&--full {
+		padding: 0;
+
+		@include max(large) {
+			padding: 0;
+		}
+	}
+
+	&--full &__container {
+		border-radius: 0;
+		padding: 24px 40px;
+
+		@include max(large) {
+			padding: 20px;
+		}
+
+		@include max(mobile) {
+			padding: 20px 15px;
+		}
 	}
 }
 
@@ -204,10 +245,20 @@ body {
 	display: flex;
 	align-items: flex-start;
 	gap: 16px;
+	padding: 16px 40px 0;
+
+	@include max(large) {
+		padding: 16px 20px 0;
+	}
 
 	@include max(tablet) {
 		flex-direction: column;
 	}
+
+	@include max(mobile) {
+		padding: 0;
+	}
+
 
 	&__content {
 		flex: 1 1 auto;
@@ -488,7 +539,27 @@ body {
 }
 
 .tags {
-	padding: 13px 15px;
+	padding: 0;
+
+	@include max(large) {
+		padding: 0;
+	}
+
+	@include max(laptop) {
+		padding: 0;
+	}
+
+	@include max(tablet) {
+		padding: 0;
+	}
+
+	@include max(mobile) {
+		padding: 0;
+	}
+
+	.section__container {
+		padding: 13px 15px;
+	}
 
 	&__title {
 		font-size: 20px;

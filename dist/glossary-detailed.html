@@ -27,7 +27,7 @@
   <body>
     <header class="site-header" data-js="siteHeader">
       <div class="site-header__overlay"></div>
-      <div class="site-header__container m-container">
+      <div class="site-header__container">
         <div class="site-header__logo"><img src="img/logo_full.svg" alt="логотип"></div>
         <div class="site-header__burger site-header__block" data-js="mainBurgerOpen">
           <svg>
@@ -126,442 +126,454 @@
     </header>
     <main class="site-main">
       <div class="page-layout">
-        <div class="breadcrumbs-section">
-              <div class="breadcrumbs  breadcrumbs--dark">
-                <ul class="breadcrumbs__list">
-                  <li class="breadcrumbs__item"><a href="javascript:void(0);">Главная</a><span class="breadcrumbs__separator">/</span>
-                  </li>
-                  <li class="breadcrumbs__item"><a href="javascript:void(0);">Глоссарий</a><span class="breadcrumbs__separator">/</span>
-                  </li>
-                  <li class="breadcrumbs__item breadcrumbs__item--current"><span>Название статьи</span>
-                  </li>
-                </ul>
-              </div>
+        <div class="breadcrumbs-section section section--transparent">
+          <div class="section__container">
+                <div class="breadcrumbs  breadcrumbs--dark">
+                  <ul class="breadcrumbs__list">
+                    <li class="breadcrumbs__item"><a href="javascript:void(0);">Главная</a><span class="breadcrumbs__separator">/</span>
+                    </li>
+                    <li class="breadcrumbs__item"><a href="javascript:void(0);">Глоссарий</a><span class="breadcrumbs__separator">/</span>
+                    </li>
+                    <li class="breadcrumbs__item breadcrumbs__item--current"><span>Название статьи</span>
+                    </li>
+                  </ul>
+                </div>
+          </div>
         </div>
         <div class="sidebar-layout">
           <div class="sidebar-layout__content">
-            <section class="section glossary-detailed__header">
-                  <div class="title  title--53 title--dark">
-                    <h1>Твердость по Бринеллю
-                    </h1>
+            <section class="section section--full glossary-detailed__header">
+              <div class="section__container">
+                    <div class="title  title--53 title--dark">
+                      <h1>Твердость по Бринеллю
+                      </h1>
+                    </div>
+                <div class="glossary-detailed__btns"><a class="btn  btn--transparent btn--182" href="javascript:void(0)">
+                        <svg>
+                          <use xlink:href="img/sprites/sprite.svg#share"></use>
+                        </svg><span class="btn__text">Поделиться</span></a><a class="btn  btn--transparent btn--182" href="#comments">
+                        <svg>
+                          <use xlink:href="img/sprites/sprite.svg#message"></use>
+                        </svg><span class="btn__text">Комментарии <span class="btn__note">(13)</span></span></a>
+                </div>
+              </div>
+            </section>
+            <section class="section section--full">
+              <div class="section__container glossary-detailed__body">
+                <div class="text-editor">
+                  <h2>Общие знания относительно определения твердости по Бринеллю</h2>
+                  <div class="text-flex-block">
+                    <div class="text-flex-block__left"><img src="img/glossary/article_1.webp" alt=""></div>
+                    <div class="text-flex-block__right">
+                      <p>При методе испытания по Бринеллю индентор представляет собой твердосплавный шарик диаметром D = 10; 5; 2,5 или 1 мм. </p>
+                      <p>Он вдавливается в образец с усилием испытания (по стандарту от 1 кг до 3000 кг) и удерживается там в течение определенного времени.</p>
+                      <p>Для расчета твердости по Бринеллю измеряются два расположенные вертикально друг к другу диаметра отпечатка на поверхности образца. </p>
+                      <p>Кроме того, используются усилие испытания в Н и диаметр сферического индентора.</p>
+                    </div>
                   </div>
-              <div class="glossary-detailed__btns"><a class="btn  btn--transparent btn--182" href="javascript:void(0)">
+                  <div class="text-note">
+                    <div class="text-note__icon">
                       <svg>
-                        <use xlink:href="img/sprites/sprite.svg#share"></use>
-                      </svg><span class="btn__text">Поделиться</span></a><a class="btn  btn--transparent btn--182" href="#comments">
+                        <use xlink:href="img/sprites/sprite.svg#info"></use>
+                      </svg>
+                    </div>
+                    <div class="text-note__content">
+                      <p>Твердость - свойство материала оказывать сопротивление упругой и пластической деформации или разрушению при внедрении в поверхностный слой материала другого, более твердого и не получающего остаточной деформации тела - индентора.</p>
+                    </div>
+                  </div>
+                  <div class="text-note">
+                    <div class="text-note__icon">
                       <svg>
-                        <use xlink:href="img/sprites/sprite.svg#message"></use>
-                      </svg><span class="btn__text">Комментарии <span class="btn__note">(13)</span></span></a>
-              </div>
-            </section>
-            <section class="section glossary-detailed__body">
-              <div class="text-editor">
-                <h2>Общие знания относительно определения твердости по Бринеллю</h2>
-                <div class="text-flex-block">
-                  <div class="text-flex-block__left"><img src="img/glossary/article_1.webp" alt=""></div>
-                  <div class="text-flex-block__right">
-                    <p>При методе испытания по Бринеллю индентор представляет собой твердосплавный шарик диаметром D = 10; 5; 2,5 или 1 мм. </p>
-                    <p>Он вдавливается в образец с усилием испытания (по стандарту от 1 кг до 3000 кг) и удерживается там в течение определенного времени.</p>
-                    <p>Для расчета твердости по Бринеллю измеряются два расположенные вертикально друг к другу диаметра отпечатка на поверхности образца. </p>
-                    <p>Кроме того, используются усилие испытания в Н и диаметр сферического индентора.</p>
-                  </div>
-                </div>
-                <div class="text-note">
-                  <div class="text-note__icon">
-                    <svg>
-                      <use xlink:href="img/sprites/sprite.svg#info"></use>
-                    </svg>
-                  </div>
-                  <div class="text-note__content">
-                    <p>Твердость - свойство материала оказывать сопротивление упругой и пластической деформации или разрушению при внедрении в поверхностный слой материала другого, более твердого и не получающего остаточной деформации тела - индентора.</p>
-                  </div>
-                </div>
-                <div class="text-note">
-                  <div class="text-note__icon">
-                    <svg>
-                      <use xlink:href="img/sprites/sprite.svg#info"></use>
-                    </svg>
-                  </div>
-                  <div class="text-note__content">
-                    <p>Твердость по Бринеллю (HB) - метод основан на том, что в плоскую поверхность под нагрузкой внедряют стальной шарик. Число твердости НВ определяется отношением нагрузки к сферической поверхности отпечатка.</p>
-                  </div>
-                </div>
-                <div class="text-note">
-                  <div class="text-note__icon">
-                    <svg>
-                      <use xlink:href="img/sprites/sprite.svg#info"></use>
-                    </svg>
-                  </div>
-                  <div class="text-note__content">
-                    <h3>Что означает твердость по Бринеллю?</h3>
-                    <p>Твердость по Бринеллю - это единица измерения, которая показывает твердость материала. Она измеряется по методу определения твердости по Бринеллю, при котором твердосплавный шарик вдавливается в материал. Размер полученного отпечатка измеряется оптически, чтобы определить твердость материала.</p>
-                    <p>Твердость по Бринеллю обычно определяют у крупно зернистых материалов, материалов с шероховатой поверхностью или неоднородных материалов (например, отливки, сплавы и кованые изделия). Ее определяют как отношение приложенного усилия к площади отпечатка. Единица измерения твердости по Бринеллю - HBW (твердость по Бринеллю с использованием шарика из карбида вольфрама).</p>
-                  </div>
-                </div>
-                <h2>Процесс определения твердости по Бринеллю согласно ISO 6506</h2>
-                <div class="text-flex-block">
-                  <div class="text-flex-block__left"><img src="img/glossary/article_2.webp" alt=""></div>
-                  <div class="text-flex-block__right">
-                    <p>При определении твердости по Бринеллю, оптическом методе, измеряют величину отпечатка, оставляемого индентором. В отличие от аналогичного оптического метода по Виккерсу, при котором в образец вдавливается индентор в форме пирамиды, при методе по Бринеллю используется сферический индентор.</p>
-                    <p>Чем глубже отпечаток, оставляемый индентором по Бринеллю с определенным диаметром шарика и при определенном усилии испытания на поверхности заготовки (образца), тем мягче испытываемый материал.</p>
-                    <p>Согласно стандарту ISO 6506 для определения твердости по Бринеллю (HBW) сферический индентор из твердого сплава (карбид вольфрама) с определенной нагрузкой (от 1 кгс до 3000 кгс) вдавливается в образец (заготовку).</p>
-                  </div>
-                </div>
-                <h3>Метеорологические характеристики</h3>
-                <table>
-                  <tr> 
-                    <th>Шкала твердости</th>
-                    <th>Диапазон измерений</th>
-                    <th>Пределы допускаемой абсолютной погрешности твердомера</th>
-                  </tr>
-                  <tr> 
-                    <td>Шкала "С" Роквелла</td>
-                    <td>(20-70) HRC</td>
-                    <td>±2 HRC</td>
-                  </tr>
-                  <tr> 
-                    <td>Шкала Бринелля</td>
-                    <td>(20-70) HRC</td>
-                    <td>±2 HRC</td>
-                  </tr>
-                  <tr> 
-                    <td>Шкала Виккерса</td>
-                    <td>(20-70) HRC</td>
-                    <td>±2 HRC</td>
-                  </tr>
-                  <tr> 
-                    <td>Шкала Шора</td>
-                    <td>(20-70) HRC</td>
-                    <td>±2 HRC</td>
-                  </tr>
-                </table>
-                <h3>Технические характеристики</h3>
-                <table>
-                  <tr>
-                    <th>Принцип измерений</th>
-                    <td>UCI-метод (принцип ультразвукового контактного импеданса)</td>
-                  </tr>
-                  <tr> 
-                    <th>Типы датчиков</th>
-                    <td> 
-                      <table> 
-                        <tr> 
-                          <td>y10</td>
-                          <td>y15</td>
-                          <td>y50</td>
-                          <td>y50</td>
-                          <td>y50</td>
-                          <td>y50</td>
-                        </tr>
-                      </table>
-                    </td>
-                  </tr>
-                  <tr> 
-                    <th>Измерительное усиление датчика, H</th>
-                    <td>
-                      <table> 
-                        <tr> 
-                          <td>9,8</td>
-                          <td>14,7</td>
-                          <td>49,0</td>
-                          <td>98,0</td>
-                          <td>14,7</td>
-                          <td>49,0</td>
-                        </tr>
-                      </table>
-                    </td>
-                  </tr>
-                  <tr> 
-                    <th>Шероховатость поверхности образца</th>
-                    <td>&lt;Ra 2,5 (для усилия 10 Н и 14,7 Н) <br>&lt;Ra 4,5 (для усилия 50 Н) <br>&lt;Ra 8,0 (для усилия 100 Н)</td>
-                  </tr>
-                  <tr> 
-                    <th>Радиус кривизны поверхности образца</th>
-                    <td>&gt;5 мм</td>
-                  </tr>
-                </table>
-                <h2>Расчет твердости по Бринеллю</h2>
-                <p>Твердость по Бринеллю HBW определяется как частное из приложенного усилия испытания F (в ньютонах (Н)) и площади оставшегося отпечатка на образце (проекции отпечатка) после сброса усилия испытания (см. формулу Бринелля). Для расчета площади оставшегося сферического отпечатка привлекается среднее арифметическое d двух вертикальных диагоналей d1 и d2 (в мм), т.к. основание отпечатков по Бринеллю зачастую не является точно круглым.</p><img src="img/glossary/article_3.webp" alt="">
-                <p>На практике для определения значения твердости не для каждого отдельного испытания проводится расчет по формуле. В качестве альтернативы значение твердости можно взять из таблиц или специального программного обеспечения, где для всех нормативных диаметров шарика и испытательных нагрузок приводится значение твердости, в зависимости от среднего диаметра отпечатка d.</p>
-                <p>Усилие испытание следует выбирать таким образом, чтобы средний диаметр отпечатка d составлял от 0,24 D до 0,6 D.</p>
-                <p>Для соблюдения этих границ необходимо согласовать друг с другом усилие испытания и диаметр шарика. На основании этого возникают различные степени нагружения (их также называют коэффициенты нагрузки) в пределах метода по Бринеллю, при которых частное из усилия испытания и квадрата диаметра шарика остается постоянным: B = 0,102*F/D2. Пять актуальных степеней нагружения: 1, 2.5, 5, 10 и 30. Испытание одного материала с различными диаметрами шарика и усилиями испытания следует проводить в пределах одной степени нагружения для сходимости результатов измерений (см. обзорную таблицу "Методы и области применения определения твердости по Бринеллю").</p>
-                <h3>Метеорологические характеристики</h3>
-                <table>
-                  <tr> 
-                    <th>Шкала твердости</th>
-                    <th>Диапазон измерений</th>
-                    <th>Пределы допускаемой абсолютной погрешности твердомера</th>
-                  </tr>
-                  <tr> 
-                    <td>Шкала "С" Роквелла</td>
-                    <td>(20-70) HRC</td>
-                    <td>±2 HRC</td>
-                  </tr>
-                  <tr> 
-                    <td>Шкала Бринелля</td>
-                    <td>(20-70) HRC</td>
-                    <td>±2 HRC</td>
-                  </tr>
-                  <tr> 
-                    <td>Шкала Виккерса</td>
-                    <td>(20-70) HRC</td>
-                    <td>±2 HRC</td>
-                  </tr>
-                  <tr> 
-                    <td>Шкала Шора</td>
-                    <td>(20-70) HRC</td>
-                    <td>±2 HRC</td>
-                  </tr>
-                </table>
-                <p>На практике для определения значения твердости не для каждого отдельного испытания проводится расчет по формуле. В качестве альтернативы значение твердости можно взять из таблиц или специального программного обеспечения, где для всех нормативных диаметров шарика и испытательных нагрузок приводится значение твердости, в зависимости от среднего диаметра отпечатка d.</p>
-                <p>Усилие испытание следует выбирать таким образом, чтобы средний диаметр отпечатка d составлял от 0,24 D до 0,6 D.</p><hr>
-                <p>Для соблюдения этих границ необходимо согласовать друг с другом усилие испытания и диаметр шарика. На основании этого возникают различные степени нагружения (их также называют коэффициенты нагрузки) в пределах метода по Бринеллю, при которых частное из усилия испытания и квадрата диаметра шарика остается постоянным: B = 0,102*F/D2. Пять актуальных степеней нагружения: 1, 2.5, 5, 10 и 30. Испытание одного материала с различными диаметрами шарика и усилиями испытания следует проводить в пределах одной степени нагружения для сходимости результатов измерений (см. обзорную таблицу "Методы и области применения определения твердости по Бринеллю").</p>
-              </div>
-            </section>
-            <section class="section comments-list" id="comments" data-js="comments">
-                  <div class="title  title--32 title--dark">
-                    <h2>Комментарии<span class="title__sup"> (13)</span>
-                    </h2>
-                  </div>
-              <div class="comments-list__list" data-js="commentsList">
-                <div class="comments-list__item" data-js="commentsItem">
-                  <div class="comments-list__header">
-                    <div class="comments-list__photo"><span>К</span></div>
-                    <div class="comments-list__name title--26">Константин Константинопольский</div>
-                    <div class="comments-list__date">
-                      <svg> 
-                        <use xlink:href="img/sprites/sprite.svg#calendar"></use>
-                      </svg><span>10.04.2024</span>
+                        <use xlink:href="img/sprites/sprite.svg#info"></use>
+                      </svg>
+                    </div>
+                    <div class="text-note__content">
+                      <p>Твердость по Бринеллю (HB) - метод основан на том, что в плоскую поверхность под нагрузкой внедряют стальной шарик. Число твердости НВ определяется отношением нагрузки к сферической поверхности отпечатка.</p>
                     </div>
                   </div>
-                  <div class="comments-list__text">Особый интерес у посетителей вызвал новый миниатюрный твердомер MET-MINI, который был выпущен нашей компанией в этом году!</div>
-                  <div class="comments-list__replies">
-                    <div class="comments-list__reply">
-                      <div class="comments-list__icon">
+                  <div class="text-note">
+                    <div class="text-note__icon">
+                      <svg>
+                        <use xlink:href="img/sprites/sprite.svg#info"></use>
+                      </svg>
+                    </div>
+                    <div class="text-note__content">
+                      <h3>Что означает твердость по Бринеллю?</h3>
+                      <p>Твердость по Бринеллю - это единица измерения, которая показывает твердость материала. Она измеряется по методу определения твердости по Бринеллю, при котором твердосплавный шарик вдавливается в материал. Размер полученного отпечатка измеряется оптически, чтобы определить твердость материала.</p>
+                      <p>Твердость по Бринеллю обычно определяют у крупно зернистых материалов, материалов с шероховатой поверхностью или неоднородных материалов (например, отливки, сплавы и кованые изделия). Ее определяют как отношение приложенного усилия к площади отпечатка. Единица измерения твердости по Бринеллю - HBW (твердость по Бринеллю с использованием шарика из карбида вольфрама).</p>
+                    </div>
+                  </div>
+                  <h2>Процесс определения твердости по Бринеллю согласно ISO 6506</h2>
+                  <div class="text-flex-block">
+                    <div class="text-flex-block__left"><img src="img/glossary/article_2.webp" alt=""></div>
+                    <div class="text-flex-block__right">
+                      <p>При определении твердости по Бринеллю, оптическом методе, измеряют величину отпечатка, оставляемого индентором. В отличие от аналогичного оптического метода по Виккерсу, при котором в образец вдавливается индентор в форме пирамиды, при методе по Бринеллю используется сферический индентор.</p>
+                      <p>Чем глубже отпечаток, оставляемый индентором по Бринеллю с определенным диаметром шарика и при определенном усилии испытания на поверхности заготовки (образца), тем мягче испытываемый материал.</p>
+                      <p>Согласно стандарту ISO 6506 для определения твердости по Бринеллю (HBW) сферический индентор из твердого сплава (карбид вольфрама) с определенной нагрузкой (от 1 кгс до 3000 кгс) вдавливается в образец (заготовку).</p>
+                    </div>
+                  </div>
+                  <h3>Метеорологические характеристики</h3>
+                  <table>
+                    <tr> 
+                      <th>Шкала твердости</th>
+                      <th>Диапазон измерений</th>
+                      <th>Пределы допускаемой абсолютной погрешности твердомера</th>
+                    </tr>
+                    <tr> 
+                      <td>Шкала "С" Роквелла</td>
+                      <td>(20-70) HRC</td>
+                      <td>±2 HRC</td>
+                    </tr>
+                    <tr> 
+                      <td>Шкала Бринелля</td>
+                      <td>(20-70) HRC</td>
+                      <td>±2 HRC</td>
+                    </tr>
+                    <tr> 
+                      <td>Шкала Виккерса</td>
+                      <td>(20-70) HRC</td>
+                      <td>±2 HRC</td>
+                    </tr>
+                    <tr> 
+                      <td>Шкала Шора</td>
+                      <td>(20-70) HRC</td>
+                      <td>±2 HRC</td>
+                    </tr>
+                  </table>
+                  <h3>Технические характеристики</h3>
+                  <table>
+                    <tr>
+                      <th>Принцип измерений</th>
+                      <td>UCI-метод (принцип ультразвукового контактного импеданса)</td>
+                    </tr>
+                    <tr> 
+                      <th>Типы датчиков</th>
+                      <td> 
+                        <table> 
+                          <tr> 
+                            <td>y10</td>
+                            <td>y15</td>
+                            <td>y50</td>
+                            <td>y50</td>
+                            <td>y50</td>
+                            <td>y50</td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr> 
+                      <th>Измерительное усиление датчика, H</th>
+                      <td>
+                        <table> 
+                          <tr> 
+                            <td>9,8</td>
+                            <td>14,7</td>
+                            <td>49,0</td>
+                            <td>98,0</td>
+                            <td>14,7</td>
+                            <td>49,0</td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr> 
+                      <th>Шероховатость поверхности образца</th>
+                      <td>&lt;Ra 2,5 (для усилия 10 Н и 14,7 Н) <br>&lt;Ra 4,5 (для усилия 50 Н) <br>&lt;Ra 8,0 (для усилия 100 Н)</td>
+                    </tr>
+                    <tr> 
+                      <th>Радиус кривизны поверхности образца</th>
+                      <td>&gt;5 мм</td>
+                    </tr>
+                  </table>
+                  <h2>Расчет твердости по Бринеллю</h2>
+                  <p>Твердость по Бринеллю HBW определяется как частное из приложенного усилия испытания F (в ньютонах (Н)) и площади оставшегося отпечатка на образце (проекции отпечатка) после сброса усилия испытания (см. формулу Бринелля). Для расчета площади оставшегося сферического отпечатка привлекается среднее арифметическое d двух вертикальных диагоналей d1 и d2 (в мм), т.к. основание отпечатков по Бринеллю зачастую не является точно круглым.</p><img src="img/glossary/article_3.webp" alt="">
+                  <p>На практике для определения значения твердости не для каждого отдельного испытания проводится расчет по формуле. В качестве альтернативы значение твердости можно взять из таблиц или специального программного обеспечения, где для всех нормативных диаметров шарика и испытательных нагрузок приводится значение твердости, в зависимости от среднего диаметра отпечатка d.</p>
+                  <p>Усилие испытание следует выбирать таким образом, чтобы средний диаметр отпечатка d составлял от 0,24 D до 0,6 D.</p>
+                  <p>Для соблюдения этих границ необходимо согласовать друг с другом усилие испытания и диаметр шарика. На основании этого возникают различные степени нагружения (их также называют коэффициенты нагрузки) в пределах метода по Бринеллю, при которых частное из усилия испытания и квадрата диаметра шарика остается постоянным: B = 0,102*F/D2. Пять актуальных степеней нагружения: 1, 2.5, 5, 10 и 30. Испытание одного материала с различными диаметрами шарика и усилиями испытания следует проводить в пределах одной степени нагружения для сходимости результатов измерений (см. обзорную таблицу "Методы и области применения определения твердости по Бринеллю").</p>
+                  <h3>Метеорологические характеристики</h3>
+                  <table>
+                    <tr> 
+                      <th>Шкала твердости</th>
+                      <th>Диапазон измерений</th>
+                      <th>Пределы допускаемой абсолютной погрешности твердомера</th>
+                    </tr>
+                    <tr> 
+                      <td>Шкала "С" Роквелла</td>
+                      <td>(20-70) HRC</td>
+                      <td>±2 HRC</td>
+                    </tr>
+                    <tr> 
+                      <td>Шкала Бринелля</td>
+                      <td>(20-70) HRC</td>
+                      <td>±2 HRC</td>
+                    </tr>
+                    <tr> 
+                      <td>Шкала Виккерса</td>
+                      <td>(20-70) HRC</td>
+                      <td>±2 HRC</td>
+                    </tr>
+                    <tr> 
+                      <td>Шкала Шора</td>
+                      <td>(20-70) HRC</td>
+                      <td>±2 HRC</td>
+                    </tr>
+                  </table>
+                  <p>На практике для определения значения твердости не для каждого отдельного испытания проводится расчет по формуле. В качестве альтернативы значение твердости можно взять из таблиц или специального программного обеспечения, где для всех нормативных диаметров шарика и испытательных нагрузок приводится значение твердости, в зависимости от среднего диаметра отпечатка d.</p>
+                  <p>Усилие испытание следует выбирать таким образом, чтобы средний диаметр отпечатка d составлял от 0,24 D до 0,6 D.</p><hr>
+                  <p>Для соблюдения этих границ необходимо согласовать друг с другом усилие испытания и диаметр шарика. На основании этого возникают различные степени нагружения (их также называют коэффициенты нагрузки) в пределах метода по Бринеллю, при которых частное из усилия испытания и квадрата диаметра шарика остается постоянным: B = 0,102*F/D2. Пять актуальных степеней нагружения: 1, 2.5, 5, 10 и 30. Испытание одного материала с различными диаметрами шарика и усилиями испытания следует проводить в пределах одной степени нагружения для сходимости результатов измерений (см. обзорную таблицу "Методы и области применения определения твердости по Бринеллю").</p>
+                </div>
+              </div>
+            </section>
+            <section class="section section--full comments-list" id="comments">
+              <div class="section__container" data-js="comments">
+                    <div class="title  title--32 title--dark">
+                      <h2>Комментарии<span class="title__sup"> (13)</span>
+                      </h2>
+                    </div>
+                <div class="comments-list__list" data-js="commentsList">
+                  <div class="comments-list__item" data-js="commentsItem">
+                    <div class="comments-list__header">
+                      <div class="comments-list__photo"><span>К</span></div>
+                      <div class="comments-list__name title--26">Константин Константинопольский</div>
+                      <div class="comments-list__date">
                         <svg> 
-                          <use xlink:href="img/sprites/sprite.svg#reply"></use>
-                        </svg>
+                          <use xlink:href="img/sprites/sprite.svg#calendar"></use>
+                        </svg><span>10.04.2024</span>
                       </div>
-                      <div class="comments-list__header">
-                        <div class="comments-list__photo comments-list__photo--reply"><img src="img/comments_photo.webp" alt=""></div>
-                        <div class="comments-list__name title--26">Менеджер Антон</div>
+                    </div>
+                    <div class="comments-list__text">Особый интерес у посетителей вызвал новый миниатюрный твердомер MET-MINI, который был выпущен нашей компанией в этом году!</div>
+                    <div class="comments-list__replies">
+                      <div class="comments-list__reply">
+                        <div class="comments-list__icon">
+                          <svg> 
+                            <use xlink:href="img/sprites/sprite.svg#reply"></use>
+                          </svg>
+                        </div>
+                        <div class="comments-list__header">
+                          <div class="comments-list__photo comments-list__photo--reply"><img src="img/comments_photo.webp" alt=""></div>
+                          <div class="comments-list__name title--26">Менеджер Антон</div>
+                        </div>
+                        <div class="comments-list__text">Спасибо Вам за комментарий! Мы учтем все пожелания</div>
                       </div>
-                      <div class="comments-list__text">Спасибо Вам за комментарий! Мы учтем все пожелания</div>
                     </div>
                   </div>
-                </div>
-                <div class="comments-list__item" data-js="commentsItem">
-                  <div class="comments-list__header">
-                    <div class="comments-list__photo"><span>П</span></div>
-                    <div class="comments-list__name title--26">Петр</div>
-                    <div class="comments-list__date">
-                      <svg> 
-                        <use xlink:href="img/sprites/sprite.svg#calendar"></use>
-                      </svg><span>10.04.2024</span>
-                    </div>
-                  </div>
-                  <div class="comments-list__text">Особый интерес у посетителей вызвал новый миниатюрный твердомер MET-MINI, который был выпущен нашей компанией в этом году!</div>
-                </div>
-                <div class="comments-list__item" data-js="commentsItem">
-                  <div class="comments-list__header">
-                    <div class="comments-list__photo"><span>И</span></div>
-                    <div class="comments-list__name title--26">Иван Иванов</div>
-                    <div class="comments-list__date">
-                      <svg> 
-                        <use xlink:href="img/sprites/sprite.svg#calendar"></use>
-                      </svg><span>10.04.2024</span>
-                    </div>
-                  </div>
-                  <div class="comments-list__text">Особый интерес у посетителей вызвал новый миниатюрный твердомер MET-MINI, который был выпущен нашей компанией в этом году!</div>
-                </div>
-                <div class="comments-list__item" data-js="commentsItem">
-                  <div class="comments-list__header">
-                    <div class="comments-list__photo"><span>М</span></div>
-                    <div class="comments-list__name title--26">Мария</div>
-                    <div class="comments-list__date">
-                      <svg> 
-                        <use xlink:href="img/sprites/sprite.svg#calendar"></use>
-                      </svg><span>10.04.2024</span>
-                    </div>
-                  </div>
-                  <div class="comments-list__text">Особый интерес у посетителей вызвал новый миниатюрный твердомер MET-MINI, который был выпущен нашей компанией в этом году!</div>
-                </div>
-                <div class="comments-list__item" data-js="commentsItem">
-                  <div class="comments-list__header">
-                    <div class="comments-list__photo"><span>И</span></div>
-                    <div class="comments-list__name title--26">Иветта</div>
-                    <div class="comments-list__date">
-                      <svg> 
-                        <use xlink:href="img/sprites/sprite.svg#calendar"></use>
-                      </svg><span>10.04.2024</span>
-                    </div>
-                  </div>
-                  <div class="comments-list__text">Особый интерес у посетителей вызвал новый миниатюрный твердомер MET-MINI, который был выпущен нашей компанией в этом году!</div>
-                </div>
-                <div class="comments-list__item" data-js="commentsItem">
-                  <div class="comments-list__header">
-                    <div class="comments-list__photo"><span>К</span></div>
-                    <div class="comments-list__name title--26">Константин Константинопольский</div>
-                    <div class="comments-list__date">
-                      <svg> 
-                        <use xlink:href="img/sprites/sprite.svg#calendar"></use>
-                      </svg><span>10.04.2024</span>
-                    </div>
-                  </div>
-                  <div class="comments-list__text">Особый интерес у посетителей вызвал новый миниатюрный твердомер MET-MINI, который был выпущен нашей компанией в этом году!</div>
-                  <div class="comments-list__replies">
-                    <div class="comments-list__reply">
-                      <div class="comments-list__icon">
+                  <div class="comments-list__item" data-js="commentsItem">
+                    <div class="comments-list__header">
+                      <div class="comments-list__photo"><span>П</span></div>
+                      <div class="comments-list__name title--26">Петр</div>
+                      <div class="comments-list__date">
                         <svg> 
-                          <use xlink:href="img/sprites/sprite.svg#reply"></use>
-                        </svg>
+                          <use xlink:href="img/sprites/sprite.svg#calendar"></use>
+                        </svg><span>10.04.2024</span>
                       </div>
-                      <div class="comments-list__header">
-                        <div class="comments-list__photo comments-list__photo--reply"><img src="img/comments_photo.webp" alt=""></div>
-                        <div class="comments-list__name title--26">Менеджер Антон</div>
+                    </div>
+                    <div class="comments-list__text">Особый интерес у посетителей вызвал новый миниатюрный твердомер MET-MINI, который был выпущен нашей компанией в этом году!</div>
+                  </div>
+                  <div class="comments-list__item" data-js="commentsItem">
+                    <div class="comments-list__header">
+                      <div class="comments-list__photo"><span>И</span></div>
+                      <div class="comments-list__name title--26">Иван Иванов</div>
+                      <div class="comments-list__date">
+                        <svg> 
+                          <use xlink:href="img/sprites/sprite.svg#calendar"></use>
+                        </svg><span>10.04.2024</span>
                       </div>
-                      <div class="comments-list__text">Спасибо Вам за комментарий! Мы учтем все пожелания</div>
+                    </div>
+                    <div class="comments-list__text">Особый интерес у посетителей вызвал новый миниатюрный твердомер MET-MINI, который был выпущен нашей компанией в этом году!</div>
+                  </div>
+                  <div class="comments-list__item" data-js="commentsItem">
+                    <div class="comments-list__header">
+                      <div class="comments-list__photo"><span>М</span></div>
+                      <div class="comments-list__name title--26">Мария</div>
+                      <div class="comments-list__date">
+                        <svg> 
+                          <use xlink:href="img/sprites/sprite.svg#calendar"></use>
+                        </svg><span>10.04.2024</span>
+                      </div>
+                    </div>
+                    <div class="comments-list__text">Особый интерес у посетителей вызвал новый миниатюрный твердомер MET-MINI, который был выпущен нашей компанией в этом году!</div>
+                  </div>
+                  <div class="comments-list__item" data-js="commentsItem">
+                    <div class="comments-list__header">
+                      <div class="comments-list__photo"><span>И</span></div>
+                      <div class="comments-list__name title--26">Иветта</div>
+                      <div class="comments-list__date">
+                        <svg> 
+                          <use xlink:href="img/sprites/sprite.svg#calendar"></use>
+                        </svg><span>10.04.2024</span>
+                      </div>
+                    </div>
+                    <div class="comments-list__text">Особый интерес у посетителей вызвал новый миниатюрный твердомер MET-MINI, который был выпущен нашей компанией в этом году!</div>
+                  </div>
+                  <div class="comments-list__item" data-js="commentsItem">
+                    <div class="comments-list__header">
+                      <div class="comments-list__photo"><span>К</span></div>
+                      <div class="comments-list__name title--26">Константин Константинопольский</div>
+                      <div class="comments-list__date">
+                        <svg> 
+                          <use xlink:href="img/sprites/sprite.svg#calendar"></use>
+                        </svg><span>10.04.2024</span>
+                      </div>
+                    </div>
+                    <div class="comments-list__text">Особый интерес у посетителей вызвал новый миниатюрный твердомер MET-MINI, который был выпущен нашей компанией в этом году!</div>
+                    <div class="comments-list__replies">
+                      <div class="comments-list__reply">
+                        <div class="comments-list__icon">
+                          <svg> 
+                            <use xlink:href="img/sprites/sprite.svg#reply"></use>
+                          </svg>
+                        </div>
+                        <div class="comments-list__header">
+                          <div class="comments-list__photo comments-list__photo--reply"><img src="img/comments_photo.webp" alt=""></div>
+                          <div class="comments-list__name title--26">Менеджер Антон</div>
+                        </div>
+                        <div class="comments-list__text">Спасибо Вам за комментарий! Мы учтем все пожелания</div>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div class="comments-list__item" data-js="commentsItem">
-                  <div class="comments-list__header">
-                    <div class="comments-list__photo"><span>П</span></div>
-                    <div class="comments-list__name title--26">Петр</div>
-                    <div class="comments-list__date">
-                      <svg> 
-                        <use xlink:href="img/sprites/sprite.svg#calendar"></use>
-                      </svg><span>10.04.2024</span>
+                  <div class="comments-list__item" data-js="commentsItem">
+                    <div class="comments-list__header">
+                      <div class="comments-list__photo"><span>П</span></div>
+                      <div class="comments-list__name title--26">Петр</div>
+                      <div class="comments-list__date">
+                        <svg> 
+                          <use xlink:href="img/sprites/sprite.svg#calendar"></use>
+                        </svg><span>10.04.2024</span>
+                      </div>
                     </div>
+                    <div class="comments-list__text">Особый интерес у посетителей вызвал новый миниатюрный твердомер MET-MINI, который был выпущен нашей компанией в этом году!</div>
                   </div>
-                  <div class="comments-list__text">Особый интерес у посетителей вызвал новый миниатюрный твердомер MET-MINI, который был выпущен нашей компанией в этом году!</div>
-                </div>
-                <div class="comments-list__item" data-js="commentsItem">
-                  <div class="comments-list__header">
-                    <div class="comments-list__photo"><span>И</span></div>
-                    <div class="comments-list__name title--26">Иван Иванов</div>
-                    <div class="comments-list__date">
-                      <svg> 
-                        <use xlink:href="img/sprites/sprite.svg#calendar"></use>
-                      </svg><span>10.04.2024</span>
+                  <div class="comments-list__item" data-js="commentsItem">
+                    <div class="comments-list__header">
+                      <div class="comments-list__photo"><span>И</span></div>
+                      <div class="comments-list__name title--26">Иван Иванов</div>
+                      <div class="comments-list__date">
+                        <svg> 
+                          <use xlink:href="img/sprites/sprite.svg#calendar"></use>
+                        </svg><span>10.04.2024</span>
+                      </div>
                     </div>
+                    <div class="comments-list__text">Особый интерес у посетителей вызвал новый миниатюрный твердомер MET-MINI, который был выпущен нашей компанией в этом году!</div>
                   </div>
-                  <div class="comments-list__text">Особый интерес у посетителей вызвал новый миниатюрный твердомер MET-MINI, который был выпущен нашей компанией в этом году!</div>
-                </div>
-                <div class="comments-list__item" data-js="commentsItem">
-                  <div class="comments-list__header">
-                    <div class="comments-list__photo"><span>М</span></div>
-                    <div class="comments-list__name title--26">Мария</div>
-                    <div class="comments-list__date">
-                      <svg> 
-                        <use xlink:href="img/sprites/sprite.svg#calendar"></use>
-                      </svg><span>10.04.2024</span>
+                  <div class="comments-list__item" data-js="commentsItem">
+                    <div class="comments-list__header">
+                      <div class="comments-list__photo"><span>М</span></div>
+                      <div class="comments-list__name title--26">Мария</div>
+                      <div class="comments-list__date">
+                        <svg> 
+                          <use xlink:href="img/sprites/sprite.svg#calendar"></use>
+                        </svg><span>10.04.2024</span>
+                      </div>
                     </div>
+                    <div class="comments-list__text">Особый интерес у посетителей вызвал новый миниатюрный твердомер MET-MINI, который был выпущен нашей компанией в этом году!</div>
                   </div>
-                  <div class="comments-list__text">Особый интерес у посетителей вызвал новый миниатюрный твердомер MET-MINI, который был выпущен нашей компанией в этом году!</div>
-                </div>
-                <div class="comments-list__item" data-js="commentsItem">
-                  <div class="comments-list__header">
-                    <div class="comments-list__photo"><span>И</span></div>
-                    <div class="comments-list__name title--26">Иветта</div>
-                    <div class="comments-list__date">
-                      <svg> 
-                        <use xlink:href="img/sprites/sprite.svg#calendar"></use>
-                      </svg><span>10.04.2024</span>
+                  <div class="comments-list__item" data-js="commentsItem">
+                    <div class="comments-list__header">
+                      <div class="comments-list__photo"><span>И</span></div>
+                      <div class="comments-list__name title--26">Иветта</div>
+                      <div class="comments-list__date">
+                        <svg> 
+                          <use xlink:href="img/sprites/sprite.svg#calendar"></use>
+                        </svg><span>10.04.2024</span>
+                      </div>
                     </div>
+                    <div class="comments-list__text">Особый интерес у посетителей вызвал новый миниатюрный твердомер MET-MINI, который был выпущен нашей компанией в этом году!</div>
                   </div>
-                  <div class="comments-list__text">Особый интерес у посетителей вызвал новый миниатюрный твердомер MET-MINI, который был выпущен нашей компанией в этом году!</div>
-                </div>
-                <div class="comments-list__item" data-js="commentsItem">
-                  <div class="comments-list__header">
-                    <div class="comments-list__photo"><span>И</span></div>
-                    <div class="comments-list__name title--26">Иван Иванов</div>
-                    <div class="comments-list__date">
-                      <svg> 
-                        <use xlink:href="img/sprites/sprite.svg#calendar"></use>
-                      </svg><span>10.04.2024</span>
+                  <div class="comments-list__item" data-js="commentsItem">
+                    <div class="comments-list__header">
+                      <div class="comments-list__photo"><span>И</span></div>
+                      <div class="comments-list__name title--26">Иван Иванов</div>
+                      <div class="comments-list__date">
+                        <svg> 
+                          <use xlink:href="img/sprites/sprite.svg#calendar"></use>
+                        </svg><span>10.04.2024</span>
+                      </div>
                     </div>
+                    <div class="comments-list__text">Особый интерес у посетителей вызвал новый миниатюрный твердомер MET-MINI, который был выпущен нашей компанией в этом году!</div>
                   </div>
-                  <div class="comments-list__text">Особый интерес у посетителей вызвал новый миниатюрный твердомер MET-MINI, который был выпущен нашей компанией в этом году!</div>
-                </div>
-                <div class="comments-list__item" data-js="commentsItem">
-                  <div class="comments-list__header">
-                    <div class="comments-list__photo"><span>М</span></div>
-                    <div class="comments-list__name title--26">Мария</div>
-                    <div class="comments-list__date">
-                      <svg> 
-                        <use xlink:href="img/sprites/sprite.svg#calendar"></use>
-                      </svg><span>10.04.2024</span>
+                  <div class="comments-list__item" data-js="commentsItem">
+                    <div class="comments-list__header">
+                      <div class="comments-list__photo"><span>М</span></div>
+                      <div class="comments-list__name title--26">Мария</div>
+                      <div class="comments-list__date">
+                        <svg> 
+                          <use xlink:href="img/sprites/sprite.svg#calendar"></use>
+                        </svg><span>10.04.2024</span>
+                      </div>
                     </div>
+                    <div class="comments-list__text">Особый интерес у посетителей вызвал новый миниатюрный твердомер MET-MINI, который был выпущен нашей компанией в этом году!</div>
                   </div>
-                  <div class="comments-list__text">Особый интерес у посетителей вызвал новый миниатюрный твердомер MET-MINI, который был выпущен нашей компанией в этом году!</div>
-                </div>
-                <div class="comments-list__item" data-js="commentsItem">
-                  <div class="comments-list__header">
-                    <div class="comments-list__photo"><span>И</span></div>
-                    <div class="comments-list__name title--26">Иветта</div>
-                    <div class="comments-list__date">
-                      <svg> 
-                        <use xlink:href="img/sprites/sprite.svg#calendar"></use>
-                      </svg><span>10.04.2024</span>
+                  <div class="comments-list__item" data-js="commentsItem">
+                    <div class="comments-list__header">
+                      <div class="comments-list__photo"><span>И</span></div>
+                      <div class="comments-list__name title--26">Иветта</div>
+                      <div class="comments-list__date">
+                        <svg> 
+                          <use xlink:href="img/sprites/sprite.svg#calendar"></use>
+                        </svg><span>10.04.2024</span>
+                      </div>
                     </div>
+                    <div class="comments-list__text">Особый интерес у посетителей вызвал новый миниатюрный твердомер MET-MINI, который был выпущен нашей компанией в этом году!</div>
                   </div>
-                  <div class="comments-list__text">Особый интерес у посетителей вызвал новый миниатюрный твердомер MET-MINI, который был выпущен нашей компанией в этом году!</div>
                 </div>
               </div>
             </section>
-            <section class="section comments-form">
-                  <div class="title  title--32 title--dark">
-                    <h2>Добавить комментарий
-                    </h2>
-                  </div>
-                  <form class="form comments-form__form" action="#" data-validate novalidate>
-                    <div class="form__content" data-js="form-content">
-                      <div class="form__fields">
-                        <div class="form__flex">
+            <section class="section section--full comments-form">
+              <div class="section__container">
+                    <div class="title  title--32 title--dark">
+                      <h2>Добавить комментарий
+                      </h2>
+                    </div>
+                    <form class="form comments-form__form" action="#" data-validate novalidate>
+                      <div class="form__content" data-js="form-content">
+                        <div class="form__fields">
+                          <div class="form__flex">
+                                <div class="field     " data-js="formField">
+                                  <label><span class="field__title">Имя</span>
+                                    <input class="field__input" type="text" placeholder="" required="" data-type="letters"><span class="field__error" data-js="fieldError"></span>
+                                  </label>
+                                </div>
+                                <div class="field     " data-js="formField">
+                                  <label><span class="field__title">e-mail</span>
+                                    <input class="field__input" type="text" placeholder="" required="" data-v-name="email"><span class="field__error" data-js="fieldError"></span>
+                                  </label>
+                                </div>
+                          </div>
                               <div class="field     " data-js="formField">
-                                <label><span class="field__title">Имя</span>
-                                  <input class="field__input" type="text" placeholder="" required="" data-type="letters"><span class="field__error" data-js="fieldError"></span>
-                                </label>
-                              </div>
-                              <div class="field     " data-js="formField">
-                                <label><span class="field__title">e-mail</span>
-                                  <input class="field__input" type="text" placeholder="" required="" data-v-name="email"><span class="field__error" data-js="fieldError"></span>
+                                <label><span class="field__title">Комментарий</span>
+                                  <textarea class="field__textarea" rows="8" placeholder="" required=""></textarea><span class="field__error" data-js="fieldError"></span>
                                 </label>
                               </div>
                         </div>
-                            <div class="field     " data-js="formField">
-                              <label><span class="field__title">Комментарий</span>
-                                <textarea class="field__textarea" rows="8" placeholder="" required=""></textarea><span class="field__error" data-js="fieldError"></span>
-                              </label>
-                            </div>
+                            <button class="btn form__submit btn--red btn--246" type="submit"><span class="btn__text">Отправить</span>
+                            </button>
+                        <div class="form__privacy form-privacy" data-js="formField">
+                          <label>
+                            <input type="checkbox" data-v-name="checkbox" required><span class="form-privacy__fake"></span>
+                          </label><span class="form-privacy__text">Согласен на обработку моих персональных данных в соответствии с <a href="#" target="_blank">Политикой в отношении обработки персональных данных</a></span><span class="field__error" data-js="fieldError"></span>
+                        </div>
                       </div>
-                          <button class="btn form__submit btn--red btn--246" type="submit"><span class="btn__text">Отправить</span>
-                          </button>
-                      <div class="form__privacy form-privacy" data-js="formField">
-                        <label>
-                          <input type="checkbox" data-v-name="checkbox" required><span class="form-privacy__fake"></span>
-                        </label><span class="form-privacy__text">Согласен на обработку моих персональных данных в соответствии с <a href="#" target="_blank">Политикой в отношении обработки персональных данных</a></span><span class="field__error" data-js="fieldError"></span>
+                      <div class="form__thanks" data-js="form-thanks">
+                        <div class="form__image-success">
+                          <svg>
+                            <use xlink:href="img/sprites/sprite.svg#success"></use>
+                          </svg>
+                        </div>
+                        <div class="title--32 form__title">Ваш комментарий отправлен.</div>
+                        <div class="form__text">С Вами свяжется ответственный сотрудник по&nbsp;указанным контактным данным.</div>
                       </div>
-                    </div>
-                    <div class="form__thanks" data-js="form-thanks">
-                      <div class="form__image-success">
-                        <svg>
-                          <use xlink:href="img/sprites/sprite.svg#success"></use>
-                        </svg>
-                      </div>
-                      <div class="title--32 form__title">Ваш комментарий отправлен.</div>
-                      <div class="form__text">С Вами свяжется ответственный сотрудник по&nbsp;указанным контактным данным.</div>
-                    </div>
-                  </form>
+                    </form>
+              </div>
             </section>
           </div>
           <div class="sidebar-layout__sidebar">
-            <div class="section tags">
-              <div class="tags__title">Ключевые слова</div>
-              <div class="tags__list">
-                <div class="tags__tag">Определение твердости по Бринеллю HBW</div>
-                <div class="tags__tag">Измерение твердости по Бринеллю HBW</div>
+            <div class="section section--full tags">
+              <div class="section__container">
+                <div class="tags__title">Ключевые слова</div>
+                <div class="tags__list">
+                  <div class="tags__tag">Определение твердости по Бринеллю HBW</div>
+                  <div class="tags__tag">Измерение твердости по Бринеллю HBW</div>
+                </div>
               </div>
             </div>
             <div class="glossary-detailed__error banner">
@@ -579,7 +591,7 @@
       </div>
     </main>
     <footer class="site-footer">
-      <div class="m-container site-footer__container">
+      <div class="site-footer__container">
         <div class="site-footer__word">производство
           <svg>
             <use xlink:href="img/sprites/sprite.svg#arrow_classic"></use>

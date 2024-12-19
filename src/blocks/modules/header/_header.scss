@@ -197,6 +197,10 @@
         align-items: center;
         gap: 14px;
 
+        @include max(large) {
+            gap: 10px;
+        }
+
         &__item {
             transition: color $tr-time linear;
 
@@ -214,6 +218,10 @@
     &__socials.socials {
         padding: 12px;
         flex: 0 0 auto;
+
+        @include max(large) {
+            padding: 12px 10px;
+        }
 
         @include max(laptop) {
             display: none;
@@ -320,7 +328,11 @@
 
     &__callback {
         align-self: center;
-        padding: 8px 4px;
+        padding: 8px 12px;
+
+        @include max(large) {
+            padding: 8px;
+        }
     }
 
 }

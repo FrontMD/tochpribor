@@ -6,178 +6,337 @@ block variables
 
 block content
     .page-layout
-        .breadcrumbs-section
-            +breadcrumbs({
-                items: [
-                    {
-                        name: 'Главная',
-                        link: 'javascript:void(0);'
-                    },
-                    {
-                        name: 'Новости',
-                        link: 'javascript:void(0);'
-                    }
-                ],
-            })
+        .breadcrumbs-section.section.section--transparent
+            .section__container
+                +breadcrumbs({
+                    items: [
+                        {
+                            name: 'Главная',
+                            link: 'javascript:void(0);'
+                        },
+                        {
+                            name: 'Новости',
+                            link: 'javascript:void(0);'
+                        }
+                    ],
+                })
 
         section.section.s-news-intro
-            +title({
-                tag: 'h1',
-                size: '67',
-                text: 'Новости'
-            })
+            .section__container
+                +title({
+                    tag: 'h1',
+                    size: '67',
+                    text: 'Новости'
+                })
 
-            .s-news-intro__top
-                .s-news-intro__left
+                .s-news-intro__top
+                    .s-news-intro__left
+                        +news-card({
+                            vMode: 'left',
+                            media: 'img/news/news_1.webp',
+                            title: 'Перспективы развития "Завод испытательных приборов" на встрече с губернатором - Точприбор',
+                            text: 'В четверг, 8 августа, губернатор Ивановской области Станислав Воскресенский посетил предприятие, обсудил с руководством компании перспективы дальнейшего развития и встретился с трудовым коллективом.',
+                            category: 'Мы в СМИ',
+                            date: '20.10.2024'
+                        })
+                    .s-news-intro__right
+                        +news-card({
+                            media: 'img/news/news_2.webp',
+                            title: 'Открытие предприятия "Завод испытательных приборов" - Точприбор',
+                            category: 'Новости',
+                            date: '20.10.2024'
+                        })
+                        +news-card({
+                            media: 'img/news/news_3.webp',
+                            title: 'Возрождение уникального ивановского завода - Точприбор',
+                            category: 'Новости',
+                            date: '20.10.2024'
+                        })
+                        +news-card({
+                            media: 'img/news/news_4.webp',
+                            title: 'Поставлена испытательная машина ИР 5145-500-11 для нужд инженерно-технического центра завода',
+                            category: 'Новости',
+                            date: '20.10.2024'
+                        })
+
+                        +btn({
+                            name: 'Смотреть все',
+                            size: 'full',
+                            icon: 'arrow_enter',
+                            cMode: 'transparent-red'
+                        })
+                .s-news-intro__bottom
                     +news-card({
-                        vMode: 'left',
-                        media: 'img/news/news_1.webp',
-                        title: 'Перспективы развития "Завод испытательных приборов" на встрече с губернатором - Точприбор',
-                        text: 'В четверг, 8 августа, губернатор Ивановской области Станислав Воскресенский посетил предприятие, обсудил с руководством компании перспективы дальнейшего развития и встретился с трудовым коллективом.',
-                        category: 'Мы в СМИ',
+                        vMode: 'small',
+                        title: 'РВ Иванове полиция накрыла подпольный цех по производству поддельных измерительных приборов',
+                        category: 'Про устройства',
                         date: '20.10.2024'
                     })
-                .s-news-intro__right
                     +news-card({
+                        vMode: 'small',
+                        title: 'РВ Иванове полиция накрыла подпольный цех по производству поддельных измерительных приборов',
+                        category: 'Про устройства',
+                        date: '20.10.2024'
+                    })
+                    +news-card({
+                        vMode: 'small',
+                        title: 'РВ Иванове полиция накрыла подпольный цех по производству поддельных измерительных приборов',
+                        category: 'Про устройства',
+                        date: '20.10.2024'
+                    })
+                    +news-card({
+                        vMode: 'small',
+                        title: 'РВ Иванове полиция накрыла подпольный цех по производству поддельных измерительных приборов',
+                        category: 'Про устройства',
+                        date: '20.10.2024'
+                    })
+                    +news-card({
+                        vMode: 'small',
+                        title: 'РВ Иванове полиция накрыла подпольный цех по производству поддельных измерительных приборов',
+                        category: 'Про устройства',
+                        date: '20.10.2024'
+                    })
+                    +news-card({
+                        vMode: 'small',
+                        title: 'РВ Иванове полиция накрыла подпольный цех по производству поддельных измерительных приборов',
+                        category: 'Про устройства',
+                        date: '20.10.2024'
+                    })
+
+        section.section.s-news-smi
+            .section__container
+                .s-news__header
+                    +title({
+                        tag: 'h2',
+                        size: '53',
+                        text: 'Мы в СМИ'
+                    })
+                    +btn({
+                        name: 'Смотреть все',
+                        size: '182',
+                        icon: 'arrow_enter',
+                        cMode: 'transparent-red'
+                    })
+
+                .s-news-smi__slider(data-js="newsSmiSlider")
+                    .swiper-wrapper 
+                        .swiper-slide
+                            +news-card({
+                                vMode: 'slider',
+                                media: 'img/news/news_5.webp',
+                                title: 'Перспективы развития "Завод испытательных приборов" на встрече с губернатором - Точприбор',
+                                category: 'Телевидение',
+                                date: '13.08.2024'
+                            })
+                        .swiper-slide    
+                            +news-card({
+                                vMode: 'slider',
+                                media: 'img/news/news_6.webp',
+                                title: 'Перспективы развития "Завод испытательных приборов" на встрече с губернатором - Точприбор',
+                                category: 'Газета “Аргументы и факты”',
+                                date: '13.08.2024'
+                            })
+                        .swiper-slide    
+                            +news-card({
+                                vMode: 'slider',
+                                media: 'img/news/news_7.webp',
+                                title: 'Перспективы развития "Завод испытательных приборов" на встрече с губернатором - Точприбор',
+                                category: 'VK',
+                                date: '13.08.2024'
+                            })
+                        .swiper-slide
+                            +news-card({
+                                vMode: 'slider',
+                                media: 'img/news/news_8.webp',
+                                title: 'Перспективы развития "Завод испытательных приборов" на встрече с губернатором - Точприбор',
+                                category: 'Новостной сайт',
+                                date: '13.08.2024'
+                            })
+                        .swiper-slide
+                            +news-card({
+                                vMode: 'slider',
+                                media: 'img/news/news_5.webp',
+                                title: 'Перспективы развития "Завод испытательных приборов" на встрече с губернатором - Точприбор',
+                                category: 'Телевидение',
+                                date: '13.08.2024'
+                            })
+                        .swiper-slide    
+                            +news-card({
+                                vMode: 'slider',
+                                media: 'img/news/news_6.webp',
+                                title: 'Перспективы развития "Завод испытательных приборов" на встрече с губернатором - Точприбор',
+                                category: 'Газета “Аргументы и факты”',
+                                date: '13.08.2024'
+                            })
+                        .swiper-slide    
+                            +news-card({
+                                vMode: 'slider',
+                                media: 'img/news/news_7.webp',
+                                title: 'Перспективы развития "Завод испытательных приборов" на встрече с губернатором - Точприбор',
+                                category: 'VK',
+                                date: '13.08.2024'
+                            })
+                        .swiper-slide
+                            +news-card({
+                                vMode: 'slider',
+                                media: 'img/news/news_8.webp',
+                                title: 'Перспективы развития "Завод испытательных приборов" на встрече с губернатором - Точприбор',
+                                category: 'Новостной сайт',
+                                date: '13.08.2024'
+                            })
+
+        section.section.section--transparent.s-news-useful
+            .section__container.s-news-useful__container
+                .s-news__header
+                    +title({
+                        tag: 'h2',
+                        size: '53',
+                        text: 'Полезные материалы'
+                    })
+                    +btn({
+                        name: 'Смотреть все',
+                        size: '182',
+                        icon: 'arrow_enter',
+                        cMode: 'transparent-red'
+                    })
+
+                +news-card({
+                    vMode: 'right',
+                    media: 'img/news/news_9.webp',
+                    title: 'Динамометр: устройство, принципы работы и виды',
+                    text: `
+                        <p>Динамометры – это приборы, которые используются для измерения силы. Принцип действия динамометра заключается в преобразовании деформации упругого элемента, вызванной действием приложенной силы.</p>
+                        <ol>
+                            <li>Принцип действия динамометра</li>
+                            <li>Виды динамометров по типу конструкции и их описание</li>
+                            <li>Виды динамометров по предназначению и их описание</li>
+                            <li>Сфера применения динамометров</li>
+                            <li>Выбор динамометра</li>
+                        </ol>
+                        <p>Внутри динамометра имеется механизм соединенных друг с другом зубчатых колёс и пружин. Когда к динамометру прикладывается сила, она передается через зубчатые колеса на пружины. Увеличивается удлинение пружины и изменяется показание шкалы.</p>
+                        <p>Для использования динамометра его устанавливают между двумя объектами и измеряют силу, которую они создают друг на друга. Это может быть полезно для различных задач, например, проверка равномерности нагрузки на кране или определение силы затяжки болта.</p>
+                        <p>Существует несколько типов динамометров, включая механические, гидравлические и электронные. Механические динамометры состоят из системы взаимодействующих зубчатых колес и пружины, которая растягивается или сжимается под действием силы. Чем больше сила, тем больше изменение формы пружины.</p>
+                        <p>Электронные динамометры используются для измерения силы путем определения изменения электрического сигнала в специальном материале.</p>
+                        `,
+                    category: 'Про устройства',
+                    date: '20.10.2024'
+                })
+
+        section.section.section--full.s-news-categories
+            .section__container.s-news-categories__container
+                .s-news-categories__item
+                    .s-news-categories__header
+                        +title({
+                            tag: 'h3',
+                            size: '32',
+                            text: 'Про технологии',
+                        })
+                        +btn({
+                            cMode: 'transparent-red',
+                            size: 'icon',
+                            icon: 'arrow_enter',
+                        })
+                    +news-card({
+                        vMode: 'category',
+                        media: 'img/news/news_10.webp',
+                        title: 'Испытания твёрдости по Бринеллю, Роквеллу и Шору',
+                    })
+                    +news-card({
+                        vMode: 'horizontal',
                         media: 'img/news/news_2.webp',
                         title: 'Открытие предприятия "Завод испытательных приборов" - Точприбор',
                         category: 'Новости',
                         date: '20.10.2024'
                     })
                     +news-card({
+                        vMode: 'horizontal',
                         media: 'img/news/news_3.webp',
                         title: 'Возрождение уникального ивановского завода - Точприбор',
                         category: 'Новости',
                         date: '20.10.2024'
                     })
                     +news-card({
+                        vMode: 'horizontal',
                         media: 'img/news/news_4.webp',
                         title: 'Поставлена испытательная машина ИР 5145-500-11 для нужд инженерно-технического центра завода',
                         category: 'Новости',
                         date: '20.10.2024'
                     })
 
-                    +btn({
-                        name: 'Смотреть все',
-                        size: 'full',
-                        icon: 'arrow_enter',
-                        cMode: 'transparent-red'
+                .s-news-categories__item
+                    .s-news-categories__header
+                        +title({
+                            tag: 'h3',
+                            size: '32',
+                            text: 'Про устройства',
+                        })
+                        +btn({
+                            cMode: 'transparent-red',
+                            size: 'icon',
+                            icon: 'arrow_enter',
+                        })
+                    +news-card({
+                        vMode: 'category',
+                        media: 'img/news/news_1.webp',
+                        title: 'Динамометр: устройство, принципы работы и виды',
                     })
-            .s-news-intro__bottom
-                +news-card({
-                    vMode: 'small',
-                    title: 'РВ Иванове полиция накрыла подпольный цех по производству поддельных измерительных приборов',
-                    category: 'Про устройства',
-                    date: '20.10.2024'
-                })
-                +news-card({
-                    vMode: 'small',
-                    title: 'РВ Иванове полиция накрыла подпольный цех по производству поддельных измерительных приборов',
-                    category: 'Про устройства',
-                    date: '20.10.2024'
-                })
-                +news-card({
-                    vMode: 'small',
-                    title: 'РВ Иванове полиция накрыла подпольный цех по производству поддельных измерительных приборов',
-                    category: 'Про устройства',
-                    date: '20.10.2024'
-                })
-                +news-card({
-                    vMode: 'small',
-                    title: 'РВ Иванове полиция накрыла подпольный цех по производству поддельных измерительных приборов',
-                    category: 'Про устройства',
-                    date: '20.10.2024'
-                })
-                +news-card({
-                    vMode: 'small',
-                    title: 'РВ Иванове полиция накрыла подпольный цех по производству поддельных измерительных приборов',
-                    category: 'Про устройства',
-                    date: '20.10.2024'
-                })
-                +news-card({
-                    vMode: 'small',
-                    title: 'РВ Иванове полиция накрыла подпольный цех по производству поддельных измерительных приборов',
-                    category: 'Про устройства',
-                    date: '20.10.2024'
-                })
+                    +news-card({
+                        vMode: 'horizontal',
+                        media: 'img/news/news_2.webp',
+                        title: 'Открытие предприятия "Завод испытательных приборов" - Точприбор',
+                        category: 'Новости',
+                        date: '20.10.2024'
+                    })
+                    +news-card({
+                        vMode: 'horizontal',
+                        media: 'img/news/news_3.webp',
+                        title: 'Возрождение уникального ивановского завода - Точприбор',
+                        category: 'Новости',
+                        date: '20.10.2024'
+                    })
+                    +news-card({
+                        vMode: 'horizontal',
+                        media: 'img/news/news_4.webp',
+                        title: 'Поставлена испытательная машина ИР 5145-500-11 для нужд инженерно-технического центра завода',
+                        category: 'Новости',
+                        date: '20.10.2024'
+                    })
 
-        section.section.s-news-smi
-            .s-news__header
-                +title({
-                    tag: 'h2',
-                    size: '53',
-                    text: 'Мы в СМИ'
-                })
-                +btn({
-                    name: 'Смотреть все',
-                    size: '182',
-                    icon: 'arrow_enter',
-                    cMode: 'transparent-red'
-                })
-
-            .s-news-smi__slider(data-js="newsSmiSlider")
-                .swiper-wrapper 
-                    .swiper-slide
-                        +news-card({
-                            vMode: 'slider',
-                            media: 'img/news/news_5.webp',
-                            title: 'Перспективы развития "Завод испытательных приборов" на встрече с губернатором - Точприбор',
-                            category: 'Телевидение',
-                            date: '13.08.2024'
+                .s-news-categories__item
+                    .s-news-categories__header
+                        +title({
+                            tag: 'h3',
+                            size: '32',
+                            text: 'Про производство',
                         })
-                    .swiper-slide    
-                        +news-card({
-                            vMode: 'slider',
-                            media: 'img/news/news_6.webp',
-                            title: 'Перспективы развития "Завод испытательных приборов" на встрече с губернатором - Точприбор',
-                            category: 'Газета “Аргументы и факты”',
-                            date: '13.08.2024'
+                        +btn({
+                            cMode: 'transparent-red',
+                            size: 'icon',
+                            icon: 'arrow_enter',
                         })
-                    .swiper-slide    
-                        +news-card({
-                            vMode: 'slider',
-                            media: 'img/news/news_7.webp',
-                            title: 'Перспективы развития "Завод испытательных приборов" на встрече с губернатором - Точприбор',
-                            category: 'VK',
-                            date: '13.08.2024'
-                        })
-                    .swiper-slide
-                        +news-card({
-                            vMode: 'slider',
-                            media: 'img/news/news_8.webp',
-                            title: 'Перспективы развития "Завод испытательных приборов" на встрече с губернатором - Точприбор',
-                            category: 'Новостной сайт',
-                            date: '13.08.2024'
-                        })
-                    .swiper-slide
-                        +news-card({
-                            vMode: 'slider',
-                            media: 'img/news/news_5.webp',
-                            title: 'Перспективы развития "Завод испытательных приборов" на встрече с губернатором - Точприбор',
-                            category: 'Телевидение',
-                            date: '13.08.2024'
-                        })
-                    .swiper-slide    
-                        +news-card({
-                            vMode: 'slider',
-                            media: 'img/news/news_6.webp',
-                            title: 'Перспективы развития "Завод испытательных приборов" на встрече с губернатором - Точприбор',
-                            category: 'Газета “Аргументы и факты”',
-                            date: '13.08.2024'
-                        })
-                    .swiper-slide    
-                        +news-card({
-                            vMode: 'slider',
-                            media: 'img/news/news_7.webp',
-                            title: 'Перспективы развития "Завод испытательных приборов" на встрече с губернатором - Точприбор',
-                            category: 'VK',
-                            date: '13.08.2024'
-                        })
-                    .swiper-slide
-                        +news-card({
-                            vMode: 'slider',
-                            media: 'img/news/news_8.webp',
-                            title: 'Перспективы развития "Завод испытательных приборов" на встрече с губернатором - Точприбор',
-                            category: 'Новостной сайт',
-                            date: '13.08.2024'
-                        })
+                    +news-card({
+                        vMode: 'category',
+                        media: 'img/news/news_5.webp',
+                        title: 'Организация и порядок проведения поверки средств измерения',
+                    })
+                    +news-card({
+                        vMode: 'horizontal',
+                        media: 'img/news/news_2.webp',
+                        title: 'Открытие предприятия "Завод испытательных приборов" - Точприбор',
+                        category: 'Новости',
+                        date: '20.10.2024'
+                    })
+                    +news-card({
+                        vMode: 'horizontal',
+                        media: 'img/news/news_3.webp',
+                        title: 'Возрождение уникального ивановского завода - Точприбор',
+                        category: 'Новости',
+                        date: '20.10.2024'
+                    })
+                    +news-card({
+                        vMode: 'horizontal',
+                        media: 'img/news/news_4.webp',
+                        title: 'Поставлена испытательная машина ИР 5145-500-11 для нужд инженерно-технического центра завода',
+                        category: 'Новости',
+                        date: '20.10.2024'
+                    })
