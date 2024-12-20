@@ -1,5 +1,6 @@
 //libs
 @@include("./libs/jquery-3.7.0.min.js")
+@@include("./libs/lazyload.min.js")
 @@include("./libs/swiper-bundle.min.js")
 @@include("./libs/select2.full.min.js")
 //если желаете подключить библиотеку - раскомментируйте и добавьте @@
@@ -15,6 +16,6 @@
 
 
 //my files
+@@include("./import/main.js")
 @@include("./import/components.js")
 @@include("./import/modules.js")
-@@include("./import/main.js")

@@ -145,6 +145,38 @@
         }
     }
 
+    &--social {
+        min-width: 310px;
+        min-height: 160px;
+        width: fit-content;
+        flex-direction: column-reverse;
+        justify-content: space-between;
+        color: $c-text;
+
+        @include max(laptop) {
+            min-width: 240px;
+            min-height: 125px;
+        }
+
+        @include max(mobile) {
+            min-width: 200px;
+            min-height: 104px;
+        }
+
+        svg {
+            align-self: flex-end;
+            width: 24px;
+            height: 24px;
+        }
+
+        .btn__text {
+            align-self: flex-start;
+            font-size: 20px;
+            line-height: 1.1em;
+            letter-spacing: -0.01em;
+        }
+    }
+
     &--icon {
         padding: 7px;
     }

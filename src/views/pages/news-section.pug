@@ -5,7 +5,7 @@ block variables
     - const title = "Новости"
 
 block content
-    .page-layout
+    .page-layout.page-layout--bottom
         .breadcrumbs-section.section.section--transparent
             .section__container
                 +breadcrumbs({
@@ -37,26 +37,30 @@ block content
                             title: 'Перспективы развития "Завод испытательных приборов" на встрече с губернатором - Точприбор',
                             text: 'В четверг, 8 августа, губернатор Ивановской области Станислав Воскресенский посетил предприятие, обсудил с руководством компании перспективы дальнейшего развития и встретился с трудовым коллективом.',
                             category: 'Мы в СМИ',
-                            date: '20.10.2024'
+                            date: '20.10.2024',
+                            noLazy: true
                         })
                     .s-news-intro__right
                         +news-card({
                             media: 'img/news/news_2.webp',
                             title: 'Открытие предприятия "Завод испытательных приборов" - Точприбор',
                             category: 'Новости',
-                            date: '20.10.2024'
+                            date: '20.10.2024',
+                            noLazy: true
                         })
                         +news-card({
                             media: 'img/news/news_3.webp',
                             title: 'Возрождение уникального ивановского завода - Точприбор',
                             category: 'Новости',
-                            date: '20.10.2024'
+                            date: '20.10.2024',
+                            noLazy: true
                         })
                         +news-card({
                             media: 'img/news/news_4.webp',
                             title: 'Поставлена испытательная машина ИР 5145-500-11 для нужд инженерно-технического центра завода',
                             category: 'Новости',
-                            date: '20.10.2024'
+                            date: '20.10.2024',
+                            noLazy: true
                         })
 
                         +btn({
@@ -357,49 +361,229 @@ block content
                         cMode: 'white'
                     })
                 .s-news-videos__content
-                    .s-news-videos__left
-                        +news-card({
-                            vMode: 'video',
-                            mediaType: 'video',
-                            poster: 'img/news/news_11.webp',
-                            media: '<iframe src="https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1" width="1280" height="720" allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" frameborder="0" allowfullscreen></iframe>',
-                            title: 'Испытательный пресс ТЭП 100',
-                            text: `
-                                <ul>
-                                    <li>Обзор изделия</li>
-                                    <li>Испытание на растяжку</li>
-                                    <li>Фрагмент процесса изготовления детали</li>
-                                </ul>`
-                        })
-                    .s-news-videos__right
-                        +news-card({
-                            vMode: 'video-h',
-                            mediaType: 'video',
-                            poster: 'img/news/news_12.webp',
-                            media: '<iframe src="https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239096&hd=3&autoplay=1" width="1280" height="720" allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" frameborder="0" allowfullscreen></iframe>',
-                            title: 'Твердомер Роквелла ТР 5018 ПАС',
-                            text: `
-                                <ul>
-                                    <li>Обзор изделия</li>
-                                    <li>Испытание на прочность</li>
-                                    <li>Фрагмент процесса изготовления детали</li>
-                                </ul>`
-                        })
+                    +news-card({
+                        vMode: 'video',
+                        mediaType: 'video',
+                        poster: 'img/news/news_11.webp',
+                        media: '<iframe src="https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1" width="1280" height="720" allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" frameborder="0" allowfullscreen></iframe>',
+                        title: 'Испытательный пресс ТЭП 100',
+                        text: `
+                            <ul>
+                                <li>Обзор изделия</li>
+                                <li>Испытание на растяжку</li>
+                                <li>Фрагмент процесса изготовления детали</li>
+                            </ul>`
+                    })
+                    +news-card({
+                        vMode: 'video-h',
+                        mediaType: 'video',
+                        poster: 'img/news/news_12.webp',
+                        media: '<iframe src="https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239096&hd=3&autoplay=1" width="1280" height="720" allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" frameborder="0" allowfullscreen></iframe>',
+                        title: 'Твердомер Роквелла ТР 5018 ПАС',
+                        text: `
+                            <ul>
+                                <li>Обзор изделия</li>
+                                <li>Испытание на прочность</li>
+                                <li>Фрагмент процесса изготовления детали</li>
+                            </ul>`
+                    })
 
-                        +news-card({
-                            vMode: 'video-h',
-                            mediaType: 'video',
-                            poster: 'img/news/news_13.webp',
-                            media: '<iframe width="1280" height="720" src="https://rutube.ru/play/embed/d13dd6ddcc81e7c4329dae177a8e35ff/?skinColor=e53935" frameBorder="0" allow="clipboard-write; autoplay" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>',
-                            title: 'Металообработка (корпусные и токарные участки)',
-                            text: `Показываем процесс изготовления корпусов и крупногабаритных деталей для производимого оборудования`
-                        })
+                    +news-card({
+                        vMode: 'video-h',
+                        mediaType: 'video',
+                        poster: 'img/news/news_13.webp',
+                        media: '<iframe width="1280" height="720" src="https://rutube.ru/play/embed/d13dd6ddcc81e7c4329dae177a8e35ff/?skinColor=e53935" frameBorder="0" allow="clipboard-write; autoplay" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>',
+                        title: 'Металообработка (корпусные и токарные участки)',
+                        text: `Показываем процесс изготовления корпусов и крупногабаритных деталей для производимого оборудования`
+                    })
 
-                        +news-card({
-                            vMode: 'video-h',
-                            mediaType: 'video',
-                            poster: 'img/news/news_14.webp',
-                            media: 'video/news.mp4',
-                            title: 'Конструкторский отдел',
-                            text: `Разбираем пример ТЗ заказчика и рассказываем о подготовке предприятия к производству новой продукции`
-                        })
+                    +news-card({
+                        vMode: 'video-h',
+                        mediaType: 'video',
+                        poster: 'img/news/news_14.webp',
+                        media: 'video/news.mp4',
+                        title: 'Конструкторский отдел',
+                        text: `Разбираем пример ТЗ заказчика и рассказываем о подготовке предприятия к производству новой продукции`
+                    })
+
+        section.section.section--transparent.s-news-news
+            .section__container.s-news-news__container
+                .s-news__header
+                    +title({
+                        tag: 'h2',
+                        size: '53',
+                        text: 'Новости'
+                    })
+                    +btn({
+                        name: 'Смотреть все',
+                        size: '182',
+                        icon: 'arrow_enter',
+                        cMode: 'transparent-red'
+                    })
+                .s-news-news__content
+                    +news-card({
+                        classes: 'news-card--img-r',
+                        vMode: 'img',
+                        media: 'img/news/news_15.webp',
+                        title: 'Приняли участие в 9-ом Московском международном форуме «Точные измерения - основа качества и безопасности»',
+                        date: '20.10.2024',
+                        category: 'Про устройства'
+                    })
+                    +news-card({
+                        vMode: 'img',
+                        media: 'img/news/news_16.webp',
+                        title: 'Энергичные люди. Выпуск журнала №&nbsp;4 (апрель 2024)',
+                        date: '20.10.2024',
+                        category: 'Про устройства'
+                    })
+                    +news-card({
+                        vMode: 'img',
+                        media: 'img/news/news_16.webp',
+                        title: 'Энергичные люди. Выпуск журнала №&nbsp;4 (апрель 2024)',
+                        date: '20.10.2024',
+                        category: 'Про устройства'
+                    })
+                    +news-card({
+                        vMode: 'img',
+                        media: 'img/news/news_16.webp',
+                        title: 'Энергичные люди. Выпуск журнала №&nbsp;4 (апрель 2024)',
+                        date: '20.10.2024',
+                        category: 'Про устройства'
+                    })
+                    +news-card({
+                        vMode: 'img',
+                        media: 'img/news/news_16.webp',
+                        title: 'Энергичные люди. Выпуск журнала №&nbsp;4 (апрель 2024)',
+                        date: '20.10.2024',
+                        category: 'Про устройства'
+                    })
+
+        section.section.section--full.s-news-products
+            .section__container.s-news-products__container
+                .s-news__header
+                    +title({
+                        tag: 'h2',
+                        size: '53',
+                        text: 'Про продукцию'
+                    })
+                    +btn({
+                        name: 'Смотреть все',
+                        size: '182',
+                        icon: 'arrow_enter',
+                        cMode: 'transparent-red'
+                    })
+                .s-news-products__content
+                    +news-card({
+                        vMode: 'classic',
+                        media: 'img/news/news_17.webp',
+                        title: 'Подписан договор на производство и поставку прибора ТМВ 1000',
+                        date: '20.10.2024',
+                        category: 'Поставка'
+                    })
+                    +news-card({
+                        vMode: 'classic',
+                        media: 'img/news/news_18.webp',
+                        title: 'Подписан договор на производство и поставку  машины на базе BP DLC 0,2 кN',
+                        date: '20.10.2024',
+                        category: 'VK'
+                    })
+                    +news-card({
+                        vMode: 'classic',
+                        media: 'img/news/news_19.webp',
+                        title: 'Подписан договор на производство и поставку прибора ТРC 5009',
+                        date: '20.10.2024',
+                        category: 'Мы в СМИ'
+                    })
+                    +news-card({
+                        vMode: 'classic',
+                        media: 'img/news/news_20.webp',
+                        title: 'Подписан договор на производство и поставку универсальной машины',
+                        date: '20.10.2024',
+                        category: 'Подписание контракта'
+                    })
+                    +news-card({
+                        vMode: 'classic',
+                        media: 'img/news/news_18.webp',
+                        title: 'Подписан договор на производство и поставку  машины на базе BP DLC 0,2 кN',
+                        date: '20.10.2024',
+                        category: 'VK'
+                    })
+                    +news-card({
+                        vMode: 'classic',
+                        media: 'img/news/news_20.webp',
+                        title: 'Подписан договор на производство и поставку универсальной машины',
+                        date: '20.10.2024',
+                        category: 'Подписание контракта'
+                    })
+                    +news-card({
+                        vMode: 'classic',
+                        media: 'img/news/news_17.webp',
+                        title: 'Подписан договор на производство и поставку прибора ТМВ 1000',
+                        date: '20.10.2024',
+                        category: 'Поставка'
+                    })
+                    +news-card({
+                        vMode: 'classic',
+                        media: 'img/news/news_19.webp',
+                        title: 'Подписан договор на производство и поставку прибора ТРC 5009',
+                        date: '20.10.2024',
+                        category: 'Мы в СМИ'
+                    })
+                    +news-card({
+                        vMode: 'classic',
+                        media: 'img/news/news_19.webp',
+                        title: 'Подписан договор на производство и поставку прибора ТРC 5009',
+                        date: '20.10.2024',
+                        category: 'Мы в СМИ'
+                    })
+                    +news-card({
+                        vMode: 'classic',
+                        media: 'img/news/news_20.webp',
+                        title: 'Подписан договор на производство и поставку универсальной машины',
+                        date: '20.10.2024',
+                        category: 'Подписание контракта'
+                    })
+                    +news-card({
+                        vMode: 'classic',
+                        media: 'img/news/news_18.webp',
+                        title: 'Подписан договор на производство и поставку  машины на базе BP DLC 0,2 кN',
+                        date: '20.10.2024',
+                        category: 'VK'
+                    })
+                    +news-card({
+                        vMode: 'classic',
+                        media: 'img/news/news_17.webp',
+                        title: 'Подписан договор на производство и поставку прибора ТМВ 1000',
+                        date: '20.10.2024',
+                        category: 'Поставка'
+                    })
+                    +news-card({
+                        vMode: 'classic',
+                        media: 'img/news/news_18.webp',
+                        title: 'Подписан договор на производство и поставку  машины на базе BP DLC 0,2 кN',
+                        date: '20.10.2024',
+                        category: 'VK'
+                    })
+                    +news-card({
+                        vMode: 'classic',
+                        media: 'img/news/news_17.webp',
+                        title: 'Подписан договор на производство и поставку прибора ТМВ 1000',
+                        date: '20.10.2024',
+                        category: 'Поставка'
+                    })
+                    +news-card({
+                        vMode: 'classic',
+                        media: 'img/news/news_20.webp',
+                        title: 'Подписан договор на производство и поставку универсальной машины',
+                        date: '20.10.2024',
+                        category: 'Подписание контракта'
+                    })
+                    +news-card({
+                        vMode: 'classic',
+                        media: 'img/news/news_19.webp',
+                        title: 'Подписан договор на производство и поставку прибора ТРC 5009',
+                        date: '20.10.2024',
+                        category: 'Мы в СМИ'
+                    })
+
+        +socials-section

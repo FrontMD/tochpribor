@@ -8,7 +8,8 @@
         title: '',
         text: '',
         category: '',
-        date: ''
+        date: '',
+        noLazy: false
     }
 
 mixin news-card(props = defaultNewsCardProps)
@@ -23,19 +24,24 @@ mixin news-card(props = defaultNewsCardProps)
             text: props.text ? props.text : defaultNewsCardProps.text,
             category: props.category ? props.category : defaultNewsCardProps.category,
             date: props.date ? props.date : defaultNewsCardProps.date,
+            noLazy: props.noLazy ? props.noLazy : defaultNewsCardProps.noLazy,
         }
 
-        let vModeClass = `news-card--${checkProps.vMode}`
+        let vModeClass = ` news-card--${checkProps.vMode}`
 
     .news-card(class= checkProps.classes + vModeClass)&attributes(attributes)
         -if(checkProps.mediaType === 'img' && checkProps.media.length > 0)
             .news-card__media
-                img(src= checkProps.media)
+                - if(checkProps.noLazy === true)
+                    img(src= checkProps.media)
+                -else
+                    img(class="lazyload" data-src= checkProps.media)
         -if(checkProps.mediaType === 'video' && checkProps.media.length > 0)
             .news-card__media
                 +video({
                     video: checkProps.media,
                     poster: checkProps.poster,
+                    noLazy: checkProps.noLazy
                 })
 
         .news-card__content

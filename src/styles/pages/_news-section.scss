@@ -20,6 +20,11 @@
         margin-top: 80px;
         border-top: 1px solid $c-border;
         height: 539px;
+
+        @include max(laptop) {
+            flex-direction: column;
+            height: auto;
+        }
     }
 
     &__left {
@@ -27,9 +32,14 @@
         width: 69%;
         height: 100%;
 
+        @include max(laptop) {
+            width: 100%;
+        }
+
         .news-card {
             height: 100%;
         }
+
     }
 
     &__right {
@@ -38,19 +48,26 @@
         flex-direction: column;
         gap: 16px;
 
+        @include max(laptop) {
+            flex: 0 0 auto;
+        }
+
         .news-card--horizontal:first-child {
             padding-top: 0;
             border-top: none;
         }
+
     }
 
     &__bottom {
-        display: flex;
-        align-items: stretch;
+        display: grid;
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+        gap: 1px;
         margin-top: 40px;
+        background-color: $c-border;
 
-        .news-card--small:first-child {
-            border-left: none;
+        @include max(tablet) {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
         }
     }
 }
@@ -67,6 +84,11 @@
         .swiper-slide {
             width: 323px;
             height: 499px;
+
+            @include max(tablet) {
+                width: 250px;
+                height: 386px;
+            }
         }
     }
 }
@@ -93,6 +115,10 @@
         display: flex;
         align-items: stretch;
         gap: 32px;
+
+        @include max(tablet) {
+            flex-direction: column;
+        }
     }
 
     &__item {
@@ -128,30 +154,54 @@
     &__container {
         display: flex;
         flex-direction: column;
-        gap: 100px;
         background-color: $c-bg-dark;
     }
 
     &__content {
-        display: flex;
-        align-items: stretch;
+        display: grid;
+        grid-template-columns: minmax(0, 54%) minmax(0, 46%);
         gap: 16px;
-    }
+        margin-top: 100px;
 
-    &__left {
-        flex: 0 0 54%;
-
-        .news-card {
-            height: 100%;
+        @include max(laptop) {
+            grid-template-columns: minmax(0, 100%);
         }
     }
 
-    &__right {
-        display: flex;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 16px;
-        flex: 1 1 auto;
-        width: 46%;
+    .news-card:first-child {
+        grid-row-start: 1;
+        grid-row-end: 4;
+    }
+}
+
+.s-news-news {
+    &__content {
+        display: grid;
+        grid-template-columns: minmax(0, 50%) repeat(2, minmax(0, 25%));
+        gap: 12px;
+        margin-top: 80px;
+    }
+
+    .news-card:first-child {
+        grid-row-start: 1;
+        grid-row-end: 3;
+        aspect-ratio: 1 / 0.7;
+    }
+}
+
+.s-news-products {
+    &__content {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 32px 16px;
+        margin-top: 100px;
+
+        @include max(laptop) {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        @include max(tablet) {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
     }
 }

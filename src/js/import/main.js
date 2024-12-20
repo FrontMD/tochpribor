@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     newsSmiSliderInit()
+    $('img.lazyload').lazyload();
 })
 
 // Блокировка скролла при открытии модалок
