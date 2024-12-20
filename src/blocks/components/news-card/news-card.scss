@@ -14,6 +14,10 @@
         line-height: 1.4em;
         font-size: 16px;
 
+        @include max(xs) {
+            font-size: 14px;
+        }
+
         &:hover {
             color: $c-accent-hover;
         }
@@ -75,6 +79,11 @@
         font-size: 12px;
         line-height: 1.4em;
         color: $c-white;
+
+        @include max(xs) {
+            gap: 4px 8px;
+            margin-top: 16px;
+        }
     }
 
     &__category,
@@ -117,12 +126,21 @@
 
     &__btn {
         margin-left: auto;
+
+        @include max(mobile) {
+            flex-basis: 100%;
+            margin-top: 16px;
+        }
     }
 }
 
 .news-card {
     &--left {
         flex-direction: row-reverse;
+
+        @include max(mobile) {
+            flex-direction: column;
+        }
     }
 
     &--left &__title {
@@ -149,6 +167,11 @@
 
         @include max(laptop) {
             aspect-ratio: 1 / 1;
+        }
+
+        @include max(mobile) {
+            max-width: 100%;
+            flex-basis: auto;
         }
 
     }
@@ -190,6 +213,10 @@
     &--right &__text {
         columns: 2;
         gap: 16px;
+
+        @include max(xs) {
+            columns: auto;
+        }
     }
 
     &--right &__media {
@@ -214,6 +241,10 @@
         @include max(tablet) {
             padding: 20px;
         }
+
+        @include max(xs) {
+            padding: 10px;
+        }
     }
 
     &--right &__tags {
@@ -234,15 +265,29 @@
         display: -webkit-box;
         -webkit-box-orient: vertical;
         overflow: hidden;
+
+        @include max(xs) {
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
     }
 
     &--horizontal &__media {
         flex: 0 0 132px;
         height: 132px;
+
+        @include max(xs) {
+            flex-basis: 120px;
+            height: 120px;
+        }
     }
 
     &--horizontal &__content {
         flex: 1 1 auto;
+    }
+
+    &--horizontal &__tags {
+        margin-top: auto;
     }
 }
 
@@ -384,6 +429,10 @@
         @include max(laptop) {
             flex-direction: row;
         }
+
+        @include max(mobile) {
+            flex-direction: column;
+        }
     }
 
     &--video &__media {
@@ -392,6 +441,11 @@
         @include max(laptop) {
             flex: 0 0 52%;
             max-width: 400px;
+        }
+
+        @include max(mobile) {
+            flex-basis: auto;
+            max-width: 100%;
         }
 
     }
@@ -431,6 +485,10 @@
         font-size: 18px;
         color: $c-bg;
         margin-top: 8px;
+
+        @include max(mobile) {
+            font-size: 14px;
+        }
     }
 
     &--video ul li {
@@ -451,6 +509,10 @@
         gap: 0;
         background-color: $c-bg-dark2;
         border-radius: 4px;
+
+        @include max(mobile) {
+            flex-direction: column;
+        }
     }
 
     &--video-h &__media {
@@ -458,6 +520,11 @@
 
         @include max(laptop) {
             max-width: 400px;
+        }
+
+        @include max(mobile) {
+            flex-basis: auto;
+            max-width: 100%;
         }
     }
 
@@ -471,6 +538,10 @@
         justify-content: flex-start;
         padding: 12px 16px 16px 20px;
         background-color: $c-bg-dark2;
+
+        @include max(mobile) {
+            width: 100%;
+        }
     }
 
     &--video-h &__title {
@@ -484,7 +555,11 @@
         }
 
         @include max(mobile) {
-            font-size: 16px;
+            font-size: 22px;
+        }
+
+        @include max(xs) {
+            font-size: 20px;
         }
 
         &:hover {
@@ -541,6 +616,10 @@
             font-size: 16px;
         }
 
+        @include max(xs) {
+            font-size: 22px;
+        }
+
         &:hover {
             color: $c-bg;
         }
@@ -565,6 +644,11 @@
     &--img-r &__content {
         flex-direction: column-reverse;
         justify-content: flex-start;
+
+        @include max(xs) {
+            flex-direction: column;
+            justify-content: flex-end;
+        }
     }
 
     &--img-r &__title {
@@ -581,7 +665,7 @@
         }
 
         @include max(xs) {
-            font-size: 24px;
+            font-size: 22px;
         }
     }
 }

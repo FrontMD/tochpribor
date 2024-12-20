@@ -31,9 +31,28 @@
         align-items: stretch;
         gap: 12px;
         margin-top: 16.3vw;
+
+        @include max(tablet) {
+            margin-top: 50px;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+
+            .btn {
+                width: 100%;
+            }
+        }
+
+        @include max(xs) {
+            margin-top: 30px;
+            grid-template-columns: repeat(1, minmax(0, 1fr));
+        }
     }
 
     &__subscribe {
         margin-left: auto;
+
+        @include max(tablet) {
+            margin-left: 0;
+        }
     }
 }
