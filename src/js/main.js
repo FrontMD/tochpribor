@@ -3,6 +3,7 @@
 @@include("./libs/lazyload.min.js")
 @@include("./libs/swiper-bundle.min.js")
 @@include("./libs/select2.full.min.js")
+@@include("./libs/hystmodal.min.js")
 //если желаете подключить библиотеку - раскомментируйте и добавьте @@
 // include("./libs/nouislider.min.js")
 // include("./libs/wNumb.min.js")

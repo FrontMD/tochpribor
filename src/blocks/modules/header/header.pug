@@ -6,10 +6,30 @@ header.site-header(data-js="siteHeader")
         .site-header__burger.site-header__block(data-js="mainBurgerOpen")
             svg
                 use(xlink:href=`img/sprites/sprite.svg#burger`)
-        .site-header__location.site-header__block
-            svg
-                use(xlink:href=`img/sprites/sprite.svg#location`)
-            span Санкт-Петербург
+        .site-header__location.site-header__block.user-city(data-js="userCity" data-default="Санкт-Петербург")
+            .user-city__header(data-js="userCityHeader")
+                svg
+                    use(xlink:href=`img/sprites/sprite.svg#location`)
+                span(data-js="userCityText") Город
+            .user-city__content(data-js='userCityContent')
+                .user-city__question
+                    span(data-js="userCityText") Санкт-Петербург
+                    |  ваш город?
+                .user-city__btns
+                    +btn({
+                        classes: '',
+                        name: 'Да',
+                        cMode: 'red',
+                        size: '108',
+                        type: 'button',
+                    })(data-js="cityBtnYes")
+                    +btn({
+                        classes: '',
+                        name: 'Выбрать другой',
+                        cMode: 'grey',
+                        size: '108',
+                        type: 'link',
+                    })(data-js="cityBtnNo")
         nav.site-header__menu.site-header__block
             ul.nav-menu
                 li.nav-menu__item
@@ -22,11 +42,11 @@ header.site-header(data-js="siteHeader")
                         svg
                             use(xlink:href=`img/sprites/sprite.svg#arrow_angle`)
                     .nav-menu__sublist
-                        a.nav-menu__link(href="javascript:void(0)") Услуга 1
-                        a.nav-menu__link(href="javascript:void(0)") Услуга 2
-                        a.nav-menu__link(href="javascript:void(0)") Услуга 3
-                        a.nav-menu__link(href="javascript:void(0)") Услуга 4
-                        a.nav-menu__link(href="javascript:void(0)") Услуга 5
+                        a.nav-menu__link(href="javascript:void(0)") Металлообработка
+                        a.nav-menu__link(href="javascript:void(0)") Поверка инструментов измерений
+                        a.nav-menu__link(href="javascript:void(0)") Пуско-наладка
+                        a.nav-menu__link(href="javascript:void(0)") Наладка средств измерений
+                        a.nav-menu__link(href="javascript:void(0)") Доставка
 
         .site-header__contacts
             ul.nav-menu

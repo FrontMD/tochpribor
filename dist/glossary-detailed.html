@@ -34,10 +34,19 @@
             <use xlink:href="img/sprites/sprite.svg#burger"></use>
           </svg>
         </div>
-        <div class="site-header__location site-header__block">
-          <svg>
-            <use xlink:href="img/sprites/sprite.svg#location"></use>
-          </svg><span>Санкт-Петербург</span>
+        <div class="site-header__location site-header__block user-city" data-js="userCity" data-default="Санкт-Петербург">
+          <div class="user-city__header" data-js="userCityHeader">
+            <svg>
+              <use xlink:href="img/sprites/sprite.svg#location"></use>
+            </svg><span data-js="userCityText">Город</span>
+          </div>
+          <div class="user-city__content" data-js="userCityContent">
+            <div class="user-city__question"><span data-js="userCityText">Санкт-Петербург</span> ваш город?</div>
+            <div class="user-city__btns">
+                  <button class="btn  btn--red btn--108" type="button" data-js="cityBtnYes"><span class="btn__text">Да</span>
+                  </button><a class="btn  btn--grey btn--108" href="javascript:void(0)" data-js="cityBtnNo"><span class="btn__text">Выбрать другой</span></a>
+            </div>
+          </div>
         </div>
         <nav class="site-header__menu site-header__block">
           <ul class="nav-menu">
@@ -48,7 +57,7 @@
                 <svg>
                   <use xlink:href="img/sprites/sprite.svg#arrow_angle"></use>
                 </svg></a>
-              <div class="nav-menu__sublist"><a class="nav-menu__link" href="javascript:void(0)">Услуга 1</a><a class="nav-menu__link" href="javascript:void(0)">Услуга 2</a><a class="nav-menu__link" href="javascript:void(0)">Услуга 3</a><a class="nav-menu__link" href="javascript:void(0)">Услуга 4</a><a class="nav-menu__link" href="javascript:void(0)">Услуга 5</a></div>
+              <div class="nav-menu__sublist"><a class="nav-menu__link" href="javascript:void(0)">Металлообработка</a><a class="nav-menu__link" href="javascript:void(0)">Поверка инструментов измерений</a><a class="nav-menu__link" href="javascript:void(0)">Пуско-наладка</a><a class="nav-menu__link" href="javascript:void(0)">Наладка средств измерений</a><a class="nav-menu__link" href="javascript:void(0)">Доставка</a></div>
             </li>
           </ul>
         </nav>
@@ -554,13 +563,13 @@
                         </div>
                       </div>
                       <div class="form__thanks" data-js="form-thanks">
+                        <div class="title--32 form__title">Ваш комментарий отправлен</div>
                         <div class="form__image-success">
                           <svg>
-                            <use xlink:href="img/sprites/sprite.svg#success"></use>
+                            <use xlink:href="img/sprites/sprite.svg#form_success"></use>
                           </svg>
                         </div>
-                        <div class="title--32 form__title">Ваш комментарий отправлен.</div>
-                        <div class="form__text">С Вами свяжется ответственный сотрудник по&nbsp;указанным контактным данным.</div>
+                        <div class="form__text">Скоро он появится на сайте.</div>
                       </div>
                     </form>
               </div>
@@ -686,78 +695,109 @@
           </svg>
         </div>
         <div class="main-burger__menu">
-              <div class="big-menu">
-                <div class="big-menu__section">
-                  <div class="big-menu__title">Каталог</div>
-                  <div class="big-menu__list" data-js="bigMenuList">
-                    <ul class="big-menu__items" data-js="bigMenuItems">
-                      <li class="big-menu__item" data-js="bigMenuItem"><a href="javascript:void(0)">Разрывные машины</a></li>
-                      <li class="big-menu__item" data-js="bigMenuItem"><a href="javascript:void(0)">Твердомеры</a></li>
-                      <li class="big-menu__item" data-js="bigMenuItem"><a href="javascript:void(0)">Меры твердости</a></li>
-                      <li class="big-menu__item" data-js="bigMenuItem"><a href="javascript:void(0)">Приборы для измерения цвета</a></li>
-                      <li class="big-menu__item" data-js="bigMenuItem"><a href="javascript:void(0)">Микроскопы						</a></li>
-                      <li class="big-menu__item" data-js="bigMenuItem"><a class="big-menu__link" href="javascript:void(0)">Динамометры</a></li>
-                      <li class="big-menu__item" data-js="bigMenuItem"><a class="big-menu__link" href="javascript:void(0)">Разрывные машины</a></li>
-                      <li class="big-menu__item" data-js="bigMenuItem"><a class="big-menu__link" href="javascript:void(0)">Твердомеры</a></li>
-                      <li class="big-menu__item" data-js="bigMenuItem"><a class="big-menu__link" href="javascript:void(0)">Меры твердости</a></li>
-                      <li class="big-menu__item" data-js="bigMenuItem"><a class="big-menu__link" href="javascript:void(0)">Приборы для измерения цвета</a></li>
-                      <li class="big-menu__item" data-js="bigMenuItem"><a class="big-menu__link" href="javascript:void(0)">Микроскопы</a></li>
-                    </ul>
-                  </div>
+          <div class="burger-menu">
+            <div class="burger-menu__section">
+              <div class="burger-menu__title">Услуги</div>
+              <ul class="burger-menu__list">
+                <li class="burger-menu__item"><a class="burger-menu__link" href="javascript:void(0)">Проверка подлинности</a></li>
+                <li class="burger-menu__item"><a class="burger-menu__link" href="javascript:void(0)">Металлообработка</a></li>
+                <li class="burger-menu__item"><a class="burger-menu__link" href="javascript:void(0)">Поверка средств измерений</a></li>
+                <li class="burger-menu__item"><a class="burger-menu__link" href="javascript:void(0)">Пуско-наладка</a></li>
+                <li class="burger-menu__item"><a class="burger-menu__link" href="javascript:void(0)">Наладка средств измерений</a></li>
+                <li class="burger-menu__item"><a class="burger-menu__link" href="javascript:void(0)">Оборудование в Лизинг</a></li>
+                <li class="burger-menu__item"><a class="burger-menu__link" href="javascript:void(0)">Безопасность</a></li>
+              </ul>
+            </div>
+            <div class="burger-menu__section">
+              <div class="burger-menu__title">Компания</div>
+              <ul class="burger-menu__list">
+                <li class="burger-menu__item"><a class="burger-menu__link" href="javascript:void(0)">О компании</a></li>
+                <li class="burger-menu__item"><a class="burger-menu__link" href="javascript:void(0)">Производство</a></li>
+                <li class="burger-menu__item"><a class="burger-menu__link" href="javascript:void(0)">Карьера в Точприбор</a></li>
+                <li class="burger-menu__item"><a class="burger-menu__link" href="javascript:void(0)">Наша команда</a></li>
+              </ul>
+            </div>
+            <div class="burger-menu__section">
+              <div class="burger-menu__title">Еще</div>
+              <ul class="burger-menu__list">
+                <li class="burger-menu__item"><a class="burger-menu__link" href="javascript:void(0)">Контакты</a></li>
+                <li class="burger-menu__item"><a class="burger-menu__link" href="javascript:void(0)">Новости</a></li>
+                <li class="burger-menu__item"><a class="burger-menu__link" href="javascript:void(0)">Документы</a></li>
+                <li class="burger-menu__item"><a class="burger-menu__link" href="javascript:void(0)">Вопросы и ответы (FAQ)</a></li>
+                <li class="burger-menu__item"><a class="burger-menu__link" href="javascript:void(0)">Карта сайта</a></li>
+              </ul>
+            </div>
+            <div class="burger-menu__section burger-menu__section--contacts">
+              <div class="burger-menu__title">Связаться</div>
+              <ul class="burger-menu__list">
+                <li class="burger-menu__item"><a class="burger-menu__link" href="mailto:info@tochpribor.ru">info@tochpribor.ru</a></li>
+                <li class="burger-menu__item"><a class="burger-menu__link" href="tel:+78003500248">+7 (800) 350-02-48</a></li>
+              </ul>
+              <div class="burger-menu__list burger-menu__list--h">
+                <div class="burger-menu__row">
+                  <div class="burger-menu__subtitle">Адрес</div>
+                  <div class="burger-menu__item"><span>Головной офис: 190121, г. Санкт-Петербург, пер. Дровяной, д. 20, пом. 4-Н</span></div>
                 </div>
-                <div class="big-menu__section">
-                  <div class="big-menu__title">О компании</div>
-                  <div class="big-menu__list" data-js="bigMenuList">
-                    <ul class="big-menu__items" data-js="bigMenuItems">
-                      <li class="big-menu__item" data-js="bigMenuItem"><a href="javascript:void(0)">Производство</a></li>
-                      <li class="big-menu__item" data-js="bigMenuItem"><a href="javascript:void(0)">Услуги</a></li>
-                      <li class="big-menu__item" data-js="bigMenuItem"><a href="javascript:void(0)">Документы</a></li>
-                      <li class="big-menu__item" data-js="bigMenuItem"><a href="javascript:void(0)">Карьера в Точприбор</a></li>
-                      <li class="big-menu__item" data-js="bigMenuItem"><a href="javascript:void(0)">Наша команда</a></li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="big-menu__section">
-                  <div class="big-menu__title">Еще</div>
-                  <div class="big-menu__list" data-js="bigMenuList">
-                    <ul class="big-menu__items" data-js="bigMenuItems">
-                      <li class="big-menu__item" data-js="bigMenuItem"><a href="javascript:void(0)">Контакты</a></li>
-                      <li class="big-menu__item" data-js="bigMenuItem"><a href="javascript:void(0)">Новости</a></li>
-                      <li class="big-menu__item" data-js="bigMenuItem"><a href="javascript:void(0)">Вопросы и ответы (FAQ)</a></li>
-                      <li class="big-menu__item" data-js="bigMenuItem"><a href="javascript:void(0)">Карта сайта</a></li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="big-menu__section">
-                  <div class="big-menu__title">Связаться</div>
-                  <div class="big-menu__list" data-js="bigMenuList">
-                    <ul class="big-menu__items" data-js="bigMenuItems">
-                      <li class="big-menu__item" data-js="bigMenuItem"><a href="mailto:info@tochpribor.ru">info@tochpribor.ru</a></li>
-                      <li class="big-menu__item" data-js="bigMenuItem"><a href="tel:+74922521233">+7 (4922) 52-12-33</a></li>
-                      <li class="big-menu__item" data-js="bigMenuItem"><span>Головной офис: 190121, г. Санкт-Петербург, пер. Дровяной, д. 20, пом. 4-Н Вопросы и ответы (FAQ)</span></li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="big-menu__footer">
-                  <div class="socials"><a class="socials__item" href="https://telegram.org/">
-                      <svg>
-                        <use xlink:href="img/sprites/sprite.svg#tg"></use>
-                      </svg></a><a class="socials__item" href="https://vk.com/">
-                      <svg>
-                        <use xlink:href="img/sprites/sprite.svg#vk"></use>
-                      </svg></a><a class="socials__item" href="https://vkvideo.ru/@tochpribor">
-                      <svg>
-                        <use xlink:href="img/sprites/sprite.svg#vk_video"></use>
-                      </svg></a></div>
-                  <div class="big-menu__copyright">© 2010—2024 Точприбор</div>
+                <div class="burger-menu__row">
+                  <div class="burger-menu__subtitle">Тел / факс</div>
+                  <div class="burger-menu__item"><a class="burger-menu__link" href="tel:+74922521233">+7 (4922) 52-12-33</a></div>
                 </div>
               </div>
+              <div class="socials"><a class="socials__item" href="https://telegram.org/">
+                  <svg>
+                    <use xlink:href="img/sprites/sprite.svg#tg"></use>
+                  </svg></a><a class="socials__item" href="https://vk.com/">
+                  <svg>
+                    <use xlink:href="img/sprites/sprite.svg#vk"></use>
+                  </svg></a><a class="socials__item" href="https://vkvideo.ru/@tochpribor">
+                  <svg>
+                    <use xlink:href="img/sprites/sprite.svg#vk_video"></use>
+                  </svg></a></div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
     <noindex>
-      <div style="display:none;">
+      <div>
         <!--код модалок сюда-->
+            <div class="modal hystmodal city-modal" id="cityModal" aria-hidden="true" data-js="cityModal">
+              <div class="hystmodal__wrap">
+                <div class="hystmodal__window" role="dialog" aria-modal="true">
+                  <div class="modal__content">
+                    <div class="modal__title title--32">Укажите ваш город</div>
+                    <div class="modal__close" data-hystclose>
+                      <svg> 
+                        <use xlink:href="./img/sprites/sprite.svg#close"></use>
+                      </svg>
+                    </div>
+                    <div class="modal__inner" data-js="modalInner">
+                          <div class="field  field--search field--reset  " data-js="formField">
+                            <button class="field__search" type="submit">
+                              <svg> 
+                                <use xlink:href="img/sprites/sprite.svg#search"></use>
+                              </svg>
+                            </button>
+                            <label>
+                              <input class="field__input" type="text" placeholder="Поиск города" data-js="citySearchInput"><span class="field__error" data-js="fieldError"></span>
+                            </label><span class="field__reset" data-js="fieldResetBtn">
+                              <svg> 
+                                <use xlink:href="img/sprites/sprite.svg#close"></use>
+                              </svg></span>
+                          </div>
+                      <ul class="city-modal__list">
+                        <li class="city-modal__item" data-js="cityModalItem" data-value="Москва">Москва</li>
+                        <li class="city-modal__item" data-js="cityModalItem" data-value="Пермь">Пермь</li>
+                        <li class="city-modal__item" data-js="cityModalItem" data-value="Санкт-Петербург">Санкт-Петербург</li>
+                        <li class="city-modal__item" data-js="cityModalItem" data-value="Уфа">Уфа</li>
+                        <li class="city-modal__item" data-js="cityModalItem" data-value="Самара">Самара</li>
+                        <li class="city-modal__item" data-js="cityModalItem" data-value="Екатеринбург">Екатеринбург</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
       </div>
     </noindex>
     <script src="js/main.min.js"></script>

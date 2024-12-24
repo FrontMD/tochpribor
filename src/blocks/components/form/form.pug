@@ -47,8 +47,8 @@ mixin form(props = defaultFormProps)
                 span.field__error(data-js='fieldError')
         - if(checkProps.innerThanks === true)
             .form__thanks(data-js='form-thanks')
+                .title--32.form__title!= checkProps.successTitle
                 .form__image-success
                     svg
-                        use(xlink:href=`img/sprites/sprite.svg#success`)
-                .title--32.form__title!= checkProps.successTitle
+                        use(xlink:href=`img/sprites/sprite.svg#form_success`)
                 .form__text!= checkProps.successText

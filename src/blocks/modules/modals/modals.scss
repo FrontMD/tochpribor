@@ -1,0 +1,21 @@
+.city-modal {
+    &__list {
+        columns: 2 16px;
+        margin-top: 24px;
+        margin-bottom: -12px;
+    }
+
+    &__item {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.4em;
+        color: $c-text;
+        margin-bottom: 12px;
+        transition: color $tr-time linear;
+        cursor: pointer;
+
+        &:hover {
+            color: $c-accent-hover;
+        }
+    }
+}

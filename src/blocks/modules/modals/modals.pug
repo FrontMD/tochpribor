@@ -1,3 +1,19 @@
 noindex
-	div(style="display:none;")
-		//код модалок сюда
+    div
+        //код модалок сюда
+        +modal({modalId:"cityModal", modalTitle:"Укажите ваш город", classes:"city-modal"})(data-js="cityModal")
+            +field({
+                placeholder: 'Поиск города',
+                inputAttr: {
+                    "data-js": "citySearchInput"
+                },
+                resetBtn: true,
+                isSearch: true
+            })
+            ul.city-modal__list
+                li.city-modal__item(data-js="cityModalItem" data-value="Москва") Москва
+                li.city-modal__item(data-js="cityModalItem" data-value="Пермь") Пермь
+                li.city-modal__item(data-js="cityModalItem" data-value="Санкт-Петербург") Санкт-Петербург
+                li.city-modal__item(data-js="cityModalItem" data-value="Уфа") Уфа
+                li.city-modal__item(data-js="cityModalItem" data-value="Самара") Самара
+                li.city-modal__item(data-js="cityModalItem" data-value="Екатеринбург") Екатеринбург

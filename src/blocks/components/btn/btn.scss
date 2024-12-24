@@ -113,6 +113,14 @@
         }
     }
 
+    &--108 {
+        width: fit-content;
+        padding: 2px 8px;
+        min-height: 20px;
+        min-width: 108px;
+        font-size: 12px;
+    }
+
     &--182 {
         padding: 9px 16px;
         width: fit-content;
@@ -124,6 +132,7 @@
         min-height: 48px;
         min-width: 246px;
     }
+
 
     &--content {
         width: fit-content;

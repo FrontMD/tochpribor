@@ -24,12 +24,17 @@
 
     &__close {
         position: absolute;
-        right: 20px;
-        top: 20px;
+        right: 10px;
+        top: 10px;
+        width: 40px;
+        height: 40px;
         display: flex;
         align-items: center;
+        justify-content: center;
         color: $c-text;
         cursor: pointer;
+        border: 1px solid $c-border;
+        border-radius: 4px;
         transition: color $tr-time-long;
 
         @include max(xs) {
@@ -38,8 +43,8 @@
         }
 
         svg {
-            width: 20px;
-            height: 20px;
+            width: 24px;
+            height: 24px;
         }
 
         &:hover {
@@ -52,7 +57,7 @@
         left: -100vw;
         right: 0;
         width: 100%;
-        max-width: 460px;
+        max-width: 815px;
         height: 100vh;
         overflow: hidden;
         transition: left $tr-time-long;
@@ -61,31 +66,32 @@
 
     &__menu {
         height: 100%;
-        padding: 40px 0 20px;
+        padding: 16px 7px 8px 16px;
+        background-image: url(../img/burger_menu_bg.webp);
+        background-repeat: no-repeat;
+        background-position: right bottom;
+        background-size: 58%;
+        overflow-y: auto;
+
+        &::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background-color: $c-text-light;
+            border-radius: 2px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: $c-bg;
+            border-radius: 2px;
+        }
 
         @include max(mobile) {
-            padding: 40px 15px 20px;
+            padding: 30px 10px 10px;
         }
 
-        .big-menu__title {
-            color: $c-text;
-        }
-
-        .big-menu__section+.big-menu__section {
-            border-top: 1px solid rgba(20, 20, 20, 0.2);
-        }
-
-        .big-menu__show {
-            color: $c-text;
-        }
-
-        .big-menu__copyright {
-            display: none;
-        }
-
-        .big-menu .socials__item {
-            border-color: rgba(20, 20, 20, 0.2);
-        }
     }
 }
 
@@ -101,5 +107,142 @@
 
     &.active &__overlay {
         opacity: 0.3;
+    }
+}
+
+.burger-menu {
+    display: grid;
+    grid-template-columns: minmax(0, 44%) minmax(0, 56%);
+    gap: 52px 26px;
+
+    @include max(mobile) {
+        gap: 32px 16px;
+    }
+
+    @include max(xs) {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 0;
+    }
+
+    &__section {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 32px;
+        padding: 14px;
+
+        @include max(mobile) {
+            gap: 16px;
+            padding: 10px;
+        }
+    }
+
+    &__section--contacts {
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 2px;
+        backdrop-filter: blur(15px);
+        border: 1px solid#FAE6E6;
+    }
+
+    &__title {
+        font-size: 26px;
+        font-weight: 400;
+        line-height: 1em;
+        letter-spacing: -0.02em;
+        color: $c-text-breadcrumbs;
+
+        @include max(mobile) {
+            font-size: 22px;
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        @include max(mobile) {
+            gap: 8px;
+        }
+    }
+
+    &__list--h {
+        gap: 12px;
+        padding-top: 6px;
+        border-top: 1px solid #FAE6E6;
+    }
+
+    &__item {
+        font-size: 20px;
+        line-height: 1.1em;
+        letter-spacing: -0.01em;
+
+        @include max(mobile) {
+            font-size: 16px;
+        }
+    }
+
+    &__link {
+        color: $c-text;
+        transition: color $tr-time linear;
+
+        &:hover {
+            color: $c-accent-hover;
+        }
+    }
+
+    &__row {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 8px;
+
+        @include max(mobile) {
+            flex-direction: column;
+        }
+    }
+
+    &__subtitle {
+        flex: 1 1 auto;
+        color: $c-text-breadcrumbs;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 1.4em;
+    }
+
+    &__row &__item {
+        flex: 0 0 213px;
+        font-size: 16px;
+
+        @include max(mobile) {
+            flex-basis: auto;
+        }
+    }
+
+
+    .socials {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+
+        &__item {
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid $c-border;
+            border-radius: 2px;
+        }
+
+        &__item svg {
+            width: 24px;
+            height: 24px;
+            transition: color $tr-time linear;
+        }
+
+        &__item:hover svg {
+            color: $c-accent-hover;
+        }
     }
 }
