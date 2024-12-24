@@ -2,34 +2,59 @@ extends ../layouts/default
 include ../helpers/mixins
 
 block variables
-    - const title = "Контакты"
+	- const title = "Контакты"
 
 block content
-    .page-layout
-        .breadcrumbs-section.section.section--transparent
-            .section__container
-                +breadcrumbs({
-                    items: [
-                        {
-                            name: 'Главная',
-                            link: 'javascript:void(0);'
-                        },
-                        {
-                            name: 'Контакты',
-                            link: 'javascript:void(0);'
-                        }
-                    ],
-                })
+	.page-layout.page-layout--bottom
+		.breadcrumbs-section.section.section--transparent
+			.section__container
+				+breadcrumbs({
+					items: [
+						{
+							name: 'Главная',
+							link: 'javascript:void(0);'
+						},
+						{
+							name: 'Контакты',
+							link: 'javascript:void(0);'
+						}
+					],
+				})
 
-        section.section.contacts-intro
-            .section__container
-                +title({
-                    tag: 'h1',
-                    size: '67',
-                    text: 'Контакты'
-                })
+		section.section.contacts-intro
+			.section__container
+				+title({
+					tag: 'h1',
+					size: '67',
+					text: 'Контакты'
+				})
 
-                .contacts-intro__content
+				.contacts-intro__content(data-js="contactsBlock")
+					.contacts-intro__tabs
+						.field.contacts-intro__select.active(data-js="contactsTabsSelect")
+							select.field__select(data-js="formSelect")
+								option(data-js='contactsTabsTab' data-coords="59.938784,30.314997" value="г. Санкт-Петербург") г. Санкт-Петербург
+								option(data-js='contactsTabsTab' data-coords="55.755864,37.617698" value="г. Москва") г. Москва
+								option(data-js='contactsTabsTab' data-coords="56.838011,60.597474" value="г. Екатеринбург") г. Екатеринбург
+								option(data-js='contactsTabsTab' data-coords="53.195878,50.100202" value="г. Самара") г. Самара
+								option(data-js='contactsTabsTab' data-coords="55.159902,61.402554" value="г. Челябинск") г. Челябинск
+								option(data-js='contactsTabsTab' data-coords="45.035470,38.975313" value="г. Краснодар") г. Краснодар
+								option(data-js='contactsTabsTab' data-coords="56.326797,44.006516" value="г. Нижний Новгород") г. Нижний Новгород
+
+						.contacts-intro__tab(data-js='contactsTabsTab' data-coords="53.902735,27.555691") Официальный дилер ГК «Точприбор» на территории Республики Беларусь: ООО «НамиЛекс
+						.contacts-intro__tab(data-js='contactsTabsTab' data-coords="56.999799, 40.973014") Производственный комплекс ООО ЗИП, г Иваново
+						a.contacts-intro__route(href="javascript:void(0)") 
+							span.text План проезда
+							span.icon
+								svg
+									use(xlink:href=`img/sprites/sprite.svg#arrow_enter`)
+
+					.contacts-intro__map(data-js="contactsMap")
+
+					.contacts-intro__info
+						.contacts-intro__item(data-js="contactsInfoItem")
+
+		+socials-section
 
 
 

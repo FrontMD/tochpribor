@@ -23,6 +23,8 @@
     <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon-180x180.png">
     <link rel="apple-touch-icon" sizes="1024x1024" href="img/favicons/apple-touch-icon-1024x1024.png">
     <link rel="stylesheet" href="styles/main.min.css">
+    <!-- лучше добавлять только на те страницы где есть блок с картой-->
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=ec8353bc-e4c0-44ee-8f5b-822d005a189e&amp;lang=ru_RU"></script>
   </head>
   <body>
     <header class="site-header" data-js="siteHeader">
@@ -134,7 +136,7 @@
       </div>
     </header>
     <main class="site-main">
-      <div class="page-layout">
+      <div class="page-layout page-layout--bottom">
         <div class="breadcrumbs-section section section--transparent">
           <div class="section__container">
                 <div class="breadcrumbs  breadcrumbs--dark">
@@ -153,9 +155,55 @@
                   <h1>Контакты
                   </h1>
                 </div>
-            <div class="contacts-intro__content"></div>
+            <div class="contacts-intro__content" data-js="contactsBlock">
+              <div class="contacts-intro__tabs">
+                <div class="field contacts-intro__select active" data-js="contactsTabsSelect">
+                  <select class="field__select" data-js="formSelect">
+                    <option data-js="contactsTabsTab" data-coords="59.938784,30.314997" value="г. Санкт-Петербург">г. Санкт-Петербург</option>
+                    <option data-js="contactsTabsTab" data-coords="55.755864,37.617698" value="г. Москва">г. Москва</option>
+                    <option data-js="contactsTabsTab" data-coords="56.838011,60.597474" value="г. Екатеринбург">г. Екатеринбург</option>
+                    <option data-js="contactsTabsTab" data-coords="53.195878,50.100202" value="г. Самара">г. Самара</option>
+                    <option data-js="contactsTabsTab" data-coords="55.159902,61.402554" value="г. Челябинск">г. Челябинск</option>
+                    <option data-js="contactsTabsTab" data-coords="45.035470,38.975313" value="г. Краснодар">г. Краснодар</option>
+                    <option data-js="contactsTabsTab" data-coords="56.326797,44.006516" value="г. Нижний Новгород">г. Нижний Новгород</option>
+                  </select>
+                </div>
+                <div class="contacts-intro__tab" data-js="contactsTabsTab" data-coords="53.902735,27.555691">Официальный дилер ГК «Точприбор» на территории Республики Беларусь: ООО «НамиЛекс</div>
+                <div class="contacts-intro__tab" data-js="contactsTabsTab" data-coords="56.999799, 40.973014">Производственный комплекс ООО ЗИП, г Иваново</div><a class="contacts-intro__route" href="javascript:void(0)"> <span class="text">План проезда</span><span class="icon">
+                    <svg>
+                      <use xlink:href="img/sprites/sprite.svg#arrow_enter"></use>
+                    </svg></span></a>
+              </div>
+              <div class="contacts-intro__map" data-js="contactsMap"></div>
+              <div class="contacts-intro__info">
+                <div class="contacts-intro__item" data-js="contactsInfoItem"></div>
+              </div>
+            </div>
           </div>
         </section>
+            <section class="section section--full socials-section">
+              <div class="socials-section__bg"><img class="lazyload" data-src="img/socials_section.webp" alt=""></div>
+              <div class="section__container socials-section__container">
+                    <div class="title  title--53 title--light">
+                      <h2>Мы в соц сетях
+                      </h2>
+                    </div>
+                <div class="socials-section__items"><a class="btn  btn--white btn--social" href="https://vk.com/">
+                        <svg>
+                          <use xlink:href="img/sprites/sprite.svg#vk"></use>
+                        </svg><span class="btn__text">Вконтакте</span></a><a class="btn  btn--white btn--social" href="https://telegram.org/">
+                        <svg>
+                          <use xlink:href="img/sprites/sprite.svg#tg"></use>
+                        </svg><span class="btn__text">Телеграм</span></a><a class="btn  btn--white btn--social" href="https://vkvideo.ru/@tochpribor">
+                        <svg>
+                          <use xlink:href="img/sprites/sprite.svg#vk_video"></use>
+                        </svg><span class="btn__text">ВК-видео</span></a><a class="btn socials-section__subscribe btn--red btn--big" href="javascript:void(0)">
+                        <svg>
+                          <use xlink:href="img/sprites/sprite.svg#arrow_enter"></use>
+                        </svg><span class="btn__text">Подписаться на рассылку</span></a>
+                </div>
+              </div>
+            </section>
       </div>
     </main>
     <footer class="site-footer">
@@ -351,6 +399,9 @@
                         <li class="city-modal__item" data-js="cityModalItem" data-value="Уфа">Уфа</li>
                         <li class="city-modal__item" data-js="cityModalItem" data-value="Самара">Самара</li>
                         <li class="city-modal__item" data-js="cityModalItem" data-value="Екатеринбург">Екатеринбург</li>
+                        <li class="city-modal__item" data-js="cityModalItem" data-value="Челябинск">Челябинск</li>
+                        <li class="city-modal__item" data-js="cityModalItem" data-value="Краснодар">Краснодар</li>
+                        <li class="city-modal__item" data-js="cityModalItem" data-value="Нижний Новгород">Нижний Новгород</li>
                       </ul>
                     </div>
                   </div>

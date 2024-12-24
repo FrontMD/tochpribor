@@ -5,6 +5,8 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     // управляет кнопками в полях форм
+    selects()
+    // инициализирует селекты
     fieldsController()
     // маски полей и валидация
     validation()

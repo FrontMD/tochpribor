@@ -1,0 +1,31 @@
+.contacts-intro {
+    &__content {
+        display: flex;
+        align-items: stretch;
+        gap: 24px;
+    }
+
+    &__tabs {
+        flex: 0 0 350px;
+    }
+
+    &__map {
+        flex: 1 1 auto;
+    }
+
+    &__info {
+        flex: 0 0 360px;
+    }
+
+    &__select .select2 {
+        background-color: #fff;
+        transition: all $tr-time linear;
+        color: $c-text;
+    }
+
+    &__select.active .select2 {
+        background-color: $c-text;
+        border-color: $c-border;
+        color: $c-white;
+    }
+}
