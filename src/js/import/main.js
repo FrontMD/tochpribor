@@ -59,7 +59,7 @@ function contactsController() {
     // Инициализация карты
     
     const mapContainer = contactsBlock.querySelector('[data-js="contactsMap"]')
-    const mapPlacemarks = contactsBlock.querySelectorAll('[data-js="contactsTabsTab"]')
+    let mapPlacemarks = [...contactsBlock.querySelectorAll('[data-js="contactsTabsOption"]')].concat([...contactsBlock.querySelectorAll('[data-js="contactsTabsTab"]')])
     let map = false
 
     ymaps.ready(function () {
@@ -112,9 +112,11 @@ function contactsController() {
     });
 
     // Работа табов
-
-    //const options = contactsBlock.querySelectorAll('[data-js="contactsTabsOption"]')
     const tabs = contactsBlock.querySelectorAll('[data-js="contactsTabsTab"]')
+    const selectBlock = contactsBlock.querySelector('[data-js="contactsTabsSelect"]')
+    const select = selectBlock.querySelector('[data-js="formSelect"]')
+    const options = select.querySelectorAll('[data-js="contactsTabsOption"]')
+    const infoItems = contactsBlock.querySelectorAll('[data-js="contactsInfoItem"]')
 
     if(tabs.length > 0) {
         tabs.forEach(tab => {
@@ -124,12 +126,34 @@ function contactsController() {
         })
     }
 
+    $(select).on('change', function() {
+        let currentOptionIndex = select.selectedIndex
+        contactsSwitch(options[currentOptionIndex])
+
+    })
+
     function contactsSwitch(tab) {
-        console.log(getCoordsArr(tab.dataset.coords))
+
         map.setCenter(getCoordsArr(tab.dataset.coords))
 
-        //map.panTo(getCoordsArr(tab.dataset.coords), {flying: false});
+        tabs.forEach(item => {
+            item.classList.remove('active')
+        })
 
+        if(tab.dataset.js == 'contactsTabsTab') {
+            tab.classList.add('active')
+            selectBlock.classList.remove('active')
+        } else {
+            selectBlock.classList.add('active')
+        }
+
+        infoItems.forEach((item, index) => {
+            item.classList.remove('active')
+
+            if(index == tab.dataset.id) {
+                item.classList.add('active')
+            }
+        })
     }
 }
 
