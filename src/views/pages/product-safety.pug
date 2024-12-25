@@ -1,0 +1,71 @@
+extends ../layouts/default
+include ../helpers/mixins
+
+block variables
+	- const title = "Безопасность изделия"
+
+block content
+	.page-layout.page-layout--bottom
+		.breadcrumbs-section.section.section--transparent
+			.section__container
+				+breadcrumbs({
+					items: [
+						{
+							name: 'Главная',
+							link: 'javascript:void(0);'
+						},
+						{
+							name: 'Безопасность изделия',
+							link: 'javascript:void(0);'
+						}
+					],
+				})
+
+		section.section.product-safety-intro
+			.section__container
+				+title({
+					tag: 'h1',
+					size: '67',
+					text: 'Безопасность изделия'
+				})
+				.section__columns
+					.section__text.text-editor
+						p Компания «ТОЧПРИБОР» дорожит мнением клиентов и своей собственной репутацией. Мы реализуем качественный товар и отвечаем за его бесперебойную работу.
+						p К сожалению, в последнее время участились случаи поставки поддельного оборудования якобы от нашей компании. 
+					.section__text.text-editor
+						p Мы приняли решение ввести номерные защитные голограммы для всей приборной продукции, чтобы обезопасить вас от контрафакта, а себя — от репутационного ущерба. 
+						p Обращаем ваше внимание, что с 26.02.2020 на каждую единицу приборной продукции устанавливаются специальные индивидуальные голограммы.На данной странице можно заполнить форму и проверить подлинность оборудования «ТОЧПРИБОР».
+
+		section.section.product-safety
+			.section__container
+				.section__columns
+					+title({
+						tag: 'h2',
+						size: '53',
+						text: 'Предупреждение о&nbsp;контрафакте'
+					})
+					.section__text.text-editor В последнее время участились случаи появления на рынке как контрафактных приборов, так и позиционирование отдельными организациями себя на своих сайтах как производителей испытательной техники, которая на самом деле разработана и может быть произведена только на нашем заводе. 
+				.product-safety__slider.safety-slider
+					.safety-slider__header
+					.safety-slider__slider(data-js="productSafetySlider")
+						.swiper-wrapper
+							.swiper-slide
+								.safety-slider__card
+									.safety-slider__num 01
+									.safety-slider__title.title--32 Правообладатель 
+									.safety-slider__text ООО «ЗИП» никому не предоставлял прав на производство техники, представленной на этом сайте.
+								.safety-slider__card
+									.safety-slider__num 02
+									.safety-slider__title.title--32 Признаки обмана 
+									.safety-slider__text Все случаи расследования показали, что приборы прошлых лет выпуска, выведенные из эксплуатации по критериям предельного состояния или окончания срока службы, после проведения «косметического» ремонта и оформления поддельных паспортов предлагались покупателям по достаточно низким ценам. Такая продукция может быть только восстановленной или выпущенной нелегально.
+								.safety-slider__card
+									.safety-slider__num 03
+									.safety-slider__title.title--32 Проверка изделия 
+									.safety-slider__text Если у Вас возникли сомнения в подлинности документации или изделия, обратитесь на наше предприятие для получения полной информации о происхождении продукта.
+							.swiper-slide
+								.safety-slider
+							.swiper-slide
+
+
+
+

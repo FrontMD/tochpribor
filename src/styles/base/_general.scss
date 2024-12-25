@@ -238,6 +238,12 @@ body {
 		}
 	}
 
+	&__columns {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, calc((100% - 135px - 119px) / 2)));
+		gap: 135px;
+	}
+
 	&--transparent &__container {
 		background-color: transparent;
 		border-radius: 0;
