@@ -1,22 +1,3 @@
-.s-news {
-    &__header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 32px;
-
-        @include max(xs) {
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 16px;
-        }
-
-        .btn {
-            flex: 0 0 auto;
-        }
-    }
-}
-
 .s-news-intro {
     &__top {
         display: flex;

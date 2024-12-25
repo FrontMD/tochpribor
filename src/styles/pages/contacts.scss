@@ -1,31 +1,341 @@
+.contacts {
+    &__title {
+        line-height: 1em;
+        letter-spacing: -0.02em;
+        color: $c-text;
+    }
+
+    &__text {
+        font-size: 18px;
+        line-height: 1.4em;
+        color: $c-text-light;
+
+        @include max(mobile) {
+            font-size: 16px;
+        }
+    }
+
+    &__subtitle {
+        font-size: 18px;
+        line-height: 1.4em;
+        color: $c-text;
+
+        @include max(mobile) {
+            font-size: 16px;
+        }
+    }
+
+    &__link {
+        transition: color $tr-time linear;
+
+        &:hover {
+            color: $c-accent-hover;
+        }
+    }
+}
+
+
 .contacts-intro {
     &__content {
         display: flex;
         align-items: stretch;
         gap: 24px;
+        margin-top: 50px;
+
+        @include max(laptop) {
+            display: grid;
+            grid-template-columns: minmax(0, 360px) auto;
+            gap: 32px 24px;
+        }
+
+        @include max(tablet) {
+            grid-template-columns: 1fr;
+        }
+
+        @include max(mobile) {
+            margin-top: 32px;
+        }
     }
 
     &__tabs {
         flex: 0 0 350px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+    }
+
+    &__tab {
+        padding: 10px 15px;
+        border: 1px solid $c-border;
+        border-radius: 4px;
+        font-size: 18px;
+        line-height: 1.1em;
+        color: $c-text;
+        cursor: pointer;
+        transition: all $tr-time linear;
+
+        &:hover,
+        &.active {
+            color: $c-white;
+            border-color: $c-text;
+            background-color: $c-text;
+        }
+
+        @include max(mobile) {
+            font-size: 16px;
+        }
     }
 
     &__map {
         flex: 1 1 auto;
+
+        @include max(tablet) {
+            min-height: 300px;
+        }
     }
 
     &__info {
         flex: 0 0 360px;
+        min-height: 645px;
+
+        @include max(laptop) {
+            grid-column-start: 1;
+            grid-column-end: 3;
+            min-height: auto;
+        }
+
+        @include max(tablet) {
+            grid-column-end: 2;
+        }
     }
 
-    &__select .select2 {
-        background-color: #fff;
-        transition: all $tr-time linear;
+    &__route {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        padding: 12px;
+        border: 1px solid $c-accent;
+        border-radius: 4px;
+        font-size: 20px;
+        line-height: 1.1em;
+        letter-spacing: -0.01em;
         color: $c-text;
+        background-color: #fae6e6;
+
+        @include max(mobile) {
+            font-size: 16px;
+            padding: 10px 15px;
+        }
+
+        .icon {
+            margin-bottom: 36px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border: 1px solid #F2BFC0;
+            border-radius: 2px;
+
+            @include max(mobile) {
+                margin-bottom: 32px;
+                width: 24px;
+                height: 24px;
+            }
+        }
+
+        .icon svg {
+            width: 16px;
+            height: 16px;
+            color: $c-accent-light;
+            transition: color $tr-time linear;
+        }
+
+        &:hover,
+        &:hover .icon svg {
+            color: $c-accent-hover;
+        }
     }
 
-    &__select.active .select2 {
-        background-color: $c-text;
-        border-color: $c-border;
-        color: $c-white;
+    &__item {
+        display: none;
+
+        &.active {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            height: 100%;
+
+
+        }
+    }
+
+    &__block {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+
+        @include max(laptop) {
+            flex-direction: row;
+        }
+
+        @include max(tablet) {
+            flex-direction: column;
+        }
+
+        @include max(mobile) {
+            gap: 16px;
+        }
+    }
+
+    &__block+&__block {
+        padding-top: 20px;
+        border-top: 1px solid $c-border;
+    }
+
+    &__contact {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+
+        @include max(laptop) {
+            gap: 16px;
+        }
+
+        @include max(mobile) {
+            gap: 8px;
+        }
+    }
+
+    &__modes {
+        max-width: 600px;
+    }
+
+    &__mode {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        font-size: 16px;
+        line-height: 1.4em;
+        color: $c-text-light;
+
+        @include max(xs) {
+            gap: 8px;
+            font-size: 14px;
+        }
+    }
+
+    &__mode+&__mode {
+        margin-top: 6px;
+        padding-top: 6px;
+        border-top: 1px solid $c-border;
+    }
+
+    &__socials {
+        margin-top: auto;
+        display: flex;
+        gap: 10px;
+        max-width: 600px;
+
+        @include max(xs) {
+            flex-direction: column;
+        }
+    }
+
+    &__social {
+        flex: 0 0 calc((100% - 10px) / 2);
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        padding: 12px;
+        border: 1px solid $c-border;
+        border-radius: 4px;
+        font-size: 20px;
+        line-height: 1.1em;
+        letter-spacing: -0.01em;
+        color: $c-text;
+
+        .icon {
+            margin-bottom: 80px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border: 1px solid $c-border;
+            border-radius: 2px;
+        }
+
+        .icon svg {
+            width: 24px;
+            height: 24px;
+            color: $c-text;
+            transition: color $tr-time linear;
+        }
+
+        &:hover .icon svg {
+            color: $c-accent-hover;
+        }
+    }
+
+}
+
+.contacts-details {
+    &__container {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+
+    }
+
+    &__content {
+        display: flex;
+        gap: 24px;
+
+        @include max(laptop) {
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        @include max(tablet) {
+            gap: 24px;
+        }
+    }
+
+    &__side {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        flex: 0 0 calc((100% - 24px) / 2);
+
+        @include max(tablet) {
+            gap: 24px;
+        }
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    &__columns {
+        columns: 3;
+        margin-bottom: -7px;
+
+        @include max(mobile) {
+            columns: 2;
+        }
+
+        @include max(xs) {
+            columns: 1;
+        }
+    }
+
+    &__columns .contacts__subtitle {
+        margin-bottom: 7px;
     }
 }

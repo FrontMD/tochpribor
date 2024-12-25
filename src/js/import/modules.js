@@ -3,6 +3,7 @@
 @@include("../../blocks/modules/modals/modals.js")
 @@include("../../blocks/modules/main-burger/main-burger.js")
 @@include("../../blocks/modules/comments/comments.js")
+@@include("../../blocks/modules/tabs-block/tabs-block.js")
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -18,4 +19,6 @@ document.addEventListener('DOMContentLoaded', () => {
     mainBurger()
     // добавляет кнопку "Смотреть все" в комментарии, если их больше 5. Вызвать нужно до анимации
     commentsHeight()
+    // управляет вкладками
+    tabsBlockInit()
 })

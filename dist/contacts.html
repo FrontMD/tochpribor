@@ -159,26 +159,463 @@
               <div class="contacts-intro__tabs">
                 <div class="field contacts-intro__select active" data-js="contactsTabsSelect">
                   <select class="field__select" data-js="formSelect">
-                    <option data-js="contactsTabsTab" data-coords="59.938784,30.314997" value="г. Санкт-Петербург">г. Санкт-Петербург</option>
-                    <option data-js="contactsTabsTab" data-coords="55.755864,37.617698" value="г. Москва">г. Москва</option>
-                    <option data-js="contactsTabsTab" data-coords="56.838011,60.597474" value="г. Екатеринбург">г. Екатеринбург</option>
-                    <option data-js="contactsTabsTab" data-coords="53.195878,50.100202" value="г. Самара">г. Самара</option>
-                    <option data-js="contactsTabsTab" data-coords="55.159902,61.402554" value="г. Челябинск">г. Челябинск</option>
-                    <option data-js="contactsTabsTab" data-coords="45.035470,38.975313" value="г. Краснодар">г. Краснодар</option>
-                    <option data-js="contactsTabsTab" data-coords="56.326797,44.006516" value="г. Нижний Новгород">г. Нижний Новгород</option>
+                    <option data-js="contactsTabsOption" data-coords="59.938784,30.314997" data-id="0" value="г. Санкт-Петербург">г. Санкт-Петербург</option>
+                    <option data-js="contactsTabsOption" data-coords="55.755864,37.617698" data-id="1" value="г. Москва">г. Москва</option>
+                    <option data-js="contactsTabsOption" data-coords="56.838011,60.597474" data-id="2" value="г. Екатеринбург">г. Екатеринбург</option>
+                    <option data-js="contactsTabsOption" data-coords="53.195878,50.100202" data-id="3" value="г. Самара">г. Самара</option>
+                    <option data-js="contactsTabsOption" data-coords="55.159902,61.402554" data-id="4" value="г. Челябинск">г. Челябинск</option>
+                    <option data-js="contactsTabsOption" data-coords="45.035470,38.975313" data-id="5" value="г. Краснодар">г. Краснодар</option>
+                    <option data-js="contactsTabsOption" data-coords="56.326797,44.006516" data-id="6" value="г. Нижний Новгород">г. Нижний Новгород</option>
                   </select>
                 </div>
-                <div class="contacts-intro__tab" data-js="contactsTabsTab" data-coords="53.902735,27.555691">Официальный дилер ГК «Точприбор» на территории Республики Беларусь: ООО «НамиЛекс</div>
-                <div class="contacts-intro__tab" data-js="contactsTabsTab" data-coords="56.999799, 40.973014">Производственный комплекс ООО ЗИП, г Иваново</div><a class="contacts-intro__route" href="javascript:void(0)"> <span class="text">План проезда</span><span class="icon">
+                <div class="contacts-intro__tab" data-js="contactsTabsTab" data-id="7" data-coords="53.902735,27.555691">Официальный дилер ГК «Точприбор» на территории Республики Беларусь: ООО «НамиЛекс</div>
+                <div class="contacts-intro__tab" data-js="contactsTabsTab" data-id="8" data-coords="56.999799, 40.973014">Производственный комплекс ООО ЗИП, г Иваново</div><a class="contacts-intro__route" href="javascript:void(0)"> <span class="text">План проезда</span><span class="icon">
                     <svg>
                       <use xlink:href="img/sprites/sprite.svg#arrow_enter"></use>
                     </svg></span></a>
               </div>
               <div class="contacts-intro__map" data-js="contactsMap"></div>
               <div class="contacts-intro__info">
-                <div class="contacts-intro__item" data-js="contactsInfoItem"></div>
+                <div class="contacts-intro__item active" data-js="contactsInfoItem">
+                  <div class="contacts-intro__block"> 
+                    <div class="contacts-intro__contact"> 
+                      <div class="contacts__title title--26">Телефон</div><a class="contacts__text contacts__link" href="tel:+78126123003">+7 (812) 612-30-03</a>
+                    </div>
+                    <div class="contacts-intro__contact"> 
+                      <div class="contacts__title title--26">Email</div><a class="contacts__text contacts__link" href="mailto:spb@tochpribor-nw.ru">spb@tochpribor-nw.ru</a>
+                    </div>
+                    <div class="contacts-intro__contact"> 
+                      <div class="contacts__title title--26">Адрес</div><a class="contacts__text">190121, г. Санкт-Петербург, пер. Дровяной, д. 20, пом. 4-Н</a>
+                    </div>
+                  </div>
+                  <div class="contacts-intro__block"> 
+                    <div class="contacts-intro__contact">
+                      <div class="contacts__title title--26">Режим работы</div>
+                      <div class="contacts-intro__modes">
+                        <div class="contacts-intro__mode"><span>Понедельник - Четверг</span><span>с 9:00 до 18:00 (Мск)</span></div>
+                        <div class="contacts-intro__mode"><span>Пятница</span><span>с 8.30 до 16.00 (Мск)</span></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="contacts-intro__socials"><a class="contacts-intro__social" href="https://web.whatsapp.com/"><span class="text">Написать в WhatsApp</span><span class="icon">
+                        <svg>
+                          <use xlink:href="img/sprites/sprite.svg#wa"></use>
+                        </svg></span></a><a class="contacts-intro__social" href="https://telegram.org/"><span class="text">Написать в Telegram</span><span class="icon">
+                        <svg>
+                          <use xlink:href="img/sprites/sprite.svg#tg"></use>
+                        </svg></span></a></div>
+                </div>
+                <div class="contacts-intro__item" data-js="contactsInfoItem">
+                  <div class="contacts-intro__block"> 
+                    <div class="contacts-intro__contact"> 
+                      <div class="contacts__title title--26">Телефон</div><a class="contacts__text contacts__link" href="tel:+78126123003">+7 (812) 612-30-03</a>
+                    </div>
+                    <div class="contacts-intro__contact"> 
+                      <div class="contacts__title title--26">Email</div><a class="contacts__text contacts__link" href="mailto:spb@tochpribor-nw.ru">spb@tochpribor-nw.ru</a>
+                    </div>
+                    <div class="contacts-intro__contact"> 
+                      <div class="contacts__title title--26">Адрес</div><a class="contacts__text">190121, г. Москва, пер. Дровяной, д. 20, пом. 4-Н</a>
+                    </div>
+                  </div>
+                  <div class="contacts-intro__block"> 
+                    <div class="contacts-intro__contact">
+                      <div class="contacts__title title--26">Режим работы</div>
+                      <div class="contacts-intro__modes">
+                        <div class="contacts-intro__mode"><span>Понедельник - Четверг</span><span>с 9:00 до 18:00 (Мск)</span></div>
+                        <div class="contacts-intro__mode"><span>Пятница</span><span>с 8.30 до 16.00 (Мск)</span></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="contacts-intro__socials"><a class="contacts-intro__social" href="https://web.whatsapp.com/"><span class="text">Написать в WhatsApp</span><span class="icon">
+                        <svg>
+                          <use xlink:href="img/sprites/sprite.svg#wa"></use>
+                        </svg></span></a><a class="contacts-intro__social" href="https://telegram.org/"><span class="text">Написать в Telegram</span><span class="icon">
+                        <svg>
+                          <use xlink:href="img/sprites/sprite.svg#tg"></use>
+                        </svg></span></a></div>
+                </div>
+                <div class="contacts-intro__item" data-js="contactsInfoItem">
+                  <div class="contacts-intro__block"> 
+                    <div class="contacts-intro__contact"> 
+                      <div class="contacts__title title--26">Телефон</div><a class="contacts__text contacts__link" href="tel:+78126123003">+7 (812) 612-30-03</a>
+                    </div>
+                    <div class="contacts-intro__contact"> 
+                      <div class="contacts__title title--26">Email</div><a class="contacts__text contacts__link" href="mailto:spb@tochpribor-nw.ru">spb@tochpribor-nw.ru</a>
+                    </div>
+                    <div class="contacts-intro__contact"> 
+                      <div class="contacts__title title--26">Адрес</div><a class="contacts__text">190121, г. Екатеринбург, пер. Дровяной, д. 20, пом. 4-Н</a>
+                    </div>
+                  </div>
+                  <div class="contacts-intro__block"> 
+                    <div class="contacts-intro__contact">
+                      <div class="contacts__title title--26">Режим работы</div>
+                      <div class="contacts-intro__modes">
+                        <div class="contacts-intro__mode"><span>Понедельник - Четверг</span><span>с 9:00 до 18:00 (Мск)</span></div>
+                        <div class="contacts-intro__mode"><span>Пятница</span><span>с 8.30 до 16.00 (Мск)</span></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="contacts-intro__socials"><a class="contacts-intro__social" href="https://web.whatsapp.com/"><span class="text">Написать в WhatsApp</span><span class="icon">
+                        <svg>
+                          <use xlink:href="img/sprites/sprite.svg#wa"></use>
+                        </svg></span></a><a class="contacts-intro__social" href="https://telegram.org/"><span class="text">Написать в Telegram</span><span class="icon">
+                        <svg>
+                          <use xlink:href="img/sprites/sprite.svg#tg"></use>
+                        </svg></span></a></div>
+                </div>
+                <div class="contacts-intro__item" data-js="contactsInfoItem">
+                  <div class="contacts-intro__block"> 
+                    <div class="contacts-intro__contact"> 
+                      <div class="contacts__title title--26">Телефон</div><a class="contacts__text contacts__link" href="tel:+78126123003">+7 (812) 612-30-03</a>
+                    </div>
+                    <div class="contacts-intro__contact"> 
+                      <div class="contacts__title title--26">Email</div><a class="contacts__text contacts__link" href="mailto:spb@tochpribor-nw.ru">spb@tochpribor-nw.ru</a>
+                    </div>
+                    <div class="contacts-intro__contact"> 
+                      <div class="contacts__title title--26">Адрес</div><a class="contacts__text">190121, г. Самара, пер. Дровяной, д. 20, пом. 4-Н</a>
+                    </div>
+                  </div>
+                  <div class="contacts-intro__block"> 
+                    <div class="contacts-intro__contact">
+                      <div class="contacts__title title--26">Режим работы</div>
+                      <div class="contacts-intro__modes">
+                        <div class="contacts-intro__mode"><span>Понедельник - Четверг</span><span>с 9:00 до 18:00 (Мск)</span></div>
+                        <div class="contacts-intro__mode"><span>Пятница</span><span>с 8.30 до 16.00 (Мск)</span></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="contacts-intro__socials"><a class="contacts-intro__social" href="https://web.whatsapp.com/"><span class="text">Написать в WhatsApp</span><span class="icon">
+                        <svg>
+                          <use xlink:href="img/sprites/sprite.svg#wa"></use>
+                        </svg></span></a><a class="contacts-intro__social" href="https://telegram.org/"><span class="text">Написать в Telegram</span><span class="icon">
+                        <svg>
+                          <use xlink:href="img/sprites/sprite.svg#tg"></use>
+                        </svg></span></a></div>
+                </div>
+                <div class="contacts-intro__item" data-js="contactsInfoItem">
+                  <div class="contacts-intro__block"> 
+                    <div class="contacts-intro__contact"> 
+                      <div class="contacts__title title--26">Телефон</div><a class="contacts__text contacts__link" href="tel:+78126123003">+7 (812) 612-30-03</a>
+                    </div>
+                    <div class="contacts-intro__contact"> 
+                      <div class="contacts__title title--26">Email</div><a class="contacts__text contacts__link" href="mailto:spb@tochpribor-nw.ru">spb@tochpribor-nw.ru</a>
+                    </div>
+                    <div class="contacts-intro__contact"> 
+                      <div class="contacts__title title--26">Адрес</div><a class="contacts__text">190121, г. Челябинск, пер. Дровяной, д. 20, пом. 4-Н</a>
+                    </div>
+                  </div>
+                  <div class="contacts-intro__block"> 
+                    <div class="contacts-intro__contact">
+                      <div class="contacts__title title--26">Режим работы</div>
+                      <div class="contacts-intro__modes">
+                        <div class="contacts-intro__mode"><span>Понедельник - Четверг</span><span>с 9:00 до 18:00 (Мск)</span></div>
+                        <div class="contacts-intro__mode"><span>Пятница</span><span>с 8.30 до 16.00 (Мск)</span></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="contacts-intro__socials"><a class="contacts-intro__social" href="https://web.whatsapp.com/"><span class="text">Написать в WhatsApp</span><span class="icon">
+                        <svg>
+                          <use xlink:href="img/sprites/sprite.svg#wa"></use>
+                        </svg></span></a><a class="contacts-intro__social" href="https://telegram.org/"><span class="text">Написать в Telegram</span><span class="icon">
+                        <svg>
+                          <use xlink:href="img/sprites/sprite.svg#tg"></use>
+                        </svg></span></a></div>
+                </div>
+                <div class="contacts-intro__item" data-js="contactsInfoItem">
+                  <div class="contacts-intro__block"> 
+                    <div class="contacts-intro__contact"> 
+                      <div class="contacts__title title--26">Телефон</div><a class="contacts__text contacts__link" href="tel:+78126123003">+7 (812) 612-30-03</a>
+                    </div>
+                    <div class="contacts-intro__contact"> 
+                      <div class="contacts__title title--26">Email</div><a class="contacts__text contacts__link" href="mailto:spb@tochpribor-nw.ru">spb@tochpribor-nw.ru</a>
+                    </div>
+                    <div class="contacts-intro__contact"> 
+                      <div class="contacts__title title--26">Адрес</div><a class="contacts__text">190121, г. Краснодар, пер. Дровяной, д. 20, пом. 4-Н</a>
+                    </div>
+                  </div>
+                  <div class="contacts-intro__block"> 
+                    <div class="contacts-intro__contact">
+                      <div class="contacts__title title--26">Режим работы</div>
+                      <div class="contacts-intro__modes">
+                        <div class="contacts-intro__mode"><span>Понедельник - Четверг</span><span>с 9:00 до 18:00 (Мск)</span></div>
+                        <div class="contacts-intro__mode"><span>Пятница</span><span>с 8.30 до 16.00 (Мск)</span></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="contacts-intro__socials"><a class="contacts-intro__social" href="https://web.whatsapp.com/"><span class="text">Написать в WhatsApp</span><span class="icon">
+                        <svg>
+                          <use xlink:href="img/sprites/sprite.svg#wa"></use>
+                        </svg></span></a><a class="contacts-intro__social" href="https://telegram.org/"><span class="text">Написать в Telegram</span><span class="icon">
+                        <svg>
+                          <use xlink:href="img/sprites/sprite.svg#tg"></use>
+                        </svg></span></a></div>
+                </div>
+                <div class="contacts-intro__item" data-js="contactsInfoItem">
+                  <div class="contacts-intro__block"> 
+                    <div class="contacts-intro__contact"> 
+                      <div class="contacts__title title--26">Телефон</div><a class="contacts__text contacts__link" href="tel:+78126123003">+7 (812) 612-30-03</a>
+                    </div>
+                    <div class="contacts-intro__contact"> 
+                      <div class="contacts__title title--26">Email</div><a class="contacts__text contacts__link" href="mailto:spb@tochpribor-nw.ru">spb@tochpribor-nw.ru</a>
+                    </div>
+                    <div class="contacts-intro__contact"> 
+                      <div class="contacts__title title--26">Адрес</div><a class="contacts__text">190121, г. Нижний Новгород, пер. Дровяной, д. 20, пом. 4-Н</a>
+                    </div>
+                  </div>
+                  <div class="contacts-intro__block"> 
+                    <div class="contacts-intro__contact">
+                      <div class="contacts__title title--26">Режим работы</div>
+                      <div class="contacts-intro__modes">
+                        <div class="contacts-intro__mode"><span>Понедельник - Четверг</span><span>с 9:00 до 18:00 (Мск)</span></div>
+                        <div class="contacts-intro__mode"><span>Пятница</span><span>с 8.30 до 16.00 (Мск)</span></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="contacts-intro__socials"><a class="contacts-intro__social" href="https://web.whatsapp.com/"><span class="text">Написать в WhatsApp</span><span class="icon">
+                        <svg>
+                          <use xlink:href="img/sprites/sprite.svg#wa"></use>
+                        </svg></span></a><a class="contacts-intro__social" href="https://telegram.org/"><span class="text">Написать в Telegram</span><span class="icon">
+                        <svg>
+                          <use xlink:href="img/sprites/sprite.svg#tg"></use>
+                        </svg></span></a></div>
+                </div>
+                <div class="contacts-intro__item" data-js="contactsInfoItem">
+                  <div class="contacts-intro__block"> 
+                    <div class="contacts-intro__contact"> 
+                      <div class="contacts__title title--26">Телефон</div><a class="contacts__text contacts__link" href="tel:+78126123003">+7 (812) 612-30-03</a>
+                    </div>
+                    <div class="contacts-intro__contact"> 
+                      <div class="contacts__title title--26">Email</div><a class="contacts__text contacts__link" href="mailto:spb@tochpribor-nw.ru">spb@tochpribor-nw.ru</a>
+                    </div>
+                    <div class="contacts-intro__contact"> 
+                      <div class="contacts__title title--26">Адрес</div><a class="contacts__text">190121, г. Минск, пер. Дровяной, д. 20, пом. 4-Н</a>
+                    </div>
+                  </div>
+                  <div class="contacts-intro__block"> 
+                    <div class="contacts-intro__contact">
+                      <div class="contacts__title title--26">Режим работы</div>
+                      <div class="contacts-intro__modes">
+                        <div class="contacts-intro__mode"><span>Понедельник - Четверг</span><span>с 9:00 до 18:00 (Мск)</span></div>
+                        <div class="contacts-intro__mode"><span>Пятница</span><span>с 8.30 до 16.00 (Мск)</span></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="contacts-intro__socials"><a class="contacts-intro__social" href="https://web.whatsapp.com/"><span class="text">Написать в WhatsApp</span><span class="icon">
+                        <svg>
+                          <use xlink:href="img/sprites/sprite.svg#wa"></use>
+                        </svg></span></a><a class="contacts-intro__social" href="https://telegram.org/"><span class="text">Написать в Telegram</span><span class="icon">
+                        <svg>
+                          <use xlink:href="img/sprites/sprite.svg#tg"></use>
+                        </svg></span></a></div>
+                </div>
+                <div class="contacts-intro__item" data-js="contactsInfoItem">
+                  <div class="contacts-intro__block"> 
+                    <div class="contacts-intro__contact"> 
+                      <div class="contacts__title title--26">Телефон</div><a class="contacts__text contacts__link" href="tel:+78126123003">+7 (812) 612-30-03</a>
+                    </div>
+                    <div class="contacts-intro__contact"> 
+                      <div class="contacts__title title--26">Email</div><a class="contacts__text contacts__link" href="mailto:spb@tochpribor-nw.ru">spb@tochpribor-nw.ru</a>
+                    </div>
+                    <div class="contacts-intro__contact"> 
+                      <div class="contacts__title title--26">Адрес</div><a class="contacts__text">190121, г. Иваново, пер. Дровяной, д. 20, пом. 4-Н</a>
+                    </div>
+                  </div>
+                  <div class="contacts-intro__block"> 
+                    <div class="contacts-intro__contact">
+                      <div class="contacts__title title--26">Режим работы</div>
+                      <div class="contacts-intro__modes">
+                        <div class="contacts-intro__mode"><span>Понедельник - Четверг</span><span>с 9:00 до 18:00 (Мск)</span></div>
+                        <div class="contacts-intro__mode"><span>Пятница</span><span>с 8.30 до 16.00 (Мск)</span></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="contacts-intro__socials"><a class="contacts-intro__social" href="https://web.whatsapp.com/"><span class="text">Написать в WhatsApp</span><span class="icon">
+                        <svg>
+                          <use xlink:href="img/sprites/sprite.svg#wa"></use>
+                        </svg></span></a><a class="contacts-intro__social" href="https://telegram.org/"><span class="text">Написать в Telegram</span><span class="icon">
+                        <svg>
+                          <use xlink:href="img/sprites/sprite.svg#tg"></use>
+                        </svg></span></a></div>
+                </div>
               </div>
             </div>
+          </div>
+        </section>
+        <section class="section contacts-details">
+          <div class="section__container contacts-details__container">
+            <div class="section__header contacts-details__header">
+                  <div class="title  title--53 title--dark">
+                    <h2>Реквизиты
+                    </h2>
+                  </div><a class="btn  btn--transparent-red btn--182" href="javascript:void(0)">
+                    <svg>
+                      <use xlink:href="img/sprites/sprite.svg#arrow_enter"></use>
+                    </svg><span class="btn__text">Карточка организации</span></a>
+            </div>
+                <div class="tabs-block contacts-details__tabs" data-js="tabsBlock">
+                  <div class="tabs-block__tabs">
+                    <div class="tabs-block__list">
+                      <div class="tabs-block__tab tabs-block__tab--active" data-index="0" data-js="tabsBlockTab">ООО ЗИП</div>
+                      <div class="tabs-block__tab" data-index="1" data-js="tabsBlockTab">ООО ТД Точприбор</div>
+                      <div class="tabs-block__tab" data-index="2" data-js="tabsBlockTab">ООО НПО Точприбор</div>
+                      <div class="tabs-block__tab" data-index="3" data-js="tabsBlockTab">ООО Гирмакс</div>
+                    </div>
+                  </div>
+                  <div class="tabs-block__slides">
+                    <div class="tabs-block__slide tabs-block__slide--active" data-js="tabsBlockSlide">
+                      <div class="contacts-details__content">
+                        <div class="contacts-details__side">
+                          <div class="contacts-details__item">
+                            <div class="contacts__title title--26">Полное наименование:</div>
+                            <div class="contacts__text">Общество с ограниченной ответственностью «ЗИП»</div>
+                          </div>
+                          <div class="contacts-details__item">
+                            <div class="contacts__title title--26">Юридический адрес:</div>
+                            <div class="contacts__text">153032, Ивановская Область, г.о. Иваново, г Иваново, ул Станкостроителей, д. 11</div>
+                          </div>
+                          <div class="contacts-details__item">
+                            <div class="contacts__title title--26">Почтовый адрес:</div>
+                            <div class="contacts__text">153032, Ивановская Область, г.о. Иваново, г Иваново, ул Станкостроителей, д. 11</div>
+                          </div>
+                        </div>
+                        <div class="contacts-details__side">
+                          <div class="contacts-details__columns">
+                            <div class="contacts__subtitle">ИНН 3702649056</div>
+                            <div class="contacts__subtitle">КПП 370201001</div>
+                            <div class="contacts__subtitle">ОГРН 1113702014447</div>
+                            <div class="contacts__subtitle">ОКПО 69363963</div>
+                            <div class="contacts__subtitle">ОКОГУ  4210014</div>
+                            <div class="contacts__subtitle">ОКАТО 24401370000</div>
+                          </div>
+                          <div class="contacts-details__item">
+                            <div class="contacts__subtitle">Р/с 40702810555130003482 в СЕВЕРО-ЗАПАДНЫЙ БАНК ПАО СБЕРБАНК</div>
+                            <div class="contacts__subtitle">К/с 30101810500000000653, БИК 044030653</div>
+                          </div>
+                          <div class="contacts-details__item">
+                            <div class="contacts__title title--26">Телефон</div><a class="contacts__text contacts__link" href="tel:+78126123003">+7 (812) 612-30-03</a>
+                          </div>
+                          <div class="contacts-details__item">
+                            <div class="contacts__title title--26">Email</div><a class="contacts__text contacts__link" href="mailto:spb@tochpribor-nw.ru">spb@tochpribor-nw.ru</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="tabs-block__slide" data-js="tabsBlockSlide">
+                      <div class="contacts-details__content">
+                        <div class="contacts-details__side">
+                          <div class="contacts-details__item">
+                            <div class="contacts__title title--26">Полное наименование:</div>
+                            <div class="contacts__text">Общество с ограниченной ответственностью «ТД Точприбор»</div>
+                          </div>
+                          <div class="contacts-details__item">
+                            <div class="contacts__title title--26">Юридический адрес:</div>
+                            <div class="contacts__text">153032, Ивановская Область, г.о. Иваново, г Иваново, ул Станкостроителей, д. 11</div>
+                          </div>
+                          <div class="contacts-details__item">
+                            <div class="contacts__title title--26">Почтовый адрес:</div>
+                            <div class="contacts__text">153032, Ивановская Область, г.о. Иваново, г Иваново, ул Станкостроителей, д. 11</div>
+                          </div>
+                        </div>
+                        <div class="contacts-details__side">
+                          <div class="contacts-details__columns">
+                            <div class="contacts__subtitle">ИНН 3702649056</div>
+                            <div class="contacts__subtitle">КПП 370201001</div>
+                            <div class="contacts__subtitle">ОГРН 1113702014447</div>
+                            <div class="contacts__subtitle">ОКПО 69363963</div>
+                            <div class="contacts__subtitle">ОКОГУ  4210014</div>
+                            <div class="contacts__subtitle">ОКАТО 24401370000</div>
+                          </div>
+                          <div class="contacts-details__block">
+                            <div class="contacts__subtitle">Р/с 40702810555130003482 в СЕВЕРО-ЗАПАДНЫЙ БАНК ПАО СБЕРБАНК</div>
+                            <div class="contacts__subtitle">К/с 30101810500000000653, БИК 044030653</div>
+                          </div>
+                          <div class="contacts-details__item">
+                            <div class="contacts__title title--26">Телефон</div><a class="contacts__text contacts__link" href="tel:+78126123003">+7 (812) 612-30-03</a>
+                          </div>
+                          <div class="contacts-details__item">
+                            <div class="contacts__title title--26">Email</div><a class="contacts__text contacts__link" href="mailto:spb@tochpribor-nw.ru">spb@tochpribor-nw.ru</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="tabs-block__slide" data-js="tabsBlockSlide">
+                      <div class="contacts-details__content">
+                        <div class="contacts-details__side">
+                          <div class="contacts-details__item">
+                            <div class="contacts__title title--26">Полное наименование:</div>
+                            <div class="contacts__text">Общество с ограниченной ответственностью «НПО Точприбор»</div>
+                          </div>
+                          <div class="contacts-details__item">
+                            <div class="contacts__title title--26">Юридический адрес:</div>
+                            <div class="contacts__text">153032, Ивановская Область, г.о. Иваново, г Иваново, ул Станкостроителей, д. 11</div>
+                          </div>
+                          <div class="contacts-details__item">
+                            <div class="contacts__title title--26">Почтовый адрес:</div>
+                            <div class="contacts__text">153032, Ивановская Область, г.о. Иваново, г Иваново, ул Станкостроителей, д. 11</div>
+                          </div>
+                        </div>
+                        <div class="contacts-details__side">
+                          <div class="contacts-details__columns">
+                            <div class="contacts__subtitle">ИНН 3702649056</div>
+                            <div class="contacts__subtitle">КПП 370201001</div>
+                            <div class="contacts__subtitle">ОГРН 1113702014447</div>
+                            <div class="contacts__subtitle">ОКПО 69363963</div>
+                            <div class="contacts__subtitle">ОКОГУ  4210014</div>
+                            <div class="contacts__subtitle">ОКАТО 24401370000</div>
+                          </div>
+                          <div class="contacts-details__block">
+                            <div class="contacts__subtitle">Р/с 40702810555130003482 в СЕВЕРО-ЗАПАДНЫЙ БАНК ПАО СБЕРБАНК</div>
+                            <div class="contacts__subtitle">К/с 30101810500000000653, БИК 044030653</div>
+                          </div>
+                          <div class="contacts-details__item">
+                            <div class="contacts__title title--26">Телефон</div><a class="contacts__text contacts__link" href="tel:+78126123003">+7 (812) 612-30-03</a>
+                          </div>
+                          <div class="contacts-details__item">
+                            <div class="contacts__title title--26">Email</div><a class="contacts__text contacts__link" href="mailto:spb@tochpribor-nw.ru">spb@tochpribor-nw.ru</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="tabs-block__slide" data-js="tabsBlockSlide">
+                      <div class="contacts-details__content">
+                        <div class="contacts-details__side">
+                          <div class="contacts-details__item">
+                            <div class="contacts__title title--26">Полное наименование:</div>
+                            <div class="contacts__text">Общество с ограниченной ответственностью «Гирмакс»</div>
+                          </div>
+                          <div class="contacts-details__item">
+                            <div class="contacts__title title--26">Юридический адрес:</div>
+                            <div class="contacts__text">153032, Ивановская Область, г.о. Иваново, г Иваново, ул Станкостроителей, д. 11</div>
+                          </div>
+                          <div class="contacts-details__item">
+                            <div class="contacts__title title--26">Почтовый адрес:</div>
+                            <div class="contacts__text">153032, Ивановская Область, г.о. Иваново, г Иваново, ул Станкостроителей, д. 11</div>
+                          </div>
+                        </div>
+                        <div class="contacts-details__side">
+                          <div class="contacts-details__columns">
+                            <div class="contacts__subtitle">ИНН 3702649056</div>
+                            <div class="contacts__subtitle">КПП 370201001</div>
+                            <div class="contacts__subtitle">ОГРН 1113702014447</div>
+                            <div class="contacts__subtitle">ОКПО 69363963</div>
+                            <div class="contacts__subtitle">ОКОГУ  4210014</div>
+                            <div class="contacts__subtitle">ОКАТО 24401370000</div>
+                          </div>
+                          <div class="contacts-details__block">
+                            <div class="contacts__subtitle">Р/с 40702810555130003482 в СЕВЕРО-ЗАПАДНЫЙ БАНК ПАО СБЕРБАНК</div>
+                            <div class="contacts__subtitle">К/с 30101810500000000653, БИК 044030653</div>
+                          </div>
+                          <div class="contacts-details__item">
+                            <div class="contacts__title title--26">Телефон</div><a class="contacts__text contacts__link" href="tel:+78126123003">+7 (812) 612-30-03</a>
+                          </div>
+                          <div class="contacts-details__item">
+                            <div class="contacts__title title--26">Email</div><a class="contacts__text contacts__link" href="mailto:spb@tochpribor-nw.ru">spb@tochpribor-nw.ru</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
           </div>
         </section>
             <section class="section section--full socials-section">
