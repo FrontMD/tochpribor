@@ -1,7 +1,6 @@
 .title {
     color: $c-text;
     font-weight: 400;
-    line-height: 1em;
     letter-spacing: -0.03em;
 
     &--light {
@@ -30,16 +29,24 @@
 
     &--83 {
         font-size: 83px;
+        line-height: 1em;
 
-        @include max(laptop) {}
+        @include max(laptop) {
+            font-size: 67px;
+        }
 
-        @include max(tablet) {}
+        @include max(mobile) {
+            font-size: 53px;
+        }
 
-        @include max(mobile) {}
+        @include max(xs) {
+            font-size: 40px;
+        }
     }
 
     &--67 {
         font-size: 67px;
+        line-height: 1em;
 
         @include max(laptop) {
             font-size: 53px;
@@ -56,6 +63,7 @@
 
     &--53 {
         font-size: 53px;
+        line-height: 1em;
 
         @include max(laptop) {
             font-size: 40px;
@@ -72,6 +80,7 @@
 
     &--32 {
         font-size: 32px;
+        line-height: 1em;
 
         @include max(laptop) {
             font-size: 28px;
@@ -88,6 +97,7 @@
 
     &--26 {
         font-size: 26px;
+        line-height: 1em;
 
         @include max(laptop) {
             font-size: 24px;
@@ -99,6 +109,16 @@
 
         @include max(xs) {
             font-size: 20px;
+        }
+    }
+
+    &--center {
+        text-align: center;
+        margin: 0 auto;
+        max-width: 970px;
+
+        @include max(laptop) {
+            max-width: 730px;
         }
     }
 

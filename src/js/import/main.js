@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     $('img.lazyload').lazyload();
     newsSmiSliderInit()
     contactsController()
+    productSafetyController()
 })
 
 // Блокировка скролла при открытии модалок
@@ -155,8 +156,29 @@ function contactsController() {
             }
         })
     }
+
+    function getCoordsArr(coords) {
+        return coords.replace(/\s/g, '').split(',')
+    }
 }
 
-function getCoordsArr(coords) {
-    return coords.replace(/\s/g, '').split(',')
+// страница безопасность изделия
+function productSafetyController() {
+    const safetySliderBlock = document.querySelector('[data-js="productSafetySliderBlock"]')
+
+    if(!safetySliderBlock) return
+
+    const safetySlider = safetySliderBlock.querySelector('[data-js="productSafetySlider"]')
+    const sliderPrev = safetySliderBlock.querySelector('[data-js="sliderPrev"]')
+    const sliderNext = safetySliderBlock.querySelector('[data-js="sliderNext"]')
+
+    const safetySliderEx = new Swiper(safetySlider, {
+        slidesPerView: 'auto',
+        spaceBetween: 16,
+        navigation: {
+            nextEl: sliderNext,
+            prevEl: sliderPrev,
+        },
+    })
+
 }

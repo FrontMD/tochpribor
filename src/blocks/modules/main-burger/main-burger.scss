@@ -141,7 +141,7 @@
         background-color: rgba(255, 255, 255, 0.1);
         border-radius: 2px;
         backdrop-filter: blur(15px);
-        border: 1px solid#FAE6E6;
+        border: 1px solid$c-accent-light3;
     }
 
     &__title {
@@ -169,7 +169,7 @@
     &__list--h {
         gap: 12px;
         padding-top: 6px;
-        border-top: 1px solid #FAE6E6;
+        border-top: 1px solid $c-accent-light3;
     }
 
     &__item {

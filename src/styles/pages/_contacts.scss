@@ -121,7 +121,7 @@
         line-height: 1.1em;
         letter-spacing: -0.01em;
         color: $c-text;
-        background-color: #fae6e6;
+        background-color: $c-accent-light3;
 
         @include max(mobile) {
             font-size: 16px;

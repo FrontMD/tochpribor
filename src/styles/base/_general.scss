@@ -242,6 +242,16 @@ body {
 		display: grid;
 		grid-template-columns: repeat(2, minmax(0, calc((100% - 135px - 119px) / 2)));
 		gap: 135px;
+
+		@include max(laptop) {
+			grid-template-columns: repeat(2, minmax(0, calc((100% - 70px) / 2)));
+			gap: 70px;
+		}
+
+		@include max(tablet) {
+			grid-template-columns: repeat(2, minmax(0, calc((100% - 32px) / 2)));
+			gap: 32px;
+		}
 	}
 
 	&--transparent &__container {
@@ -620,5 +630,40 @@ body {
 		color: $c-white;
 		font-size: 12px;
 		border-radius: 2px;
+	}
+}
+
+.slider-controls {
+	display: flex;
+	align-items: stretch;
+	gap: 8px;
+}
+
+.slider-control {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 46px;
+	height: 46px;
+	border: 1px solid $c-bg;
+	border-radius: 2px;
+	color: $c-text-dark;
+	transition: all $tr-time linear;
+	cursor: pointer;
+
+	svg {
+		width: 16px;
+		height: 16px;
+	}
+
+	&--prev {
+		svg {
+			transform: rotate(-180deg);
+		}
+	}
+
+	&:hover {
+		border-color: $c-accent-hover;
+		color: $c-accent-hover;
 	}
 }

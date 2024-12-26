@@ -1,0 +1,223 @@
+.product-safety-intro {
+    &__content {
+        margin-top: 50px;
+        padding-top: 16px;
+        border-top: 1px solid $c-border;
+    }
+}
+
+.product-safety-fake {
+    &__slider {
+        margin-top: 50px;
+    }
+}
+
+.safety-slider {
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__slider {
+        overflow: hidden;
+        margin-top: 24px;
+        padding-right: 24px;
+        padding-left: 24px;
+        margin-right: -24px;
+        margin-left: -24px;
+
+        @include max(tablet) {
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: -15px;
+            margin-left: -15px;
+        }
+    }
+
+    .swiper-slide {
+        width: fit-content;
+    }
+
+    &__card {
+        width: 454px;
+        min-height: 410px;
+        padding: 16px 24px;
+        border: 1px solid $c-bg;
+        border-radius: 4px;
+    }
+
+    &__num {
+        color: $c-accent-light3;
+    }
+
+    &__title {
+        margin-top: 16px;
+        padding-top: 20px;
+        border-top: 1px solid $c-bg;
+    }
+
+    &__text {
+        color: $c-text-light;
+        margin-top: 16px;
+    }
+}
+
+.product-safety-brand {
+    &__list {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 52px;
+        margin-top: 140px;
+
+        @include max(laptop) {
+            margin-top: 100px;
+            flex-direction: column;
+        }
+    }
+
+    &__title {
+        flex: 1 1 auto;
+    }
+
+    &__cards {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+        flex: 0 0 920px;
+        max-width: 920px;
+
+        @include max(laptop) {
+            max-width: 100%;
+            flex-basis: auto;
+        }
+    }
+
+    &__card {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        padding: 14px 16px;
+        border: 1px solid $c-bg;
+        border-radius: 4px;
+
+        &--full {
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }
+    }
+
+    &__icon {
+        width: 62px;
+        height: 62px;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+
+    &__title,
+    &__subtitle {
+        letter-spacing: -0.02em;
+        color: $c-text;
+    }
+
+    &__text {
+        font-size: 18px;
+        line-height: 1.4em;
+        color: $c-text-breadcrumbs;
+
+        p+p {
+            padding-top: 1.4em;
+        }
+
+        a {
+            text-decoration: underline;
+
+            &:hover {
+                color: $c-accent-hover;
+            }
+        }
+    }
+}
+
+.product-safety-cases {
+    &__list {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        margin-top: 64px;
+        margin-bottom: 16px;
+
+        @include max(laptop) {
+            flex-wrap: wrap;
+        }
+
+    }
+
+    &__card {
+        display: flex;
+        flex-direction: column;
+        flex: 0 0 calc((100% - 48px) / 4);
+        border: 1px solid $c-bg;
+        border-radius: 4px;
+        padding: 16px 20px;
+        color: $c-text;
+        min-height: 455px;
+
+        @include max(laptop) {
+            flex: 0 0 calc((100% - 16px) / 2);
+        }
+    }
+
+    &__text {
+        font-size: 14px;
+        line-height: 1.4em;
+        color: $c-text-light;
+    }
+
+    &__title {
+        font-size: 18px;
+        line-height: 1.4em;
+        margin-top: 14px;
+    }
+
+    &__link {
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        width: fit-content;
+        padding: 1px 11px 2px 4px;
+        background-color: $c-input-bg;
+        transition: all $tr-time linear;
+
+        &:hover {
+            color: $c-white;
+            background-color: $c-accent-hover;
+        }
+
+        svg {
+            width: 9px;
+            height: 6px;
+            transform: rotate(-90deg);
+        }
+    }
+
+    &__block {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        max-width: 218px;
+        margin-top: 16px;
+        padding-top: 20px;
+        border-top: 1px solid $c-bg;
+
+        &--last {
+            margin-top: auto;
+        }
+    }
+}

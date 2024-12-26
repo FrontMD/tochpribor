@@ -136,7 +136,7 @@
       </div>
     </header>
     <main class="site-main">
-      <div class="page-layout page-layout--bottom">
+      <div class="page-layout">
         <div class="breadcrumbs-section section section--transparent">
           <div class="section__container">
                 <div class="breadcrumbs  breadcrumbs--dark">
@@ -155,7 +155,7 @@
                   <h1>Безопасность изделия
                   </h1>
                 </div>
-            <div class="section__columns">
+            <div class="section__columns product-safety-intro__content">
               <div class="section__text text-editor">
                 <p>Компания «ТОЧПРИБОР» дорожит мнением клиентов и своей собственной репутацией. Мы реализуем качественный товар и отвечаем за его бесперебойную работу.</p>
                 <p>К сожалению, в последнее время участились случаи поставки поддельного оборудования якобы от нашей компании. </p>
@@ -167,7 +167,7 @@
             </div>
           </div>
         </section>
-        <section class="section product-safety">
+        <section class="section product-safety-fake">
           <div class="section__container">
             <div class="section__columns">
                   <div class="title  title--53 title--dark">
@@ -176,34 +176,243 @@
                   </div>
               <div class="section__text text-editor">В последнее время участились случаи появления на рынке как контрафактных приборов, так и позиционирование отдельными организациями себя на своих сайтах как производителей испытательной техники, которая на самом деле разработана и может быть произведена только на нашем заводе. </div>
             </div>
-            <div class="product-safety__slider safety-slider">
-              <div class="safety-slider__header"></div>
+            <div class="product-safety-fake__slider safety-slider" data-js="productSafetySliderBlock">
+              <div class="safety-slider__header"><a class="btn  btn--red btn--246" href="javascript:void(0)">
+                      <svg>
+                        <use xlink:href="img/sprites/sprite.svg#arrow_enter"></use>
+                      </svg><span class="btn__text">Проверить изделие</span></a>
+                <div class="slider-controls">
+                  <button class="slider-control slider-control--prev" type="button" data-js="sliderPrev">
+                    <svg>
+                      <use xlink:href="img/sprites/sprite.svg#arrow_classic"></use>
+                    </svg>
+                  </button>
+                  <button class="slider-control slider-control--next" type="button" data-js="sliderNext">
+                    <svg>
+                      <use xlink:href="img/sprites/sprite.svg#arrow_classic"></use>
+                    </svg>
+                  </button>
+                </div>
+              </div>
               <div class="safety-slider__slider" data-js="productSafetySlider">
                 <div class="swiper-wrapper">
                   <div class="swiper-slide">
                     <div class="safety-slider__card">
-                      <div class="safety-slider__num">01</div>
+                      <div class="safety-slider__num title--83">01</div>
                       <div class="safety-slider__title title--32">Правообладатель </div>
                       <div class="safety-slider__text">ООО «ЗИП» никому не предоставлял прав на производство техники, представленной на этом сайте.</div>
                     </div>
+                  </div>
+                  <div class="swiper-slide">
                     <div class="safety-slider__card">
-                      <div class="safety-slider__num">02</div>
+                      <div class="safety-slider__num title--83">02</div>
                       <div class="safety-slider__title title--32">Признаки обмана </div>
                       <div class="safety-slider__text">Все случаи расследования показали, что приборы прошлых лет выпуска, выведенные из эксплуатации по критериям предельного состояния или окончания срока службы, после проведения «косметического» ремонта и оформления поддельных паспортов предлагались покупателям по достаточно низким ценам. Такая продукция может быть только восстановленной или выпущенной нелегально.</div>
                     </div>
+                  </div>
+                  <div class="swiper-slide">
                     <div class="safety-slider__card">
-                      <div class="safety-slider__num">03</div>
+                      <div class="safety-slider__num title--83">03</div>
                       <div class="safety-slider__title title--32">Проверка изделия </div>
                       <div class="safety-slider__text">Если у Вас возникли сомнения в подлинности документации или изделия, обратитесь на наше предприятие для получения полной информации о происхождении продукта.</div>
                     </div>
                   </div>
                   <div class="swiper-slide">
-                    <div class="safety-slider"></div>
+                    <div class="safety-slider__card">
+                      <div class="safety-slider__num title--83">04</div>
+                      <div class="safety-slider__title title--32">Правообладатель </div>
+                      <div class="safety-slider__text">ООО «ЗИП» никому не предоставлял прав на производство техники, представленной на этом сайте.</div>
+                    </div>
                   </div>
-                  <div class="swiper-slide"></div>
+                  <div class="swiper-slide">
+                    <div class="safety-slider__card">
+                      <div class="safety-slider__num title--83">05</div>
+                      <div class="safety-slider__title title--32">Признаки обмана </div>
+                      <div class="safety-slider__text">Все случаи расследования показали, что приборы прошлых лет выпуска, выведенные из эксплуатации по критериям предельного состояния или окончания срока службы, после проведения «косметического» ремонта и оформления поддельных паспортов предлагались покупателям по достаточно низким ценам. Такая продукция может быть только восстановленной или выпущенной нелегально.</div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="safety-slider__card">
+                      <div class="safety-slider__num title--83">06</div>
+                      <div class="safety-slider__title title--32">Проверка изделия </div>
+                      <div class="safety-slider__text">Если у Вас возникли сомнения в подлинности документации или изделия, обратитесь на наше предприятие для получения полной информации о происхождении продукта.</div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
+          </div>
+        </section>
+        <section class="section product-safety-brand">
+          <div class="section__container">
+            <div class="section__columns">
+                  <div class="title  title--53 title--dark">
+                    <h2>Бренд, которому можно доверять
+                    </h2>
+                  </div>
+              <div class="section__text text-editor">Наши торговые знаки, знаки соответствия и обозначения на продукции</div>
+            </div>
+            <div class="product-safety-brand__list">
+              <div class="product-safety-brand__title title--32">Наши признаки</div>
+              <div class="product-safety-brand__cards">
+                <div class="product-safety-brand__card">
+                  <div class="product-safety-brand__icon"><img src="img/product-safety/brand_1.png"></div>
+                  <div class="product-safety-brand__subtitle title--32">Товарный знак Tochline</div>
+                  <div class="product-safety-brand__text">TOCHLINE — зарегистрированная торговая марка с идентификационным номером 605917</div>
+                </div>
+                <div class="product-safety-brand__card">
+                  <div class="product-safety-brand__icon"><img src="img/product-safety/brand_2.png"></div>
+                  <div class="product-safety-brand__subtitle title--32">ООО «ЗИП»</div>
+                  <div class="product-safety-brand__text">
+                    <p>Товарный знак, используемый ООО «ЗИП», зарегистрирован в Государственном реестре товарных знаков и знаков обслуживания</p>
+                    <p>Свидетельство на товарный знак № 756316 <br>Правообладатель – ООО «Завод испытательных приборов» (ООО «ЗИП»)</p>
+                  </div>
+                </div>
+                <div class="product-safety-brand__card">
+                  <div class="product-safety-brand__icon"><img src="img/product-safety/brand_3.png"></div>
+                  <div class="product-safety-brand__subtitle title--32">Метрологическая лаборатория ООО «ЗИП»</div>
+                  <div class="product-safety-brand__text">
+                    <p>Аккредитована Федеральной службой по аккредитации (Росакредитация) на право осуществлять деятельность по проведению работ и (или) оказанию услуг по поверке средств измерений.</p>
+                    <p>Организация ООО «ЗИП» занесена в реестр аккредитованных лиц. <br><a href="javascript:void(0)">Аттестат аккредитации RA.RU.312915</a> <br>Правообладатель – ООО «Завод испытательных приборов» (ООО «ЗИП»).</p>
+                  </div>
+                </div>
+                <div class="product-safety-brand__card">
+                  <div class="product-safety-brand__icon"><img src="img/product-safety/brand_4.png"></div>
+                  <div class="product-safety-brand__subtitle title--32">Сертификат соотвествия</div>
+                  <div class="product-safety-brand__text"> 
+                    <p>Знак соответствия требованиям ГОСТ Р ИСО 9001-2015 (ISO 9001:2015) системы менеджмента качества, распространяющейся на производство приборов и инструментов для испытания, выпускаемых предприятием ООО «ЗИП»</p>
+                    <p>Сертификат соответствия №&nbsp;СДС.ФР.СМ.00504.21</p>
+                    <p>Правообладатель – ООО «Завод испытательных приборов» (ООО «ЗИП»).</p>
+                  </div>
+                </div>
+                <div class="product-safety-brand__card product-safety-brand__card--full">
+                  <div class="product-safety-brand__icon"><img src="img/product-safety/brand_5.png"></div>
+                  <div class="product-safety-brand__subtitle title--32">Голограмма бренда</div>
+                  <div class="product-safety-brand__text">
+                    <p>Голограммы с одним и тем же номером устанавливаются на оборудование, вклеиваются в Журнал регистрации готовой продукции ООО "ЗИП", а также в паспорт каждого выпускаемого изделия. </p>
+                    <p>Товарная марка Tochline, нанесённая на голограмму, зарегистрирована в Федеральной службе по интеллектуальной собственности (РОСПАТЕНТ) №605917.</p>
+                    <p>При получении продукции без голограмм с датой выпуска после 26.02.2020г. продукцию считать контрафактной и обращаться по тел. <a href="tel:+78126123003">+7(812) 612-30-03</a>.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="section product-safety-cases">
+          <div class="section__container">
+                <div class="title title--center title--53 title--dark">
+                  <h2>Выявленные случаи поставки поддельного оборудования
+                  </h2>
+                </div>
+            <div class="product-safety-cases__list">
+              <div class="product-safety-cases__card">
+                <div class="product-safety-cases__text">Поставщик контрафакта</div>
+                <div class="product-safety-cases__title">ООО «Рога и копыта»</div>
+                <div class="product-safety-cases__block"><a class="product-safety-cases__link" href="javascript:void(0)"> <span>Карточка организации</span>
+                    <svg>
+                      <use xlink:href="img/sprites/sprite.svg#arrow_angle"></use>
+                    </svg></a><a class="product-safety-cases__link" href="javascript:void(0)"> <span>Решение суда</span>
+                    <svg>
+                      <use xlink:href="img/sprites/sprite.svg#arrow_angle"></use>
+                    </svg></a><a class="product-safety-cases__link" href="javascript:void(0)"> <span>Список изделий</span>
+                    <svg>
+                      <use xlink:href="img/sprites/sprite.svg#arrow_angle"></use>
+                    </svg></a></div>
+                <div class="product-safety-cases__block product-safety-cases__block--last">
+                  <div class="product-safety-cases__text">Покупатели</div><a class="product-safety-cases__link" href="javascript:void(0)"> <span>Покупатель 1</span>
+                    <svg>
+                      <use xlink:href="img/sprites/sprite.svg#arrow_angle"></use>
+                    </svg></a><a class="product-safety-cases__link" href="javascript:void(0)"> <span>Покупатель 2</span>
+                    <svg>
+                      <use xlink:href="img/sprites/sprite.svg#arrow_angle"></use>
+                    </svg></a><a class="product-safety-cases__link" href="javascript:void(0)"> <span>Покупатель 3</span>
+                    <svg>
+                      <use xlink:href="img/sprites/sprite.svg#arrow_angle"></use>
+                    </svg></a>
+                </div>
+              </div>
+              <div class="product-safety-cases__card">
+                <div class="product-safety-cases__text">Поставщик контрафакта</div>
+                <div class="product-safety-cases__title">ООО «Ромашка»</div>
+                <div class="product-safety-cases__block"><a class="product-safety-cases__link" href="javascript:void(0)"> <span>Карточка организации</span>
+                    <svg>
+                      <use xlink:href="img/sprites/sprite.svg#arrow_angle"></use>
+                    </svg></a><a class="product-safety-cases__link" href="javascript:void(0)"> <span>Решение суда</span>
+                    <svg>
+                      <use xlink:href="img/sprites/sprite.svg#arrow_angle"></use>
+                    </svg></a><a class="product-safety-cases__link" href="javascript:void(0)"> <span>Список изделий</span>
+                    <svg>
+                      <use xlink:href="img/sprites/sprite.svg#arrow_angle"></use>
+                    </svg></a></div>
+                <div class="product-safety-cases__block product-safety-cases__block--last">
+                  <div class="product-safety-cases__text">Покупатели</div><a class="product-safety-cases__link" href="javascript:void(0)"> <span>Покупатель 1</span>
+                    <svg>
+                      <use xlink:href="img/sprites/sprite.svg#arrow_angle"></use>
+                    </svg></a><a class="product-safety-cases__link" href="javascript:void(0)"> <span>Покупатель 2</span>
+                    <svg>
+                      <use xlink:href="img/sprites/sprite.svg#arrow_angle"></use>
+                    </svg></a><a class="product-safety-cases__link" href="javascript:void(0)"> <span>Покупатель 3</span>
+                    <svg>
+                      <use xlink:href="img/sprites/sprite.svg#arrow_angle"></use>
+                    </svg></a>
+                </div>
+              </div>
+              <div class="product-safety-cases__card">
+                <div class="product-safety-cases__text">Поставщик контрафакта</div>
+                <div class="product-safety-cases__title">ООО «Компания»</div>
+                <div class="product-safety-cases__block"><a class="product-safety-cases__link" href="javascript:void(0)"> <span>Карточка организации</span>
+                    <svg>
+                      <use xlink:href="img/sprites/sprite.svg#arrow_angle"></use>
+                    </svg></a><a class="product-safety-cases__link" href="javascript:void(0)"> <span>Решение суда</span>
+                    <svg>
+                      <use xlink:href="img/sprites/sprite.svg#arrow_angle"></use>
+                    </svg></a><a class="product-safety-cases__link" href="javascript:void(0)"> <span>Список изделий</span>
+                    <svg>
+                      <use xlink:href="img/sprites/sprite.svg#arrow_angle"></use>
+                    </svg></a></div>
+                <div class="product-safety-cases__block product-safety-cases__block--last">
+                  <div class="product-safety-cases__text">Покупатели</div><a class="product-safety-cases__link" href="javascript:void(0)"> <span>Покупатель 1</span>
+                    <svg>
+                      <use xlink:href="img/sprites/sprite.svg#arrow_angle"></use>
+                    </svg></a><a class="product-safety-cases__link" href="javascript:void(0)"> <span>Покупатель 2</span>
+                    <svg>
+                      <use xlink:href="img/sprites/sprite.svg#arrow_angle"></use>
+                    </svg></a><a class="product-safety-cases__link" href="javascript:void(0)"> <span>Покупатель 3</span>
+                    <svg>
+                      <use xlink:href="img/sprites/sprite.svg#arrow_angle"></use>
+                    </svg></a>
+                </div>
+              </div>
+              <div class="product-safety-cases__card">
+                <div class="product-safety-cases__text">Поставщик контрафакта</div>
+                <div class="product-safety-cases__title">ООО «Фирма»</div>
+                <div class="product-safety-cases__block"><a class="product-safety-cases__link" href="javascript:void(0)"> <span>Карточка организации</span>
+                    <svg>
+                      <use xlink:href="img/sprites/sprite.svg#arrow_angle"></use>
+                    </svg></a><a class="product-safety-cases__link" href="javascript:void(0)"> <span>Решение суда</span>
+                    <svg>
+                      <use xlink:href="img/sprites/sprite.svg#arrow_angle"></use>
+                    </svg></a><a class="product-safety-cases__link" href="javascript:void(0)"> <span>Список изделий</span>
+                    <svg>
+                      <use xlink:href="img/sprites/sprite.svg#arrow_angle"></use>
+                    </svg></a></div>
+                <div class="product-safety-cases__block product-safety-cases__block--last">
+                  <div class="product-safety-cases__text">Покупатели</div><a class="product-safety-cases__link" href="javascript:void(0)"> <span>Покупатель 1</span>
+                    <svg>
+                      <use xlink:href="img/sprites/sprite.svg#arrow_angle"></use>
+                    </svg></a><a class="product-safety-cases__link" href="javascript:void(0)"> <span>Покупатель 2</span>
+                    <svg>
+                      <use xlink:href="img/sprites/sprite.svg#arrow_angle"></use>
+                    </svg></a><a class="product-safety-cases__link" href="javascript:void(0)"> <span>Покупатель 3</span>
+                    <svg>
+                      <use xlink:href="img/sprites/sprite.svg#arrow_angle"></use>
+                    </svg></a>
+                </div>
+              </div>
+            </div><a class="btn  btn--transparent btn--full" href="javascript:void(0)">
+                  <svg>
+                    <use xlink:href="img/sprites/sprite.svg#arrow_enter"></use>
+                  </svg><span class="btn__text">Показать ещё</span></a>
           </div>
         </section>
       </div>
