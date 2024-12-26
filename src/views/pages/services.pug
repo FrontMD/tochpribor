@@ -1,0 +1,79 @@
+extends ../layouts/default
+include ../helpers/mixins
+
+block variables
+	- const title = "Услуги"
+
+block content
+	.page-layout
+		.breadcrumbs-section.section.section--transparent
+			.section__container
+				+breadcrumbs({
+					items: [
+						{
+							name: 'Главная',
+							link: 'javascript:void(0);'
+						},
+						{
+							name: 'Услуги',
+							link: 'javascript:void(0);'
+						}
+					],
+				})
+
+		.services
+			.services__container
+				section.section.section--full.services__left
+					.section__container.services__sidebar
+						.services__header
+							+title({
+								tag: 'h1',
+								size: '83',
+								text: 'Услуги'
+							})
+							+btn({
+								name: 'Оставить заявку',
+								cMode: 'red',
+								size: '246',
+								icon: 'arrow_enter'
+							})
+						.services__tabs.scrollbar.scrollbar--small
+							a.services__tab.active(href="javascript:void(0)")
+								span.name.title--26 Услуги по металлообработке
+								svg
+									use(xlink:href=`img/sprites/sprite.svg#arrow_enter`)
+								span.count.title--26 13
+							a.services__tab(href="javascript:void(0)")
+								span.name.title--26 Поверка инструментов измерений
+								svg
+									use(xlink:href=`img/sprites/sprite.svg#arrow_enter`)
+								span.count.title--26 5
+							a.services__tab(href="javascript:void(0)")
+								span.name.title--26 Пуско-наладка
+								svg
+									use(xlink:href=`img/sprites/sprite.svg#arrow_enter`)
+								span.count.title--26 4
+							a.services__tab(href="javascript:void(0)")
+								span.name.title--26 Наладка средств измерений
+								svg
+									use(xlink:href=`img/sprites/sprite.svg#arrow_enter`)
+								span.count.title--26 3
+							a.services__tab(href="javascript:void(0)")
+								span.name.title--26 Доставка
+								svg
+									use(xlink:href=`img/sprites/sprite.svg#arrow_enter`)
+								span.count.title--26 2
+
+				section.section.section--full.services__right
+					.section__container.services__accordion(data-js="accordion")
+						+spoiler({
+							title: 'Ленточнопильная резка металла'
+						})
+							p test 1
+
+						+spoiler({
+							title: 'Плазмо-газовая резка металла'
+						})
+							p test 2
+
+

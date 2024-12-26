@@ -9,20 +9,20 @@ function tabsBlockInit() {
     tabsList.forEach(tab => {
         tab.addEventListener('click', e => {
 
-            currentTab = e.target
+            currentTab = e.target.closest('[data-js="tabsBlockTab"]')
             currentIndex = currentTab.dataset.index
 
             tabsList.forEach(iTab => {
-                iTab.classList.remove('tabs-block__tab--active')
+                iTab.classList.remove('active')
             })
 
-            currentTab.classList.add('tabs-block__tab--active')
+            currentTab.classList.add('active')
 
             slidesList.forEach((slide, index) => {
                 if(index == currentIndex) {
-                    slide.classList.add('tabs-block__slide--active')
+                    slide.classList.add('active')
                 } else {
-                    slide.classList.remove('tabs-block__slide--active')
+                    slide.classList.remove('active')
                 }
             })
         })

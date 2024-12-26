@@ -11,21 +11,6 @@
     &__tabs {
         overflow-x: auto;
         padding-bottom: 1px;
-
-        &::-webkit-scrollbar {
-            width: 3px;
-            height: 3px;
-        }
-
-        &::-webkit-scrollbar-track {
-            background-color: $c-text-light;
-            border-radius: 2px;
-        }
-
-        &::-webkit-scrollbar-thumb {
-            background-color: $c-bg;
-            border-radius: 2px;
-        }
     }
 
     &__list {
@@ -73,7 +58,7 @@
             transition: background-color 0.1s linear;
         }
 
-        &--active::after {
+        &.active::after {
             background-color: $c-accent;
         }
 
@@ -98,7 +83,7 @@
     &__slide {
         display: none;
 
-        &--active {
+        &.active {
             display: block;
         }
     }

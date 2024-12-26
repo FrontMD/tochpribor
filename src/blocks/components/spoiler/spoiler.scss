@@ -1,0 +1,80 @@
+.spoiler {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    display: block;
+    padding: 0 35px 5px;
+    background-color: $c-white;
+
+    &__intro {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        cursor: pointer;
+        padding: 35px 0 30px;
+
+        @include max(tablet) {
+            padding: 20px 0 15px;
+            gap: 10px;
+        }
+
+    }
+
+    &__title {
+        color: $c-accent;
+
+        @include max(mobile) {
+            font-size: 14px;
+            max-width: none;
+        }
+    }
+
+    &__icon {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: $c-accent;
+        background-color: transparent;
+        border: 1px solid $c-border;
+        border-color: $c-border;
+        flex-shrink: 0;
+        flex-grow: 0;
+        width: 53px;
+        height: 53px;
+        border-radius: 50%;
+        transition: all $tr-time;
+        transform: rotateY(180deg);
+
+        svg {
+            width: 12px;
+            height: 12px;
+            transition: all $tr-time;
+        }
+
+        @include max(tablet) {
+            width: 40px;
+            height: 40px;
+        }
+    }
+
+    &__intro:hover &__icon,
+    &.active &__icon {
+        background: $c-accent;
+        color: $c-white;
+        border-color: $c-accent;
+    }
+
+    &__content {
+        display: none;
+        overflow: hidden;
+        padding-top: 25px;
+        border-top: 1px solid $c-border;
+        padding-bottom: 50px;
+
+        @include max(tablet) {
+            padding-top: 15px;
+        }
+    }
+}

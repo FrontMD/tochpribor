@@ -3,12 +3,20 @@
         margin-top: 50px;
         padding-top: 16px;
         border-top: 1px solid $c-border;
+
+        @include max(mobile) {
+            margin-top: 32px;
+        }
     }
 }
 
 .product-safety-fake {
     &__slider {
         margin-top: 50px;
+
+        @include max(tablet) {
+            margin-top: 32px;
+        }
     }
 }
 
@@ -17,6 +25,20 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+
+        @include max(xs) {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 16px;
+
+            .btn {
+                width: 100%;
+            }
+
+            .slider-controls {
+                align-self: flex-end;
+            }
+        }
     }
 
     &__slider {
@@ -35,16 +57,31 @@
         }
     }
 
+    .swiper-wrapper {
+        align-items: stretch;
+    }
+
     .swiper-slide {
         width: fit-content;
+        height: auto;
     }
 
     &__card {
         width: 454px;
         min-height: 410px;
+        height: 100%;
         padding: 16px 24px;
         border: 1px solid $c-bg;
         border-radius: 4px;
+
+        @include max(tablet) {
+            width: 360px;
+            padding: 16px;
+        }
+
+        @include max(xs) {
+            width: 300px;
+        }
     }
 
     &__num {
@@ -75,6 +112,16 @@
             margin-top: 100px;
             flex-direction: column;
         }
+
+        @include max(tablet) {
+            margin-top: 50px;
+            gap: 32px;
+        }
+
+        @include max(mobile) {
+            margin-top: 32px;
+            gap: 24px;
+        }
     }
 
     &__title {
@@ -88,9 +135,18 @@
         flex: 0 0 920px;
         max-width: 920px;
 
+        @include min(1970) {
+            flex: 0 0 50%;
+            max-width: 50%;
+        }
+
         @include max(laptop) {
             max-width: 100%;
             flex-basis: auto;
+        }
+
+        @include max(mobile) {
+            grid-template-columns: 1fr;
         }
     }
 
@@ -105,12 +161,22 @@
         &--full {
             grid-column-start: 1;
             grid-column-end: 3;
+
+            @include max(mobile) {
+                grid-column-end: 2;
+                gap: 16px;
+            }
         }
     }
 
     &__icon {
         width: 62px;
         height: 62px;
+
+        @include max(mobile) {
+            width: 46px;
+            height: 46px;
+        }
 
         img {
             width: 100%;
@@ -129,6 +195,10 @@
         font-size: 18px;
         line-height: 1.4em;
         color: $c-text-breadcrumbs;
+
+        @include max(mobile) {
+            font-size: 16px;
+        }
 
         p+p {
             padding-top: 1.4em;
@@ -156,6 +226,14 @@
             flex-wrap: wrap;
         }
 
+        @include max(tablet) {
+            margin-top: 50px;
+        }
+
+        @include max(mobile) {
+            margin-top: 32px;
+        }
+
     }
 
     &__card {
@@ -170,6 +248,10 @@
 
         @include max(laptop) {
             flex: 0 0 calc((100% - 16px) / 2);
+        }
+
+        @include max(mobile) {
+            flex-basis: 100%;
         }
     }
 

@@ -73,21 +73,6 @@
         background-size: 58%;
         overflow-y: auto;
 
-        &::-webkit-scrollbar {
-            width: 6px;
-            height: 6px;
-        }
-
-        &::-webkit-scrollbar-track {
-            background-color: $c-text-light;
-            border-radius: 2px;
-        }
-
-        &::-webkit-scrollbar-thumb {
-            background-color: $c-bg;
-            border-radius: 2px;
-        }
-
         @include max(mobile) {
             padding: 30px 10px 10px;
         }

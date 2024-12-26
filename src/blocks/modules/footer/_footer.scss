@@ -56,7 +56,14 @@
         }
 
         @include max(mobile) {
+            width: 100%;
             margin-top: 20px;
+            margin-right: 0;
+
+            .btn {
+                width: 100%;
+                min-height: 160px;
+            }
         }
     }
 
@@ -100,10 +107,11 @@
         max-width: 460px;
 
         @include max(mobile) {
-            padding: 0;
-            background-color: transparent;
-            backdrop-filter: none;
-            max-width: 100%;
+            margin-left: -5px;
+            margin-right: -5px;
+            padding: 12px;
+            max-width: calc(100% + 10px);
+            border-radius: 4px;
         }
     }
 

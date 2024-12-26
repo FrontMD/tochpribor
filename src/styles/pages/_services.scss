@@ -1,0 +1,107 @@
+.services {
+    &__container {
+        display: flex;
+        align-items: stretch;
+        gap: 16px;
+        padding: 0 40px;
+
+        @include max(large) {
+            padding: 0 20px;
+        }
+
+        @include max(mobile) {
+            padding: 0;
+        }
+    }
+
+    .section__container {
+        border-radius: 4px;
+        padding: 24px;
+    }
+
+    &__sidebar {
+        position: sticky;
+        top: 96px;
+    }
+
+    &__left {
+        flex: 0 0 calc(100% - 16px);
+        max-width: 696px;
+    }
+
+    &__right {
+        flex: 1 1 auto;
+
+        height: 2000px;
+    }
+
+    &__header {
+        display: flex;
+        align-items: stretch;
+        justify-content: space-between;
+    }
+
+    &__tabs {
+        margin-top: 87px;
+        display: flex;
+        align-items: stretch;
+        flex-direction: column;
+        gap: 8px;
+        max-height: calc(100vh - 330px);
+        overflow-y: auto;
+        margin-right: -5px;
+        padding-right: 5px;
+    }
+
+    &__tab {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 22px;
+        padding: 8px 12px;
+        border: 1px solid $c-bg;
+        border-radius: 4px;
+        cursor: pointer;
+        color: $c-text;
+
+        &.active {
+            border-color: $c-accent;
+            color: $c-accent;
+
+            .count {
+                color: $c-accent-light3;
+            }
+        }
+
+        &:hover {
+            border-color: $c-accent-hover;
+            color: $c-accent-hover;
+
+            .count {
+                color: $c-accent-light3;
+            }
+        }
+
+        .name {
+            flex: 0 0 calc(100% - 22px - 16px);
+            line-height: 1em;
+            letter-spacing: -0.02em;
+        }
+
+        svg {
+            width: 16px;
+            height: 16px;
+            flex: 0 0 16px;
+        }
+
+        .count {
+            line-height: 1em;
+            letter-spacing: -0.02em;
+            color: $c-border;
+            transition: color $tr-time linear;
+        }
+    }
+
+
+}
