@@ -9,6 +9,16 @@
         left: 12px;
         bottom: 12px;
         z-index: 3;
+
+        @include max(mobile) {
+            left: 8px;
+            bottom: 8px;
+
+            .slider-control {
+                width: 32px;
+                height: 32px;
+            }
+        }
     }
 
     .swiper-wrapper {
@@ -49,6 +59,13 @@
         padding-top: 14px;
         z-index: 3;
 
+        @include max(mobile) {
+            top: 8px;
+            left: 8px;
+            width: calc(100% - 16px);
+            padding-top: 10px;
+        }
+
         .swiper-pagination-progressbar {
             background-color: rgba(255, 255, 255, 0.3);
         }
@@ -63,6 +80,10 @@
         line-height: 1em;
         letter-spacing: -0.02em;
         color: rgba(255, 255, 255, 0.45);
+
+        @include max(mobile) {
+            font-size: 16px;
+        }
     }
 
     &__current {

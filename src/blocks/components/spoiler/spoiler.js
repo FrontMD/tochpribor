@@ -36,6 +36,14 @@ function spoilers() {
 		const content = $(spoiler).find('[data-js="spoilerContent"]');
 		spoiler.classList.add("active");
 		$(content).slideDown(400);
+
+		/*setTimeout(() => {
+			$([document.documentElement, document.body]).animate({
+				scrollTop: $(spoiler).offset().top - 160
+			}, 1000);
+
+			console.log(window.scrollX)
+		}, 400)*/
 	};
 
 	function closeSpoiler(spoiler) {

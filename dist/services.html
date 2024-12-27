@@ -22,7 +22,7 @@
     <link rel="apple-touch-icon" sizes="152x152" href="img/favicons/apple-touch-icon-152x152.png">
     <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon-180x180.png">
     <link rel="apple-touch-icon" sizes="1024x1024" href="img/favicons/apple-touch-icon-1024x1024.png">
-    <link rel="stylesheet" href="styles/main.min.css">
+    <link rel="stylesheet" href="styles/main.css">
     <!-- лучше добавлять только на те страницы где есть блок с картой-->
     <script src="https://api-maps.yandex.ru/2.1/?apikey=ec8353bc-e4c0-44ee-8f5b-822d005a189e&amp;lang=ru_RU"></script>
   </head>
@@ -220,6 +220,7 @@
                             <h2>Токарные станки с наклонной станиной с ЧПУ</h2>
                             <div class="services__textbg">
                               <h3>IRONMAC ITX-408 HCNC</h3>
+                              <p>Плазмогазорез с портальным столом ЧПУ:</p>
                               <ul> 
                                 <li>Макс. диаметр вращения, мм 400,</li>
                                 <li>Макс. диаметр точения, мм 340,</li>
@@ -265,10 +266,10 @@
                             </div><a class="download-btn download-btn--textblock" href="javascript:void(0)"><span class="download-btn__img"><img src="img/docs-type/doc.svg"></span><span class="download-btn__text">Полный перечень услуги</span><span class="download-btn__size">3,5 Мб</span><span class="download-btn__download">
                                     <svg>
                                       <use xlink:href="img/sprites/sprite.svg#download"></use>
-                                    </svg>Скачать</span></a><a class="download-btn download-btn--textblock" href="javascript:void(0)"><span class="download-btn__img"><img src="img/docs-type/xls.svg"></span><span class="download-btn__text">Прайс-лист</span><span class="download-btn__size">2,7 Мб</span><span class="download-btn__download">
+                                    </svg><span>Скачать</span></span></a><a class="download-btn download-btn--textblock" href="javascript:void(0)"><span class="download-btn__img"><img src="img/docs-type/xls.svg"></span><span class="download-btn__text">Прайс-лист</span><span class="download-btn__size">2,7 Мб</span><span class="download-btn__download">
                                     <svg>
                                       <use xlink:href="img/sprites/sprite.svg#download"></use>
-                                    </svg>Скачать</span></a>
+                                    </svg><span>Скачать</span></span></a>
                           </div>
                         </div>
                       </div>
@@ -282,7 +283,31 @@
                           </div>
                         </div>
                         <div class="spoiler__content" data-js="spoilerContent">
-                          <p>test 2</p>
+                          <div class="services__textblock">
+                                <div class="media-slider" data-js="mediaSlider">
+                                  <div class="swiper-wrapper">
+                                    <div class="swiper-slide"><a class="media-slider__slide" href="img/media-slider/slide_1.jpg" data-fancybox="servicesSlider2" data-thumb="img/media-slider/slide_1.jpg"><img src="img/media-slider/slide_1.jpg"></a></div>
+                                    <div class="swiper-slide"><a class="media-slider__slide" href="img/media-slider/slide_2.jpg" data-fancybox="servicesSlider2" data-thumb="img/media-slider/slide_2.jpg"><img src="img/media-slider/slide_2.jpg"></a></div>
+                                    <div class="swiper-slide"><a class="media-slider__slide" href="img/media-slider/slide_3.jpg" data-fancybox="servicesSlider2" data-thumb="img/media-slider/slide_3.jpg"><img src="img/media-slider/slide_3.jpg"></a></div>
+                                  </div>
+                                  <div class="media-slider__pagination">
+                                    <div data-js="sliderPagination"></div>
+                                    <div class="media-slider__fraction"><span class="media-slider__current" data-js="sliderCurrentFraction"></span><span class="media-slider__sepparator"> / </span><span class="media-slider__total" data-js="sliderTotalFraction"></span></div>
+                                  </div>
+                                  <div class="media-slider__controls slider-controls">
+                                    <button class="slider-control slider-control--prev" type="button" data-js="sliderPrev">
+                                      <svg>
+                                        <use xlink:href="img/sprites/sprite.svg#arrow_classic"></use>
+                                      </svg>
+                                    </button>
+                                    <button class="slider-control slider-control--next" type="button" data-js="sliderNext">
+                                      <svg>
+                                        <use xlink:href="img/sprites/sprite.svg#arrow_classic"></use>
+                                      </svg>
+                                    </button>
+                                  </div>
+                                </div>
+                          </div>
                         </div>
                       </div>
                       <div class="spoiler" data-js="spoiler">
@@ -295,7 +320,230 @@
                           </div>
                         </div>
                         <div class="spoiler__content" data-js="spoilerContent">
-                          <p>test 3</p>
+                          <div class="services__textblock">
+                            <div class="services__textbg">
+                              <h3>IRONMAC ITX-408 HCNC</h3>
+                              <p>Плазмогазорез с портальным столом ЧПУ:</p>
+                              <ul> 
+                                <li>Макс. диаметр вращения, мм 400,</li>
+                                <li>Макс. диаметр точения, мм 340,</li>
+                                <li>Макс. длина точения, мм 450,</li>
+                                <li>Макс. диаметр прутка, мм 52,</li>
+                                <li>Точность позиционирования, мм 0,007 / 0,007,</li>
+                                <li>Повторяемость, мм 0,003 / 0,003.</li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="spoiler" data-js="spoiler">
+                        <div class="spoiler__intro">
+                          <div class="spoiler__title title--32">Электро-эрозионная резка</div>
+                          <div class="spoiler__icon">
+                            <svg>
+                              <use xlink:href="img/sprites/sprite.svg#arrow_enter"></use>
+                            </svg>
+                          </div>
+                        </div>
+                        <div class="spoiler__content" data-js="spoilerContent">
+                          <div class="services__textblock"><a class="download-btn download-btn--textblock" href="javascript:void(0)"><span class="download-btn__img"><img src="img/docs-type/doc.svg"></span><span class="download-btn__text">Полный перечень услуги</span><span class="download-btn__size">3,5 Мб</span><span class="download-btn__download">
+                                    <svg>
+                                      <use xlink:href="img/sprites/sprite.svg#download"></use>
+                                    </svg><span>Скачать</span></span></a><a class="download-btn download-btn--textblock" href="javascript:void(0)"><span class="download-btn__img"><img src="img/docs-type/xls.svg"></span><span class="download-btn__text">Прайс-лист</span><span class="download-btn__size">2,7 Мб</span><span class="download-btn__download">
+                                    <svg>
+                                      <use xlink:href="img/sprites/sprite.svg#download"></use>
+                                    </svg><span>Скачать</span></span></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="spoiler" data-js="spoiler">
+                        <div class="spoiler__intro">
+                          <div class="spoiler__title title--32">Зубофрезерные работы</div>
+                          <div class="spoiler__icon">
+                            <svg>
+                              <use xlink:href="img/sprites/sprite.svg#arrow_enter"></use>
+                            </svg>
+                          </div>
+                        </div>
+                        <div class="spoiler__content" data-js="spoilerContent">
+                          <div class="services__textblock">
+                            <h2>Вертикально-обрабатывающие фрезерные центры</h2>
+                            <div class="services__textbg">
+                              <h3>IRONMAC ITX-408 HCNC</h3>
+                              <ul> 
+                                <li>Макс. диаметр вращения, мм 400,</li>
+                                <li>Макс. диаметр точения, мм 340,</li>
+                                <li>Макс. длина точения, мм 450,</li>
+                                <li>Макс. диаметр прутка, мм 52,</li>
+                                <li>Точность позиционирования, мм 0,007 / 0,007,</li>
+                                <li>Повторяемость, мм 0,003 / 0,003.</li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="spoiler" data-js="spoiler">
+                        <div class="spoiler__intro">
+                          <div class="spoiler__title title--32">Расточные работы</div>
+                          <div class="spoiler__icon">
+                            <svg>
+                              <use xlink:href="img/sprites/sprite.svg#arrow_enter"></use>
+                            </svg>
+                          </div>
+                        </div>
+                        <div class="spoiler__content" data-js="spoilerContent">
+                          <div class="services__textblock">
+                            <h2>Вертикально-обрабатывающие фрезерные центры</h2>
+                            <div class="services__textbg">
+                              <h3>IRONMAC ITX-408 HCNC</h3>
+                              <ul> 
+                                <li>Макс. диаметр вращения, мм 400,</li>
+                                <li>Макс. диаметр точения, мм 340,</li>
+                                <li>Макс. длина точения, мм 450,</li>
+                                <li>Макс. диаметр прутка, мм 52,</li>
+                                <li>Точность позиционирования, мм 0,007 / 0,007,</li>
+                                <li>Повторяемость, мм 0,003 / 0,003.</li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="spoiler" data-js="spoiler">
+                        <div class="spoiler__intro">
+                          <div class="spoiler__title title--32">Сверловка отверстий в металле</div>
+                          <div class="spoiler__icon">
+                            <svg>
+                              <use xlink:href="img/sprites/sprite.svg#arrow_enter"></use>
+                            </svg>
+                          </div>
+                        </div>
+                        <div class="spoiler__content" data-js="spoilerContent">
+                          <div class="services__textblock">
+                            <h2>Вертикально-обрабатывающие фрезерные центры</h2>
+                            <div class="services__textbg">
+                              <h3>IRONMAC ITX-408 HCNC</h3>
+                              <ul> 
+                                <li>Макс. диаметр вращения, мм 400,</li>
+                                <li>Макс. диаметр точения, мм 340,</li>
+                                <li>Макс. длина точения, мм 450,</li>
+                                <li>Макс. диаметр прутка, мм 52,</li>
+                                <li>Точность позиционирования, мм 0,007 / 0,007,</li>
+                                <li>Повторяемость, мм 0,003 / 0,003.</li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="spoiler" data-js="spoiler">
+                        <div class="spoiler__intro">
+                          <div class="spoiler__title title--32">Шлифовальные работы</div>
+                          <div class="spoiler__icon">
+                            <svg>
+                              <use xlink:href="img/sprites/sprite.svg#arrow_enter"></use>
+                            </svg>
+                          </div>
+                        </div>
+                        <div class="spoiler__content" data-js="spoilerContent">
+                          <div class="services__textblock">
+                            <h2>Вертикально-обрабатывающие фрезерные центры</h2>
+                            <div class="services__textbg">
+                              <h3>IRONMAC ITX-408 HCNC</h3>
+                              <p>Макс. диаметр вращения, мм 400, Макс. диаметр точения, мм 340, Макс. длина точения, мм 450, Макс. диаметр прутка, мм 52, Точность позиционирования, мм 0,007 / 0,007, Повторяемость, мм 0,003 / 0,003.</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="spoiler" data-js="spoiler">
+                        <div class="spoiler__intro">
+                          <div class="spoiler__title title--32">Прессовое оборудование</div>
+                          <div class="spoiler__icon">
+                            <svg>
+                              <use xlink:href="img/sprites/sprite.svg#arrow_enter"></use>
+                            </svg>
+                          </div>
+                        </div>
+                        <div class="spoiler__content" data-js="spoilerContent">
+                          <div class="services__textblock">
+                            <h2>Вертикально-обрабатывающие фрезерные центры</h2>
+                            <div class="services__textbg">
+                              <ul> 
+                                <li>Макс. диаметр вращения, мм 400,</li>
+                                <li>Макс. диаметр точения, мм 340,</li>
+                                <li>Макс. длина точения, мм 450,</li>
+                                <li>Макс. диаметр прутка, мм 52,</li>
+                                <li>Точность позиционирования, мм 0,007 / 0,007,</li>
+                                <li>Повторяемость, мм 0,003 / 0,003.</li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="spoiler" data-js="spoiler">
+                        <div class="spoiler__intro">
+                          <div class="spoiler__title title--32">Термическая обработка (отжиг, закалка)</div>
+                          <div class="spoiler__icon">
+                            <svg>
+                              <use xlink:href="img/sprites/sprite.svg#arrow_enter"></use>
+                            </svg>
+                          </div>
+                        </div>
+                        <div class="spoiler__content" data-js="spoilerContent">
+                          <div class="services__textblock">
+                            <h2>Вертикально-обрабатывающие фрезерные центры</h2>
+                            <div class="services__textbg">
+                              <ul> 
+                                <li>Макс. диаметр вращения, мм 400,</li>
+                                <li>Макс. диаметр точения, мм 340,</li>
+                                <li>Макс. длина точения, мм 450,</li>
+                                <li>Макс. диаметр прутка, мм 52,</li>
+                                <li>Точность позиционирования, мм 0,007 / 0,007,</li>
+                                <li>Повторяемость, мм 0,003 / 0,003.</li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="spoiler" data-js="spoiler">
+                        <div class="spoiler__intro">
+                          <div class="spoiler__title title--32">Сварочные работы</div>
+                          <div class="spoiler__icon">
+                            <svg>
+                              <use xlink:href="img/sprites/sprite.svg#arrow_enter"></use>
+                            </svg>
+                          </div>
+                        </div>
+                        <div class="spoiler__content" data-js="spoilerContent">
+                          <div class="services__textblock">
+                                <div class="media-slider" data-js="mediaSlider">
+                                  <div class="swiper-wrapper">
+                                    <div class="swiper-slide"><a class="media-slider__slide" href="img/media-slider/slide_1.jpg" data-fancybox="servicesSlider4" data-thumb="img/media-slider/slide_1.jpg"><img src="img/media-slider/slide_1.jpg"></a></div>
+                                    <div class="swiper-slide"><a class="media-slider__slide" href="img/media-slider/slide_2.jpg" data-fancybox="servicesSlider4" data-thumb="img/media-slider/slide_2.jpg"><img src="img/media-slider/slide_2.jpg"></a></div>
+                                    <div class="swiper-slide"><a class="media-slider__slide" href="img/media-slider/slide_3.jpg" data-fancybox="servicesSlider4" data-thumb="img/media-slider/slide_3.jpg"><img src="img/media-slider/slide_3.jpg"></a></div>
+                                  </div>
+                                  <div class="media-slider__pagination">
+                                    <div data-js="sliderPagination"></div>
+                                    <div class="media-slider__fraction"><span class="media-slider__current" data-js="sliderCurrentFraction"></span><span class="media-slider__sepparator"> / </span><span class="media-slider__total" data-js="sliderTotalFraction"></span></div>
+                                  </div>
+                                  <div class="media-slider__controls slider-controls">
+                                    <button class="slider-control slider-control--prev" type="button" data-js="sliderPrev">
+                                      <svg>
+                                        <use xlink:href="img/sprites/sprite.svg#arrow_classic"></use>
+                                      </svg>
+                                    </button>
+                                    <button class="slider-control slider-control--next" type="button" data-js="sliderNext">
+                                      <svg>
+                                        <use xlink:href="img/sprites/sprite.svg#arrow_classic"></use>
+                                      </svg>
+                                    </button>
+                                  </div>
+                                </div><a class="download-btn download-btn--textblock" href="javascript:void(0)"><span class="download-btn__img"><img src="img/docs-type/doc.svg"></span><span class="download-btn__text">Полный перечень услуги</span><span class="download-btn__size">3,5 Мб</span><span class="download-btn__download">
+                                    <svg>
+                                      <use xlink:href="img/sprites/sprite.svg#download"></use>
+                                    </svg><span>Скачать</span></span></a><a class="download-btn download-btn--textblock" href="javascript:void(0)"><span class="download-btn__img"><img src="img/docs-type/xls.svg"></span><span class="download-btn__text">Прайс-лист</span><span class="download-btn__size">2,7 Мб</span><span class="download-btn__download">
+                                    <svg>
+                                      <use xlink:href="img/sprites/sprite.svg#download"></use>
+                                    </svg><span>Скачать</span></span></a>
+                          </div>
                         </div>
                       </div>
                 </div><a class="btn  btn--transparent-red btn--full" href="javascript:void(0)"><span class="btn__text">Смотреть еще</span></a>
@@ -509,6 +757,6 @@
             </div>
       </div>
     </noindex>
-    <script src="js/main.min.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>

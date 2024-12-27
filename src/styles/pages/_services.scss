@@ -9,6 +9,10 @@
             padding: 0 20px;
         }
 
+        @include max(tablet) {
+            flex-direction: column;
+        }
+
         @include max(mobile) {
             padding: 0;
         }
@@ -22,22 +26,63 @@
     &__sidebar {
         position: sticky;
         top: 96px;
+
+        @include max(tablet) {
+            position: relative;
+            top: 0;
+        }
     }
 
     &__left {
         flex: 0 0 calc(100% - 16px);
         max-width: 696px;
+
+        @include max(laptop) {
+            max-width: 480px;
+        }
+
+        @include max(tablet) {
+            flex-basis: auto;
+            max-width: 100%;
+        }
     }
 
     &__right {
         flex: 1 1 auto;
         max-width: calc(100% - 696px - 16px);
+
+        @include max(laptop) {
+            max-width: calc(100% - 480px - 16px);
+        }
+
+        @include max(tablet) {
+            flex-basis: auto;
+            max-width: 100%;
+        }
+
     }
 
     &__header {
         display: flex;
         align-items: stretch;
         justify-content: space-between;
+
+        @include max(laptop) {
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        @include max(tablet) {
+            flex-direction: row;
+        }
+
+        @include max(xs) {
+            flex-direction: column;
+
+            .btn {
+                width: 100%;
+            }
+        }
     }
 
     &__tabs {
@@ -50,6 +95,20 @@
         overflow-y: auto;
         margin-right: -5px;
         padding-right: 5px;
+
+        @include max(laptop) {
+            margin-top: 32px;
+        }
+
+        @include max(tablet) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            max-height: none;
+        }
+
+        @include max(mobile) {
+            display: flex;
+        }
     }
 
     &__tab {
@@ -63,6 +122,10 @@
         border-radius: 4px;
         cursor: pointer;
         color: $c-text;
+
+        @include max(xs) {
+            gap: 16px;
+        }
 
         &.active {
             border-color: $c-accent;
@@ -108,8 +171,13 @@
     }
 
     .services__textblock {
-
         color: $c-text;
+        font-size: 18px;
+        line-height: 1.4em;
+
+        @include max(mobile) {
+            font-size: 16px;
+        }
 
         *:first-child {
             margin-top: 0;
@@ -123,14 +191,75 @@
             font-size: 26px;
             margin-top: 24px;
             margin-bottom: 24px;
+
+            @include max(laptop) {
+                font-size: 24px;
+            }
+
+            @include max(mobile) {
+                font-size: 22px;
+                margin-top: 16px;
+                margin-bottom: 16px;
+            }
+
+            @include max(xs) {
+                font-size: 20px;
+            }
         }
 
         h3 {
+            font-size: 20px;
+            line-height: 1.1em;
+            letter-spacing: -0.01em;
+
+            @include max(mobile) {
+                font-size: 18px;
+            }
+        }
+
+        h3,
+        p,
+        ul,
+        ol {
             margin-top: 16px;
             margin-bottom: 16px;
+
+            @include max(mobile) {
+                margin-top: 12px;
+                margin-bottom: 12px;
+            }
+        }
+
+        ul li {
+            position: relative;
+            padding-left: 1.5em;
+
+            &:before {
+                content: '';
+                position: absolute;
+                left: 0.75em;
+                top: 0.7em;
+                transform: translate(-50%, -50%);
+                width: 6px;
+                height: 6px;
+                background-color: $c-text-light;
+                border-radius: 100%;
+            }
         }
 
         .services__textbg {
+            margin-top: 24px;
+            margin-bottom: 24px;
+            padding: 12px;
+            background-color: $c-input-bg;
+            color: $c-text-light;
+            border-radius: 2px;
+
+            @include max(mobile) {
+                padding: 8px;
+                margin-top: 16px;
+                margin-bottom: 16px;
+            }
 
             *:first-child {
                 margin-top: 0;
@@ -139,12 +268,6 @@
             *:last-child {
                 margin-bottom: 0;
             }
-
-            margin-top: 24px;
-            margin-bottom: 24px;
-            padding: 12px;
-            background-color: $c-input-bg;
-            color: $c-text-light;
 
             h2,
             h3 {

@@ -724,13 +724,11 @@ body {
 			@include max(laptop) {
 				max-width: 840px;
 				max-height: 560px;
-				border-radius: 15px;
 			}
 
 			@include max(mobile) {
 				max-width: 335px;
 				max-height: none;
-				border-radius: 4px;
 			}
 		}
 
@@ -846,17 +844,16 @@ body {
 			transition: all $tr-time linear;
 			cursor: pointer;
 
+			@include max(mobile) {
+				width: 24px;
+				height: 24px;
+			}
+
 			svg {
 				width: 8.54px;
 				height: 9.61px;
 				box-shadow: none;
 				filter: none;
-			}
-
-			&--prev {
-				svg {
-					transform: rotate(-180deg);
-				}
 			}
 
 			&:hover {
@@ -868,11 +865,18 @@ body {
 		}
 
 		.f-button.is-prev {
-			transform: rotate(-180deg);
 			left: 40px;
+
+			svg {
+				transform: rotate(-180deg);
+			}
 
 			@include max(laptop) {
 				left: 30px;
+			}
+
+			@include max(mobile) {
+				left: 5px;
 			}
 		}
 
@@ -881,6 +885,10 @@ body {
 
 			@include max(laptop) {
 				right: 30px;
+			}
+
+			@include max(mobile) {
+				right: 5px;
 			}
 
 		}
