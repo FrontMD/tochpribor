@@ -4,6 +4,7 @@
 @@include("../../blocks/modules/main-burger/main-burger.js")
 @@include("../../blocks/modules/comments/comments.js")
 @@include("../../blocks/modules/tabs-block/tabs-block.js")
+@@include("../../blocks/modules/media-slider/media-slider.js")
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -21,4 +22,6 @@ document.addEventListener('DOMContentLoaded', () => {
     commentsHeight()
     // управляет вкладками
     tabsBlockInit()
+    // Слайдер с галереей
+    mediaSliderInit()
 })

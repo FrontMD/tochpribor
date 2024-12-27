@@ -1,0 +1,43 @@
+-
+    const defaultMediaSliderProps = {
+        classes: '',
+        fancyGroup: 'mediaSlider',
+        slides: [
+            'img/media-slider/slide_1.jpg',
+            'img/media-slider/slide_2.jpg',
+            'img/media-slider/slide_3.jpg',
+        ],
+    }
+
+mixin media-slider(props= defaultMediaSliderProps)
+    -
+        const checkProps = {
+            classes: props.classes ? props.classes : defaultMediaSliderProps.classes,
+            slides: props.slides ? props.slides : defaultMediaSliderProps.slides,
+            fancyGroup: props.fancyGroup ? props.fancyGroup : defaultMediaSliderProps.fancyGroup
+        }
+
+    .media-slider(class= checkProps.classes data-js="mediaSlider")&attributes(attributes)
+        .swiper-wrapper
+            - let count = 0 
+            - while (count < checkProps.slides.length)
+                .swiper-slide
+                    a.media-slider__slide(href= checkProps.slides[count] data-fancybox= checkProps.fancyGroup data-thumb= checkProps.slides[count])
+                        img(src= checkProps.slides[count])
+
+                - count += 1;
+        .media-slider__pagination
+            div(data-js='sliderPagination')
+            .media-slider__fraction
+                span.media-slider__current(data-js="sliderCurrentFraction")
+                span.media-slider__sepparator!= ' / '
+                span.media-slider__total(data-js="sliderTotalFraction")
+        .media-slider__controls.slider-controls
+            button.slider-control.slider-control--prev(type="button" data-js='sliderPrev')
+                svg
+                    use(xlink:href=`img/sprites/sprite.svg#arrow_classic`)
+            button.slider-control.slider-control--next(type="button" data-js='sliderNext')
+                svg
+                    use(xlink:href=`img/sprites/sprite.svg#arrow_classic`)
+
+

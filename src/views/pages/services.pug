@@ -65,15 +65,86 @@ block content
 								span.count.title--26 2
 
 				section.section.section--full.services__right
-					.section__container.services__accordion(data-js="accordion")
-						+spoiler({
-							title: 'Ленточнопильная резка металла'
-						})
-							p test 1
+					.section__container
+						.services__accordion(data-js="accordion")
+							+spoiler({
+								title: 'Ленточнопильная резка металла'
+							})
+								.services__textblock
+									+media-slider({
+										fancyGroup: 'servicesSlider1'
+									})
 
-						+spoiler({
-							title: 'Плазмо-газовая резка металла'
+									h2 Токарные станки с наклонной станиной с ЧПУ
+
+									.services__textbg
+										h3 IRONMAC ITX-408 HCNC
+										ul 
+											li Макс. диаметр вращения, мм 400,
+											li Макс. диаметр точения, мм 340,
+											li Макс. длина точения, мм 450,
+											li Макс. диаметр прутка, мм 52,
+											li Точность позиционирования, мм 0,007 / 0,007,
+											li Повторяемость, мм 0,003 / 0,003.
+										h3 IRONMAC ITX-510 HCNC
+										ul
+											li Макс. диаметр вращения, мм 500,
+											li Макс. диаметр точения, мм 360,
+											li Макс. длина точения, мм 650,
+											li Макс. диаметр прутка, мм 74,
+											li Точность позиционирования, мм 0,007 / 0,007,
+											li Повторяемость, мм 0,003 / 0,003.
+
+									h2 Вертикально-обрабатывающие фрезерные центры
+
+									.services__textbg
+										h3 Фрезерный центр с ЧПУ KMT 1000
+										ul
+											li Система ЧПУ Fanuc Размер стола, мм 1100 x 520,
+											li T-образные пазы, мм 5 x 18 x 100,
+											li Макс. нагрузка на стол, кг 750,
+											li Перемещение по оси X, мм 1000,
+											li Перемещение по оси Y, мм 520,
+											li Перемещение по оси Z, мм 560,
+											li Точность позиционирования по осям X / Y / Z, мм ± 0,004,
+											li Повторяемость X / Y / Z, мм ± 0,0025.
+										h3 Фрезерный центр с ЧПУ KMT 650
+										ul
+											li Система ЧПУ Fanuc Размер стола, мм 750x420,
+											li T-образные пазы, мм 5 x 14 x 125,
+											li Макс. нагрузка на стол, кг 350,
+											li Перемещение по оси X, мм 650,
+											li Перемещение по оси Y, мм 420,
+											li Перемещение по оси Z, мм 500,
+											li Точность позиционирования по осям X / Y / Z, мм ± 0,004,
+											li Повторяемость X / Y / Z, мм ± 0,0025.
+									+download-btn({
+										classes: 'download-btn--textblock',
+										img: 'img/docs-type/doc.svg',
+										name: 'Полный перечень услуги',
+										size: '3,5 Мб'
+									})
+									+download-btn({
+										classes: 'download-btn--textblock',
+										img: 'img/docs-type/xls.svg',
+										name: 'Прайс-лист',
+										size: '2,7 Мб'
+									})
+
+							+spoiler({
+								title: 'Плазмо-газовая резка металла'
+							})
+								p test 2
+
+							+spoiler({
+								title: 'Токарные и фрезерные работы ЧПУ'
+							})
+								p test 3
+
+						+btn({
+							class: 'services__more',
+							name: 'Смотреть еще',
+							cMode: 'transparent-red'
 						})
-							p test 2
 
 

@@ -650,6 +650,7 @@ body {
 	justify-content: center;
 	width: 46px;
 	height: 46px;
+	background-color: $c-white;
 	border: 1px solid $c-bg;
 	border-radius: 2px;
 	color: $c-text-dark;
@@ -657,8 +658,8 @@ body {
 	cursor: pointer;
 
 	svg {
-		width: 16px;
-		height: 16px;
+		width: 8.54px;
+		height: 9.61px;
 	}
 
 	&--prev {
@@ -693,6 +694,195 @@ body {
 		&::-webkit-scrollbar {
 			width: 3px;
 			height: 3px;
+		}
+	}
+}
+
+.my-fancybox {
+	.fancybox__viewport {
+		.fancybox__slide {
+			padding-left: 40px;
+			padding-right: 40px;
+
+			@include max(laptop) {
+				padding-left: 20px;
+				padding-right: 20px;
+			}
+
+			@include max(mobile) {
+				padding-left: 15px;
+				padding-right: 15px;
+			}
+		}
+
+		.fancybox__content {
+			max-width: 1200px;
+			max-height: 800px;
+			border-radius: 4px;
+			overflow: hidden;
+
+			@include max(laptop) {
+				max-width: 840px;
+				max-height: 560px;
+				border-radius: 15px;
+			}
+
+			@include max(mobile) {
+				max-width: 335px;
+				max-height: none;
+				border-radius: 4px;
+			}
+		}
+
+	}
+
+	.f-thumbs {
+		@include max(mobile) {
+			padding: 0 20px 8px;
+		}
+
+		.f-thumbs__slide {
+			width: 100px;
+			height: 67px;
+			margin: 0 10px 0 0;
+
+			@include max(laptop) {
+				width: 100px;
+				height: 67px;
+				margin: 0 10px 0 0;
+			}
+
+			@include max(mobile) {
+				width: 80px;
+				height: 54px;
+				margin: 0 5px 0 0;
+			}
+
+			&__button {
+				width: 100%;
+				opacity: 1;
+
+				&:after {
+					content: "";
+					position: absolute;
+					top: 0;
+					left: 0;
+					right: 0;
+					height: auto;
+					bottom: 0;
+					border: 2px solid #585A60;
+					border-radius: 2px;
+					animation: f-fadeIn 0.2s ease-out;
+					z-index: 10;
+				}
+			}
+
+			&__img {
+				border-radius: 2px;
+
+			}
+		}
+
+		.f-thumbs__slide.is-nav-selected {
+			.f-thumbs__slide__button {
+				&:after {
+					border: 2px solid $c-accent-hover;
+					border-radius: 2px;
+				}
+			}
+		}
+	}
+
+	.fancybox__toolbar {
+		.f-button[data-fancybox-close] {
+			border-radius: 2px;
+			margin-top: 40px;
+			margin-right: 40px;
+			width: 46px;
+			height: 46px;
+
+			&:hover {
+				background-color: $c-accent-hover;
+			}
+
+			@include max(laptop) {
+				margin-top: 30px;
+				margin-right: 30px;
+				width: 46px;
+				height: 46px;
+			}
+
+			@include max(mobile) {
+				margin-top: 20px;
+				margin-right: 20px;
+				width: 32px;
+				height: 32px;
+			}
+
+			svg {
+				width: 24px;
+				height: 24px;
+				color: white;
+
+				@include max(mobile) {
+					width: 16px;
+					height: 16px;
+				}
+			}
+		}
+	}
+
+	.fancybox__nav {
+		.f-button {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 46px;
+			height: 46px;
+			background-color: $c-white;
+			border: 1px solid $c-bg;
+			border-radius: 2px;
+			color: $c-text-dark;
+			transition: all $tr-time linear;
+			cursor: pointer;
+
+			svg {
+				width: 8.54px;
+				height: 9.61px;
+				box-shadow: none;
+				filter: none;
+			}
+
+			&--prev {
+				svg {
+					transform: rotate(-180deg);
+				}
+			}
+
+			&:hover {
+				border-color: $c-accent-hover;
+				color: $c-white;
+				background-color: $c-accent-hover;
+			}
+
+		}
+
+		.f-button.is-prev {
+			transform: rotate(-180deg);
+			left: 40px;
+
+			@include max(laptop) {
+				left: 30px;
+			}
+		}
+
+		.f-button.is-next {
+			right: 40px;
+
+			@include max(laptop) {
+				right: 30px;
+			}
+
 		}
 	}
 }

@@ -4,6 +4,7 @@
 @@include("../../blocks/components/video/video.js")
 @@include("../../blocks/components/spoiler/spoiler.js")
 
+
 document.addEventListener('DOMContentLoaded', () => {
     // управляет кнопками в полях форм
     selects()

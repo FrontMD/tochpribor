@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     newsSmiSliderInit()
     contactsController()
     productSafetyController()
+    fancyboxInit()
 })
 
 // Блокировка скролла при открытии модалок
@@ -181,4 +182,34 @@ function productSafetyController() {
         },
     })
 
+}
+
+//Инициализация фансибокса
+function fancyboxInit() {
+    Fancybox.bind("[data-fancybox]", {
+        placeFocusBack: false,
+        mainClass: 'my-fancybox',
+        idle: false,
+        Carousel: {
+            transition: "crossfade",
+            Navigation: {
+                prevTpl: '<svg><use xlink:href=img/sprites/sprite.svg#arrow_classic></use></svg>',
+                nextTpl: '<svg><use xlink:href=img/sprites/sprite.svg#arrow_classic></use></svg>',
+              },
+        },
+        Thumbs: {
+            type: "classic",
+        },
+        Toolbar: {
+            enabled: true,
+            display: {
+                left: [],
+                middle: [],
+                right: [
+                  "close",
+                ],
+            },
+        }
+
+    });
 }

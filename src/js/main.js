@@ -4,10 +4,11 @@
 @@include("./libs/swiper-bundle.min.js")
 @@include("./libs/select2.full.min.js")
 @@include("./libs/hystmodal.min.js")
+@@include("./libs/fancybox.umd.min.js")
+
 //если желаете подключить библиотеку - раскомментируйте и добавьте @@
 // include("./libs/nouislider.min.js")
 // include("./libs/wNumb.min.js")
-// include("./libs/fancybox.umd.min.js")
 // include("./libs/autosize.min.js")
 // include("./libs/inputmask.min.js")
 // include("./libs/debounce.js")
