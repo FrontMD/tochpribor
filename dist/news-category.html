@@ -158,16 +158,199 @@
                     <h1>Мы в СМИ
                     </h1>
                   </div>
+              <form class="c-news-intro__search">
+                    <div class="field  field--search   " data-js="formField">
+                      <button class="field__search" type="submit">
+                        <svg> 
+                          <use xlink:href="img/sprites/sprite.svg#search"></use>
+                        </svg>
+                      </button>
+                      <label>
+                        <input class="field__input" type="text" placeholder="Поиск по разделу"><span class="field__error" data-js="fieldError"></span>
+                      </label>
+                    </div>
+              </form>
             </div>
             <div class="c-news-intro__filter">
-              <form class="filter filter--news"></form>
+                  <form class="form-filter" action="#" data-js="formFilter">
+                    <div class="form-filter__side">
+                      <div class="form-filter__tabs">
+                        <div class="filter-tab">
+                          <label class="filter-tab__label">
+                            <input type="checkbox" name="category" value="vk">
+                            <div class="filter-tab__inner"><span class="filter-tab__text">VK</span><span class="filter-tab__reset">
+                                <svg>
+                                  <use xlink:href="img/sprites/sprite.svg#close"></use>
+                                </svg></span></div>
+                          </label>
+                        </div>
+                        <div class="filter-tab">
+                          <label class="filter-tab__label">
+                            <input type="checkbox" name="category" value="видео">
+                            <div class="filter-tab__inner"><span class="filter-tab__text">Видео</span><span class="filter-tab__reset">
+                                <svg>
+                                  <use xlink:href="img/sprites/sprite.svg#close"></use>
+                                </svg></span></div>
+                          </label>
+                        </div>
+                        <div class="filter-tab">
+                          <label class="filter-tab__label">
+                            <input type="checkbox" name="category" value="РБК">
+                            <div class="filter-tab__inner"><span class="filter-tab__text">РБК</span><span class="filter-tab__reset">
+                                <svg>
+                                  <use xlink:href="img/sprites/sprite.svg#close"></use>
+                                </svg></span></div>
+                          </label>
+                        </div>
+                        <div class="filter-tab">
+                          <label class="filter-tab__label">
+                            <input type="checkbox" name="category" value="первый канал">
+                            <div class="filter-tab__inner"><span class="filter-tab__text">Первый канал</span><span class="filter-tab__reset">
+                                <svg>
+                                  <use xlink:href="img/sprites/sprite.svg#close"></use>
+                                </svg></span></div>
+                          </label>
+                        </div>
+                        <div class="filter-tab">
+                          <label class="filter-tab__label">
+                            <input type="checkbox" name="category" value="телевидение">
+                            <div class="filter-tab__inner"><span class="filter-tab__text">Телевидение</span><span class="filter-tab__reset">
+                                <svg>
+                                  <use xlink:href="img/sprites/sprite.svg#close"></use>
+                                </svg></span></div>
+                          </label>
+                        </div>
+                        <div class="filter-tab">
+                          <label class="filter-tab__label">
+                            <input type="checkbox" name="category" value="радио">
+                            <div class="filter-tab__inner"><span class="filter-tab__text">Радио</span><span class="filter-tab__reset">
+                                <svg>
+                                  <use xlink:href="img/sprites/sprite.svg#close"></use>
+                                </svg></span></div>
+                          </label>
+                        </div>
+                        <div class="filter-tab filter-tab--select" data-js="filterTabSelect">
+                          <div class="filter-tab__inner"><span class="filter-tab__text">Все фильтры</span><span class="filter-tab__icon">
+                              <svg>
+                                <use xlink:href="img/sprites/sprite.svg#filter"></use>
+                              </svg></span><span class="filter-tab__reset">
+                              <svg>
+                                <use xlink:href="img/sprites/sprite.svg#close"></use>
+                              </svg></span></div>
+                          <div class="filter-tab__list">
+                            <div class="filter-tab__checkboxes scrollbar">
+                              <div class="filter-checkbox">
+                                <label class="filter-checkbox__inner">
+                                  <input type="checkbox" name="category" value="РБК"><span class="filter-checkbox__text">РБК</span>
+                                </label>
+                              </div>
+                              <div class="filter-checkbox">
+                                <label class="filter-checkbox__inner">
+                                  <input type="checkbox" name="category" value="Первый канал"><span class="filter-checkbox__text">Первый канал</span>
+                                </label>
+                              </div>
+                              <div class="filter-checkbox">
+                                <label class="filter-checkbox__inner">
+                                  <input type="checkbox" name="category" value="радио"><span class="filter-checkbox__text">Радио</span>
+                                </label>
+                              </div>
+                              <div class="filter-checkbox">
+                                <label class="filter-checkbox__inner">
+                                  <input type="checkbox" name="category" value="vk"><span class="filter-checkbox__text">VK</span>
+                                </label>
+                              </div>
+                              <div class="filter-checkbox">
+                                <label class="filter-checkbox__inner">
+                                  <input type="checkbox" name="category" value="интервью"><span class="filter-checkbox__text">Интервью</span>
+                                </label>
+                              </div>
+                              <div class="filter-checkbox">
+                                <label class="filter-checkbox__inner">
+                                  <input type="checkbox" name="category" value="подкаст"><span class="filter-checkbox__text">Подкаст</span>
+                                </label>
+                              </div>
+                              <div class="filter-checkbox">
+                                <label class="filter-checkbox__inner">
+                                  <input type="checkbox" name="category" value="vk"><span class="filter-checkbox__text">VK</span>
+                                </label>
+                              </div>
+                              <div class="filter-checkbox">
+                                <label class="filter-checkbox__inner">
+                                  <input type="checkbox" name="category" value="интервью"><span class="filter-checkbox__text">Интервью</span>
+                                </label>
+                              </div>
+                              <div class="filter-checkbox">
+                                <label class="filter-checkbox__inner">
+                                  <input type="checkbox" name="category" value="подкаст"><span class="filter-checkbox__text">Подкаст</span>
+                                </label>
+                              </div>
+                              <div class="filter-checkbox">
+                                <label class="filter-checkbox__inner">
+                                  <input type="checkbox" name="category" value="РБК"><span class="filter-checkbox__text">РБК</span>
+                                </label>
+                              </div>
+                              <div class="filter-checkbox">
+                                <label class="filter-checkbox__inner">
+                                  <input type="checkbox" name="category" value="Первый канал"><span class="filter-checkbox__text">Первый канал</span>
+                                </label>
+                              </div>
+                              <div class="filter-checkbox">
+                                <label class="filter-checkbox__inner">
+                                  <input type="checkbox" name="category" value="радио"><span class="filter-checkbox__text">Радио</span>
+                                </label>
+                              </div>
+                              <div class="filter-checkbox">
+                                <label class="filter-checkbox__inner">
+                                  <input type="checkbox" name="category" value="vk"><span class="filter-checkbox__text">VK</span>
+                                </label>
+                              </div>
+                              <div class="filter-checkbox">
+                                <label class="filter-checkbox__inner">
+                                  <input type="checkbox" name="category" value="интервью"><span class="filter-checkbox__text">Интервью</span>
+                                </label>
+                              </div>
+                              <div class="filter-checkbox">
+                                <label class="filter-checkbox__inner">
+                                  <input type="checkbox" name="category" value="подкаст"><span class="filter-checkbox__text">Подкаст</span>
+                                </label>
+                              </div>
+                            </div>
+                            <div class="filter-tab__btns"><a class="btn  btn--red btn--small" href="javascript:void(0)"><span class="btn__text">Применить</span></a><a class="btn  btn--grey btn--small" href="javascript:void(0)"><span class="btn__text">Сбросить</span></a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-filter__side">
+                      <div class="form-filter__select filter-select" data-js="filterSelect">
+                        <div class="filter-select__header">
+                          <input type="text" data-js="filterSelectInput" value="Сначала новое">
+                        </div>
+                        <div class="filter-select__content">
+                          <div class="filter-select__option" data-js="filterSelectOption" data-value="Сначала новое">Сначала новое</div>
+                          <div class="filter-select__option" data-js="filterSelectOption" data-value="Сначала старое">Сначала старое</div>
+                        </div>
+                      </div>
+                      <div class="form-filter__select filter-select" data-js="filterSelect">
+                        <div class="filter-select__header">
+                          <input type="text" data-js="filterSelectInput" value="За все время">
+                        </div>
+                        <div class="filter-select__content">
+                          <div class="filter-select__option" data-js="filterSelectOption" data-value="За все время">За все время</div>
+                          <div class="filter-select__option" data-js="filterSelectOption" data-value="За неделю">За неделю</div>
+                          <div class="filter-select__option" data-js="filterSelectOption" data-value="За месяц">За месяц</div>
+                          <div class="filter-select__option" data-js="filterSelectOption" data-date>Выбрать период</div>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
             </div>
           </div>
         </section>
         <section class="section c-news-cards">
           <div class="section__container">
             <div class="c-news-cards__content">
-                  <div class="news-card  news-card--classic">
+                  <div class="news-card c-news-cards__card news-card--classic">
                     <div class="news-card__media"><img class="lazyload" data-src="img/news/news_17.webp">
                     </div>
                     <div class="news-card__content"><a class="news-card__title" href="javascript:void(0)">Подписан договор на производство и поставку прибора ТМВ 1000</a>
@@ -176,7 +359,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="news-card  news-card--classic">
+                  <div class="news-card c-news-cards__card news-card--classic">
                     <div class="news-card__media"><img class="lazyload" data-src="img/news/news_18.webp">
                     </div>
                     <div class="news-card__content"><a class="news-card__title" href="javascript:void(0)">Подписан договор на производство и поставку  машины на базе BP DLC 0,2 кN</a>
@@ -185,8 +368,8 @@
                       </div>
                     </div>
                   </div>
-                  <div class="news-card  news-card--classic">
-                    <div class="news-card__media"><img class="lazyload" data-src="img/news/news_19.webp">
+                  <div class="news-card c-news-cards__card news-card--classic">
+                    <div class="news-card__media"><img class="lazyload" data-src="img/news/news_2.webp">
                     </div>
                     <div class="news-card__content"><a class="news-card__title" href="javascript:void(0)">Подписан договор на производство и поставку прибора ТРC 5009</a>
                       <div class="news-card__tags"><a class="news-card__category" href="javascript:void(0)">Мы в СМИ</a>
@@ -194,8 +377,8 @@
                       </div>
                     </div>
                   </div>
-                  <div class="news-card  news-card--classic">
-                    <div class="news-card__media"><img class="lazyload" data-src="img/news/news_20.webp">
+                  <div class="news-card c-news-cards__card news-card--classic">
+                    <div class="news-card__media"><img class="lazyload" data-src="img/news/news_19.webp">
                     </div>
                     <div class="news-card__content"><a class="news-card__title" href="javascript:void(0)">Подписан договор на производство и поставку универсальной машины</a>
                       <div class="news-card__tags"><a class="news-card__category" href="javascript:void(0)">Мы в СМИ</a>
@@ -203,8 +386,8 @@
                       </div>
                     </div>
                   </div>
-                  <div class="news-card  news-card--classic">
-                    <div class="news-card__media"><img class="lazyload" data-src="img/news/news_18.webp">
+                  <div class="news-card c-news-cards__card news-card--classic">
+                    <div class="news-card__media"><img class="lazyload" data-src="img/news/news_20.webp">
                     </div>
                     <div class="news-card__content"><a class="news-card__title" href="javascript:void(0)">Подписан договор на производство и поставку  машины на базе BP DLC 0,2 кN</a>
                       <div class="news-card__tags"><a class="news-card__category" href="javascript:void(0)">Мы в СМИ</a>
@@ -212,8 +395,8 @@
                       </div>
                     </div>
                   </div>
-                  <div class="news-card  news-card--classic">
-                    <div class="news-card__media"><img class="lazyload" data-src="img/news/news_20.webp">
+                  <div class="news-card c-news-cards__card news-card--classic">
+                    <div class="news-card__media"><img class="lazyload" data-src="img/news/news_17.webp">
                     </div>
                     <div class="news-card__content"><a class="news-card__title" href="javascript:void(0)">Подписан договор на производство и поставку универсальной машины</a>
                       <div class="news-card__tags"><a class="news-card__category" href="javascript:void(0)">Мы в СМИ</a>
@@ -221,8 +404,8 @@
                       </div>
                     </div>
                   </div>
-                  <div class="news-card  news-card--classic">
-                    <div class="news-card__media"><img class="lazyload" data-src="img/news/news_17.webp">
+                  <div class="news-card c-news-cards__card news-card--classic">
+                    <div class="news-card__media"><img class="lazyload" data-src="img/news/news_19.webp">
                     </div>
                     <div class="news-card__content"><a class="news-card__title" href="javascript:void(0)">Подписан договор на производство и поставку прибора ТМВ 1000</a>
                       <div class="news-card__tags"><a class="news-card__category" href="javascript:void(0)">Мы в СМИ</a>
@@ -230,8 +413,8 @@
                       </div>
                     </div>
                   </div>
-                  <div class="news-card  news-card--classic">
-                    <div class="news-card__media"><img class="lazyload" data-src="img/news/news_19.webp">
+                  <div class="news-card c-news-cards__card news-card--classic">
+                    <div class="news-card__media"><img class="lazyload" data-src="img/news/news_2.webp">
                     </div>
                     <div class="news-card__content"><a class="news-card__title" href="javascript:void(0)">Подписан договор на производство и поставку прибора ТРC 5009</a>
                       <div class="news-card__tags"><a class="news-card__category" href="javascript:void(0)">Мы в СМИ</a>
@@ -239,8 +422,17 @@
                       </div>
                     </div>
                   </div>
-                  <div class="news-card  news-card--classic">
+                  <div class="news-card c-news-cards__card news-card--classic">
                     <div class="news-card__media"><img class="lazyload" data-src="img/news/news_19.webp">
+                    </div>
+                    <div class="news-card__content"><a class="news-card__title" href="javascript:void(0)">Подписан договор на производство и поставку универсальной машины</a>
+                      <div class="news-card__tags"><a class="news-card__category" href="javascript:void(0)">Мы в СМИ</a>
+                        <div class="news-card__date">20.10.2024</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="news-card c-news-cards__card news-card--classic">
+                    <div class="news-card__media"><img class="lazyload" data-src="img/news/news_17.webp">
                     </div>
                     <div class="news-card__content"><a class="news-card__title" href="javascript:void(0)">Подписан договор на производство и поставку прибора ТРC 5009</a>
                       <div class="news-card__tags"><a class="news-card__category" href="javascript:void(0)">Мы в СМИ</a>
@@ -248,16 +440,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="news-card  news-card--classic">
-                    <div class="news-card__media"><img class="lazyload" data-src="img/news/news_20.webp">
-                    </div>
-                    <div class="news-card__content"><a class="news-card__title" href="javascript:void(0)">Подписан договор на производство и поставку универсальной машины</a>
-                      <div class="news-card__tags"><a class="news-card__category" href="javascript:void(0)">Мы в СМИ</a>
-                        <div class="news-card__date">20.10.2024</div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="news-card  news-card--classic">
+                  <div class="news-card c-news-cards__card news-card--classic">
                     <div class="news-card__media"><img class="lazyload" data-src="img/news/news_18.webp">
                     </div>
                     <div class="news-card__content"><a class="news-card__title" href="javascript:void(0)">Подписан договор на производство и поставку  машины на базе BP DLC 0,2 кN</a>
@@ -266,7 +449,16 @@
                       </div>
                     </div>
                   </div>
-                  <div class="news-card  news-card--classic">
+                  <div class="news-card c-news-cards__card news-card--classic">
+                    <div class="news-card__media"><img class="lazyload" data-src="img/news/news_20.webp">
+                    </div>
+                    <div class="news-card__content"><a class="news-card__title" href="javascript:void(0)">Подписан договор на производство и поставку прибора ТМВ 1000</a>
+                      <div class="news-card__tags"><a class="news-card__category" href="javascript:void(0)">Мы в СМИ</a>
+                        <div class="news-card__date">20.10.2024</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="news-card c-news-cards__card news-card--classic">
                     <div class="news-card__media"><img class="lazyload" data-src="img/news/news_17.webp">
                     </div>
                     <div class="news-card__content"><a class="news-card__title" href="javascript:void(0)">Подписан договор на производство и поставку прибора ТМВ 1000</a>
@@ -275,7 +467,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="news-card  news-card--classic">
+                  <div class="news-card c-news-cards__card news-card--classic">
                     <div class="news-card__media"><img class="lazyload" data-src="img/news/news_18.webp">
                     </div>
                     <div class="news-card__content"><a class="news-card__title" href="javascript:void(0)">Подписан договор на производство и поставку  машины на базе BP DLC 0,2 кN</a>
@@ -284,26 +476,17 @@
                       </div>
                     </div>
                   </div>
-                  <div class="news-card  news-card--classic">
-                    <div class="news-card__media"><img class="lazyload" data-src="img/news/news_17.webp">
-                    </div>
-                    <div class="news-card__content"><a class="news-card__title" href="javascript:void(0)">Подписан договор на производство и поставку прибора ТМВ 1000</a>
-                      <div class="news-card__tags"><a class="news-card__category" href="javascript:void(0)">Мы в СМИ</a>
-                        <div class="news-card__date">20.10.2024</div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="news-card  news-card--classic">
-                    <div class="news-card__media"><img class="lazyload" data-src="img/news/news_20.webp">
-                    </div>
-                    <div class="news-card__content"><a class="news-card__title" href="javascript:void(0)">Подписан договор на производство и поставку универсальной машины</a>
-                      <div class="news-card__tags"><a class="news-card__category" href="javascript:void(0)">Мы в СМИ</a>
-                        <div class="news-card__date">20.10.2024</div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="news-card  news-card--classic">
+                  <div class="news-card c-news-cards__card news-card--classic">
                     <div class="news-card__media"><img class="lazyload" data-src="img/news/news_19.webp">
+                    </div>
+                    <div class="news-card__content"><a class="news-card__title" href="javascript:void(0)">Подписан договор на производство и поставку универсальной машины</a>
+                      <div class="news-card__tags"><a class="news-card__category" href="javascript:void(0)">Мы в СМИ</a>
+                        <div class="news-card__date">20.10.2024</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="news-card c-news-cards__card news-card--classic">
+                    <div class="news-card__media"><img class="lazyload" data-src="img/news/news_2.webp">
                     </div>
                     <div class="news-card__content"><a class="news-card__title" href="javascript:void(0)">Подписан договор на производство и поставку прибора ТРC 5009</a>
                       <div class="news-card__tags"><a class="news-card__category" href="javascript:void(0)">Мы в СМИ</a>

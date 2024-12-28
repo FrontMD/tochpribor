@@ -33,14 +33,20 @@ block content
                         size: '67',
                         text: 'Мы в СМИ'
                     })
+                    form.c-news-intro__search
+                        +field({
+                            placeholder: 'Поиск по разделу',
+                            isSearch: true
+                        })
 
                 .c-news-intro__filter
-                    form.filter.filter--news
+                    +form-filter
 
         section.section.c-news-cards
             .section__container
                 .c-news-cards__content
                     +news-card({
+                        classes: 'c-news-cards__card',
                         vMode: 'classic',
                         media: 'img/news/news_17.webp',
                         title: 'Подписан договор на производство и поставку прибора ТМВ 1000',
@@ -48,6 +54,7 @@ block content
                         category: 'Мы в СМИ'
                     })
                     +news-card({
+                        classes: 'c-news-cards__card',
                         vMode: 'classic',
                         media: 'img/news/news_18.webp',
                         title: 'Подписан договор на производство и поставку  машины на базе BP DLC 0,2 кN',
@@ -55,62 +62,71 @@ block content
                         category: 'Мы в СМИ'
                     })
                     +news-card({
+                        classes: 'c-news-cards__card',
                         vMode: 'classic',
-                        media: 'img/news/news_19.webp',
+                        media: 'img/news/news_2.webp',
                         title: 'Подписан договор на производство и поставку прибора ТРC 5009',
                         date: '20.10.2024',
                         category: 'Мы в СМИ'
                     })
                     +news-card({
+                        classes: 'c-news-cards__card',
                         vMode: 'classic',
-                        media: 'img/news/news_20.webp',
+                        media: 'img/news/news_19.webp',
                         title: 'Подписан договор на производство и поставку универсальной машины',
                         date: '20.10.2024',
                         category: 'Мы в СМИ'
                     })
                     +news-card({
+                        classes: 'c-news-cards__card',
                         vMode: 'classic',
-                        media: 'img/news/news_18.webp',
+                        media: 'img/news/news_20.webp',
                         title: 'Подписан договор на производство и поставку  машины на базе BP DLC 0,2 кN',
                         date: '20.10.2024',
                         category: 'Мы в СМИ'
                     })
                     +news-card({
+                        classes: 'c-news-cards__card',
                         vMode: 'classic',
-                        media: 'img/news/news_20.webp',
+                        media: 'img/news/news_17.webp',
                         title: 'Подписан договор на производство и поставку универсальной машины',
                         date: '20.10.2024',
                         category: 'Мы в СМИ'
                     })
                     +news-card({
+                        classes: 'c-news-cards__card',
                         vMode: 'classic',
-                        media: 'img/news/news_17.webp',
+                        media: 'img/news/news_19.webp',
                         title: 'Подписан договор на производство и поставку прибора ТМВ 1000',
                         date: '20.10.2024',
                         category: 'Мы в СМИ'
                     })
                     +news-card({
+                        classes: 'c-news-cards__card',
                         vMode: 'classic',
-                        media: 'img/news/news_19.webp',
+                        media: 'img/news/news_2.webp',
                         title: 'Подписан договор на производство и поставку прибора ТРC 5009',
                         date: '20.10.2024',
                         category: 'Мы в СМИ'
                     })
                     +news-card({
+                        classes: 'c-news-cards__card',
                         vMode: 'classic',
                         media: 'img/news/news_19.webp',
+                        title: 'Подписан договор на производство и поставку универсальной машины',
+                        date: '20.10.2024',
+                        category: 'Мы в СМИ'
+                    })
+                    +news-card({
+                        classes: 'c-news-cards__card',
+                        vMode: 'classic',
+                        media: 'img/news/news_17.webp',
                         title: 'Подписан договор на производство и поставку прибора ТРC 5009',
                         date: '20.10.2024',
                         category: 'Мы в СМИ'
                     })
                     +news-card({
-                        vMode: 'classic',
-                        media: 'img/news/news_20.webp',
-                        title: 'Подписан договор на производство и поставку универсальной машины',
-                        date: '20.10.2024',
-                        category: 'Мы в СМИ'
-                    })
-                    +news-card({
+                        classes: 'c-news-cards__card',
                         vMode: 'classic',
                         media: 'img/news/news_18.webp',
                         title: 'Подписан договор на производство и поставку  машины на базе BP DLC 0,2 кN',
@@ -118,6 +134,15 @@ block content
                         category: 'Мы в СМИ'
                     })
                     +news-card({
+                        classes: 'c-news-cards__card',
+                        vMode: 'classic',
+                        media: 'img/news/news_20.webp',
+                        title: 'Подписан договор на производство и поставку прибора ТМВ 1000',
+                        date: '20.10.2024',
+                        category: 'Мы в СМИ'
+                    })
+                    +news-card({
+                        classes: 'c-news-cards__card',
                         vMode: 'classic',
                         media: 'img/news/news_17.webp',
                         title: 'Подписан договор на производство и поставку прибора ТМВ 1000',
@@ -125,6 +150,7 @@ block content
                         category: 'Мы в СМИ'
                     })
                     +news-card({
+                        classes: 'c-news-cards__card',
                         vMode: 'classic',
                         media: 'img/news/news_18.webp',
                         title: 'Подписан договор на производство и поставку  машины на базе BP DLC 0,2 кN',
@@ -132,22 +158,17 @@ block content
                         category: 'Мы в СМИ'
                     })
                     +news-card({
-                        vMode: 'classic',
-                        media: 'img/news/news_17.webp',
-                        title: 'Подписан договор на производство и поставку прибора ТМВ 1000',
-                        date: '20.10.2024',
-                        category: 'Мы в СМИ'
-                    })
-                    +news-card({
-                        vMode: 'classic',
-                        media: 'img/news/news_20.webp',
-                        title: 'Подписан договор на производство и поставку универсальной машины',
-                        date: '20.10.2024',
-                        category: 'Мы в СМИ'
-                    })
-                    +news-card({
+                        classes: 'c-news-cards__card',
                         vMode: 'classic',
                         media: 'img/news/news_19.webp',
+                        title: 'Подписан договор на производство и поставку универсальной машины',
+                        date: '20.10.2024',
+                        category: 'Мы в СМИ'
+                    })
+                    +news-card({
+                        classes: 'c-news-cards__card',
+                        vMode: 'classic',
+                        media: 'img/news/news_2.webp',
                         title: 'Подписан договор на производство и поставку прибора ТРC 5009',
                         date: '20.10.2024',
                         category: 'Мы в СМИ'

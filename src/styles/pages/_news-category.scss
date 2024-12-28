@@ -1,20 +1,33 @@
-.c-news-intro {}
+.c-news-intro {
+    &__search {
+        flex-shrink: 0;
+        min-width: 416px;
+        align-self: flex-start;
+    }
+
+    &__filter {
+        margin-top: 110px;
+        padding-top: 17px;
+        border-top: 1px solid $c-border;
+    }
+}
 
 .c-news-cards {
     &__content {
         display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-columns: repeat(4, minmax(0, 1fr));
         gap: 32px 16px;
-        margin-top: 100px;
+
+        @include max(laptop) {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
 
         @include max(tablet) {
             grid-template-columns: repeat(2, minmax(0, 1fr));
-            margin-top: 60px;
         }
 
         @include max(xs) {
             grid-template-columns: repeat(1, minmax(0, 1fr));
-            margin-top: 32px;
         }
     }
 }

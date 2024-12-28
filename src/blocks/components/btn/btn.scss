@@ -93,7 +93,6 @@
         color: $c-text;
         background-color: $c-border;
         transition: all $tr-time;
-        border-radius: 4px;
 
         .btn__note,
         svg {
@@ -152,6 +151,11 @@
             min-width: 200px;
             min-height: 104px;
         }
+    }
+
+    &--small {
+        padding: 2px 12px;
+        font-size: 12px;
     }
 
     &--social {
