@@ -3,9 +3,31 @@
         classes: '',
         fancyGroup: 'mediaSlider',
         slides: [
-            'img/media-slider/slide_1.jpg',
-            'img/media-slider/slide_2.jpg',
-            'img/media-slider/slide_3.jpg',
+            {
+                img: 'img/media-slider/slide_1.jpg',
+                video: '',
+                videoType: ''
+            },
+            {
+                img: 'img/media-slider/slide_4.jpg',
+                video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                videoType: 'iframe'
+            },
+            {
+                img: 'img/media-slider/slide_2.jpg',
+                video: '',
+                videoType: ''
+            },
+            {
+                img: 'img/media-slider/slide_4.jpg',
+                video: 'video/news.mp4',
+                videoType: 'video'
+            },
+            {
+                img: 'img/media-slider/slide_3.jpg',
+                video: '',
+                videoType: ''
+            },
         ],
     }
 
@@ -22,8 +44,25 @@ mixin media-slider(props= defaultMediaSliderProps)
             - let count = 0 
             - while (count < checkProps.slides.length)
                 .swiper-slide
-                    a.media-slider__slide(href= checkProps.slides[count] data-fancybox= checkProps.fancyGroup data-thumb= checkProps.slides[count])
-                        img(src= checkProps.slides[count])
+                    - if(checkProps.slides[count].video.length > 0 && checkProps.slides[count].videoType == 'iframe')
+                        a.media-slider__slide(href= checkProps.slides[count].video data-type="iframe" data-fancybox= checkProps.fancyGroup data-thumb= checkProps.slides[count].img)
+                            img(src= checkProps.slides[count].img)
+                            .btn.media-slider__play.btn--red.btn--246
+                                svg
+                                    use(xlink:href="img/sprites/sprite.svg#play_t")
+                                    .btn__text Смотреть видео
+
+
+                    - else if(checkProps.slides[count].video.length > 0 && checkProps.slides[count].videoType == 'video')
+                        a.media-slider__slide(href= checkProps.slides[count].video data-fancybox= checkProps.fancyGroup data-thumb= checkProps.slides[count].img)
+                            img(src= checkProps.slides[count].img)
+                            .btn.media-slider__play.btn--red.btn--246
+                                svg
+                                    use(xlink:href="img/sprites/sprite.svg#play_t")
+                                    .btn__text Смотреть видео
+                    - else
+                        a.media-slider__slide(href= checkProps.slides[count].img data-fancybox= checkProps.fancyGroup data-thumb= checkProps.slides[count].img)
+                            img(src= checkProps.slides[count].img)
 
                 - count += 1;
         .media-slider__pagination

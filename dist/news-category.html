@@ -25,6 +25,8 @@
     <link rel="stylesheet" href="styles/main.min.css">
     <!-- лучше добавлять только на те страницы где есть блок с картой-->
     <script src="https://api-maps.yandex.ru/2.1/?apikey=ec8353bc-e4c0-44ee-8f5b-822d005a189e&amp;lang=ru_RU"></script>
+    <!-- лучше добавлять только на те страницы где есть видео-->
+    <script src="https://vk.com/js/api/videoplayer.min.js"></script>
   </head>
   <body>
     <header class="site-header" data-js="siteHeader">
@@ -230,92 +232,92 @@
                           </label>
                         </div>
                         <div class="filter-tab filter-tab--select" data-js="filterTabSelect">
-                          <div class="filter-tab__inner"><span class="filter-tab__text">Все фильтры</span><span class="filter-tab__icon">
+                          <div class="filter-tab__inner" data-js="filterTabSelectInner"><span class="filter-tab__text">Все фильтры</span><span class="filter-tab__icon">
                               <svg>
                                 <use xlink:href="img/sprites/sprite.svg#filter"></use>
                               </svg></span><span class="filter-tab__reset">
                               <svg>
                                 <use xlink:href="img/sprites/sprite.svg#close"></use>
                               </svg></span></div>
-                          <div class="filter-tab__list">
+                          <div class="filter-tab__list" data-js="filterTabSelectList">
                             <div class="filter-tab__checkboxes scrollbar">
                               <div class="filter-checkbox">
                                 <label class="filter-checkbox__inner">
-                                  <input type="checkbox" name="category" value="РБК"><span class="filter-checkbox__text">РБК</span>
+                                  <input type="checkbox" name="category" value="РБК"><span class="filter-checkbox__fake"></span><span class="filter-checkbox__text">РБК</span>
                                 </label>
                               </div>
                               <div class="filter-checkbox">
                                 <label class="filter-checkbox__inner">
-                                  <input type="checkbox" name="category" value="Первый канал"><span class="filter-checkbox__text">Первый канал</span>
+                                  <input type="checkbox" name="category" value="Первый канал"><span class="filter-checkbox__fake"></span><span class="filter-checkbox__text">Первый канал</span>
                                 </label>
                               </div>
                               <div class="filter-checkbox">
                                 <label class="filter-checkbox__inner">
-                                  <input type="checkbox" name="category" value="радио"><span class="filter-checkbox__text">Радио</span>
+                                  <input type="checkbox" name="category" value="радио"><span class="filter-checkbox__fake"></span><span class="filter-checkbox__text">Радио</span>
                                 </label>
                               </div>
                               <div class="filter-checkbox">
                                 <label class="filter-checkbox__inner">
-                                  <input type="checkbox" name="category" value="vk"><span class="filter-checkbox__text">VK</span>
+                                  <input type="checkbox" name="category" value="vk"><span class="filter-checkbox__fake"></span><span class="filter-checkbox__text">VK</span>
                                 </label>
                               </div>
                               <div class="filter-checkbox">
                                 <label class="filter-checkbox__inner">
-                                  <input type="checkbox" name="category" value="интервью"><span class="filter-checkbox__text">Интервью</span>
+                                  <input type="checkbox" name="category" value="интервью"><span class="filter-checkbox__fake"></span><span class="filter-checkbox__text">Интервью</span>
                                 </label>
                               </div>
                               <div class="filter-checkbox">
                                 <label class="filter-checkbox__inner">
-                                  <input type="checkbox" name="category" value="подкаст"><span class="filter-checkbox__text">Подкаст</span>
+                                  <input type="checkbox" name="category" value="подкаст"><span class="filter-checkbox__fake"></span><span class="filter-checkbox__text">Подкаст</span>
                                 </label>
                               </div>
                               <div class="filter-checkbox">
                                 <label class="filter-checkbox__inner">
-                                  <input type="checkbox" name="category" value="vk"><span class="filter-checkbox__text">VK</span>
+                                  <input type="checkbox" name="category" value="vk"><span class="filter-checkbox__fake"></span><span class="filter-checkbox__text">VK</span>
                                 </label>
                               </div>
                               <div class="filter-checkbox">
                                 <label class="filter-checkbox__inner">
-                                  <input type="checkbox" name="category" value="интервью"><span class="filter-checkbox__text">Интервью</span>
+                                  <input type="checkbox" name="category" value="интервью"><span class="filter-checkbox__fake"></span><span class="filter-checkbox__text">Интервью</span>
                                 </label>
                               </div>
                               <div class="filter-checkbox">
                                 <label class="filter-checkbox__inner">
-                                  <input type="checkbox" name="category" value="подкаст"><span class="filter-checkbox__text">Подкаст</span>
+                                  <input type="checkbox" name="category" value="подкаст"><span class="filter-checkbox__fake"></span><span class="filter-checkbox__text">Подкаст</span>
                                 </label>
                               </div>
                               <div class="filter-checkbox">
                                 <label class="filter-checkbox__inner">
-                                  <input type="checkbox" name="category" value="РБК"><span class="filter-checkbox__text">РБК</span>
+                                  <input type="checkbox" name="category" value="РБК"><span class="filter-checkbox__fake"></span><span class="filter-checkbox__text">РБК</span>
                                 </label>
                               </div>
                               <div class="filter-checkbox">
                                 <label class="filter-checkbox__inner">
-                                  <input type="checkbox" name="category" value="Первый канал"><span class="filter-checkbox__text">Первый канал</span>
+                                  <input type="checkbox" name="category" value="Первый канал"><span class="filter-checkbox__fake"></span><span class="filter-checkbox__text">Первый канал</span>
                                 </label>
                               </div>
                               <div class="filter-checkbox">
                                 <label class="filter-checkbox__inner">
-                                  <input type="checkbox" name="category" value="радио"><span class="filter-checkbox__text">Радио</span>
+                                  <input type="checkbox" name="category" value="радио"><span class="filter-checkbox__fake"></span><span class="filter-checkbox__text">Радио</span>
                                 </label>
                               </div>
                               <div class="filter-checkbox">
                                 <label class="filter-checkbox__inner">
-                                  <input type="checkbox" name="category" value="vk"><span class="filter-checkbox__text">VK</span>
+                                  <input type="checkbox" name="category" value="vk"><span class="filter-checkbox__fake"></span><span class="filter-checkbox__text">VK</span>
                                 </label>
                               </div>
                               <div class="filter-checkbox">
                                 <label class="filter-checkbox__inner">
-                                  <input type="checkbox" name="category" value="интервью"><span class="filter-checkbox__text">Интервью</span>
+                                  <input type="checkbox" name="category" value="интервью"><span class="filter-checkbox__fake"></span><span class="filter-checkbox__text">Интервью</span>
                                 </label>
                               </div>
                               <div class="filter-checkbox">
                                 <label class="filter-checkbox__inner">
-                                  <input type="checkbox" name="category" value="подкаст"><span class="filter-checkbox__text">Подкаст</span>
+                                  <input type="checkbox" name="category" value="подкаст"><span class="filter-checkbox__fake"></span><span class="filter-checkbox__text">Подкаст</span>
                                 </label>
                               </div>
                             </div>
-                            <div class="filter-tab__btns"><a class="btn  btn--red btn--small" href="javascript:void(0)"><span class="btn__text">Применить</span></a><a class="btn  btn--grey btn--small" href="javascript:void(0)"><span class="btn__text">Сбросить</span></a>
+                            <div class="filter-tab__btns"><a class="btn  btn--red btn--small" href="javascript:void(0)" data-js="filterTabSelectSet"><span class="btn__text">Применить</span></a><a class="btn  btn--grey btn--small" href="javascript:void(0)" data-js="filterTabSelectClear"><span class="btn__text">Сбросить</span></a>
                             </div>
                           </div>
                         </div>
@@ -325,6 +327,10 @@
                       <div class="form-filter__select filter-select" data-js="filterSelect">
                         <div class="filter-select__header">
                           <input type="text" data-js="filterSelectInput" value="Сначала новое">
+                          <div class="filter-select__fake" data-js="filterSelectFake">Сначала новое</div>
+                          <svg>
+                            <use xlink:href="img/sprites/sprite.svg#arrow_angle"></use>
+                          </svg>
                         </div>
                         <div class="filter-select__content">
                           <div class="filter-select__option" data-js="filterSelectOption" data-value="Сначала новое">Сначала новое</div>
@@ -334,6 +340,10 @@
                       <div class="form-filter__select filter-select" data-js="filterSelect">
                         <div class="filter-select__header">
                           <input type="text" data-js="filterSelectInput" value="За все время">
+                          <div class="filter-select__fake" data-js="filterSelectFake">За все время</div>
+                          <svg>
+                            <use xlink:href="img/sprites/sprite.svg#arrow_angle"></use>
+                          </svg>
                         </div>
                         <div class="filter-select__content">
                           <div class="filter-select__option" data-js="filterSelectOption" data-value="За все время">За все время</div>

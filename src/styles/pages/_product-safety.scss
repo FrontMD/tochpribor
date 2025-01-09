@@ -273,7 +273,7 @@
         align-items: center;
         gap: 10px;
         width: fit-content;
-        padding: 1px 11px 2px 4px;
+        padding: 1px 4px 2px;
         background-color: $c-input-bg;
         transition: all $tr-time linear;
 
@@ -283,8 +283,8 @@
         }
 
         svg {
-            width: 9px;
-            height: 6px;
+            width: 16px;
+            height: 16px;
             transform: rotate(-90deg);
         }
     }

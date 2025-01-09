@@ -25,8 +25,10 @@
         display: flex;
         align-items: center;
         gap: 6px;
-        padding: 8px 16px;
+        padding: 7px 16px;
         color: $c-text;
+        font-size: 14px;
+        line-height: 1.4em;
         background-color: $c-white;
         border: 1px solid $c-border;
         transition: all $tr-time linear;
@@ -61,8 +63,27 @@
         }
     }
 
+    &__icon {
+        color: $c-text-light;
+
+    }
+
     &__reset {
         display: none;
+    }
+
+    &--select.active &__reset {
+        display: block;
+    }
+
+    &--select.active &__icon {
+        display: none;
+    }
+
+    &--select.has-checked &__inner {
+        background-color: $c-text;
+        color: $c-white;
+        border-color: $c-text;
     }
 
     input:checked+&__inner {
@@ -77,12 +98,21 @@
 
     &__list {
         position: absolute;
-        top: calc(100% + 14px);
+        top: calc(100% + 0px);
         left: 0;
         min-width: 200px;
         padding: 8px 12px;
         background-color: $c-white;
         z-index: 5;
+        opacity: 0;
+        visibility: hidden;
+        transition: all $tr-time linear;
+    }
+
+    &--select.active &__list {
+        top: calc((100% + 14px));
+        opacity: 1;
+        visibility: visible;
     }
 
     &__checkboxes {
@@ -103,7 +133,120 @@
 }
 
 .filter-checkbox {
-    display: flex;
-    align-items: center;
-    gap: 8px;
+    &__inner {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        width: fit-content;
+        cursor: pointer;
+    }
+
+    input {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 0;
+        height: 0;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    &__fake {
+        height: 16px;
+        width: 16px;
+        border: 1px solid $c-bg;
+        border-color: $c-bg;
+        transition: all $tr-time linear;
+        border-radius: 2px;
+        background-color: $c-white;
+        background-image: url(../img/checkbox.svg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: 12px 12px;
+    }
+
+    input:checked+&__fake {
+        background-color: $c-accent;
+        border-color: $c-accent;
+    }
+}
+
+.filter-select {
+    position: relative;
+    font-size: 14px;
+    line-height: 1.4em;
+    color: $c-text;
+
+    &__header {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        min-width: 200px;
+        gap: 6px;
+        padding: 8px 12px;
+        border-radius: 4px;
+        color: $c-text;
+        background-color: $c-input-bg;
+        transition: all $tr-time linear;
+        cursor: pointer;
+
+        svg {
+            width: 16px;
+            height: 16px;
+            color: $c-text-breadcrumbs;
+            transition: all $tr-time linear;
+        }
+
+        &:hover {
+            background-color: $c-text;
+            color: $c-white;
+
+            svg {
+                color: $c-white;
+                transition: all $tr-time linear;
+            }
+        }
+
+        input {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 0;
+            opacity: 0;
+            visibility: hidden;
+
+        }
+
+        &__fake {
+            flex: 0 0 auto;
+            white-space: nowrap;
+        }
+    }
+
+    &.active &__header svg {
+        transform: rotate(-180deg);
+    }
+
+    &__content {
+        position: absolute;
+        top: calc(100% + 0px);
+        left: 0;
+        min-width: 200px;
+        padding: 8px 12px;
+        background-color: $c-white;
+        z-index: 5;
+        opacity: 0;
+        visibility: hidden;
+        transition: all $tr-time linear;
+    }
+
+    &.active &__content {
+        top: calc((100% + 14px));
+        opacity: 1;
+        visibility: visible;
+    }
+
 }

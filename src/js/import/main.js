@@ -209,7 +209,54 @@ function fancyboxInit() {
                   "close",
                 ],
             },
-        }
+        },
+        on: {
+            "Carousel.change": (fancybox, event) => {
+                let currentSlide = fancybox.getSlide()
+              let prevSlide = event.slides[event.prevPage]
+
+              if(prevSlide.type == 'iframe') {
+                let player = prevSlide.el.querySelector('iframe')
+                let playerSrc = player.getAttribute('src')
+
+                if(playerSrc.includes('rutube')) {
+                    player.contentWindow.postMessage(JSON.stringify({
+                        type: 'player:pause',
+                        data: {}
+                    }), '*');
+                } else if(playerSrc.includes('vkvideo')) {
+                    let player = VK.VideoPlayer(prevSlide.el.querySelector('iframe'));
+                    player.pause();
+                }
+            }
+
+              if(currentSlide.type == 'iframe') {
+                let player = currentSlide.el.querySelector('iframe')
+                let playerSrc = player.getAttribute('src')
+
+                if(playerSrc.includes('rutube')) {
+                    if(player.contentDocument!==null) {
+                        player.contentWindow.postMessage(JSON.stringify({
+                            type: 'player:play',
+                            data: {}
+                        }), '*');
+                    }  else {
+                        player.addEventListener("load", function() {
+                            player.contentWindow.postMessage(JSON.stringify({
+                                type: 'player:play',
+                                data: {}
+                            }), '*');
+                        })
+                    }
+                }else if(playerSrc.includes('vkvideo')) {
+                    let player = VK.VideoPlayer(currentSlide.el.querySelector('iframe'));
+                    player.play();
+                }
+
+              }
+
+            },
+        },
 
     });
 }

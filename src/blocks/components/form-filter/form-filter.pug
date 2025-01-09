@@ -67,7 +67,7 @@ mixin form-filter(props = defaultFormFilterProps)
                                     use(xlink:href=`img/sprites/sprite.svg#close`)
 
                 .filter-tab.filter-tab--select(data-js="filterTabSelect")
-                    .filter-tab__inner
+                    .filter-tab__inner(data-js="filterTabSelectInner")
                         span.filter-tab__text Все фильтры
                         span.filter-tab__icon
                             svg
@@ -76,90 +76,111 @@ mixin form-filter(props = defaultFormFilterProps)
                             svg
                                 use(xlink:href=`img/sprites/sprite.svg#close`)
 
-                    .filter-tab__list
+                    .filter-tab__list(data-js="filterTabSelectList")
                         .filter-tab__checkboxes.scrollbar
                             .filter-checkbox
                                 label.filter-checkbox__inner
                                     input(type="checkbox" name='category' value="РБК")
+                                    span.filter-checkbox__fake
                                     span.filter-checkbox__text РБК
                             .filter-checkbox
                                 label.filter-checkbox__inner
                                     input(type="checkbox" name='category' value="Первый канал")
+                                    span.filter-checkbox__fake
                                     span.filter-checkbox__text Первый канал
                             .filter-checkbox
                                 label.filter-checkbox__inner
                                     input(type="checkbox" name='category' value="радио")
+                                    span.filter-checkbox__fake
                                     span.filter-checkbox__text Радио
                             .filter-checkbox
                                 label.filter-checkbox__inner
                                     input(type="checkbox" name='category' value="vk")
+                                    span.filter-checkbox__fake
                                     span.filter-checkbox__text VK
                             .filter-checkbox
                                 label.filter-checkbox__inner
                                     input(type="checkbox" name='category' value="интервью")
+                                    span.filter-checkbox__fake
                                     span.filter-checkbox__text Интервью
                             .filter-checkbox
                                 label.filter-checkbox__inner
                                     input(type="checkbox" name='category' value="подкаст")
+                                    span.filter-checkbox__fake
                                     span.filter-checkbox__text Подкаст
                             .filter-checkbox
                                 label.filter-checkbox__inner
                                     input(type="checkbox" name='category' value="vk")
+                                    span.filter-checkbox__fake
                                     span.filter-checkbox__text VK
                             .filter-checkbox
                                 label.filter-checkbox__inner
                                     input(type="checkbox" name='category' value="интервью")
+                                    span.filter-checkbox__fake
                                     span.filter-checkbox__text Интервью
                             .filter-checkbox
                                 label.filter-checkbox__inner
                                     input(type="checkbox" name='category' value="подкаст")
+                                    span.filter-checkbox__fake
                                     span.filter-checkbox__text Подкаст
                             .filter-checkbox
                                 label.filter-checkbox__inner
                                     input(type="checkbox" name='category' value="РБК")
+                                    span.filter-checkbox__fake
                                     span.filter-checkbox__text РБК
                             .filter-checkbox
                                 label.filter-checkbox__inner
                                     input(type="checkbox" name='category' value="Первый канал")
+                                    span.filter-checkbox__fake
                                     span.filter-checkbox__text Первый канал
                             .filter-checkbox
                                 label.filter-checkbox__inner
                                     input(type="checkbox" name='category' value="радио")
+                                    span.filter-checkbox__fake
                                     span.filter-checkbox__text Радио
                             .filter-checkbox
                                 label.filter-checkbox__inner
                                     input(type="checkbox" name='category' value="vk")
+                                    span.filter-checkbox__fake
                                     span.filter-checkbox__text VK
                             .filter-checkbox
                                 label.filter-checkbox__inner
                                     input(type="checkbox" name='category' value="интервью")
+                                    span.filter-checkbox__fake
                                     span.filter-checkbox__text Интервью
                             .filter-checkbox
                                 label.filter-checkbox__inner
                                     input(type="checkbox" name='category' value="подкаст")
+                                    span.filter-checkbox__fake
                                     span.filter-checkbox__text Подкаст
                         .filter-tab__btns
                             +btn({
                                 name: 'Применить',
                                 cMode: 'red',
                                 size: 'small'
-                            })
+                            })(data-js="filterTabSelectSet")
                             +btn({
                                 name: 'Сбросить',
                                 cMode: 'grey',
                                 size: 'small'
-                            })
+                            })(data-js="filterTabSelectClear")
 
         .form-filter__side
             .form-filter__select.filter-select(data-js='filterSelect')
                 .filter-select__header
                     input(type="text" data-js="filterSelectInput" value="Сначала новое")
+                    .filter-select__fake(data-js="filterSelectFake") Сначала новое
+                    svg
+                        use(xlink:href=`img/sprites/sprite.svg#arrow_angle`)
                 .filter-select__content
                     .filter-select__option(data-js="filterSelectOption" data-value="Сначала новое") Сначала новое
                     .filter-select__option(data-js="filterSelectOption" data-value="Сначала старое") Сначала старое
             .form-filter__select.filter-select(data-js='filterSelect')
                 .filter-select__header
                     input(type="text" data-js="filterSelectInput" value="За все время")
+                    .filter-select__fake(data-js="filterSelectFake") За все время
+                    svg
+                        use(xlink:href=`img/sprites/sprite.svg#arrow_angle`)
                 .filter-select__content
                     .filter-select__option(data-js="filterSelectOption" data-value="За все время") За все время
                     .filter-select__option(data-js="filterSelectOption" data-value="За неделю") За неделю
