@@ -5,6 +5,7 @@
 @@include("../../blocks/modules/comments/comments.js")
 @@include("../../blocks/modules/tabs-block/tabs-block.js")
 @@include("../../blocks/modules/media-slider/media-slider.js")
+@@include("../../blocks/modules/cards-slider/cards-slider.js")
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -24,4 +25,6 @@ document.addEventListener('DOMContentLoaded', () => {
     tabsBlockInit()
     // Слайдер с галереей
     mediaSliderInit()
+    // Слайдеры с карточками
+    cardsSlidersInit()
 })

@@ -1,0 +1,61 @@
+-
+	const defaultCatalogCardProps = {
+		classes: '',
+		title: '',
+		desc: '',
+		image: '',
+		tags: [],
+		prices: []
+
+	}
+
+mixin catalog-card(props = defaultCatalogCardProps)
+	-
+		const checkProps = {
+			classes: props.classes ? props.classes : defaultCatalogCardProps.classes,
+			title: props.title ? props.title : defaultCatalogCardProps.title,
+			desc: props.desc ? props.desc : defaultCatalogCardProps.desc,
+			image: props.image ? props.image : defaultCatalogCardProps.image,
+			tags: props.tags ? props.tags : defaultCatalogCardProps.tags,
+			prices: props.prices ? props.prices : defaultCatalogCardProps.prices
+		}
+
+	.catalog-card(class= checkProps.classes)&attributes(attributes)
+		a.catalog-card__link(href="javascript:void(0);")
+		.catalog-card__header
+			- if(checkProps.tags.length > 0)
+				.catalog-card__tags
+					- let tagsCounter = 0
+						- while (tagsCounter < checkProps.tags.length)
+							- let currentTag = checkProps.tags[tagsCounter]
+							.catalog-card__tag(class= `catalog-card__tag--${currentTag.color}`)
+								- if(currentTag.img.length > 0)
+									img(src= currentTag.img)
+								!= currentTag.text 
+
+							- tagsCounter++
+		.catalog-card__body
+			.catalog-card__photo
+				img(src= checkProps.image alt= checkProps.title)
+			.catalog-card__info
+				.catalog-card__title!= checkProps.title
+				- if(checkProps.desc.length > 0)
+					.catalog-card__desc!= checkProps.desc
+			- if(checkProps.prices.length > 0)
+				.catalog-card__prices
+					.catalog-card__price!= checkProps.prices[0]
+					- if(checkProps.prices[1].length > 0)
+						.catalog-card__price.catalog-card__price--old!= checkProps.prices[1]
+
+		.catalog-card__footer
+			+btn({
+				name: 'Заказать в 1 клик',
+				cMode: 'red'
+			})
+			+btn({
+				name: 'В корзину',
+				cMode: 'transparent-red',
+				icon: 'basket',
+				iconPos: 'left',
+
+			})

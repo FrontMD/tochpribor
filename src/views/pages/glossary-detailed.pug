@@ -27,33 +27,34 @@ block content
 
         .sidebar-layout
             .sidebar-layout__content
-                section.section.section--full.glossary-detailed__header
+                section.section.section--full.article-layout__header
                     .section__container
                         +title({
                             tag: 'h1',
                             size: '53',
                             text: 'Твердость по Бринеллю'
                         })
-                        .glossary-detailed__btns
-                            +btn({
-                                classes: '',
-                                name: 'Поделиться',
-                                cMode: 'transparent',
-                                size: '182',
-                                link: 'javascript:void(0)',
-                                icon: 'share'
-                            })
-                            +btn({
-                                classes: '',
-                                name: 'Комментарии <span class="btn__note">(13)</span>',
-                                cMode: 'transparent',
-                                size: '182',
-                                link: '#comments',
-                                icon: 'message'
-                            })
+                        .article-layout__bottom
+                            .article-layout__side.article-layout__side--last
+                                +btn({
+                                    classes: '',
+                                    name: 'Поделиться',
+                                    cMode: 'transparent',
+                                    size: '182',
+                                    link: 'javascript:void(0)',
+                                    icon: 'share'
+                                })
+                                +btn({
+                                    classes: '',
+                                    name: 'Комментарии <span class="btn__note">(13)</span>',
+                                    cMode: 'transparent',
+                                    size: '182',
+                                    link: '#comments',
+                                    icon: 'message'
+                                })
 
                 section.section.section--full
-                    .section__container.glossary-detailed__body
+                    .section__container.article-layout__body
                         .text-editor
                             h2 Общие знания относительно определения твердости по Бринеллю
                             .text-flex-block
@@ -205,7 +206,7 @@ block content
                             .tags__tag Определение твердости по Бринеллю HBW
                             .tags__tag Измерение твердости по Бринеллю HBW
 
-                .glossary-detailed__error.banner
+                .article-layout__banner.banner
                     .banner__bg
                         img(src="img/glossary/glossary_support.webp" alt="")
                     .banner__content

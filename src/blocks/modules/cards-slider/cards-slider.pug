@@ -1,0 +1,30 @@
+-
+    const defaultCardsSliderProps = {
+        classes: '',
+        title: '',
+        slidesCount: '2'
+    }
+
+mixin cards-slider(props= defaultCardsSliderProps)
+    -
+        const checkProps = {
+            classes: props.classes ? props.classes : defaultCardsSliderProps.classes,
+            title: props.title ? props.title : defaultCardsSliderProps.title,
+            slidesCount: props.slidesCount ? props.slidesCount : defaultCardsSliderProps.slidesCount
+        }
+
+    .cards-slider(class= checkProps.classes data-js=`slider${checkProps.slidesCount}Cards`)&attributes(attributes)
+        .cards-slider__header
+            - if(checkProps.title.length > 0)
+                .cards-slider.title--32!= checkProps.title
+            .cards-slider__controls.slider-controls
+                button.slider-control.slider-control--prev(type="button" data-js='sliderPrev')
+                    svg
+                        use(xlink:href=`img/sprites/sprite.svg#arrow_classic`)
+                button.slider-control.slider-control--next(type="button" data-js='sliderNext')
+                    svg
+                        use(xlink:href=`img/sprites/sprite.svg#arrow_classic`)
+        .swiper-wrapper
+            block
+
+
