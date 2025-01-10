@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Страницы</title>
+    <title>Новости (статья)</title>
     <meta name="theme-color" content="#fff">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -138,143 +138,283 @@
       </div>
     </header>
     <main class="site-main">
-      <style type="text/css">
-        .pages-list {
-            padding: 150px 0 60px;
-        }
-        
-        .pages-list__links {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            grid-gap: 20px;
-            margin-top: 30px;
-        }
-        
-        .pages-list__subtitle {
-            margin-top: 60px;
-            font-size: 32px !important;
-        }
-        
-        .pages-list__link {
-            position: relative;
-            font-size: 26px;
-            text-decoration: none;
-            color: var(--c-text);
-            transition: color 0.3s linear;
-            line-height: 1.02em;
-            min-height: 3.06em;
-            padding-right: 160px;
-        
-            span {
-                font-size: 0.7em;
-                opacity: 0.7;
-            }
-        }
-        
-        .pages-list__link:after {
-            content: '';
-            position: absolute;
-            right: 0;
-            top: 0;
-            font-size: 14px;
-            line-height: 1.02em;
-            padding: 5px 10px;
-            border-radius: 3px;
-            width: fit-content;
-        }
-        
-        .pages-list__link--check {
-            padding-right: 155px;
-        }
-        
-        .pages-list__link--check:after {
-            content: "проверка / правки";
-            background-color: #ffffcc;
-            color: #ff6a00;
-        }
-        
-        
-        .pages-list__link--postponed:after {
-            content: "отложено / очередь";
-            background-color: #dedede;
-            color: #212121;
-        }
-        
-        .pages-list__link--work {
-            padding-right: 85px;
-        }
-        
-        .pages-list__link--work:after {
-            content: "в работе";
-            background-color: #9FC5F8;
-            color: #000044;
-        }
-        
-        .pages-list__link--ready {
-            padding-right: 85px;
-        }
-        
-        .pages-list__link--ready:after {
-            content: "натяжка";
-            background-color: #93C47D;
-            color: #04412B;
-        }
-        
-        .pages-list__link:hover {
-            color: var(--c-accent);
-        }
-        
-        @media (max-width: 600px) {
-            .pages-list__link {
-                padding-right: 0;
-                padding-top: 30px;
-            }
-        
-            .pages-list__link:after {
-                left: 0;
-                right: auto;
-            }
-        }
-        
-        @media (max-width: 1340px) {
-        
-            .pages-list__links {
-                grid-gap: 15px;
-                margin-top: 40px;
-            }
-        
-            .pages-list__link {
-                font-size: 20px;
-            }
-        }
-        
-        @media (max-width: 1023px) {
-            .pages-list {
-                padding: 85px 0 50px;
-            }
-        
-            .pages-list__links {
-                grid-template-columns: 1fr;
-                grid-gap: 20px;
-                margin-top: 40px;
-            }
-        
-            .pages-list__link {
-                min-height: auto;
-            }
-        }
-        
-      </style>
-      <div class="page-layout page-layout--white">
-        <section class="section pages-list">
+      <div class="page-layout">
+        <div class="breadcrumbs-section section section--transparent">
           <div class="section__container">
-                <div class="title pages-list__title title--83 title--dark">
-                  <h1>Страницы
-                  </h1>
+                <div class="breadcrumbs  breadcrumbs--dark">
+                  <ul class="breadcrumbs__list scrollbar scrollbar--small">
+                    <li class="breadcrumbs__item"><a href="javascript:void(0);">Главная</a><span class="breadcrumbs__separator">/</span>
+                    </li>
+                    <li class="breadcrumbs__item"><a href="javascript:void(0);">Новости</a><span class="breadcrumbs__separator">/</span>
+                    </li>
+                    <li class="breadcrumbs__item breadcrumbs__item--current"><span>Название статьи</span>
+                    </li>
+                  </ul>
                 </div>
-            <div class="pages-list__links"><a class="pages-list__link pages-list__link--ready" href="news-section.html" target="_blank">Новости (раздел)</a><a class="pages-list__link pages-list__link--check" href="news-category.html" target="_blank">Новости (категория)</a><a class="pages-list__link pages-list__link--work" href="news-detailed.html" target="_blank">Новости (детальная)</a><a class="pages-list__link pages-list__link--ready" href="glossary-list.html" target="_blank">Глоссарий (раздел)</a><a class="pages-list__link pages-list__link--ready" href="glossary-detailed.html" target="_blank">Глоссарий (детальная)</a><a class="pages-list__link pages-list__link--ready" href="contacts.html" target="_blank">Контакты</a><a class="pages-list__link pages-list__link--ready" href="site-map.html" target="_blank">Карта сайта</a><a class="pages-list__link pages-list__link--ready" href="product-safety.html" target="_blank">Безопасность изделия</a><a class="pages-list__link pages-list__link--ready" href="services.html" target="_blank">Услуги</a><a class="pages-list__link pages-list__link--ready" href="404.html" target="_blank">404</a></div>
           </div>
-        </section>
+        </div>
+        <div class="sidebar-layout">
+          <div class="sidebar-layout__content">
+            <section class="section section--full news-detailed__header">
+              <div class="section__container">
+                    <div class="title  title--53 title--dark">
+                      <h1>Твердость по Бринеллю
+                      </h1>
+                    </div>
+                <div class="news-detailed__btns"><a class="btn  btn--transparent btn--182" href="javascript:void(0)">
+                        <svg>
+                          <use xlink:href="img/sprites/sprite.svg#share"></use>
+                        </svg><span class="btn__text">Поделиться</span></a><a class="btn  btn--transparent btn--182" href="#comments">
+                        <svg>
+                          <use xlink:href="img/sprites/sprite.svg#message"></use>
+                        </svg><span class="btn__text">Комментарии <span class="btn__note">(13)</span></span></a>
+                </div>
+              </div>
+            </section>
+            <section class="section section--full comments-list" id="comments">
+              <div class="section__container" data-js="comments">
+                    <div class="title  title--32 title--dark">
+                      <h2>Комментарии<span class="title__sup"> (13)</span>
+                      </h2>
+                    </div>
+                <div class="comments-list__list" data-js="commentsList">
+                  <div class="comments-list__item" data-js="commentsItem">
+                    <div class="comments-list__header">
+                      <div class="comments-list__photo"><span>К</span></div>
+                      <div class="comments-list__name title--26">Константин Константинопольский</div>
+                      <div class="comments-list__date">
+                        <svg> 
+                          <use xlink:href="img/sprites/sprite.svg#calendar"></use>
+                        </svg><span>10.04.2024</span>
+                      </div>
+                    </div>
+                    <div class="comments-list__text">Особый интерес у посетителей вызвал новый миниатюрный твердомер MET-MINI, который был выпущен нашей компанией в этом году!</div>
+                    <div class="comments-list__replies">
+                      <div class="comments-list__reply">
+                        <div class="comments-list__icon">
+                          <svg> 
+                            <use xlink:href="img/sprites/sprite.svg#reply"></use>
+                          </svg>
+                        </div>
+                        <div class="comments-list__header">
+                          <div class="comments-list__photo comments-list__photo--reply"><img src="img/comments_photo.webp" alt=""></div>
+                          <div class="comments-list__name title--26">Менеджер Антон</div>
+                        </div>
+                        <div class="comments-list__text">Спасибо Вам за комментарий! Мы учтем все пожелания</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="comments-list__item" data-js="commentsItem">
+                    <div class="comments-list__header">
+                      <div class="comments-list__photo"><span>П</span></div>
+                      <div class="comments-list__name title--26">Петр</div>
+                      <div class="comments-list__date">
+                        <svg> 
+                          <use xlink:href="img/sprites/sprite.svg#calendar"></use>
+                        </svg><span>10.04.2024</span>
+                      </div>
+                    </div>
+                    <div class="comments-list__text">Особый интерес у посетителей вызвал новый миниатюрный твердомер MET-MINI, который был выпущен нашей компанией в этом году!</div>
+                  </div>
+                  <div class="comments-list__item" data-js="commentsItem">
+                    <div class="comments-list__header">
+                      <div class="comments-list__photo"><span>И</span></div>
+                      <div class="comments-list__name title--26">Иван Иванов</div>
+                      <div class="comments-list__date">
+                        <svg> 
+                          <use xlink:href="img/sprites/sprite.svg#calendar"></use>
+                        </svg><span>10.04.2024</span>
+                      </div>
+                    </div>
+                    <div class="comments-list__text">Особый интерес у посетителей вызвал новый миниатюрный твердомер MET-MINI, который был выпущен нашей компанией в этом году!</div>
+                  </div>
+                  <div class="comments-list__item" data-js="commentsItem">
+                    <div class="comments-list__header">
+                      <div class="comments-list__photo"><span>М</span></div>
+                      <div class="comments-list__name title--26">Мария</div>
+                      <div class="comments-list__date">
+                        <svg> 
+                          <use xlink:href="img/sprites/sprite.svg#calendar"></use>
+                        </svg><span>10.04.2024</span>
+                      </div>
+                    </div>
+                    <div class="comments-list__text">Особый интерес у посетителей вызвал новый миниатюрный твердомер MET-MINI, который был выпущен нашей компанией в этом году!</div>
+                  </div>
+                  <div class="comments-list__item" data-js="commentsItem">
+                    <div class="comments-list__header">
+                      <div class="comments-list__photo"><span>И</span></div>
+                      <div class="comments-list__name title--26">Иветта</div>
+                      <div class="comments-list__date">
+                        <svg> 
+                          <use xlink:href="img/sprites/sprite.svg#calendar"></use>
+                        </svg><span>10.04.2024</span>
+                      </div>
+                    </div>
+                    <div class="comments-list__text">Особый интерес у посетителей вызвал новый миниатюрный твердомер MET-MINI, который был выпущен нашей компанией в этом году!</div>
+                  </div>
+                  <div class="comments-list__item" data-js="commentsItem">
+                    <div class="comments-list__header">
+                      <div class="comments-list__photo"><span>К</span></div>
+                      <div class="comments-list__name title--26">Константин Константинопольский</div>
+                      <div class="comments-list__date">
+                        <svg> 
+                          <use xlink:href="img/sprites/sprite.svg#calendar"></use>
+                        </svg><span>10.04.2024</span>
+                      </div>
+                    </div>
+                    <div class="comments-list__text">Особый интерес у посетителей вызвал новый миниатюрный твердомер MET-MINI, который был выпущен нашей компанией в этом году!</div>
+                    <div class="comments-list__replies">
+                      <div class="comments-list__reply">
+                        <div class="comments-list__icon">
+                          <svg> 
+                            <use xlink:href="img/sprites/sprite.svg#reply"></use>
+                          </svg>
+                        </div>
+                        <div class="comments-list__header">
+                          <div class="comments-list__photo comments-list__photo--reply"><img src="img/comments_photo.webp" alt=""></div>
+                          <div class="comments-list__name title--26">Менеджер Антон</div>
+                        </div>
+                        <div class="comments-list__text">Спасибо Вам за комментарий! Мы учтем все пожелания</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="comments-list__item" data-js="commentsItem">
+                    <div class="comments-list__header">
+                      <div class="comments-list__photo"><span>П</span></div>
+                      <div class="comments-list__name title--26">Петр</div>
+                      <div class="comments-list__date">
+                        <svg> 
+                          <use xlink:href="img/sprites/sprite.svg#calendar"></use>
+                        </svg><span>10.04.2024</span>
+                      </div>
+                    </div>
+                    <div class="comments-list__text">Особый интерес у посетителей вызвал новый миниатюрный твердомер MET-MINI, который был выпущен нашей компанией в этом году!</div>
+                  </div>
+                  <div class="comments-list__item" data-js="commentsItem">
+                    <div class="comments-list__header">
+                      <div class="comments-list__photo"><span>И</span></div>
+                      <div class="comments-list__name title--26">Иван Иванов</div>
+                      <div class="comments-list__date">
+                        <svg> 
+                          <use xlink:href="img/sprites/sprite.svg#calendar"></use>
+                        </svg><span>10.04.2024</span>
+                      </div>
+                    </div>
+                    <div class="comments-list__text">Особый интерес у посетителей вызвал новый миниатюрный твердомер MET-MINI, который был выпущен нашей компанией в этом году!</div>
+                  </div>
+                  <div class="comments-list__item" data-js="commentsItem">
+                    <div class="comments-list__header">
+                      <div class="comments-list__photo"><span>М</span></div>
+                      <div class="comments-list__name title--26">Мария</div>
+                      <div class="comments-list__date">
+                        <svg> 
+                          <use xlink:href="img/sprites/sprite.svg#calendar"></use>
+                        </svg><span>10.04.2024</span>
+                      </div>
+                    </div>
+                    <div class="comments-list__text">Особый интерес у посетителей вызвал новый миниатюрный твердомер MET-MINI, который был выпущен нашей компанией в этом году!</div>
+                  </div>
+                  <div class="comments-list__item" data-js="commentsItem">
+                    <div class="comments-list__header">
+                      <div class="comments-list__photo"><span>И</span></div>
+                      <div class="comments-list__name title--26">Иветта</div>
+                      <div class="comments-list__date">
+                        <svg> 
+                          <use xlink:href="img/sprites/sprite.svg#calendar"></use>
+                        </svg><span>10.04.2024</span>
+                      </div>
+                    </div>
+                    <div class="comments-list__text">Особый интерес у посетителей вызвал новый миниатюрный твердомер MET-MINI, который был выпущен нашей компанией в этом году!</div>
+                  </div>
+                  <div class="comments-list__item" data-js="commentsItem">
+                    <div class="comments-list__header">
+                      <div class="comments-list__photo"><span>И</span></div>
+                      <div class="comments-list__name title--26">Иван Иванов</div>
+                      <div class="comments-list__date">
+                        <svg> 
+                          <use xlink:href="img/sprites/sprite.svg#calendar"></use>
+                        </svg><span>10.04.2024</span>
+                      </div>
+                    </div>
+                    <div class="comments-list__text">Особый интерес у посетителей вызвал новый миниатюрный твердомер MET-MINI, который был выпущен нашей компанией в этом году!</div>
+                  </div>
+                  <div class="comments-list__item" data-js="commentsItem">
+                    <div class="comments-list__header">
+                      <div class="comments-list__photo"><span>М</span></div>
+                      <div class="comments-list__name title--26">Мария</div>
+                      <div class="comments-list__date">
+                        <svg> 
+                          <use xlink:href="img/sprites/sprite.svg#calendar"></use>
+                        </svg><span>10.04.2024</span>
+                      </div>
+                    </div>
+                    <div class="comments-list__text">Особый интерес у посетителей вызвал новый миниатюрный твердомер MET-MINI, который был выпущен нашей компанией в этом году!</div>
+                  </div>
+                  <div class="comments-list__item" data-js="commentsItem">
+                    <div class="comments-list__header">
+                      <div class="comments-list__photo"><span>И</span></div>
+                      <div class="comments-list__name title--26">Иветта</div>
+                      <div class="comments-list__date">
+                        <svg> 
+                          <use xlink:href="img/sprites/sprite.svg#calendar"></use>
+                        </svg><span>10.04.2024</span>
+                      </div>
+                    </div>
+                    <div class="comments-list__text">Особый интерес у посетителей вызвал новый миниатюрный твердомер MET-MINI, который был выпущен нашей компанией в этом году!</div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section class="section section--full comments-form">
+              <div class="section__container">
+                    <div class="title  title--32 title--dark">
+                      <h2>Добавить комментарий
+                      </h2>
+                    </div>
+                    <form class="form comments-form__form" action="#" data-validate novalidate>
+                      <div class="form__content" data-js="form-content">
+                        <div class="form__fields">
+                          <div class="form__flex">
+                                <div class="field     " data-js="formField">
+                                  <label><span class="field__title">Имя</span>
+                                    <input class="field__input" type="text" placeholder="" required="" data-type="letters"><span class="field__error" data-js="fieldError"></span>
+                                  </label>
+                                </div>
+                                <div class="field     " data-js="formField">
+                                  <label><span class="field__title">e-mail</span>
+                                    <input class="field__input" type="text" placeholder="" required="" data-v-name="email"><span class="field__error" data-js="fieldError"></span>
+                                  </label>
+                                </div>
+                          </div>
+                              <div class="field     " data-js="formField">
+                                <label><span class="field__title">Комментарий</span>
+                                  <textarea class="field__textarea" rows="8" placeholder="" required=""></textarea><span class="field__error" data-js="fieldError"></span>
+                                </label>
+                              </div>
+                        </div>
+                            <button class="btn form__submit btn--red btn--246" type="submit"><span class="btn__text">Отправить</span>
+                            </button>
+                        <div class="form__privacy form-privacy" data-js="formField">
+                          <label>
+                            <input type="checkbox" data-v-name="checkbox" required><span class="form-privacy__fake"></span>
+                          </label><span class="form-privacy__text">Согласен на обработку моих персональных данных в соответствии с <a href="#" target="_blank">Политикой в отношении обработки персональных данных</a></span><span class="field__error" data-js="fieldError"></span>
+                        </div>
+                      </div>
+                      <div class="form__thanks" data-js="form-thanks">
+                        <div class="title--32 form__title">Ваш комментарий отправлен</div>
+                        <div class="form__image-success">
+                          <svg>
+                            <use xlink:href="img/sprites/sprite.svg#form_success"></use>
+                          </svg>
+                        </div>
+                        <div class="form__text">Скоро он появится на сайте.</div>
+                      </div>
+                    </form>
+              </div>
+            </section>
+          </div>
+          <div class="sidebar-layout__sidebar"></div>
+        </div>
       </div>
     </main>
     <footer class="site-footer">

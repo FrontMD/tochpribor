@@ -1,0 +1,125 @@
+.pagination {
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    margin-top: 100px;
+
+    @include max(mobile) {
+        justify-content: center;
+        margin-top: 40px;
+    }
+
+    &__page {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        width: 48px;
+        height: 48px;
+        background-color: $c-white;
+        border: 1px solid $c-border;
+        border-radius: 4px;
+        color: $c-text;
+        font-size: 16px;
+        line-height: 1.4em;
+        transition: all $tr-time linear;
+        text-decoration: none;
+        margin: 0 !important;
+        padding: 0 !important;
+
+        @include max(mobile) {
+            width: 30px;
+            height: 30px;
+            font-size: 12px;
+        }
+
+        &.active {
+            background-color: $c-text;
+            color: $c-white !important;
+        }
+
+        &:hover {
+            background-color: $c-accent-hover;
+            color: $c-white !important;
+        }
+    }
+
+    &__btn {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        width: 48px;
+        height: 48px;
+        background-color: $c-white;
+        border: 1px solid $c-border;
+        border-radius: 4px;
+        color: $c-bg;
+        padding: 0 !important;
+
+        @include max(mobile) {
+            width: 30px;
+            height: 30px;
+        }
+
+        svg {
+            width: 24px;
+            height: 24px;
+
+            @include max(mobile) {
+                width: 16px;
+                height: 16px;
+            }
+        }
+
+        &.active,
+        &:hover {
+            background-color: $c-accent;
+
+            svg {
+                color: $c-white !important;
+            }
+        }
+    }
+
+    &__btn--next {
+        transform: rotate(-90deg);
+        margin: 0 0 0 24px !important;
+
+        @include max(mobile) {
+            margin: 0 0 0 8px !important;
+        }
+    }
+
+    &__btn--prev {
+        transform: rotate(90deg);
+        margin: 0 24px 0 0 !important;
+
+        @include max(mobile) {
+            margin: 0 8px 0 0 !important;
+        }
+    }
+
+    &__separator {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 48px;
+        height: 48px;
+        background-color: $c-white;
+        border: 1px solid $c-border;
+        border-radius: 4px;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.4em;
+        color: $c-text;
+
+        @include max(mobile) {
+            width: 30px;
+            height: 30px;
+            font-size: 12px;
+        }
+    }
+}

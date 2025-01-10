@@ -167,22 +167,40 @@ mixin form-filter(props = defaultFormFilterProps)
 
         .form-filter__side
             .form-filter__select.filter-select(data-js='filterSelect')
-                .filter-select__header
+                .filter-select__header(data-js="filterSelectHeader")
                     input(type="text" data-js="filterSelectInput" value="Сначала новое")
                     .filter-select__fake(data-js="filterSelectFake") Сначала новое
                     svg
                         use(xlink:href=`img/sprites/sprite.svg#arrow_angle`)
                 .filter-select__content
-                    .filter-select__option(data-js="filterSelectOption" data-value="Сначала новое") Сначала новое
+                    .filter-select__option.active(data-js="filterSelectOption" data-value="Сначала новое") Сначала новое
                     .filter-select__option(data-js="filterSelectOption" data-value="Сначала старое") Сначала старое
             .form-filter__select.filter-select(data-js='filterSelect')
-                .filter-select__header
+                .filter-select__header(data-js="filterSelectHeader")
                     input(type="text" data-js="filterSelectInput" value="За все время")
                     .filter-select__fake(data-js="filterSelectFake") За все время
                     svg
                         use(xlink:href=`img/sprites/sprite.svg#arrow_angle`)
                 .filter-select__content
-                    .filter-select__option(data-js="filterSelectOption" data-value="За все время") За все время
+                    .filter-select__option.active(data-js="filterSelectOption" data-value="За все время") За все время
                     .filter-select__option(data-js="filterSelectOption" data-value="За неделю") За неделю
                     .filter-select__option(data-js="filterSelectOption" data-value="За месяц") За месяц
-                    .filter-select__option(data-js="filterSelectOption" data-date) Выбрать период
+                    .filter-select__option.date-select(data-js="dateSelect") 
+                        .date-select__header(data-js="dateSelectHeader") Выбрать период
+                        .date-select__calendar(data-js="dateSelectCalendar")
+                            .date-select__field
+                                input.date-select__input(data-js="dateSelectInput" placeholder='Выбрать даты' readonly)
+                                .date-select__reset(data-js="dateSelectReset")
+                                    svg
+                                        use(xlink:href=`img/sprites/sprite.svg#close`)
+                            .date-select__btns
+                                +btn({
+                                    name: 'Отменить',
+                                    cMode: 'grey',
+                                    size: '108',
+                                })(data-js="dateSelectClose")
+                                +btn({
+                                    name: 'Применить',
+                                    cMode: 'red',
+                                    size: '108',
+                                })(data-js="dateSelectSet")

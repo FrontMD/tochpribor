@@ -910,3 +910,87 @@ body {
 		}
 	}
 }
+
+.air-datepicker {
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	border: none;
+}
+
+.air-datepicker {
+	--adp-width: 222px; //ширина
+	--adp-z-index: 5; // z-index календаря 
+	--adp-cell-border-radius: 4px; // радиус скругления дней
+	--adp-border-radius: 4px; // радиус скругления стрелок
+	--adp-nav-arrow-color: #919191; // стрелки
+	--adp-nav-color-secondary: var(--c-text); // светлый текст
+	--adp-color-other-month: #919191; // цвет текста в другом месяце
+	--adp-color: var(--c-text); // основной текст
+	--adp-day-name-color: #C8C8C8; //цвет текста дней недели
+	--adp-color-current-date: #CA0001; // текущий день
+	--adp-cell-background-color-selected: #CA0001; //фон выбранного дня
+	--adp-background-color-selected-other-month: #CA0001; //фон выбранного дня в другом месяце
+	--adp-cell-background-color-selected-hover: #8E0001; // наведение на выбранный день
+	--adp-background-color-selected-other-month-focused: #8E0001; // наведение на выбранный день в другом месяце
+	--adp-cell-background-color-hover: #DD595A; // наведение на день
+	--adp-background-color-hover: #F4F4F4; // наведение на стрелку
+	--adp-cell-background-color-in-range: #FCF2F2; // фон ячейки в периоде
+	--adp-background-color-in-range: #FCF2F2; // фон ячейки в периоде в другом месяце
+	--adp-cell-background-color-in-range-hover: #DD595A; // наведение на ячейки в периоде
+	--adp-background-color-in-range-focused: #DD595A; // наведение на ячейки в периоде в другом месяце
+
+	&.-inline- {
+		margin-top: 12px;
+	}
+
+	.air-datepicker-nav {
+		padding: 0;
+		border-bottom: none;
+	}
+
+	.air-datepicker--content {
+		padding: 0;
+		margin-top: 12px;
+	}
+
+	.air-datepicker-cell.-day- {
+		&:hover {
+			color: $c-white;
+		}
+	}
+
+	.air-datepicker-cell.-day-.-range-to-:not(.-selected-),
+	.air-datepicker-cell.-day-.-range-from-:not(.-selected-) {
+		&:hover {
+			color: $c-text;
+		}
+	}
+
+	.air-datepicker-nav--action {
+		width: 16px;
+		height: 16px;
+
+		svg {
+			width: 16px;
+			height: 16px;
+		}
+
+		&[data-action="prev"] {
+			transform: rotate(90deg);
+		}
+
+		&[data-action="next"] {
+			transform: rotate(-90deg);
+		}
+	}
+
+	.air-datepicker-nav {
+		align-items: center;
+	}
+}
+
+.air-datepicker-global-container {
+	z-index: 99;
+}

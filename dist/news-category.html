@@ -325,7 +325,7 @@
                     </div>
                     <div class="form-filter__side">
                       <div class="form-filter__select filter-select" data-js="filterSelect">
-                        <div class="filter-select__header">
+                        <div class="filter-select__header" data-js="filterSelectHeader">
                           <input type="text" data-js="filterSelectInput" value="Сначала новое">
                           <div class="filter-select__fake" data-js="filterSelectFake">Сначала новое</div>
                           <svg>
@@ -333,12 +333,12 @@
                           </svg>
                         </div>
                         <div class="filter-select__content">
-                          <div class="filter-select__option" data-js="filterSelectOption" data-value="Сначала новое">Сначала новое</div>
+                          <div class="filter-select__option active" data-js="filterSelectOption" data-value="Сначала новое">Сначала новое</div>
                           <div class="filter-select__option" data-js="filterSelectOption" data-value="Сначала старое">Сначала старое</div>
                         </div>
                       </div>
                       <div class="form-filter__select filter-select" data-js="filterSelect">
-                        <div class="filter-select__header">
+                        <div class="filter-select__header" data-js="filterSelectHeader">
                           <input type="text" data-js="filterSelectInput" value="За все время">
                           <div class="filter-select__fake" data-js="filterSelectFake">За все время</div>
                           <svg>
@@ -346,10 +346,24 @@
                           </svg>
                         </div>
                         <div class="filter-select__content">
-                          <div class="filter-select__option" data-js="filterSelectOption" data-value="За все время">За все время</div>
+                          <div class="filter-select__option active" data-js="filterSelectOption" data-value="За все время">За все время</div>
                           <div class="filter-select__option" data-js="filterSelectOption" data-value="За неделю">За неделю</div>
                           <div class="filter-select__option" data-js="filterSelectOption" data-value="За месяц">За месяц</div>
-                          <div class="filter-select__option" data-js="filterSelectOption" data-date>Выбрать период</div>
+                          <div class="filter-select__option date-select" data-js="dateSelect"> 
+                            <div class="date-select__header" data-js="dateSelectHeader">Выбрать период</div>
+                            <div class="date-select__calendar" data-js="dateSelectCalendar">
+                              <div class="date-select__field">
+                                <input class="date-select__input" data-js="dateSelectInput" placeholder="Выбрать даты" readonly>
+                                <div class="date-select__reset" data-js="dateSelectReset">
+                                  <svg>
+                                    <use xlink:href="img/sprites/sprite.svg#close"></use>
+                                  </svg>
+                                </div>
+                              </div>
+                              <div class="date-select__btns"><a class="btn  btn--grey btn--108" href="javascript:void(0)" data-js="dateSelectClose"><span class="btn__text">Отменить</span></a><a class="btn  btn--red btn--108" href="javascript:void(0)" data-js="dateSelectSet"><span class="btn__text">Применить</span></a>
+                              </div>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -505,6 +519,15 @@
                     </div>
                   </div>
             </div>
+                <div class="pagination"><a class="pagination__btn pagination__btn--prev" href="javascript:void(0);">
+                    <svg>
+                      <use xlink:href="img/sprites/sprite.svg#arrow_angle"></use>
+                    </svg></a><a class="pagination__page active" href="javascript:void(0);">1</a><a class="pagination__page" href="javascript:void(0);">2</a><a class="pagination__page" href="javascript:void(0);">3</a>
+                  <div class="pagination__separator">...</div><a class="pagination__page" href="javascript:void(0);">99</a><a class="pagination__btn pagination__btn--next" href="javascript:void(0);">
+                    <svg>
+                      <use xlink:href="img/sprites/sprite.svg#arrow_angle"></use>
+                    </svg></a>
+                </div>
           </div>
         </section>
             <section class="section section--full socials-section">
