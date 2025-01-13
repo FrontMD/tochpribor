@@ -46,7 +46,7 @@
 
     &__error {
         flex: 0 0 315px;
-        max-height: 326px;
+        max-height: 280px;
 
         @include max(xs) {
             max-height: 300px;
@@ -180,6 +180,37 @@
 
         &:hover {
             color: $c-accent-hover;
+        }
+    }
+
+    &__faq {
+        max-width: calc(100% - 315px - 30px);
+
+        @include max(laptop) {
+            max-width: 100%;
+            width: 100%;
+        }
+
+        .spoiler .text-editor {
+            color: $c-text-light;
+        }
+
+        .spoiler .text-editor a {
+            transition: color;
+        }
+
+        .spoiler .text-editor a:hover {
+            color: $c-accent-hover;
+        }
+
+        .spoiler .spoiler__title {
+            font-size: 20px;
+            line-height: 1.1em;
+            letter-spacing: -0.01em;
+
+            @include max(mobile) {
+                font-size: 18px;
+            }
         }
     }
 }

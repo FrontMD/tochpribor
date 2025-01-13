@@ -1,0 +1,396 @@
+extends ../layouts/default
+include ../helpers/mixins
+
+block variables
+	- const title = "Вакансия"
+
+block content
+	.page-layout.page-layout--bottom
+		.breadcrumbs-section.section.section--transparent
+			.section__container
+				+breadcrumbs({
+					items: [
+						{
+							name: 'Главная',
+							link: 'javascript:void(0);'
+						},
+						{
+							name: 'Наша команда',
+							link: 'javascript:void(0);'
+						},
+						{
+							name: 'Вакансии',
+							link: 'javascript:void(0);'
+						},
+						{
+							name: 'Название вакансии',
+							link: 'javascript:void(0);'
+						}
+					],
+				})
+
+		.sidebar-layout
+			.sidebar-layout__content
+				section.section.section--full.vacancy-layout__header
+					//-.section__container
+						+title({
+							tag: 'h1',
+							size: '53',
+							text: 'Семинар по твердометрии и спектрометрии в Екатеринбурге 10 июля'
+						})
+						.article-layout__bottom
+							.article-layout__side
+								.article-layout__info
+									svg
+										use(xlink:href=`img/sprites/sprite.svg#calendar`)
+									span 12 июля 2024
+								.article-layout__info
+									svg
+										use(xlink:href=`img/sprites/sprite.svg#folder`)
+									span Категория: Новости 
+							.article-layout__side.article-layout__side--last
+								+btn({
+									classes: '',
+									name: 'Поделиться',
+									cMode: 'transparent',
+									size: '182',
+									link: 'javascript:void(0)',
+									icon: 'share'
+								})
+								+btn({
+									classes: '',
+									name: 'Комментарии <span class="btn__note">(13)</span>',
+									cMode: 'transparent',
+									size: '182',
+									link: '#comments',
+									icon: 'message'
+								})
+
+				section.section.section--full
+					.section__container.article-layout__body
+						//-.text-editor
+							img(src="img/news/news_article_1.webp" alt="")
+
+							h2 10 июля 2024 года компания посетила город Екатеринбург по приглашению наших коллег из компании
+
+							p ООО «РУСПРОМКОНТРОЛЬ», чтобы поучаствовать в очном семинаре по приборам неразрушающего контроля. 
+
+							p Руководитель отдела продаж Иванов Иван выступил с докладом по двум темам:
+
+							ul
+								li Теоретические основы измерения твёрдости материалов;
+								li Применение комбинированных, ультразвуковых и динамических твердомеров для проведения контроля на предприятии
+
+							img(src="img/news/news_article_2.webp" alt="")
+
+							h2 Также в рамках семинара была проведена практическая часть, на которой все желающие могли на практике попробовать измерить твёрдость собственных образцов
+
+							p Особый интерес у посетителей вызвал новый миниатюрный твердомер MET-MINI, который был выпущен нашей компанией в этом году. Данная модель, также как и более ранние, прошла все испытания и включена в государственный реестр средств измерения РФ под номером 86618-22.
+
+							p Благодарим руководителя компании ООО «РУСПРОМКОНТРОЛЬ» Енидорцева Дмитрия Николаевича и руководителя отдела продаж Юминова Юрия Геннадьевича за организацию семинара на высоком уровне, а также за тёплый приём нашего представителя!
+
+				section.section.section--full
+					//-.section__container
+						+cards-slider({
+							title: 'Связанные товары'
+						})
+							.swiper-slide
+								+catalog-card({
+									classes: 'cards-slider__card',
+									title: 'Твердомер ТПУ 1800',
+									desc: `
+										<h3>Технические характеристики</h3>
+										<ul>
+											<li>Конструктивное исполнение: установка на виброопоры</li>
+											<li>Наибольший предел измерений (НПИ): 100</li>
+											<li>Ход подвижной траверсы без захватов, мм: 700</li>
+										</ul>
+										<h3>Базовая комплектация</h3>
+										<ul>
+											<li>Захваты для образцов: тип IV, ГОСТ 1497</li>
+											<li>НИзмеритель силы тензорезисторный: 1 компл.</li>
+											<li>ПТК:  ноутбук, принтер + ПО (1 компл.)</li>
+										</ul>
+										`,
+									image: 'img/catalog/product_1.png',
+									tags: [
+										{
+											img: 'img/catalog/check_icon.svg',
+											text: 'В наличии',
+											color: 'green'
+										},
+										{
+											img: '',
+											text: 'Новинка',
+											color: 'blue'
+										},
+										{
+											img: '',
+											text: 'Скидка',
+											color: 'red'
+										}
+									],
+									prices: [
+										'550 000 ₽',
+										'680 000 ₽'
+									]
+								})
+							.swiper-slide
+								+catalog-card({
+									classes: 'cards-slider__card',
+									title: 'Твердомер ТКМ-459С',
+									desc: `
+										<h3>Технические характеристики</h3>
+										<ul>
+											<li>Конструктивное исполнение: установка на виброопоры</li>
+											<li>Наибольший предел измерений (НПИ): 100</li>
+											<li>Ход подвижной траверсы без захватов, мм: 700</li>
+										</ul>
+										<h3>Базовая комплектация</h3>
+										<ul>
+											<li>Захваты для образцов: тип IV, ГОСТ 1497</li>
+											<li>НИзмеритель силы тензорезисторный: 1 компл.</li>
+											<li>ПТК:  ноутбук, принтер + ПО (1 компл.)</li>
+										</ul>
+										`,
+									image: 'img/catalog/product_2.png',
+									tags: [
+										{
+											img: 'img/catalog/check_icon.svg',
+											text: 'В наличии',
+											color: 'green'
+										},
+										{
+											img: '',
+											text: 'Новинка',
+											color: 'blue'
+										},
+										{
+											img: '',
+											text: 'Скидка',
+											color: 'red'
+										}
+									],
+									prices: [
+										'550 000 ₽',
+										'680 000 ₽'
+									]
+								})
+							.swiper-slide
+								+catalog-card({
+									classes: 'cards-slider__card',
+									title: 'Твердомер ТПУ 1800',
+									desc: `
+										<h3>Технические характеристики</h3>
+										<ul>
+											<li>Конструктивное исполнение: установка на виброопоры</li>
+											<li>Наибольший предел измерений (НПИ): 100</li>
+											<li>Ход подвижной траверсы без захватов, мм: 700</li>
+										</ul>
+										<h3>Базовая комплектация</h3>
+										<ul>
+											<li>Захваты для образцов: тип IV, ГОСТ 1497</li>
+											<li>НИзмеритель силы тензорезисторный: 1 компл.</li>
+											<li>ПТК:  ноутбук, принтер + ПО (1 компл.)</li>
+										</ul>
+										`,
+									image: 'img/catalog/product_1.png',
+									tags: [
+										{
+											img: 'img/catalog/check_icon.svg',
+											text: 'В наличии',
+											color: 'green'
+										},
+										{
+											img: '',
+											text: 'Новинка',
+											color: 'blue'
+										},
+										{
+											img: '',
+											text: 'Скидка',
+											color: 'red'
+										}
+									],
+									prices: [
+										'550 000 ₽',
+										'680 000 ₽'
+									]
+								})
+							.swiper-slide
+								+catalog-card({
+									classes: 'cards-slider__card',
+									title: 'Твердомер ТКМ-459С',
+									desc: `
+										<h3>Технические характеристики</h3>
+										<ul>
+											<li>Конструктивное исполнение: установка на виброопоры</li>
+											<li>Наибольший предел измерений (НПИ): 100</li>
+											<li>Ход подвижной траверсы без захватов, мм: 700</li>
+										</ul>
+										<h3>Базовая комплектация</h3>
+										<ul>
+											<li>Захваты для образцов: тип IV, ГОСТ 1497</li>
+											<li>НИзмеритель силы тензорезисторный: 1 компл.</li>
+											<li>ПТК:  ноутбук, принтер + ПО (1 компл.)</li>
+										</ul>
+										`,
+									image: 'img/catalog/product_2.png',
+									tags: [
+										{
+											img: 'img/catalog/check_icon.svg',
+											text: 'В наличии',
+											color: 'green'
+										},
+										{
+											img: '',
+											text: 'Новинка',
+											color: 'blue'
+										},
+										{
+											img: '',
+											text: 'Скидка',
+											color: 'red'
+										}
+									],
+									prices: [
+										'550 000 ₽',
+										'680 000 ₽'
+									]
+								})
+
+			.sidebar-layout__sidebar
+				.section.section--full.tags
+					.section__container
+						.tags__title Ключевые навыки
+						.tags__list
+							.tags__tag Работоспособность
+							.tags__tag Работа в команде
+
+				.article-layout__banner.banner.banner--notext
+					.banner__bg
+						img(src="img/news/news_banner_1.webp" alt="")
+					.banner__content
+						.banner__title.title--26 Стань частью нашего коллектива
+						+btn({
+							classes: '',
+							size: "content",
+							name: 'Отправить резюме',
+							icon: 'arrow_enter',
+							size: '246'
+						})
+
+				.section.section--full.sidebar-articles
+					.section__container
+						.sidebar-articles__title Новые вакансии
+						//-.sidebar-articles__list
+							+news-card({
+								classes: 'sidebar-articles__card',
+								media: 'img/news/news_2.webp',
+								title: 'Открытие предприятия "Завод испытательных приборов" - Точприбор',
+								category: 'Мы в ВК'
+							})
+							+news-card({
+								classes: 'sidebar-articles__card',
+								media: 'img/news/news_3.webp',
+								title: 'Возрождение уникального ивановского завода - Точприбор',
+								category: 'Новости'
+							})
+							+news-card({
+								classes: 'sidebar-articles__card',
+								media: 'img/news/news_4.webp',
+								title: 'Поставлена испытательная машина ИР 5145-500-11 для нужд инженерно-технического центра завода',
+								category: 'Новости'
+							})
+							+news-card({
+								classes: 'sidebar-articles__card',
+								media: 'img/news/news_3.webp',
+								title: 'Возрождение уникального ивановского завода - Точприбор',
+								category: 'Новости'
+							})
+							+news-card({
+								classes: 'sidebar-articles__card',
+								media: 'img/news/news_2.webp',
+								title: 'Открытие предприятия "Завод испытательных приборов" - Точприбор',
+								category: 'Мы в ВК'
+							})
+
+
+		section.section.section--full
+			//-.section__container
+				+cards-slider({
+					title: 'Другие вакансии',
+					slidesCount: '4'
+				})
+					.swiper-slide
+						+news-card({
+							classes: 'cards-slider__card',
+							vMode: 'classic',
+							media: 'img/news/news_17.webp',
+							title: 'Подписан договор на производство и поставку прибора ТМВ 1000',
+							date: '20.10.2024',
+							category: 'Мы в СМИ'
+						})
+					.swiper-slide
+						+news-card({
+							classes: 'cards-slider__card',
+							vMode: 'classic',
+							media: 'img/news/news_18.webp',
+							title: 'Подписан договор на производство и поставку  машины на базе BP DLC 0,2 кN',
+							date: '20.10.2024',
+							category: 'Мы в СМИ'
+						})
+					.swiper-slide
+						+news-card({
+							classes: 'cards-slider__card',
+							vMode: 'classic',
+							media: 'img/news/news_2.webp',
+							title: 'Подписан договор на производство и поставку прибора ТРC 5009',
+							date: '20.10.2024',
+							category: 'Мы в СМИ'
+						})
+					.swiper-slide
+						+news-card({
+							classes: 'cards-slider__card',
+							vMode: 'classic',
+							media: 'img/news/news_19.webp',
+							title: 'Подписан договор на производство и поставку универсальной машины',
+							date: '20.10.2024',
+							category: 'Мы в СМИ'
+						})
+					.swiper-slide
+						+news-card({
+							classes: 'cards-slider__card',
+							vMode: 'classic',
+							media: 'img/news/news_17.webp',
+							title: 'Подписан договор на производство и поставку прибора ТМВ 1000',
+							date: '20.10.2024',
+							category: 'Мы в СМИ'
+						})
+					.swiper-slide
+						+news-card({
+							classes: 'cards-slider__card',
+							vMode: 'classic',
+							media: 'img/news/news_18.webp',
+							title: 'Подписан договор на производство и поставку  машины на базе BP DLC 0,2 кN',
+							date: '20.10.2024',
+							category: 'Мы в СМИ'
+						})
+					.swiper-slide
+						+news-card({
+							classes: 'cards-slider__card',
+							vMode: 'classic',
+							media: 'img/news/news_2.webp',
+							title: 'Подписан договор на производство и поставку прибора ТРC 5009',
+							date: '20.10.2024',
+							category: 'Мы в СМИ'
+						})
+					.swiper-slide
+						+news-card({
+							classes: 'cards-slider__card',
+							vMode: 'classic',
+							media: 'img/news/news_19.webp',
+							title: 'Подписан договор на производство и поставку универсальной машины',
+							date: '20.10.2024',
+							category: 'Мы в СМИ'
+						})

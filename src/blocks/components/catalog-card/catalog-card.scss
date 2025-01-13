@@ -47,6 +47,10 @@
         font-weight: 400;
         line-height: 1.4em;
 
+        @include max(mobile) {
+            font-size: 10px;
+        }
+
         &--green {
             color: #019F3C;
             background-color: #E6F5EC;
@@ -94,6 +98,14 @@
         grid-template-columns: minmax(0, 47%) minmax(0, 53%);
         gap: 10px;
         margin-bottom: 6px;
+
+        @include max(mobile) {
+            grid-template-columns: minmax(0, 35%) minmax(0, 65%);
+        }
+
+        @include max(xs) {
+            grid-template-columns: 1fr;
+        }
     }
 
     &__photo {
@@ -101,6 +113,11 @@
         align-items: center;
         justify-content: center;
         aspect-ratio: 1 / 1;
+
+        @include max(xs) {
+            max-width: 160px;
+            margin: 0 auto;
+        }
 
         img {
             max-width: 100%;
@@ -127,6 +144,10 @@
 
         @include max(large) {
             font-size: 10px;
+        }
+
+        @include max(mobile) {
+            margin-top: 16px;
         }
 
         h2,
@@ -182,6 +203,7 @@
 
         @include max(xs) {
             font-size: 20px;
+            grid-column-end: 2;
         }
     }
 
@@ -203,6 +225,11 @@
         justify-content: space-between;
         gap: 10px;
         margin-top: auto;
+
+        @include max(xs) {
+            flex-direction: column;
+            align-items: stretch;
+        }
 
         .btn {
             flex: 0 1 50%;

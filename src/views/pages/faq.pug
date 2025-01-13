@@ -1,0 +1,189 @@
+extends ../layouts/default
+include ../helpers/mixins
+
+block variables
+    - const title = "Вопросы и ответы (FAQ)"
+
+block content
+    .page-layout
+        .breadcrumbs-section.section.section--transparent
+            .section__container
+                +breadcrumbs({
+                    items: [
+                        {
+                            name: 'Главная',
+                            link: 'javascript:void(0);'
+                        },
+                        {
+                            name: 'Вопросы и ответы (FAQ)',
+                            link: 'javascript:void(0);'
+                        }
+                    ],
+                })
+
+        section.section.glossary-list__intro
+            .section__container
+                .glossary-list__header
+                    +title({
+                        tag: 'h1',
+                        size: '67',
+                        text: 'Вопросы и ответы (FAQ)'
+                    })
+                    .glossary-list__desc Мы объединили здесь всю необходимую информацию, чтобы избавить Вас от необходимости искать ее по разным источникам.
+
+                form.glossary-list__filter
+                    .glossary-list__block
+                        .glossary-list__radios
+                            .glossary-list__radio
+                                label 
+                                    input(type="radio" name="glossary-list-section" value="Все направления" checked)
+                                    span Все направления
+                            .glossary-list__radio
+                                label 
+                                    input(type="radio" name="glossary-list-section" value="Универсальные испытательные машины (разрывные машины)")
+                                    span Общие
+                            .glossary-list__radio
+                                label 
+                                    input(type="radio" name="glossary-list-section" value="Приборы для измерения твердости (твердомеры)")
+                                    span Доставка
+                            .glossary-list__radio
+                                label 
+                                    input(type="radio" name="glossary-list-section" value="Меры твердости эталонные")
+                                    span Оплата
+                            .glossary-list__radio
+                                label 
+                                    input(type="radio" name="glossary-list-section" value="Приборы для измерения цвета")
+                                    span Юриспруденция
+                            .glossary-list__radio
+                                label 
+                                    input(type="radio" name="glossary-list-section" value="Микроскопы" checked)
+                                    span Товары
+
+                    .glossary-list__block
+                        .glossary-list__left
+                            .glossary-list__search
+                                +field({
+                                    placeholder: 'Поиск',
+                                    resetBtn: true,
+                                    isSearch: true
+                                })
+                            .glossary-list__radios          
+                                .glossary-list__radio
+                                    label 
+                                        input(type="radio" name="glossary-list-section" value="Все направления" checked)
+                                        span Все вопросы по товарам
+                                .glossary-list__radio
+                                    label 
+                                        input(type="radio" name="glossary-list-section" value="Универсальные испытательные машины (разрывные машины)")
+                                        span Испытательные машины
+                                .glossary-list__radio
+                                    label 
+                                        input(type="radio" name="glossary-list-section" value="Приборы для измерения твердости (твердомеры)")
+                                        span Динамометры
+                                .glossary-list__radio
+                                    label 
+                                        input(type="radio" name="glossary-list-section" value="Меры твердости эталонные")
+                                        span Видеоизмерительные системы Girmax
+                                .glossary-list__radio
+                                    label 
+                                        input(type="radio" name="glossary-list-section" value="Приборы для измерения цвета")
+                                        span Молотки Шмитта
+                                .glossary-list__radio
+                                    label 
+                                        input(type="radio" name="glossary-list-section" value="Микроскопы")
+                                        span Гири Girmax
+                                .glossary-list__radio
+                                    label 
+                                        input(type="radio" name="glossary-list-section" value="Динамометры")
+                                        span Испытательные пресса
+                                .glossary-list__radio
+                                    label 
+                                        input(type="radio" name="glossary-list-section" value="Видеоизмерительные системы Girmax")
+                                        span Копры маятниковые и вертикальные
+                                .glossary-list__radio
+                                    label 
+                                        input(type="radio" name="glossary-list-section" value="Молотки Шмитта")
+                                        span Оборудование для технологических испытаний
+                                .glossary-list__radio
+                                    label 
+                                        input(type="radio" name="glossary-list-section" value="Гири Girmax")
+                                        span Экстензометры
+                                .glossary-list__radio
+                                    label 
+                                        input(type="radio" name="glossary-list-section" value="Испытательные пресса")
+                                        span Системы температурных испытаний
+                                .glossary-list__radio
+                                    label 
+                                        input(type="radio" name="glossary-list-section" value="Копры маятниковые и вертикальные")
+                                        span Машины трения (для испытания на трение и износ)
+                                .glossary-list__radio
+                                    label 
+                                        input(type="radio" name="glossary-list-section" value="Оборудование для технологических испытаний")
+                                        span Приборы для неразрушающего контроля
+                                .glossary-list__radio
+                                    label 
+                                        input(type="radio" name="glossary-list-section" value="Экстензометры")
+                                        span Оборудование для пробоподготовки (металлография и т.д.)
+                                .glossary-list__radio
+                                    label 
+                                        input(type="radio" name="glossary-list-section" value="Системы температурных испытаний")
+                                        span Шлифовальные станки
+                                .glossary-list__radio
+                                    label 
+                                        input(type="radio" name="glossary-list-section" value="Машины трения (для испытания на трение и износ)")
+                                        span Полировальные станки
+                                .glossary-list__radio
+                                    label 
+                                        input(type="radio" name="glossary-list-section" value="Приборы для неразрушающего контроля")
+                                        span Шлифовально-полировальные станки
+                                .glossary-list__radio
+                                    label 
+                                        input(type="radio" name="glossary-list-section" value="Оборудование для пробоподготовки (металлография и т.д.)")
+                                        span Станки для запрессовки
+                                .glossary-list__radio
+                                    label 
+                                        input(type="radio" name="glossary-list-section" value="Шлифовальные станки")
+                                        span Весы лабораторные, весы крановые
+
+                        .glossary-list__error.banner
+                            .banner__bg
+                                img(src="img/glossary/glossary_support.webp" alt="")
+                            .banner__content
+                                .banner__title.title--26 Не нашли ответ на свой вопрос? 
+                                .banner__text Напишите нам
+                                +btn({
+                                    classes: '',
+                                    size: "246",
+                                    name: 'Задать вопрос',
+                                    icon: 'arrow_enter',
+                                })
+
+        section.section
+            .section__container.glossary-list__faq
+                .glossary-list__accordion(data-js="accordion")
+                    +spoiler({
+                        title: 'Каким твердомером можно измерить твердость хромового покрытия?'
+                    })
+                        .text-editor
+                            | Приказ Министерства образования и науки РФ от 27 ноября 2015 г. <a href="javascript:void(0);">№ 1383 “Об утверждении Положения о практике обучающихся, осваивающих основные профессиональные образовательные программы высшего образования”</a>
+                    +spoiler({
+                        title: 'Можно-ли, измерив твердость металла, узнать его расчетное сопротивление?'
+                    })
+                        .text-editor
+                            | Приказ Министерства образования и науки РФ от 27 ноября 2015 г. <a href="javascript:void(0);">№ 1383 “Об утверждении Положения о практике обучающихся, осваивающих основные профессиональные образовательные программы высшего образования”</a>
+                    +spoiler({
+                        title: 'Требованиям какого ГОСТа соответствуют выпускаемые Вами портативные твердомеры (или иной документ)?'
+                    })
+                        .text-editor
+                            | Приказ Министерства образования и науки РФ от 27 ноября 2015 г. <a href="javascript:void(0);">№ 1383 “Об утверждении Положения о практике обучающихся, осваивающих основные профессиональные образовательные программы высшего образования”</a>
+                    +spoiler({
+                        title: 'Есть ли оптовые скидки?'
+                    })
+                        .text-editor
+                            | Приказ Министерства образования и науки РФ от 27 ноября 2015 г. <a href="javascript:void(0);">№ 1383 “Об утверждении Положения о практике обучающихся, осваивающих основные профессиональные образовательные программы высшего образования”</a>
+                    +spoiler({
+                        title: 'Участвуете в тендерах?'
+                    })
+                        .text-editor
+                            | Приказ Министерства образования и науки РФ от 27 ноября 2015 г. <a href="javascript:void(0);">№ 1383 “Об утверждении Положения о практике обучающихся, осваивающих основные профессиональные образовательные программы высшего образования”</a>
+                +pagination

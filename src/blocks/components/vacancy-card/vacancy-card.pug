@@ -1,0 +1,36 @@
+-
+    const defaultVacancyCardProps = {
+        classes: '',
+        vMode: 'horizontal',
+        media: '',
+        title: '',
+        category: '',
+        date: ''
+    }
+
+mixin vacancy-card(props = defaultVacancyCardProps)
+    -
+        const checkProps = {
+            classes: props.classes ? props.classes : defaultVacancyCardProps.classes,
+            vMode: props.vMode ? props.vMode : defaultVacancyCardProps.vMode,
+            media: props.media ? props.media : defaultVacancyCardProps.media,
+            title: props.title ? props.title : defaultVacancyCardProps.title,
+            category: props.category ? props.category : defaultVacancyCardProps.category,
+            date: props.date ? props.date : defaultVacancyCardProps.date
+        }
+
+        let vModeClass = ` vacancy-card--${checkProps.vMode}`
+
+    .vacancy-card(class= checkProps.classes + vModeClass)&attributes(attributes)
+        -if(checkProps.media.length > 0)
+            .vacancy-card__media
+                img(class="lazyload" data-src= checkProps.media)
+
+        .vacancy-card__content
+            a.vacancy-card__title(href="javascript:void(0)")!= checkProps.title
+            -if(checkProps.category.length > 0 || checkProps.date.length > 0)
+                .vacancy-card__tags
+                    -if(checkProps.category.length > 0)
+                        a.vacancy-card__category(href="javascript:void(0)")!= checkProps.category
+                    -if(checkProps.date.length > 0)
+                        .vacancy-card__date!= checkProps.date
