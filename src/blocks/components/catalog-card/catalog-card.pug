@@ -31,9 +31,15 @@ mixin catalog-card(props = defaultCatalogCardProps)
 							.catalog-card__tag(class= `catalog-card__tag--${currentTag.color}`)
 								- if(currentTag.img.length > 0)
 									img(src= currentTag.img)
-								!= currentTag.text 
-
+								!= currentTag.text
 							- tagsCounter++
+				.catalog-card__controls
+					a.catalog-card__control(href="javascript:void(0)")
+						svg
+							use(xlink:href=`img/sprites/sprite.svg#view`)
+					a.catalog-card__control(href="javascript:void(0)")
+						svg
+							use(xlink:href=`img/sprites/sprite.svg#compare_2`)
 		.catalog-card__body
 			.catalog-card__photo
 				img(src= checkProps.image alt= checkProps.title)
@@ -56,6 +62,5 @@ mixin catalog-card(props = defaultCatalogCardProps)
 				name: 'В корзину',
 				cMode: 'transparent-red',
 				icon: 'basket',
-				iconPos: 'left',
-
+				iconPos: 'left'
 			})

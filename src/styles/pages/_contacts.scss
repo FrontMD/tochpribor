@@ -244,43 +244,6 @@
         }
     }
 
-    &__social {
-        flex: 0 0 calc((100% - 10px) / 2);
-        display: flex;
-        align-items: flex-end;
-        justify-content: space-between;
-        padding: 12px;
-        border: 1px solid $c-border;
-        border-radius: 4px;
-        font-size: 20px;
-        line-height: 1.1em;
-        letter-spacing: -0.01em;
-        color: $c-text;
-
-        .icon {
-            margin-bottom: 80px;
-            flex-shrink: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 32px;
-            height: 32px;
-            border: 1px solid $c-border;
-            border-radius: 2px;
-        }
-
-        .icon svg {
-            width: 24px;
-            height: 24px;
-            color: $c-text;
-            transition: color $tr-time linear;
-        }
-
-        &:hover .icon svg {
-            color: $c-accent-hover;
-        }
-    }
-
 }
 
 .contacts-details {

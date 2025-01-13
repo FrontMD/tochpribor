@@ -696,6 +696,10 @@
         font-size: 20px;
         line-height: 1.1em;
         letter-spacing: -0.01em;
+        -webkit-line-clamp: 3;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
 
         @include max(laptop) {
             font-size: 18px;
@@ -707,6 +711,8 @@
     }
 
     &--classic &__tags {
+        flex-direction: row-reverse;
+        justify-content: flex-end;
         padding-top: 10px;
         border-top: 1px solid $c-bg;
         margin-top: auto;
