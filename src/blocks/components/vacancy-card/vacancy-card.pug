@@ -1,9 +1,10 @@
 -
     const defaultVacancyCardProps = {
         classes: '',
-        vMode: 'horizontal',
+        vMode: '',
         media: '',
         title: '',
+        salary: '',
         category: '',
         date: ''
     }
@@ -15,11 +16,12 @@ mixin vacancy-card(props = defaultVacancyCardProps)
             vMode: props.vMode ? props.vMode : defaultVacancyCardProps.vMode,
             media: props.media ? props.media : defaultVacancyCardProps.media,
             title: props.title ? props.title : defaultVacancyCardProps.title,
+            salary: props.salary ? props.salary : defaultVacancyCardProps.salary,
             category: props.category ? props.category : defaultVacancyCardProps.category,
             date: props.date ? props.date : defaultVacancyCardProps.date
         }
 
-        let vModeClass = ` vacancy-card--${checkProps.vMode}`
+        let vModeClass = checkProps.vMode.length > 0 ? ` vacancy-card--${checkProps.vMode}` : ''
 
     .vacancy-card(class= checkProps.classes + vModeClass)&attributes(attributes)
         -if(checkProps.media.length > 0)
@@ -28,6 +30,10 @@ mixin vacancy-card(props = defaultVacancyCardProps)
 
         .vacancy-card__content
             a.vacancy-card__title(href="javascript:void(0)")!= checkProps.title
+            -if(checkProps.salary.length > 0)
+                .vacancy-card__salary
+                    .vacancy-card__amount!= checkProps.salary
+                    .vacancy-card__tax до вычета НДФЛ
             -if(checkProps.category.length > 0 || checkProps.date.length > 0)
                 .vacancy-card__tags
                     -if(checkProps.category.length > 0)

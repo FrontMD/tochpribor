@@ -1,21 +1,40 @@
 .vacancy-card {
     display: flex;
-    gap: 16px;
+    flex-direction: column;
+    gap: 12px;
+    border-radius: 4px 4px 0 0;
+    overflow: hidden;
+
+    &__media {
+        width: 100%;
+        aspect-ratio: 1 / 0.55;
+        flex: 0 0 auto;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
 
     &__content {
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        flex: 1 1 auto;
     }
 
     &__title {
+        min-height: 2.8em;
+        margin-bottom: 11px;
         color: $c-text;
         transition: color $tr-time linear;
         line-height: 1.4em;
-        font-size: 16px;
+        font-size: 20px;
+        line-height: 1.1em;
+        letter-spacing: -0.01em;
 
         @include max(xs) {
-            font-size: 14px;
+            font-size: 16px;
         }
 
         &:hover {
@@ -23,66 +42,39 @@
         }
     }
 
-    &__text {
-        font-size: 14px;
+    &__salary {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: auto;
+    }
+
+    &__amount {
+        font-size: 16px;
         line-height: 1.4em;
-        margin-top: 16px;
+        color: $c-text;
+    }
 
-        p {
-            margin-bottom: 1.4em;
-        }
-
-        ol {
-            list-style-type: none;
-            counter-reset: num;
-            margin-bottom: 1.4em;
-        }
-
-        ol li {
-            position: relative;
-            padding: 0 0 0 4px;
-        }
-
-        ol li:before {
-            content: counter(num) '.';
-            counter-increment: num;
-            margin-right: 4px;
-        }
-
-        ul {
-            margin-bottom: 1.4em;
-        }
-
-        ul li {
-            position: relative;
-            padding: 0 0 0 21px;
-        }
-
-        ul li:before {
-            content: '';
-            position: absolute;
-            left: 8px;
-            top: 8px;
-            width: 4px;
-            height: 4px;
-            border-radius: 100%;
-        }
-
+    &__tax {
+        font-size: 10px;
+        line-height: 1.4em;
+        color: $c-accent;
     }
 
     &__tags {
         display: flex;
         align-items: center;
         flex-wrap: wrap;
-        gap: 8px 16px;
-        margin-top: 24px;
+        gap: 8px;
+        margin-top: 11px;
+        padding-top: 11px;
+        border-top: 1px solid $c-bg;
         font-size: 12px;
         line-height: 1.4em;
         color: $c-white;
 
         @include max(xs) {
-            gap: 4px 8px;
-            margin-top: 16px;
+            gap: 4px;
         }
     }
 
@@ -102,73 +94,45 @@
         }
     }
 
-    &__media {
-        position: relative;
-        border-radius: 4px;
-        overflow: hidden;
-
-        &::after {
-            content: "";
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            left: 0;
-            top: 0;
-            background-color: rgba(0, 0, 0, 0.2);
-        }
-
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-    }
-
-    &__btn {
-        margin-left: auto;
-
-        @include max(mobile) {
-            flex-basis: 100%;
-            margin-top: 16px;
-        }
-    }
 }
 
-.news-card {
-
-    &--horizontal {
-        align-items: stretch;
+.vacancy-card {
+    &--small {
+        align-items: flex-start;
+        flex-direction: row;
         padding-top: 16px;
         border-top: 1px solid $c-border;
     }
 
-    &--horizontal &__title {
-        -webkit-line-clamp: 3;
+    &--small &__media {
+        flex: 0 0 100px;
+        aspect-ratio: 1 / 1;
+    }
+
+    &--small &__content {
+        align-self: stretch;
+        justify-content: space-between;
+        gap: 6px;
+    }
+
+    &--small &__title {
+        font-size: 16px;
+        min-height: auto;
+        margin-bottom: 0;
+        -webkit-line-clamp: 2;
         display: -webkit-box;
         -webkit-box-orient: vertical;
         overflow: hidden;
-
-        @include max(xs) {
-            margin-bottom: 10px;
-            font-size: 14px;
-        }
     }
 
-    &--horizontal &__media {
-        flex: 0 0 132px;
-        height: 132px;
-
-        @include max(xs) {
-            flex-basis: 120px;
-            height: 120px;
-        }
+    &--small &__tags {
+        margin-top: 0;
+        padding-top: 0;
+        border-top: none;
     }
 
-    &--horizontal &__content {
-        flex: 1 1 auto;
-    }
-
-    &--horizontal &__tags {
-        margin-top: auto;
+    &--small &__salary {
+        order: 2;
+        margin-top: 0;
     }
 }

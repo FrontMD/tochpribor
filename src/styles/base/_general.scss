@@ -681,8 +681,8 @@ body {
 		&:before {
 			content: '';
 			position: absolute;
-			left: 0.75em;
-			top: 0.7em;
+			left: 0.5625em;
+			top: 0.65em;
 			width: 0.375em;
 			height: 0.375em;
 			transform: translateY(-50%);
@@ -878,6 +878,7 @@ body {
 		font-size: 20px;
 		line-height: 1.1em;
 		letter-spacing: -0.01em;
+		color: $c-text;
 	}
 
 	&__list {
@@ -924,6 +925,7 @@ body {
 		font-size: 20px;
 		line-height: 1.1em;
 		letter-spacing: -0.01em;
+		color: $c-text;
 	}
 
 	&__list {
