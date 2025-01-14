@@ -11,9 +11,14 @@
     border-radius: 2px;
     cursor: pointer;
 
-    svg {
+    svg,
+    img {
         width: 16px;
         height: 16px;
+    }
+
+    img {
+        object-fit: contain;
     }
 
     &--full {
