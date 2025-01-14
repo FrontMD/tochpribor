@@ -17,7 +17,7 @@ function commentsHeight() {
         let itemsBlock = commentsBlock.querySelector('[data-js="commentsList"]');
         let fullHeight = itemsBlock.offsetHeight;
         let shortHeight = 120
-        if(window.innerWidth < 769) {
+        if(window.innerWidth < 768) {
             shortHeight = 80 
         }
         let showHideBtn = document.createElement('button');

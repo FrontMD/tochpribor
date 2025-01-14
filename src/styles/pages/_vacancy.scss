@@ -5,6 +5,10 @@
         gap: 16px;
         margin-top: 50px;
         color: $c-text;
+
+        @include max(mobile) {
+            flex-direction: column;
+        }
     }
 
     &__item {
@@ -18,17 +22,21 @@
         color: $c-text-breadcrumbs;
         border-bottom: 1px solid rgba(0, 0, 0, 0.1);
         margin-bottom: 16px;
+
+        @include max(mobile) {
+            margin-bottom: 8px;
+            padding-bottom: 8px;
+        }
     }
 
     &__price {
         display: flex;
         align-items: flex-start;
+        flex-wrap: wrap;
         gap: 12px;
     }
 
     &__amount {
-        font-size: 32px;
-        line-height: 1em;
         letter-spacing: -0.02em;
     }
 
@@ -57,14 +65,11 @@
         border-top: 1px solid $c-border;
 
         @include max(mobile) {
-            gap: 24px;
+            gap: 16px;
             margin-top: 40px;
             flex-direction: column;
-        }
-
-        @include max(xs) {
             align-items: flex-start;
-            gap: 16px;
+            margin-top: 16px;
         }
 
     }
@@ -82,12 +87,11 @@
         }
 
         @include max(mobile) {
-            align-items: flex-end;
+            align-items: flex-start;
         }
 
         @include max(xs) {
             flex-direction: column;
-            align-items: flex-start;
         }
     }
 
@@ -100,7 +104,7 @@
             gap: 10px;
         }
 
-        @include max(xs) {
+        @include max(mobile) {
             margin-left: 0;
         }
     }
@@ -115,10 +119,6 @@
 
         @include max(laptop) {
             padding-bottom: 0;
-        }
-
-        @include max(mobile) {
-            justify-content: flex-end;
         }
 
         svg {
@@ -138,6 +138,15 @@
         margin-top: 32px;
         padding-top: 20px;
         border-top: 1px solid $c-border;
+
+        @include max(mobile) {
+            flex-direction: column;
+        }
+
+        @include max(xs) {
+            margin-top: 16px;
+            padding-top: 16px;
+        }
     }
 
     &__section:first-child {
@@ -148,6 +157,14 @@
 
     &__title {
         flex: 0 0 435px;
+
+        @include max(laptop) {
+            flex-basis: 300px;
+        }
+
+        @include max(mobile) {
+            flex-basis: auto;
+        }
     }
 
     &__desc {
@@ -159,6 +176,10 @@
             display: flex;
             flex-direction: column;
             gap: 16px;
+
+            @include max(xs) {
+                gap: 8px;
+            }
         }
 
         ul li:before {
@@ -171,11 +192,26 @@
     &__top {
         display: flex;
         align-items: stretch;
-        gap: 16px;
+        gap: 30px;
+
+        @include max(mobile) {
+            flex-direction: column;
+        }
     }
 
     &__map {
-        flex: 0 0 435px;
+        flex: 0 0 445px;
+        border-radius: 4px;
+        overflow: hidden;
+
+        @include max(laptop) {
+            flex-basis: 310px;
+        }
+
+        @include max(mobile) {
+            flex-basis: auto;
+            height: 330px;
+        }
     }
 
     &__info {
@@ -209,6 +245,12 @@
         max-width: 510px;
         font-size: 18px;
         line-height: 1.4em;
+
+        @include max(laptop) {
+            font-size: 16px;
+            margin-top: 16px;
+            flex-direction: column;
+        }
     }
 
     &__text a {
@@ -224,8 +266,25 @@
         align-items: stretch;
         gap: 10px;
         margin-top: 32px;
-        max-width: calc(100% - 435px - 16px);
+        max-width: calc(100% - 445px - 30px);
         margin-left: auto;
+
+        @include max(laptop) {
+            max-width: 100%;
+        }
+
+        @include max(tablet) {
+            max-width: calc(100% - 310px - 30px);
+        }
+
+        @include max(mobile) {
+            max-width: 100%;
+            margin-left: 0;
+        }
+
+        @include max(xs) {
+            flex-direction: column;
+        }
     }
 }
 

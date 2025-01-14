@@ -167,13 +167,13 @@
                   <div class="vacancy-header__item">
                     <div class="vacancy-header__title">Доход</div>
                     <div class="vacancy-header__price">
-                      <div class="vacancy-header__amount">от 40 000 ₽</div>
+                      <div class="vacancy-header__amount title--32">от 40 000 ₽</div>
                       <div class="vacancy-header__tax">до вычета НДФЛ</div>
                     </div>
                   </div>
                   <div class="vacancy-header__item">
                     <div class="vacancy-header__title">Опыт</div>
-                    <div class="vacancy-header__amount">1–3 года</div>
+                    <div class="vacancy-header__amount title--32">1–3 года</div>
                   </div>
                   <div class="vacancy-header__item">
                     <div class="vacancy-header__title">График работы</div>
@@ -247,15 +247,8 @@
             <section class="section section--full vacancy-contacts">
               <div class="section__container">
                 <div class="vacancy-contacts__top">
-                  <!-- точки заполняются в формате json, можно указать несколько точек-->
-                  <div class="vacancy-contacts__map" data-js="simpleMap" data-coords="
-								[
-									{
-										&quot;coords&quot;: &quot;56.960471,40.940674&quot;,
-										&quot;address&quot;: &quot;Иваново, улица Станкостроителей, 11к5&quot;
-									}
-								]
-"></div>
+                  <!-- если нужно показать несколько точек, то перечислить массивы координат через дефис, например, data-coords="[56.960471,40.940674], [56.950352, 40.970129], [57.134609, 40.335625]"-->
+                  <div class="vacancy-contacts__map" data-js="simpleMap" data-coords="[56.960471,40.940674]"></div>
                   <div class="vacancy-contacts__info">
                     <div class="vacancy-contacts__item">
                       <div class="vacancy-contacts__title title--26">Телефон</div>

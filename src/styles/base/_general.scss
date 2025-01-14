@@ -327,11 +327,17 @@ body {
 
 		@include max(tablet) {
 			max-width: 100%;
+			width: 100%;
 		}
 
 		.section--full+.section--full {
 			margin-top: 16px;
 			border-radius: 4px;
+
+			@include max(mobile) {
+				margin-top: 0;
+				border-radius: 0;
+			}
 		}
 	}
 

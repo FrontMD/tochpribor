@@ -43,11 +43,11 @@ block content
 							.vacancy-header__item
 								.vacancy-header__title Доход
 								.vacancy-header__price
-									.vacancy-header__amount от 40 000 ₽
+									.vacancy-header__amount.title--32 от 40 000 ₽
 									.vacancy-header__tax до вычета НДФЛ
 							.vacancy-header__item
 								.vacancy-header__title Опыт
-								.vacancy-header__amount 1–3 года
+								.vacancy-header__amount.title--32 1–3 года
 							.vacancy-header__item
 								.vacancy-header__title График работы
 								.vacancy-header__text.vacancy-header__schedule понедельник — пятница с&nbsp;9:00&nbsp;до&nbsp;18:00
@@ -113,15 +113,8 @@ block content
 				section.section.section--full.vacancy-contacts
 					.section__container
 						.vacancy-contacts__top
-							// точки заполняются в формате json, можно указать несколько точек
-							.vacancy-contacts__map(data-js="simpleMap" data-coords=`
-								[
-									{
-										"coords": "56.960471,40.940674",
-										"address": "Иваново, улица Станкостроителей, 11к5"
-									}
-								]
-`)
+							// если нужно показать несколько точек, то перечислить массивы координат через дефис, например, data-coords="[56.960471,40.940674], [56.950352, 40.970129], [57.134609, 40.335625]"
+							.vacancy-contacts__map(data-js="simpleMap" data-coords="[56.960471,40.940674]")
 							.vacancy-contacts__info
 								.vacancy-contacts__item
 									.vacancy-contacts__title.title--26 Телефон

@@ -46,6 +46,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        flex-wrap: wrap;
         margin-top: auto;
     }
 
@@ -123,6 +124,10 @@
         display: -webkit-box;
         -webkit-box-orient: vertical;
         overflow: hidden;
+
+        @include max(laptop) {
+            font-size: 14px;
+        }
     }
 
     &--small &__tags {

@@ -18,7 +18,7 @@ function cardsSlidersInit() {
                     prevEl: sliderPrev,
                 },
                 breakpoints: {
-                    769: {
+                    768: {
                         slidesPerView: 1.5,
                         spaceBetween: 16
                     },
