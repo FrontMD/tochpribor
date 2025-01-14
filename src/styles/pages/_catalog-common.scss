@@ -1,0 +1,8 @@
+.catalog-common {
+    &__cards {
+        display: grid;
+        justify-items: center;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 16px;
+    }
+}

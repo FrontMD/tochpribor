@@ -1,0 +1,62 @@
+extends ../layouts/default
+include ../helpers/mixins
+
+block variables
+    - const title = "Категория новостей"
+
+block content
+    .page-layout
+        .breadcrumbs-section.section.section--transparent
+            .section__container
+                +breadcrumbs({
+                    items: [
+                        {
+                            name: 'Главная',
+                            link: 'javascript:void(0);'
+                        },
+                        {
+                            name: 'Каталог',
+                            link: 'javascript:void(0);'
+                        }
+                    ],
+                })
+
+        section.section.catalog-common
+            .section__container
+                .section__header
+                    +title({
+                        tag: 'h1',
+                        size: '53',
+                        text: 'Каталог'
+                    })
+                .catalog-common__cards
+                    +category-card({
+                        title: 'Универсальные испытательные машины (разрывные машины)',
+                        image: 'img/catalog/category_1.webp',
+                        count: '5 моделей',
+                    })
+                    +category-card({
+                        title: 'Аксессуары для испытательных машин',
+                        image: 'img/catalog/category_2.webp',
+                        count: '3 модели',
+                    })
+                    +category-card({
+                        title: 'Копры маятниковые и вертикальные',
+                        image: 'img/catalog/category_3.webp',
+                        count: '3 модели',
+                    })
+                    +category-card({
+                        title: 'Приборы для измерения твердости (твердомеры)',
+                        image: 'img/catalog/category_4.webp',
+                        count: '3 модели',
+                    })
+                    +category-card({
+                        title: 'Меры твердости эталонные',
+                        image: 'img/catalog/category_5.webp',
+                        count: '16 моделей',
+                    })
+                    +category-card({
+                        title: 'Динамометры',
+                        image: 'img/catalog/category_6.webp',
+                        count: '3 модели',
+                    })

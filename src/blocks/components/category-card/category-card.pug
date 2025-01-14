@@ -1,0 +1,32 @@
+-
+	const defaultCategoryCardProps = {
+		classes: '',
+		title: '',
+		image: '',
+		count: '',
+		sticker: []
+	}
+
+mixin category-card(props = defaultCategoryCardProps)
+	-
+		const checkProps = {
+			classes: props.classes ? props.classes : defaultCategoryCardProps.classes,
+			title: props.title ? props.title : defaultCategoryCardProps.title,
+			image: props.image ? props.image : defaultCategoryCardProps.image,
+			count: props.count ? props.count : defaultCategoryCardProps.count,
+			sticker: props.sticker ? props.sticker : defaultCategoryCardProps.sticker
+		}
+
+	.category-card(class= checkProps.classes)&attributes(attributes)
+		a.category-card__link(href="javascript:void(0);")
+		.category-card__header
+			- if(checkProps.count.length > 0)
+				.category-card__count!= checkProps.count
+			- if(checkProps.sticker.length > 0)
+				.category-card__sticker!= checkProps.sticker[0]
+					- if(checkProps.sticker[1].length > 0)
+						.category-card__substicker!= checkProps.sticker[1]
+		.category-card__body
+			.category-card__photo
+				img(class="lazyload" src="img/lazy-placeholder.webp" data-src= checkProps.image alt= checkProps.title)
+			.category-card__title!= checkProps.title

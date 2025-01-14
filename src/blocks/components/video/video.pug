@@ -1,29 +1,29 @@
 -
-    const defaultVideoProps = {
-        classes: '',
-        video: '',
-        poster: '',
-        noLazy: ''
-    }
+	const defaultVideoProps = {
+		classes: '',
+		video: '',
+		poster: '',
+		noLazy: ''
+	}
 
 mixin video(props = defaultVideoProps)
-    -
-        const checkProps = {
-            classes: props.classes ? props.classes : defaultVideoProps.classes,
-            video: props.video ? props.video : defaultVideoProps.video,
-            poster: props.poster ? props.poster : defaultVideoProps.poster,
-            noLazy: props.noLazy ? props.noLazy : defaultVideoProps.noLazy,
-        }
+	-
+		const checkProps = {
+			classes: props.classes ? props.classes : defaultVideoProps.classes,
+			video: props.video ? props.video : defaultVideoProps.video,
+			poster: props.poster ? props.poster : defaultVideoProps.poster,
+			noLazy: props.noLazy ? props.noLazy : defaultVideoProps.noLazy,
+		}
 
-    .video(data-js='video')
-        .video__video
-            .video__img(data-js='videoPoster')
-                -if(checkProps.noLazy === true)
-                    img(src=checkProps.poster alt="")
-                -else
-                    img(class="lazyload" data-src=checkProps.poster alt="")
-            .video__frame(data-js='videoFrame' data-video=checkProps.video)
-        button.video__btn(type="button" data-js="videoBtnPlay")
-            svg
-                use(xlink:href=`img/sprites/sprite.svg#play`)
+	.video(data-js='video')
+		.video__video
+			.video__img(data-js='videoPoster')
+				-if(checkProps.noLazy === true)
+					img(src=checkProps.poster alt="")
+				-else
+					img(class="lazyload" src="img/lazy-placeholder.webp" data-src=checkProps.poster alt="")
+			.video__frame(data-js='videoFrame' data-video=checkProps.video)
+		button.video__btn(type="button" data-js="videoBtnPlay")
+			svg
+				use(xlink:href=`img/sprites/sprite.svg#play`)
 
