@@ -1,0 +1,27 @@
+.catalog-category {
+    &__title {
+        max-width: 1300px;
+    }
+
+    &__layout {
+        display: flex;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    &__filter {
+        flex: 0 0 340px;
+    }
+
+    &__content {
+        flex: 1 1 auto;
+    }
+
+    &__cards {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+    }
+
+
+}

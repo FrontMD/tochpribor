@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Каталог (категория)</title>
+    <meta name="theme-color" content="#fff">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="shortcut icon" href="img/favicons/favicon.ico" type="image/x-icon">
+    <link rel="icon" sizes="16x16" href="img/favicons/favicon-16x16.png" type="image/png">
+    <link rel="icon" sizes="32x32" href="img/favicons/favicon-32x32.png" type="image/png">
+    <link rel="apple-touch-icon-precomposed" href="img/favicons/apple-touch-icon-precomposed.png">
+    <link rel="apple-touch-icon" href="img/favicons/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="img/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="img/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="img/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="img/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="img/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon-180x180.png">
+    <link rel="apple-touch-icon" sizes="1024x1024" href="img/favicons/apple-touch-icon-1024x1024.png">
+    <link rel="stylesheet" href="styles/main.min.css">
+    <!-- лучше добавлять только на те страницы где есть блок с картой-->
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=ec8353bc-e4c0-44ee-8f5b-822d005a189e&amp;lang=ru_RU"></script>
+    <!-- лучше добавлять только на те страницы где есть видео-->
+    <script src="https://vk.com/js/api/videoplayer.min.js"></script>
+  </head>
+  <body>
+    <header class="site-header" data-js="siteHeader">
+      <div class="site-header__overlay"></div>
+      <div class="site-header__container">
+        <div class="site-header__logo"><img src="img/logo_full.svg" alt="логотип"></div>
+        <div class="site-header__burger site-header__block" data-js="mainBurgerOpen">
+          <svg>
+            <use xlink:href="img/sprites/sprite.svg#burger"></use>
+          </svg>
+        </div>
+        <div class="site-header__location site-header__block user-city" data-js="userCity" data-default="Санкт-Петербург">
+          <div class="user-city__header" data-js="userCityHeader">
+            <svg>
+              <use xlink:href="img/sprites/sprite.svg#location"></use>
+            </svg><span data-js="userCityText">Город</span>
+          </div>
+          <div class="user-city__content" data-js="userCityContent">
+            <div class="user-city__question"><span data-js="userCityText">Санкт-Петербург</span> ваш город?</div>
+            <div class="user-city__btns">
+                  <button class="btn  btn--red btn--108" type="button" data-js="cityBtnYes"><span class="btn__text">Да</span>
+                  </button><a class="btn  btn--grey btn--108" href="javascript:void(0)" data-js="cityBtnNo"><span class="btn__text">Выбрать другой</span></a>
+            </div>
+          </div>
+        </div>
+        <nav class="site-header__menu site-header__block">
+          <ul class="nav-menu">
+            <li class="nav-menu__item"><a class="nav-menu__link" href="javascript:void(0)">Каталог продукции </a></li>
+            <li class="nav-menu__item"><a class="nav-menu__link" href="javascript:void(0)">Производство</a></li>
+            <li class="nav-menu__item"><a class="nav-menu__link" href="javascript:void(0)">
+                 Услуги
+                <svg>
+                  <use xlink:href="img/sprites/sprite.svg#arrow_angle"></use>
+                </svg></a>
+              <div class="nav-menu__sublist"><a class="nav-menu__link" href="javascript:void(0)">Металлообработка</a><a class="nav-menu__link" href="javascript:void(0)">Поверка инструментов измерений</a><a class="nav-menu__link" href="javascript:void(0)">Пуско-наладка</a><a class="nav-menu__link" href="javascript:void(0)">Наладка средств измерений</a><a class="nav-menu__link" href="javascript:void(0)">Доставка</a></div>
+            </li>
+          </ul>
+        </nav>
+        <div class="site-header__contacts">
+          <ul class="nav-menu">
+            <li class="nav-menu__item"><a class="nav-menu__link" href="mailto:info@tochpribor-nw.ru">
+                 info@tochpribor-nw.ru
+                <svg>
+                  <use xlink:href="img/sprites/sprite.svg#arrow_angle"></use>
+                </svg></a>
+              <div class="nav-menu__sublist"><a class="nav-menu__link" href="mailto:info@tochpribor-nw.ru">info@tochpribor-nw.ru</a></div>
+            </li>
+            <li class="nav-menu__item"><a class="nav-menu__link" href="tel:+78126123003">
+                 +7 (812) 612-30-03
+                <svg>
+                  <use xlink:href="img/sprites/sprite.svg#arrow_angle"></use>
+                </svg></a>
+              <div class="nav-menu__sublist"><a class="nav-menu__link" href="tel:+78126123003">+7 (812) 612-30-03</a></div>
+            </li>
+          </ul>
+        </div>
+        <div class="site-header__socials socials"><a class="socials__item" href="https://telegram.org/">
+            <svg>
+              <use xlink:href="img/sprites/sprite.svg#tg"></use>
+            </svg></a><a class="socials__item" href="https://vk.com/">
+            <svg>
+              <use xlink:href="img/sprites/sprite.svg#vk"></use>
+            </svg></a></div>
+        <div class="site-header__search search">
+          <div class="search__open" data-js="headerSearchOpen">
+            <svg>
+              <use xlink:href="img/sprites/sprite.svg#search"></use>
+            </svg>
+          </div>
+          <div class="search__content" data-js="headerSearchContent">
+            <form class="search__form">
+                  <div class="field  field--search field--reset  " data-js="formField">
+                    <button class="field__search" type="submit">
+                      <svg> 
+                        <use xlink:href="img/sprites/sprite.svg#search"></use>
+                      </svg>
+                    </button>
+                    <label>
+                      <input class="field__input" type="text" placeholder="Поиск" data-js="headerSearchInput"><span class="field__error" data-js="fieldError"></span>
+                    </label><span class="field__reset" data-js="fieldResetBtn">
+                      <svg> 
+                        <use xlink:href="img/sprites/sprite.svg#close"></use>
+                      </svg></span>
+                  </div>
+                  <div class="field     " data-js="formField">
+                    <label>
+                    </label>
+                    <select class="field__select" placeholder="" data-js="formSelect">
+                      <option value="По сайту">По сайту</option>
+                      <option value="По каталогу">По каталогу</option>
+                    </select><span class="field__error" data-js="fieldError"></span>
+                  </div><a class="btn  btn--red btn--content" href="javascript:void(0)">
+                    <svg>
+                      <use xlink:href="img/sprites/sprite.svg#arrow_enter"></use>
+                    </svg><span class="btn__text">Поиск</span></a>
+            </form>
+          </div>
+        </div>
+        <div class="site-header__shop site-header__block shop"> <a class="shop__item" href="javascript:void(0)">
+            <svg>
+              <use xlink:href="img/sprites/sprite.svg#compare"></use>
+            </svg><span>5</span></a><a class="shop__item" href="javascript:void(0)">
+            <svg>
+              <use xlink:href="img/sprites/sprite.svg#basket"></use>
+            </svg><span>5</span></a></div><a class="btn site-header__callback btn--red btn--content" href="javascript:void(0)">
+              <svg>
+                <use xlink:href="img/sprites/sprite.svg#arrow_enter"></use>
+              </svg><span class="btn__text">Заказать звонок</span></a>
+      </div>
+    </header>
+    <main class="site-main">
+      <div class="page-layout">
+        <div class="breadcrumbs-section section section--transparent">
+          <div class="section__container">
+                <div class="breadcrumbs  breadcrumbs--dark">
+                  <ul class="breadcrumbs__list scrollbar scrollbar--small">
+                    <li class="breadcrumbs__item"><a href="javascript:void(0);">Главная</a><span class="breadcrumbs__separator">/</span>
+                    </li>
+                    <li class="breadcrumbs__item"><a href="javascript:void(0);">Каталог</a><span class="breadcrumbs__separator">/</span>
+                    </li>
+                    <li class="breadcrumbs__item"><a href="javascript:void(0);">Название категории</a><span class="breadcrumbs__separator">/</span>
+                    </li>
+                    <li class="breadcrumbs__item"><a href="javascript:void(0);">Название подкатегории</a><span class="breadcrumbs__separator">/</span>
+                    </li>
+                    <li class="breadcrumbs__item breadcrumbs__item--current"><span>Название подкатегории 2</span>
+                    </li>
+                  </ul>
+                </div>
+          </div>
+        </div>
+        <section class="section">
+          <div class="section__container">
+                <div class="title catalog-category__title title--53 title--dark">
+                  <h1>Серия ТРМ / универсальные испытательные машины (производство «ЗИП»)
+                  </h1>
+                </div>
+            <div class="catalog-category__sort"></div>
+          </div>
+        </section>
+        <section class="section section--transparent">
+          <div class="section__container catalog-category__layout">
+            <div class="catalog-category__filter">
+                  <form class="form-filter form-filter--sidebar" action="#" data-js="formFilter">
+                  </form>
+            </div>
+            <div class="catalog-category__content">
+              <div class="catalog-category__cards">
+                    <div class="catalog-card cards-slider__card"><a class="catalog-card__link" href="javascript:void(0);"></a>
+                      <div class="catalog-card__header">
+                        <div class="catalog-card__tags">
+                          <div class="catalog-card__tag catalog-card__tag--green"><img src="img/catalog/check_icon.svg">В наличии
+                          </div>
+                          <div class="catalog-card__tag catalog-card__tag--blue">Новинка
+                          </div>
+                          <div class="catalog-card__tag catalog-card__tag--red">Скидка
+                          </div>
+                        </div>
+                        <div class="catalog-card__controls"><a class="catalog-card__control" href="javascript:void(0)">
+                            <svg>
+                              <use xlink:href="img/sprites/sprite.svg#view"></use>
+                            </svg></a><a class="catalog-card__control" href="javascript:void(0)">
+                            <svg>
+                              <use xlink:href="img/sprites/sprite.svg#compare_2"></use>
+                            </svg></a></div>
+                      </div>
+                      <div class="catalog-card__body">
+                        <div class="catalog-card__photo"><img src="img/catalog/product_1.png" alt="Твердомер ТПУ 1800"></div>
+                        <div class="catalog-card__info">
+                          <div class="catalog-card__title">Твердомер ТПУ 1800</div>
+                          <div class="catalog-card__desc">
+                                <h3>Технические характеристики</h3>
+                                <ul>
+                                    <li>Конструктивное исполнение: установка на виброопоры</li>
+                                    <li>Наибольший предел измерений (НПИ): 100</li>
+                                    <li>Ход подвижной траверсы без захватов, мм: 700</li>
+                                </ul>
+                                <h3>Базовая комплектация</h3>
+                                <ul>
+                                    <li>Захваты для образцов: тип IV, ГОСТ 1497</li>
+                                    <li>НИзмеритель силы тензорезисторный: 1 компл.</li>
+                                    <li>ПТК:  ноутбук, принтер + ПО (1 компл.)</li>
+                                </ul>
+                                </div>
+                        </div>
+                        <div class="catalog-card__prices">
+                          <div class="catalog-card__price">550 000 ₽</div>
+                          <div class="catalog-card__price catalog-card__price--old">680 000 ₽</div>
+                        </div>
+                      </div>
+                      <div class="catalog-card__footer"><a class="btn  btn--red btn--full" href="javascript:void(0)"><span class="btn__text">Заказать в 1 клик</span></a><a class="btn  btn--transparent-red btn--full" href="javascript:void(0)">
+                              <svg>
+                                <use xlink:href="img/sprites/sprite.svg#basket"></use>
+                              </svg><span class="btn__text">В корзину</span></a>
+                      </div>
+                    </div>
+                    <div class="catalog-card cards-slider__card"><a class="catalog-card__link" href="javascript:void(0);"></a>
+                      <div class="catalog-card__header">
+                        <div class="catalog-card__tags">
+                          <div class="catalog-card__tag catalog-card__tag--green"><img src="img/catalog/check_icon.svg">В наличии
+                          </div>
+                          <div class="catalog-card__tag catalog-card__tag--blue">Новинка
+                          </div>
+                          <div class="catalog-card__tag catalog-card__tag--red">Скидка
+                          </div>
+                        </div>
+                        <div class="catalog-card__controls"><a class="catalog-card__control" href="javascript:void(0)">
+                            <svg>
+                              <use xlink:href="img/sprites/sprite.svg#view"></use>
+                            </svg></a><a class="catalog-card__control" href="javascript:void(0)">
+                            <svg>
+                              <use xlink:href="img/sprites/sprite.svg#compare_2"></use>
+                            </svg></a></div>
+                      </div>
+                      <div class="catalog-card__body">
+                        <div class="catalog-card__photo"><img src="img/catalog/product_2.png" alt="Твердомер ТКМ-459С"></div>
+                        <div class="catalog-card__info">
+                          <div class="catalog-card__title">Твердомер ТКМ-459С</div>
+                          <div class="catalog-card__desc">
+                                <h3>Технические характеристики</h3>
+                                <ul>
+                                    <li>Конструктивное исполнение: установка на виброопоры</li>
+                                    <li>Наибольший предел измерений (НПИ): 100</li>
+                                    <li>Ход подвижной траверсы без захватов, мм: 700</li>
+                                </ul>
+                                <h3>Базовая комплектация</h3>
+                                <ul>
+                                    <li>Захваты для образцов: тип IV, ГОСТ 1497</li>
+                                    <li>НИзмеритель силы тензорезисторный: 1 компл.</li>
+                                    <li>ПТК:  ноутбук, принтер + ПО (1 компл.)</li>
+                                </ul>
+                                </div>
+                        </div>
+                        <div class="catalog-card__prices">
+                          <div class="catalog-card__price">550 000 ₽</div>
+                          <div class="catalog-card__price catalog-card__price--old">680 000 ₽</div>
+                        </div>
+                      </div>
+                      <div class="catalog-card__footer"><a class="btn  btn--red btn--full" href="javascript:void(0)"><span class="btn__text">Заказать в 1 клик</span></a><a class="btn  btn--transparent-red btn--full" href="javascript:void(0)">
+                              <svg>
+                                <use xlink:href="img/sprites/sprite.svg#basket"></use>
+                              </svg><span class="btn__text">В корзину</span></a>
+                      </div>
+                    </div>
+                    <div class="catalog-card cards-slider__card"><a class="catalog-card__link" href="javascript:void(0);"></a>
+                      <div class="catalog-card__header">
+                        <div class="catalog-card__tags">
+                          <div class="catalog-card__tag catalog-card__tag--green"><img src="img/catalog/check_icon.svg">В наличии
+                          </div>
+                          <div class="catalog-card__tag catalog-card__tag--blue">Новинка
+                          </div>
+                          <div class="catalog-card__tag catalog-card__tag--red">Скидка
+                          </div>
+                        </div>
+                        <div class="catalog-card__controls"><a class="catalog-card__control" href="javascript:void(0)">
+                            <svg>
+                              <use xlink:href="img/sprites/sprite.svg#view"></use>
+                            </svg></a><a class="catalog-card__control" href="javascript:void(0)">
+                            <svg>
+                              <use xlink:href="img/sprites/sprite.svg#compare_2"></use>
+                            </svg></a></div>
+                      </div>
+                      <div class="catalog-card__body">
+                        <div class="catalog-card__photo"><img src="img/catalog/product_1.png" alt="Твердомер ТПУ 1800"></div>
+                        <div class="catalog-card__info">
+                          <div class="catalog-card__title">Твердомер ТПУ 1800</div>
+                          <div class="catalog-card__desc">
+                                <h3>Технические характеристики</h3>
+                                <ul>
+                                    <li>Конструктивное исполнение: установка на виброопоры</li>
+                                    <li>Наибольший предел измерений (НПИ): 100</li>
+                                    <li>Ход подвижной траверсы без захватов, мм: 700</li>
+                                </ul>
+                                <h3>Базовая комплектация</h3>
+                                <ul>
+                                    <li>Захваты для образцов: тип IV, ГОСТ 1497</li>
+                                    <li>НИзмеритель силы тензорезисторный: 1 компл.</li>
+                                    <li>ПТК:  ноутбук, принтер + ПО (1 компл.)</li>
+                                </ul>
+                                </div>
+                        </div>
+                        <div class="catalog-card__prices">
+                          <div class="catalog-card__price">550 000 ₽</div>
+                          <div class="catalog-card__price catalog-card__price--old">680 000 ₽</div>
+                        </div>
+                      </div>
+                      <div class="catalog-card__footer"><a class="btn  btn--red btn--full" href="javascript:void(0)"><span class="btn__text">Заказать в 1 клик</span></a><a class="btn  btn--transparent-red btn--full" href="javascript:void(0)">
+                              <svg>
+                                <use xlink:href="img/sprites/sprite.svg#basket"></use>
+                              </svg><span class="btn__text">В корзину</span></a>
+                      </div>
+                    </div>
+                    <div class="catalog-card cards-slider__card"><a class="catalog-card__link" href="javascript:void(0);"></a>
+                      <div class="catalog-card__header">
+                        <div class="catalog-card__tags">
+                          <div class="catalog-card__tag catalog-card__tag--green"><img src="img/catalog/check_icon.svg">В наличии
+                          </div>
+                          <div class="catalog-card__tag catalog-card__tag--blue">Новинка
+                          </div>
+                          <div class="catalog-card__tag catalog-card__tag--red">Скидка
+                          </div>
+                        </div>
+                        <div class="catalog-card__controls"><a class="catalog-card__control" href="javascript:void(0)">
+                            <svg>
+                              <use xlink:href="img/sprites/sprite.svg#view"></use>
+                            </svg></a><a class="catalog-card__control" href="javascript:void(0)">
+                            <svg>
+                              <use xlink:href="img/sprites/sprite.svg#compare_2"></use>
+                            </svg></a></div>
+                      </div>
+                      <div class="catalog-card__body">
+                        <div class="catalog-card__photo"><img src="img/catalog/product_2.png" alt="Твердомер ТКМ-459С"></div>
+                        <div class="catalog-card__info">
+                          <div class="catalog-card__title">Твердомер ТКМ-459С</div>
+                          <div class="catalog-card__desc">
+                                <h3>Технические характеристики</h3>
+                                <ul>
+                                    <li>Конструктивное исполнение: установка на виброопоры</li>
+                                    <li>Наибольший предел измерений (НПИ): 100</li>
+                                    <li>Ход подвижной траверсы без захватов, мм: 700</li>
+                                </ul>
+                                <h3>Базовая комплектация</h3>
+                                <ul>
+                                    <li>Захваты для образцов: тип IV, ГОСТ 1497</li>
+                                    <li>НИзмеритель силы тензорезисторный: 1 компл.</li>
+                                    <li>ПТК:  ноутбук, принтер + ПО (1 компл.)</li>
+                                </ul>
+                                </div>
+                        </div>
+                        <div class="catalog-card__prices">
+                          <div class="catalog-card__price">550 000 ₽</div>
+                          <div class="catalog-card__price catalog-card__price--old">680 000 ₽</div>
+                        </div>
+                      </div>
+                      <div class="catalog-card__footer"><a class="btn  btn--red btn--full" href="javascript:void(0)"><span class="btn__text">Заказать в 1 клик</span></a><a class="btn  btn--transparent-red btn--full" href="javascript:void(0)">
+                              <svg>
+                                <use xlink:href="img/sprites/sprite.svg#basket"></use>
+                              </svg><span class="btn__text">В корзину</span></a>
+                      </div>
+                    </div>
+              </div>
+                  <div class="pagination"><a class="pagination__btn pagination__btn--prev" href="javascript:void(0);">
+                      <svg>
+                        <use xlink:href="img/sprites/sprite.svg#arrow_angle"></use>
+                      </svg></a><a class="pagination__page active" href="javascript:void(0);">1</a><a class="pagination__page" href="javascript:void(0);">2</a><a class="pagination__page" href="javascript:void(0);">3</a>
+                    <div class="pagination__separator">...</div><a class="pagination__page" href="javascript:void(0);">99</a><a class="pagination__btn pagination__btn--next" href="javascript:void(0);">
+                      <svg>
+                        <use xlink:href="img/sprites/sprite.svg#arrow_angle"></use>
+                      </svg></a>
+                  </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+    <footer class="site-footer">
+      <div class="site-footer__container">
+        <div class="site-footer__word">производство
+          <svg>
+            <use xlink:href="img/sprites/sprite.svg#arrow_classic"></use>
+          </svg>модернизация
+          <svg>
+            <use xlink:href="img/sprites/sprite.svg#arrow_classic"></use>
+          </svg>ремонт
+        </div>
+        <div class="site-footer__left"><a class="btn  btn--red btn--big" href="javascript:void(0)">
+                <svg>
+                  <use xlink:href="img/sprites/sprite.svg#arrow_enter"></use>
+                </svg><span class="btn__text">Оставить заявку</span></a>
+          <div class="site-footer__docs"><a class="site-footer__doc" href="javascript:void()">Пользовательское соглашение</a><a class="site-footer__doc" href="javascript:void()">Политика обработки персональных данных и конфиденциальности</a></div>
+          <div class="site-footer__copyright">© 2010—2024 Точприбор</div>
+        </div>
+        <div class="site-footer__menu">
+              <div class="big-menu scrollbar">
+                <div class="big-menu__section">
+                  <div class="big-menu__title">Каталог</div>
+                  <div class="big-menu__list" data-js="bigMenuList">
+                    <ul class="big-menu__items" data-js="bigMenuItems">
+                      <li class="big-menu__item" data-js="bigMenuItem"><a href="javascript:void(0)">Разрывные машины</a></li>
+                      <li class="big-menu__item" data-js="bigMenuItem"><a href="javascript:void(0)">Твердомеры</a></li>
+                      <li class="big-menu__item" data-js="bigMenuItem"><a href="javascript:void(0)">Меры твердости</a></li>
+                      <li class="big-menu__item" data-js="bigMenuItem"><a href="javascript:void(0)">Приборы для измерения цвета</a></li>
+                      <li class="big-menu__item" data-js="bigMenuItem"><a href="javascript:void(0)">Микроскопы						</a></li>
+                      <li class="big-menu__item" data-js="bigMenuItem"><a class="big-menu__link" href="javascript:void(0)">Динамометры</a></li>
+                      <li class="big-menu__item" data-js="bigMenuItem"><a class="big-menu__link" href="javascript:void(0)">Разрывные машины</a></li>
+                      <li class="big-menu__item" data-js="bigMenuItem"><a class="big-menu__link" href="javascript:void(0)">Твердомеры</a></li>
+                      <li class="big-menu__item" data-js="bigMenuItem"><a class="big-menu__link" href="javascript:void(0)">Меры твердости</a></li>
+                      <li class="big-menu__item" data-js="bigMenuItem"><a class="big-menu__link" href="javascript:void(0)">Приборы для измерения цвета</a></li>
+                      <li class="big-menu__item" data-js="bigMenuItem"><a class="big-menu__link" href="javascript:void(0)">Микроскопы</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="big-menu__section">
+                  <div class="big-menu__title">О компании</div>
+                  <div class="big-menu__list" data-js="bigMenuList">
+                    <ul class="big-menu__items" data-js="bigMenuItems">
+                      <li class="big-menu__item" data-js="bigMenuItem"><a href="javascript:void(0)">Производство</a></li>
+                      <li class="big-menu__item" data-js="bigMenuItem"><a href="javascript:void(0)">Услуги</a></li>
+                      <li class="big-menu__item" data-js="bigMenuItem"><a href="javascript:void(0)">Документы</a></li>
+                      <li class="big-menu__item" data-js="bigMenuItem"><a href="javascript:void(0)">Карьера в Точприбор</a></li>
+                      <li class="big-menu__item" data-js="bigMenuItem"><a href="javascript:void(0)">Наша команда</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="big-menu__section">
+                  <div class="big-menu__title">Еще</div>
+                  <div class="big-menu__list" data-js="bigMenuList">
+                    <ul class="big-menu__items" data-js="bigMenuItems">
+                      <li class="big-menu__item" data-js="bigMenuItem"><a href="javascript:void(0)">Контакты</a></li>
+                      <li class="big-menu__item" data-js="bigMenuItem"><a href="javascript:void(0)">Новости</a></li>
+                      <li class="big-menu__item" data-js="bigMenuItem"><a href="javascript:void(0)">Вопросы и ответы (FAQ)</a></li>
+                      <li class="big-menu__item" data-js="bigMenuItem"><a href="javascript:void(0)">Карта сайта</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="big-menu__section">
+                  <div class="big-menu__title">Связаться</div>
+                  <div class="big-menu__list" data-js="bigMenuList">
+                    <ul class="big-menu__items" data-js="bigMenuItems">
+                      <li class="big-menu__item" data-js="bigMenuItem"><a href="mailto:info@tochpribor.ru">info@tochpribor.ru</a></li>
+                      <li class="big-menu__item" data-js="bigMenuItem"><a href="tel:+74922521233">+7 (4922) 52-12-33</a></li>
+                      <li class="big-menu__item" data-js="bigMenuItem"><span>Головной офис: 190121, г. Санкт-Петербург, пер. Дровяной, д. 20, пом. 4-Н Вопросы и ответы (FAQ)</span></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="big-menu__footer">
+                  <div class="socials"><a class="socials__item" href="https://telegram.org/">
+                      <svg>
+                        <use xlink:href="img/sprites/sprite.svg#tg"></use>
+                      </svg></a><a class="socials__item" href="https://vk.com/">
+                      <svg>
+                        <use xlink:href="img/sprites/sprite.svg#vk"></use>
+                      </svg></a><a class="socials__item" href="https://vkvideo.ru/@tochpribor">
+                      <svg>
+                        <use xlink:href="img/sprites/sprite.svg#vk_video"></use>
+                      </svg></a></div>
+                  <div class="big-menu__copyright">© 2010—2024 Точприбор</div>
+                </div>
+              </div>
+        </div>
+      </div>
+    </footer>
+    <div class="main-burger" data-js="mainBurger">
+      <div class="main-burger__overlay" data-js="mainBurgerClose"></div>
+      <div class="main-burger__content">
+        <div class="main-burger__close" data-js="mainBurgerClose">
+          <svg> 
+            <use xlink:href="img/sprites/sprite.svg#close"></use>
+          </svg>
+        </div>
+        <div class="main-burger__menu scrollbar">
+          <div class="burger-menu">
+            <div class="burger-menu__section">
+              <div class="burger-menu__title">Услуги</div>
+              <ul class="burger-menu__list">
+                <li class="burger-menu__item"><a class="burger-menu__link" href="javascript:void(0)">Проверка подлинности</a></li>
+                <li class="burger-menu__item"><a class="burger-menu__link" href="javascript:void(0)">Металлообработка</a></li>
+                <li class="burger-menu__item"><a class="burger-menu__link" href="javascript:void(0)">Поверка средств измерений</a></li>
+                <li class="burger-menu__item"><a class="burger-menu__link" href="javascript:void(0)">Пуско-наладка</a></li>
+                <li class="burger-menu__item"><a class="burger-menu__link" href="javascript:void(0)">Наладка средств измерений</a></li>
+                <li class="burger-menu__item"><a class="burger-menu__link" href="javascript:void(0)">Оборудование в Лизинг</a></li>
+                <li class="burger-menu__item"><a class="burger-menu__link" href="javascript:void(0)">Безопасность</a></li>
+              </ul>
+            </div>
+            <div class="burger-menu__section">
+              <div class="burger-menu__title">Компания</div>
+              <ul class="burger-menu__list">
+                <li class="burger-menu__item"><a class="burger-menu__link" href="javascript:void(0)">О компании</a></li>
+                <li class="burger-menu__item"><a class="burger-menu__link" href="javascript:void(0)">Производство</a></li>
+                <li class="burger-menu__item"><a class="burger-menu__link" href="javascript:void(0)">Карьера в Точприбор</a></li>
+                <li class="burger-menu__item"><a class="burger-menu__link" href="javascript:void(0)">Наша команда</a></li>
+              </ul>
+            </div>
+            <div class="burger-menu__section">
+              <div class="burger-menu__title">Еще</div>
+              <ul class="burger-menu__list">
+                <li class="burger-menu__item"><a class="burger-menu__link" href="javascript:void(0)">Контакты</a></li>
+                <li class="burger-menu__item"><a class="burger-menu__link" href="javascript:void(0)">Новости</a></li>
+                <li class="burger-menu__item"><a class="burger-menu__link" href="javascript:void(0)">Документы</a></li>
+                <li class="burger-menu__item"><a class="burger-menu__link" href="javascript:void(0)">Вопросы и ответы (FAQ)</a></li>
+                <li class="burger-menu__item"><a class="burger-menu__link" href="javascript:void(0)">Карта сайта</a></li>
+              </ul>
+            </div>
+            <div class="burger-menu__section burger-menu__section--contacts">
+              <div class="burger-menu__title">Связаться</div>
+              <ul class="burger-menu__list">
+                <li class="burger-menu__item"><a class="burger-menu__link" href="mailto:info@tochpribor.ru">info@tochpribor.ru</a></li>
+                <li class="burger-menu__item"><a class="burger-menu__link" href="tel:+78003500248">+7 (800) 350-02-48</a></li>
+              </ul>
+              <div class="burger-menu__list burger-menu__list--h">
+                <div class="burger-menu__row">
+                  <div class="burger-menu__subtitle">Адрес</div>
+                  <div class="burger-menu__item"><span>Головной офис: 190121, г. Санкт-Петербург, пер. Дровяной, д. 20, пом. 4-Н</span></div>
+                </div>
+                <div class="burger-menu__row">
+                  <div class="burger-menu__subtitle">Тел / факс</div>
+                  <div class="burger-menu__item"><a class="burger-menu__link" href="tel:+74922521233">+7 (4922) 52-12-33</a></div>
+                </div>
+              </div>
+              <div class="socials"><a class="socials__item" href="https://telegram.org/">
+                  <svg>
+                    <use xlink:href="img/sprites/sprite.svg#tg"></use>
+                  </svg></a><a class="socials__item" href="https://vk.com/">
+                  <svg>
+                    <use xlink:href="img/sprites/sprite.svg#vk"></use>
+                  </svg></a><a class="socials__item" href="https://vkvideo.ru/@tochpribor">
+                  <svg>
+                    <use xlink:href="img/sprites/sprite.svg#vk_video"></use>
+                  </svg></a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <noindex>
+      <div>
+        <!--код модалок сюда-->
+            <div class="modal hystmodal city-modal" id="cityModal" aria-hidden="true" data-js="cityModal">
+              <div class="hystmodal__wrap">
+                <div class="hystmodal__window" role="dialog" aria-modal="true">
+                  <div class="modal__content">
+                    <div class="modal__title title--32">Укажите ваш город</div>
+                    <div class="modal__close" data-hystclose>
+                      <svg> 
+                        <use xlink:href="./img/sprites/sprite.svg#close"></use>
+                      </svg>
+                    </div>
+                    <div class="modal__inner" data-js="modalInner">
+                          <div class="field  field--search field--reset  " data-js="formField">
+                            <button class="field__search" type="submit">
+                              <svg> 
+                                <use xlink:href="img/sprites/sprite.svg#search"></use>
+                              </svg>
+                            </button>
+                            <label>
+                              <input class="field__input" type="text" placeholder="Поиск города" data-js="citySearchInput"><span class="field__error" data-js="fieldError"></span>
+                            </label><span class="field__reset" data-js="fieldResetBtn">
+                              <svg> 
+                                <use xlink:href="img/sprites/sprite.svg#close"></use>
+                              </svg></span>
+                          </div>
+                      <ul class="city-modal__list">
+                        <li class="city-modal__item" data-js="cityModalItem" data-value="Москва">Москва</li>
+                        <li class="city-modal__item" data-js="cityModalItem" data-value="Пермь">Пермь</li>
+                        <li class="city-modal__item" data-js="cityModalItem" data-value="Санкт-Петербург">Санкт-Петербург</li>
+                        <li class="city-modal__item" data-js="cityModalItem" data-value="Уфа">Уфа</li>
+                        <li class="city-modal__item" data-js="cityModalItem" data-value="Самара">Самара</li>
+                        <li class="city-modal__item" data-js="cityModalItem" data-value="Екатеринбург">Екатеринбург</li>
+                        <li class="city-modal__item" data-js="cityModalItem" data-value="Челябинск">Челябинск</li>
+                        <li class="city-modal__item" data-js="cityModalItem" data-value="Краснодар">Краснодар</li>
+                        <li class="city-modal__item" data-js="cityModalItem" data-value="Нижний Новгород">Нижний Новгород</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+      </div>
+    </noindex>
+    <script src="js/main.min.js"></script>
+  </body>
+</html>

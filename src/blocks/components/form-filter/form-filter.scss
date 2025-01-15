@@ -201,6 +201,12 @@
         background-color: $c-accent;
         border-color: $c-accent;
     }
+
+    &__text {
+        font-size: 14px;
+        line-height: 1.4em;
+        color: $c-text;
+    }
 }
 
 .filter-select {

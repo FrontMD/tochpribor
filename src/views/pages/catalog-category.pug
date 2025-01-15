@@ -1,0 +1,217 @@
+extends ../layouts/default
+include ../helpers/mixins
+
+block variables
+    - const title = "Каталог (категория)"
+
+block content
+    .page-layout
+        .breadcrumbs-section.section.section--transparent
+            .section__container
+                +breadcrumbs({
+                    items: [
+                        {
+                            name: 'Главная',
+                            link: 'javascript:void(0);'
+                        },
+                        {
+                            name: 'Каталог',
+                            link: 'javascript:void(0);'
+                        },
+                        {
+                            name: 'Название категории',
+                            link: 'javascript:void(0);'
+                        },
+                        {
+                            name: 'Название подкатегории',
+                            link: 'javascript:void(0);'
+                        },
+                        {
+                            name: 'Название подкатегории 2',
+                            link: 'javascript:void(0);'
+                        }
+                    ],
+                })
+
+        section.section
+            .section__container
+                +title({
+                    classes: 'catalog-category__title',
+                    tag: 'h1',
+                    size: '53',
+                    text: 'Серия ТРМ / универсальные испытательные машины (производство «ЗИП»)'
+                })
+                .catalog-category__sort
+
+        section.section.section--transparent
+            .section__container.catalog-category__layout
+                .catalog-category__filter
+                    +form-filter({
+                        vMode: 'sidebar'
+                    })
+                .catalog-category__content
+                    .catalog-category__cards
+                        +catalog-card({
+                            classes: 'cards-slider__card',
+                            title: 'Твердомер ТПУ 1800',
+                            desc: `
+                                <h3>Технические характеристики</h3>
+                                <ul>
+                                    <li>Конструктивное исполнение: установка на виброопоры</li>
+                                    <li>Наибольший предел измерений (НПИ): 100</li>
+                                    <li>Ход подвижной траверсы без захватов, мм: 700</li>
+                                </ul>
+                                <h3>Базовая комплектация</h3>
+                                <ul>
+                                    <li>Захваты для образцов: тип IV, ГОСТ 1497</li>
+                                    <li>НИзмеритель силы тензорезисторный: 1 компл.</li>
+                                    <li>ПТК:  ноутбук, принтер + ПО (1 компл.)</li>
+                                </ul>
+                                `,
+                            image: 'img/catalog/product_1.png',
+                            tags: [
+                                {
+                                    img: 'img/catalog/check_icon.svg',
+                                    text: 'В наличии',
+                                    color: 'green'
+                                },
+                                {
+                                    img: '',
+                                    text: 'Новинка',
+                                    color: 'blue'
+                                },
+                                {
+                                    img: '',
+                                    text: 'Скидка',
+                                    color: 'red'
+                                }
+                            ],
+                            prices: [
+                                '550 000 ₽',
+                                '680 000 ₽'
+                            ]
+                        })
+
+                        +catalog-card({
+                            classes: 'cards-slider__card',
+                            title: 'Твердомер ТКМ-459С',
+                            desc: `
+                                <h3>Технические характеристики</h3>
+                                <ul>
+                                    <li>Конструктивное исполнение: установка на виброопоры</li>
+                                    <li>Наибольший предел измерений (НПИ): 100</li>
+                                    <li>Ход подвижной траверсы без захватов, мм: 700</li>
+                                </ul>
+                                <h3>Базовая комплектация</h3>
+                                <ul>
+                                    <li>Захваты для образцов: тип IV, ГОСТ 1497</li>
+                                    <li>НИзмеритель силы тензорезисторный: 1 компл.</li>
+                                    <li>ПТК:  ноутбук, принтер + ПО (1 компл.)</li>
+                                </ul>
+                                `,
+                            image: 'img/catalog/product_2.png',
+                            tags: [
+                                {
+                                    img: 'img/catalog/check_icon.svg',
+                                    text: 'В наличии',
+                                    color: 'green'
+                                },
+                                {
+                                    img: '',
+                                    text: 'Новинка',
+                                    color: 'blue'
+                                },
+                                {
+                                    img: '',
+                                    text: 'Скидка',
+                                    color: 'red'
+                                }
+                            ],
+                            prices: [
+                                '550 000 ₽',
+                                '680 000 ₽'
+                            ]
+                        })
+
+                        +catalog-card({
+                            classes: 'cards-slider__card',
+                            title: 'Твердомер ТПУ 1800',
+                            desc: `
+                                <h3>Технические характеристики</h3>
+                                <ul>
+                                    <li>Конструктивное исполнение: установка на виброопоры</li>
+                                    <li>Наибольший предел измерений (НПИ): 100</li>
+                                    <li>Ход подвижной траверсы без захватов, мм: 700</li>
+                                </ul>
+                                <h3>Базовая комплектация</h3>
+                                <ul>
+                                    <li>Захваты для образцов: тип IV, ГОСТ 1497</li>
+                                    <li>НИзмеритель силы тензорезисторный: 1 компл.</li>
+                                    <li>ПТК:  ноутбук, принтер + ПО (1 компл.)</li>
+                                </ul>
+                                `,
+                            image: 'img/catalog/product_1.png',
+                            tags: [
+                                {
+                                    img: 'img/catalog/check_icon.svg',
+                                    text: 'В наличии',
+                                    color: 'green'
+                                },
+                                {
+                                    img: '',
+                                    text: 'Новинка',
+                                    color: 'blue'
+                                },
+                                {
+                                    img: '',
+                                    text: 'Скидка',
+                                    color: 'red'
+                                }
+                            ],
+                            prices: [
+                                '550 000 ₽',
+                                '680 000 ₽'
+                            ]
+                        })
+
+                        +catalog-card({
+                            classes: 'cards-slider__card',
+                            title: 'Твердомер ТКМ-459С',
+                            desc: `
+                                <h3>Технические характеристики</h3>
+                                <ul>
+                                    <li>Конструктивное исполнение: установка на виброопоры</li>
+                                    <li>Наибольший предел измерений (НПИ): 100</li>
+                                    <li>Ход подвижной траверсы без захватов, мм: 700</li>
+                                </ul>
+                                <h3>Базовая комплектация</h3>
+                                <ul>
+                                    <li>Захваты для образцов: тип IV, ГОСТ 1497</li>
+                                    <li>НИзмеритель силы тензорезисторный: 1 компл.</li>
+                                    <li>ПТК:  ноутбук, принтер + ПО (1 компл.)</li>
+                                </ul>
+                                `,
+                            image: 'img/catalog/product_2.png',
+                            tags: [
+                                {
+                                    img: 'img/catalog/check_icon.svg',
+                                    text: 'В наличии',
+                                    color: 'green'
+                                },
+                                {
+                                    img: '',
+                                    text: 'Новинка',
+                                    color: 'blue'
+                                },
+                                {
+                                    img: '',
+                                    text: 'Скидка',
+                                    color: 'red'
+                                }
+                            ],
+                            prices: [
+                                '550 000 ₽',
+                                '680 000 ₽'
+                            ]
+                        })
+                    +pagination

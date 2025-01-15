@@ -4,7 +4,12 @@
 		title: '',
 		image: '',
 		count: '',
-		sticker: []
+		sticker: {
+			first: '',
+			second: '',
+			color: '',
+			icon: ''
+		}
 	}
 
 mixin category-card(props = defaultCategoryCardProps)
@@ -17,15 +22,23 @@ mixin category-card(props = defaultCategoryCardProps)
 			sticker: props.sticker ? props.sticker : defaultCategoryCardProps.sticker
 		}
 
+		let sticker =  checkProps.sticker
+		let stickerColorMode = sticker.color.length > 0 ? `category-card__sticker--${sticker.color}` : ''
+
 	.category-card(class= checkProps.classes)&attributes(attributes)
 		a.category-card__link(href="javascript:void(0);")
 		.category-card__header
 			- if(checkProps.count.length > 0)
 				.category-card__count!= checkProps.count
-			- if(checkProps.sticker.length > 0)
-				.category-card__sticker!= checkProps.sticker[0]
-					- if(checkProps.sticker[1].length > 0)
-						.category-card__substicker!= checkProps.sticker[1]
+			- if(sticker.first.length > 0)
+				.category-card__stickers
+					.category-card__sticker(class= stickerColorMode)
+						- if(sticker.icon.length > 0)
+							svg
+								use(xlink:href=`img/sprites/sprite.svg#${sticker.icon}`)
+						!= sticker.first
+					- if(sticker.second.length > 0)
+						.category-card__sticker.category-card__sticker--second!= sticker.second
 		.category-card__body
 			.category-card__photo
 				img(class="lazyload" src="img/lazy-placeholder.webp" data-src= checkProps.image alt= checkProps.title)

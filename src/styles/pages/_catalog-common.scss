@@ -1,8 +1,37 @@
 .catalog-common {
     &__cards {
-        display: grid;
-        justify-items: center;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
         gap: 16px;
+        margin-top: 32px;
+
+        @include max(mobile) {
+            gap: 8px;
+        }
+    }
+
+    &__card {
+        flex: 0 0 calc((100% - 16px * 3) / 4);
+
+        @include max(laptop) {
+            flex-basis: calc((100% - 16px * 2) / 3);
+        }
+
+        @include max(tablet) {
+            flex-basis: calc((100% - 16px) / 2);
+        }
+
+        @include max(mobile) {
+            flex-basis: calc((100% - 8px) / 2);
+        }
+
+        @include max(xs) {
+            flex-basis: 100%;
+        }
+
+        @include min(2300) {
+            flex-basis: calc((100% - 16px * 5) / 6);
+        }
     }
 }
