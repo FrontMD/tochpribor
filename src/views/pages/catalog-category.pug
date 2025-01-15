@@ -49,6 +49,103 @@ block content
                     +form-filter({
                         vMode: 'sidebar'
                     })
+                        .form-filter__block
+                            .form-filter__subtitle Исполнение
+                            .form-filter__list
+                                .filter-checkbox
+                                    label.filter-checkbox__inner
+                                        input(type="checkbox" name='execution' value="Одноколонные")
+                                        span.filter-checkbox__fake
+                                        span.filter-checkbox__text Одноколонные <span>(23)</span>
+                                .filter-checkbox
+                                    label.filter-checkbox__inner
+                                        input(type="checkbox" name='execution' value="2-х колонные настольные")
+                                        span.filter-checkbox__fake
+                                        span.filter-checkbox__text 2-х колонные настольные <span>(15)</span>
+                                .filter-checkbox
+                                    label.filter-checkbox__inner
+                                        input(type="checkbox" name='execution' value="2-х колонные напольные")
+                                        span.filter-checkbox__fake
+                                        span.filter-checkbox__text 2-х колонные напольные <span>(11)</span>
+                                .filter-checkbox
+                                    label.filter-checkbox__inner
+                                        input(type="checkbox" name='execution' value="4-х колонные напольные")
+                                        span.filter-checkbox__fake
+                                        span.filter-checkbox__text 4-х колонные напольные <span>(9)</span>
+
+                        .form-filter__block
+                            .form-filter__subtitle Рабочий ход траверсы <span>мм</span>
+                            .filter-range(data-js="filterRange" data-min="10" data-max="2500" data-step="5")
+                                input.filter-range__input(type='number' data-js="filterRangeMin")
+                                input.filter-range__input(type='number' data-js="filterRangeMax")
+                                .filter-range__range(data-js="filterRangeSlider")
+
+                        .form-filter__block
+                            .form-filter__subtitle Наибольший предел измерений (НПИ, нагрузка) <span>кН</span>
+                            .filter-range(data-js="filterRange" data-min="0" data-max="100" data-step="1")
+                                input.filter-range__input(type='number' data-js="filterRangeMin")
+                                input.filter-range__input(type='number' data-js="filterRangeMax")
+                                .filter-range__range(data-js="filterRangeSlider")
+
+                        .form-filter__block
+                            .form-filter__subtitle Двухзонные / однозонные
+                            .form-filter__list
+                                .filter-checkbox
+                                    label.filter-checkbox__inner
+                                        input(type="checkbox" name='zoning' value="Двухзонные")
+                                        span.filter-checkbox__fake
+                                        span.filter-checkbox__text Двухзонные <span>(23)</span>
+                                .filter-checkbox
+                                    label.filter-checkbox__inner
+                                        input(type="checkbox" name='zoning' value="Однозонные")
+                                        span.filter-checkbox__fake
+                                        span.filter-checkbox__text Однозонные <span>(15)</span>
+                                .filter-checkbox
+                                    label.filter-checkbox__inner
+                                        input(type="checkbox" name='zoning' value="Для тестирования")
+                                        span.filter-checkbox__fake
+                                        span.filter-checkbox__text Для тестирования <span>(11)</span>
+                                .filter-checkbox
+                                    label.filter-checkbox__inner
+                                        input(type="checkbox" name='zoning' value="Для тестирования")
+                                        span.filter-checkbox__fake
+                                        span.filter-checkbox__text Для тестирования <span>(9)</span>
+                                .filter-checkbox
+                                    label.filter-checkbox__inner
+                                        input(type="checkbox" name='zoning' value="Для тестирования")
+                                        span.filter-checkbox__fake
+                                        span.filter-checkbox__text Для тестирования <span>(6)</span>
+                                .filter-checkbox
+                                    label.filter-checkbox__inner
+                                        input(type="checkbox" name='zoning' value="Для тестирования")
+                                        span.filter-checkbox__fake
+                                        span.filter-checkbox__text Для тестирования <span>(11)</span>
+                                .filter-checkbox
+                                    label.filter-checkbox__inner
+                                        input(type="checkbox" name='zoning' value="Для тестирования")
+                                        span.filter-checkbox__fake
+                                        span.filter-checkbox__text Для тестирования <span>(9)</span>
+                                .filter-checkbox
+                                    label.filter-checkbox__inner
+                                        input(type="checkbox" name='zoning' value="Для тестирования")
+                                        span.filter-checkbox__fake
+                                        span.filter-checkbox__text Для тестирования <span>(6)</span>
+
+                        .form-filter__btns
+                            +btn({
+                                name: 'Применить',
+                                cMode: 'red',
+                                type: 'button',
+                                buttonType: 'submit',
+                            })
+                            +btn({
+                                name: 'Сбросить фильтры',
+                                cMode: 'transparent',
+                                type: 'button',
+                                buttonType: 'reset',
+                            })
+
+
                 .catalog-category__content
                     .catalog-category__cards
                         +catalog-card({

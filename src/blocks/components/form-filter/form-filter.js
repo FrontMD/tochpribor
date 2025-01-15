@@ -180,5 +180,56 @@ function formFilterController() {
 
         }
 
+        // Range
+        const rangeFields = formFilter.querySelectorAll('[data-js="filterRange"]')
+
+        
+        if(rangeFields.length > 0) {
+            const formater = {
+                from: function (formattedValue) {
+                  return Number(formattedValue);
+                },
+                to: function (numericValue) {
+                  return Math.round(numericValue);
+                },
+              };
+
+            rangeFields.forEach(rangeField => {
+                const slider = rangeField.querySelector('[data-js="filterRangeSlider"]');
+                const min = parseInt(rangeField.dataset.min);
+                const max = parseInt(rangeField.dataset.max);
+                const step = parseInt(rangeField.dataset.step);
+                const inputsList = [
+                    rangeField.querySelector('[data-js="filterRangeMin"]'),
+                    rangeField.querySelector('[data-js="filterRangeMax"]')
+                ]
+
+                let sliderEx = noUiSlider.create(slider, {
+                    start: [min, max],
+                    connect: true,
+                    format: formater,
+                    tooltips: true,
+                    step: step,
+                    range: {
+                        'min': min,
+                        'max': max
+                    }
+                });
+
+                sliderEx.on("update", function (values, handle) {
+                    inputsList[handle].value = values[handle]
+                });
+               
+                formFilter.addEventListener('reset', function() {
+                    sliderEx.reset();
+                    setTimeout(() => {
+                        sliderEx.set([null, null])
+                    }, 0)
+                })
+                
+
+            })
+        }
+
     })
 }

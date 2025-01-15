@@ -11,6 +11,9 @@
 
     &__filter {
         flex: 0 0 340px;
+        padding: 16px;
+        border-radius: 4px;
+        background-color: $c-white;
     }
 
     &__content {
