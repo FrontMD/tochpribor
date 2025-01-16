@@ -199,7 +199,9 @@ block content
                         .form-filter__side
                             .form-filter__select.filter-select(data-js='filterSelect')
                                 .filter-select__header(data-js="filterSelectHeader")
-                                    input(type="text" data-js="filterSelectInput" value="Сначала новое")
+                                    select(data-js="filterSelectInput")
+                                        option(value="Сначала новое" selected) Сначала новое
+                                        option(value="Сначала старое") Сначала старое
                                     .filter-select__fake(data-js="filterSelectFake") Сначала новое
                                     svg
                                         use(xlink:href=`img/sprites/sprite.svg#arrow_angle`)
@@ -208,7 +210,11 @@ block content
                                     .filter-select__option(data-js="filterSelectOption" data-value="Сначала старое") Сначала старое
                             .form-filter__select.filter-select(data-js='filterSelect')
                                 .filter-select__header(data-js="filterSelectHeader")
-                                    input(type="text" data-js="filterSelectInput" value="За все время")
+                                    select(data-js="filterSelectInput")
+                                        option(value="За все время" selected) За все время
+                                        option(value="За неделю") За неделю
+                                        option(value="За месяц") За месяц
+                                        option(value="" data-js="filterSelectCustomDate")
                                     .filter-select__fake(data-js="filterSelectFake") За все время
                                     svg
                                         use(xlink:href=`img/sprites/sprite.svg#arrow_angle`)

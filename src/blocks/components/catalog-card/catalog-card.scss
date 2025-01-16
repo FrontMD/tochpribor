@@ -38,6 +38,10 @@
         gap: 10px;
     }
 
+    &__tagblock {
+        position: relative;
+    }
+
     &__tag {
         display: flex;
         align-items: center;
@@ -47,9 +51,21 @@
         font-size: 14px;
         font-weight: 400;
         line-height: 1.4em;
+        max-width: fit-content;
 
         @include max(mobile) {
             font-size: 10px;
+        }
+
+        img {
+            width: 14px;
+            height: 14px;
+            object-fit: contain;
+
+            @include max(mobile) {
+                width: 12px;
+                height: 12px;
+            }
         }
 
         &--green {
@@ -65,6 +81,30 @@
         &--red {
             color: $c-accent;
             background-color: #FAE6E6;
+        }
+
+        &--grey {
+            color: $c-text-light;
+            background-color: $c-border;
+        }
+    }
+
+    &__note {
+        position: absolute;
+        top: calc(100% + 4px);
+        left: 0;
+        max-width: 200px;
+        width: max-content;
+        padding: 8px 10px;
+        border-radius: 4px;
+        background-color: $c-text;
+        color: $c-white;
+        font-size: 12px;
+        line-height: 1.4em;
+
+        @include max(mobile) {
+            font-size: 10px;
+            max-width: 170px;
         }
     }
 
@@ -98,7 +138,8 @@
         display: grid;
         grid-template-columns: minmax(0, 47%) minmax(0, 53%);
         gap: 10px;
-        margin-bottom: 6px;
+        padding-bottom: 16px;
+        border-bottom: 1px solid $c-border;
 
         @include max(mobile) {
             grid-template-columns: minmax(0, 35%) minmax(0, 65%);
@@ -186,13 +227,10 @@
         display: flex;
         align-items: flex-start;
         gap: 14px;
-        grid-column-start: 1;
-        grid-column-end: 3;
-        padding-top: 10px;
         line-height: 1em;
         font-size: 26px;
         line-height: 1em;
-        border-top: 1px solid $c-border;
+        margin-bottom: 6px;
 
         @include max(laptop) {
             font-size: 24px;
@@ -204,7 +242,6 @@
 
         @include max(xs) {
             font-size: 20px;
-            grid-column-end: 2;
         }
     }
 
@@ -237,5 +274,19 @@
             position: relative;
             z-index: 3;
         }
+    }
+
+    &__footer &__full-btn {
+        flex-basis: 100%;
+    }
+}
+
+.catalog-card {
+    &--catalog {
+        border-color: transparent;
+    }
+
+    &--catalog:hover {
+        border-color: #4e4e4e;
     }
 }

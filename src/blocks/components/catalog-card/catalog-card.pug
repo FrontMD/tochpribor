@@ -5,7 +5,9 @@
 		desc: '',
 		image: '',
 		tags: [],
-		prices: []
+		prices: [],
+		vMode: '',
+		notForSale: false
 
 	}
 
@@ -17,10 +19,14 @@ mixin catalog-card(props = defaultCatalogCardProps)
 			desc: props.desc ? props.desc : defaultCatalogCardProps.desc,
 			image: props.image ? props.image : defaultCatalogCardProps.image,
 			tags: props.tags ? props.tags : defaultCatalogCardProps.tags,
-			prices: props.prices ? props.prices : defaultCatalogCardProps.prices
+			prices: props.prices ? props.prices : defaultCatalogCardProps.prices,
+			vMode: props.vMode ? props.vMode : defaultCatalogCardProps.vMode,
+			notForSale: props.notForSale ? props.notForSale : defaultCatalogCardProps.notForSale,
 		}
 
-	.catalog-card(class= checkProps.classes)&attributes(attributes)
+		let vModeClass = checkProps.vMode ? `catalog-card--${checkProps.vMode}` : ''
+
+	.catalog-card(class= checkProps.classes + vModeClass)&attributes(attributes)
 		a.catalog-card__link(href="javascript:void(0);")
 		.catalog-card__header
 			- if(checkProps.tags.length > 0)
@@ -28,10 +34,13 @@ mixin catalog-card(props = defaultCatalogCardProps)
 					- let tagsCounter = 0
 						- while (tagsCounter < checkProps.tags.length)
 							- let currentTag = checkProps.tags[tagsCounter]
-							.catalog-card__tag(class= `catalog-card__tag--${currentTag.color}`)
-								- if(currentTag.img.length > 0)
-									img(src= currentTag.img)
-								!= currentTag.text
+							.catalog-card__tagblock
+								.catalog-card__tag(class= `catalog-card__tag--${currentTag.color}`)
+									- if(currentTag.img.length > 0)
+										img(src= currentTag.img)
+									!= currentTag.text
+								-if(currentTag.note)
+									.catalog-card__note!= currentTag.note
 							- tagsCounter++
 				.catalog-card__controls
 					a.catalog-card__control(href="javascript:void(0)")
@@ -47,20 +56,33 @@ mixin catalog-card(props = defaultCatalogCardProps)
 				.catalog-card__title!= checkProps.title
 				- if(checkProps.desc.length > 0)
 					.catalog-card__desc!= checkProps.desc
-			- if(checkProps.prices.length > 0)
-				.catalog-card__prices
-					.catalog-card__price!= checkProps.prices[0]
-					- if(checkProps.prices[1].length > 0)
-						.catalog-card__price.catalog-card__price--old!= checkProps.prices[1]
+		- if(checkProps.prices.length > 0)
+			.catalog-card__prices
+				.catalog-card__price!= checkProps.prices[0]
+				- if(checkProps.prices[1].length > 0)
+					.catalog-card__price.catalog-card__price--old!= checkProps.prices[1]
 
 		.catalog-card__footer
-			+btn({
-				name: 'Заказать в 1 клик',
-				cMode: 'red'
-			})
-			+btn({
-				name: 'В корзину',
-				cMode: 'transparent-red',
-				icon: 'basket',
-				iconPos: 'left'
-			})
+			- if(checkProps.notForSale === true)
+				+btn({
+					classes: 'catalog-card__full-btn',
+					name: 'Смотреть аналоги',
+					cMode: 'transparent-red'
+				})
+			- else
+				+btn({
+					name: 'Заказать в 1 клик',
+					cMode: 'red'
+				})
+				- if(checkProps.vMode == 'catalog')
+					+btn({
+						name: 'Смотреть модели',
+						cMode: 'transparent-red'
+					})
+				-else
+					+btn({
+						name: 'В корзину',
+						cMode: 'transparent-red',
+						icon: 'basket',
+						iconPos: 'left'
+					})

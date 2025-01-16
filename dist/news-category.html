@@ -326,7 +326,10 @@
                     <div class="form-filter__side">
                       <div class="form-filter__select filter-select" data-js="filterSelect">
                         <div class="filter-select__header" data-js="filterSelectHeader">
-                          <input type="text" data-js="filterSelectInput" value="Сначала новое">
+                          <select data-js="filterSelectInput">
+                            <option value="Сначала новое" selected>Сначала новое</option>
+                            <option value="Сначала старое">Сначала старое</option>
+                          </select>
                           <div class="filter-select__fake" data-js="filterSelectFake">Сначала новое</div>
                           <svg>
                             <use xlink:href="img/sprites/sprite.svg#arrow_angle"></use>
@@ -339,7 +342,12 @@
                       </div>
                       <div class="form-filter__select filter-select" data-js="filterSelect">
                         <div class="filter-select__header" data-js="filterSelectHeader">
-                          <input type="text" data-js="filterSelectInput" value="За все время">
+                          <select data-js="filterSelectInput">
+                            <option value="За все время" selected>За все время</option>
+                            <option value="За неделю">За неделю</option>
+                            <option value="За месяц">За месяц</option>
+                            <option value="" data-js="filterSelectCustomDate"></option>
+                          </select>
                           <div class="filter-select__fake" data-js="filterSelectFake">За все время</div>
                           <svg>
                             <use xlink:href="img/sprites/sprite.svg#arrow_angle"></use>

@@ -34,8 +34,7 @@ mixin category-card(props = defaultCategoryCardProps)
 				.category-card__stickers
 					.category-card__sticker(class= stickerColorMode)
 						- if(sticker.icon.length > 0)
-							svg
-								use(xlink:href=`img/sprites/sprite.svg#${sticker.icon}`)
+							img(src= sticker.icon)
 						!= sticker.first
 					- if(sticker.second.length > 0)
 						.category-card__sticker.category-card__sticker--second!= sticker.second

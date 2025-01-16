@@ -310,7 +310,7 @@
             }
         }
 
-        input {
+        select {
             position: absolute;
             top: 0;
             left: 0;
@@ -318,7 +318,6 @@
             height: 0;
             opacity: 0;
             visibility: hidden;
-
         }
 
         &__fake {
@@ -480,29 +479,30 @@
 }
 
 .filter-range {
-    /* remove */
     display: flex;
     align-items: center;
-    justify-content: center;
-
-
-    /* end remove */
-
-
+    justify-content: space-between;
+    gap: 16px;
     height: 44px;
+    padding: 0 16px;
     border: 1px solid $c-border;
     border-radius: 4px;
     position: relative;
 
     &__input {
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 0;
-        height: 0;
-        overflow: hidden;
-        opacity: 0;
-        visibility: hidden;
+        font-size: 14px;
+        line-height: 1.4em;
+        color: $c-text;
+
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+    }
+
+    &__input--max {
+        text-align: end;
     }
 
     .noUi-horizontal {
@@ -512,8 +512,8 @@
     .noUi-target {
         position: absolute;
         bottom: 0;
-        left: 8px;
-        width: calc(100% - 16px);
+        left: 21px;
+        width: calc(100% - 42px);
         border: none;
         background-color: transparent;
         box-shadow: none;
@@ -541,21 +541,4 @@
         }
     }
 
-    .noUi-tooltip {
-        padding: 0 4px;
-        border-radius: 0;
-        font-size: 14px;
-        line-height: 1.4em;
-        color: $c-text;
-        background-color: $c-white;
-        left: 0;
-        transform: none;
-        border: none;
-        bottom: calc(100% + 6px);
-    }
-
-    .noUi-handle-upper .noUi-tooltip {
-        left: auto;
-        right: 0;
-    }
 }

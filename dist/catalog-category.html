@@ -167,22 +167,27 @@
                   <form class="form-filter" action="#" data-js="formFilter">
                     <div class="form-filter__select filter-select" data-js="filterSelect">
                       <div class="filter-select__header" data-js="filterSelectHeader">
-                        <input type="text" data-js="filterSelectInput" value="Сначала новое">
+                        <select data-js="filterSelectInput">
+                          <option value="По популярности" selected>По популярности</option>
+                          <option value="Сначала дешевле">Сначала дешевле</option>
+                          <option value="Сначала дороже">Сначала дороже</option>
+                        </select>
                         <div class="filter-select__fake" data-js="filterSelectFake">По популярности</div>
                         <svg>
                           <use xlink:href="img/sprites/sprite.svg#arrow_angle"></use>
                         </svg>
                       </div>
                       <div class="filter-select__content">
-                        <div class="filter-select__option active" data-js="filterSelectOption" data-value="Сначала новое">Дешевле</div>
-                        <div class="filter-select__option" data-js="filterSelectOption" data-value="Сначала старое">Дороже</div>
+                        <div class="filter-select__option active" data-js="filterSelectOption" data-value="По популярности">По популярности</div>
+                        <div class="filter-select__option" data-js="filterSelectOption" data-value="Сначала дешевле">Сначала дешевле</div>
+                        <div class="filter-select__option" data-js="filterSelectOption" data-value="Сначала дороже">Сначала дороже</div>
                       </div>
                     </div>
                   </form>
             </div>
           </div>
         </section>
-        <section class="section section--transparent">
+        <section class="section section--transparent catalog-category__section">
           <div class="section__container catalog-category__layout">
             <div class="catalog-category__filter">
                   <form class="form-filter form-filter--sidebar" action="#" data-js="formFilter">
@@ -216,16 +221,16 @@
                     <div class="form-filter__block">
                       <div class="form-filter__subtitle">Рабочий ход траверсы <span>мм</span></div>
                       <div class="filter-range" data-js="filterRange" data-min="45" data-max="2500" data-step="5">
-                        <input class="filter-range__input" type="number" data-js="filterRangeMin">
-                        <input class="filter-range__input" type="number" data-js="filterRangeMax">
+                        <input class="filter-range__input filter-range__input--min" type="number" min="45" max="2500" data-js="filterRangeMin">
+                        <input class="filter-range__input filter-range__input--max" type="number" min="45" max="2500" data-js="filterRangeMax">
                         <div class="filter-range__range" data-js="filterRangeSlider"></div>
                       </div>
                     </div>
                     <div class="form-filter__block">
                       <div class="form-filter__subtitle">Наибольший предел измерений (НПИ, нагрузка) <span>кН</span></div>
                       <div class="filter-range" data-js="filterRange" data-min="0" data-max="100" data-step="1">
-                        <input class="filter-range__input" type="number" data-js="filterRangeMin">
-                        <input class="filter-range__input" type="number" data-js="filterRangeMax">
+                        <input class="filter-range__input" type="number" min="0" max="100" data-js="filterRangeMin">
+                        <input class="filter-range__input" type="number" min="0" max="100" data-js="filterRangeMax">
                         <div class="filter-range__range" data-js="filterRangeSlider"></div>
                       </div>
                     </div>
@@ -286,14 +291,20 @@
             </div>
             <div class="catalog-category__content">
               <div class="catalog-category__cards">
-                    <div class="catalog-card cards-slider__card"><a class="catalog-card__link" href="javascript:void(0);"></a>
+                    <div class="catalog-card catalog-card--catalog"><a class="catalog-card__link" href="javascript:void(0);"></a>
                       <div class="catalog-card__header">
                         <div class="catalog-card__tags">
-                          <div class="catalog-card__tag catalog-card__tag--green"><img src="img/catalog/check_icon.svg">В наличии
+                          <div class="catalog-card__tagblock">
+                            <div class="catalog-card__tag catalog-card__tag--green"><img src="img/catalog/check_icon.svg">В наличии
+                            </div>
                           </div>
-                          <div class="catalog-card__tag catalog-card__tag--blue">Новинка
+                          <div class="catalog-card__tagblock">
+                            <div class="catalog-card__tag catalog-card__tag--blue">Новинка
+                            </div>
                           </div>
-                          <div class="catalog-card__tag catalog-card__tag--red">Скидка
+                          <div class="catalog-card__tagblock">
+                            <div class="catalog-card__tag catalog-card__tag--red">Скидка
+                            </div>
                           </div>
                         </div>
                         <div class="catalog-card__controls"><a class="catalog-card__control" href="javascript:void(0)">
@@ -305,9 +316,9 @@
                             </svg></a></div>
                       </div>
                       <div class="catalog-card__body">
-                        <div class="catalog-card__photo"><img src="img/catalog/product_1.png" alt="Твердомер ТПУ 1800"></div>
+                        <div class="catalog-card__photo"><img src="img/catalog/product_3.png" alt="ИР 5047-50 разрывная машина универсальная"></div>
                         <div class="catalog-card__info">
-                          <div class="catalog-card__title">Твердомер ТПУ 1800</div>
+                          <div class="catalog-card__title">ИР 5047-50 разрывная машина универсальная</div>
                           <div class="catalog-card__desc">
                                 <h3>Технические характеристики</h3>
                                 <ul>
@@ -323,25 +334,21 @@
                                 </ul>
                                 </div>
                         </div>
-                        <div class="catalog-card__prices">
-                          <div class="catalog-card__price">550 000 ₽</div>
-                          <div class="catalog-card__price catalog-card__price--old">680 000 ₽</div>
-                        </div>
                       </div>
-                      <div class="catalog-card__footer"><a class="btn  btn--red btn--full" href="javascript:void(0)"><span class="btn__text">Заказать в 1 клик</span></a><a class="btn  btn--transparent-red btn--full" href="javascript:void(0)">
-                              <svg>
-                                <use xlink:href="img/sprites/sprite.svg#basket"></use>
-                              </svg><span class="btn__text">В корзину</span></a>
+                      <div class="catalog-card__prices">
+                        <div class="catalog-card__price">550 000 ₽</div>
+                        <div class="catalog-card__price catalog-card__price--old">680 000 ₽</div>
+                      </div>
+                      <div class="catalog-card__footer"><a class="btn  btn--red btn--full" href="javascript:void(0)"><span class="btn__text">Заказать в 1 клик</span></a><a class="btn  btn--transparent-red btn--full" href="javascript:void(0)"><span class="btn__text">Смотреть модели</span></a>
                       </div>
                     </div>
-                    <div class="catalog-card cards-slider__card"><a class="catalog-card__link" href="javascript:void(0);"></a>
+                    <div class="catalog-card catalog-card--catalog"><a class="catalog-card__link" href="javascript:void(0);"></a>
                       <div class="catalog-card__header">
                         <div class="catalog-card__tags">
-                          <div class="catalog-card__tag catalog-card__tag--green"><img src="img/catalog/check_icon.svg">В наличии
-                          </div>
-                          <div class="catalog-card__tag catalog-card__tag--blue">Новинка
-                          </div>
-                          <div class="catalog-card__tag catalog-card__tag--red">Скидка
+                          <div class="catalog-card__tagblock">
+                            <div class="catalog-card__tag catalog-card__tag--grey"><img src="img/catalog/arrow_circle.svg">Снято с производства
+                            </div>
+                            <div class="catalog-card__note">Товар больше не производится. Смотрите аналоги в карточке товара</div>
                           </div>
                         </div>
                         <div class="catalog-card__controls"><a class="catalog-card__control" href="javascript:void(0)">
@@ -353,9 +360,9 @@
                             </svg></a></div>
                       </div>
                       <div class="catalog-card__body">
-                        <div class="catalog-card__photo"><img src="img/catalog/product_2.png" alt="Твердомер ТКМ-459С"></div>
+                        <div class="catalog-card__photo"><img src="img/catalog/product_4.png" alt="ИР 5047-50 разрывная машина универсальная"></div>
                         <div class="catalog-card__info">
-                          <div class="catalog-card__title">Твердомер ТКМ-459С</div>
+                          <div class="catalog-card__title">ИР 5047-50 разрывная машина универсальная</div>
                           <div class="catalog-card__desc">
                                 <h3>Технические характеристики</h3>
                                 <ul>
@@ -371,25 +378,16 @@
                                 </ul>
                                 </div>
                         </div>
-                        <div class="catalog-card__prices">
-                          <div class="catalog-card__price">550 000 ₽</div>
-                          <div class="catalog-card__price catalog-card__price--old">680 000 ₽</div>
-                        </div>
                       </div>
-                      <div class="catalog-card__footer"><a class="btn  btn--red btn--full" href="javascript:void(0)"><span class="btn__text">Заказать в 1 клик</span></a><a class="btn  btn--transparent-red btn--full" href="javascript:void(0)">
-                              <svg>
-                                <use xlink:href="img/sprites/sprite.svg#basket"></use>
-                              </svg><span class="btn__text">В корзину</span></a>
+                      <div class="catalog-card__footer"><a class="btn catalog-card__full-btn btn--transparent-red btn--full" href="javascript:void(0)"><span class="btn__text">Смотреть аналоги</span></a>
                       </div>
                     </div>
-                    <div class="catalog-card cards-slider__card"><a class="catalog-card__link" href="javascript:void(0);"></a>
+                    <div class="catalog-card catalog-card--catalog"><a class="catalog-card__link" href="javascript:void(0);"></a>
                       <div class="catalog-card__header">
                         <div class="catalog-card__tags">
-                          <div class="catalog-card__tag catalog-card__tag--green"><img src="img/catalog/check_icon.svg">В наличии
-                          </div>
-                          <div class="catalog-card__tag catalog-card__tag--blue">Новинка
-                          </div>
-                          <div class="catalog-card__tag catalog-card__tag--red">Скидка
+                          <div class="catalog-card__tagblock">
+                            <div class="catalog-card__tag catalog-card__tag--grey"><img src="img/catalog/arrow_circle.svg">Под заказ
+                            </div>
                           </div>
                         </div>
                         <div class="catalog-card__controls"><a class="catalog-card__control" href="javascript:void(0)">
@@ -401,9 +399,9 @@
                             </svg></a></div>
                       </div>
                       <div class="catalog-card__body">
-                        <div class="catalog-card__photo"><img src="img/catalog/product_1.png" alt="Твердомер ТПУ 1800"></div>
+                        <div class="catalog-card__photo"><img src="img/catalog/product_5.png" alt="FU DLC 50 кН Испытательная машина "></div>
                         <div class="catalog-card__info">
-                          <div class="catalog-card__title">Твердомер ТПУ 1800</div>
+                          <div class="catalog-card__title">FU DLC 50 кН Испытательная машина </div>
                           <div class="catalog-card__desc">
                                 <h3>Технические характеристики</h3>
                                 <ul>
@@ -419,25 +417,19 @@
                                 </ul>
                                 </div>
                         </div>
-                        <div class="catalog-card__prices">
-                          <div class="catalog-card__price">550 000 ₽</div>
-                          <div class="catalog-card__price catalog-card__price--old">680 000 ₽</div>
-                        </div>
                       </div>
-                      <div class="catalog-card__footer"><a class="btn  btn--red btn--full" href="javascript:void(0)"><span class="btn__text">Заказать в 1 клик</span></a><a class="btn  btn--transparent-red btn--full" href="javascript:void(0)">
-                              <svg>
-                                <use xlink:href="img/sprites/sprite.svg#basket"></use>
-                              </svg><span class="btn__text">В корзину</span></a>
+                      <div class="catalog-card__prices">
+                        <div class="catalog-card__price">Цена по запросу</div>
+                      </div>
+                      <div class="catalog-card__footer"><a class="btn  btn--red btn--full" href="javascript:void(0)"><span class="btn__text">Заказать в 1 клик</span></a><a class="btn  btn--transparent-red btn--full" href="javascript:void(0)"><span class="btn__text">Смотреть модели</span></a>
                       </div>
                     </div>
-                    <div class="catalog-card cards-slider__card"><a class="catalog-card__link" href="javascript:void(0);"></a>
+                    <div class="catalog-card catalog-card--catalog"><a class="catalog-card__link" href="javascript:void(0);"></a>
                       <div class="catalog-card__header">
                         <div class="catalog-card__tags">
-                          <div class="catalog-card__tag catalog-card__tag--green"><img src="img/catalog/check_icon.svg">В наличии
-                          </div>
-                          <div class="catalog-card__tag catalog-card__tag--blue">Новинка
-                          </div>
-                          <div class="catalog-card__tag catalog-card__tag--red">Скидка
+                          <div class="catalog-card__tagblock">
+                            <div class="catalog-card__tag catalog-card__tag--grey"><img src="img/catalog/arrow_circle.svg">Под заказ
+                            </div>
                           </div>
                         </div>
                         <div class="catalog-card__controls"><a class="catalog-card__control" href="javascript:void(0)">
@@ -449,9 +441,9 @@
                             </svg></a></div>
                       </div>
                       <div class="catalog-card__body">
-                        <div class="catalog-card__photo"><img src="img/catalog/product_2.png" alt="Твердомер ТКМ-459С"></div>
+                        <div class="catalog-card__photo"><img src="img/catalog/product_5.png" alt="FU DLC 200 кН испытательная машина"></div>
                         <div class="catalog-card__info">
-                          <div class="catalog-card__title">Твердомер ТКМ-459С</div>
+                          <div class="catalog-card__title">FU DLC 200 кН испытательная машина</div>
                           <div class="catalog-card__desc">
                                 <h3>Технические характеристики</h3>
                                 <ul>
@@ -467,15 +459,87 @@
                                 </ul>
                                 </div>
                         </div>
-                        <div class="catalog-card__prices">
-                          <div class="catalog-card__price">550 000 ₽</div>
-                          <div class="catalog-card__price catalog-card__price--old">680 000 ₽</div>
+                      </div>
+                      <div class="catalog-card__prices">
+                        <div class="catalog-card__price">1 550 000 ₽</div>
+                      </div>
+                      <div class="catalog-card__footer"><a class="btn  btn--red btn--full" href="javascript:void(0)"><span class="btn__text">Заказать в 1 клик</span></a><a class="btn  btn--transparent-red btn--full" href="javascript:void(0)"><span class="btn__text">Смотреть модели</span></a>
+                      </div>
+                    </div>
+                    <div class="catalog-card catalog-card--catalog"><a class="catalog-card__link" href="javascript:void(0);"></a>
+                      <div class="catalog-card__header">
+                        <div class="catalog-card__tags">
+                          <div class="catalog-card__tagblock">
+                            <div class="catalog-card__tag catalog-card__tag--green"><img src="img/catalog/check_icon.svg">В наличии
+                            </div>
+                          </div>
+                        </div>
+                        <div class="catalog-card__controls"><a class="catalog-card__control" href="javascript:void(0)">
+                            <svg>
+                              <use xlink:href="img/sprites/sprite.svg#view"></use>
+                            </svg></a><a class="catalog-card__control" href="javascript:void(0)">
+                            <svg>
+                              <use xlink:href="img/sprites/sprite.svg#compare_2"></use>
+                            </svg></a></div>
+                      </div>
+                      <div class="catalog-card__body">
+                        <div class="catalog-card__photo"><img src="img/catalog/product_6.png" alt="FU DLC 50 кН Испытательная машина "></div>
+                        <div class="catalog-card__info">
+                          <div class="catalog-card__title">FU DLC 50 кН Испытательная машина </div>
+                          <div class="catalog-card__desc">
+                                <h3>Технические характеристики</h3>
+                                <ul>
+                                    <li>Конструктивное исполнение: установка на виброопоры</li>
+                                    <li>Наибольший предел измерений (НПИ): 100</li>
+                                    <li>Ход подвижной траверсы без захватов, мм: 700</li>
+                                </ul>
+                                <h3>Базовая комплектация</h3>
+                                <ul>
+                                    <li>Захваты для образцов: тип IV, ГОСТ 1497</li>
+                                    <li>НИзмеритель силы тензорезисторный: 1 компл.</li>
+                                    <li>ПТК:  ноутбук, принтер + ПО (1 компл.)</li>
+                                </ul>
+                                </div>
                         </div>
                       </div>
-                      <div class="catalog-card__footer"><a class="btn  btn--red btn--full" href="javascript:void(0)"><span class="btn__text">Заказать в 1 клик</span></a><a class="btn  btn--transparent-red btn--full" href="javascript:void(0)">
-                              <svg>
-                                <use xlink:href="img/sprites/sprite.svg#basket"></use>
-                              </svg><span class="btn__text">В корзину</span></a>
+                      <div class="catalog-card__prices">
+                        <div class="catalog-card__price">Цена по запросу</div>
+                      </div>
+                      <div class="catalog-card__footer"><a class="btn  btn--red btn--full" href="javascript:void(0)"><span class="btn__text">Заказать в 1 клик</span></a><a class="btn  btn--transparent-red btn--full" href="javascript:void(0)"><span class="btn__text">Смотреть модели</span></a>
+                      </div>
+                    </div>
+                    <div class="catalog-card catalog-card--catalog"><a class="catalog-card__link" href="javascript:void(0);"></a>
+                      <div class="catalog-card__header">
+                        <div class="catalog-card__tags">
+                          <div class="catalog-card__tagblock">
+                            <div class="catalog-card__tag catalog-card__tag--grey"><img src="img/catalog/arrow_circle.svg">Под заказ
+                            </div>
+                          </div>
+                        </div>
+                        <div class="catalog-card__controls"><a class="catalog-card__control" href="javascript:void(0)">
+                            <svg>
+                              <use xlink:href="img/sprites/sprite.svg#view"></use>
+                            </svg></a><a class="catalog-card__control" href="javascript:void(0)">
+                            <svg>
+                              <use xlink:href="img/sprites/sprite.svg#compare_2"></use>
+                            </svg></a></div>
+                      </div>
+                      <div class="catalog-card__body">
+                        <div class="catalog-card__photo"><img src="img/catalog/product_5.png" alt="Машины универсальные ТРМЦ Tochline"></div>
+                        <div class="catalog-card__info">
+                          <div class="catalog-card__title">Машины универсальные ТРМЦ Tochline</div>
+                          <div class="catalog-card__desc">
+                                <h3>Технические характеристики</h3>
+                                <ul>
+                                    <li>Модификация, кол-во: 52</li>
+                                </ul>
+                                </div>
+                        </div>
+                      </div>
+                      <div class="catalog-card__prices">
+                        <div class="catalog-card__price">1 550 000 ₽</div>
+                      </div>
+                      <div class="catalog-card__footer"><a class="btn  btn--red btn--full" href="javascript:void(0)"><span class="btn__text">Заказать в 1 клик</span></a><a class="btn  btn--transparent-red btn--full" href="javascript:void(0)"><span class="btn__text">Смотреть модели</span></a>
                       </div>
                     </div>
               </div>

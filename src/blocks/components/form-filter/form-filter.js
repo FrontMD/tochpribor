@@ -75,6 +75,7 @@ function formFilterController() {
                 const filterSelectOptions = filterSelect.querySelectorAll("[data-js='filterSelectOption']")
                 const filterSelectFake = filterSelect.querySelector("[data-js='filterSelectFake']")
                 const filterSelectInput = filterSelect.querySelector("[data-js='filterSelectInput']")
+                const filterSelectRealOptions = filterSelectInput.querySelectorAll("option")
 
                 filterSelectHeader.addEventListener('click', function() {
                     if(filterSelect.classList.contains('active')) {
@@ -93,7 +94,14 @@ function formFilterController() {
                         let currentVal = this.dataset.value
 
                         filterSelectFake.innerHTML = currentVal
-                        filterSelectInput.value = currentVal
+
+                        filterSelectRealOptions.forEach(realOption => {
+                            if(realOption.value == currentVal) {
+                                realOption.selected = true
+                                return
+                            }
+                        })
+
                         this.classList.add('active')
                         filterSelectClose(filterSelect)
 
@@ -125,7 +133,6 @@ function formFilterController() {
                 }
             })
 
-
             // Dates
             const dateSelects = formFilter.querySelectorAll('[data-js="dateSelect"]')
     
@@ -139,6 +146,7 @@ function formFilterController() {
                     const dateSelectReset = dateSelect.querySelector('[data-js="dateSelectReset"]')
                     const dateSelectSet = dateSelect.querySelector('[data-js="dateSelectSet"]')
                     const dateSelectClose = dateSelect.querySelector('[data-js="dateSelectClose"]')
+                    const filterSelectCustomDate = filterSelectInput.querySelector('[data-js="filterSelectCustomDate"]')
         
                     let dp = new AirDatepicker(dateSelectInput, {
                         inline: true,
@@ -172,7 +180,11 @@ function formFilterController() {
                     dateSelectSet.addEventListener('click', function() {
                         if(dateSelectInput.value.length < 1) return
                         filterSelectFake.innerHTML = dateSelectInput.value
-                        filterSelectInput.value = dateSelectInput.value
+
+                        filterSelectCustomDate.value = dateSelectInput.value
+                        filterSelectCustomDate.innerHTML = dateSelectInput.value
+                        filterSelectCustomDate.selected = true 
+
                         filterSelectClose(filterSelect)
                     })
                })
@@ -207,7 +219,7 @@ function formFilterController() {
                     start: [min, max],
                     connect: true,
                     format: formater,
-                    tooltips: true,
+                    tooltips: false,
                     step: step,
                     range: {
                         'min': min,
@@ -218,6 +230,32 @@ function formFilterController() {
                 sliderEx.on("update", function (values, handle) {
                     inputsList[handle].value = values[handle]
                 });
+
+                inputsList.forEach((currentInput, index) => {
+                    if(index == 0) {
+                        currentInput.addEventListener('change', function() {
+                            sliderEx.set([this.value, null])
+                        })
+                    } else if(index == 1) {
+                        currentInput.addEventListener('change', function() {
+                            sliderEx.set([null, this.value])
+                        })
+                    }
+
+                    currentInput.addEventListener('keydown', function(e) {
+                        if (e.keyCode === 13) {
+                            e.preventDefault()
+                            e.stopPropagation()
+                            this.blur()
+                        }
+                    })
+                })
+
+                inputsList.forEach(currentInput => {
+                    currentInput.addEventListener('input', function() {
+
+                    })
+                })
                
                 formFilter.addEventListener('reset', function() {
                     sliderEx.reset();

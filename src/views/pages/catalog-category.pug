@@ -45,16 +45,20 @@ block content
                     +form-filter
                         .form-filter__select.filter-select(data-js='filterSelect')
                             .filter-select__header(data-js="filterSelectHeader")
-                                input(type="text" data-js="filterSelectInput" value="Сначала новое")
+                                select(data-js="filterSelectInput")
+                                    option(value="По популярности" selected) По популярности
+                                    option(value="Сначала дешевле") Сначала дешевле
+                                    option(value="Сначала дороже") Сначала дороже
                                 .filter-select__fake(data-js="filterSelectFake") По популярности
                                 svg
                                     use(xlink:href=`img/sprites/sprite.svg#arrow_angle`)
                             .filter-select__content
-                                .filter-select__option.active(data-js="filterSelectOption" data-value="Сначала новое") Дешевле
-                                .filter-select__option(data-js="filterSelectOption" data-value="Сначала старое") Дороже
+                                .filter-select__option.active(data-js="filterSelectOption" data-value="По популярности") По популярности
+                                .filter-select__option(data-js="filterSelectOption" data-value="Сначала дешевле") Сначала дешевле
+                                .filter-select__option(data-js="filterSelectOption" data-value="Сначала дороже") Сначала дороже
 
 
-        section.section.section--transparent
+        section.section.section--transparent.catalog-category__section
             .section__container.catalog-category__layout
                 .catalog-category__filter
                     +form-filter({
@@ -88,15 +92,15 @@ block content
                         .form-filter__block
                             .form-filter__subtitle Рабочий ход траверсы <span>мм</span>
                             .filter-range(data-js="filterRange" data-min="45" data-max="2500" data-step="5")
-                                input.filter-range__input(type='number' data-js="filterRangeMin")
-                                input.filter-range__input(type='number' data-js="filterRangeMax")
+                                input.filter-range__input.filter-range__input--min(type='number' min="45" max="2500" data-js="filterRangeMin")
+                                input.filter-range__input.filter-range__input--max(type='number' min="45" max="2500" data-js="filterRangeMax")
                                 .filter-range__range(data-js="filterRangeSlider")
 
                         .form-filter__block
                             .form-filter__subtitle Наибольший предел измерений (НПИ, нагрузка) <span>кН</span>
                             .filter-range(data-js="filterRange" data-min="0" data-max="100" data-step="1")
-                                input.filter-range__input(type='number' data-js="filterRangeMin")
-                                input.filter-range__input(type='number' data-js="filterRangeMax")
+                                input.filter-range__input(type='number' min="0" max="100" data-js="filterRangeMin")
+                                input.filter-range__input(type='number' min="0" max="100" data-js="filterRangeMax")
                                 .filter-range__range(data-js="filterRangeSlider")
 
                         .form-filter__block
@@ -158,12 +162,10 @@ block content
                                 buttonType: 'reset',
                             })
 
-
                 .catalog-category__content
                     .catalog-category__cards
                         +catalog-card({
-                            classes: 'cards-slider__card',
-                            title: 'Твердомер ТПУ 1800',
+                            title: 'ИР 5047-50 разрывная машина универсальная',
                             desc: `
                                 <h3>Технические характеристики</h3>
                                 <ul>
@@ -178,7 +180,7 @@ block content
                                     <li>ПТК:  ноутбук, принтер + ПО (1 компл.)</li>
                                 </ul>
                                 `,
-                            image: 'img/catalog/product_1.png',
+                            image: 'img/catalog/product_3.png',
                             tags: [
                                 {
                                     img: 'img/catalog/check_icon.svg',
@@ -199,12 +201,12 @@ block content
                             prices: [
                                 '550 000 ₽',
                                 '680 000 ₽'
-                            ]
+                            ],
+                            vMode: 'catalog'
                         })
 
                         +catalog-card({
-                            classes: 'cards-slider__card',
-                            title: 'Твердомер ТКМ-459С',
+                            title: 'ИР 5047-50 разрывная машина универсальная',
                             desc: `
                                 <h3>Технические характеристики</h3>
                                 <ul>
@@ -219,33 +221,22 @@ block content
                                     <li>ПТК:  ноутбук, принтер + ПО (1 компл.)</li>
                                 </ul>
                                 `,
-                            image: 'img/catalog/product_2.png',
+                            image: 'img/catalog/product_4.png',
                             tags: [
                                 {
-                                    img: 'img/catalog/check_icon.svg',
-                                    text: 'В наличии',
-                                    color: 'green'
-                                },
-                                {
-                                    img: '',
-                                    text: 'Новинка',
-                                    color: 'blue'
-                                },
-                                {
-                                    img: '',
-                                    text: 'Скидка',
-                                    color: 'red'
+                                    img: 'img/catalog/arrow_circle.svg',
+                                    text: 'Снято с производства',
+                                    note: 'Товар больше не производится. Смотрите аналоги в карточке товара',
+                                    color: 'grey'
                                 }
                             ],
-                            prices: [
-                                '550 000 ₽',
-                                '680 000 ₽'
-                            ]
+                            prices: [],
+                            vMode: 'catalog',
+                            notForSale: true
                         })
 
                         +catalog-card({
-                            classes: 'cards-slider__card',
-                            title: 'Твердомер ТПУ 1800',
+                            title: 'FU DLC 50 кН Испытательная машина ',
                             desc: `
                                 <h3>Технические характеристики</h3>
                                 <ul>
@@ -260,33 +251,23 @@ block content
                                     <li>ПТК:  ноутбук, принтер + ПО (1 компл.)</li>
                                 </ul>
                                 `,
-                            image: 'img/catalog/product_1.png',
+                            image: 'img/catalog/product_5.png',
                             tags: [
                                 {
-                                    img: 'img/catalog/check_icon.svg',
-                                    text: 'В наличии',
-                                    color: 'green'
-                                },
-                                {
-                                    img: '',
-                                    text: 'Новинка',
-                                    color: 'blue'
-                                },
-                                {
-                                    img: '',
-                                    text: 'Скидка',
-                                    color: 'red'
+                                    img: 'img/catalog/arrow_circle.svg',
+                                    text: 'Под заказ',
+                                    color: 'grey'
                                 }
                             ],
                             prices: [
-                                '550 000 ₽',
-                                '680 000 ₽'
-                            ]
+                                'Цена по запросу',
+                                ''
+                            ],
+                            vMode: 'catalog'
                         })
 
                         +catalog-card({
-                            classes: 'cards-slider__card',
-                            title: 'Твердомер ТКМ-459С',
+                            title: 'FU DLC 200 кН испытательная машина',
                             desc: `
                                 <h3>Технические характеристики</h3>
                                 <ul>
@@ -301,27 +282,73 @@ block content
                                     <li>ПТК:  ноутбук, принтер + ПО (1 компл.)</li>
                                 </ul>
                                 `,
-                            image: 'img/catalog/product_2.png',
+                            image: 'img/catalog/product_5.png',
+                            tags: [
+                                {
+                                    img: 'img/catalog/arrow_circle.svg',
+                                    text: 'Под заказ',
+                                    color: 'grey'
+                                }
+                            ],
+                            prices: [
+                                '1 550 000 ₽',
+                                ''
+                            ],
+                            vMode: 'catalog'
+                        })
+
+                        +catalog-card({
+                            title: 'FU DLC 50 кН Испытательная машина ',
+                            desc: `
+                                <h3>Технические характеристики</h3>
+                                <ul>
+                                    <li>Конструктивное исполнение: установка на виброопоры</li>
+                                    <li>Наибольший предел измерений (НПИ): 100</li>
+                                    <li>Ход подвижной траверсы без захватов, мм: 700</li>
+                                </ul>
+                                <h3>Базовая комплектация</h3>
+                                <ul>
+                                    <li>Захваты для образцов: тип IV, ГОСТ 1497</li>
+                                    <li>НИзмеритель силы тензорезисторный: 1 компл.</li>
+                                    <li>ПТК:  ноутбук, принтер + ПО (1 компл.)</li>
+                                </ul>
+                                `,
+                            image: 'img/catalog/product_6.png',
                             tags: [
                                 {
                                     img: 'img/catalog/check_icon.svg',
                                     text: 'В наличии',
                                     color: 'green'
-                                },
-                                {
-                                    img: '',
-                                    text: 'Новинка',
-                                    color: 'blue'
-                                },
-                                {
-                                    img: '',
-                                    text: 'Скидка',
-                                    color: 'red'
                                 }
                             ],
                             prices: [
-                                '550 000 ₽',
-                                '680 000 ₽'
-                            ]
+                                'Цена по запросу',
+                                ''
+                            ],
+                            vMode: 'catalog'
                         })
+
+                        +catalog-card({
+                            title: 'Машины универсальные ТРМЦ Tochline',
+                            desc: `
+                                <h3>Технические характеристики</h3>
+                                <ul>
+                                    <li>Модификация, кол-во: 52</li>
+                                </ul>
+                                `,
+                            image: 'img/catalog/product_5.png',
+                            tags: [
+                                {
+                                    img: 'img/catalog/arrow_circle.svg',
+                                    text: 'Под заказ',
+                                    color: 'grey'
+                                }
+                            ],
+                            prices: [
+                                '1 550 000 ₽',
+                                ''
+                            ],
+                            vMode: 'catalog'
+                        })
+
                     +pagination
