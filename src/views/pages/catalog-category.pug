@@ -42,6 +42,17 @@ block content
                     text: 'Серия ТРМ / универсальные испытательные машины (производство «ЗИП»)'
                 })
                 .catalog-category__sort
+                    +form-filter
+                        .form-filter__select.filter-select(data-js='filterSelect')
+                            .filter-select__header(data-js="filterSelectHeader")
+                                input(type="text" data-js="filterSelectInput" value="Сначала новое")
+                                .filter-select__fake(data-js="filterSelectFake") По популярности
+                                svg
+                                    use(xlink:href=`img/sprites/sprite.svg#arrow_angle`)
+                            .filter-select__content
+                                .filter-select__option.active(data-js="filterSelectOption" data-value="Сначала новое") Дешевле
+                                .filter-select__option(data-js="filterSelectOption" data-value="Сначала старое") Дороже
+
 
         section.section.section--transparent
             .section__container.catalog-category__layout
@@ -51,31 +62,32 @@ block content
                     })
                         .form-filter__block
                             .form-filter__subtitle Исполнение
-                            .form-filter__list
-                                .filter-checkbox
-                                    label.filter-checkbox__inner
-                                        input(type="checkbox" name='execution' value="Одноколонные")
-                                        span.filter-checkbox__fake
-                                        span.filter-checkbox__text Одноколонные <span>(23)</span>
-                                .filter-checkbox
-                                    label.filter-checkbox__inner
-                                        input(type="checkbox" name='execution' value="2-х колонные настольные")
-                                        span.filter-checkbox__fake
-                                        span.filter-checkbox__text 2-х колонные настольные <span>(15)</span>
-                                .filter-checkbox
-                                    label.filter-checkbox__inner
-                                        input(type="checkbox" name='execution' value="2-х колонные напольные")
-                                        span.filter-checkbox__fake
-                                        span.filter-checkbox__text 2-х колонные напольные <span>(11)</span>
-                                .filter-checkbox
-                                    label.filter-checkbox__inner
-                                        input(type="checkbox" name='execution' value="4-х колонные напольные")
-                                        span.filter-checkbox__fake
-                                        span.filter-checkbox__text 4-х колонные напольные <span>(9)</span>
+                            .form-filter__list(data-js="filterList")
+                                .form-filter__items(data-js="filterListItems")
+                                    .filter-checkbox(data-js="filterListItem")
+                                        label.filter-checkbox__inner
+                                            input(type="checkbox" name='execution' value="Одноколонные")
+                                            span.filter-checkbox__fake
+                                            span.filter-checkbox__text Одноколонные <span>(23)</span>
+                                    .filter-checkbox(data-js="filterListItem")
+                                        label.filter-checkbox__inner
+                                            input(type="checkbox" name='execution' value="2-х колонные настольные")
+                                            span.filter-checkbox__fake
+                                            span.filter-checkbox__text 2-х колонные настольные <span>(15)</span>
+                                    .filter-checkbox(data-js="filterListItem")
+                                        label.filter-checkbox__inner
+                                            input(type="checkbox" name='execution' value="2-х колонные напольные")
+                                            span.filter-checkbox__fake
+                                            span.filter-checkbox__text 2-х колонные напольные <span>(11)</span>
+                                    .filter-checkbox(data-js="filterListItem")
+                                        label.filter-checkbox__inner
+                                            input(type="checkbox" name='execution' value="4-х колонные напольные")
+                                            span.filter-checkbox__fake
+                                            span.filter-checkbox__text 4-х колонные напольные <span>(9)</span>
 
                         .form-filter__block
                             .form-filter__subtitle Рабочий ход траверсы <span>мм</span>
-                            .filter-range(data-js="filterRange" data-min="10" data-max="2500" data-step="5")
+                            .filter-range(data-js="filterRange" data-min="45" data-max="2500" data-step="5")
                                 input.filter-range__input(type='number' data-js="filterRangeMin")
                                 input.filter-range__input(type='number' data-js="filterRangeMax")
                                 .filter-range__range(data-js="filterRangeSlider")
@@ -89,47 +101,48 @@ block content
 
                         .form-filter__block
                             .form-filter__subtitle Двухзонные / однозонные
-                            .form-filter__list
-                                .filter-checkbox
-                                    label.filter-checkbox__inner
-                                        input(type="checkbox" name='zoning' value="Двухзонные")
-                                        span.filter-checkbox__fake
-                                        span.filter-checkbox__text Двухзонные <span>(23)</span>
-                                .filter-checkbox
-                                    label.filter-checkbox__inner
-                                        input(type="checkbox" name='zoning' value="Однозонные")
-                                        span.filter-checkbox__fake
-                                        span.filter-checkbox__text Однозонные <span>(15)</span>
-                                .filter-checkbox
-                                    label.filter-checkbox__inner
-                                        input(type="checkbox" name='zoning' value="Для тестирования")
-                                        span.filter-checkbox__fake
-                                        span.filter-checkbox__text Для тестирования <span>(11)</span>
-                                .filter-checkbox
-                                    label.filter-checkbox__inner
-                                        input(type="checkbox" name='zoning' value="Для тестирования")
-                                        span.filter-checkbox__fake
-                                        span.filter-checkbox__text Для тестирования <span>(9)</span>
-                                .filter-checkbox
-                                    label.filter-checkbox__inner
-                                        input(type="checkbox" name='zoning' value="Для тестирования")
-                                        span.filter-checkbox__fake
-                                        span.filter-checkbox__text Для тестирования <span>(6)</span>
-                                .filter-checkbox
-                                    label.filter-checkbox__inner
-                                        input(type="checkbox" name='zoning' value="Для тестирования")
-                                        span.filter-checkbox__fake
-                                        span.filter-checkbox__text Для тестирования <span>(11)</span>
-                                .filter-checkbox
-                                    label.filter-checkbox__inner
-                                        input(type="checkbox" name='zoning' value="Для тестирования")
-                                        span.filter-checkbox__fake
-                                        span.filter-checkbox__text Для тестирования <span>(9)</span>
-                                .filter-checkbox
-                                    label.filter-checkbox__inner
-                                        input(type="checkbox" name='zoning' value="Для тестирования")
-                                        span.filter-checkbox__fake
-                                        span.filter-checkbox__text Для тестирования <span>(6)</span>
+                            .form-filter__list(data-js="filterList")
+                                .form-filter__items(data-js="filterListItems")
+                                    .filter-checkbox(data-js="filterListItem")
+                                        label.filter-checkbox__inner
+                                            input(type="checkbox" name='zoning' value="Двухзонные")
+                                            span.filter-checkbox__fake
+                                            span.filter-checkbox__text Двухзонные <span>(23)</span>
+                                    .filter-checkbox(data-js="filterListItem")
+                                        label.filter-checkbox__inner
+                                            input(type="checkbox" name='zoning' value="Однозонные")
+                                            span.filter-checkbox__fake
+                                            span.filter-checkbox__text Однозонные <span>(15)</span>
+                                    .filter-checkbox(data-js="filterListItem")
+                                        label.filter-checkbox__inner
+                                            input(type="checkbox" name='zoning' value="Для тестирования")
+                                            span.filter-checkbox__fake
+                                            span.filter-checkbox__text Для тестирования <span>(11)</span>
+                                    .filter-checkbox(data-js="filterListItem")
+                                        label.filter-checkbox__inner
+                                            input(type="checkbox" name='zoning' value="Для тестирования")
+                                            span.filter-checkbox__fake
+                                            span.filter-checkbox__text Для тестирования <span>(9)</span>
+                                    .filter-checkbox(data-js="filterListItem")
+                                        label.filter-checkbox__inner
+                                            input(type="checkbox" name='zoning' value="Для тестирования")
+                                            span.filter-checkbox__fake
+                                            span.filter-checkbox__text Для тестирования <span>(6)</span>
+                                    .filter-checkbox(data-js="filterListItem")
+                                        label.filter-checkbox__inner
+                                            input(type="checkbox" name='zoning' value="Для тестирования")
+                                            span.filter-checkbox__fake
+                                            span.filter-checkbox__text Для тестирования <span>(11)</span>
+                                    .filter-checkbox(data-js="filterListItem")
+                                        label.filter-checkbox__inner
+                                            input(type="checkbox" name='zoning' value="Для тестирования")
+                                            span.filter-checkbox__fake
+                                            span.filter-checkbox__text Для тестирования <span>(9)</span>
+                                    .filter-checkbox(data-js="filterListItem")
+                                        label.filter-checkbox__inner
+                                            input(type="checkbox" name='zoning' value="Для тестирования")
+                                            span.filter-checkbox__fake
+                                            span.filter-checkbox__text Для тестирования <span>(6)</span>
 
                         .form-filter__btns
                             +btn({

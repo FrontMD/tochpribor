@@ -71,6 +71,36 @@
         flex-direction: column;
         gap: 8px;
     }
+
+    &__items {
+        overflow: hidden;
+        transition: max-height $tr-time linear;
+    }
+
+    &__show {
+        color: $c-accent;
+        width: fit-content;
+        cursor: pointer;
+        margin-top: 4px;
+
+        .show {
+            display: block;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        &--opened {
+            .show {
+                display: none;
+            }
+
+            .hide {
+                display: block;
+            }
+        }
+    }
 }
 
 .filter-tab {
@@ -450,19 +480,30 @@
 }
 
 .filter-range {
+    /* remove */
     display: flex;
     align-items: center;
     justify-content: center;
 
-    input {
-        max-width: 100px;
-    }
+
+    /* end remove */
 
 
     height: 44px;
     border: 1px solid $c-border;
     border-radius: 4px;
     position: relative;
+
+    &__input {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 0;
+        height: 0;
+        overflow: hidden;
+        opacity: 0;
+        visibility: hidden;
+    }
 
     .noUi-horizontal {
         height: 1px;
@@ -471,8 +512,8 @@
     .noUi-target {
         position: absolute;
         bottom: 0;
-        left: 0;
-        width: 100%;
+        left: 8px;
+        width: calc(100% - 16px);
         border: none;
         background-color: transparent;
         box-shadow: none;
@@ -498,5 +539,23 @@
         &::after {
             content: none;
         }
+    }
+
+    .noUi-tooltip {
+        padding: 0 4px;
+        border-radius: 0;
+        font-size: 14px;
+        line-height: 1.4em;
+        color: $c-text;
+        background-color: $c-white;
+        left: 0;
+        transform: none;
+        border: none;
+        bottom: calc(100% + 6px);
+    }
+
+    .noUi-handle-upper .noUi-tooltip {
+        left: auto;
+        right: 0;
     }
 }

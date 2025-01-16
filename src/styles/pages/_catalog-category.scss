@@ -3,6 +3,13 @@
         max-width: 1300px;
     }
 
+    &__sort {
+        display: flex;
+        margin-top: 30px;
+        gap: 16px;
+        flex-wrap: wrap;
+    }
+
     &__layout {
         display: flex;
         align-items: flex-start;
