@@ -4,6 +4,7 @@
 @@include("../../blocks/components/video/video.js")
 @@include("../../blocks/components/spoiler/spoiler.js")
 @@include("../../blocks/components/form-filter/form-filter.js")
+@@include("../../blocks/components/copy-btn/copy-btn.js")
 
 document.addEventListener('DOMContentLoaded', () => {
     // управляет кнопками в полях форм
@@ -18,4 +19,6 @@ document.addEventListener('DOMContentLoaded', () => {
     spoilers()
     // фильтр
     formFilterController()
+    //кнопка копировать
+    copyBtn()
 })

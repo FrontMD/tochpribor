@@ -1,0 +1,20 @@
+-
+    const defaultCopyBtnProps = {
+        classes: '',
+        text: '',
+        forCopy: ''
+    }
+
+mixin copy-btn(props = defaultCopyBtnProps)
+    -
+        const checkProps = {
+            classes: props.classes ? props.classes : defaultCopyBtnProps.classes,
+            text: props.text ? props.text : defaultCopyBtnProps.text,
+            forCopy: props.forCopy ? props.forCopy : defaultCopyBtnProps.forCopy
+        }
+
+    .copy-btn(class= checkProps.classes data-js='copyBtn' data-text=checkProps.forCopy)&attributes(attributes)
+        span.copy-btn__text!= checkProps.text
+        span.copy-btn__icon
+            svg 
+                use(xlink:href=`img/sprites/sprite.svg#copy`)

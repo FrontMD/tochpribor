@@ -34,7 +34,7 @@ mixin catalog-card(props = defaultCatalogCardProps)
 					- let tagsCounter = 0
 						- while (tagsCounter < checkProps.tags.length)
 							- let currentTag = checkProps.tags[tagsCounter]
-							.catalog-card__tagblock
+							.catalog-card__tagblock(class= `${currentTag.note ? 'hovered' : ''}`)
 								.catalog-card__tag(class= `catalog-card__tag--${currentTag.color}`)
 									- if(currentTag.img.length > 0)
 										img(src= currentTag.img)
@@ -43,7 +43,7 @@ mixin catalog-card(props = defaultCatalogCardProps)
 									.catalog-card__note!= currentTag.note
 							- tagsCounter++
 				.catalog-card__controls
-					a.catalog-card__control(href="javascript:void(0)")
+					a.catalog-card__control(data-modal="#quickViewModal")
 						svg
 							use(xlink:href=`img/sprites/sprite.svg#view`)
 					a.catalog-card__control(href="javascript:void(0)")

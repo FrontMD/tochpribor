@@ -120,6 +120,26 @@
         }
     }
 
+    &--noborder {
+        color: #4e4e4e;
+        border: none;
+
+        &:hover {
+            color: $c-accent-hover;
+        }
+    }
+
+    &--link {
+        width: fit-content;
+        padding: 0;
+        font-size: 12px;
+        gap: 4px;
+
+        .btn__text {
+            margin-top: 2px;
+        }
+    }
+
     &--108 {
         width: fit-content;
         padding: 2px 8px;
