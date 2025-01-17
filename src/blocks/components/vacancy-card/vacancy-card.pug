@@ -6,7 +6,8 @@
 		title: '',
 		salary: '',
 		category: '',
-		date: ''
+		date: '',
+		noLazy: false
 	}
 
 mixin vacancy-card(props = defaultVacancyCardProps)
@@ -18,7 +19,8 @@ mixin vacancy-card(props = defaultVacancyCardProps)
 			title: props.title ? props.title : defaultVacancyCardProps.title,
 			salary: props.salary ? props.salary : defaultVacancyCardProps.salary,
 			category: props.category ? props.category : defaultVacancyCardProps.category,
-			date: props.date ? props.date : defaultVacancyCardProps.date
+			date: props.date ? props.date : defaultVacancyCardProps.date,
+			noLazy: props.noLazy ? props.noLazy : defaultVacancyCardProps.noLazy
 		}
 
 		let vModeClass = checkProps.vMode.length > 0 ? ` vacancy-card--${checkProps.vMode}` : ''
@@ -26,7 +28,10 @@ mixin vacancy-card(props = defaultVacancyCardProps)
 	.vacancy-card(class= checkProps.classes + vModeClass)&attributes(attributes)
 		-if(checkProps.media.length > 0)
 			.vacancy-card__media
-				img(class="lazyload" src="img/lazy-placeholder.webp" data-src= checkProps.media)
+				- if(checkProps.noLazy === true)
+					img(src= checkProps.media alt="")
+				-else		
+					img(class="lazyload" src="img/lazy-placeholder.webp" data-src= checkProps.media alt="")
 
 		.vacancy-card__content
 			a.vacancy-card__title(href="javascript:void(0)")!= checkProps.title

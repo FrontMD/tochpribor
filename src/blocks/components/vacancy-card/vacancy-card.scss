@@ -18,7 +18,9 @@
     }
 
     &__content {
-        display: contents;
+        display: flex;
+        flex-direction: column;
+        flex: 1 1 auto;
     }
 
     &__title {
@@ -109,9 +111,6 @@
     }
 
     &--small &__content {
-        display: flex;
-        flex-direction: column;
-        flex: 1 1 auto;
         align-self: stretch;
         justify-content: space-between;
         gap: 6px;
