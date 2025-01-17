@@ -32,7 +32,7 @@ mixin category-card(props = defaultCategoryCardProps)
 				.category-card__count!= checkProps.count
 			- if(sticker.first.length > 0)
 				.category-card__stickers
-					.category-card__sticker(class= stickerColorMode)
+					.category-card__sticker(class= stickerColorMode + `${sticker.second.length > 0 ? ' hovered' : ''}`)
 						- if(sticker.icon.length > 0)
 							img(src= sticker.icon)
 						!= sticker.first

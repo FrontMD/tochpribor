@@ -18,9 +18,7 @@
     }
 
     &__content {
-        display: flex;
-        flex-direction: column;
-        flex: 1 1 auto;
+        display: contents;
     }
 
     &__title {
@@ -32,6 +30,7 @@
         font-size: 20px;
         line-height: 1.1em;
         letter-spacing: -0.01em;
+        margin-bottom: auto;
 
         @include max(xs) {
             font-size: 16px;
@@ -47,7 +46,6 @@
         justify-content: space-between;
         align-items: center;
         flex-wrap: wrap;
-        margin-top: auto;
     }
 
     &__amount {
@@ -111,6 +109,9 @@
     }
 
     &--small &__content {
+        display: flex;
+        flex-direction: column;
+        flex: 1 1 auto;
         align-self: stretch;
         justify-content: space-between;
         gap: 6px;
