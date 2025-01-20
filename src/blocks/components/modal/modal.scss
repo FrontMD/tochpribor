@@ -56,7 +56,15 @@
             height: 24px;
         }
 
-        @include max(mobile) {}
+        @include max(mobile) {
+            width: 32px;
+            height: 32px;
+
+            svg {
+                width: 16px;
+                height: 16px;
+            }
+        }
     }
 
     &__title {

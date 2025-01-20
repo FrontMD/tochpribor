@@ -1,0 +1,81 @@
+extends ../layouts/default
+include ../helpers/mixins
+
+block variables
+    - const title = "Сравнение товаров"
+
+block content
+    .page-layout
+        .breadcrumbs-section.section.section--transparent
+            .section__container
+                +breadcrumbs({
+                    items: [
+                        {
+                            name: 'Главная',
+                            link: 'javascript:void(0);'
+                        },
+                        {
+                            name: 'Сравнение товаров',
+                            link: 'javascript:void(0);'
+                        }
+                    ],
+                })
+
+        section.section.compare
+            .section__container
+                .section__header
+                    +title({
+                        tag: 'h1',
+                        size: '53',
+                        text: 'Сравнение товаров'
+                    })
+                    .compare__actions
+                        +btn({
+                            name: 'Распечатать',
+                            icon: 'print',
+                            cMode: 'noborder',
+                            size: 'link'
+                        })
+                        +btn({
+                            name: 'Скачать .xls',
+                            icon: 'download',
+                            cMode: 'noborder',
+                            size: 'link'
+                        })
+                        +btn({
+                            name: 'Скачать .pdf',
+                            icon: 'download',
+                            cMode: 'noborder',
+                            size: 'link'
+                        })
+                        +btn({
+                            name: 'Очистить все',
+                            icon: 'close',
+                            cMode: 'noborder',
+                            size: 'link'
+                        })
+
+                .compare__body.tabs-block
+                    .tabs-block__tabs.scrollbar.scrollbar--small
+                        .tabs-block__list
+                            .tabs-block__tab.active Разрывные машины 
+                                span (5)
+                            .tabs-block__tab Твердомеры 
+                                span (2)
+
+                    .compare__actions.compare__actions--inner
+                        +field({
+                            tag: 'input',
+                            type: 'checkbox',
+                            title: 'Только отличия'
+                        })
+                        +btn({
+                            name: 'Очистить категорию',
+                            icon: 'close',
+                            cMode: 'noborder',
+                            size: 'link'
+                        })
+
+
+                    .compare__content
+

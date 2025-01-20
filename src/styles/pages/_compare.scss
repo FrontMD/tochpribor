@@ -1,0 +1,27 @@
+.compare {
+    &__actions {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin-top: 16px;
+        flex: 0 0 auto;
+
+        &--inner {
+            padding: 0 24px;
+
+            @include max(tablet) {
+                padding: 0 15px;
+            }
+
+            @include max(mobile) {
+                margin-top: 30px;
+            }
+        }
+    }
+
+
+
+    &__block {}
+
+    &__content {}
+}

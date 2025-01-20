@@ -54,6 +54,10 @@
         text-align: start;
         padding-left: 0;
         padding-right: 64px;
+
+        @include max(mobile) {
+            padding-right: 48px;
+        }
     }
 
     .quick-view {
@@ -83,18 +87,30 @@
             @include max(tablet) {
                 grid-template-columns: 1fr;
             }
+
+            @include max(mobile) {
+                gap: 16px;
+            }
         }
 
         &__photo {
             align-self: flex-start;
-            aspect-ratio: 1 / 0.96;
+            aspect-ratio: 1 / 0.935;
             position: relative;
             border: 1px solid $c-border;
             border-radius: 4px;
             overflow: hidden;
 
+            @include max(laptop) {
+                aspect-ratio: 1 / 0.96;
+            }
+
             @include max(tablet) {
                 aspect-ratio: 1 / 0.5;
+            }
+
+            @include max(mobile) {
+                aspect-ratio: 1 / 0.9;
             }
 
             img {
@@ -220,6 +236,12 @@
             gap: 6px;
             padding-bottom: 16px;
             border-bottom: 1px solid $c-border;
+
+            @include max(mobile) {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
         }
 
         &__logo {
@@ -237,6 +259,11 @@
             letter-spacing: -0.01em;
             color: $c-text;
             margin-bottom: 16px;
+
+            @include max(mobile) {
+                font-size: 18px;
+                margin-bottom: 8px;
+            }
         }
 
         &__text {
@@ -347,8 +374,12 @@
         border-style: solid;
         border-color: $c-border;
         font-size: 14px;
-        line-height: 1, 4em;
+        line-height: 1.4em;
         color: $c-text;
+
+        @include max(mobile) {
+            padding: 8px 0;
+        }
 
         &__row {
             display: flex;

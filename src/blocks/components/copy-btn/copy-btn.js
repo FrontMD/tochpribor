@@ -5,7 +5,8 @@ function copyBtn() {
 
     btns.forEach(btn => {
         btn.addEventListener('click', function() {
-            console.log('скопированно')
+            const text = this.dataset.text;
+            navigator.clipboard.writeText(text);
         })
     })
 }
