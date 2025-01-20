@@ -42,19 +42,19 @@ noindex
                 .quick-view__grid
                     .quick-view__photo
                         .quick-view__tags
-                            .catalog-card__tagblock
-                                .catalog-card__tag.catalog-card__tag--green
+                            .quick-view__tagblock
+                                .quick-view__tag.quick-view__tag--green
                                     img(src="img/catalog/check_icon.svg")
                                     | В наличии
-                            .catalog-card__tagblock
-                                .catalog-card__tag.catalog-card__tag--blue Новинка
-                            .catalog-card__tagblock
-                                .catalog-card__tag.catalog-card__tag--red Скидка
-                            .catalog-card__tagblock.hovered
-                                .catalog-card__tag.catalog-card__tag--grey
+                            .quick-view__tagblock
+                                .quick-view__tag.quick-view__tag--blue Новинка
+                            .quick-view__tagblock
+                                .quick-view__tag.quick-view__tag--red Скидка
+                            .quick-view__tagblock.hovered
+                                .quick-view__tag.quick-view__tag--grey
                                     img(src="img/catalog/arrow_circle.svg")
                                     | Снято с производства
-                                .catalog-card__note Товар больше не производится. Смотрите аналоги в карточке товара
+                                .quick-view__note Товар больше не производится. Смотрите аналоги в карточке товара
 
                         img(src="img/catalog/product_7.webp")
                     .quick-view__info
@@ -93,18 +93,19 @@ noindex
 
                         .quick-view__block
                             .quick-view__subtitle Документы
-                            +download-btn({
-                                classes: '',
-                                img: 'img/docs-type/pdf.svg',
-                                name: 'Свидетельство об утверждении типа средств измерений ОС.С. 28.070.А №75160',
-                                size: ''
-                            })
-                            +download-btn({
-                                classes: '',
-                                img: 'img/docs-type/pdf.svg',
-                                name: 'Методика поверки',
-                                size: ''
-                            })
+                            .quick-view__list
+                                +download-btn({
+                                    classes: 'download-btn--small',
+                                    img: 'img/docs-type/pdf.svg',
+                                    name: 'Свидетельство об утверждении типа средств измерений ОС.С. 28.070.А №75160',
+                                    size: ''
+                                })
+                                +download-btn({
+                                    classes: 'download-btn--small',
+                                    img: 'img/docs-type/pdf.svg',
+                                    name: 'Методика поверки',
+                                    size: ''
+                                })
                     .quick-view__controls
                         .quick-view__order
                             .quick-view__prices
@@ -127,6 +128,7 @@ noindex
                                 icon: 'question'
                             })
                         +btn({
+                            classes: 'quick-view__more',
                             name: 'Подробнее о товаре',
                             size: 'full',
                             cMode: 'transparent-red',

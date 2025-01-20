@@ -73,8 +73,20 @@
         }
     }
 
+}
+
+.download-btn {
     &--textblock {
         margin-top: 16px;
         margin-bottom: 16px;
+    }
+
+    &--small {
+        padding: 13px 8px;
+        font-size: 12px;
+    }
+
+    &--small &__download {
+        font-size: 14px;
     }
 }

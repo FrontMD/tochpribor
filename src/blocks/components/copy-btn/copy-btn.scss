@@ -1,5 +1,30 @@
 .copy-btn {
-    &__text {}
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: $c-text-breadcrumbs;
+    transition: color $tr-time linear;
+    cursor: pointer;
 
-    &__icon {}
+    &:hover {
+        color: $c-accent-hover;
+    }
+
+    &__text {
+        font-size: 12px;
+        line-height: 1.4em;
+    }
+
+    &__icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        svg {
+            width: 16px;
+            height: 16px;
+        }
+    }
+
+
 }
