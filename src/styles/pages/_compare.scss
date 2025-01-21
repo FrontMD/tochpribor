@@ -19,9 +19,150 @@
         }
     }
 
+    &__body {
+        margin-top: 24px;
+    }
+
+}
+
+.compare-block {
+
+    &__header {
+        padding: 24px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__actions {
+        width: fit-content;
+        margin-top: 0;
+    }
+
+    &__section {
+        overflow-x: auto;
+        margin-left: 328px;
+
+        &--params {
+            overflow-x: hidden;
+            position: relative;
+            margin-left: 0;
+            margin-top: 2px;
+        }
+    }
+
+    &__inner {
+        display: flex;
+        align-items: stretch;
+        gap: 16px;
+
+        &--params {
+            flex-direction: column;
+            gap: 0;
+        }
+    }
+
+    &__row {
+        display: flex;
+        align-items: stretch;
+        gap: 16px;
+        border-top: 1px solid $c-border;
+
+        &:nth-child(odd) {
+            background-color: $c-main-bg;
+        }
+    }
+
+    &__list {
+        overflow-x: auto;
+        display: flex;
+        align-items: stretch;
+        gap: 16px;
+    }
+
+    &__prod,
+    &__cell {
+        flex: 0 0 215px;
+        width: 215px;
+    }
+
+    &__cell {
+        font-size: 16px;
+        line-height: 1.4em;
+        color: $c-text;
+        padding: 8px 0 12px;
 
 
-    &__block {}
+        &--title {
+            flex-basis: 312px;
+            font-size: 14px;
+            color: $c-text-breadcrumbs;
+            padding-left: 16px;
+        }
+    }
+}
 
-    &__content {}
+.compare-prod {
+    position: relative;
+
+    &__photo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        aspect-ratio: 0.99;
+        padding: 18px;
+        border: 1px solid $c-border;
+        border-radius: 4px;
+
+        img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+    }
+
+    &__controls {
+        position: absolute;
+        top: 7px;
+        right: 9px;
+        padding: 4px 8px;
+        border-radius: 2px;
+        background-color: $c-input-bg;
+    }
+
+    &__control {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 30px;
+        height: 32px;
+        color: $c-text-light;
+        cursor: pointer;
+        transition: color $tr-time linear;
+
+        &:hover {
+            color: $c-accent-hover;
+        }
+
+        svg {
+            width: 16px;
+            height: 16px;
+        }
+    }
+
+    &__control+&__control {
+        border-top: 1px solid $c-border;
+    }
+
+    &__title {
+        margin-top: 14px;
+        font-size: 18px;
+        line-height: 1.4em;
+        color: $c-text;
+        height: 4.2em;
+        -webkit-line-clamp: 3;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
 }
