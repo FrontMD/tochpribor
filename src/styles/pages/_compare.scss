@@ -28,7 +28,7 @@
 .compare-block {
 
     &__header {
-        padding: 24px;
+        padding: 12px 12px 12px 24px;
         display: flex;
         justify-content: space-between;
     }
@@ -38,27 +38,47 @@
         margin-top: 0;
     }
 
-    &__section {
-        overflow-x: auto;
+    &__prodwrap {
         margin-left: 328px;
+        padding-right: 12px;
 
-        &--params {
-            overflow-x: hidden;
-            position: relative;
-            margin-left: 0;
-            margin-top: 2px;
-        }
     }
 
-    &__inner {
+    &__paramwrap {
+        position: relative;
+        margin-left: 0;
+        margin-top: 2px;
+    }
+
+    &__prods {
+        overflow: hidden;
+        margin-right: -12px;
+        padding-right: 12px;
+        padding-bottom: 6px;
+        position: relative;
+    }
+
+    &__progressbar.swiper-pagination-progressbar {
+        height: 6px;
+        position: absolute;
+        bottom: 0;
+        top: auto;
+        border-radius: 2px;
+        background-color: $c-border;
+    }
+
+    &__progressbar.swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+        border-radius: 2px;
+        border: 1px solid $c-border;
+        background-color: $c-bg;
+    }
+
+    &__params {
         display: flex;
         align-items: stretch;
-        gap: 16px;
-
-        &--params {
-            flex-direction: column;
-            gap: 0;
-        }
+        flex-direction: column;
+        gap: 0;
+        overflow: visible;
     }
 
     &__row {
@@ -73,10 +93,11 @@
     }
 
     &__list {
-        overflow-x: auto;
-        display: flex;
-        align-items: stretch;
-        gap: 16px;
+        flex: 0 0 calc(100% - 328px);
+        max-width: calc(100% - 328px);
+        overflow: hidden;
+        margin-right: -12px;
+        padding-right: 12px;
     }
 
     &__prod,

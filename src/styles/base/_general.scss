@@ -972,6 +972,12 @@ body {
 	transition: all $tr-time linear;
 	cursor: pointer;
 
+	&.swiper-button-disabled {
+		color: $c-bg;
+		border-color: $c-border;
+		pointer-events: none;
+	}
+
 	svg {
 		width: 8.54px;
 		height: 9.61px;
