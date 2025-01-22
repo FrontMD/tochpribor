@@ -42,6 +42,15 @@
         margin-left: 328px;
         padding-right: 12px;
 
+        @include max(laptop) {
+            margin-left: 282px;
+        }
+
+        @include max(tablet) {
+            margin-left: 0;
+            padding-left: 12px;
+        }
+
     }
 
     &__paramwrap {
@@ -58,16 +67,18 @@
         position: relative;
     }
 
-    &__progressbar.swiper-pagination-progressbar {
+    &__scrollbar {
+        width: 100%;
         height: 6px;
         position: absolute;
         bottom: 0;
         top: auto;
+        z-index: 5;
         border-radius: 2px;
-        background-color: $c-border;
+        background-color: #E9E9E9;
     }
 
-    &__progressbar.swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+    &__scrollbar .swiper-scrollbar-drag {
         border-radius: 2px;
         border: 1px solid $c-border;
         background-color: $c-bg;
@@ -89,6 +100,19 @@
 
         &:nth-child(odd) {
             background-color: $c-main-bg;
+
+            @include max(tablet) {
+                background-color: $c-white;
+            }
+        }
+
+        @include max(laptop) {
+            gap: 12px;
+        }
+
+        @include max(tablet) {
+            flex-direction: column;
+            gap: 0;
         }
     }
 
@@ -98,12 +122,27 @@
         overflow: hidden;
         margin-right: -12px;
         padding-right: 12px;
+
+        @include max(laptop) {
+            flex: 0 0 calc(100% - 282px);
+            max-width: calc(100% - 282px);
+        }
+
+        @include max(tablet) {
+            flex-basis: auto;
+            max-width: 100%;
+        }
     }
 
     &__prod,
     &__cell {
         flex: 0 0 215px;
         width: 215px;
+
+        @include max(laptop) {
+            flex-basis: 180px;
+            width: 180px;
+        }
     }
 
     &__cell {
@@ -112,13 +151,34 @@
         color: $c-text;
         padding: 8px 0 12px;
 
+        @include max(laptop) {
+            font-size: 14px;
+        }
+
+        @include max(tablet) {
+            padding: 8px 0;
+            padding-left: 12px;
+        }
+
 
         &--title {
             flex-basis: 312px;
             font-size: 14px;
             color: $c-text-breadcrumbs;
             padding-left: 16px;
+
+            @include max(laptop) {
+                flex-basis: 270px;
+                font-size: 12px;
+            }
+
+            @include max(tablet) {
+                flex-basis: auto;
+                width: 100%;
+                background-color: $c-main-bg;
+            }
         }
+
     }
 }
 
@@ -149,6 +209,10 @@
         padding: 4px 8px;
         border-radius: 2px;
         background-color: $c-input-bg;
+
+        @include max(laptop) {
+            padding: 2px 4px;
+        }
     }
 
     &__control {
@@ -160,6 +224,11 @@
         color: $c-text-light;
         cursor: pointer;
         transition: color $tr-time linear;
+
+        @include max(laptop) {
+            width: 24px;
+            height: 24px;
+        }
 
         &:hover {
             color: $c-accent-hover;
@@ -185,5 +254,9 @@
         display: -webkit-box;
         -webkit-box-orient: vertical;
         overflow: hidden;
+
+        @include max(laptop) {
+            font-size: 16px;
+        }
     }
 }
