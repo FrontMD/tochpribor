@@ -1,0 +1,21 @@
+-
+    const defaultAmountInputProps = {
+        classes: '',
+    }
+
+mixin amount-input(props = defaultAmountInputProps)
+    -
+        const checkProps = {
+            classes: props.classes ? props.classes : defaultAmountInputProps.classes,
+        }
+
+
+    .amount-input(class=checkProps.classes data-js="amountInput")
+        span.amount-input__width
+        span.amount-input__change.amount-input__minus.min
+            svg 
+                use(xlink:href=`img/sprites/sprite.svg#minus`)
+        input.amount-input__value(type="number" name="amount" value="1" autocomplete="off")
+        span.amount-input__change.amount-input__plus 
+            svg 
+                use(xlink:href=`img/sprites/sprite.svg#plus`)

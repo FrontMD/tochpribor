@@ -211,6 +211,11 @@
 }*/
 
 .field {
+
+    &--checkbox {
+        width: fit-content;
+    }
+
     &--checkbox label {
         cursor: pointer;
         position: relative;

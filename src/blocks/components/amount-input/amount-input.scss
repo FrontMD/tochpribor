@@ -1,0 +1,97 @@
+.amount-input {
+    display: flex;
+    align-items: center;
+    max-width: 250px;
+    min-width: 160px;
+    width: 160px;
+    height: 48px;
+    border: 1px solid lightgray;
+
+    @include max(tablet) {
+        width: 174px;
+        height: 57px;
+    }
+
+    &__change {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-basis: 50px;
+        flex-shrink: 0;
+        flex-grow: 0;
+        height: 100%;
+        cursor: pointer;
+
+        @include max(tablet) {
+            flex-basis: 57px;
+        }
+
+        &.min {
+            pointer-events: none;
+            color: grey;
+            opacity: 0.5;
+        }
+
+        &:hover {
+            background-color: grey;
+        }
+
+        svg,
+        use {
+            width: 10px;
+            height: 10px;
+
+            @include max(tablet) {
+                width: 10px;
+                height: 10px;
+            }
+        }
+
+    }
+
+    &__value {
+        display: block;
+        flex-shrink: 0;
+        min-width: 60px;
+        width: 60px;
+        max-width: 150px;
+        height: 100%;
+        text-align: center;
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 1.22;
+        color: black;
+        outline: none;
+        border: none;
+        background: none;
+
+        @include max(1024) {
+            flex-basis: 60px;
+            max-width: calc(100% - 114px);
+            font-size: 24px;
+        }
+    }
+
+    &__width {
+        position: absolute;
+        text-align: center;
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 1.22;
+        visibility: hidden;
+        opacity: 0;
+        z-index: -100;
+    }
+
+    input[type="number"]::-webkit-outer-spin-button,
+    input[type="number"]::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+    }
+
+    input[type='number'],
+    input[type="number"]:hover,
+    input[type="number"]:focus {
+        appearance: none;
+        -moz-appearance: textfield;
+    }
+}

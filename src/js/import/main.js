@@ -333,10 +333,9 @@ function compareSliderInit() {
             const sliderScrollbar = slider.querySelector('[data-js="sliderScrollbar"]')
 
             if(sliderScrollbar) {
-                console.log("первый")
                 let sliderEx = new Swiper(slider, {
                     slidesPerView: 'auto',
-                    spaceBetween: 12,
+                    spaceBetween: 8,
                     allowTouchMove: false,
                     navigation: {
                         nextEl: sliderNext,
@@ -347,6 +346,9 @@ function compareSliderInit() {
                         draggable: false,
                     },
                     breackpoints: {
+                        768: {
+                            spaceBetween: 12
+                        },
                         1421: {
                             spaceBetween: 16
                         }
@@ -354,16 +356,18 @@ function compareSliderInit() {
  
                 })
             } else {
-                console.log("остальные")
                 let sliderEx = new Swiper(slider, {
                     slidesPerView: 'auto',
-                    spaceBetween: 12,
+                    spaceBetween: 8,
                     allowTouchMove: false,
                     navigation: {
                         nextEl: sliderNext,
                         prevEl: sliderPrev,
                     },
                     breackpoints: {
+                        768: {
+                            spaceBetween: 12
+                        },
                         1421: {
                             spaceBetween: 16
                         }

@@ -1,0 +1,35 @@
+.cart {
+    &__actions {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin-top: 16px;
+        flex: 0 0 auto;
+
+        @include max(tablet) {
+            align-self: flex-end;
+            margin-top: 0;
+        }
+
+        @include max(mobile) {
+            flex-wrap: wrap;
+        }
+    }
+
+    &__header {
+        @include max(tablet) {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 24px;
+        }
+    }
+
+    &__list {
+        margin-top: 24px;
+
+        @include max(tablet) {
+            margin-top: 16px;
+        }
+    }
+
+}

@@ -1,6 +1,7 @@
 
 @@include("../../blocks/components/field/field.js")
 @@include("../../blocks/components/form/form.js")
+@@include("../../blocks/components/amount-input/amount-input.js")
 @@include("../../blocks/components/video/video.js")
 @@include("../../blocks/components/spoiler/spoiler.js")
 @@include("../../blocks/components/form-filter/form-filter.js")
@@ -19,6 +20,8 @@ document.addEventListener('DOMContentLoaded', () => {
     spoilers()
     // фильтр
     formFilterController()
-    //кнопка копировать
+    // кнопка копировать
     copyBtn()
+    // поле количества товара
+    amountInput()
 })

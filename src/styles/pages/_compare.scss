@@ -6,21 +6,30 @@
         margin-top: 16px;
         flex: 0 0 auto;
 
-        &--inner {
-            padding: 0 24px;
+        @include max(tablet) {
+            align-self: flex-end;
+            margin-top: 0;
+        }
 
-            @include max(tablet) {
-                padding: 0 15px;
-            }
+        @include max(mobile) {
+            flex-wrap: wrap;
+        }
+    }
 
-            @include max(mobile) {
-                margin-top: 30px;
-            }
+    &__header {
+        @include max(tablet) {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 24px;
         }
     }
 
     &__body {
         margin-top: 24px;
+
+        @include max(tablet) {
+            margin-top: 16px;
+        }
     }
 
 }
@@ -31,11 +40,21 @@
         padding: 12px 12px 12px 24px;
         display: flex;
         justify-content: space-between;
+        gap: 16px;
+
+        @include max(mobile) {
+            padding: 12px 15px;
+        }
     }
 
     &__actions {
         width: fit-content;
         margin-top: 0;
+        flex-shrink: 1;
+
+        @include max(tablet) {
+            align-self: center;
+        }
     }
 
     &__prodwrap {
@@ -143,6 +162,11 @@
             flex-basis: 180px;
             width: 180px;
         }
+
+        @include max(mobile) {
+            flex-basis: 120px;
+            width: 120px;
+        }
     }
 
     &__cell {
@@ -160,6 +184,9 @@
             padding-left: 12px;
         }
 
+        @include max(mobile) {
+            font-size: 12px;
+        }
 
         &--title {
             flex-basis: 312px;
@@ -177,6 +204,11 @@
                 width: 100%;
                 background-color: $c-main-bg;
             }
+
+            @include max(mobile) {
+                flex-basis: auto;
+                width: 100%;
+            }
         }
 
     }
@@ -190,8 +222,8 @@
         align-items: center;
         justify-content: center;
         width: 100%;
-        aspect-ratio: 0.99;
-        padding: 18px;
+        aspect-ratio: 1 / 0.99;
+        padding: 8.372%;
         border: 1px solid $c-border;
         border-radius: 4px;
 
@@ -257,6 +289,11 @@
 
         @include max(laptop) {
             font-size: 16px;
+        }
+
+        @include max(mobile) {
+            font-size: 13px;
+            margin-top: 6px;
         }
     }
 }

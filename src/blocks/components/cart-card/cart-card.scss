@@ -1,0 +1,223 @@
+.cart-card {
+    width: 100%;
+    display: flex;
+    align-items: stretch;
+    gap: 24px;
+    padding: 24px 0;
+    border-top: 1px solid $c-border;
+
+    &__col {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    &__photo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        align-self: flex-start;
+        flex: 0 0 215px;
+        aspect-ratio: 1 / 1;
+        padding: 18px;
+        border: 1px solid $c-border;
+        border-radius: 4px;
+
+        @include max(large) {
+            flex: 0 0 163px;
+            padding: 14px;
+        }
+
+        img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+    }
+
+    &__info {
+        flex: 1 1 380px;
+        min-width: 380px;
+    }
+
+    &__title {
+        max-width: 380px;
+    }
+
+    &__tags {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    &__tagblock.hovered {
+        position: relative;
+    }
+
+    &__tag {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        padding: 4px 6px;
+        border-radius: 4px;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.4em;
+        max-width: fit-content;
+
+        @include max(mobile) {
+            font-size: 10px;
+        }
+
+        img {
+            width: 14px;
+            height: 14px;
+            object-fit: contain;
+
+            @include max(mobile) {
+                width: 12px;
+                height: 12px;
+            }
+        }
+
+        &--green {
+            color: #019F3C;
+            background-color: #E6F5EC;
+        }
+
+        &--blue {
+            color: #1998FF;
+            background-color: #E8F5FF;
+        }
+
+        &--red {
+            color: $c-accent;
+            background-color: #FAE6E6;
+        }
+
+        &--grey {
+            color: $c-text-light;
+            background-color: $c-border;
+        }
+    }
+
+    &__note {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        max-width: 200px;
+        width: max-content;
+        padding: 8px 10px;
+        border-radius: 4px;
+        background-color: $c-text;
+        color: $c-white;
+        font-size: 12px;
+        line-height: 1.4em;
+        opacity: 0;
+        visibility: hidden;
+        transition: all $tr-time linear;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 100%;
+            left: 0;
+            width: 100%;
+            height: 4px;
+        }
+
+        @include max(mobile) {
+            font-size: 10px;
+            max-width: 170px;
+        }
+    }
+
+    &__tag:hover+&__note,
+    &__note:hover {
+        opacity: 1;
+        top: calc(100% + 4px);
+        visibility: visible;
+    }
+
+    &__order {
+        flex: 0 0 316px;
+    }
+
+    &__prices {
+        line-height: 1em;
+        font-size: 26px;
+        line-height: 1em;
+
+        @include max(laptop) {
+            font-size: 24px;
+        }
+
+        @include max(mobile) {
+            font-size: 22px;
+        }
+
+        @include max(xs) {
+            font-size: 20px;
+        }
+    }
+
+    &__price {
+        letter-spacing: -0.02em;
+        color: $c-text;
+
+        &--old {
+            margin-top: 12px;
+            color: $c-text-breadcrumbs;
+            text-decoration: line-through;
+            line-height: 1.4em;
+            font-size: 0.54em;
+        }
+    }
+
+    &__controls {
+        display: flex;
+        align-items: stretch;
+        gap: 10px;
+    }
+
+    &__btns {
+        display: flex;
+        align-items: stretch;
+        width: fit-content;
+        padding: 9px 0;
+        border-radius: 2px;
+        background-color: $c-input-bg;
+
+        @include max(laptop) {
+            padding: 2px 4px;
+        }
+    }
+
+    &__btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        color: $c-text-light;
+        cursor: pointer;
+        transition: color $tr-time linear;
+
+        @include max(laptop) {
+            width: 24px;
+        }
+
+        &:hover {
+            color: $c-accent-hover;
+        }
+
+        svg {
+            width: 16px;
+            height: 16px;
+        }
+    }
+
+    &__btn+&__btn {
+        border-left: 1px solid $c-border;
+    }
+}

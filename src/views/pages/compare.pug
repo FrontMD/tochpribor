@@ -2,296 +2,296 @@ extends ../layouts/default
 include ../helpers/mixins
 
 block variables
-  - const title = "Сравнение товаров"
+    - const title = "Сравнение товаров"
 
 block content
-  .page-layout
-    .breadcrumbs-section.section.section--transparent
-      .section__container
-        +breadcrumbs({
-          items: [
-            {
-              name: 'Главная',
-              link: 'javascript:void(0);'
-            },
-            {
-              name: 'Сравнение товаров',
-              link: 'javascript:void(0);'
-            }
-          ],
-        })
-
-    section.section.compare
-      .section__container
-        .section__header
-          +title({
-            tag: 'h1',
-            size: '53',
-            text: 'Сравнение товаров'
-          })
-          .compare__actions
-            +btn({
-              name: 'Распечатать',
-              icon: 'print',
-              cMode: 'noborder',
-              size: 'link'
-            })
-            +btn({
-              name: 'Скачать .xls',
-              icon: 'download',
-              cMode: 'noborder',
-              size: 'link'
-            })
-            +btn({
-              name: 'Скачать .pdf',
-              icon: 'download',
-              cMode: 'noborder',
-              size: 'link'
-            })
-            +btn({
-              name: 'Очистить все',
-              icon: 'close',
-              cMode: 'noborder',
-              size: 'link'
-            })
-
-        .compare__body.tabs-block
-          .tabs-block__tabs.scrollbar.scrollbar--small
-            .tabs-block__list
-              .tabs-block__tab.active Разрывные машины 
-                span (5)
-              .tabs-block__tab Твердомеры 
-                span (2)
-
-          .compare-block(data-js="compareBlock")
-            .compare-block__header
-              .compare__actions.compare-block__actions
-                +field({
-                  tag: 'input',
-                  type: 'checkbox',
-                  title: 'Только отличия'
-                })
-                +btn({
-                  name: 'Очистить категорию',
-                  icon: 'close',
-                  cMode: 'noborder',
-                  size: 'link'
+    .page-layout
+        .breadcrumbs-section.section.section--transparent
+            .section__container
+                +breadcrumbs({
+                    items: [
+                        {
+                            name: 'Главная',
+                            link: 'javascript:void(0);'
+                        },
+                        {
+                            name: 'Сравнение товаров',
+                            link: 'javascript:void(0);'
+                        }
+                    ],
                 })
 
-              .slider-controls
-                button.slider-control.slider-control--prev(type="button" data-js='sliderPrev')
-                  svg
-                    use(xlink:href=`img/sprites/sprite.svg#arrow_classic`)
-                button.slider-control.slider-control--next(type="button" data-js='sliderNext')
-                  svg
-                    use(xlink:href=`img/sprites/sprite.svg#arrow_classic`)
+        section.section.compare
+            .section__container
+                .section__header.compare__header
+                    +title({
+                        tag: 'h1',
+                        size: '67',
+                        text: 'Сравнение товаров'
+                    })
+                    .compare__actions
+                        +btn({
+                            name: 'Распечатать',
+                            icon: 'print',
+                            cMode: 'noborder',
+                            size: 'link'
+                        })
+                        +btn({
+                            name: 'Скачать .xls',
+                            icon: 'download',
+                            cMode: 'noborder',
+                            size: 'link'
+                        })
+                        +btn({
+                            name: 'Скачать .pdf',
+                            icon: 'download',
+                            cMode: 'noborder',
+                            size: 'link'
+                        })
+                        +btn({
+                            name: 'Очистить все',
+                            icon: 'close',
+                            cMode: 'noborder',
+                            size: 'link'
+                        })
 
-            .compare-block__prodwrap
-              .compare-block__prods(data-js="compareSlider")
-                .compare-block__scrollbar(data-js="sliderScrollbar")
-                .swiper-wrapper
-                  .swiper-slide.compare-block__prod.compare-prod
-                    .compare-prod__photo
-                      img(src="img/catalog/product_8.webp" alt="")
-                    .compare-prod__controls
-                      .compare-prod__control(href="javascript:void(0)")
-                        svg
-                          use(xlink:href="img/sprites/sprite.svg#remove")
-                      .compare-prod__control(href="javascript:void(0)")
-                        svg
-                          use(xlink:href="img/sprites/sprite.svg#compare_2")
-                    .compare-prod__title ИР 5113-100 универсальная разрывная машина
+                .compare__body.tabs-block
+                    .tabs-block__tabs.scrollbar.scrollbar--small
+                        .tabs-block__list
+                            .tabs-block__tab.active Разрывные машины 
+                                span (5)
+                            .tabs-block__tab Твердомеры 
+                                span (2)
 
-                  .swiper-slide.compare-block__prod.compare-prod
-                    .compare-prod__photo
-                      img(src="img/catalog/product_9.webp" alt="")
-                    .compare-prod__controls
-                      .compare-prod__control(href="javascript:void(0)")
-                        svg
-                          use(xlink:href="img/sprites/sprite.svg#remove")
-                      .compare-prod__control(href="javascript:void(0)")
-                        svg
-                          use(xlink:href="img/sprites/sprite.svg#compare_2")
-                    .compare-prod__title Разрывная машина ИР 5143-200
+                    .compare-block(data-js="compareBlock")
+                        .compare-block__header
+                            .compare__actions.compare-block__actions
+                                +field({
+                                    tag: 'input',
+                                    type: 'checkbox',
+                                    title: 'Только отличия'
+                                })
+                                +btn({
+                                    name: 'Очистить категорию',
+                                    icon: 'close',
+                                    cMode: 'noborder',
+                                    size: 'link'
+                                })
 
-                  .swiper-slide.compare-block__prod.compare-prod
-                    .compare-prod__photo
-                      img(src="img/catalog/product_10.webp" alt="")
-                    .compare-prod__controls
-                      .compare-prod__control(href="javascript:void(0)")
-                        svg
-                          use(xlink:href="img/sprites/sprite.svg#remove")
-                      .compare-prod__control(href="javascript:void(0)")
-                        svg
-                          use(xlink:href="img/sprites/sprite.svg#compare_2")
-                    .compare-prod__title FU DLC 200 кН испытательная машина
+                            .slider-controls
+                                button.slider-control.slider-control--prev(type="button" data-js='sliderPrev')
+                                    svg
+                                        use(xlink:href=`img/sprites/sprite.svg#arrow_classic`)
+                                button.slider-control.slider-control--next(type="button" data-js='sliderNext')
+                                    svg
+                                        use(xlink:href=`img/sprites/sprite.svg#arrow_classic`)
 
-                  .swiper-slide.compare-block__prod.compare-prod
-                    .compare-prod__photo
-                      img(src="img/catalog/product_11.webp" alt="")
-                    .compare-prod__controls
-                      .compare-prod__control(href="javascript:void(0)")
-                        svg
-                          use(xlink:href="img/sprites/sprite.svg#remove")
-                      .compare-prod__control(href="javascript:void(0)")
-                        svg
-                          use(xlink:href="img/sprites/sprite.svg#compare_2")
-                    .compare-prod__title Испытательная машина для пневморессор (пневмобаллоннов) DVT LZ
+                        .compare-block__prodwrap
+                            .compare-block__prods(data-js="compareSlider")
+                                .compare-block__scrollbar(data-js="sliderScrollbar")
+                                .swiper-wrapper
+                                    .swiper-slide.compare-block__prod.compare-prod
+                                        .compare-prod__photo
+                                            img(src="img/catalog/product_8.webp" alt="")
+                                        .compare-prod__controls
+                                            .compare-prod__control(href="javascript:void(0)")
+                                                svg
+                                                    use(xlink:href="img/sprites/sprite.svg#remove")
+                                            .compare-prod__control(href="javascript:void(0)")
+                                                svg
+                                                    use(xlink:href="img/sprites/sprite.svg#compare_2")
+                                        .compare-prod__title ИР 5113-100 универсальная разрывная машина
 
-                  .swiper-slide.compare-block__prod.compare-prod
-                    .compare-prod__photo
-                      img(src="img/catalog/product_12.webp" alt="")
-                    .compare-prod__controls
-                      .compare-prod__control(href="javascript:void(0)")
-                        svg
-                          use(xlink:href="img/sprites/sprite.svg#remove")
-                      .compare-prod__control(href="javascript:void(0)")
-                        svg
-                          use(xlink:href="img/sprites/sprite.svg#compare_2")
-                    .compare-prod__title ИР 5061-0,05
+                                    .swiper-slide.compare-block__prod.compare-prod
+                                        .compare-prod__photo
+                                            img(src="img/catalog/product_9.webp" alt="")
+                                        .compare-prod__controls
+                                            .compare-prod__control(href="javascript:void(0)")
+                                                svg
+                                                    use(xlink:href="img/sprites/sprite.svg#remove")
+                                            .compare-prod__control(href="javascript:void(0)")
+                                                svg
+                                                    use(xlink:href="img/sprites/sprite.svg#compare_2")
+                                        .compare-prod__title Разрывная машина ИР 5143-200
 
-                  .swiper-slide.compare-block__prod.compare-prod
-                    .compare-prod__photo
-                      img(src="img/catalog/product_13.webp" alt="")
-                    .compare-prod__controls
-                      .compare-prod__control(href="javascript:void(0)")
-                        svg
-                          use(xlink:href="img/sprites/sprite.svg#remove")
-                      .compare-prod__control(href="javascript:void(0)")
-                        svg
-                          use(xlink:href="img/sprites/sprite.svg#compare_2")
-                    .compare-prod__title ИХ 5111
+                                    .swiper-slide.compare-block__prod.compare-prod
+                                        .compare-prod__photo
+                                            img(src="img/catalog/product_10.webp" alt="")
+                                        .compare-prod__controls
+                                            .compare-prod__control(href="javascript:void(0)")
+                                                svg
+                                                    use(xlink:href="img/sprites/sprite.svg#remove")
+                                            .compare-prod__control(href="javascript:void(0)")
+                                                svg
+                                                    use(xlink:href="img/sprites/sprite.svg#compare_2")
+                                        .compare-prod__title FU DLC 200 кН испытательная машина
 
-            .compare-block__paramwrap
-              .compare-block__params
-                .compare-block__row
-                  .compare-block__cell.compare-block__cell--title Наибольшая предельная нагрузка, кН
-                  .compare-block__list(data-js="compareSlider")
-                    .swiper-wrapper
-                      .swiper-slide.compare-block__cell 100
-                      .swiper-slide.compare-block__cell 100
-                      .swiper-slide.compare-block__cell —
-                      .swiper-slide.compare-block__cell 100
-                      .swiper-slide.compare-block__cell 0.05
-                      .swiper-slide.compare-block__cell —
+                                    .swiper-slide.compare-block__prod.compare-prod
+                                        .compare-prod__photo
+                                            img(src="img/catalog/product_11.webp" alt="")
+                                        .compare-prod__controls
+                                            .compare-prod__control(href="javascript:void(0)")
+                                                svg
+                                                    use(xlink:href="img/sprites/sprite.svg#remove")
+                                            .compare-prod__control(href="javascript:void(0)")
+                                                svg
+                                                    use(xlink:href="img/sprites/sprite.svg#compare_2")
+                                        .compare-prod__title Испытательная машина для пневморессор (пневмобаллоннов) DVT LZ
 
-                .compare-block__row
-                  .compare-block__cell.compare-block__cell--title Пределы допускаемой погрешности измерения нагрузки, % (в диапазоне нагрузок, кН)
-                  .compare-block__list(data-js="compareSlider")
-                    .swiper-wrapper
-                      .swiper-slide.compare-block__cell П±1 (от 4 до 100)
-                      .swiper-slide.compare-block__cell П±1 (от 4 до 100)
-                      .swiper-slide.compare-block__cell —
-                      .swiper-slide.compare-block__cell 100
-                      .swiper-slide.compare-block__cell 0,05
-                      .swiper-slide.compare-block__cell
+                                    .swiper-slide.compare-block__prod.compare-prod
+                                        .compare-prod__photo
+                                            img(src="img/catalog/product_12.webp" alt="")
+                                        .compare-prod__controls
+                                            .compare-prod__control(href="javascript:void(0)")
+                                                svg
+                                                    use(xlink:href="img/sprites/sprite.svg#remove")
+                                            .compare-prod__control(href="javascript:void(0)")
+                                                svg
+                                                    use(xlink:href="img/sprites/sprite.svg#compare_2")
+                                        .compare-prod__title ИР 5061-0,05
 
-                .compare-block__row
-                  .compare-block__cell.compare-block__cell--title Скорость перемещения активного захвата, мм/мин
-                  .compare-block__list(data-js="compareSlider")
-                    .swiper-wrapper
-                      .swiper-slide.compare-block__cell от 0,1 до 500
-                      .swiper-slide.compare-block__cell от 0,1 до 500
-                      .swiper-slide.compare-block__cell —
-                      .swiper-slide.compare-block__cell ±1 (от 4 до 100)
-                      .swiper-slide.compare-block__cell ±1
-                      .swiper-slide.compare-block__cell —
+                                    .swiper-slide.compare-block__prod.compare-prod
+                                        .compare-prod__photo
+                                            img(src="img/catalog/product_13.webp" alt="")
+                                        .compare-prod__controls
+                                            .compare-prod__control(href="javascript:void(0)")
+                                                svg
+                                                    use(xlink:href="img/sprites/sprite.svg#remove")
+                                            .compare-prod__control(href="javascript:void(0)")
+                                                svg
+                                                    use(xlink:href="img/sprites/sprite.svg#compare_2")
+                                        .compare-prod__title ИХ 5111
 
-                .compare-block__row
-                  .compare-block__cell.compare-block__cell--title Номинальная цена единицы наименьшего разряда: при индикации нагрузки, Н
-                  .compare-block__list(data-js="compareSlider")
-                    .swiper-wrapper
-                      .swiper-slide.compare-block__cell 10
-                      .swiper-slide.compare-block__cell 10
-                      .swiper-slide.compare-block__cell —
-                      .swiper-slide.compare-block__cell от 0,1 до 500
-                      .swiper-slide.compare-block__cell —
-                      .swiper-slide.compare-block__cell —
+                        .compare-block__paramwrap
+                            .compare-block__params
+                                .compare-block__row
+                                    .compare-block__cell.compare-block__cell--title Наибольшая предельная нагрузка, кН
+                                    .compare-block__list(data-js="compareSlider")
+                                        .swiper-wrapper
+                                            .swiper-slide.compare-block__cell 100
+                                            .swiper-slide.compare-block__cell 100
+                                            .swiper-slide.compare-block__cell —
+                                            .swiper-slide.compare-block__cell 100
+                                            .swiper-slide.compare-block__cell 0.05
+                                            .swiper-slide.compare-block__cell —
 
-                .compare-block__row
-                  .compare-block__cell.compare-block__cell--title При измерении перемещения активного захвата, мм
-                  .compare-block__list(data-js="compareSlider")
-                    .swiper-wrapper
-                      .swiper-slide.compare-block__cell 0,01
-                      .swiper-slide.compare-block__cell 0,01
-                      .swiper-slide.compare-block__cell —
-                      .swiper-slide.compare-block__cell —
-                      .swiper-slide.compare-block__cell —
-                      .swiper-slide.compare-block__cell —
+                                .compare-block__row
+                                    .compare-block__cell.compare-block__cell--title Пределы допускаемой погрешности измерения нагрузки, % (в диапазоне нагрузок, кН)
+                                    .compare-block__list(data-js="compareSlider")
+                                        .swiper-wrapper
+                                            .swiper-slide.compare-block__cell П±1 (от 4 до 100)
+                                            .swiper-slide.compare-block__cell П±1 (от 4 до 100)
+                                            .swiper-slide.compare-block__cell —
+                                            .swiper-slide.compare-block__cell 100
+                                            .swiper-slide.compare-block__cell 0,05
+                                            .swiper-slide.compare-block__cell
 
-                .compare-block__row
-                  .compare-block__cell.compare-block__cell--title Ход подвижной траверсы без захватов, мм
-                  .compare-block__list(data-js="compareSlider")
-                    .swiper-wrapper
-                      .swiper-slide.compare-block__cell 700
-                      .swiper-slide.compare-block__cell 700
-                      .swiper-slide.compare-block__cell не менее 1200
-                      .swiper-slide.compare-block__cell —
-                      .swiper-slide.compare-block__cell —
-                      .swiper-slide.compare-block__cell —
+                                .compare-block__row
+                                    .compare-block__cell.compare-block__cell--title Скорость перемещения активного захвата, мм/мин
+                                    .compare-block__list(data-js="compareSlider")
+                                        .swiper-wrapper
+                                            .swiper-slide.compare-block__cell от 0,1 до 500
+                                            .swiper-slide.compare-block__cell от 0,1 до 500
+                                            .swiper-slide.compare-block__cell —
+                                            .swiper-slide.compare-block__cell ±1 (от 4 до 100)
+                                            .swiper-slide.compare-block__cell ±1
+                                            .swiper-slide.compare-block__cell —
 
-                .compare-block__row
-                  .compare-block__cell.compare-block__cell--title Ширина рабочего пространства, мм
-                  .compare-block__list(data-js="compareSlider")
-                    .swiper-wrapper
-                      .swiper-slide.compare-block__cell 400
-                      .swiper-slide.compare-block__cell 400
-                      .swiper-slide.compare-block__cell не менее 520
-                      .swiper-slide.compare-block__cell —
-                      .swiper-slide.compare-block__cell —
-                      .swiper-slide.compare-block__cell —
+                                .compare-block__row
+                                    .compare-block__cell.compare-block__cell--title Номинальная цена единицы наименьшего разряда: при индикации нагрузки, Н
+                                    .compare-block__list(data-js="compareSlider")
+                                        .swiper-wrapper
+                                            .swiper-slide.compare-block__cell 10
+                                            .swiper-slide.compare-block__cell 10
+                                            .swiper-slide.compare-block__cell —
+                                            .swiper-slide.compare-block__cell от 0,1 до 500
+                                            .swiper-slide.compare-block__cell —
+                                            .swiper-slide.compare-block__cell —
 
-                .compare-block__row
-                  .compare-block__cell.compare-block__cell--title Максимальная мощность, кВт (питание)
-                  .compare-block__list(data-js="compareSlider")
-                    .swiper-wrapper
-                      .swiper-slide.compare-block__cell 1,5 (3N, 380В, 50 Гц)
-                      .swiper-slide.compare-block__cell 1,5 (3N, 380В, 50 Гц)
-                      .swiper-slide.compare-block__cell 220 В, 50 Гц
-                      .swiper-slide.compare-block__cell —
-                      .swiper-slide.compare-block__cell —
-                      .swiper-slide.compare-block__cell —
+                                .compare-block__row
+                                    .compare-block__cell.compare-block__cell--title При измерении перемещения активного захвата, мм
+                                    .compare-block__list(data-js="compareSlider")
+                                        .swiper-wrapper
+                                            .swiper-slide.compare-block__cell 0,01
+                                            .swiper-slide.compare-block__cell 0,01
+                                            .swiper-slide.compare-block__cell —
+                                            .swiper-slide.compare-block__cell —
+                                            .swiper-slide.compare-block__cell —
+                                            .swiper-slide.compare-block__cell —
 
-                .compare-block__row
-                  .compare-block__cell.compare-block__cell--title Габаритные размеры установки испытательной (ширина х длина х высота), мм
-                  .compare-block__list(data-js="compareSlider")
-                    .swiper-wrapper
-                      .swiper-slide.compare-block__cell 900x790x1800
-                      .swiper-slide.compare-block__cell 900x790x1800
-                      .swiper-slide.compare-block__cell 2050х1070х660
-                      .swiper-slide.compare-block__cell —
-                      .swiper-slide.compare-block__cell —
-                      .swiper-slide.compare-block__cell —
+                                .compare-block__row
+                                    .compare-block__cell.compare-block__cell--title Ход подвижной траверсы без захватов, мм
+                                    .compare-block__list(data-js="compareSlider")
+                                        .swiper-wrapper
+                                            .swiper-slide.compare-block__cell 700
+                                            .swiper-slide.compare-block__cell 700
+                                            .swiper-slide.compare-block__cell не менее 1200
+                                            .swiper-slide.compare-block__cell —
+                                            .swiper-slide.compare-block__cell —
+                                            .swiper-slide.compare-block__cell —
 
-                .compare-block__row
-                  .compare-block__cell.compare-block__cell--title Габаритные размеры стойки приборной (ширина х длина х высота), мм
-                  .compare-block__list(data-js="compareSlider")
-                    .swiper-wrapper
-                      .swiper-slide.compare-block__cell 1305x585x790
-                      .swiper-slide.compare-block__cell 1305x585x790
-                      .swiper-slide.compare-block__cell —
-                      .swiper-slide.compare-block__cell —
-                      .swiper-slide.compare-block__cell —
-                      .swiper-slide.compare-block__cell —
+                                .compare-block__row
+                                    .compare-block__cell.compare-block__cell--title Ширина рабочего пространства, мм
+                                    .compare-block__list(data-js="compareSlider")
+                                        .swiper-wrapper
+                                            .swiper-slide.compare-block__cell 400
+                                            .swiper-slide.compare-block__cell 400
+                                            .swiper-slide.compare-block__cell не менее 520
+                                            .swiper-slide.compare-block__cell —
+                                            .swiper-slide.compare-block__cell —
+                                            .swiper-slide.compare-block__cell —
 
-                .compare-block__row
-                  .compare-block__cell.compare-block__cell--title Масса установки испытательной, кг
-                  .compare-block__list(data-js="compareSlider")
-                    .swiper-wrapper
-                      .swiper-slide.compare-block__cell 750
-                      .swiper-slide.compare-block__cell 750
-                      .swiper-slide.compare-block__cell —
-                      .swiper-slide.compare-block__cell —
-                      .swiper-slide.compare-block__cell —
-                      .swiper-slide.compare-block__cell —
+                                .compare-block__row
+                                    .compare-block__cell.compare-block__cell--title Максимальная мощность, кВт (питание)
+                                    .compare-block__list(data-js="compareSlider")
+                                        .swiper-wrapper
+                                            .swiper-slide.compare-block__cell 1,5 (3N, 380В, 50 Гц)
+                                            .swiper-slide.compare-block__cell 1,5 (3N, 380В, 50 Гц)
+                                            .swiper-slide.compare-block__cell 220 В, 50 Гц
+                                            .swiper-slide.compare-block__cell —
+                                            .swiper-slide.compare-block__cell —
+                                            .swiper-slide.compare-block__cell —
 
-                .compare-block__row
-                  .compare-block__cell.compare-block__cell--title Масса стойки приборной, кг
-                  .compare-block__list(data-js="compareSlider")
-                    .swiper-wrapper
-                      .swiper-slide.compare-block__cell 100
-                      .swiper-slide.compare-block__cell 100
-                      .swiper-slide.compare-block__cell —
-                      .swiper-slide.compare-block__cell —
-                      .swiper-slide.compare-block__cell —
-                      .swiper-slide.compare-block__cell —
+                                .compare-block__row
+                                    .compare-block__cell.compare-block__cell--title Габаритные размеры установки испытательной (ширина х длина х высота), мм
+                                    .compare-block__list(data-js="compareSlider")
+                                        .swiper-wrapper
+                                            .swiper-slide.compare-block__cell 900x790x1800
+                                            .swiper-slide.compare-block__cell 900x790x1800
+                                            .swiper-slide.compare-block__cell 2050х1070х660
+                                            .swiper-slide.compare-block__cell —
+                                            .swiper-slide.compare-block__cell —
+                                            .swiper-slide.compare-block__cell —
+
+                                .compare-block__row
+                                    .compare-block__cell.compare-block__cell--title Габаритные размеры стойки приборной (ширина х длина х высота), мм
+                                    .compare-block__list(data-js="compareSlider")
+                                        .swiper-wrapper
+                                            .swiper-slide.compare-block__cell 1305x585x790
+                                            .swiper-slide.compare-block__cell 1305x585x790
+                                            .swiper-slide.compare-block__cell —
+                                            .swiper-slide.compare-block__cell —
+                                            .swiper-slide.compare-block__cell —
+                                            .swiper-slide.compare-block__cell —
+
+                                .compare-block__row
+                                    .compare-block__cell.compare-block__cell--title Масса установки испытательной, кг
+                                    .compare-block__list(data-js="compareSlider")
+                                        .swiper-wrapper
+                                            .swiper-slide.compare-block__cell 750
+                                            .swiper-slide.compare-block__cell 750
+                                            .swiper-slide.compare-block__cell —
+                                            .swiper-slide.compare-block__cell —
+                                            .swiper-slide.compare-block__cell —
+                                            .swiper-slide.compare-block__cell —
+
+                                .compare-block__row
+                                    .compare-block__cell.compare-block__cell--title Масса стойки приборной, кг
+                                    .compare-block__list(data-js="compareSlider")
+                                        .swiper-wrapper
+                                            .swiper-slide.compare-block__cell 100
+                                            .swiper-slide.compare-block__cell 100
+                                            .swiper-slide.compare-block__cell —
+                                            .swiper-slide.compare-block__cell —
+                                            .swiper-slide.compare-block__cell —
+                                            .swiper-slide.compare-block__cell —
