@@ -1,50 +1,40 @@
 .amount-input {
     display: flex;
     align-items: center;
-    max-width: 250px;
-    min-width: 160px;
-    width: 160px;
+    max-width: 190px;
+    min-width: 100px;
+    width: 100px;
     height: 48px;
-    border: 1px solid lightgray;
-
-    @include max(tablet) {
-        width: 174px;
-        height: 57px;
-    }
+    background-color: $c-input-bg;
+    border-radius: 4px;
+    overflow: hidden;
 
     &__change {
         display: flex;
         align-items: center;
         justify-content: center;
-        flex-basis: 50px;
+        flex-basis: 30px;
         flex-shrink: 0;
         flex-grow: 0;
         height: 100%;
         cursor: pointer;
-
-        @include max(tablet) {
-            flex-basis: 57px;
-        }
+        transition: all $tr-time linear;
+        color: $c-accent;
 
         &.min {
             pointer-events: none;
-            color: grey;
-            opacity: 0.5;
+            color: $c-bg;
         }
 
         &:hover {
-            background-color: grey;
+            background-color: $c-accent-hover;
+            color: white;
         }
 
         svg,
         use {
-            width: 10px;
-            height: 10px;
-
-            @include max(tablet) {
-                width: 10px;
-                height: 10px;
-            }
+            width: 18px;
+            height: 18px;
         }
 
     }
@@ -52,32 +42,25 @@
     &__value {
         display: block;
         flex-shrink: 0;
-        min-width: 60px;
-        width: 60px;
-        max-width: 150px;
+        min-width: 40px;
+        width: 40px;
+        max-width: 130px;
         height: 100%;
         text-align: center;
-        font-size: 24px;
-        font-weight: 600;
-        line-height: 1.22;
-        color: black;
+        font-size: 18px;
+        line-height: 1.4em;
+        color: $c-text;
         outline: none;
         border: none;
         background: none;
-
-        @include max(1024) {
-            flex-basis: 60px;
-            max-width: calc(100% - 114px);
-            font-size: 24px;
-        }
     }
 
     &__width {
         position: absolute;
         text-align: center;
-        font-size: 24px;
-        font-weight: 600;
-        line-height: 1.22;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 1.4em;
         visibility: hidden;
         opacity: 0;
         z-index: -100;

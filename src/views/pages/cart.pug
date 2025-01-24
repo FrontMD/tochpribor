@@ -21,6 +21,7 @@ block content
 					],
 				})
 
+		// Чтобы показать пустую корзину, нужно вместо этого sidebar-layout положить cart-empty из файла cart-empty.html
 		.sidebar-layout
 			.sidebar-layout__content
 				section.section.section--full.cart
@@ -115,7 +116,7 @@ block content
 										img: 'img/catalog/arrow_circle.svg',
 										text: 'Под заказ',
 										color: 'grey',
-										note: 'Изготавливаем индивидуально под заказ'
+										note: 'Изготавливаем по индивидуальному заказу'
 									}
 								],
 								prices: [
@@ -131,7 +132,7 @@ block content
 										img: 'img/catalog/arrow_circle.svg',
 										text: 'Под заказ',
 										color: 'grey',
-										note: 'Изготавливаем индивидуально под заказ'
+										note: 'Изготавливаем по индивидуальному заказу'
 									}
 								],
 								prices: [
@@ -142,7 +143,7 @@ block content
 
 			.sidebar-layout__sidebar
 				.section.section--full.section--transparent.cart-sidebar
-					.section__container
+					.cart-sidebar__container
 						.cart-sidebar__order
 							.cart-sidebar__title Ваш заказ
 							.cart-sidebar__detail
@@ -151,7 +152,7 @@ block content
 									.cart-sidebar__value 9 999 999 ₽
 								.cart-sidebar__row
 									.cart-sidebar__name Скидка
-									.cart-sidebar__value – 1 559 955 ₽
+									.cart-sidebar__value.cart-sidebar__value--red – 1 559 955 ₽
 							.cart-sidebar__total
 								.cart-sidebar__row
 									.cart-sidebar__name Итого
