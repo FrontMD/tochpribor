@@ -1,0 +1,27 @@
+-
+    const defaultHelpProps = {
+        classes: '',
+        img: '',
+        title: '',
+        text: '',
+        btnText: '',
+        isTransparent: false
+    }
+
+mixin help-section(props= defaultHelpProps)
+    -
+        const checkProps = {
+            classes: props.classes ? props.classes : defaultHelpProps.classes,
+            img: props.img ? props.img : defaultHelpProps.img,
+            title: props.title ? props.title: defaultHelpProps.title,
+            text: props.text ? props.text : defaultHelpProps.text,
+            btnText: props.btnText ? props.btnText : defaultHelpProps.btnText,
+            isTransparent: props.isTransparent ? props.isTransparent: defaultHelpProps.isTransparent
+        }
+
+        let transparentClass = checkProps.isTransparent === true ? ' section--transparent' : ''
+
+    section.help-section.section.section--full(class= checkProps.classes + transparentClass)&attributes(attributes)
+        .section__container
+
+

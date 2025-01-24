@@ -152,7 +152,15 @@
           </div>
         </div>
         <section class="section cart-empty">
-          <div class="section__container cart-empty__container"></div>
+          <div class="section__container cart-empty__container">
+            <div class="cart-empty__content">
+              <div class="cart-empty__title">Корзина пуста</div>
+              <div class="cart-empty__text">Перейдите в каталог или воспользуйтесь поиском</div><a class="btn  btn--red btn--full" href="javascript:void(0)">
+                    <svg>
+                      <use xlink:href="img/sprites/sprite.svg#arrow_enter"></use>
+                    </svg><span class="btn__text">В каталог</span></a>
+            </div>
+          </div>
         </section>
       </div>
     </main>
@@ -320,7 +328,7 @@
             <div class="modal hystmodal city-modal" id="cityModal" aria-hidden="true" data-js="cityModal">
               <div class="hystmodal__wrap">
                 <div class="hystmodal__window" role="dialog" aria-modal="true">
-                  <div class="modal__content">
+                  <div class="modal__content scrollbar scrollbar--small">
                     <div class="modal__title title--32">Укажите ваш город</div>
                     <div class="modal__close" data-hystclose>
                       <svg> 
@@ -360,7 +368,7 @@
             <div class="modal hystmodal quick-view-modal" id="quickViewModal" aria-hidden="true">
               <div class="hystmodal__wrap">
                 <div class="hystmodal__window" role="dialog" aria-modal="true">
-                  <div class="modal__content">
+                  <div class="modal__content scrollbar scrollbar--small">
                     <div class="modal__title title--32">Универсальная испытательная машина ТРМ-О 0,1 А0,5 Tochline</div>
                     <div class="modal__close" data-hystclose>
                       <svg> 

@@ -6,6 +6,7 @@
 @@include("../../blocks/modules/tabs-block/tabs-block.js")
 @@include("../../blocks/modules/media-slider/media-slider.js")
 @@include("../../blocks/modules/cards-slider/cards-slider.js")
+@@include("../../blocks/modules/product-slider/product-slider.js")
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -27,4 +28,6 @@ document.addEventListener('DOMContentLoaded', () => {
     mediaSliderInit()
     // Слайдеры с карточками
     cardsSlidersInit()
+    // Слайдер на детальной странице товара
+    productSlider()
 })

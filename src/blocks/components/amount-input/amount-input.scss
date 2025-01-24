@@ -9,6 +9,10 @@
     border-radius: 4px;
     overflow: hidden;
 
+    @include max(mobile) {
+        height: 40px;
+    }
+
     &__change {
         display: flex;
         align-items: center;
@@ -53,6 +57,10 @@
         outline: none;
         border: none;
         background: none;
+
+        @include max(mobile) {
+            font-size: 16px;
+        }
     }
 
     &__width {

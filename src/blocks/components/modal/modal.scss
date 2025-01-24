@@ -83,10 +83,15 @@
         z-index: 9999;
         padding: 20px 16px;
         border-radius: 4px;
+        max-height: 95vh;
+        overflow-y: auto;
 
         @include max(tablet) {
-            width: calc(100% - 40px);
+            width: 100vw;
+            min-width: 100vw;
             margin: 0 auto;
+            max-height: 100vh;
+            height: 100vh;
         }
 
         @include max(mobile) {}

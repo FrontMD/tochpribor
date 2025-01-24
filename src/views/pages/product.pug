@@ -1,0 +1,65 @@
+extends ../layouts/default
+include ../helpers/mixins
+
+block variables
+	- const title = "Карточка товара детальная"
+
+block content
+	.page-layout.page-layout--bottom
+		.breadcrumbs-section.section.section--transparent
+			.section__container
+				+breadcrumbs({
+					items: [
+						{
+							name: 'Главная',
+							link: 'javascript:void(0);'
+						},
+						{
+							name: 'Каталог',
+							link: 'javascript:void(0);'
+						},
+						{
+							name: 'Название категории',
+							link: 'javascript:void(0);'
+						},
+						{
+							name: 'Название подкатегории',
+							link: 'javascript:void(0);'
+						},
+						{
+							name: 'Название товара',
+							link: 'javascript:void(0);'
+						}
+					],
+				})
+
+		section.section.product-intro
+			.section__container.product-intro__container
+				.product-intro__media
+					+product-slider
+				.product-intro__info
+					+title({
+						classes: 'product-intro__title',
+						tag: 'h1',
+						size: '53',
+						text: 'Универсальная испытательная машина ТРМ-О 0,1 А1 Tochline'
+					})
+
+		.sidebar-layout
+			.sidebar-layout__content
+				section.section.section--full.product-detailed
+					.section__container
+
+			.sidebar-layout__sidebar
+				.section.section--full.section--transparent.product-sidebar
+					.product-sidebar__container
+
+		section.section.section--full.product-accry
+			.section__container
+
+		section.section.section--full.product-accry
+			.section__container
+
+		+help-section
+
+

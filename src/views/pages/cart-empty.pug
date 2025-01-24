@@ -23,3 +23,12 @@ block content
 
 		section.section.cart-empty
 			.section__container.cart-empty__container
+				.cart-empty__content
+					.cart-empty__title Корзина пуста
+					.cart-empty__text Перейдите в каталог или воспользуйтесь поиском
+					+btn({
+						name: 'В каталог',
+						cMode: 'red',
+						icon: 'arrow_enter',
+						size: 'full'
+					})

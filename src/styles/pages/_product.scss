@@ -1,0 +1,13 @@
+.product-intro {
+    &__container {
+        display: flex;
+        align-items: flex-start;
+        gap: 32px;
+    }
+
+    &__media {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+
+}

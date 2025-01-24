@@ -1,16 +1,33 @@
 .cart-card {
+    position: relative;
     width: 100%;
-    display: flex;
-    align-items: stretch;
+    display: grid;
+    grid-template-columns: minmax(215px, 215px) minmax(200px, auto) minmax(260px, 316px);
     gap: 24px;
     padding: 24px 0;
     border-top: 1px solid $c-border;
+
+    @include max(large) {
+        grid-template-columns: minmax(163px, 163px) minmax(200px, auto) minmax(260px, 260px);
+        gap: 16px;
+    }
+
+    @include max(laptop) {
+        grid-template-columns: minmax(120px, 120px) minmax(200px, auto) minmax(260px, 260px);
+        gap: 16px;
+    }
+
+    @include max(mobile) {
+        grid-template-columns: 1fr;
+        padding: 16px 0;
+    }
 
     &__col {
         display: flex;
         justify-content: space-between;
         flex-direction: column;
         gap: 24px;
+
     }
 
     &__photo {
@@ -18,15 +35,15 @@
         align-items: center;
         justify-content: center;
         align-self: flex-start;
-        flex: 0 0 215px;
         aspect-ratio: 1 / 1;
         padding: 18px;
         border: 1px solid $c-border;
         border-radius: 4px;
 
-        @include max(large) {
-            flex: 0 0 163px;
-            padding: 14px;
+        @include max(mobile) {
+            height: 200px;
+            aspect-ratio: auto;
+            padding: 10px;
         }
 
         img {
@@ -36,19 +53,26 @@
         }
     }
 
-    &__info {
-        flex: 1 1 380px;
-        min-width: 380px;
-    }
+    &__info {}
 
     &__title {
         max-width: 380px;
+
+        @include max(mobile) {
+            max-width: 100%;
+        }
     }
 
     &__tags {
         display: flex;
         align-items: center;
         gap: 10px;
+
+        @include max(mobile) {
+            position: absolute;
+            left: 10px;
+            top: 26px;
+        }
     }
 
     &__tagblock.hovered {
@@ -141,7 +165,15 @@
     }
 
     &__order {
-        flex: 0 0 316px;
+        @include max(mobile) {
+            flex-direction: row;
+            align-items: flex-end;
+        }
+
+        @include max(xs) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
     }
 
     &__prices {
@@ -172,6 +204,10 @@
             text-decoration: line-through;
             line-height: 1.4em;
             font-size: 0.54em;
+
+            @include max(mobile) {
+                margin-top: 5px;
+            }
         }
     }
 
@@ -179,6 +215,12 @@
         display: flex;
         align-items: stretch;
         gap: 10px;
+
+        @include max(xs) {
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            width: 100%;
+        }
     }
 
     &__btns {

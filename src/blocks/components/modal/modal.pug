@@ -16,7 +16,7 @@ mixin modal(props = defaultTitleProps)
     .modal.hystmodal(id=checkProps.modalId class=checkProps.classes aria-hidden="true")&attributes(attributes)
         .hystmodal__wrap
             .hystmodal__window(role="dialog" aria-modal="true")
-                .modal__content
+                .modal__content.scrollbar.scrollbar--small
                     - if(checkProps.modalTitle.length > 0)
                         .modal__title.title--32!= checkProps.modalTitle 
                     .modal__close(data-hystclose)

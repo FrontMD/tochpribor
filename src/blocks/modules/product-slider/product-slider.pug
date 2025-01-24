@@ -1,0 +1,58 @@
+-
+    const defaultProductSliderProps = {
+        classes: '',
+    }
+
+mixin product-slider(props= defaultProductSliderProps)
+    -
+        const checkProps = {
+            classes: props.classes ? props.classes : defaultHelpProps.classes,
+        }
+
+    .product-slider(data-js="productSlider")
+        .product-slider__slider(data-js="productSliderSlider")
+            .swiper-wrapper
+                .swiper-slide.product-slider__slide
+                    img(src="img/catalog/product_14.webp" alt="")
+                .swiper-slide.product-slider__slide
+                    img(src="img/lazy-placeholder" data-src="img/catalog/product_15.webp" class="swiper-lazy" alt="")
+                    .swiper-lazy-preloader
+                .swiper-slide.product-slider__slide
+                    img(src="img/lazy-placeholder" data-src="img/catalog/product_16.webp" class="swiper-lazy" alt="")
+                    .swiper-lazy-preloader
+                .swiper-slide.product-slider__slide
+                    img(src="img/lazy-placeholder" data-src="img/catalog/product_17.webp" class="swiper-lazy" alt="")
+                    .swiper-lazy-preloader
+                .swiper-slide.product-slider__slide
+                    img(src="img/lazy-placeholder" data-src="img/catalog/product_14.webp" class="swiper-lazy" alt="")
+                    .swiper-lazy-preloader
+                .swiper-slide.product-slider__slide
+                    img(src="img/lazy-placeholder" data-src="img/catalog/product_15.webp" class="swiper-lazy" alt="")
+                    .swiper-lazy-preloader
+                .swiper-slide.product-slider__slide
+                    img(src="img/lazy-placeholder" data-src="img/catalog/product_16.webp" class="swiper-lazy" alt="")
+                    .swiper-lazy-preloader
+                .swiper-slide.product-slider__slide
+                    img(src="img/lazy-placeholder" data-src="img/catalog/product_17.webp" class="swiper-lazy" alt="")
+                    .swiper-lazy-preloader
+
+        .product-slider__tabs(data-js="productSliderTabs")
+            .swiper-wrapper
+                .swiper-slide.product-slider__tab
+                    img(src="img/catalog/product_14.webp" alt="")
+                .swiper-slide.product-slider__tab
+                    img(src="img/catalog/product_15.webp" alt="")
+                .swiper-slide.product-slider__tab
+                    img(src="img/catalog/product_16.webp" alt="")
+                .swiper-slide.product-slider__tab
+                    img(src="img/catalog/product_17.webp" alt="")
+                .swiper-slide.product-slider__tab
+                    img(src="img/catalog/product_14.webp" alt="")
+                .swiper-slide.product-slider__tab
+                    img(src="img/catalog/product_15.webp" alt="")
+                .swiper-slide.product-slider__tab
+                    img(src="img/catalog/product_16.webp" alt="")
+                .swiper-slide.product-slider__tab
+                    img(src="img/catalog/product_17.webp" alt="")
+
+
