@@ -5,6 +5,8 @@
     width: 94px;
     aspect-ratio: 1 / 0.667;
     border: 1px solid $c-border;
+    border-radius: 2px;
+    overflow: hidden;
 
     &__poster {
         position: relative;

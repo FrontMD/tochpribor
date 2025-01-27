@@ -1,0 +1,22 @@
+-
+    const defaultProductArticlesProps = {
+        classes: ''
+    }
+
+mixin product-articles(props = defaultProductArticlesProps)
+    -
+        const checkProps = {
+            classes: props.classes ? props.classes : defaultProductTagsProps.classes
+        }
+
+    .product-articles(class=checkProps.classes)
+        .product-articles__logo
+            img(src="img/catalog/quick_view_logo.webp")
+        +copy-btn({
+            text: 'Артикул 32131376233-19',
+            forCopy: '32131376233-19'
+        })
+        +copy-btn({
+            text: 'Номер в си рф: 76233-19',
+            forCopy: '76233-19'
+        })

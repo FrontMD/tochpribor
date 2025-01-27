@@ -70,23 +70,15 @@ noindex
 
                         img(src="img/catalog/product_7.webp")
                     .quick-view__info
-                        .quick-view__articles
-                            .quick-view__logo
-                                img(src="img/catalog/quick_view_logo.webp")
-                            +copy-btn({
-                                text: 'Артикул 32131376233-19',
-                                forCopy: '32131376233-19'
-                            })
-                            +copy-btn({
-                                text: 'Номер в си рф: 76233-19',
-                                forCopy: '76233-19'
-                            })
+                        +product-articles({
+                            classes: 'quick-view__articles'
+                        })
                         .quick-view__block
                             .quick-view__subtitle Применение
                             .quick-view__text Статические испытания образов из различных материалов на растяжение, сжатие, изгиб, сдвиг, срез, адгезию и прочее
                         .quick-view__block
                             .quick-view__subtitle Характеристики
-                            .quick-view__chars.chars-table
+                            .chars-table
                                 .chars-table__row
                                     .chars-table__title Конструктивное исполнение
                                     .chars-table__value настольное

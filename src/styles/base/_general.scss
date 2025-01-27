@@ -558,11 +558,12 @@ body {
 	}
 
 	&--notext &__content {
-		min-height: 194px;
+		min-height: 162px;
 	}
 
 	&__title {
-		line-height: 1em;
+		font-size: 20px;
+		line-height: 1.1em;
 		letter-spacing: -0.02em;
 	}
 
@@ -901,6 +902,39 @@ body {
 		color: $c-white;
 		font-size: 12px;
 		border-radius: 2px;
+	}
+}
+
+.chars-table {
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+	padding: 12px 0;
+	border-width: 1px 0 1px 0;
+	border-style: solid;
+	border-color: $c-border;
+	font-size: 14px;
+	line-height: 1.4em;
+	color: $c-text;
+
+	@include max(mobile) {
+		padding: 8px 0;
+	}
+
+	&__row {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	&__title {
+		color: $c-text-breadcrumbs;
+		flex: 0 0 72%;
+	}
+
+	&__value {
+		text-align: end;
+		flex: 0 0 28%;
 	}
 }
 

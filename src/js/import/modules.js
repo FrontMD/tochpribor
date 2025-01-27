@@ -7,6 +7,7 @@
 @@include("../../blocks/modules/media-slider/media-slider.js")
 @@include("../../blocks/modules/cards-slider/cards-slider.js")
 @@include("../../blocks/modules/product-slider/product-slider.js")
+@@include("../../blocks/modules/product-page-intro/product-intro.js")
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -30,4 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
     cardsSlidersInit()
     // Слайдер на детальной странице товара
     productSlider()
+    // Скрипты первого экрана детальной карточки товара
+    productIntro()
 })

@@ -22,7 +22,7 @@
     }
 
     &--full {
-        padding: 12px 16px;
+        padding: 12px;
         width: 100%;
     }
 
@@ -129,6 +129,7 @@
         svg {
             color: #4e4e4e;
             transition: color $tr-time linear;
+            margin-bottom: 3px;
         }
 
         &:hover {
