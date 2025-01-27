@@ -160,31 +160,22 @@
         <section class="section product-intro">
           <div class="section__container product-intro__container">
             <div class="product-intro__media">
-                  <div class="product-slider" data-js="productSlider">
-                    <div class="product-slider__slider" data-js="productSliderSlider">
-                      <div class="swiper-wrapper">
-                        <div class="swiper-slide product-slider__slide"><img src="img/catalog/product_14.webp" alt=""></div>
-                        <div class="swiper-slide product-slider__slide"><img class="swiper-lazy" src="img/lazy-placeholder" data-src="img/catalog/product_15.webp" alt="">
-                          <div class="swiper-lazy-preloader"></div>
-                        </div>
-                        <div class="swiper-slide product-slider__slide"><img class="swiper-lazy" src="img/lazy-placeholder" data-src="img/catalog/product_16.webp" alt="">
-                          <div class="swiper-lazy-preloader"></div>
-                        </div>
-                        <div class="swiper-slide product-slider__slide"><img class="swiper-lazy" src="img/lazy-placeholder" data-src="img/catalog/product_17.webp" alt="">
-                          <div class="swiper-lazy-preloader"></div>
-                        </div>
-                        <div class="swiper-slide product-slider__slide"><img class="swiper-lazy" src="img/lazy-placeholder" data-src="img/catalog/product_14.webp" alt="">
-                          <div class="swiper-lazy-preloader"></div>
-                        </div>
-                        <div class="swiper-slide product-slider__slide"><img class="swiper-lazy" src="img/lazy-placeholder" data-src="img/catalog/product_15.webp" alt="">
-                          <div class="swiper-lazy-preloader"></div>
-                        </div>
-                        <div class="swiper-slide product-slider__slide"><img class="swiper-lazy" src="img/lazy-placeholder" data-src="img/catalog/product_16.webp" alt="">
-                          <div class="swiper-lazy-preloader"></div>
-                        </div>
-                        <div class="swiper-slide product-slider__slide"><img class="swiper-lazy" src="img/lazy-placeholder" data-src="img/catalog/product_17.webp" alt="">
-                          <div class="swiper-lazy-preloader"></div>
-                        </div>
+                  <div class="product-slider" data-js="productSlider"><a class="video-btn product-slider__video" href="https://vkvideo.ru/video_ext.php?oid=-228066748&amp;id=456239041&amp;hd=3&amp;autoplay=1&amp;js_api=1" data-type="iframe" data-js="videoBtn" data-fancybox><span class="video-btn__poster" data-js="videoBtnPoster"><img src="img/catalog/video_btn_poster.webp" alt=""></span><span class="video-btn__play" data-js="videoBtnPlay">
+                            <svg>
+                              <use xlink:href="img/sprites/sprite.svg#play_2"></use>
+                            </svg></span></a>
+                        <!-- Если видео не по прямой ссылке а с VK Видео, то ссылке добавить data-type="iframe" а в href указать ссылку из iframe встраивания, который даёт ВК-->
+                        <!-- Например <a class="video-btn" href="https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1" data-type="iframe" data-js='videoBtn' data-fancybox>...</a>-->
+                    <div class="product-slider__wrapper">
+                      <div class="product-slider__slider" data-js="productSliderSlider">
+                        <div class="swiper-wrapper"><a class="swiper-slide product-slider__slide" href="img/catalog/product_14.webp" data-fancybox="productSlider" data-thumb="img/catalog/product_14.webp"><img src="img/catalog/product_14.webp" alt=""></a><a class="swiper-slide product-slider__slide" href="img/catalog/product_15.webp" data-fancybox="productSlider" data-thumb="img/catalog/product_15.webp"><img src="img/catalog/product_15.webp" loading="lazy" alt="">
+                            <div class="swiper-lazy-preloader"></div></a><a class="swiper-slide product-slider__slide" href="img/catalog/product_16.webp" data-fancybox="productSlider" data-thumb="img/catalog/product_16.webp"><img src="img/catalog/product_16.webp" loading="lazy" alt="">
+                            <div class="swiper-lazy-preloader"></div></a><a class="swiper-slide product-slider__slide" href="img/catalog/product_17.webp" data-fancybox="productSlider" data-thumb="img/catalog/product_17.webp"><img src="img/catalog/product_17.webp" loading="lazy" alt="">
+                            <div class="swiper-lazy-preloader"></div></a><a class="swiper-slide product-slider__slide" href="img/catalog/product_14.webp" data-fancybox="productSlider" data-thumb="img/catalog/product_14.webp"><img src="img/catalog/product_14.webp" loading="lazy" alt="">
+                            <div class="swiper-lazy-preloader"></div></a><a class="swiper-slide product-slider__slide" href="img/catalog/product_15.webp" data-fancybox="productSlider" data-thumb="img/catalog/product_15.webp"><img src="img/catalog/product_15.webp" loading="lazy" alt="">
+                            <div class="swiper-lazy-preloader"></div></a><a class="swiper-slide product-slider__slide" href="img/catalog/product_16.webp" data-fancybox="productSlider" data-thumb="img/catalog/product_16.webp"><img src="img/catalog/product_16.webp" loading="lazy" alt="">
+                            <div class="swiper-lazy-preloader"></div></a><a class="swiper-slide product-slider__slide" href="img/catalog/product_17.webp" data-fancybox="productSlider" data-thumb="img/catalog/product_17.webp"><img src="img/catalog/product_17.webp" loading="lazy" alt="">
+                            <div class="swiper-lazy-preloader"></div></a></div>
                       </div>
                     </div>
                     <div class="product-slider__tabs" data-js="productSliderTabs">
@@ -198,6 +189,18 @@
                         <div class="swiper-slide product-slider__tab"><img src="img/catalog/product_16.webp" alt=""></div>
                         <div class="swiper-slide product-slider__tab"><img src="img/catalog/product_17.webp" alt=""></div>
                       </div>
+                      <div class="product-slider__controls slider-controls">
+                        <button class="slider-control slider-control--prev" type="button" data-js="sliderPrev">
+                          <svg>
+                            <use xlink:href="img/sprites/sprite.svg#arrow_classic2"></use>
+                          </svg>
+                        </button>
+                        <button class="slider-control slider-control--next" type="button" data-js="sliderNext">
+                          <svg>
+                            <use xlink:href="img/sprites/sprite.svg#arrow_classic2"></use>
+                          </svg>
+                        </button>
+                      </div>
                     </div>
                   </div>
             </div>
@@ -206,6 +209,45 @@
                     <h1>Универсальная испытательная машина ТРМ-О 0,1 А1 Tochline
                     </h1>
                   </div>
+              <div class="product-intro__controls"><a class="btn  btn--noborder btn--link" href="javascript:void(0)">
+                      <svg>
+                        <use xlink:href="img/sprites/sprite.svg#compare_2"></use>
+                      </svg><span class="btn__text">Сравнить</span></a><a class="btn  btn--noborder btn--link" href="javascript:void(0)">
+                      <svg>
+                        <use xlink:href="img/sprites/sprite.svg#share"></use>
+                      </svg><span class="btn__text">Поделиться</span></a>
+              </div>
+              <div class="product-intro__body">
+                <div class="product-intro__main"></div>
+                <div class="product-intro__side">
+                  <div class="product-intro__order">
+                        <div class="product-price  product-price--horizontal product-price--32">
+                          <div class="product-price__price">550 000 ₽</div>
+                          <div class="product-price__price product-price__price--old">680 000 ₽</div>
+                        </div>
+                        <div class="product-tags">
+                          <div class="product-tags__tagblock">
+                            <div class="product-tags__tag product-tags__tag--green"><img src="img/catalog/check_icon.svg">В наличии
+                            </div>
+                          </div>
+                          <div class="product-tags__tagblock">
+                            <div class="product-tags__tag product-tags__tag--blue">Новинка
+                            </div>
+                          </div>
+                          <div class="product-tags__tagblock">
+                            <div class="product-tags__tag product-tags__tag--red">Скидка
+                            </div>
+                          </div>
+                        </div><a class="btn product-intro__cart btn--red btn--full" href="javascript:void(0)">
+                          <svg>
+                            <use xlink:href="img/sprites/sprite.svg#basket"></use>
+                          </svg><span class="btn__text">В корзину</span></a><a class="btn  btn--transparent-red btn--full" href="javascript:void(0)"><span class="btn__text">Запросить коммерческое предложение</span></a><a class="btn  btn--grey btn--full" href="javascript:void(0)">
+                          <svg>
+                            <use xlink:href="img/sprites/sprite.svg#question"></use>
+                          </svg><span class="btn__text">Задать вопрос</span></a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -455,21 +497,25 @@
                         </div>
                         <div class="quick-view__grid">
                           <div class="quick-view__photo">
-                            <div class="quick-view__tags">
-                              <div class="quick-view__tagblock">
-                                <div class="quick-view__tag quick-view__tag--green"><img src="img/catalog/check_icon.svg">В наличии</div>
-                              </div>
-                              <div class="quick-view__tagblock">
-                                <div class="quick-view__tag quick-view__tag--blue">Новинка</div>
-                              </div>
-                              <div class="quick-view__tagblock">
-                                <div class="quick-view__tag quick-view__tag--red">Скидка</div>
-                              </div>
-                              <div class="quick-view__tagblock hovered">
-                                <div class="quick-view__tag quick-view__tag--grey"><img src="img/catalog/arrow_circle.svg">Снято с производства</div>
-                                <div class="quick-view__note">Товар больше не производится. Смотрите аналоги в карточке товара</div>
-                              </div>
-                            </div><img src="img/catalog/product_7.webp">
+                                <div class="product-tags quick-view__tags">
+                                  <div class="product-tags__tagblock">
+                                    <div class="product-tags__tag product-tags__tag--green"><img src="img/catalog/check_icon.svg">В наличии
+                                    </div>
+                                  </div>
+                                  <div class="product-tags__tagblock">
+                                    <div class="product-tags__tag product-tags__tag--blue">Новинка
+                                    </div>
+                                  </div>
+                                  <div class="product-tags__tagblock">
+                                    <div class="product-tags__tag product-tags__tag--red">Скидка
+                                    </div>
+                                  </div>
+                                  <div class="product-tags__tagblock hovered">
+                                    <div class="product-tags__tag product-tags__tag--grey"><img src="img/catalog/arrow_circle.svg">Снято с производства
+                                    </div>
+                                    <div class="product-tags__note">Товар больше не производится. Смотрите аналоги в карточке товара</div>
+                                  </div>
+                                </div><img src="img/catalog/product_7.webp">
                           </div>
                           <div class="quick-view__info">
                             <div class="quick-view__articles">
@@ -526,10 +572,10 @@
                           </div>
                           <div class="quick-view__controls">
                             <div class="quick-view__order">
-                              <div class="quick-view__prices">
-                                <div class="quick-view__price">550 000 ₽</div>
-                                <div class="quick-view__price quick-view__price--old">680 000 ₽</div>
-                              </div><a class="btn  btn--red btn--full" href="javascript:void(0)"><span class="btn__text">Подробнее о товаре</span></a><a class="btn  btn--transparent-red btn--full" href="javascript:void(0)"><span class="btn__text">Запросить техническое описание</span></a><a class="btn  btn--grey btn--full" href="javascript:void(0)">
+                                  <div class="product-price quick-view__prices product-price--horizontal product-price--32">
+                                    <div class="product-price__price">550 000 ₽</div>
+                                    <div class="product-price__price product-price__price--old">680 000 ₽</div>
+                                  </div><a class="btn  btn--red btn--full" href="javascript:void(0)"><span class="btn__text">Подробнее о товаре</span></a><a class="btn  btn--transparent-red btn--full" href="javascript:void(0)"><span class="btn__text">Запросить техническое описание</span></a><a class="btn  btn--grey btn--full" href="javascript:void(0)">
                                     <svg>
                                       <use xlink:href="img/sprites/sprite.svg#question"></use>
                                     </svg><span class="btn__text">Задать вопрос</span></a>

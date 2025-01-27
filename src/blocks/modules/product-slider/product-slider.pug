@@ -10,31 +10,37 @@ mixin product-slider(props= defaultProductSliderProps)
         }
 
     .product-slider(data-js="productSlider")
-        .product-slider__slider(data-js="productSliderSlider")
-            .swiper-wrapper
-                .swiper-slide.product-slider__slide
-                    img(src="img/catalog/product_14.webp" alt="")
-                .swiper-slide.product-slider__slide
-                    img(src="img/lazy-placeholder" data-src="img/catalog/product_15.webp" class="swiper-lazy" alt="")
-                    .swiper-lazy-preloader
-                .swiper-slide.product-slider__slide
-                    img(src="img/lazy-placeholder" data-src="img/catalog/product_16.webp" class="swiper-lazy" alt="")
-                    .swiper-lazy-preloader
-                .swiper-slide.product-slider__slide
-                    img(src="img/lazy-placeholder" data-src="img/catalog/product_17.webp" class="swiper-lazy" alt="")
-                    .swiper-lazy-preloader
-                .swiper-slide.product-slider__slide
-                    img(src="img/lazy-placeholder" data-src="img/catalog/product_14.webp" class="swiper-lazy" alt="")
-                    .swiper-lazy-preloader
-                .swiper-slide.product-slider__slide
-                    img(src="img/lazy-placeholder" data-src="img/catalog/product_15.webp" class="swiper-lazy" alt="")
-                    .swiper-lazy-preloader
-                .swiper-slide.product-slider__slide
-                    img(src="img/lazy-placeholder" data-src="img/catalog/product_16.webp" class="swiper-lazy" alt="")
-                    .swiper-lazy-preloader
-                .swiper-slide.product-slider__slide
-                    img(src="img/lazy-placeholder" data-src="img/catalog/product_17.webp" class="swiper-lazy" alt="")
-                    .swiper-lazy-preloader
+        +video-btn({
+            classes: 'product-slider__video',
+            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+            poster: 'img/catalog/video_btn_poster.webp',
+        })
+        .product-slider__wrapper
+            .product-slider__slider(data-js="productSliderSlider")
+                .swiper-wrapper
+                    a.swiper-slide.product-slider__slide(href="img/catalog/product_14.webp" data-fancybox="productSlider" data-thumb="img/catalog/product_14.webp")
+                        img(src="img/catalog/product_14.webp" alt="")
+                    a.swiper-slide.product-slider__slide(href="img/catalog/product_15.webp" data-fancybox="productSlider" data-thumb="img/catalog/product_15.webp")
+                        img(src="img/catalog/product_15.webp" loading="lazy" alt="")
+                        .swiper-lazy-preloader
+                    a.swiper-slide.product-slider__slide(href="img/catalog/product_16.webp" data-fancybox="productSlider" data-thumb="img/catalog/product_16.webp")
+                        img(src="img/catalog/product_16.webp" loading="lazy" alt="")
+                        .swiper-lazy-preloader
+                    a.swiper-slide.product-slider__slide(href="img/catalog/product_17.webp" data-fancybox="productSlider" data-thumb="img/catalog/product_17.webp")
+                        img(src="img/catalog/product_17.webp" loading="lazy" alt="")
+                        .swiper-lazy-preloader
+                    a.swiper-slide.product-slider__slide(href="img/catalog/product_14.webp" data-fancybox="productSlider" data-thumb="img/catalog/product_14.webp")
+                        img(src="img/catalog/product_14.webp" loading="lazy" alt="")
+                        .swiper-lazy-preloader
+                    a.swiper-slide.product-slider__slide(href="img/catalog/product_15.webp" data-fancybox="productSlider" data-thumb="img/catalog/product_15.webp")
+                        img(src="img/catalog/product_15.webp" loading="lazy" alt="")
+                        .swiper-lazy-preloader
+                    a.swiper-slide.product-slider__slide(href="img/catalog/product_16.webp" data-fancybox="productSlider" data-thumb="img/catalog/product_16.webp")
+                        img(src="img/catalog/product_16.webp" loading="lazy" alt="")
+                        .swiper-lazy-preloader
+                    a.swiper-slide.product-slider__slide(href="img/catalog/product_17.webp" data-fancybox="productSlider" data-thumb="img/catalog/product_17.webp")
+                        img(src="img/catalog/product_17.webp" loading="lazy" alt="")
+                        .swiper-lazy-preloader
 
         .product-slider__tabs(data-js="productSliderTabs")
             .swiper-wrapper
@@ -54,5 +60,12 @@ mixin product-slider(props= defaultProductSliderProps)
                     img(src="img/catalog/product_16.webp" alt="")
                 .swiper-slide.product-slider__tab
                     img(src="img/catalog/product_17.webp" alt="")
+            .product-slider__controls.slider-controls
+                button.slider-control.slider-control--prev(type="button" data-js='sliderPrev')
+                    svg
+                        use(xlink:href=`img/sprites/sprite.svg#arrow_classic2`)
+                button.slider-control.slider-control--next(type="button" data-js='sliderNext')
+                    svg
+                        use(xlink:href=`img/sprites/sprite.svg#arrow_classic2`)
 
 

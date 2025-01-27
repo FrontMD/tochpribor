@@ -245,14 +245,14 @@
     }
 
     &__prices {
+        margin-top: auto;
+        margin-bottom: 6px;
         display: flex;
         align-items: flex-start;
         gap: 14px;
         line-height: 1em;
         font-size: 26px;
         line-height: 1em;
-        margin-top: auto;
-        margin-bottom: 6px;
 
         @include max(laptop) {
             font-size: 24px;

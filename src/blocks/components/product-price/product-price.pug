@@ -1,0 +1,28 @@
+-
+    const defaultProductPriceProps = {
+        classes: '',
+        vMode: '',
+        price: '',
+        oldPrice: '',
+        size: ''
+    }
+
+mixin product-price(props = defaultProductPriceProps)
+    -
+        const checkProps = {
+            classes: props.classes ? props.classes : defaultProductPriceProps.classes,
+            vMode: props.vMode ? props.vMode : defaultProductPriceProps.vMode,
+            price: props.price ? props.price : defaultProductPriceProps.price,
+            oldPrice: props.oldPrice ? props.oldPrice : defaultProductPriceProps.oldPrice,
+            size: props.size ? props.size : defaultProductPriceProps.size,
+        }
+
+        let vModeClass = checkProps.vMode.length > 0 ? ' product-price--horizontal' : ''
+        let sizeClass = checkProps.size.length > 0 ? ` product-price--${checkProps.size}` : ''
+
+
+    .product-price(class=checkProps.classes + vModeClass + sizeClass)
+        .product-price__price!= checkProps.price
+
+        -if(checkProps.oldPrice.length > 0)
+            .product-price__price.product-price__price--old!= checkProps.oldPrice

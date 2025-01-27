@@ -1,0 +1,65 @@
+.product-price {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+    line-height: 1em;
+    font-size: 26px;
+    line-height: 1em;
+
+    @include max(laptop) {
+        font-size: 24px;
+    }
+
+    @include max(mobile) {
+        font-size: 22px;
+    }
+
+    @include max(xs) {
+        font-size: 20px;
+    }
+
+    &__price {
+        letter-spacing: -0.02em;
+        color: $c-text;
+
+        &--old {
+            color: $c-text-breadcrumbs;
+            text-decoration: line-through;
+            line-height: 1.4em;
+            font-size: 0.54em;
+
+            @include max(mobile) {
+                margin-top: 5px;
+            }
+        }
+    }
+}
+
+.product-price {
+    &--horizontal {
+        flex-direction: row;
+    }
+
+    &--horizontal &__price--old {
+        margin-top: 0;
+    }
+}
+
+.product-price {
+    &--32 {
+        font-size: 32px;
+
+        @include max(laptop) {
+            font-size: 26px;
+        }
+
+        @include max(mobile) {
+            font-size: 24px;
+        }
+
+        @include max(xs) {
+            font-size: 22px;
+        }
+    }
+}

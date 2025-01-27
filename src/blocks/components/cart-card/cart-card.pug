@@ -23,24 +23,16 @@ mixin cart-card(props = defaultCartCardProps)
 		.cart-card__info.cart-card__col
 			.cart-card__title.title--26!= checkProps.title
 			- if(checkProps.tags.length > 0)
-				.cart-card__tags
-					- let tagsCounter = 0
-						- while (tagsCounter < checkProps.tags.length)
-							- let currentTag = checkProps.tags[tagsCounter]
-							.cart-card__tagblock(class= `${currentTag.note ? 'hovered' : ''}`)
-								.cart-card__tag(class= `catalog-card__tag--${currentTag.color}`)
-									- if(currentTag.img.length > 0)
-										img(src= currentTag.img)
-									!= currentTag.text
-								-if(currentTag.note)
-									.cart-card__note!= currentTag.note
-							- tagsCounter++
+				+product-tags({
+					classes: 'cart-card__tags',
+					tags: checkProps.tags
+				})
 		.cart-card__order.cart-card__col
 			- if(checkProps.prices.length > 0)
-				.cart-card__prices
-					.cart-card__price!= checkProps.prices[0]
-					- if(checkProps.prices[1].length > 0)
-						.cart-card__price.cart-card__price--old!= checkProps.prices[1]
+				+product-price({
+					price: checkProps.prices[0],
+					oldPrice: checkProps.prices[1]
+				})
 				.cart-card__controls
 					.cart-card__btns
 						a.cart-card__btn

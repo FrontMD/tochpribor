@@ -6,8 +6,25 @@
     }
 
     &__media {
-        flex: 0 0 50%;
-        max-width: 50%;
+        flex: 0 0 40.5%;
+        max-width: 40.5%;
+
+    }
+
+    &__body {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 32px;
+    }
+
+    &__side {
+        flex: 0 0 324px;
+    }
+
+    &__cart svg {
+        width: 24px;
+        height: 24px;
     }
 
 }

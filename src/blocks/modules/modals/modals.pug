@@ -41,20 +41,32 @@ noindex
                     })
                 .quick-view__grid
                     .quick-view__photo
-                        .quick-view__tags
-                            .quick-view__tagblock
-                                .quick-view__tag.quick-view__tag--green
-                                    img(src="img/catalog/check_icon.svg")
-                                    | В наличии
-                            .quick-view__tagblock
-                                .quick-view__tag.quick-view__tag--blue Новинка
-                            .quick-view__tagblock
-                                .quick-view__tag.quick-view__tag--red Скидка
-                            .quick-view__tagblock.hovered
-                                .quick-view__tag.quick-view__tag--grey
-                                    img(src="img/catalog/arrow_circle.svg")
-                                    | Снято с производства
-                                .quick-view__note Товар больше не производится. Смотрите аналоги в карточке товара
+                        +product-tags({
+                            classes: 'quick-view__tags',
+                            tags: [
+                                {
+                                    img: 'img/catalog/check_icon.svg',
+                                    text: 'В наличии',
+                                    color: 'green'
+                                },
+                                {
+                                    img: '',
+                                    text: 'Новинка',
+                                    color: 'blue'
+                                },
+                                {
+                                    img: '',
+                                    text: 'Скидка',
+                                    color: 'red'
+                                },
+                                {
+                                    img: 'img/catalog/arrow_circle.svg',
+                                    text: 'Снято с производства',
+                                    note: 'Товар больше не производится. Смотрите аналоги в карточке товара',
+                                    color: 'grey'
+                                }
+                            ]
+                        })
 
                         img(src="img/catalog/product_7.webp")
                     .quick-view__info
@@ -108,9 +120,13 @@ noindex
                                 })
                     .quick-view__controls
                         .quick-view__order
-                            .quick-view__prices
-                                .quick-view__price 550 000 ₽
-                                .quick-view__price.quick-view__price--old 680 000 ₽
+                            +product-price({
+                                classes: 'quick-view__prices',
+                                price: '550 000 ₽',
+                                oldPrice: '680 000 ₽',
+                                vMode: 'horizontal',
+                                size: '32'
+                            })
                             +btn({
                                 name: 'Подробнее о товаре',
                                 size: 'full',

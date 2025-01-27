@@ -44,6 +44,66 @@ block content
 						size: '53',
 						text: 'Универсальная испытательная машина ТРМ-О 0,1 А1 Tochline'
 					})
+					.product-intro__controls
+						+btn({
+							name: 'Сравнить',
+							icon: 'compare_2',
+							cMode: 'noborder',
+							size: 'link'
+						})
+						+btn({
+							name: 'Поделиться',
+							icon: 'share',
+							cMode: 'noborder',
+							size: 'link'
+						})
+					.product-intro__body
+						.product-intro__main
+						.product-intro__side
+							.product-intro__order
+								+product-price({
+									price: '550 000 ₽',
+									oldPrice: '680 000 ₽',
+									vMode: 'horizontal',
+									size: '32'
+								})
+								+product-tags({
+									tags: [
+										{
+											img: 'img/catalog/check_icon.svg',
+											text: 'В наличии',
+											color: 'green'
+										},
+										{
+											img: '',
+											text: 'Новинка',
+											color: 'blue'
+										},
+										{
+											img: '',
+											text: 'Скидка',
+											color: 'red'
+										}
+									]
+								})
+								+btn({
+									classes: 'product-intro__cart',
+									name: 'В корзину',
+									size: 'full',
+									cMode: 'red',
+									icon: 'basket',
+								})
+								+btn({
+									name: 'Запросить коммерческое предложение',
+									size: 'full',
+									cMode: 'transparent-red'
+								})
+								+btn({
+									name: 'Задать вопрос',
+									size: 'full',
+									cMode: 'grey',
+									icon: 'question'
+								})
 
 		.sidebar-layout
 			.sidebar-layout__content

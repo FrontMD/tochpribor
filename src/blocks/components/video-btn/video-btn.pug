@@ -1,0 +1,25 @@
+-
+    const defaultVideoBtnProps = {
+        classes: '',
+        video: '',
+        poster: ''
+    }
+
+mixin video-btn(props = defaultVideoProps)
+    -
+        const checkProps = {
+            classes: props.classes ? props.classes : defaultVideoBtnProps.classes,
+            video: props.video ? props.video : defaultVideoBtnProps.video,
+            poster: props.poster ? props.poster : defaultVideoBtnProps.poster,
+        }
+
+    a.video-btn(class= checkProps.classes href= checkProps.video data-type="iframe" data-js='videoBtn' data-fancybox)
+        span.video-btn__poster(data-js='videoBtnPoster')
+            img(src=checkProps.poster alt="")
+        span.video-btn__play(data-js="videoBtnPlay")
+            svg
+                use(xlink:href=`img/sprites/sprite.svg#play_2`)
+
+
+    // Если видео не по прямой ссылке а с VK Видео, то ссылке добавить data-type="iframe" а в href указать ссылку из iframe встраивания, который даёт ВК
+    // Например <a class="video-btn" href="https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1" data-type="iframe" data-js='videoBtn' data-fancybox>...</a>

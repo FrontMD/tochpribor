@@ -1,0 +1,25 @@
+-
+    const defaultProductTagsProps = {
+        classes: '',
+        tags: []
+    }
+
+mixin product-tags(props = defaultProductTagsProps)
+    -
+        const checkProps = {
+            classes: props.classes ? props.classes : defaultProductTagsProps.classes,
+            tags: props.tags ? props.tags : defaultProductTagsProps.tags,
+        }
+
+    .product-tags(class=checkProps.classes)
+        - let tagsCounter = 0
+            - while (tagsCounter < checkProps.tags.length)
+                - let currentTag = checkProps.tags[tagsCounter]
+                .product-tags__tagblock(class= `${currentTag.note ? 'hovered' : ''}`)
+                    .product-tags__tag(class= `product-tags__tag--${currentTag.color}`)
+                        - if(currentTag.img.length > 0)
+                            img(src= currentTag.img)
+                        != currentTag.text
+                    -if(currentTag.note)
+                        .product-tags__note!= currentTag.note
+                - tagsCounter++
