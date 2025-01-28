@@ -806,6 +806,14 @@ body {
 			background-color: $c-bg;
 			border-radius: 2px;
 		}
+
+		&:first-child {
+			margin-top: 0;
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
 	}
 
 	.text-flex-block {

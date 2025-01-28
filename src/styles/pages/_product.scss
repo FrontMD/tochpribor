@@ -98,4 +98,143 @@
             }
         }
     }
+
+    &__docs {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+    }
+}
+
+.product-sidebar {
+    &__title {
+        margin-top: 8px;
+        margin-bottom: 24px;
+    }
+
+    &__cards {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        align-items: stretch;
+    }
+}
+
+.p-news-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 32px;
+    min-height: 230px;
+    padding: 12px 12px 20px;
+    background-color: $c-white;
+    color: $c-white;
+    border-radius: 4px;
+    overflow: hidden;
+
+    &__link {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 7;
+    }
+
+    &__bg {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.244) 0%, rgba(0, 0, 0, 0.61) 100%);
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__header {
+        position: relative;
+        z-index: 3;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 16px;
+    }
+
+    &__date {
+        width: fit-content;
+        background-color: #A0A09D;
+        padding: 2px 6px;
+        border-radius: 2px;
+        font-size: 12px;
+        line-height: 1.4em;
+    }
+
+    &__btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $c-white;
+        width: 32px;
+        height: 32px;
+        border: solid 1px $c-bg;
+        color: $c-accent-light;
+        transition: all $tr-time linear;
+
+        svg {
+            width: 16px;
+            height: 16px;
+        }
+    }
+
+    &__title {
+        position: relative;
+        z-index: 3;
+        font-size: 20px;
+        line-height: 1.1em;
+        letter-spacing: -0.01em;
+        transition: color $tr-time linear;
+    }
+
+    &--white {
+        color: $c-text;
+    }
+
+    &--white &__date {
+        background-color: $c-input-bg;
+    }
+
+    &:hover {
+
+        .p-news-card__btn {
+            border-color: $c-accent-hover;
+            color: $c-accent-hover;
+        }
+
+        .p-news-card__title {
+            color: $c-bg;
+        }
+    }
+
+    &--white:hover {
+        .p-news-card__title {
+            color: $c-accent-hover;
+        }
+    }
 }

@@ -150,17 +150,101 @@ block content
 												td 770
 
 							.tabs-block__slide(data-js="tabsBlockSlide")
+								.product-detailed__docs
+									+download-btn({
+										classes: '',
+										img: 'img/docs-type/pdf.svg',
+										name: 'Свидетельство об утверждении типа средств измерений ОС.С. 28.070.А №75160',
+										size: '3,5 Мб'
+									})
+									+download-btn({
+										classes: '',
+										img: 'img/docs-type/pdf.svg',
+										name: 'Методика поверки',
+										size: '12,5 Мб'
+									})
+									+download-btn({
+										classes: '',
+										img: 'img/docs-type/pdf.svg',
+										name: 'Разрешение на применение Знака соответствия',
+										size: '1 Мб'
+									})
+									+download-btn({
+										classes: '',
+										img: 'img/docs-type/pdf.svg',
+										name: 'Патент на изобретение №2818547',
+										size: '88 Мб'
+									})
+									+download-btn({
+										classes: '',
+										img: 'img/docs-type/pdf.svg',
+										name: 'Свидетельство об утверждении типа средств измерений ОС.С. 28.070.А №75160 ОС.С. 28.070.А  ОС.С. 28.070.А  ОС.С. 28.070.А',
+										size: '43,9 Мб'
+									})
+									+download-btn({
+										classes: '',
+										img: 'img/docs-type/pdf.svg',
+										name: 'Свидетельство об утверждении типа средств измерений ОС.С. 28.070.А №75160',
+										size: '2,5 Мб'
+									})
+
 							.tabs-block__slide(data-js="tabsBlockSlide")
 
 			.sidebar-layout__sidebar
 				.section.section--full.section--transparent.product-sidebar
 					.product-sidebar__container
+						.product-sidebar__title.title--32 Пишем об этом товаре здесь
+						.product-sidebar__cards
+							.p-news-card
+								a.p-news-card__link(href="javascript:void(0)")
+								.p-news-card__bg 
+									img(class="lazyload" src="img/lazy-placeholder.webp" data-src="/img/news/news_21.webp" alt="")
+								.p-news-card__header
+									.p-news-card__date 20.10.2024
+								.p-news-card__title Возрождение уникального ивановского завода - Точприбор
+							.p-news-card.p-news-card--white
+								a.p-news-card__link(href="javascript:void(0)")
+								.p-news-card__header
+									.p-news-card__date 20.10.2024
+									.p-news-card__btn
+										svg 
+											use(xlink:href=`img/sprites/sprite.svg#arrow_enter`)
+								.p-news-card__title Группа компаний «Точприбор» получила сертификат менеджмента качества ISO 9001:2015 - Точприбор
+							.p-news-card.p-news-card--white
+								a.p-news-card__link(href="javascript:void(0)")
+								.p-news-card__header
+									.p-news-card__date 20.10.2024
+									.p-news-card__btn
+										svg 
+											use(xlink:href=`img/sprites/sprite.svg#arrow_enter`)
+								.p-news-card__title Группа компаний «Точприбор» получила сертификат менеджмента качества ISO 9001:2015 - Точприбор
+							+btn({
+								name: 'Смотреть все',
+								cMode: 'light-red'
+							})
+
 
 		section.section.section--full.product-accry
 			.section__container
+				+title({
+					classes: 'product-accry__title',
+					tag: 'h2',
+					size: '53',
+					text: 'Аксессуары для испытательных машин',
+					sup: ''
+				})
+				+btn({
+					name: 'Все аксессуары',
+					cMode: 'transparent-red',
+					icon: 'arrow_enter',
+					size: '272'
+				})
 
-		section.section.section--full.product-accry
-			.section__container
+				+cards-slider({
+					classes: 'product-accry__slider',
+					title: '',
+					slidesCount: '4'
+				})
 
 		+help-section
 

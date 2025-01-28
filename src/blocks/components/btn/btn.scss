@@ -98,6 +98,30 @@
         }
     }
 
+    &--light-red {
+        color: $c-accent;
+        background-color: $c-accent-light2;
+        border: 1px solid $c-accent;
+        transition: all $tr-time;
+        border-radius: 4px;
+
+        .btn__note,
+        svg {
+            color: $c-accent;
+            transition: all $tr-time;
+        }
+
+        &:hover {
+            border-color: $c-accent-hover;
+            color: $c-accent-hover;
+
+            .btn__note,
+            svg {
+                color: $c-accent-hover;
+            }
+        }
+    }
+
     &--grey {
         color: $c-text;
         background-color: $c-border;
@@ -170,6 +194,12 @@
         width: fit-content;
         min-height: 48px;
         min-width: 246px;
+    }
+
+    &--272 {
+        width: fit-content;
+        min-height: 48px;
+        min-width: 272px;
     }
 
 
