@@ -28,6 +28,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        gap: 12px;
         padding: 7px 24px 10px;
         cursor: pointer;
         font-size: 18px;
@@ -36,6 +37,11 @@
         color: $c-text;
         transition: color $tr-time linear;
         white-space: nowrap;
+
+        svg {
+            width: 24px;
+            height: 24px;
+        }
 
         @include max(tablet) {
             padding: 7px 15px 10px;
@@ -86,5 +92,18 @@
         &.active {
             display: block;
         }
+    }
+}
+
+.tabs-block {
+    &--section &__list {
+        border-top: none;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    &--section &__slides {
+        margin-top: 32px;
+        padding: 0 32px;
     }
 }

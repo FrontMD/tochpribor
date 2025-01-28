@@ -1,0 +1,101 @@
+.product-detailed {
+    &__container.section__container {
+        padding-top: 0;
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+    &__desc.text-editor {
+        hr {
+            margin: 20px 0;
+        }
+
+        a {
+            position: relative;
+            display: inline-block;
+            font-size: 12px;
+            line-height: 1.4em;
+            padding: 2px 24px 2px 6px;
+            background-color: $c-input-bg;
+            transition: color $tr-time linear;
+
+            &::after {
+                content: '';
+                width: 16px;
+                height: 16px;
+                position: absolute;
+                top: 2px;
+                right: 4px;
+                background-image: url("data:image/svg+xml,%3Csvg width='16' height='17' viewBox='0 0 16 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.00016 11.8333L9.3335 8.49992L6.00016 5.16659' stroke='%234E4E4E' stroke-linecap='square'/%3E%3C/svg%3E");
+                transition: background-image $tr-time linear;
+            }
+
+            &:hover {
+                color: $c-accent-hover;
+
+                &::after {
+                    background-image: url("data:image/svg+xml,%3Csvg width='16' height='17' viewBox='0 0 16 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.00016 11.8333L9.3335 8.49992L6.00016 5.16659' stroke='%238E0001' stroke-linecap='square'/%3E%3C/svg%3E");
+                }
+            }
+        }
+    }
+
+    &__tech.text-editor {
+        table {
+            min-width: auto;
+
+            tr th,
+            tr td {
+                border-radius: 0 !important;
+                background-color: transparent;
+            }
+
+            thead {
+                padding-bottom: 17px;
+            }
+
+            thead th,
+            thead td {
+                border-width: 0;
+                padding: 7px 5px 19px;
+            }
+
+            thead th {
+                font-size: 20px;
+                line-height: 1.1em;
+                letter-spacing: -0.01em;
+                font-weight: 400;
+                color: $c-text;
+            }
+
+            thead th b {
+                display: inline-block;
+                font-size: 16px;
+                line-height: 1.4em;
+                padding: 1px 4px;
+                border: solid 1px $c-bg;
+                border-radius: 4px;
+                font-weight: 400;
+            }
+
+            tbody th,
+            tbody td {
+                border-width: 0 0 1px 0;
+                padding: 14px 5px 7px;
+                font-size: 16px;
+                font-weight: 400;
+            }
+
+            tr th:first-child,
+            tr td:first-child {
+                padding-left: 0;
+                padding-right: 35px;
+            }
+
+            tr th:last-child,
+            tr td:last-child {
+                padding-right: 0;
+            }
+        }
+    }
+}

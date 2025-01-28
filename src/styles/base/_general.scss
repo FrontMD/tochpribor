@@ -718,10 +718,8 @@ body {
 
 	table {
 		min-width: 100%;
-		border-color: red;
 		border-radius: 40px;
 		margin-bottom: 32px;
-		overflow-x: auto;
 
 		@include max(mobile) {
 			margin: 24px auto;
@@ -782,6 +780,32 @@ body {
 			border-width: 0 !important;
 		}
 
+	}
+
+	.text-scroll-h {
+		width: 100%;
+		overflow-x: auto;
+		margin-bottom: 26px;
+		padding-bottom: 6px;
+
+		@include max(mobile) {
+			margin: 24px auto 18px;
+		}
+
+		&::-webkit-scrollbar {
+			width: 3px;
+			height: 3px;
+		}
+
+		&::-webkit-scrollbar-track {
+			background-color: $c-text-light;
+			border-radius: 2px;
+		}
+
+		&::-webkit-scrollbar-thumb {
+			background-color: $c-bg;
+			border-radius: 2px;
+		}
 	}
 
 	.text-flex-block {
@@ -854,6 +878,18 @@ body {
 
 		&__content {
 			flex: 1 1 auto;
+		}
+	}
+
+	.text-highlight {
+		max-width: 680px;
+		padding: 12px;
+		border-radius: 4px;
+		background-color: $c-input-bg;
+		margin-bottom: 1.4em;
+
+		ul li+li {
+			margin-top: 1.375em;
 		}
 	}
 }

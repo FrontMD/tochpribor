@@ -324,17 +324,127 @@
         <div class="sidebar-layout">
           <div class="sidebar-layout__content">
             <section class="section section--full product-detailed">
-              <div class="section__container">
-                    <div class="tabs-block" data-js="tabsBlock">
+              <div class="section__container product-detailed__container">
+                    <div class="tabs-block tabs-block--section" data-js="tabsBlock">
                       <div class="tabs-block__tabs scrollbar scrollbar--small">
                         <div class="tabs-block__list">
-                          <div class="tabs-block__tab active" data-index="0" data-js="tabsBlockTab">Описание</div>
-                          <div class="tabs-block__tab" data-index="1" data-js="tabsBlockTab">Технические характеристики</div>
-                          <div class="tabs-block__tab" data-index="2" data-js="tabsBlockTab">Документы</div>
-                          <div class="tabs-block__tab" data-index="3" data-js="tabsBlockTab">Доставка с ДЛ</div>
+                          <div class="tabs-block__tab active" data-index="0" data-js="tabsBlockTab">
+                            <svg>
+                              <use xlink:href="img/sprites/sprite.svg#info"></use>
+                            </svg><span>Описание</span>
+                          </div>
+                          <div class="tabs-block__tab" data-index="1" data-js="tabsBlockTab">
+                            <svg>
+                              <use xlink:href="img/sprites/sprite.svg#gear"></use>
+                            </svg><span>Технические характеристики</span>
+                          </div>
+                          <div class="tabs-block__tab" data-index="2" data-js="tabsBlockTab">
+                            <svg>
+                              <use xlink:href="img/sprites/sprite.svg#file"></use>
+                            </svg><span>Документы</span>
+                          </div>
+                          <div class="tabs-block__tab" data-index="3" data-js="tabsBlockTab">
+                            <svg>
+                              <use xlink:href="img/sprites/sprite.svg#truck"></use>
+                            </svg><span>Доставка с ДЛ</span>
+                          </div>
                         </div>
                       </div>
                       <div class="tabs-block__slides">
+                        <div class="tabs-block__slide active" data-js="tabsBlockSlide">
+                          <div class="product-detailed__desc text-editor">
+                            <h3>Особенности линейки</h3>
+                            <ul> 
+                              <li>Эргономичный пульт управления;</li>
+                              <li>Управление машиной и испытаниями осуществляется через программу с ПК или ноутбука;</li>
+                              <li>Зарегистрированная торговая марка, защита от подделок;</li>
+                              <li>Точность позиционирования траверсы;</li>
+                              <li>Плавный ход захватов и приспособлений</li>
+                            </ul>
+                            <hr>
+                            <h3>Заводская комплектация</h3>
+                            <ul>
+                              <li>Высокоточная синхронная система управления перемещением – 1 компл. <a href="javascript:void(0)">Фото</a></li>
+                              <li>Высокоточная ШВП – 1шт. <a href="javascript:void(0)">Фото</a></li>
+                              <li>Прецизионная измерительная система – 1компл. <a href="javascript:void(0)">Фото</a></li>
+                              <li>Высокоточный фотоэлектрический энкодер – 1шт. <a href="javascript:void(0)">Фото</a></li>
+                              <li>Цифровая система регулировки и контроля скорости – 1 компл. <a href="javascript:void(0)">Фото</a></li>
+                              <li>Высокоточный датчик нагрузки – 1шт. <a href="javascript:void(0)">Фото</a></li>
+                              <li>Программное обеспечение – 1 компл. <a href="javascript:void(0)">Фото</a></li>
+                              <li>Универсальные тисковые захваты – 1 компл. <a href="javascript:void(0)">Фото</a></li>
+                              <li>Губки-вкладыши– 2 компл. <a href="javascript:void(0)">Фото</a></li>
+                              <li>Универсальные тисковые захваты – 1 компл. <a href="javascript:void(0)">Фото</a></li>
+                              <li>Плиты для испытания на сжатие – 1 компл. <a href="javascript:void(0)">Фото</a></li>
+                              <li>ПК или ноутбук – 1 компл. <a href="javascript:void(0)">Фото</a></li>
+                            </ul>
+                            <div class="text-highlight">
+                              <h3>Заводская комплектация</h3>
+                              <ul>
+                                <li>Изменение НПИ в пределах от 0,1 до 5 кН не приведёт к изменению цены на машину (БЕСПЛАТНО), вместе с НПИ меняется НмПИ.</li>
+                                <li>Возможно оснащение машины доп. датчиком для понижения минимального значения НмПИ и повышения точности на минимальных нагрузках (доп. датчик + 50 т.р.)</li>
+                                <li>Возможно увеличения рабочего хода, максимального расстояния между захватами до = не менее 1200 мм (+ 160 т.р.)</li>
+                                <li>По желанию заказчика и по предварительной договорённости, приёмка оборудования возможна на производстве, до момента отгрузки.</li>
+                                <li>По желанию заказчика, возможно оснащение машины доп. захватами и приспособлениями: на растяжения, на сжатие, на 3х опорный изгиб, на прокол, экстензометрами, системами температурных испытаний и т.д.</li>
+                              </ul>
+                            </div>
+                            <h3>Габариты рабочей зоны <a href="javascript:void(0)">Фото</a></h3>
+                            <h3>Диаграмма мощности двигателя <a href="javascript:void(0)">Фото</a></h3>
+                          </div>
+                        </div>
+                        <div class="tabs-block__slide" data-js="tabsBlockSlide">
+                          <div class="product-detailed__tech text-editor">
+                            <table>
+                              <thead>
+                                <tr>
+                                  <th>Характеристики модификаций</th>
+                                  <th><b>ТРМ-О 0,1</b></th>
+                                  <th><b>ТРМ-О 0,2</b></th>
+                                  <th><b>ТРМ-О 0,3</b></th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <th>Конструктивное исполнение</th>
+                                  <td>настольное</td>
+                                  <td>настольное</td>
+                                  <td>настольное</td>
+                                </tr>
+                                <tr>
+                                  <th>Напряжение питания</th>
+                                  <td>220В, 50Гц</td>
+                                  <td>220В, 50Гц</td>
+                                  <td>220В, 50Гц</td>
+                                </tr>
+                                <tr>
+                                  <th>Мин. нагрузка, Н</th>
+                                  <td>0,2</td>
+                                  <td>0,2</td>
+                                  <td>0,2</td>
+                                </tr>
+                                <tr>
+                                  <th>Макс. нагрузка, Н</th>
+                                  <td>100</td>
+                                  <td>100</td>
+                                  <td>100</td>
+                                </tr>
+                                <tr>
+                                  <th>Погрешность по нагрузке на данном диапазоне</th>
+                                  <td>±0.5%</td>
+                                  <td>±0.5%</td>
+                                  <td>±0.5%</td>
+                                </tr>
+                                <tr>
+                                  <th>Ход траверсы, мм</th>
+                                  <td>770</td>
+                                  <td>770</td>
+                                  <td>770</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                        <div class="tabs-block__slide" data-js="tabsBlockSlide"></div>
+                        <div class="tabs-block__slide" data-js="tabsBlockSlide"></div>
                       </div>
                     </div>
               </div>

@@ -38,23 +38,119 @@ block content
 		.sidebar-layout
 			.sidebar-layout__content
 				section.section.section--full.product-detailed
-					.section__container
+					.section__container.product-detailed__container
 						+tabs-block({
+							classes: 'tabs-block--section',
 							tabs: [
 								{
 									name: 'Описание',
+									icon: 'info'
 								},
 								{
 									name: 'Технические характеристики',
+									icon: 'gear'
 								},
 								{
 									name: 'Документы',
+									icon: 'file'
 								},
 								{
 									name: 'Доставка с ДЛ',
+									icon: 'truck'
 								}
 							],
 						})
+							.tabs-block__slide.active(data-js="tabsBlockSlide")
+								.product-detailed__desc.text-editor
+									h3 Особенности линейки
+
+									ul 
+										li Эргономичный пульт управления;
+										li Управление машиной и испытаниями осуществляется через программу с ПК или ноутбука;
+										li Зарегистрированная торговая марка, защита от подделок;
+										li Точность позиционирования траверсы;
+										li Плавный ход захватов и приспособлений
+
+									hr
+
+									h3 Заводская комплектация
+
+									ul
+										li Высокоточная синхронная система управления перемещением – 1 компл. <a href="javascript:void(0)">Фото</a>
+										li Высокоточная ШВП – 1шт. <a href="javascript:void(0)">Фото</a>
+										li Прецизионная измерительная система – 1компл. <a href="javascript:void(0)">Фото</a>
+										li Высокоточный фотоэлектрический энкодер – 1шт. <a href="javascript:void(0)">Фото</a>
+										li Цифровая система регулировки и контроля скорости – 1 компл. <a href="javascript:void(0)">Фото</a>
+										li Высокоточный датчик нагрузки – 1шт. <a href="javascript:void(0)">Фото</a>
+										li Программное обеспечение – 1 компл. <a href="javascript:void(0)">Фото</a>
+										li Универсальные тисковые захваты – 1 компл. <a href="javascript:void(0)">Фото</a>
+										li Губки-вкладыши– 2 компл. <a href="javascript:void(0)">Фото</a>
+										li Универсальные тисковые захваты – 1 компл. <a href="javascript:void(0)">Фото</a>
+										li Плиты для испытания на сжатие – 1 компл. <a href="javascript:void(0)">Фото</a>
+										li ПК или ноутбук – 1 компл. <a href="javascript:void(0)">Фото</a>
+
+									.text-highlight
+										h3 Заводская комплектация
+
+										ul
+											li Изменение НПИ в пределах от 0,1 до 5 кН не приведёт к изменению цены на машину (БЕСПЛАТНО), вместе с НПИ меняется НмПИ.
+											li Возможно оснащение машины доп. датчиком для понижения минимального значения НмПИ и повышения точности на минимальных нагрузках (доп. датчик + 50 т.р.)
+											li Возможно увеличения рабочего хода, максимального расстояния между захватами до = не менее 1200 мм (+ 160 т.р.)
+											li По желанию заказчика и по предварительной договорённости, приёмка оборудования возможна на производстве, до момента отгрузки.
+											li По желанию заказчика, возможно оснащение машины доп. захватами и приспособлениями: на растяжения, на сжатие, на 3х опорный изгиб, на прокол, экстензометрами, системами температурных испытаний и т.д.
+
+									h3 Габариты рабочей зоны <a href="javascript:void(0)">Фото</a>
+									h3 Диаграмма мощности двигателя <a href="javascript:void(0)">Фото</a>
+
+
+							.tabs-block__slide(data-js="tabsBlockSlide")
+								.product-detailed__tech.text-editor
+									table
+										thead
+											tr
+												th Характеристики модификаций
+												th
+													b ТРМ-О 0,1
+												th
+													b ТРМ-О 0,2
+												th
+													b ТРМ-О 0,3
+
+										tbody
+											tr
+												th Конструктивное исполнение
+												td настольное
+												td настольное
+												td настольное
+
+											tr
+												th Напряжение питания
+												td 220В, 50Гц
+												td 220В, 50Гц
+												td 220В, 50Гц
+											tr
+												th Мин. нагрузка, Н
+												td 0,2
+												td 0,2
+												td 0,2
+											tr
+												th Макс. нагрузка, Н
+												td 100
+												td 100
+												td 100
+											tr
+												th Погрешность по нагрузке на данном диапазоне
+												td ±0.5%
+												td ±0.5%
+												td ±0.5%
+											tr
+												th Ход траверсы, мм
+												td 770
+												td 770
+												td 770
+
+							.tabs-block__slide(data-js="tabsBlockSlide")
+							.tabs-block__slide(data-js="tabsBlockSlide")
 
 			.sidebar-layout__sidebar
 				.section.section--full.section--transparent.product-sidebar

@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     fancyboxInit();
     simpleMapInit();
     compareSliderInit();
+    textTableScrollInit();
 })
 
 // Блокировка скролла при открытии модалок
@@ -378,3 +379,21 @@ function compareSliderInit() {
         })
     })
 } 
+
+// горизонтальный скролл таблиц в текстовом редакторе
+function textTableScrollInit() {
+    const tables = document.querySelectorAll(".text-editor table")
+
+    if(tables.length < 1) return
+    
+    tables.forEach(table => {
+        if(table.parentElement.closest('table') === null) {
+            const wrapper = document.createElement('div');
+            wrapper.classList.add('text-scroll-h')
+
+            table.parentNode.insertBefore(wrapper, table);
+            wrapper.appendChild(table);
+        }
+        
+    })
+}
