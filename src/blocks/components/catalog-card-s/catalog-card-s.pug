@@ -1,0 +1,56 @@
+-
+    const defaultCatalogCardSProps = {
+        classes: '',
+        title: '',
+        image: '',
+        tags: [],
+        prices: []
+    }
+
+mixin catalog-card-s(props = defaultCatalogCardSProps)
+    -
+        const checkProps = {
+            classes: props.classes ? props.classes : defaultCatalogCardSProps.classes,
+            title: props.title ? props.title : defaultCatalogCardSProps.title,
+            image: props.image ? props.image : defaultCatalogCardSProps.image,
+            tags: props.tags ? props.tags : defaultCatalogCardSProps.tags,
+            prices: props.prices ? props.prices : defaultCatalogCardSProps.prices
+        }
+
+    .catalog-card-s(class= checkProps.classes)&attributes(attributes)
+        a.catalog-card-s__link(href="javascript:void(0);")
+        .catalog-card-s__header
+            - if(checkProps.tags.length > 0)
+                +product-tags({
+                    classes: 'catalog-card-s__tags',
+                    tags: checkProps.tags
+                })
+        .catalog-card-s__body
+            .catalog-card-s__photo
+                img(src= checkProps.image alt= checkProps.title)
+                .catalog-card-s__fake
+                    svg 
+                        use(xlink:href=`img/sprites/sprite.svg#arrow_enter`)
+                    span Подробнее
+            .catalog-card-s__title!= checkProps.title
+        - if(checkProps.prices.length > 0)
+            +product-price({
+                classes: 'catalog-card-s__prices',
+                price: checkProps.prices[0],
+                oldPrice: checkProps.prices[1],
+                vMode: 'horizontal',
+                size: '20'
+            })
+
+        .catalog-card-s__footer
+            +btn({
+                name: 'Заказать в 1 клик',
+                cMode: 'red'
+            })
+            +btn({
+                classes: 'catalog-card-s__cart',
+                size: 'icon',
+                cMode: 'transparent-red',
+                icon: 'basket',
+                iconPos: 'left'
+            })

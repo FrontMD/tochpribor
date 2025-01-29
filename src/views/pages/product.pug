@@ -44,24 +44,25 @@ block content
 							tabs: [
 								{
 									name: 'Описание',
-									icon: 'info'
+									icon: 'info',
+
 								},
 								{
 									name: 'Технические характеристики',
-									icon: 'gear'
+									icon: 'gear',
 								},
 								{
 									name: 'Документы',
-									icon: 'file'
+									icon: 'file',
 								},
 								{
 									name: 'Доставка с ДЛ',
-									icon: 'truck'
+									icon: 'truck',
 								}
 							],
 						})
 							.tabs-block__slide.active(data-js="tabsBlockSlide")
-								.product-detailed__desc.text-editor
+								.product-detailed__desc.text-editor#lineDesc
 									h3 Особенности линейки
 
 									ul 
@@ -73,21 +74,45 @@ block content
 
 									hr
 
-									h3 Заводская комплектация
+									h3#completeSet Заводская комплектация
 
 									ul
-										li Высокоточная синхронная система управления перемещением – 1 компл. <a href="javascript:void(0)">Фото</a>
-										li Высокоточная ШВП – 1шт. <a href="javascript:void(0)">Фото</a>
-										li Прецизионная измерительная система – 1компл. <a href="javascript:void(0)">Фото</a>
-										li Высокоточный фотоэлектрический энкодер – 1шт. <a href="javascript:void(0)">Фото</a>
-										li Цифровая система регулировки и контроля скорости – 1 компл. <a href="javascript:void(0)">Фото</a>
-										li Высокоточный датчик нагрузки – 1шт. <a href="javascript:void(0)">Фото</a>
-										li Программное обеспечение – 1 компл. <a href="javascript:void(0)">Фото</a>
-										li Универсальные тисковые захваты – 1 компл. <a href="javascript:void(0)">Фото</a>
-										li Губки-вкладыши– 2 компл. <a href="javascript:void(0)">Фото</a>
-										li Универсальные тисковые захваты – 1 компл. <a href="javascript:void(0)">Фото</a>
-										li Плиты для испытания на сжатие – 1 компл. <a href="javascript:void(0)">Фото</a>
-										li ПК или ноутбук – 1 компл. <a href="javascript:void(0)">Фото</a>
+										li 
+											!= 'Высокоточная синхронная система управления перемещением – 1 компл. <a href="img/catalog/product_1.webp" data-fancybox="group1">Фото</a>'
+											.text-gallery-list
+												a(href="img/catalog/product_2.webp" data-fancybox="group1")
+										li 
+											!= 'Высокоточная ШВП – 1шт. <a href="img/catalog/product_3.webp" data-fancybox="group2">Фото</a>'
+											.text-gallery-list
+												a(href="img/catalog/product_4.webp" data-fancybox="group2")
+												a(href="img/catalog/product_5.webp" data-fancybox="group2")
+												a(href="img/catalog/product_6.webp" data-fancybox="group2")
+												a(href="img/catalog/product_15.webp" data-fancybox="group2")
+												a(href="img/catalog/product_16.webp" data-fancybox="group2")
+										li 
+											!= 'Прецизионная измерительная система – 1компл.'
+										li 
+											!= 'Высокоточный фотоэлектрический энкодер – 1шт.'
+										li 
+											!= 'Цифровая система регулировки и контроля скорости – 1 компл.'
+										li 
+											!= 'Высокоточный датчик нагрузки – 1шт.'
+										li 
+											!= 'Программное обеспечение – 1 компл. <a href="img/catalog/product_7.webp" data-fancybox="group3">Фото</a>'
+											.text-gallery-list
+												a(href="img/catalog/product_8.webp" data-fancybox="group3")
+												a(href="img/catalog/product_9.webp" data-fancybox="group3")
+												a(href="img/catalog/product_10.webp" data-fancybox="group3")
+										li 
+											!= 'Универсальные тисковые захваты – 1 компл.'
+										li 
+											!= 'Губки-вкладыши– 2 компл.'
+										li 
+											!= 'Универсальные тисковые захваты – 1 компл.'
+										li 
+											!= 'Плиты для испытания на сжатие – 1 компл.'
+										li 
+											!= 'ПК или ноутбук – 1 компл.'
 
 									.text-highlight
 										h3 Заводская комплектация
@@ -99,13 +124,19 @@ block content
 											li По желанию заказчика и по предварительной договорённости, приёмка оборудования возможна на производстве, до момента отгрузки.
 											li По желанию заказчика, возможно оснащение машины доп. захватами и приспособлениями: на растяжения, на сжатие, на 3х опорный изгиб, на прокол, экстензометрами, системами температурных испытаний и т.д.
 
-									h3 Габариты рабочей зоны <a href="javascript:void(0)">Фото</a>
-									h3 Диаграмма мощности двигателя <a href="javascript:void(0)">Фото</a>
+									h3 Габариты рабочей зоны <a href="img/catalog/product_11.webp"  data-fancybox="group4">Фото</a>
+									.text-gallery-list
+										a(href="img/catalog/product_12.webp" data-fancybox="group4")
+									h3 Диаграмма мощности двигателя <a href="img/catalog/product_13.webp"  data-fancybox="group5">Фото</a>
+									.text-gallery-list
+										a(href="img/catalog/product_14.webp" data-fancybox="group5")
+										a(href="img/catalog/product_17.webp" data-fancybox="group5")
 
 
 							.tabs-block__slide(data-js="tabsBlockSlide")
 								.product-detailed__tech.text-editor
 									table
+										// Если продукт без моделей, то убрать <thead>...</thead>
 										thead
 											tr
 												th Характеристики модификаций
@@ -150,7 +181,7 @@ block content
 												td 770
 
 							.tabs-block__slide(data-js="tabsBlockSlide")
-								.product-detailed__docs
+								.product-detailed__docs#productDocs
 									+download-btn({
 										classes: '',
 										img: 'img/docs-type/pdf.svg',
@@ -198,7 +229,7 @@ block content
 							.p-news-card
 								a.p-news-card__link(href="javascript:void(0)")
 								.p-news-card__bg 
-									img(class="lazyload" src="img/lazy-placeholder.webp" data-src="/img/news/news_21.webp" alt="")
+									img(class="lazyload" src="img/lazy-placeholder.webp" data-src="img/news/news_21.webp" alt="")
 								.p-news-card__header
 									.p-news-card__date 20.10.2024
 								.p-news-card__title Возрождение уникального ивановского завода - Точприбор
@@ -234,6 +265,7 @@ block content
 					sup: ''
 				})
 				+btn({
+					classes: 'product-accry__btn',
 					name: 'Все аксессуары',
 					cMode: 'transparent-red',
 					icon: 'arrow_enter',
@@ -245,8 +277,184 @@ block content
 					title: '',
 					slidesCount: '4'
 				})
+					.swiper-slide
+						+catalog-card-s({
+							title: 'Приспособление для определения прочности крепления ранта и стельки (до 3 кН)',
+							image: 'img/catalog/product_18.png',
+							tags: [
+								{
+									img: 'img/catalog/check_icon.svg',
+									text: 'В наличии',
+									color: 'green'
+								},
+								{
+									img: '',
+									text: 'Новинка',
+									color: 'blue'
+								},
+								{
+									img: '',
+									text: 'Скидка',
+									color: 'red'
+								}
+							],
+							prices: [
+								'550 000 ₽',
+								'680 000 ₽'
+							],
+						})
+					.swiper-slide
+						+catalog-card-s({
+							title: 'Самозажимной роликовый захват (до 1 кН)',
+							image: 'img/catalog/product_19.png',
+							tags: [
+								{
+									img: 'img/catalog/check_icon.svg',
+									text: 'В наличии',
+									color: 'green'
+								},
+								{
+									img: '',
+									text: 'Скидка',
+									color: 'red'
+								}
+							],
+							prices: [
+								'550 000 ₽',
+								'680 000 ₽'
+							],
+						})
 
-		+help-section
+					.swiper-slide
+						+catalog-card-s({
+							title: 'Цанговый захват для стальных канатов (до 600 кН)',
+							image: 'img/catalog/product_20.png',
+							tags: [
+								{
+									img: 'img/catalog/check_icon.svg',
+									text: 'В наличии',
+									color: 'green'
+								},
+								{
+									img: '',
+									text: 'Скидка',
+									color: 'red'
+								}
+							],
+							prices: [
+								'550 000 ₽',
+								'680 000 ₽'
+							],
+						})
 
+					.swiper-slide
+						+catalog-card-s({
+							title: 'Приспособление для определения прочности крепления ранта и стельки (до 3 кН)',
+							image: 'img/catalog/product_21.png',
+							tags: [
+								{
+									img: 'img/catalog/arrow_circle.svg',
+									text: 'Под заказ',
+									color: 'grey',
+									note: 'Изготавливаем по индивидуальному заказу'
+								}
+							],
+							prices: [
+								'550 000 ₽',
+								''
+							],
+						})
 
+					.swiper-slide
+						+catalog-card-s({
+							title: 'Приспособление для определения прочности крепления ранта и стельки (до 3 кН)',
+							image: 'img/catalog/product_18.png',
+							tags: [
+								{
+									img: 'img/catalog/check_icon.svg',
+									text: 'В наличии',
+									color: 'green'
+								},
+								{
+									img: '',
+									text: 'Новинка',
+									color: 'blue'
+								},
+								{
+									img: '',
+									text: 'Скидка',
+									color: 'red'
+								}
+							],
+							prices: [
+								'550 000 ₽',
+								'680 000 ₽'
+							],
+						})
+					.swiper-slide
+						+catalog-card-s({
+							title: 'Самозажимной роликовый захват (до 1 кН)',
+							image: 'img/catalog/product_19.png',
+							tags: [
+								{
+									img: 'img/catalog/check_icon.svg',
+									text: 'В наличии',
+									color: 'green'
+								},
+								{
+									img: '',
+									text: 'Скидка',
+									color: 'red'
+								}
+							],
+							prices: [
+								'550 000 ₽',
+								'680 000 ₽'
+							],
+						})
 
+					.swiper-slide
+						+catalog-card-s({
+							title: 'Цанговый захват для стальных канатов (до 600 кН)',
+							image: 'img/catalog/product_20.png',
+							tags: [
+								{
+									img: 'img/catalog/check_icon.svg',
+									text: 'В наличии',
+									color: 'green'
+								},
+								{
+									img: '',
+									text: 'Скидка',
+									color: 'red'
+								}
+							],
+							prices: [
+								'550 000 ₽',
+								'680 000 ₽'
+							],
+						})
+
+					.swiper-slide
+						+catalog-card-s({
+							title: 'Приспособление для определения прочности крепления ранта и стельки (до 3 кН)',
+							image: 'img/catalog/product_21.png',
+							tags: [
+								{
+									img: 'img/catalog/arrow_circle.svg',
+									text: 'Под заказ',
+									color: 'grey',
+									note: 'Изготавливаем по индивидуальному заказу'
+								}
+							],
+							prices: [
+								'550 000 ₽',
+								''
+							],
+						})
+
+		+help-section({
+			img: 'img/help_section_bg.webp',
+			title: 'Не нашли подходящий товар? <br>Поможем подобрать аналог',
+			btnText: 'Подобрать оборудование',
+		})

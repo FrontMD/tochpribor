@@ -25,6 +25,7 @@ section.section.product-intro
             .product-intro__body
                 .product-intro__main
                     +product-articles
+                    // Если продукт без моделей, то убрать <div class="product-intro__block">...</div>
                     .product-intro__block(data-js="productModelsBlock")
                         .product-intro__subtitle Модель
                         .product-intro__models(data-js="productModelsList")
@@ -73,19 +74,19 @@ section.section.product-intro
                         .product-intro__subtitle Применение
                         .product-intro__text Статические испытания образов из различных материалов на растяжение, сжатие, изгиб, сдвиг, срез, адгезию и прочее
                         .product-intro__links
-                            a.product-intro__link(href="javascript:void(0)") 
+                            a.product-intro__link(href="#lineDesc")
                                 span Особенности линейки
                                 svg
                                     use(xlink:href=`img/sprites/sprite.svg#arrow_angle`)
-                            a.product-intro__link(href="javascript:void(0)") 
+                            a.product-intro__link(href="#productDocs")
                                 span Документы
                                 svg
                                     use(xlink:href=`img/sprites/sprite.svg#arrow_angle`)
-                            a.product-intro__link(href="javascript:void(0)") 
+                            a.product-intro__link(href="#completeSet")
                                 span Оснащение поставки
                                 svg
                                     use(xlink:href=`img/sprites/sprite.svg#arrow_angle`)
-                            a.product-intro__link(href="javascript:void(0)") 
+                            a.product-intro__link(href="video/news.mp4" data-fancybox)
                                 span Видео
                                 svg
                                     use(xlink:href=`img/sprites/sprite.svg#arrow_angle`)

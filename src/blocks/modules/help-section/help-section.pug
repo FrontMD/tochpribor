@@ -3,9 +3,7 @@
         classes: '',
         img: '',
         title: '',
-        text: '',
         btnText: '',
-        isTransparent: false
     }
 
 mixin help-section(props= defaultHelpProps)
@@ -14,14 +12,30 @@ mixin help-section(props= defaultHelpProps)
             classes: props.classes ? props.classes : defaultHelpProps.classes,
             img: props.img ? props.img : defaultHelpProps.img,
             title: props.title ? props.title: defaultHelpProps.title,
-            text: props.text ? props.text : defaultHelpProps.text,
             btnText: props.btnText ? props.btnText : defaultHelpProps.btnText,
-            isTransparent: props.isTransparent ? props.isTransparent: defaultHelpProps.isTransparent
         }
 
         let transparentClass = checkProps.isTransparent === true ? ' section--transparent' : ''
 
     section.help-section.section.section--full(class= checkProps.classes + transparentClass)&attributes(attributes)
         .section__container
+            .help-section__content
+                .help-section__bg
+                    img(class="lazyload" src="img/lazy-placeholder" data-src= checkProps.img alt="")
+
+                +title({
+                    classes: 'help-section__title',
+                    tag: 'h2',
+                    size: '53',
+                    text: checkProps.title
+                })
+
+                +btn({
+                    classes: 'help-section__btn',
+                    name: checkProps.btnText,
+                    cMode: 'red',
+                    size: 'big',
+                    icon: 'arrow_enter'
+                })
 
 

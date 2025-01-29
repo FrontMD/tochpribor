@@ -56,7 +56,7 @@
     &__info {}
 
     &__title {
-        max-width: 380px;
+        max-width: 520px;
 
         @include max(mobile) {
             max-width: 100%;

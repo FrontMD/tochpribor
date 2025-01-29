@@ -62,4 +62,24 @@
             font-size: 22px;
         }
     }
+
+    &--20 {
+        font-size: 20px;
+
+        @include max(laptop) {
+            font-size: 20px;
+        }
+
+        @include max(mobile) {
+            font-size: 18px;
+        }
+
+        @include max(xs) {
+            font-size: 16px;
+        }
+    }
+
+    &--20 &__price--old {
+        font-size: 0.7em;
+    }
 }

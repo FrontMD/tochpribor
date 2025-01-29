@@ -17,8 +17,6 @@ function productIntro() {
             const modelsItemHeight = modelsItem.offsetHeight;
             const fullHeight = modelsItemsList.offsetHeight;
             const maxHeight = modelsItemHeight * startRows + gap * (startRows - 1)
-
-            console.log(modelsItemHeight)
         
             if(maxHeight < fullHeight) {
                 modelsItemsList.style.maxHeight = maxHeight + 'px'
