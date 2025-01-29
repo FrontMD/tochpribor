@@ -187,5 +187,19 @@
         gap: 8px;
     }
 
+    &__chars-all {
+        display: block;
+        margin-top: 12px;
+        font-size: 14px;
+        line-height: 1.4em;
+        text-decoration: underline;
+        color: $c-text;
+        transition: color $tr-time linear;
+
+        &:hover {
+            color: $c-accent-hover;
+        }
+    }
+
 
 }

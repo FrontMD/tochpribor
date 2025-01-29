@@ -21,7 +21,7 @@ mixin tabs-block(props= defaultTabsProps)
         }
 
     .tabs-block(class= checkProps.classes data-js="tabsBlock")&attributes(attributes)
-        .tabs-block__tabs.scrollbar.scrollbar--small
+        .tabs-block__tabs.scrollbar.scrollbar--small(data-js="tabsBlockList")
             .tabs-block__list
                 - let count = 0 
                 - while (count < checkProps.tabs.length)

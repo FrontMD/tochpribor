@@ -1,8 +1,8 @@
 function productIntro() {
-     // Showmore models
-     const modelsBlocks = document.querySelectorAll('[data-js="productModelsBlock"]')
+    // показать все модели
+    const modelsBlocks = document.querySelectorAll('[data-js="productModelsBlock"]')
 
-     if(modelsBlocks.length > 0) {
+    if(modelsBlocks.length > 0) {
          
         const showMoreLayout =  `
                                 <span class="show">Показать все модификации</span>
@@ -40,5 +40,31 @@ function productIntro() {
             }
         })
          
+    }
+
+    // добавление в корзину и удаление из корзины
+    const productCartBlocks = document.querySelectorAll('[data-js="productCartBlock"]');
+
+    if(productCartBlocks.length > 0) {
+        productCartBlocks.forEach(block => {
+            const cartBtn = block.querySelector('[data-js="productCartBlockBtn"]')
+            const amountInputBlock = block.querySelector('[data-js="amountInput"]')
+            const amountInputPlus = amountInputBlock.querySelector('.amount-input__change.amount-input__plus')
+            const amountInput = amountInputBlock.querySelector('input')
+
+            cartBtn.addEventListener('click', function() {
+                amountInputPlus.click()
+                this.style.display = 'none';
+                amountInputBlock.classList.add('active')
+            })
+
+            amountInput.addEventListener('change', function() {
+                if(this.value < 1) {
+                    cartBtn.style.display = 'flex';
+                    amountInputBlock.classList.remove('active')
+                }
+            })
+
+        })
     }
 }

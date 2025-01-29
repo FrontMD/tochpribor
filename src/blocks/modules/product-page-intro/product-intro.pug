@@ -108,6 +108,7 @@ section.section.product-intro
                             .chars-table__row
                                 .chars-table__title Погрешность по нагрузке на данном диапазоне
                                 .chars-table__value  ±0.5%
+                        a.product-intro__chars-all(href="#allChars") Все характеристики
                 .product-intro__side
                     .product-intro__order
                         +product-price({
@@ -136,13 +137,18 @@ section.section.product-intro
                             ]
                         })
                         .product-intro__btns
-                            +btn({
-                                classes: 'product-intro__cart',
-                                name: 'В корзину',
-                                size: 'full',
-                                cMode: 'red',
-                                icon: 'basket',
-                            })
+                            .product-intro__cartblock(data-js="productCartBlock")
+                                +btn({
+                                    classes: 'product-intro__cart',
+                                    name: 'В корзину',
+                                    size: 'full',
+                                    cMode: 'red',
+                                    icon: 'basket',
+                                })(data-js="productCartBlockBtn")
+                                +amount-input({
+                                    classes: 'amount-input--cartblock',
+                                    inCart: true
+                                })(data-cart)
                             +btn({
                                 name: 'Запросить коммерческое предложение',
                                 size: 'full',

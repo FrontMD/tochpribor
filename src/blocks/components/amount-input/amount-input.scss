@@ -86,3 +86,23 @@
         -moz-appearance: textfield;
     }
 }
+
+.amount-input {
+    &--cartblock {
+        display: none;
+        max-width: 100%;
+        min-width: 100%;
+        width: 100%;
+    }
+
+    &--cartblock.active {
+        display: flex;
+    }
+
+    &__value {
+        flex-shrink: 1;
+        min-width: auto;
+        width: 100%;
+        max-width: none;
+    }
+}

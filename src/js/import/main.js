@@ -413,6 +413,7 @@ function anchorsInit() {
             const anchorName = this.getAttribute('href').replace('#', '');
             const targetEl = document.getElementById(anchorName);
             const targetTabs = targetEl.closest('[data-js="tabsBlock"]');
+            let scrollTopOffset = document.querySelector('[data-js="siteHeader"]') ? document.querySelector('[data-js="siteHeader"]').offsetHeight : '0'
 
             if(targetTabs) {
                 const targetTabsSlide = targetEl.closest('[data-js="tabsBlockSlide"]')
@@ -422,15 +423,18 @@ function anchorsInit() {
                 if(targetTab) {
                     targetTab.click()
                 }
+
+                scrollTopOffset = scrollTopOffset + targetTabs.querySelector('[data-js="tabsBlockList"]').offsetHeight + 32
+
             }
 
-            const targetElPos = $(targetEl).offset().top
+            const targetElPos = Math.ceil($(targetEl).offset().top - scrollTopOffset)
 
-            console.log(targetElPos)
-    
-            /*targetEl.scrollIntoView({
+            window.scrollTo({
+                top: targetElPos,
                 behavior: 'smooth'
-            });*/
+            })
+    
         });
     });
 }

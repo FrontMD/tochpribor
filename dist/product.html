@@ -276,7 +276,7 @@
                         <div class="chars-table__title">Погрешность по нагрузке на данном диапазоне</div>
                         <div class="chars-table__value"> ±0.5%</div>
                       </div>
-                    </div>
+                    </div><a class="product-intro__chars-all" href="#allChars">Все характеристики</a>
                   </div>
                 </div>
                 <div class="product-intro__side">
@@ -299,10 +299,21 @@
                             </div>
                           </div>
                         </div>
-                    <div class="product-intro__btns"><a class="btn product-intro__cart btn--red btn--full" href="javascript:void(0)">
-                            <svg>
-                              <use xlink:href="img/sprites/sprite.svg#basket"></use>
-                            </svg><span class="btn__text">В корзину</span></a><a class="btn  btn--light-red btn--full" href="javascript:void(0)"><span class="btn__text">Запросить коммерческое предложение</span></a><a class="btn  btn--grey btn--full" href="javascript:void(0)">
+                    <div class="product-intro__btns">
+                      <div class="product-intro__cartblock" data-js="productCartBlock"><a class="btn product-intro__cart btn--red btn--full" href="javascript:void(0)" data-js="productCartBlockBtn">
+                              <svg>
+                                <use xlink:href="img/sprites/sprite.svg#basket"></use>
+                              </svg><span class="btn__text">В корзину</span></a>
+                            <div class="amount-input amount-input--cartblock" data-js="amountInput" data-cart><span class="amount-input__width"></span><span class="amount-input__change amount-input__minus min">
+                                <svg> 
+                                  <use xlink:href="img/sprites/sprite.svg#minus"></use>
+                                </svg></span>
+                              <input class="amount-input__value" type="number" name="amount" value="0" autocomplete="off"><span class="amount-input__change amount-input__plus">
+                                <svg> 
+                                  <use xlink:href="img/sprites/sprite.svg#plus"></use>
+                                </svg></span>
+                            </div>
+                      </div><a class="btn  btn--light-red btn--full" href="javascript:void(0)"><span class="btn__text">Запросить коммерческое предложение</span></a><a class="btn  btn--grey btn--full" href="javascript:void(0)">
                             <svg>
                               <use xlink:href="img/sprites/sprite.svg#question"></use>
                             </svg><span class="btn__text">Задать вопрос</span></a>
@@ -327,7 +338,7 @@
             <section class="section section--full product-detailed">
               <div class="section__container product-detailed__container">
                     <div class="tabs-block tabs-block--section" data-js="tabsBlock">
-                      <div class="tabs-block__tabs scrollbar scrollbar--small">
+                      <div class="tabs-block__tabs scrollbar scrollbar--small" data-js="tabsBlockList">
                         <div class="tabs-block__list">
                           <div class="tabs-block__tab active" data-index="0" data-js="tabsBlockTab">
                             <svg>
@@ -410,7 +421,7 @@
                           </div>
                         </div>
                         <div class="tabs-block__slide" data-js="tabsBlockSlide">
-                          <div class="product-detailed__tech text-editor">
+                          <div class="product-detailed__tech text-editor" id="allChars">
                             <table>
                               <!-- Если продукт без моделей, то убрать <thead>...</thead>-->
                               <thead>

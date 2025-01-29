@@ -1,21 +1,23 @@
 -
     const defaultAmountInputProps = {
         classes: '',
+        inCart: false
     }
 
 mixin amount-input(props = defaultAmountInputProps)
     -
         const checkProps = {
             classes: props.classes ? props.classes : defaultAmountInputProps.classes,
+            inCart: props.inCart ? props.inCart : defaultAmountInputProps.inCart,
         }
 
 
-    .amount-input(class=checkProps.classes data-js="amountInput")
+    .amount-input(class=checkProps.classes data-js="amountInput")&attributes(attributes)
         span.amount-input__width
         span.amount-input__change.amount-input__minus.min
             svg 
                 use(xlink:href=`img/sprites/sprite.svg#minus`)
-        input.amount-input__value(type="number" name="amount" value="1" autocomplete="off")
-        span.amount-input__change.amount-input__plus 
+        input.amount-input__value(type="number" name="amount" value=`${checkProps.inCart === false ? '1' : '0'}` autocomplete="off")
+        span.amount-input__change.amount-input__plus
             svg 
                 use(xlink:href=`img/sprites/sprite.svg#plus`)
