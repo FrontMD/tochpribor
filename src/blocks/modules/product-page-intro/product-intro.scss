@@ -3,12 +3,49 @@
         display: flex;
         align-items: flex-start;
         gap: 32px;
+
+        @include max(laptop) {
+            gap: 24px;
+        }
+
+        @include max(tablet) {
+            flex-direction: column;
+        }
     }
 
     &__media {
+        position: relative;
         flex: 0 0 40.5%;
         max-width: 40.5%;
 
+        @include max(laptop) {
+            flex-basis: 37%;
+            max-width: 37%;
+        }
+
+        @include max(tablet) {
+            flex-basis: auto;
+            width: 100%;
+            max-width: 100%;
+        }
+    }
+
+    &__tags--mob {
+        display: none;
+        position: absolute;
+        left: 10px;
+        top: 10px;
+        z-index: 5;
+
+        @include max(laptop) {
+            display: flex;
+        }
+    }
+
+    &__tags--desk {
+        @include max(laptop) {
+            display: none;
+        }
     }
 
     &__controls {
@@ -25,6 +62,11 @@
         align-items: flex-start;
         justify-content: space-between;
         gap: 32px;
+
+        @include max(laptop) {
+            flex-direction: column;
+            gap: 24px;
+        }
     }
 
     &__main {
@@ -71,6 +113,10 @@
         gap: 8px;
         overflow: hidden;
         transition: max-height $tr-time linear;
+
+        @include max(xs) {
+            gap: 4px;
+        }
     }
 
     &__model {
@@ -87,6 +133,17 @@
         transition: all $tr-time linear;
         border-radius: 4px;
 
+        @include max(mobile) {
+            min-height: 31px;
+            padding: 5px 8px 4px;
+            font-size: 14px;
+        }
+
+        @include max(xs) {
+            min-height: 29px;
+            font-size: 12px;
+        }
+
         &.active {
             border-color: $c-accent;
         }
@@ -98,10 +155,16 @@
     }
 
     &__more {
+        font-size: 16px;
+        line-height: 1.4em;
         margin-top: 8px;
         color: $c-text-breadcrumbs;
         width: fit-content;
         cursor: pointer;
+
+        @include max(xs) {
+            font-size: 14px;
+        }
 
         .show {
             display: block;
@@ -143,6 +206,10 @@
         border-radius: 2px;
         transition: color $tr-time linear;
 
+        @include max(mobile) {
+            font-size: 14px;
+        }
+
         svg {
             width: 16px;
             height: 16px;
@@ -165,6 +232,12 @@
         flex-direction: column;
         gap: 16px;
         flex: 0 0 324px;
+
+        @include max(laptop) {
+            flex-basis: auto;
+            align-items: stretch;
+            width: 100%;
+        }
     }
 
     &__order {
@@ -174,6 +247,19 @@
         padding: 16px;
         border: solid 1px $c-border;
         border-radius: 4px;
+
+        @include max(xs) {
+            padding: 0;
+            border: none;
+        }
+    }
+
+    &__replacements {
+        padding: 8px 0 16px;
+
+        @include max(xs) {
+            padding: 0 0 8px;
+        }
     }
 
     &__cart svg {

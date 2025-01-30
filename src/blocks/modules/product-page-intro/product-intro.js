@@ -12,7 +12,7 @@ function productIntro() {
         modelsBlocks.forEach(modelsBlock => {
             const modelsItemsList = modelsBlock.querySelector('[data-js="productModelsList"]');
             const modelsItem = modelsItemsList.querySelector('[data-js="productModelsItem"]');
-            const gap = 8;
+            const gap = window.innerWidth > 500 ? 8 : 4;
             const startRows = 3
             const modelsItemHeight = modelsItem.offsetHeight;
             const fullHeight = modelsItemsList.offsetHeight;

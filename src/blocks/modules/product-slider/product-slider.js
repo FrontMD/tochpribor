@@ -9,12 +9,17 @@ function productSlider() {
     const thumbsNext = productSliderTabs.querySelector('[data-js="sliderNext"]')
     
     let productSliderTabsEx = new Swiper(productSliderTabs, {
-        slidesPerView: 7.5,
+        slidesPerView: 6,
         spaceBetween: 8,
         navigation: {
             nextEl: thumbsNext,
             prevEl: thumbsPrev,
         },
+        breakpoints: {
+            501: {
+                slidesPerView: 7.5
+            }
+        }
     })
 
     let productSliderSliderEx = new Swiper(productSliderSlider, {

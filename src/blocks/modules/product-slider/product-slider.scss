@@ -24,8 +24,16 @@
         max-height: 700px;
 
         @include max(large) {
-            max-height: auto;
+            max-height: none;
             aspect-ratio: 1 / 0.945;
+        }
+
+        @include max(tablet) {
+            aspect-ratio: 1 / 0.45;
+        }
+
+        @include max(xs) {
+            aspect-ratio: 1 / 0.75;
         }
 
         img {

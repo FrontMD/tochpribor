@@ -108,6 +108,11 @@
 }
 
 .product-sidebar {
+    @include max(mobile) {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
     &__title {
         margin-top: 8px;
         margin-bottom: 24px;

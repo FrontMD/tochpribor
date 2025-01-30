@@ -47,11 +47,6 @@
         transition: background-color $tr-time linear;
         z-index: 3;
 
-        @include max(xs) {
-            max-width: 160px;
-            margin: 0 auto;
-        }
-
         img {
             max-width: 60%;
             max-height: 100%;
@@ -84,6 +79,14 @@
         line-height: 1.1em;
         letter-spacing: -0.01em;
         color: $c-text;
+        -webkit-line-clamp: 4;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+
+        @include max(mobile) {
+            font-size: 18px;
+        }
     }
 
     &__prices {
@@ -99,6 +102,10 @@
         padding-top: 32px;
         opacity: 0;
         transition: opacity $tr-time linear;
+
+        @include max(laptop) {
+            opacity: 1;
+        }
 
         .btn {
             z-index: 9;

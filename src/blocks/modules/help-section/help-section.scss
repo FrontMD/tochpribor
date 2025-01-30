@@ -1,11 +1,32 @@
 .help-section {
+
+    &__container.section__container {
+        @include max(mobile) {
+            padding: 0;
+        }
+    }
+
     &__content {
         position: relative;
         min-height: 34.7vw;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        gap: 32px;
         padding: 40px;
+
+        @include max(tablet) {
+            padding: 20px;
+            min-height: 40vw;
+        }
+
+        @include max(mobile) {
+            min-height: 55vw;
+        }
+
+        @include max(xs) {
+            min-height: 70vw;
+        }
     }
 
     &__bg {
@@ -36,6 +57,12 @@
     &__title {
         color: $c-white;
         z-index: 3;
+
+        @include max(mobile) {
+            br {
+                display: none;
+            }
+        }
     }
 
     &__text {

@@ -1,175 +1,243 @@
-section.section.product-intro
-    .section__container.product-intro__container
-        .product-intro__media
-            +product-slider
-        .product-intro__info
-            +title({
-                classes: 'product-intro__title',
-                tag: 'h1',
-                size: '53',
-                text: 'Универсальная испытательная машина ТРМ-О 0,1 А1 Tochline'
-            })
-            .product-intro__controls
-                +btn({
-                    name: 'Сравнить',
-                    icon: 'compare_2',
-                    cMode: 'noborder',
-                    size: 'link'
-                })
-                +btn({
-                    name: 'Поделиться',
-                    icon: 'share',
-                    cMode: 'noborder',
-                    size: 'link'
-                })
-            .product-intro__body
-                .product-intro__main
-                    +product-articles
-                    // Если продукт без моделей, то убрать <div class="product-intro__block">...</div>
-                    .product-intro__block(data-js="productModelsBlock")
-                        .product-intro__subtitle Модель
-                        .product-intro__models(data-js="productModelsList")
-                            a.product-intro__model.active(href="javascript:void(0)" data-js="productModelsItem") ТРМ-О 0,1
-                            a.product-intro__model(href="javascript:void(0)" data-js="productModelsItem") ТРМ-О 0,2
-                            a.product-intro__model(href="javascript:void(0)" data-js="productModelsItem") ТРМ-О 0,3
-                            a.product-intro__model(href="javascript:void(0)" data-js="productModelsItem") ТРМ-О 0,5
-                            a.product-intro__model(href="javascript:void(0)" data-js="productModelsItem") ТРМ-О 1
-                            a.product-intro__model(href="javascript:void(0)" data-js="productModelsItem") ТРМ-О 1,5
-                            a.product-intro__model(href="javascript:void(0)" data-js="productModelsItem") ТРМ-О 2
-                            a.product-intro__model(href="javascript:void(0)" data-js="productModelsItem") ТРМ-О 2,5
-                            a.product-intro__model(href="javascript:void(0)" data-js="productModelsItem") ТРМ-О 3
-                            a.product-intro__model(href="javascript:void(0)" data-js="productModelsItem") ТРМ-О 5
-                            a.product-intro__model(href="javascript:void(0)" data-js="productModelsItem") ТРМ-О 0,1
-                            a.product-intro__model(href="javascript:void(0)" data-js="productModelsItem") ТРМ-О 0,2
-                            a.product-intro__model(href="javascript:void(0)" data-js="productModelsItem") ТРМ-О 0,3
-                            a.product-intro__model(href="javascript:void(0)" data-js="productModelsItem") ТРМ-О 0,5
-                            a.product-intro__model(href="javascript:void(0)" data-js="productModelsItem") ТРМ-О 1
-                            a.product-intro__model(href="javascript:void(0)" data-js="productModelsItem") ТРМ-О 1,5
-                            a.product-intro__model(href="javascript:void(0)" data-js="productModelsItem") ТРМ-О 2
-                            a.product-intro__model(href="javascript:void(0)" data-js="productModelsItem") ТРМ-О 2,5
-                            a.product-intro__model(href="javascript:void(0)" data-js="productModelsItem") ТРМ-О 3
-                            a.product-intro__model(href="javascript:void(0)" data-js="productModelsItem") ТРМ-О 5
-                            a.product-intro__model(href="javascript:void(0)" data-js="productModelsItem") ТРМ-О 0,1
-                            a.product-intro__model(href="javascript:void(0)" data-js="productModelsItem") ТРМ-О 0,2
-                            a.product-intro__model(href="javascript:void(0)" data-js="productModelsItem") ТРМ-О 0,3
-                            a.product-intro__model(href="javascript:void(0)" data-js="productModelsItem") ТРМ-О 0,5
-                            a.product-intro__model(href="javascript:void(0)" data-js="productModelsItem") ТРМ-О 1
-                            a.product-intro__model(href="javascript:void(0)" data-js="productModelsItem") ТРМ-О 1,5
-                            a.product-intro__model(href="javascript:void(0)" data-js="productModelsItem") ТРМ-О 2
-                            a.product-intro__model(href="javascript:void(0)" data-js="productModelsItem") ТРМ-О 2,5
-                            a.product-intro__model(href="javascript:void(0)" data-js="productModelsItem") ТРМ-О 3
-                            a.product-intro__model(href="javascript:void(0)" data-js="productModelsItem") ТРМ-О 5
-                            a.product-intro__model(href="javascript:void(0)" data-js="productModelsItem") ТРМ-О 0,1
-                            a.product-intro__model(href="javascript:void(0)" data-js="productModelsItem") ТРМ-О 0,2
-                            a.product-intro__model(href="javascript:void(0)" data-js="productModelsItem") ТРМ-О 0,3
-                            a.product-intro__model(href="javascript:void(0)" data-js="productModelsItem") ТРМ-О 0,5
-                            a.product-intro__model(href="javascript:void(0)" data-js="productModelsItem") ТРМ-О 1
-                            a.product-intro__model(href="javascript:void(0)" data-js="productModelsItem") ТРМ-О 1,5
-                            a.product-intro__model(href="javascript:void(0)" data-js="productModelsItem") ТРМ-О 2
-                            a.product-intro__model(href="javascript:void(0)" data-js="productModelsItem") ТРМ-О 2,5
-                            a.product-intro__model(href="javascript:void(0)" data-js="productModelsItem") ТРМ-О 3
-                            a.product-intro__model(href="javascript:void(0)" data-js="productModelsItem") ТРМ-О 5
+-
+    const defaultProductIntroProps = {
+        classes: '',
+        dc: false
+    }
 
-                    .product-intro__block
-                        .product-intro__subtitle Применение
-                        .product-intro__text Статические испытания образов из различных материалов на растяжение, сжатие, изгиб, сдвиг, срез, адгезию и прочее
-                        .product-intro__links
-                            a.product-intro__link(href="#lineDesc")
-                                span Особенности линейки
-                                svg
-                                    use(xlink:href=`img/sprites/sprite.svg#arrow_angle`)
-                            a.product-intro__link(href="#productDocs")
-                                span Документы
-                                svg
-                                    use(xlink:href=`img/sprites/sprite.svg#arrow_angle`)
-                            a.product-intro__link(href="#completeSet")
-                                span Оснащение поставки
-                                svg
-                                    use(xlink:href=`img/sprites/sprite.svg#arrow_angle`)
-                            a.product-intro__link(href="video/news.mp4" data-fancybox)
-                                span Видео
-                                svg
-                                    use(xlink:href=`img/sprites/sprite.svg#arrow_angle`)
-                    .product-intro__block.product-intro__block--noborder
-                        .product-intro__subtitle Характеристики
-                        .chars-table
-                            .chars-table__row
-                                .chars-table__title Конструктивное исполнение
-                                .chars-table__value настольное
-                            .chars-table__row
-                                .chars-table__title Напряжение питания
-                                .chars-table__value  220В, 50Гц
-                            .chars-table__row
-                                .chars-table__title Мин. нагрузка, Н
-                                .chars-table__value 0,2
-                            .chars-table__row
-                                .chars-table__title Макс. нагрузка, Н
-                                .chars-table__value 100
-                            .chars-table__row
-                                .chars-table__title Погрешность по нагрузке на данном диапазоне
-                                .chars-table__value  ±0.5%
-                        a.product-intro__chars-all(href="#allChars") Все характеристики
-                .product-intro__side
-                    .product-intro__order
-                        +product-price({
-                            price: '550 000 ₽',
-                            oldPrice: '680 000 ₽',
-                            vMode: 'horizontal',
-                            size: '32'
-                        })
-                        +product-tags({
-                            tags: [
-                                {
-                                    img: 'img/catalog/check_icon.svg',
-                                    text: 'В наличии',
-                                    color: 'green'
-                                },
-                                {
-                                    img: '',
-                                    text: 'Новинка',
-                                    color: 'blue'
-                                },
-                                {
-                                    img: '',
-                                    text: 'Скидка',
-                                    color: 'red'
-                                }
-                            ]
-                        })
-                        .product-intro__btns
-                            .product-intro__cartblock(data-js="productCartBlock")
+mixin product-intro(props= defaultProductIntroProps)
+    -
+        const checkProps = {
+            classes: props.classes ? props.classes : defaultProductIntroProps.classes,
+            dc: props.dc ? props.dc : defaultProductIntroProps.dc,
+        }
+
+    section.section.product-intro(class= checkProps.classes)&attributes(attributes)
+        .section__container.product-intro__container
+            .product-intro__media
+                - if(checkProps.dc === false)
+                    +product-tags({
+                        classes: 'product-intro__tags--mob',
+                        tags: [
+                            {
+                                img: 'img/catalog/check_icon.svg',
+                                text: 'В наличии',
+                                color: 'green'
+                            },
+                            {
+                                img: '',
+                                text: 'Новинка',
+                                color: 'blue'
+                            },
+                            {
+                                img: '',
+                                text: 'Скидка',
+                                color: 'red'
+                            }
+                        ]
+                    })
+                - else
+                    +product-tags({
+                        classes: 'product-intro__tags--mob',
+                        tags: [
+                            {
+                                img: 'img/catalog/arrow_circle.svg',
+                                text: 'Снято с производства',
+                                note: 'Товар больше не производится. Смотрите аналоги в карточке товара',
+                                color: 'grey'
+                            }
+                        ]
+                    })
+                +product-slider
+            .product-intro__info
+                +title({
+                    classes: 'product-intro__title',
+                    tag: 'h1',
+                    size: '53',
+                    text: 'Универсальная испытательная машина ТРМ-О 0,1 А1 Tochline'
+                })
+                .product-intro__controls
+                    +btn({
+                        name: 'Сравнить',
+                        icon: 'compare_2',
+                        cMode: 'noborder',
+                        size: 'link'
+                    })
+                    +btn({
+                        name: 'Поделиться',
+                        icon: 'share',
+                        cMode: 'noborder',
+                        size: 'link'
+                    })
+                .product-intro__body
+                    .product-intro__main
+                        +product-articles
+                        // Если продукт без моделей, то убрать <div class="product-intro__block">...</div>
+                        .product-intro__block(data-js="productModelsBlock")
+                            .product-intro__subtitle Модель
+                            .product-intro__models(data-js="productModelsList")
+                                a.product-intro__model.active(href="javascript:void(0)" data-js="productModelsItem") ТРМ-О 0,1
+                                a.product-intro__model(href="javascript:void(0)" data-js="productModelsItem") ТРМ-О 0,2
+                                a.product-intro__model(href="javascript:void(0)" data-js="productModelsItem") ТРМ-О 0,3
+                                a.product-intro__model(href="javascript:void(0)" data-js="productModelsItem") ТРМ-О 0,5
+                                a.product-intro__model(href="javascript:void(0)" data-js="productModelsItem") ТРМ-О 1
+                                a.product-intro__model(href="javascript:void(0)" data-js="productModelsItem") ТРМ-О 1,5
+                                a.product-intro__model(href="javascript:void(0)" data-js="productModelsItem") ТРМ-О 2
+                                a.product-intro__model(href="javascript:void(0)" data-js="productModelsItem") ТРМ-О 2,5
+                                a.product-intro__model(href="javascript:void(0)" data-js="productModelsItem") ТРМ-О 3
+                                a.product-intro__model(href="javascript:void(0)" data-js="productModelsItem") ТРМ-О 5
+                                a.product-intro__model(href="javascript:void(0)" data-js="productModelsItem") ТРМ-О 0,1
+                                a.product-intro__model(href="javascript:void(0)" data-js="productModelsItem") ТРМ-О 0,2
+                                a.product-intro__model(href="javascript:void(0)" data-js="productModelsItem") ТРМ-О 0,3
+                                a.product-intro__model(href="javascript:void(0)" data-js="productModelsItem") ТРМ-О 0,5
+                                a.product-intro__model(href="javascript:void(0)" data-js="productModelsItem") ТРМ-О 1
+                                a.product-intro__model(href="javascript:void(0)" data-js="productModelsItem") ТРМ-О 1,5
+                                a.product-intro__model(href="javascript:void(0)" data-js="productModelsItem") ТРМ-О 2
+                                a.product-intro__model(href="javascript:void(0)" data-js="productModelsItem") ТРМ-О 2,5
+                                a.product-intro__model(href="javascript:void(0)" data-js="productModelsItem") ТРМ-О 3
+                                a.product-intro__model(href="javascript:void(0)" data-js="productModelsItem") ТРМ-О 5
+                                a.product-intro__model(href="javascript:void(0)" data-js="productModelsItem") ТРМ-О 0,1
+                                a.product-intro__model(href="javascript:void(0)" data-js="productModelsItem") ТРМ-О 0,2
+                                a.product-intro__model(href="javascript:void(0)" data-js="productModelsItem") ТРМ-О 0,3
+                                a.product-intro__model(href="javascript:void(0)" data-js="productModelsItem") ТРМ-О 0,5
+                                a.product-intro__model(href="javascript:void(0)" data-js="productModelsItem") ТРМ-О 1
+                                a.product-intro__model(href="javascript:void(0)" data-js="productModelsItem") ТРМ-О 1,5
+                                a.product-intro__model(href="javascript:void(0)" data-js="productModelsItem") ТРМ-О 2
+                                a.product-intro__model(href="javascript:void(0)" data-js="productModelsItem") ТРМ-О 2,5
+                                a.product-intro__model(href="javascript:void(0)" data-js="productModelsItem") ТРМ-О 3
+                                a.product-intro__model(href="javascript:void(0)" data-js="productModelsItem") ТРМ-О 5
+                                a.product-intro__model(href="javascript:void(0)" data-js="productModelsItem") ТРМ-О 0,1
+                                a.product-intro__model(href="javascript:void(0)" data-js="productModelsItem") ТРМ-О 0,2
+                                a.product-intro__model(href="javascript:void(0)" data-js="productModelsItem") ТРМ-О 0,3
+                                a.product-intro__model(href="javascript:void(0)" data-js="productModelsItem") ТРМ-О 0,5
+                                a.product-intro__model(href="javascript:void(0)" data-js="productModelsItem") ТРМ-О 1
+                                a.product-intro__model(href="javascript:void(0)" data-js="productModelsItem") ТРМ-О 1,5
+                                a.product-intro__model(href="javascript:void(0)" data-js="productModelsItem") ТРМ-О 2
+                                a.product-intro__model(href="javascript:void(0)" data-js="productModelsItem") ТРМ-О 2,5
+                                a.product-intro__model(href="javascript:void(0)" data-js="productModelsItem") ТРМ-О 3
+                                a.product-intro__model(href="javascript:void(0)" data-js="productModelsItem") ТРМ-О 5
+
+                        .product-intro__block
+                            .product-intro__subtitle Применение
+                            .product-intro__text Статические испытания образов из различных материалов на растяжение, сжатие, изгиб, сдвиг, срез, адгезию и прочее
+                            .product-intro__links
+                                a.product-intro__link(href="#lineDesc")
+                                    span Особенности линейки
+                                    svg
+                                        use(xlink:href=`img/sprites/sprite.svg#arrow_angle`)
+                                a.product-intro__link(href="#productDocs")
+                                    span Документы
+                                    svg
+                                        use(xlink:href=`img/sprites/sprite.svg#arrow_angle`)
+                                a.product-intro__link(href="#completeSet")
+                                    span Оснащение поставки
+                                    svg
+                                        use(xlink:href=`img/sprites/sprite.svg#arrow_angle`)
+                                a.product-intro__link(href="video/news.mp4" data-fancybox)
+                                    span Видео
+                                    svg
+                                        use(xlink:href=`img/sprites/sprite.svg#arrow_angle`)
+                        .product-intro__block.product-intro__block--noborder
+                            .product-intro__subtitle Характеристики
+                            .chars-table
+                                .chars-table__row
+                                    .chars-table__title Конструктивное исполнение
+                                    .chars-table__value настольное
+                                .chars-table__row
+                                    .chars-table__title Напряжение питания
+                                    .chars-table__value  220В, 50Гц
+                                .chars-table__row
+                                    .chars-table__title Мин. нагрузка, Н
+                                    .chars-table__value 0,2
+                                .chars-table__row
+                                    .chars-table__title Макс. нагрузка, Н
+                                    .chars-table__value 100
+                                .chars-table__row
+                                    .chars-table__title Погрешность по нагрузке на данном диапазоне
+                                    .chars-table__value  ±0.5%
+                            a.product-intro__chars-all(href="#allChars") Все характеристики
+                    .product-intro__side
+                        .product-intro__order
+                            - if(checkProps.dc === false)
+                                +product-price({
+                                    price: '550 000 ₽',
+                                    oldPrice: '680 000 ₽',
+                                    vMode: 'horizontal',
+                                    size: '32'
+                                })
+                                +product-tags({
+                                    classes: 'product-intro__tags--desk',
+                                    tags: [
+                                        {
+                                            img: 'img/catalog/check_icon.svg',
+                                            text: 'В наличии',
+                                            color: 'green'
+                                        },
+                                        {
+                                            img: '',
+                                            text: 'Новинка',
+                                            color: 'blue'
+                                        },
+                                        {
+                                            img: '',
+                                            text: 'Скидка',
+                                            color: 'red'
+                                        }
+                                    ]
+                                })
+                            - else
+                                +product-tags({
+                                    classes: 'product-intro__tags--desk',
+                                    tags: [
+                                        {
+                                            img: 'img/catalog/arrow_circle.svg',
+                                            text: 'Снято с производства',
+                                            note: 'Товар больше не производится. Смотрите подходящие замены ниже.',
+                                            color: 'grey'
+                                        }
+                                    ]
+                                })
+                                .product-intro__replacements
+                                    .product-intro__subtitle Подходящие замены
+                                    .product-intro__models
+                                        a.product-intro__model.active(href="javascript:void(0)") ТРМ-0,1
+                                        a.product-intro__model(href="javascript:void(0)") ТРМ-0,1
+                                        a.product-intro__model(href="javascript:void(0)") ТРМ-0,1
+                                        a.product-intro__model(href="javascript:void(0)") ТРМ-0,1
+                            .product-intro__btns
+                                - if(checkProps.dc === false)
+                                    .product-intro__cartblock(data-js="productCartBlock")
+                                        +btn({
+                                            classes: 'product-intro__cart',
+                                            name: 'В корзину',
+                                            size: 'full',
+                                            cMode: 'red',
+                                            icon: 'basket',
+                                        })(data-js="productCartBlockBtn")
+                                        +amount-input({
+                                            classes: 'amount-input--cartblock',
+                                            inCart: true
+                                        })(data-cart)
                                 +btn({
-                                    classes: 'product-intro__cart',
-                                    name: 'В корзину',
+                                    name: 'Запросить коммерческое предложение',
                                     size: 'full',
-                                    cMode: 'red',
-                                    icon: 'basket',
-                                })(data-js="productCartBlockBtn")
-                                +amount-input({
-                                    classes: 'amount-input--cartblock',
-                                    inCart: true
-                                })(data-cart)
-                            +btn({
-                                name: 'Запросить коммерческое предложение',
-                                size: 'full',
-                                cMode: 'light-red'
-                            })
-                            +btn({
-                                name: 'Задать вопрос',
-                                size: 'full',
-                                cMode: 'grey',
-                                icon: 'question'
-                            })
+                                    cMode: 'light-red'
+                                })
+                                +btn({
+                                    name: 'Задать вопрос',
+                                    size: 'full',
+                                    cMode: 'grey',
+                                    icon: 'question'
+                                })
 
-                    .banner.banner--notext
-                        .banner__bg
-                            img(src="img/news/news_banner_1.webp" alt="")
-                        .banner__content
-                            .banner__title Бесплатная консультация по&nbsp;подбору оборудования
-                            +btn({
-                                classes: '',
-                                size: "content",
-                                name: 'Получить консультацию',
-                                icon: 'arrow_enter',
-                                size: '246'
-                            })
+                        .banner.banner--notext
+                            .banner__bg
+                                img(src="img/news/news_banner_1.webp" alt="")
+                            .banner__content
+                                .banner__title Бесплатная консультация по&nbsp;подбору оборудования
+                                +btn({
+                                    classes: '',
+                                    size: "content",
+                                    name: 'Получить консультацию',
+                                    icon: 'arrow_enter',
+                                    size: '246'
+                                })
