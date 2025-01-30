@@ -1,0 +1,23 @@
+-
+    const defaultHomeIntroProps = {
+        classes: ''
+    }
+
+mixin home-intro(props= defaultHomeIntroProps)
+    -
+        const checkProps = {
+            classes: props.classes ? props.classes : defaultHomeIntroProps.classes
+        }
+
+    section.section.section--full.home-intro(class= checkProps.classes data-js="homeIntro")&attributes(attributes)
+        .section__container.home-intro__container
+            .home-intro__img.home-intro__bg
+
+            .home-intro__content
+                +title({
+                    classes: 'home-intro__title',
+                    tag: 'h1',
+                    size: '83',
+                    text: 'Ведущий завод приборостроения',
+                    cMode: 'light'
+                })

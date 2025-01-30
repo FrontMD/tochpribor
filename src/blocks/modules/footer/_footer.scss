@@ -11,6 +11,12 @@
     padding: 16px 0;
     color: $c-white;
 
+    @include max(laptop) {
+        height: calc(100vh - 61px);
+        min-height: calc(100vh - 61px);
+        max-height: calc(100vh - 61px);
+    }
+
     @include max(mobile) {
         height: auto;
         min-height: auto;

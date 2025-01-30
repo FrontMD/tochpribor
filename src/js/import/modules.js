@@ -1,3 +1,4 @@
+@@include("../../blocks/modules/home-intro/home-intro.js")
 @@include("../../blocks/modules/header/header.js")
 @@include("../../blocks/modules/footer/footer.js")
 @@include("../../blocks/modules/modals/modals.js")
@@ -11,6 +12,8 @@
 
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Скрипты первого экрана главной страницы
+    homeIntro()
     // открывает модалки
     modalsInit()
     // управляет поиском в хедере
