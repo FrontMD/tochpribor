@@ -1,0 +1,59 @@
+.h-advantages {
+    &__header {
+        padding-top: 74px;
+    }
+
+    &__title {
+        max-width: 970px;
+    }
+
+    &__bottom {
+        display: grid;
+        grid-template-columns: minmax(0, 49%) minmax(460px, 460px);
+        margin-top: 40px;
+        border-top: 1px solid $c-bg;
+        padding-top: 20px;
+    }
+
+    &__cards {
+        padding-bottom: 74px;
+        margin-top: 145px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 8px;
+    }
+
+    &__card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 340px;
+        padding: 16px 20px;
+        background-color: $c-white;
+        border-radius: 4px;
+    }
+
+    &__subtitle {
+        display: flex;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    &__img {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    &__text.text-editor,
+    &__text.text-editor p,
+    &__text.text-editor ul {
+        font-size: 14px;
+    }
+
+    &__text.text-editor a:hover {
+        color: $c-accent;
+    }
+}

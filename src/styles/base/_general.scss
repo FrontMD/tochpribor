@@ -297,6 +297,18 @@ body {
 			padding: 20px 15px;
 		}
 	}
+
+	&__tag {
+		font-size: 16px;
+		line-height: 1.4em;
+		color: $c-text-light;
+	}
+
+	&__subtitle {
+		font-size: 14px;
+		line-height: 1.4em;
+		color: $c-text;
+	}
 }
 
 .sidebar-layout {

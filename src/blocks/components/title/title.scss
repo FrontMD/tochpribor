@@ -78,6 +78,23 @@
         }
     }
 
+    &--43 {
+        font-size: 43px;
+        line-height: 1em;
+
+        @include max(laptop) {
+            font-size: 32px;
+        }
+
+        @include max(mobile) {
+            font-size: 28px;
+        }
+
+        @include max(xs) {
+            font-size: 26px;
+        }
+    }
+
     &--32 {
         font-size: 32px;
         line-height: 1em;
