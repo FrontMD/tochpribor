@@ -48,7 +48,7 @@
         z-index: 3;
 
         img {
-            max-width: 60%;
+            max-width: 70%;
             max-height: 100%;
             object-fit: contain;
         }
@@ -89,9 +89,24 @@
         }
     }
 
-    &__prices {
-        padding-top: 11px;
+    &__order {
         border-top: solid 1px $c-bg;
+        padding-top: 11px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        gap: 8px;
+        min-height: 36px;
+    }
+
+    &__mds {
+        padding: 2px 6px;
+        font-size: 14px;
+        line-height: 1.4em;
+        color: #F5A733;
+        background-color: #FEF9F2;
+        border-radius: 2px;
     }
 
     &__footer {

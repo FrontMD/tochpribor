@@ -112,4 +112,22 @@
         color: $c-white;
     }
 
+    &__parallax {
+        position: absolute;
+        width: 130%;
+        left: 0;
+        bottom: 0;
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+}
+
+.cards-slider {
+    &--parallax {
+        padding-bottom: calc(1.667vw + 32px);
+    }
 }

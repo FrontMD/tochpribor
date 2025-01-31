@@ -223,6 +223,22 @@
         }
     }
 
+    &--middle {
+        min-width: 257px;
+        min-height: 120px;
+        width: fit-content;
+
+        @include max(laptop) {
+            min-width: 200px;
+            min-height: 95px;
+        }
+
+        @include max(mobile) {
+            min-width: 155px;
+            min-height: 75px;
+        }
+    }
+
     &--small {
         padding: 2px 12px;
         font-size: 12px;

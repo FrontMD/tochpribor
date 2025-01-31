@@ -2,220 +2,232 @@ extends ../layouts/default
 include ../helpers/mixins
 
 block variables
-    - const title = "Главная"
+	- const title = "Главная"
 
 block content
-    .page-layout
+	.page-layout
 
-        +home-intro
+		+home-intro
 
-        +h-advantages({
-            title: 'Производитель оборудования для&nbsp;физико-механических испытаний материалов ГК «Точприбор»',
-            tag: '[Наша миссия в цифрах и фактах]',
-            subtitle: 'Разработка, производство и поставки оборудования для физико-механических испытаний. Производим и поставляем лабораторное оборудование'
-        })
+		+h-advantages({
+			title: 'Производитель оборудования для&nbsp;физико-механических испытаний материалов ГК «Точприбор»',
+			tag: '[Наша миссия в цифрах и фактах]',
+			subtitle: 'Разработка, производство и поставки оборудования для физико-механических испытаний. Производим и поставляем лабораторное оборудование'
+		})
 
-        //- full-bg component
+		+img-section({
+			img: 'img/home/bg_1.webp',
+			title: 'Производство Точприбор',
+			btns: [
+				{
+					name: 'О компании',
+					size: 'middle',
+					icon: 'arrow_enter',
+				},
+				{
+					name: 'О заводе',
+					size: 'middle',
+					icon: 'arrow_enter',
+					cMode: 'white'
+				}
+			],
+			btnsPos: 'right'
+		})
 
-        //-section.section.section--full.home-catalog
-            .section__container
-                +title({
-                    classes: 'home-catalog__title',
-                    tag: 'h2',
-                    size: '53',
-                    text: 'Аксессуары для испытательных машин',
-                    sup: ''
-                })
-                +btn({
-                    classes: 'home-catalog__btn',
-                    name: 'Все аксессуары',
-                    cMode: 'transparent-red',
-                    icon: 'arrow_enter',
-                    size: '272'
-                })
+		section.section.section--full.home-catalog
+			.section__container
+				.section-header
+					+title({
+						classes: 'section-header__title',
+						tag: 'h2',
+						size: '53',
+						text: 'Каталог оборудования',
+						sup: ''
+					})
+					+btn({
+						classes: 'section-header__btn',
+						name: 'Перейти в каталог',
+						cMode: 'transparent-red',
+						icon: 'arrow_enter',
+						size: '272'
+					})
 
-                +cards-slider({
-                    classes: 'home-catalog__slider',
-                    title: '',
-                    slidesCount: '4'
-                })
-                    .swiper-slide
-                        +catalog-card-s({
-                            title: 'Приспособление для определения прочности крепления ранта и стельки (до 3 кН)',
-                            image: 'img/catalog/product_18.png',
-                            tags: [
-                                {
-                                    img: 'img/catalog/check_icon.svg',
-                                    text: 'В наличии',
-                                    color: 'green'
-                                },
-                                {
-                                    img: '',
-                                    text: 'Новинка',
-                                    color: 'blue'
-                                },
-                                {
-                                    img: '',
-                                    text: 'Скидка',
-                                    color: 'red'
-                                }
-                            ],
-                            prices: [
-                                '550 000 ₽',
-                                '680 000 ₽'
-                            ],
-                        })
-                    .swiper-slide
-                        +catalog-card-s({
-                            title: 'Самозажимной роликовый захват (до 1 кН)',
-                            image: 'img/catalog/product_19.png',
-                            tags: [
-                                {
-                                    img: 'img/catalog/check_icon.svg',
-                                    text: 'В наличии',
-                                    color: 'green'
-                                },
-                                {
-                                    img: '',
-                                    text: 'Скидка',
-                                    color: 'red'
-                                }
-                            ],
-                            prices: [
-                                '550 000 ₽',
-                                '680 000 ₽'
-                            ],
-                        })
+				+cards-slider({
+					title: '',
+					slidesCount: '4'
+				})
+					.swiper-slide
+						+catalog-card-s({
+							title: 'ТРМ-О Tochline',
+							image: 'img/catalog/product_7.webp',
+							tags: [
+								{
+									img: 'img/catalog/check_icon.svg',
+									text: 'В наличии',
+									color: 'green'
+								},
+								{
+									img: '',
+									text: 'Новинка',
+									color: 'blue'
+								}
+							],
+							prices: [
+								'от 680 000 ₽',
+								''
+							],
+							mds: '5 модификаций'
+						})
+					.swiper-slide
+						+catalog-card-s({
+							title: 'Молоток Шмитта МШ-1A Tochline',
+							image: 'img/catalog/product_23.webp',
+							tags: [
+								{
+									img: 'img/catalog/check_icon.svg',
+									text: 'В наличии',
+									color: 'green'
+								}
+							],
+							prices: [
+								'450 000 ₽'
+							],
+						})
 
-                    .swiper-slide
-                        +catalog-card-s({
-                            title: 'Цанговый захват для стальных канатов (до 600 кН)',
-                            image: 'img/catalog/product_20.png',
-                            tags: [
-                                {
-                                    img: 'img/catalog/check_icon.svg',
-                                    text: 'В наличии',
-                                    color: 'green'
-                                },
-                                {
-                                    img: '',
-                                    text: 'Скидка',
-                                    color: 'red'
-                                }
-                            ],
-                            prices: [
-                                '550 000 ₽',
-                                '680 000 ₽'
-                            ],
-                        })
+					.swiper-slide
+						+catalog-card-s({
+							title: 'Твердомер Бринелля ТБ 5005А',
+							image: 'img/catalog/product_24.webp',
+							tags: [
+								{
+									img: 'img/catalog/check_icon.svg',
+									text: 'В наличии',
+									color: 'green'
+								},
+								{
+									img: '',
+									text: 'Скидка',
+									color: 'red'
+								}
+							],
+							prices: [
+								'1 550 000 ₽',
+								'1 680 000 ₽'
+							],
+						})
 
-                    .swiper-slide
-                        +catalog-card-s({
-                            title: 'Приспособление для определения прочности крепления ранта и стельки (до 3 кН)',
-                            image: 'img/catalog/product_21.png',
-                            tags: [
-                                {
-                                    img: 'img/catalog/arrow_circle.svg',
-                                    text: 'Под заказ',
-                                    color: 'grey',
-                                    note: 'Изготавливаем по индивидуальному заказу'
-                                }
-                            ],
-                            prices: [
-                                '550 000 ₽',
-                                ''
-                            ],
-                        })
+					.swiper-slide
+						+catalog-card-s({
+							title: 'Ручной станок РСН-1 Tochline',
+							image: 'img/catalog/product_25.webp',
+							tags: [
+								{
+									img: 'img/catalog/arrow_circle.svg',
+									text: 'Под заказ',
+									color: 'grey',
+									note: 'Изготавливаем по индивидуальному заказу'
+								}
+							],
+							prices: [
+								'1 680 000 ₽',
+								''
+							],
+						})
 
-                    .swiper-slide
-                        +catalog-card-s({
-                            title: 'Приспособление для определения прочности крепления ранта и стельки (до 3 кН)',
-                            image: 'img/catalog/product_18.png',
-                            tags: [
-                                {
-                                    img: 'img/catalog/check_icon.svg',
-                                    text: 'В наличии',
-                                    color: 'green'
-                                },
-                                {
-                                    img: '',
-                                    text: 'Новинка',
-                                    color: 'blue'
-                                },
-                                {
-                                    img: '',
-                                    text: 'Скидка',
-                                    color: 'red'
-                                }
-                            ],
-                            prices: [
-                                '550 000 ₽',
-                                '680 000 ₽'
-                            ],
-                        })
-                    .swiper-slide
-                        +catalog-card-s({
-                            title: 'Самозажимной роликовый захват (до 1 кН)',
-                            image: 'img/catalog/product_19.png',
-                            tags: [
-                                {
-                                    img: 'img/catalog/check_icon.svg',
-                                    text: 'В наличии',
-                                    color: 'green'
-                                },
-                                {
-                                    img: '',
-                                    text: 'Скидка',
-                                    color: 'red'
-                                }
-                            ],
-                            prices: [
-                                '550 000 ₽',
-                                '680 000 ₽'
-                            ],
-                        })
+					.swiper-slide
+						+catalog-card-s({
+							title: 'ТРМ-О Tochline',
+							image: 'img/catalog/product_7.webp',
+							tags: [
+								{
+									img: 'img/catalog/check_icon.svg',
+									text: 'В наличии',
+									color: 'green'
+								},
+								{
+									img: '',
+									text: 'Новинка',
+									color: 'blue'
+								}
+							],
+							prices: [
+								'от 680 000 ₽',
+								''
+							],
+							mds: '5 модификаций'
+						})
+					.swiper-slide
+						+catalog-card-s({
+							title: 'Молоток Шмитта МШ-1A Tochline',
+							image: 'img/catalog/product_23.webp',
+							tags: [
+								{
+									img: 'img/catalog/check_icon.svg',
+									text: 'В наличии',
+									color: 'green'
+								}
+							],
+							prices: [
+								'450 000 ₽'
+							],
+						})
 
-                    .swiper-slide
-                        +catalog-card-s({
-                            title: 'Цанговый захват для стальных канатов (до 600 кН)',
-                            image: 'img/catalog/product_20.png',
-                            tags: [
-                                {
-                                    img: 'img/catalog/check_icon.svg',
-                                    text: 'В наличии',
-                                    color: 'green'
-                                },
-                                {
-                                    img: '',
-                                    text: 'Скидка',
-                                    color: 'red'
-                                }
-                            ],
-                            prices: [
-                                '550 000 ₽',
-                                '680 000 ₽'
-                            ],
-                        })
+					.swiper-slide
+						+catalog-card-s({
+							title: 'Твердомер Бринелля ТБ 5005А',
+							image: 'img/catalog/product_24.webp',
+							tags: [
+								{
+									img: 'img/catalog/check_icon.svg',
+									text: 'В наличии',
+									color: 'green'
+								},
+								{
+									img: '',
+									text: 'Скидка',
+									color: 'red'
+								}
+							],
+							prices: [
+								'1 550 000 ₽',
+								'1 680 000 ₽'
+							],
+						})
 
-                    .swiper-slide
-                        +catalog-card-s({
-                            title: 'Приспособление для определения прочности крепления ранта и стельки (до 3 кН)',
-                            image: 'img/catalog/product_21.png',
-                            tags: [
-                                {
-                                    img: 'img/catalog/arrow_circle.svg',
-                                    text: 'Под заказ',
-                                    color: 'grey',
-                                    note: 'Изготавливаем по индивидуальному заказу'
-                                }
-                            ],
-                            prices: [
-                                '550 000 ₽',
-                                ''
-                            ],
-                        })
+					.swiper-slide
+						+catalog-card-s({
+							title: 'Ручной станок РСН-1 Tochline',
+							image: 'img/catalog/product_25.webp',
+							tags: [
+								{
+									img: 'img/catalog/arrow_circle.svg',
+									text: 'Под заказ',
+									color: 'grey',
+									note: 'Изготавливаем по индивидуальному заказу'
+								}
+							],
+							prices: [
+								'1 680 000 ₽',
+								''
+							],
+						})
 
-        //- home-clients
-        //- full-bg component
-        //- home-services
-        //- home-news
+		+h-clients({
+
+		})
+
+		+img-section({
+			img: 'img/home/bg_2.webp',
+			title: 'Скачайте каталог наших решений',
+			text: 'В каталоге более подробно представлен перечень нашего оборудования, а так же информация о&nbsp;компании',
+			btns: [
+				{
+					name: 'Скачать pdf',
+					size: 'middle',
+					icon: 'download',
+				},
+			]
+		})
+
+		//- home-services
+		//- home-news

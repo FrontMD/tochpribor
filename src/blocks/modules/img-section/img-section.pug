@@ -1,0 +1,44 @@
+-
+    const defaultImgSectionProps = {
+        classes: '',
+        img: '',
+        title: '',
+        text: '',
+        btns: [],
+        btnsPos: ''
+    }
+
+mixin img-section(props= defaultImgSectionProps)
+    -
+        const checkProps = {
+            classes: props.classes ? props.classes : defaultImgSectionProps.classes,
+            title: props.title ? props.title : defaultImgSectionProps.title,
+            img: props.img ? props.img : defaultImgSectionProps.img,
+            text: props.text ? props.text : defaultImgSectionProps.text,
+            btns: props.btns ? props.btns : defaultImgSectionProps.btns,
+            btnsPos: props.btnsPos ? props.btnsPos : defaultImgSectionProps.btnsPos
+        }
+
+        let btnsPositionClass = checkProps.btnsPos.length > 0 ? ` img-section__btns--${checkProps.btnsPos}` : ''
+
+    section.section.section--full.section--transparent.img-section(class= checkProps.classes)&attributes(attributes)
+        .img-section__bg
+            img(class='lazyload' src='img/lazy-placeholder.webp' data-src= checkProps.img, alt="")
+        .section__container.img-section__container
+            +title({
+                classes: "img-section__title",
+                tag: 'h2',
+                size: '53',
+                text: checkProps.title
+            })
+            -if(checkProps.text.length > 0)
+                .img-section__text!= checkProps.text
+
+            .img-section__btns(class= btnsPositionClass)
+                - let btnsList = checkProps.btns
+                - let btnsCount = 0
+
+                - while(btnsCount < btnsList.length)
+                    +btn(btnsList[btnsCount])
+
+                    - btnsCount++

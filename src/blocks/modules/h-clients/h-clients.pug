@@ -1,0 +1,86 @@
+-
+	const defaultHclientsProps = {
+		classes: '',
+	}
+
+mixin h-clients(props= defaultHclientsProps)
+	-
+		const checkProps = {
+			classes: props.classes ? props.classes : defaultHclientsProps.classes,
+			title: props.title ? props.title : defaultHclientsProps.title,
+			tag: props.tag ? props.tag : defaultHclientsProps.tag,
+			subtitle: props.subtitle ? props.subtitle : defaultHclientsProps.subtitle
+		}
+
+	section.section.section--full.h-clients
+		.section__container
+			.section-header
+				.section__tag.section-header__tag [Наши клиенты]
+				+title({
+					classes: 'section-header__title',
+					tag: 'h2',
+					size: '53',
+					text: 'К нам обращаются госкорпорации и крупнейшие компании',
+				})
+
+			+cards-slider({
+				title: '',
+				slidesCount: '6',
+				parallax: true
+			})(data-parallax)
+				.swiper-slide
+					.h-clients__card
+						.h-clients__img
+							img(class="lazyload" src="img/lazy-placeholder.webp" data-src="img/clients/client_1.svg" alt="")
+				.swiper-slide
+					.h-clients__card
+						.h-clients__img
+							img(class="lazyload" src="img/lazy-placeholder.webp" data-src="img/clients/client_2.svg" alt="")
+				.swiper-slide
+					.h-clients__card
+						.h-clients__img
+							img(class="lazyload" src="img/lazy-placeholder.webp" data-src="img/clients/client_3.svg" alt="")
+				.swiper-slide
+					.h-clients__card
+						.h-clients__img
+							img(class="lazyload" src="img/lazy-placeholder.webp" data-src="img/clients/client_4.svg" alt="")
+				.swiper-slide
+					.h-clients__card
+						.h-clients__img
+							img(class="lazyload" src="img/lazy-placeholder.webp" data-src="img/clients/client_5.svg" alt="")
+				.swiper-slide
+					.h-clients__card
+						.h-clients__img
+							img(class="lazyload" src="img/lazy-placeholder.webp" data-src="img/clients/client_6.svg" alt="")
+				.swiper-slide
+					.h-clients__card
+						.h-clients__img
+							img(class="lazyload" src="img/lazy-placeholder.webp" data-src="img/clients/client_7.svg" alt="")
+				.swiper-slide
+					.h-clients__card
+						.h-clients__img
+							img(class="lazyload" src="img/lazy-placeholder.webp" data-src="img/clients/client_1.svg" alt="")
+				.swiper-slide
+					.h-clients__card
+						.h-clients__img
+							img(class="lazyload" src="img/lazy-placeholder.webp" data-src="img/clients/client_2.svg" alt="")
+				.swiper-slide
+					.h-clients__card
+						.h-clients__img
+							img(class="lazyload" src="img/lazy-placeholder.webp" data-src="img/clients/client_3.svg" alt="")
+				.swiper-slide
+					.h-clients__card
+						.h-clients__img
+							img(class="lazyload" src="img/lazy-placeholder.webp" data-src="img/clients/client_4.svg" alt="")
+				.swiper-slide
+					.h-clients__card
+						.h-clients__img
+							img(class="lazyload" src="img/lazy-placeholder.webp" data-src="img/clients/client_5.svg" alt="")
+				.swiper-slide
+					.h-clients__card
+						.h-clients__img
+							img(class="lazyload" src="img/lazy-placeholder.webp" data-src="img/clients/client_6.svg" alt="")
+				.swiper-slide
+					.h-clients__card
+						.h-clients__img
+							img(class="lazyload" src="img/lazy-placeholder.webp" data-src="img/clients/client_7.svg" alt="")

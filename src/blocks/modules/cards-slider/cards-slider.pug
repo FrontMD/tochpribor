@@ -2,7 +2,8 @@
     const defaultCardsSliderProps = {
         classes: '',
         title: '',
-        slidesCount: '2'
+        slidesCount: '2',
+        parallax: false
     }
 
 mixin cards-slider(props= defaultCardsSliderProps)
@@ -10,10 +11,13 @@ mixin cards-slider(props= defaultCardsSliderProps)
         const checkProps = {
             classes: props.classes ? props.classes : defaultCardsSliderProps.classes,
             title: props.title ? props.title : defaultCardsSliderProps.title,
-            slidesCount: props.slidesCount ? props.slidesCount : defaultCardsSliderProps.slidesCount
+            slidesCount: props.slidesCount ? props.slidesCount : defaultCardsSliderProps.slidesCount,
+            parallax: props.parallax ? props.parallax : defaultCardsSliderProps.parallax
         }
 
-    .cards-slider(class= checkProps.classes data-js=`slider${checkProps.slidesCount}Cards`)&attributes(attributes)
+        let parallaxClass = checkProps.parallax === true ? 'cards-slider--parallax' : ''
+
+    .cards-slider(class= checkProps.classes + parallaxClass data-js=`slider${checkProps.slidesCount}Cards`)&attributes(attributes)
         .cards-slider__header
             - if(checkProps.title.length > 0)
                 .cards-slider.title--32!= checkProps.title
@@ -26,5 +30,9 @@ mixin cards-slider(props= defaultCardsSliderProps)
                         use(xlink:href=`img/sprites/sprite.svg#arrow_classic`)
         .swiper-wrapper
             block
+        -if(checkProps.parallax === true)
+            .cards-slider__parallax(data-swiper-parallax="-23%")
+                img(class="lazyload" src="img/lazy-placeholder.webp" data-src="img/slider_ruler.svg" alt="")
+
 
 

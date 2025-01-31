@@ -4,7 +4,8 @@
         title: '',
         image: '',
         tags: [],
-        prices: []
+        prices: [],
+        mds: ''
     }
 
 mixin catalog-card-s(props = defaultCatalogCardSProps)
@@ -14,7 +15,8 @@ mixin catalog-card-s(props = defaultCatalogCardSProps)
             title: props.title ? props.title : defaultCatalogCardSProps.title,
             image: props.image ? props.image : defaultCatalogCardSProps.image,
             tags: props.tags ? props.tags : defaultCatalogCardSProps.tags,
-            prices: props.prices ? props.prices : defaultCatalogCardSProps.prices
+            prices: props.prices ? props.prices : defaultCatalogCardSProps.prices,
+            mds: props.mds ? props.mds : defaultCatalogCardSProps.mds
         }
 
     .catalog-card-s(class= checkProps.classes)&attributes(attributes)
@@ -33,14 +35,17 @@ mixin catalog-card-s(props = defaultCatalogCardSProps)
                         use(xlink:href=`img/sprites/sprite.svg#arrow_enter`)
                     span Подробнее
             .catalog-card-s__title!= checkProps.title
-        - if(checkProps.prices.length > 0)
-            +product-price({
-                classes: 'catalog-card-s__prices',
-                price: checkProps.prices[0],
-                oldPrice: checkProps.prices[1],
-                vMode: 'horizontal',
-                size: '20'
-            })
+        .catalog-card-s__order
+            - if(checkProps.prices.length > 0)
+                +product-price({
+                    classes: 'catalog-card-s__prices',
+                    price: checkProps.prices[0],
+                    oldPrice: checkProps.prices[1],
+                    vMode: 'horizontal',
+                    size: '20'
+                })
+            - if(checkProps.mds.length > 0)
+                .catalog-card-s__mds!= checkProps.mds
 
         .catalog-card-s__footer
             +btn({

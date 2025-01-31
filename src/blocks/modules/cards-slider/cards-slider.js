@@ -7,11 +7,13 @@ function cardsSlidersInit() {
         sliders2Cards.forEach(slider2Cards => {
             const sliderPrev = slider2Cards.querySelector('[data-js="sliderPrev"]')
             const sliderNext = slider2Cards.querySelector('[data-js="sliderNext"]')
-        
+            const parallax = slider2Cards.hasAttribute('data-parallax') 
+            
             const slider2CardsEx = new Swiper(slider2Cards, {
                 slidesPerView: 1.1,
                 allowTouchMove: true,
-                spaceBetween: 8, 
+                spaceBetween: 8,
+                parallax: parallax, 
                 loop: false,
                 navigation: {
                     nextEl: sliderNext,
@@ -44,11 +46,15 @@ function cardsSlidersInit() {
         sliders4Cards.forEach(slider4Cards => {
             const sliderPrev = slider4Cards.querySelector('[data-js="sliderPrev"]')
             const sliderNext = slider4Cards.querySelector('[data-js="sliderNext"]')
+            const parallax = slider4Cards.hasAttribute('data-parallax') 
+
+            console.log(parallax)
         
             const slider4CardsEx = new Swiper(slider4Cards, {
                 slidesPerView: 1.1,
                 allowTouchMove: true,
                 spaceBetween: 8,
+                parallax: parallax,
                 loop: false,
                 navigation: {
                     nextEl: sliderNext,
@@ -65,6 +71,51 @@ function cardsSlidersInit() {
                     },
                     1421: {
                         slidesPerView: 4,
+                        spaceBetween: 16
+                    },
+                    2300: {
+                        slidesPerView: 6,
+                        spaceBetween: 16
+                    }
+                }
+            })
+        })
+    
+    }
+
+    // слайдеры с шестью видимыми карточками 
+    const sliders6Cards = document.querySelectorAll('[data-js="slider6Cards"]')
+
+    if(sliders6Cards.length > 0) {
+
+        sliders6Cards.forEach(slider6Cards => {
+            const sliderPrev = slider6Cards.querySelector('[data-js="sliderPrev"]')
+            const sliderNext = slider6Cards.querySelector('[data-js="sliderNext"]')
+            const parallax = slider6Cards.hasAttribute('data-parallax')
+
+            console.log(parallax)
+        
+            const slider6CardsEx = new Swiper(slider6Cards, {
+                slidesPerView: 1.1,
+                allowTouchMove: true,
+                spaceBetween: 16,
+                parallax: parallax,
+                loop: false,
+                navigation: {
+                    nextEl: sliderNext,
+                    prevEl: sliderPrev,
+                },
+                breakpoints: {
+                    501: {
+                        slidesPerView: 2,
+                        spaceBetween: 16
+                    },
+                    1024: {
+                        slidesPerView: 3,
+                        spaceBetween: 16
+                    },
+                    1421: {
+                        slidesPerView: 6,
                         spaceBetween: 16
                     },
                     2300: {

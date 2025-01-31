@@ -1,0 +1,22 @@
+.h-clients {
+    &__card {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+        border: 1px solid $c-bg;
+        border-radius: 4px;
+    }
+
+    &__img {
+        max-width: 100%;
+        max-height: 100%;
+
+        img {
+            max-width: 100%;
+            max-height: 100%
+        }
+    }
+}
