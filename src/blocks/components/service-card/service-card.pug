@@ -1,0 +1,36 @@
+-
+	const defaultServiceCardProps = {
+		classes: '',
+		number: '',
+		image: '',
+		imageHover: '',
+		title: '',
+		desc: '',
+	}
+
+mixin service-card(props = defaultServiceCardProps)
+	-
+		const checkProps = {
+			classes: props.classes ? props.classes : defaultServiceCardProps.classes,
+			number: props.number ? props.number : defaultServiceCardProps.number,
+			image: props.image ? props.image : defaultServiceCardProps.image,
+			imageHover: props.imageHover ? props.imageHover : defaultServiceCardProps.imageHover,
+			title: props.title ? props.title : defaultServiceCardProps.title,
+			desc: props.desc ? props.desc : defaultServiceCardProps.desc,
+		}
+
+	.service-card(class= checkProps.classes)&attributes(attributes)
+		a.service-card__link(href="javascript:void(0);")
+		.service-card__icon
+			svg
+				use(xlink:href=`img/sprites/sprite.svg#arrow_enter`)
+		.service-card__top
+			.service-card__number.title--83!= checkProps.number
+			.service-card__img
+				img(class="lazyload default" src="img/lazy-placeholder.webp" data-src= checkProps.image alt= checkProps.title)
+				img(class="lazyload hover" src="img/lazy-placeholder.webp" data-src= checkProps.imageHover alt= checkProps.title)
+
+		.service-card__bottom
+			.service-card__title.title--32!= checkProps.title
+			.service-card__desc!= checkProps.desc
+

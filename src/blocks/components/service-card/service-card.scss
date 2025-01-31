@@ -1,0 +1,110 @@
+.service-card {
+    position: relative;
+    padding: 16px 24px 24px;
+    background-color: $c-white;
+    cursor: pointer;
+    border: 1px solid $c-bg;
+    border-color: $c-bg;
+    transition: all $tr-time linear;
+    border-radius: 4px;
+
+    &__icon {
+        position: absolute;
+        right: 8px;
+        bottom: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
+        color: $c-accent;
+        border: 1px solid $c-accent;
+        border-radius: 2px;
+        opacity: 0;
+        transition: opacity $tr-time linear;
+
+        svg {
+            width: 16px;
+            height: 16px;
+        }
+    }
+
+    &__number {
+        line-height: 1em;
+        letter-spacing: -0.03em;
+        color: $c-accent-light3;
+    }
+
+    &__top {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        border-bottom: 1px solid $c-bg;
+        border-color: $c-bg;
+        transition: border-color $tr-time linear;
+        padding-bottom: 24px;
+    }
+
+    &__img {
+        position: relative;
+        width: 189px;
+        aspect-ratio: 1 / 1;
+
+        img {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            max-width: 100%;
+            max-height: 100%;
+            transition: all $tr-time linear;
+        }
+
+        .default {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .hover {
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
+
+    &__bottom {
+        margin-top: 20px;
+    }
+
+    &__desc {
+        margin-top: 16px;
+        font-size: 16px;
+        line-height: 1.4em;
+        color: $c-text-light;
+        padding-right: 50px;
+    }
+
+    &:hover {
+        background-color: #FDF7F7;
+        border-color: #FDF7F7;
+
+        .service-card__icon {
+            opacity: 1;
+        }
+
+        .service-card__top {
+            border-color: #F2BFC0;
+        }
+
+        .service-card__img {
+            .default {
+                opacity: 0;
+                visibility: hidden;
+            }
+
+            .hover {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }
+}

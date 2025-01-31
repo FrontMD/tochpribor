@@ -229,5 +229,56 @@ block content
 			]
 		})
 
-		//- home-services
+		section.section.section--full
+			.section__container
+				.section-header
+					.section__tag.section-header__tag [Наши услуги]
+					+title({
+						classes: 'section-header__title',
+						tag: 'h2',
+						size: '53',
+						text: 'Предоставляем широкий спектр услуг',
+						sup: ''
+					})
+					.section__subtitle.section-header__subtitle Точприбор является приемником великого Советского завода. Доставка осуществляется в&nbsp;самые кратчайшие сроки на&nbsp;выгодных для&nbsp;вас&nbsp;условиях
+
+				+cards-slider({
+					title: '',
+					slidesCount: '3'
+				})
+					.swiper-slide
+						+service-card({
+							number: '01',
+							image: 'img/home/service_card_1.svg',
+							imageHover: 'img/home/service_card_1_hover.svg',
+							title: 'Металлообработка',
+							desc: 'Точприбор является приемником великого Советского завода. Доставка осуществляется в&nbsp;самые кратчайшие сроки на&nbsp;выгодных для&nbsp;вас&nbsp;условиях'
+						})
+					.swiper-slide
+						+service-card({
+							number: '02',
+							image: 'img/home/service_card_2.svg',
+							imageHover: 'img/home/service_card_2_hover.svg',
+							title: 'Поверка средств измерений',
+							desc: 'Точприбор является приемником великого Советского завода. Доставка осуществляется в&nbsp;самые кратчайшие сроки на&nbsp;выгодных для&nbsp;вас&nbsp;условиях'
+						})
+					.swiper-slide
+						+service-card({
+							number: '03',
+							image: 'img/home/service_card_3.svg',
+							imageHover: 'img/home/service_card_3_hover.svg',
+							title: 'Пуско-наладка',
+							desc: 'Точприбор является приемником великого Советского завода. Доставка осуществляется в&nbsp;самые кратчайшие сроки на&nbsp;выгодных для&nbsp;вас&nbsp;условиях'
+						})
+					.swiper-slide
+						+service-card({
+							number: '04',
+							image: 'img/home/service_card_4.svg',
+							imageHover: 'img/home/service_card_4_hover.svg',
+							title: 'Наладка средств измерений',
+							desc: 'Точприбор является приемником великого Советского завода. Доставка осуществляется в&nbsp;самые кратчайшие сроки на&nbsp;выгодных для&nbsp;вас&nbsp;условиях'
+						})
+
+
+
 		//- home-news
