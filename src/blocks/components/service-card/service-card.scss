@@ -7,6 +7,7 @@
     border-color: $c-bg;
     transition: all $tr-time linear;
     border-radius: 4px;
+    height: 100%;
 
     &__icon {
         position: absolute;

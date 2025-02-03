@@ -211,9 +211,8 @@
     &__title {
         position: relative;
         z-index: 3;
-        font-size: 20px;
-        line-height: 1.1em;
-        letter-spacing: -0.01em;
+        line-height: 1em;
+        letter-spacing: -0.02em;
         transition: color $tr-time linear;
     }
 
@@ -241,5 +240,11 @@
         .p-news-card__title {
             color: $c-accent-hover;
         }
+    }
+
+    &--sidebar &__title {
+        font-size: 20px;
+        line-height: 1.1em;
+        letter-spacing: -0.01em;
     }
 }

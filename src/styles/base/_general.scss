@@ -317,6 +317,10 @@ body {
 	align-items: center;
 	padding: 26px 0 16px;
 
+	&--left {
+		align-items: flex-start;
+	}
+
 	&__title {
 		max-width: 730px;
 		text-align: center;
@@ -335,6 +339,11 @@ body {
 	&__tag {
 		margin-bottom: 8px;
 		text-align: center;
+	}
+
+	&--left &__title,
+	&--left &__tag {
+		text-align: start;
 	}
 }
 

@@ -11,13 +11,91 @@ mixin home-intro(props= defaultHomeIntroProps)
 
     section.section.section--full.home-intro(class= checkProps.classes data-js="homeIntro")&attributes(attributes)
         .section__container.home-intro__container
-            .home-intro__img.home-intro__bg
-
+            .home-intro__bg
+                video(autoplay muted loop playsinline webkit-playsinline data-js="autoplayVideo")
+                    source(src="public/video/home_intro.mp4" type="video/mp4")
+            .home-intro__slider(data-js="homeIntroSlider")
+                .swiper-wrapper
+                    .swiper-slide.home-intro__seq(data-js="homeIntroAnim")
+                    .swiper-slide.home-intro__seq(data-js="homeIntroAnim")
+                    .swiper-slide.home-intro__seq(data-js="homeIntroAnim")
+                    .swiper-slide.home-intro__seq(data-js="homeIntroAnim")
+                    .swiper-slide.home-intro__seq(data-js="homeIntroAnim")
             .home-intro__content
-                +title({
-                    classes: 'home-intro__title',
-                    tag: 'h1',
-                    size: '83',
-                    text: 'Ведущий завод приборостроения',
-                    cMode: 'light'
-                })
+                .home-intro__left
+                    .section__tag.home-intro__tag [Производим с 1958 года]
+                    +title({
+                        classes: 'home-intro__title',
+                        tag: 'h1',
+                        size: '83',
+                        text: 'Ведущий завод приборостроения',
+                        cMode: 'light'
+                    })
+                .home-intro__right
+                    .home-intro__info.home-info
+                        .home-info__tabs(data-js="homeIntroTabs")
+                            .swiper-wrapper
+                                .swiper-slide.home-info__tab(data-js="homeIntroTab") 01
+                                .swiper-slide.home-info__tab(data-js="homeIntroTab") 02
+                                .swiper-slide.home-info__tab(data-js="homeIntroTab") 03
+                                .swiper-slide.home-info__tab(data-js="homeIntroTab") 04
+                                .swiper-slide.home-info__tab(data-js="homeIntroTab") 05
+                        .home-info__slider(data-js="homeIntroInfoSlider")
+                            .swiper-wrapper
+                                .swiper-slide.home-info__slide
+                                    .home-info__icon
+                                        img(src="img/home/home_intro_icon_1.svg")
+                                    .home-info__title.title--26.title--light Разрывные машины
+                                    .home-info__text Универсальная испытательная машина применяется для&nbsp;проведения исследований различных материалов в&nbsp;производственной и&nbsp;научной сфере
+                                    +btn({
+                                        name: 'В каталог',
+                                        icon: "arrow_enter",
+                                        cMode: 'red',
+                                        size: 'full'
+                                    })
+                                .swiper-slide.home-info__slide
+                                    .home-info__icon
+                                        img(src="img/home/home_intro_icon_1.svg")
+                                    .home-info__title.title--26.title--light Разрывные машины 2
+                                    .home-info__text Универсальная испытательная машина применяется для&nbsp;проведения исследований различных материалов в&nbsp;производственной и&nbsp;научной сфере
+                                    +btn({
+                                        name: 'В каталог',
+                                        icon: "arrow_enter",
+                                        cMode: 'red',
+                                        size: 'full'
+                                    })
+                                .swiper-slide.home-info__slide
+                                    .home-info__icon
+                                        img(src="img/home/home_intro_icon_1.svg")
+                                    .home-info__title.title--26.title--light Разрывные машины 3
+                                    .home-info__text Универсальная испытательная машина применяется для&nbsp;проведения исследований различных материалов в&nbsp;производственной и&nbsp;научной сфере
+                                    +btn({
+                                        name: 'В каталог',
+                                        icon: "arrow_enter",
+                                        cMode: 'red',
+                                        size: 'full'
+                                    })
+                                .swiper-slide.home-info__slide
+                                    .home-info__icon
+                                        img(src="img/home/home_intro_icon_1.svg")
+                                    .home-info__title.title--26.title--light Разрывные машины 4
+                                    .home-info__text Универсальная испытательная машина применяется для&nbsp;проведения исследований различных материалов в&nbsp;производственной и&nbsp;научной сфере
+                                    +btn({
+                                        name: 'В каталог',
+                                        icon: "arrow_enter",
+                                        cMode: 'red',
+                                        size: 'full'
+                                    })
+                                .swiper-slide.home-info__slide
+                                    .home-info__icon
+                                        img(src="img/home/home_intro_icon_1.svg")
+                                    .home-info__title.title--26.title--light Разрывные машины 5
+                                    .home-info__text Универсальная испытательная машина применяется для&nbsp;проведения исследований различных материалов в&nbsp;производственной и&nbsp;научной сфере
+                                    +btn({
+                                        name: 'В каталог',
+                                        icon: "arrow_enter",
+                                        cMode: 'red',
+                                        size: 'full'
+                                    })
+                    .home-intro__progress
+                        a.section__tag [Пропустить]

@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     $('img.lazyload').lazyload();
+    //mobAutoplayVideo();
     newsSmiSliderInit();
     contactsController();
     productSafetyController();
@@ -438,3 +439,18 @@ function anchorsInit() {
         });
     });
 }
+
+// Автовоспроизведение видео на мобильном
+/*function mobAutoplayVideo() {
+    const videos = document.querySelectorAll('[data-js="autoplayVideo"]');
+    
+    if(videos.length) {
+        window.addEventListener('touchstart', function videoStart() {
+            videos.forEach(video => {
+                video.play();
+                console.log('first touch');
+            })
+            this.removeEventListener('touchstart', videoStart);
+        });
+    }
+}*/
