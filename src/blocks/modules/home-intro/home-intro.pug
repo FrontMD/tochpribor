@@ -15,6 +15,24 @@ mixin home-intro(props= defaultHomeIntroProps)
                 video(autoplay muted loop playsinline webkit-playsinline data-js="autoplayVideo")
                     source(src="public/video/home_intro.mp4" type="video/mp4")
             .home-intro__slider(data-js="homeIntroSlider")
+                .home-intro__chart.home-chart(data-js="homeIntroChart")
+                    .home-chart__chart
+                        .home-chart__text Испытание на растяжение металла
+                        .home-chart__text.home-chart__text--bottom ТРМ-П Tochline
+                        .home-chart__grid
+                            img(src="img/home/chart_grid.svg" alt="")
+                        .home-chart__line(data-js="homeIntroChartLine")
+                            img(src="img/home/chart_line.svg" alt="")
+                    .home-chart__table
+                        .home-chart__row
+                            .home-chart__param Усилие
+                            .home-chart__value <span data-js="homeIntroChartVal" data-min="6000" data-max="18454">6 000</span> Н
+                        .home-chart__row
+                            .home-chart__param Перемещение
+                            .home-chart__value <span data-js="homeIntroChartVal" data-min="0" data-max="21324">0</span> мм
+                        .home-chart__row
+                            .home-chart__param Скорость
+                            .home-chart__value -20.4 мм/мин
                 .swiper-wrapper
                     .swiper-slide.home-intro__seq(data-js="homeIntroAnim")
                     .swiper-slide.home-intro__seq(data-js="homeIntroAnim")
@@ -98,7 +116,7 @@ mixin home-intro(props= defaultHomeIntroProps)
                                         size: 'full'
                                     })
                     .home-intro__progress.progressbar.active(data-js="homeIntroProgressBar")
-                        button.section__tag(type="button" data-js="homeIntroProgressBarSkip") [Пропустить]
+                        button.section__tag.progressbar__skip(type="button" data-js="homeIntroProgressBarSkip") [Пропустить]
                         .progressbar__body
                             .progressbar__fill(data-js="homeIntroProgressBarFill")
 

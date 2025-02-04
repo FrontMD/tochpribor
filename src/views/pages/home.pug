@@ -2,334 +2,334 @@ extends ../layouts/default
 include ../helpers/mixins
 
 block variables
-	- const title = "Главная"
+    - const title = "Главная"
 
 block content
-	.page-layout
+    .page-layout(data-js="pageLayout" data-anim="home")
 
-		+home-intro
+        +home-intro
 
-		+h-advantages({
-			title: 'Производитель оборудования для&nbsp;физико-механических испытаний материалов ГК «Точприбор»',
-			tag: '[Наша миссия в цифрах и фактах]',
-			subtitle: 'Разработка, производство и поставки оборудования для физико-механических испытаний. Производим и поставляем лабораторное оборудование'
-		})
+        +h-advantages({
+            title: 'Производитель оборудования для&nbsp;физико-механических испытаний материалов ГК «Точприбор»',
+            tag: '[Наша миссия в цифрах и фактах]',
+            subtitle: 'Разработка, производство и поставки оборудования для физико-механических испытаний. Производим и поставляем лабораторное оборудование'
+        })
 
-		+img-section({
-			img: 'img/home/bg_1.webp',
-			title: 'Производство Точприбор',
-			btns: [
-				{
-					name: 'О компании',
-					size: 'middle',
-					icon: 'arrow_enter',
-				},
-				{
-					name: 'О заводе',
-					size: 'middle',
-					icon: 'arrow_enter',
-					cMode: 'white'
-				}
-			],
-			btnsPos: 'right'
-		})
+        +img-section({
+            img: 'img/home/bg_1.webp',
+            title: 'Производство Точприбор',
+            btns: [
+                {
+                    name: 'О компании',
+                    size: 'middle',
+                    icon: 'arrow_enter',
+                },
+                {
+                    name: 'О заводе',
+                    size: 'middle',
+                    icon: 'arrow_enter',
+                    cMode: 'white'
+                }
+            ],
+            btnsPos: 'right'
+        })
 
-		section.section.section--full.home-catalog
-			.section__container
-				.section-header
-					+title({
-						classes: 'section-header__title',
-						tag: 'h2',
-						size: '53',
-						text: 'Каталог оборудования',
-						sup: ''
-					})
-					+btn({
-						classes: 'section-header__btn',
-						name: 'Перейти в каталог',
-						cMode: 'transparent-red',
-						icon: 'arrow_enter',
-						size: '272'
-					})
+        section.section.section--full.home-catalog
+            .section__container
+                .section-header
+                    +title({
+                        classes: 'section-header__title',
+                        tag: 'h2',
+                        size: '53',
+                        text: 'Каталог оборудования',
+                        sup: ''
+                    })
+                    +btn({
+                        classes: 'section-header__btn',
+                        name: 'Перейти в каталог',
+                        cMode: 'transparent-red',
+                        icon: 'arrow_enter',
+                        size: '272'
+                    })
 
-				+cards-slider({
-					title: '',
-					slidesCount: '4'
-				})
-					.swiper-slide
-						+catalog-card-s({
-							title: 'ТРМ-О Tochline',
-							image: 'img/catalog/product_7.webp',
-							tags: [
-								{
-									img: 'img/catalog/check_icon.svg',
-									text: 'В наличии',
-									color: 'green'
-								},
-								{
-									img: '',
-									text: 'Новинка',
-									color: 'blue'
-								}
-							],
-							prices: [
-								'от 680 000 ₽',
-								''
-							],
-							mds: '5 модификаций'
-						})
-					.swiper-slide
-						+catalog-card-s({
-							title: 'Молоток Шмитта МШ-1A Tochline',
-							image: 'img/catalog/product_23.webp',
-							tags: [
-								{
-									img: 'img/catalog/check_icon.svg',
-									text: 'В наличии',
-									color: 'green'
-								}
-							],
-							prices: [
-								'450 000 ₽'
-							],
-						})
+                +cards-slider({
+                    title: '',
+                    slidesCount: '4'
+                })
+                    .swiper-slide
+                        +catalog-card-s({
+                            title: 'ТРМ-О Tochline',
+                            image: 'img/catalog/product_7.webp',
+                            tags: [
+                                {
+                                    img: 'img/catalog/check_icon.svg',
+                                    text: 'В наличии',
+                                    color: 'green'
+                                },
+                                {
+                                    img: '',
+                                    text: 'Новинка',
+                                    color: 'blue'
+                                }
+                            ],
+                            prices: [
+                                'от 680 000 ₽',
+                                ''
+                            ],
+                            mds: '5 модификаций'
+                        })
+                    .swiper-slide
+                        +catalog-card-s({
+                            title: 'Молоток Шмитта МШ-1A Tochline',
+                            image: 'img/catalog/product_23.webp',
+                            tags: [
+                                {
+                                    img: 'img/catalog/check_icon.svg',
+                                    text: 'В наличии',
+                                    color: 'green'
+                                }
+                            ],
+                            prices: [
+                                '450 000 ₽'
+                            ],
+                        })
 
-					.swiper-slide
-						+catalog-card-s({
-							title: 'Твердомер Бринелля ТБ 5005А',
-							image: 'img/catalog/product_24.webp',
-							tags: [
-								{
-									img: 'img/catalog/check_icon.svg',
-									text: 'В наличии',
-									color: 'green'
-								},
-								{
-									img: '',
-									text: 'Скидка',
-									color: 'red'
-								}
-							],
-							prices: [
-								'1 550 000 ₽',
-								'1 680 000 ₽'
-							],
-						})
+                    .swiper-slide
+                        +catalog-card-s({
+                            title: 'Твердомер Бринелля ТБ 5005А',
+                            image: 'img/catalog/product_24.webp',
+                            tags: [
+                                {
+                                    img: 'img/catalog/check_icon.svg',
+                                    text: 'В наличии',
+                                    color: 'green'
+                                },
+                                {
+                                    img: '',
+                                    text: 'Скидка',
+                                    color: 'red'
+                                }
+                            ],
+                            prices: [
+                                '1 550 000 ₽',
+                                '1 680 000 ₽'
+                            ],
+                        })
 
-					.swiper-slide
-						+catalog-card-s({
-							title: 'Ручной станок РСН-1 Tochline',
-							image: 'img/catalog/product_25.webp',
-							tags: [
-								{
-									img: 'img/catalog/arrow_circle.svg',
-									text: 'Под заказ',
-									color: 'grey',
-									note: 'Изготавливаем по индивидуальному заказу'
-								}
-							],
-							prices: [
-								'1 680 000 ₽',
-								''
-							],
-						})
+                    .swiper-slide
+                        +catalog-card-s({
+                            title: 'Ручной станок РСН-1 Tochline',
+                            image: 'img/catalog/product_25.webp',
+                            tags: [
+                                {
+                                    img: 'img/catalog/arrow_circle.svg',
+                                    text: 'Под заказ',
+                                    color: 'grey',
+                                    note: 'Изготавливаем по индивидуальному заказу'
+                                }
+                            ],
+                            prices: [
+                                '1 680 000 ₽',
+                                ''
+                            ],
+                        })
 
-					.swiper-slide
-						+catalog-card-s({
-							title: 'ТРМ-О Tochline',
-							image: 'img/catalog/product_7.webp',
-							tags: [
-								{
-									img: 'img/catalog/check_icon.svg',
-									text: 'В наличии',
-									color: 'green'
-								},
-								{
-									img: '',
-									text: 'Новинка',
-									color: 'blue'
-								}
-							],
-							prices: [
-								'от 680 000 ₽',
-								''
-							],
-							mds: '5 модификаций'
-						})
-					.swiper-slide
-						+catalog-card-s({
-							title: 'Молоток Шмитта МШ-1A Tochline',
-							image: 'img/catalog/product_23.webp',
-							tags: [
-								{
-									img: 'img/catalog/check_icon.svg',
-									text: 'В наличии',
-									color: 'green'
-								}
-							],
-							prices: [
-								'450 000 ₽'
-							],
-						})
+                    .swiper-slide
+                        +catalog-card-s({
+                            title: 'ТРМ-О Tochline',
+                            image: 'img/catalog/product_7.webp',
+                            tags: [
+                                {
+                                    img: 'img/catalog/check_icon.svg',
+                                    text: 'В наличии',
+                                    color: 'green'
+                                },
+                                {
+                                    img: '',
+                                    text: 'Новинка',
+                                    color: 'blue'
+                                }
+                            ],
+                            prices: [
+                                'от 680 000 ₽',
+                                ''
+                            ],
+                            mds: '5 модификаций'
+                        })
+                    .swiper-slide
+                        +catalog-card-s({
+                            title: 'Молоток Шмитта МШ-1A Tochline',
+                            image: 'img/catalog/product_23.webp',
+                            tags: [
+                                {
+                                    img: 'img/catalog/check_icon.svg',
+                                    text: 'В наличии',
+                                    color: 'green'
+                                }
+                            ],
+                            prices: [
+                                '450 000 ₽'
+                            ],
+                        })
 
-					.swiper-slide
-						+catalog-card-s({
-							title: 'Твердомер Бринелля ТБ 5005А',
-							image: 'img/catalog/product_24.webp',
-							tags: [
-								{
-									img: 'img/catalog/check_icon.svg',
-									text: 'В наличии',
-									color: 'green'
-								},
-								{
-									img: '',
-									text: 'Скидка',
-									color: 'red'
-								}
-							],
-							prices: [
-								'1 550 000 ₽',
-								'1 680 000 ₽'
-							],
-						})
+                    .swiper-slide
+                        +catalog-card-s({
+                            title: 'Твердомер Бринелля ТБ 5005А',
+                            image: 'img/catalog/product_24.webp',
+                            tags: [
+                                {
+                                    img: 'img/catalog/check_icon.svg',
+                                    text: 'В наличии',
+                                    color: 'green'
+                                },
+                                {
+                                    img: '',
+                                    text: 'Скидка',
+                                    color: 'red'
+                                }
+                            ],
+                            prices: [
+                                '1 550 000 ₽',
+                                '1 680 000 ₽'
+                            ],
+                        })
 
-					.swiper-slide
-						+catalog-card-s({
-							title: 'Ручной станок РСН-1 Tochline',
-							image: 'img/catalog/product_25.webp',
-							tags: [
-								{
-									img: 'img/catalog/arrow_circle.svg',
-									text: 'Под заказ',
-									color: 'grey',
-									note: 'Изготавливаем по индивидуальному заказу'
-								}
-							],
-							prices: [
-								'1 680 000 ₽',
-								''
-							],
-						})
+                    .swiper-slide
+                        +catalog-card-s({
+                            title: 'Ручной станок РСН-1 Tochline',
+                            image: 'img/catalog/product_25.webp',
+                            tags: [
+                                {
+                                    img: 'img/catalog/arrow_circle.svg',
+                                    text: 'Под заказ',
+                                    color: 'grey',
+                                    note: 'Изготавливаем по индивидуальному заказу'
+                                }
+                            ],
+                            prices: [
+                                '1 680 000 ₽',
+                                ''
+                            ],
+                        })
 
-		+h-clients({
+        +h-clients({
 
-		})
+        })
 
-		+img-section({
-			img: 'img/home/bg_2.webp',
-			title: 'Скачайте каталог наших решений',
-			text: 'В каталоге более подробно представлен перечень нашего оборудования, а так же информация о&nbsp;компании',
-			btns: [
-				{
-					name: 'Скачать pdf',
-					size: 'middle',
-					icon: 'download',
-				},
-			]
-		})
+        +img-section({
+            img: 'img/home/bg_2.webp',
+            title: 'Скачайте каталог наших решений',
+            text: 'В каталоге более подробно представлен перечень нашего оборудования, а так же информация о&nbsp;компании',
+            btns: [
+                {
+                    name: 'Скачать pdf',
+                    size: 'middle',
+                    icon: 'download',
+                },
+            ]
+        })
 
-		section.section.section--full
-			.section__container
-				.section-header
-					.section__tag.section-header__tag [Наши услуги]
-					+title({
-						classes: 'section-header__title',
-						tag: 'h2',
-						size: '53',
-						text: 'Предоставляем широкий спектр услуг',
-						sup: ''
-					})
-					.section__subtitle.section-header__subtitle Точприбор является приемником великого Советского завода. Доставка осуществляется в&nbsp;самые кратчайшие сроки на&nbsp;выгодных для&nbsp;вас&nbsp;условиях
+        section.section.section--full
+            .section__container
+                .section-header
+                    .section__tag.section-header__tag [Наши услуги]
+                    +title({
+                        classes: 'section-header__title',
+                        tag: 'h2',
+                        size: '53',
+                        text: 'Предоставляем широкий спектр услуг',
+                        sup: ''
+                    })
+                    .section__subtitle.section-header__subtitle Точприбор является приемником великого Советского завода. Доставка осуществляется в&nbsp;самые кратчайшие сроки на&nbsp;выгодных для&nbsp;вас&nbsp;условиях
 
-				+cards-slider({
-					title: '',
-					slidesCount: '3'
-				})
-					.swiper-slide
-						+service-card({
-							number: '01',
-							image: 'img/home/service_card_1.svg',
-							imageHover: 'img/home/service_card_1_hover.svg',
-							title: 'Металлообработка',
-							desc: 'Точприбор является приемником великого Советского завода. Доставка осуществляется в&nbsp;самые кратчайшие сроки на&nbsp;выгодных для&nbsp;вас&nbsp;условиях'
-						})
-					.swiper-slide
-						+service-card({
-							number: '02',
-							image: 'img/home/service_card_2.svg',
-							imageHover: 'img/home/service_card_2_hover.svg',
-							title: 'Поверка средств измерений',
-							desc: 'Точприбор является приемником великого Советского завода. Доставка осуществляется в&nbsp;самые кратчайшие сроки на&nbsp;выгодных для&nbsp;вас&nbsp;условиях'
-						})
-					.swiper-slide
-						+service-card({
-							number: '03',
-							image: 'img/home/service_card_3.svg',
-							imageHover: 'img/home/service_card_3_hover.svg',
-							title: 'Пуско-наладка',
-							desc: 'Точприбор является приемником великого Советского завода. Доставка осуществляется в&nbsp;самые кратчайшие сроки на&nbsp;выгодных для&nbsp;вас&nbsp;условиях'
-						})
-					.swiper-slide
-						+service-card({
-							number: '04',
-							image: 'img/home/service_card_4.svg',
-							imageHover: 'img/home/service_card_4_hover.svg',
-							title: 'Наладка средств измерений',
-							desc: 'Точприбор является приемником великого Советского завода. Доставка осуществляется в&nbsp;самые кратчайшие сроки на&nbsp;выгодных для&nbsp;вас&nbsp;условиях'
-						})
+                +cards-slider({
+                    title: '',
+                    slidesCount: '3'
+                })
+                    .swiper-slide
+                        +service-card({
+                            number: '01',
+                            image: 'img/home/service_card_1.svg',
+                            imageHover: 'img/home/service_card_1_hover.svg',
+                            title: 'Металлообработка',
+                            desc: 'Точприбор является приемником великого Советского завода. Доставка осуществляется в&nbsp;самые кратчайшие сроки на&nbsp;выгодных для&nbsp;вас&nbsp;условиях'
+                        })
+                    .swiper-slide
+                        +service-card({
+                            number: '02',
+                            image: 'img/home/service_card_2.svg',
+                            imageHover: 'img/home/service_card_2_hover.svg',
+                            title: 'Поверка средств измерений',
+                            desc: 'Точприбор является приемником великого Советского завода. Доставка осуществляется в&nbsp;самые кратчайшие сроки на&nbsp;выгодных для&nbsp;вас&nbsp;условиях'
+                        })
+                    .swiper-slide
+                        +service-card({
+                            number: '03',
+                            image: 'img/home/service_card_3.svg',
+                            imageHover: 'img/home/service_card_3_hover.svg',
+                            title: 'Пуско-наладка',
+                            desc: 'Точприбор является приемником великого Советского завода. Доставка осуществляется в&nbsp;самые кратчайшие сроки на&nbsp;выгодных для&nbsp;вас&nbsp;условиях'
+                        })
+                    .swiper-slide
+                        +service-card({
+                            number: '04',
+                            image: 'img/home/service_card_4.svg',
+                            imageHover: 'img/home/service_card_4_hover.svg',
+                            title: 'Наладка средств измерений',
+                            desc: 'Точприбор является приемником великого Советского завода. Доставка осуществляется в&nbsp;самые кратчайшие сроки на&nbsp;выгодных для&nbsp;вас&nbsp;условиях'
+                        })
 
 
 
-		section.section.section--full.section--transparent.h-news
-			.section__container
-				.section-header.section-header--left
-					.section__tag.section-header__tag [Пресс-центр]
-					+title({
-						classes: 'section-header__title',
-						tag: 'h2',
-						size: '53',
-						text: 'Будьте в курсе последних новостей завода',
-						sup: ''
-					})
-				.h-news__cards
-					.p-news-card.h-news__card--first
-						a.p-news-card__link(href="javascript:void(0)")
-						.p-news-card__bg 
-							img(class="lazyload" src="img/lazy-placeholder.webp" data-src="img/news/news_21.webp" alt="")
-						.p-news-card__header
-							.p-news-card__date 20.10.2024
-						.p-news-card__title.title--32 Возрождение уникального ивановского завода - Точприбор
-					.p-news-card.p-news-card--white
-						a.p-news-card__link(href="javascript:void(0)")
-						.p-news-card__header
-							.p-news-card__date 20.10.2024
-							.p-news-card__btn
-								svg 
-									use(xlink:href=`img/sprites/sprite.svg#arrow_enter`)
-						.p-news-card__title.title--26 Группа компаний «Точприбор» получила сертификат менеджмента качества ISO 9001:2015 - Точприбор
-					.p-news-card.p-news-card--white
-						a.p-news-card__link(href="javascript:void(0)")
-						.p-news-card__header
-							.p-news-card__date 20.10.2024
-							.p-news-card__btn
-								svg 
-									use(xlink:href=`img/sprites/sprite.svg#arrow_enter`)
-						.p-news-card__title.title--26 Группа компаний «Точприбор» получила сертификат менеджмента качества ISO 9001:2015 - Точприбор
-					.p-news-card.p-news-card--white
-						a.p-news-card__link(href="javascript:void(0)")
-						.p-news-card__header
-							.p-news-card__date 20.10.2024
-							.p-news-card__btn
-								svg 
-									use(xlink:href=`img/sprites/sprite.svg#arrow_enter`)
-						.p-news-card__title.title--26 Группа компаний «Точприбор» получила сертификат менеджмента качества ISO 9001:2015 - Точприбор
-					.p-news-card.p-news-card--white
-						a.p-news-card__link(href="javascript:void(0)")
-						.p-news-card__header
-							.p-news-card__date 20.10.2024
-							.p-news-card__btn
-								svg 
-									use(xlink:href=`img/sprites/sprite.svg#arrow_enter`)
-						.p-news-card__title.title--26 Группа компаний «Точприбор» получила сертификат менеджмента качества ISO 9001:2015 - Точприбор
+        section.section.section--full.section--transparent.h-news
+            .section__container
+                .section-header.section-header--left
+                    .section__tag.section-header__tag [Пресс-центр]
+                    +title({
+                        classes: 'section-header__title',
+                        tag: 'h2',
+                        size: '53',
+                        text: 'Будьте в курсе последних новостей завода',
+                        sup: ''
+                    })
+                .h-news__cards
+                    .p-news-card.h-news__card--first
+                        a.p-news-card__link(href="javascript:void(0)")
+                        .p-news-card__bg 
+                            img(class="lazyload" src="img/lazy-placeholder.webp" data-src="img/news/news_21.webp" alt="")
+                        .p-news-card__header
+                            .p-news-card__date 20.10.2024
+                        .p-news-card__title.title--32 Возрождение уникального ивановского завода - Точприбор
+                    .p-news-card.p-news-card--white
+                        a.p-news-card__link(href="javascript:void(0)")
+                        .p-news-card__header
+                            .p-news-card__date 20.10.2024
+                            .p-news-card__btn
+                                svg 
+                                    use(xlink:href=`img/sprites/sprite.svg#arrow_enter`)
+                        .p-news-card__title.title--26 Группа компаний «Точприбор» получила сертификат менеджмента качества ISO 9001:2015 - Точприбор
+                    .p-news-card.p-news-card--white
+                        a.p-news-card__link(href="javascript:void(0)")
+                        .p-news-card__header
+                            .p-news-card__date 20.10.2024
+                            .p-news-card__btn
+                                svg 
+                                    use(xlink:href=`img/sprites/sprite.svg#arrow_enter`)
+                        .p-news-card__title.title--26 Группа компаний «Точприбор» получила сертификат менеджмента качества ISO 9001:2015 - Точприбор
+                    .p-news-card.p-news-card--white
+                        a.p-news-card__link(href="javascript:void(0)")
+                        .p-news-card__header
+                            .p-news-card__date 20.10.2024
+                            .p-news-card__btn
+                                svg 
+                                    use(xlink:href=`img/sprites/sprite.svg#arrow_enter`)
+                        .p-news-card__title.title--26 Группа компаний «Точприбор» получила сертификат менеджмента качества ISO 9001:2015 - Точприбор
+                    .p-news-card.p-news-card--white
+                        a.p-news-card__link(href="javascript:void(0)")
+                        .p-news-card__header
+                            .p-news-card__date 20.10.2024
+                            .p-news-card__btn
+                                svg 
+                                    use(xlink:href=`img/sprites/sprite.svg#arrow_enter`)
+                        .p-news-card__title.title--26 Группа компаний «Точприбор» получила сертификат менеджмента качества ISO 9001:2015 - Точприбор
 

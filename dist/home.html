@@ -138,7 +138,7 @@
       </div>
     </header>
     <main class="site-main">
-      <div class="page-layout">
+      <div class="page-layout" data-js="pageLayout" data-anim="home">
             <section class="section section--full home-intro" data-js="homeIntro">
               <div class="section__container home-intro__container">
                 <div class="home-intro__bg">
@@ -147,6 +147,28 @@
                   </video>
                 </div>
                 <div class="home-intro__slider" data-js="homeIntroSlider">
+                  <div class="home-intro__chart home-chart" data-js="homeIntroChart">
+                    <div class="home-chart__chart">
+                      <div class="home-chart__text">Испытание на растяжение металла</div>
+                      <div class="home-chart__text home-chart__text--bottom">ТРМ-П Tochline</div>
+                      <div class="home-chart__grid"><img src="img/home/chart_grid.svg" alt=""></div>
+                      <div class="home-chart__line" data-js="homeIntroChartLine"><img src="img/home/chart_line.svg" alt=""></div>
+                    </div>
+                    <div class="home-chart__table">
+                      <div class="home-chart__row">
+                        <div class="home-chart__param">Усилие</div>
+                        <div class="home-chart__value"><span data-js="homeIntroChartVal" data-min="6000" data-max="18454">6 000</span> Н</div>
+                      </div>
+                      <div class="home-chart__row">
+                        <div class="home-chart__param">Перемещение</div>
+                        <div class="home-chart__value"><span data-js="homeIntroChartVal" data-min="0" data-max="21324">0</span> мм</div>
+                      </div>
+                      <div class="home-chart__row">
+                        <div class="home-chart__param">Скорость</div>
+                        <div class="home-chart__value">-20.4 мм/мин</div>
+                      </div>
+                    </div>
+                  </div>
                   <div class="swiper-wrapper">
                     <div class="swiper-slide home-intro__seq" data-js="homeIntroAnim"></div>
                     <div class="swiper-slide home-intro__seq" data-js="homeIntroAnim"></div>
@@ -220,7 +242,7 @@
                       </div>
                     </div>
                     <div class="home-intro__progress progressbar active" data-js="homeIntroProgressBar">
-                      <button class="section__tag" type="button" data-js="homeIntroProgressBarSkip">[Пропустить]</button>
+                      <button class="section__tag progressbar__skip" type="button" data-js="homeIntroProgressBarSkip">[Пропустить]</button>
                       <div class="progressbar__body">
                         <div class="progressbar__fill" data-js="homeIntroProgressBarFill"></div>
                       </div>
@@ -903,7 +925,7 @@
         </section>
       </div>
     </main>
-    <footer class="site-footer">
+    <footer class="site-footer" data-js="siteFooter">
       <div class="site-footer__container">
         <div class="site-footer__word">производство
           <svg>

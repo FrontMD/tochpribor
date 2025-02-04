@@ -88,6 +88,7 @@
         ]
     },
     "dependencies": {
+        "gsap": "^3.12.7",
         "lottie-web": "^5.12.2"
     }
 }

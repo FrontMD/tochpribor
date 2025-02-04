@@ -13,11 +13,14 @@ function homeIntro() {
     const homeIntroSlider = homeIntro.querySelector('[data-js="homeIntroSlider"]');
     const homeIntroTabs = homeIntro.querySelector('[data-js="homeIntroTabs"]');
     const homeIntroInfoSlider = homeIntro.querySelector('[data-js="homeIntroInfoSlider"]');
-    const progressBar = homeIntro.querySelector('[data-js="homeIntroProgressBar"]')
-    const progressBarFill = homeIntro.querySelector('[data-js="homeIntroProgressBarFill"]')
-    const homeIntroInfo = homeIntro.querySelector('[data-js="homeIntroInfo"]')
+    const progressBar = homeIntro.querySelector('[data-js="homeIntroProgressBar"]');
+    const progressBarFill = homeIntro.querySelector('[data-js="homeIntroProgressBarFill"]');
+    const skipBtn = homeIntro.querySelector('[data-js="homeIntroProgressBarSkip"]');
+    const homeIntroInfo = homeIntro.querySelector('[data-js="homeIntroInfo"]');
 
-    //const tabsList = homeIntroTabs.querySelectorAll('[data-js="homeIntroTab"]');
+    const homeIntroChart = homeIntro.querySelector('[data-js="homeIntroChart"]');
+    const homeIntroChartLine = homeIntroChart.querySelector('[data-js="homeIntroChartLine"]');
+    const homeIntroChartVals = homeIntroChart.querySelectorAll('[data-js="homeIntroChartVal"]');
 
     const homeIntroTabsEx = new Swiper(homeIntroTabs, {
         slidesPerView: 5,
@@ -73,25 +76,46 @@ function homeIntro() {
             // пока запускаем первую вручную, потом будет после прелоадера
             item.play()
 
-            // тут надо скрыть вкладки
-            
             item.addEventListener('config_ready', () => {
-                const totalFrames = item.totalFrames * 0.8;
+                const startProgress = 80;
+                const endProgress = 140;
+                const periodLength = endProgress - startProgress
 
                 item.addEventListener('enterFrame', () => {
-                    let currentProgress = Math.ceil(parseInt(item.currentFrame) / totalFrames * 100);
+                    let currentFrame = parseInt(item.currentFrame) - startProgress;
+                    let currentProgress = Math.ceil(currentFrame / periodLength * 100);
 
-                    currentProgress = currentProgress > 100 ? 100 : currentProgress
-
-                    progressBarFill.style.width = currentProgress + '%'
                     
+                    if(currentFrame == -20) {
+                        homeIntroChart.classList.add('active');
+                    }
+                    
+                    currentProgress = currentProgress > 100 ? 100 : currentProgress
+                    currentProgress = currentProgress < 1 ? 0 : currentProgress
+
+                    if(currentProgress > 0) {
+                        progressBarFill.style.width = currentProgress + '%';
+                        homeIntroChartLine.style.width = currentProgress + '%';
+
+                        homeIntroChartVals.forEach(val => {
+                            const valMin = parseFloat(val.dataset.min);
+                            const valMax = parseFloat(val.dataset.max);
+                            const valPeriod = valMax - valMin;
+                            const newVal = Math.round(valPeriod / 100 * currentProgress)  + valMin
+                            
+                            val.innerHTML = newVal.toLocaleString();
+                        })
+                    }
+
                     if(currentProgress == 100) {
-                        progressBarToggle(false)
+                        progressBarFill.style.width = '0%';
+                        homeIntroChartLine.style.width = '0%';
+                        progressBarToggle(false);
+                        homeIntroChart.classList.remove('active');
                     }
                 })
             })
     
-
         }
 
         // после окончания листаем слайдер и перематываем анимацию на определённый кадр, чтобы выглядело как изображение. все кроме 0
@@ -111,12 +135,15 @@ function homeIntro() {
 
     // смена слайда
     homeIntroSliderEx.on('slideChangeTransitionEnd', function(currentSlider) {
+        
+        const currentSlideIndex = currentSlider.realIndex
 
         //возвращаем все анимации на старт
         renders.forEach(render => {
             render.goToAndStop(0, false);
         })
 
+        // проматываем страницу вверх и блокируем скролл
         lockBody()
         window.scrollTo({
             top: 0,
@@ -124,15 +151,33 @@ function homeIntro() {
             behavior: 'smooth'
         })
 
-        const currentSlideIndex = currentSlider.realIndex
+        // если первый слайд, то возвращаем прогрессбар
+        if(currentSlideIndex == 0) {
+            progressBarToggle(true)
+        } else {
+            // если не первый то убираем
+            progressBarToggle(false)
+            homeIntroChart.classList.remove('active');
+            progressBarFill.style.width = '0%';
+            homeIntroChartLine.style.width = '0%';
+        }
 
+        // запускаем анимацию
         renders[currentSlideIndex].play()
 
+        // если последний слайд, то снимаем блокировку скролла
         if(currentSlideIndex == renders.length - 1) {
             setTimeout(unlockBody, 10)
         }
+
     });
 
+    skipBtn.addEventListener('click', () => {
+        homeIntroInfoSliderEx.slideNext(10, true);
+        progressBarToggle(false)
+    })
+    
+    // переключение с прогрессбара на вкладки и обратно
     function progressBarToggle(show) {
         if(show) {
             progressBar.classList.add('active');
