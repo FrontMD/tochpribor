@@ -2,6 +2,7 @@
 @@include("./libs/jquery-3.7.0.min.js")
 @@include("./libs/lazyload.min.js")
 @@include("./libs/swiper-bundle.min.js")
+//include("./libs/lottie_api.min.js")
 @@include("./libs/lottie.min.js")
 @@include("./libs/select2.full.min.js")
 @@include("./libs/hystmodal.min.js")

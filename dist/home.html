@@ -164,7 +164,7 @@
                         </div>
                   </div>
                   <div class="home-intro__right">
-                    <div class="home-intro__info home-info">
+                    <div class="home-intro__info home-info" data-js="homeIntroInfo">
                       <div class="home-info__tabs" data-js="homeIntroTabs">
                         <div class="swiper-wrapper">
                           <div class="swiper-slide home-info__tab" data-js="homeIntroTab">01</div>
@@ -219,7 +219,12 @@
                         </div>
                       </div>
                     </div>
-                    <div class="home-intro__progress"><a class="section__tag">[Пропустить]</a></div>
+                    <div class="home-intro__progress progressbar active" data-js="homeIntroProgressBar">
+                      <button class="section__tag" type="button" data-js="homeIntroProgressBarSkip">[Пропустить]</button>
+                      <div class="progressbar__body">
+                        <div class="progressbar__fill" data-js="homeIntroProgressBarFill"></div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>

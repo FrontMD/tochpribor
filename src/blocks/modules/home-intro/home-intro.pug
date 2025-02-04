@@ -32,7 +32,7 @@ mixin home-intro(props= defaultHomeIntroProps)
                         cMode: 'light'
                     })
                 .home-intro__right
-                    .home-intro__info.home-info
+                    .home-intro__info.home-info(data-js="homeIntroInfo")
                         .home-info__tabs(data-js="homeIntroTabs")
                             .swiper-wrapper
                                 .swiper-slide.home-info__tab(data-js="homeIntroTab") 01
@@ -97,5 +97,8 @@ mixin home-intro(props= defaultHomeIntroProps)
                                         cMode: 'red',
                                         size: 'full'
                                     })
-                    .home-intro__progress
-                        a.section__tag [Пропустить]
+                    .home-intro__progress.progressbar.active(data-js="homeIntroProgressBar")
+                        button.section__tag(type="button" data-js="homeIntroProgressBarSkip") [Пропустить]
+                        .progressbar__body
+                            .progressbar__fill(data-js="homeIntroProgressBarFill")
+
