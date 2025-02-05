@@ -1,6 +1,6 @@
 footer.site-footer(data-js="siteFooter")
     .site-footer__container
-        .site-footer__word
+        .site-footer__word(data-js='footerText')
             | производство
             svg
                 use(xlink:href=`img/sprites/sprite.svg#arrow_classic`)
@@ -8,7 +8,7 @@ footer.site-footer(data-js="siteFooter")
             svg
                 use(xlink:href=`img/sprites/sprite.svg#arrow_classic`)
             | ремонт
-        .site-footer__left
+        .site-footer__left(data-js='footerLeft')
             +btn({
                 classes: '',
                 size: "big",
@@ -21,7 +21,7 @@ footer.site-footer(data-js="siteFooter")
 
             .site-footer__copyright © 2010—2024 Точприбор
 
-        .site-footer__menu
+        .site-footer__menu(data-js='footerMenu')
             +big-menu
 
 
