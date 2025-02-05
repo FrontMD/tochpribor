@@ -1,3 +1,4 @@
+console.log(window)
 gsap.registerPlugin(ScrollTrigger);
 
 const animationBreakpoint = 767;
@@ -5,7 +6,7 @@ const vh = window.innerHeight
 
 document.addEventListener('DOMContentLoaded', () => {
     if (window.innerWidth > animationBreakpoint) {
-        initScrollAnimations()
+        //initScrollAnimations()
     }
 })
 

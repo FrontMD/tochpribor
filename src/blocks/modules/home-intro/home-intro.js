@@ -3,7 +3,7 @@ function homeIntro() {
 
     if(!homeIntro) return
 
-    //lockBody()
+    lockBody()
     window.scrollTo({
         top: 0,
         left: 0,
@@ -144,7 +144,7 @@ function homeIntro() {
         })
 
         // проматываем страницу вверх и блокируем скролл
-        //lockBody()
+        lockBody()
         window.scrollTo({
             top: 0,
             left: 0,
