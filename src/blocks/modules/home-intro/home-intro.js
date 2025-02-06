@@ -3,19 +3,25 @@ function homeIntro() {
 
     if(!homeIntro) return
 
-    lockBody()
-    window.scrollTo({
-        top: 0,
-        left: 0,
-        behavior: 'smooth'
-    })
+    if(window.scrollY < vh / 3) {
+        lockBody()
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+        })
+    } else {
+        unlockBody()
+    }
 
     const homeIntroSlider = homeIntro.querySelector('[data-js="homeIntroSlider"]');
     const homeIntroTabs = homeIntro.querySelector('[data-js="homeIntroTabs"]');
+    const tabsProgressList = homeIntroTabs.querySelectorAll('[data-js="tabProgress"]');
     const homeIntroInfoSlider = homeIntro.querySelector('[data-js="homeIntroInfoSlider"]');
     const progressBar = homeIntro.querySelector('[data-js="homeIntroProgressBar"]');
     const progressBarFill = homeIntro.querySelector('[data-js="homeIntroProgressBarFill"]');
     const skipBtn = homeIntro.querySelector('[data-js="homeIntroProgressBarSkip"]');
+    const skipAllBtn = homeIntro.querySelector('[data-js="homeIntroSkipAll"]');
     const homeIntroInfo = homeIntro.querySelector('[data-js="homeIntroInfo"]');
 
     const homeIntroChart = homeIntro.querySelector('[data-js="homeIntroChart"]');
@@ -81,9 +87,31 @@ function homeIntro() {
                 const endProgress = 140;
                 const periodLength = endProgress - startProgress
 
+                const totalFrames = item.totalFrames;
+                const currentProgressLine = tabsProgressList[index]
+                const currentOverlay = currentProgressLine.querySelector('[data-js="tabProgressOverlay"]')
+
                 item.addEventListener('enterFrame', () => {
                     let currentFrame = parseInt(item.currentFrame) - startProgress;
                     let currentProgress = Math.ceil(currentFrame / periodLength * 100);
+
+                    let currentRealFrame = item.currentFrame
+
+                    if(currentRealFrame > endProgress) {
+                        currentOverlay.style.width = Math.ceil((currentRealFrame - endProgress) / (totalFrames - endProgress) * 100) + '%';
+
+                        if(parseInt(currentRealFrame) == totalFrames - 1) {
+                            currentOverlay.style.width = '0%';
+                        }
+                    }
+
+                    if(currentRealFrame == 0) {
+                        currentOverlay.style.width = '0%';
+                    }
+
+                    if(parseInt(item.currentFrame) === endProgress + 1) {
+                        item.setSpeed(0.7)
+                    }
 
                     
                     if(currentFrame == -20) {
@@ -116,16 +144,36 @@ function homeIntro() {
                 })
             })
     
+        } else {
+            item.addEventListener('config_ready', () => {
+                const totalFrames = item.totalFrames;
+                const currentProgressLine = tabsProgressList[index]
+                const currentOverlay = currentProgressLine.querySelector('[data-js="tabProgressOverlay"]')
+                
+                item.addEventListener('enterFrame', () => {
+                    const currentFrame = parseInt(item.currentFrame);
+                    currentOverlay.style.width = Math.ceil(currentFrame / totalFrames * 100) + '%';
+                    if(currentFrame == totalFrames) {
+                        currentOverlay.style.width = '0%';
+                    }
+                })
+
+            })
         }
 
         // после окончания листаем слайдер и перематываем анимацию на определённый кадр, чтобы выглядело как изображение. все кроме 0
         item.addEventListener ('complete', () => {
         
             // Автопролистывание слайдов
-            //homeIntroInfoSliderEx.slideNext(100, true);
+            homeIntroInfoSliderEx.slideNext(10, true);
 
             if(index !== 0) {
                 item.goToAndStop(0, false);
+
+                if(index == renders.length - 1) {
+                    tabsProgressList[index].querySelector('[data-js="tabProgressOverlay"]').style.width = '100%'
+                }
+
             }
 
         })
@@ -143,16 +191,23 @@ function homeIntro() {
             render.goToAndStop(0, false);
         })
 
-        // проматываем страницу вверх и блокируем скролл
-        lockBody()
-        window.scrollTo({
-            top: 0,
-            left: 0,
-            behavior: 'smooth'
-        })
+        // проматываем страницу вверх и блокируем скролл если первый экран занимает больше 2/3 окна просмотра
+        let posTop = window.scrollY;
 
-        // если первый слайд, то возвращаем прогрессбар
+        if(posTop < vh / 3) {
+            lockBody()
+            window.scrollTo({
+                top: 0,
+                left: 0,
+                behavior: 'smooth'
+            })
+        } else {
+            unlockBody()
+        }
+
+        // если первый слайд, то возвращаем прогрессбар и нормальную скорость анимации
         if(currentSlideIndex == 0) {
+            renders[0].setSpeed(1)
             progressBarToggle(true)
         } else {
             // если не первый то убираем
@@ -173,8 +228,15 @@ function homeIntro() {
     });
 
     skipBtn.addEventListener('click', () => {
-        homeIntroInfoSliderEx.slideNext(10, true);
-        progressBarToggle(false)
+        renders[0].goToAndPlay(139, true)
+    })
+
+    skipAllBtn.addEventListener('click', () => {
+        unlockBody();
+        window.scrollTo({
+            top: vh - 60,
+            behavior: 'smooth'
+        })
     })
     
     // переключение с прогрессбара на вкладки и обратно

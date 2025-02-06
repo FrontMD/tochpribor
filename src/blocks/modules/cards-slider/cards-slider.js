@@ -49,7 +49,7 @@ function cardsSlidersInit() {
                 const parallax = slider3Cards.hasAttribute('data-parallax') 
                 
                 const slider3CardsEx = new Swiper(slider3Cards, {
-                    slidesPerView: 1.1,
+                    slidesPerView: 1.2,
                     allowTouchMove: true,
                     spaceBetween: 16,
                     parallax: parallax, 
@@ -60,7 +60,7 @@ function cardsSlidersInit() {
                     },
                     breakpoints: {
                         768: {
-                            slidesPerView: 1.5,
+                            slidesPerView: 2,
                             spaceBetween: 16
                         },
                         1250: {
@@ -131,9 +131,9 @@ function cardsSlidersInit() {
             const parallax = slider6Cards.hasAttribute('data-parallax')
         
             const slider6CardsEx = new Swiper(slider6Cards, {
-                slidesPerView: 1.1,
+                slidesPerView: 2,
                 allowTouchMove: true,
-                spaceBetween: 16,
+                spaceBetween: 8,
                 parallax: parallax,
                 loop: false,
                 navigation: {
@@ -142,21 +142,12 @@ function cardsSlidersInit() {
                 },
                 breakpoints: {
                     501: {
-                        slidesPerView: 2,
-                        spaceBetween: 16
+                        slidesPerView: 4,
                     },
                     1024: {
-                        slidesPerView: 3,
-                        spaceBetween: 16
-                    },
-                    1421: {
                         slidesPerView: 6,
                         spaceBetween: 16
                     },
-                    2300: {
-                        slidesPerView: 6,
-                        spaceBetween: 16
-                    }
                 }
             })
         })

@@ -122,6 +122,21 @@
         }
     }
 
+    &--transparent-grey {
+        color: $c-text-light;
+        background-color: transparent;
+        transition: all $tr-time;
+
+        &:hover {
+            color: $c-white;
+
+            .btn__note,
+            svg {
+                color: $c-white;
+            }
+        }
+    }
+
     &--grey {
         color: $c-text;
         background-color: $c-border;

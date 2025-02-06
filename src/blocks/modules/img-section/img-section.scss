@@ -16,11 +16,15 @@
         }
     }
 
-    &__container {
+    &__container.section__container {
         position: relative;
         z-index: 3;
         padding-top: 40px;
         padding-bottom: 40px;
+
+        @include max(tablet) {
+            padding: 20px;
+        }
     }
 
     &__title {

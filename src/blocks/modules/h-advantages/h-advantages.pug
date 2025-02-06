@@ -1,98 +1,106 @@
 -
-	const defaultHAdvantagesProps = {
-		classes: '',
-		title: '',
-		tag: '',
-		subtitle: ''
-	}
+    const defaultHAdvantagesProps = {
+        classes: '',
+        title: '',
+        tag: '',
+        subtitle: ''
+    }
 
 mixin h-advantages(props= defaultHAdvantagesProps)
-	-
-		const checkProps = {
-			classes: props.classes ? props.classes : defaultHAdvantagesProps.classes,
-			title: props.title ? props.title : defaultHAdvantagesProps.title,
-			tag: props.tag ? props.tag : defaultHAdvantagesProps.tag,
-			subtitle: props.subtitle ? props.subtitle : defaultHAdvantagesProps.subtitle
-		}
+    -
+        const checkProps = {
+            classes: props.classes ? props.classes : defaultHAdvantagesProps.classes,
+            title: props.title ? props.title : defaultHAdvantagesProps.title,
+            tag: props.tag ? props.tag : defaultHAdvantagesProps.tag,
+            subtitle: props.subtitle ? props.subtitle : defaultHAdvantagesProps.subtitle
+        }
 
-	section.section.section--full.section--transparent.h-advantages(class= checkProps.classes)&attributes(attributes)
-		.section__container
-			.h-advantages__header
-				+title({
-					classes: "h-advantages__title",
-					tag: 'h2',
-					size: '53',
-					text: checkProps.title
-				})
-				-if(checkProps.tag.length > 0 || checkProps.subtitle.length > 0)
-					.h-advantages__bottom
-						-if(checkProps.tag.length > 0)
-							.section__tag.h-advantages__tag!= checkProps.tag
-						-if(checkProps.subtitle.length > 0)
-							.section__subtitle!= checkProps.subtitle
+    section.section.section--full.section--transparent.h-advantages(class= checkProps.classes)&attributes(attributes)
+        .section__container
+            .h-advantages__header
+                +title({
+                    classes: "h-advantages__title",
+                    tag: 'h2',
+                    size: '53',
+                    text: checkProps.title
+                })
+                -if(checkProps.tag.length > 0 || checkProps.subtitle.length > 0)
+                    .h-advantages__bottom
+                        -if(checkProps.tag.length > 0)
+                            .section__tag.h-advantages__tag!= checkProps.tag
+                        -if(checkProps.subtitle.length > 0)
+                            .section__subtitle!= checkProps.subtitle
 
-			.h-advantages__cards
-				.h-advantages__card
-					.h-advantages__img
-						img(class="lazyload" src="img/lazy-placeholder.webp" data-src="img/home/card_1.svg" alt="")
-					.h-advantages__subtitle.title--32
-						span.title--67 3 200
-						span.title--43 м<sup>2</sup>
-					.h-advantages__text.text-editor У нас имеются собственные помещения для производства продукции, общая площадь которых составляет свыше
+            .h-advantages__cards(data-js="hAdvantagesSlider")
+                .h-advantages__controls.slider-controls
+                    button.slider-control.slider-control--prev(type="button" data-js='sliderPrev')
+                        svg
+                            use(xlink:href=`img/sprites/sprite.svg#arrow_classic`)
+                    button.slider-control.slider-control--next(type="button" data-js='sliderNext')
+                        svg
+                            use(xlink:href=`img/sprites/sprite.svg#arrow_classic`)
+                .swiper-wrapper
+                    .swiper-slide.h-advantages__card
+                        .h-advantages__img
+                            img(class="lazyload" src="img/lazy-placeholder.webp" data-src="img/home/card_1.svg" alt="")
+                        .h-advantages__subtitle.title--32
+                            span.title--67 3 200
+                            span.title--43 м<sup>2</sup>
+                        .h-advantages__text.text-editor У нас имеются собственные помещения для производства продукции, общая площадь которых составляет свыше
 
-				.h-advantages__card
-					.h-advantages__img
-						img(class="lazyload" src="img/lazy-placeholder.webp" data-src="img/home/card_2.svg" alt="")
-					.h-advantages__subtitle.title--32 Заключение Минпромторга
-					.h-advantages__text.text-editor О производстве на территории РФ
+                    .swiper-slide.h-advantages__card
+                        .h-advantages__img
+                            img(class="lazyload" src="img/lazy-placeholder.webp" data-src="img/home/card_2.svg" alt="")
+                        .h-advantages__subtitle.title--32 Заключение Минпромторга
+                        .h-advantages__text.text-editor О производстве на территории РФ
 
-				.h-advantages__card
-					.h-advantages__img
-						img(class="lazyload" src="img/lazy-placeholder.webp" data-src="img/home/card_3.svg" alt="")
-					.h-advantages__subtitle.title--32 Расширенная гарантия на оборудование
+                    .swiper-slide.h-advantages__card
+                        .h-advantages__img
+                            img(class="lazyload" src="img/lazy-placeholder.webp" data-src="img/home/card_3.svg" alt="")
+                        .h-advantages__subtitle.title--32 Расширенная гарантия на оборудование
 
-				.h-advantages__card
-					.h-advantages__img
-						img(class="lazyload" src="img/lazy-placeholder.webp" data-src="img/home/card_4.svg" alt="")
-					.h-advantages__subtitle.title--32 Собственное производство
-					.h-advantages__text.text-editor Полного цикла
+                    .swiper-slide.h-advantages__card
+                        .h-advantages__img
+                            img(class="lazyload" src="img/lazy-placeholder.webp" data-src="img/home/card_4.svg" alt="")
+                        .h-advantages__subtitle.title--32 Собственное производство
+                        .h-advantages__text.text-editor Полного цикла
 
-				.h-advantages__card
-					.h-advantages__img
-						img(class="lazyload" src="img/lazy-placeholder.webp" data-src="img/home/card_5.svg" alt="")
-					.h-advantages__subtitle.title--32
-						span.title--67 60+
-						span.title--43 лет
-					.h-advantages__text.text-editor Опыта разработки, производства и поставок испытательного оборудования
+                    .swiper-slide.h-advantages__card
+                        .h-advantages__img
+                            img(class="lazyload" src="img/lazy-placeholder.webp" data-src="img/home/card_5.svg" alt="")
+                        .h-advantages__subtitle.title--32
+                            span.title--67 60+
+                            span.title--43 лет
+                        .h-advantages__text.text-editor Опыта разработки, производства и поставок испытательного оборудования
 
-				.h-advantages__card
-					.h-advantages__img
-						img(class="lazyload" src="img/lazy-placeholder.webp" data-src="img/home/card_6.svg" alt="")
-					.h-advantages__subtitle.title--32 Лучшее соотношение цены и качества
+                    .swiper-slide.h-advantages__card
+                        .h-advantages__img
+                            img(class="lazyload" src="img/lazy-placeholder.webp" data-src="img/home/card_6.svg" alt="")
+                        .h-advantages__subtitle.title--32 Лучшее соотношение цены и качества
 
-				.h-advantages__card
-					.h-advantages__img
-						img(class="lazyload" src="img/lazy-placeholder.webp" data-src="img/home/card_7.svg" alt="")
-					.h-advantages__subtitle.title--32 Оказываем услуги
-					.h-advantages__text.text-editor 
-						ul
-							li по поверке СИ
-							li по металлообработке
+                    .swiper-slide.h-advantages__card
+                        .h-advantages__img
+                            img(class="lazyload" src="img/lazy-placeholder.webp" data-src="img/home/card_7.svg" alt="")
+                        .h-advantages__subtitle.title--32 Оказываем услуги
+                        .h-advantages__text.text-editor 
+                            ul
+                                li по поверке СИ
+                                li по металлообработке
 
-				.h-advantages__card
-					.h-advantages__img
-						img(class="lazyload" src="img/lazy-placeholder.webp" data-src="img/home/card_8.svg" alt="")
-					.h-advantages__subtitle.title--32 Сертификат менеджмента
-					.h-advantages__text.text-editor Качества производства <a href='#'>ISO 9001:2015</a>
+                    .swiper-slide.h-advantages__card
+                        .h-advantages__img
+                            img(class="lazyload" src="img/lazy-placeholder.webp" data-src="img/home/card_8.svg" alt="")
+                        .h-advantages__subtitle.title--32 Сертификат менеджмента
+                        .h-advantages__text.text-editor Качества производства <a href='#'>ISO 9001:2015</a>
 
-				.h-advantages__card
-					.h-advantages__img
-						img(class="lazyload" src="img/lazy-placeholder.webp" data-src="img/home/card_7.svg" alt="")
-					.h-advantages__subtitle.title--32 Официальный представитель
-					.h-advantages__text.text-editor На территории РФ и ближнего зарубежья европейского производителя испытательного оборудования - компании Devotrans
+                    .swiper-slide.h-advantages__card
+                        .h-advantages__img
+                            img(class="lazyload" src="img/lazy-placeholder.webp" data-src="img/home/card_7.svg" alt="")
+                        .h-advantages__subtitle.title--32 Официальный представитель
+                        .h-advantages__text.text-editor На территории РФ и ближнего зарубежья европейского производителя испытательного оборудования - компании Devotrans
 
-				.h-advantages__card
-					.h-advantages__img
-						img(class="lazyload" src="img/lazy-placeholder.webp" data-src="img/home/card_8.svg" alt="")
-					.h-advantages__subtitle.title--32 Используем уникальные материалы
-					.h-advantages__text.text-editor В ассортименте есть оборудование и материалы, которые в РФ изготавливает только наш завод
+                    .swiper-slide.h-advantages__card
+                        .h-advantages__img
+                            img(class="lazyload" src="img/lazy-placeholder.webp" data-src="img/home/card_8.svg" alt="")
+                        .h-advantages__subtitle.title--32 Используем уникальные материалы
+                        .h-advantages__text.text-editor В ассортименте есть оборудование и материалы, которые в РФ изготавливает только наш завод

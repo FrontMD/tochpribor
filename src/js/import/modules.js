@@ -9,6 +9,7 @@
 @@include("../../blocks/modules/cards-slider/cards-slider.js")
 @@include("../../blocks/modules/product-slider/product-slider.js")
 @@include("../../blocks/modules/product-page-intro/product-intro.js")
+@@include("../../blocks/modules/h-advantages/h-advantages.js")
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -36,4 +37,6 @@ document.addEventListener('DOMContentLoaded', () => {
     productSlider()
     // Скрипты первого экрана детальной карточки товара
     productIntro()
+    // Слайдер карточек преимуществ
+    hAdvantagesSlider()
 })

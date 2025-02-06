@@ -1,4 +1,3 @@
-console.log(window)
 gsap.registerPlugin(ScrollTrigger);
 
 const animationBreakpoint = 767;
@@ -39,36 +38,37 @@ function footerScrollAnimation() {
     trigger.style.zIndex = '10'
     trigger.style.height = '100vh'
     trigger.style.maxHeigth = '100vh'
-    const addTimeFooter = 200;
     const topOffset = (vh - footer.offsetHeight) + 'px'
     console.log(trigger)*/
     
-    const footerTimeline = gsap.timeline();
-    const pinWrap = document.createElement('div');
+    /*const pinWrap = document.createElement('div');
     const pin = document.createElement('div');
     const main = document.querySelector('.site-main')
     const mainHeight = main.offsetHeight
-    const footerHeight = footer.offsetHeight
     const contentHeight = mainHeight + footerHeight
-
     main.before(pinWrap)
     pinWrap.appendChild(pin)
     pin.appendChild(main)
-    pin.appendChild(footer)
+    pin.appendChild(footer)*/
     
-    footer.closest('body').style.height = contentHeight + 'px'
+    const footerTimeline = gsap.timeline();
+    const footerHeight = footer.offsetHeight
+    const addTimeFooter = 200;
+    
+    
+    //footer.closest('body').style.height = contentHeight + 'px'
 
     scrollTriggerObject = ScrollTrigger.create({
-        trigger: pinWrap,
+        trigger: footer,
         pin: true,
-        start: `top top`,
-        end: `+=${contentHeight - vh}px`,
-        scrub: 1,
+        start: () => "top " + Math.ceil(vh - footerHeight)  + "px",
+        end: () => "+=" + addTimeFooter + '%',
+        scrub: 0,
         animation: footerTimeline,
-        pinSpacing: false
+        markers: true
     });
     
-    footerTimeline.fromTo(pin, {
+    /*footerTimeline.fromTo(pin, {
 		y: "0",
 	}, {
 		y: `-${mainHeight - vh + footerHeight}px`,
@@ -82,31 +82,24 @@ function footerScrollAnimation() {
 		y: `-${contentHeight - vh}px`,
 		duration: 0.3,
 		ease: "none",
-	}, ">");
+	}, ">");*/
 
     footerTimeline.fromTo('[data-js="footerText"]', {
-        x: '70%',
-	}, {
-		x: "0",
-		duration: 0.5,
-		ease: "none",
-	}, "<-0.1");
+        x: '74%',
+    }, {
+        x: "0",
+        duration: 0.6,
+        ease: "none",
+    }, "0");
 
     footerTimeline.fromTo('[data-js="footerMenu"]', {
         x: '120%',
-	}, {
-		x: "0",
-		duration: 0.1,
-		ease: "none",
-	}, ">-0.1");
+    }, {
+        x: "0",
+        duration: 0.1,
+        ease: "none",
+    }, "<+=1.3");
 
-    footerTimeline.fromTo('[data-js="footerLeft"]', {
-        opacity: '0',
-	}, {
-		opacity: "1",
-		duration: 0.1,
-		ease: "none",
-	}, "<");
 }
 
 function homeScrollAnimation() {

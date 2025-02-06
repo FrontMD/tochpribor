@@ -13,7 +13,7 @@ mixin home-intro(props= defaultHomeIntroProps)
         .section__container.home-intro__container
             .home-intro__bg
                 video(autoplay muted loop playsinline webkit-playsinline data-js="autoplayVideo")
-                    source(src="public/video/home_intro.mp4" type="video/mp4")
+                    source(src="public/video/home_intro.mp4" media="(min-width: 1024px)" type="video/mp4")
             .home-intro__slider(data-js="homeIntroSlider")
                 .home-intro__chart.home-chart(data-js="homeIntroChart")
                     .home-chart__chart
@@ -51,13 +51,35 @@ mixin home-intro(props= defaultHomeIntroProps)
                     })
                 .home-intro__right
                     .home-intro__info.home-info(data-js="homeIntroInfo")
+                        +btn({
+                            classes: 'home-info__scroll',
+                            name: 'Вниз',
+                            cMode: 'transparent-grey',
+                            size: 'link',
+                            icon: 'arrow_classic'
+                        })(data-js="homeIntroSkipAll")
                         .home-info__tabs(data-js="homeIntroTabs")
                             .swiper-wrapper
-                                .swiper-slide.home-info__tab(data-js="homeIntroTab") 01
-                                .swiper-slide.home-info__tab(data-js="homeIntroTab") 02
-                                .swiper-slide.home-info__tab(data-js="homeIntroTab") 03
-                                .swiper-slide.home-info__tab(data-js="homeIntroTab") 04
-                                .swiper-slide.home-info__tab(data-js="homeIntroTab") 05
+                                .swiper-slide.home-info__tab(data-js="homeIntroTab") 
+                                    span 01
+                                    .tab-progress(data-js="tabProgress")
+                                        .tab-progress__overlay(data-js="tabProgressOverlay")
+                                .swiper-slide.home-info__tab(data-js="homeIntroTab") 
+                                    span 02
+                                    .tab-progress(data-js="tabProgress")
+                                        .tab-progress__overlay(data-js="tabProgressOverlay")
+                                .swiper-slide.home-info__tab(data-js="homeIntroTab") 
+                                    span 03
+                                    .tab-progress(data-js="tabProgress")
+                                        .tab-progress__overlay(data-js="tabProgressOverlay")
+                                .swiper-slide.home-info__tab(data-js="homeIntroTab") 
+                                    span 04
+                                    .tab-progress(data-js="tabProgress")
+                                        .tab-progress__overlay(data-js="tabProgressOverlay")
+                                .swiper-slide.home-info__tab(data-js="homeIntroTab") 
+                                    span 05
+                                    .tab-progress(data-js="tabProgress")
+                                        .tab-progress__overlay(data-js="tabProgressOverlay")
                         .home-info__slider(data-js="homeIntroInfoSlider")
                             .swiper-wrapper
                                 .swiper-slide.home-info__slide

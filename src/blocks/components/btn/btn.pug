@@ -8,7 +8,6 @@
         link: 'javascript:void(0)',
         buttonType: 'button',
         icon: '',
-        iconPos: 'left'
     }
 
 mixin btn(props = defaultBtnProps)
@@ -21,8 +20,7 @@ mixin btn(props = defaultBtnProps)
             type: props.type ? props.type : defaultBtnProps.type,
             link: props.link ? props.link : defaultBtnProps.link,
             buttonType: props.buttonType ? props.buttonType : defaultBtnProps.buttonType,
-            icon: props.icon ? props.icon : defaultBtnProps.icon,
-            iconPos: props.iconPos ? props.iconPos : defaultBtnProps.iconPos
+            icon: props.icon ? props.icon : defaultBtnProps.icon
         }
 
         let colorClass = ` btn--${checkProps.cMode}`

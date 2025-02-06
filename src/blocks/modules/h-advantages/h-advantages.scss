@@ -1,10 +1,26 @@
 .h-advantages {
+
+    &.section {
+        @include max(tablet) {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+    }
+
     &__header {
         padding-top: 74px;
+
+        @include max(tablet) {
+            padding-top: 24px;
+        }
     }
 
     &__title {
         max-width: 970px;
+
+        @include max(tablet) {
+            max-width: 100%;
+        }
     }
 
     &__bottom {
@@ -13,6 +29,10 @@
         margin-top: 40px;
         border-top: 1px solid $c-bg;
         padding-top: 20px;
+
+        @include max(tablet) {
+            margin-top: 20px;
+        }
     }
 
     &__cards {
@@ -21,6 +41,35 @@
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: 8px;
+        overflow: hidden;
+
+        @include max(laptop) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        @include max(tablet) {
+            display: block;
+            padding-bottom: 40px;
+            margin-top: 40px;
+        }
+    }
+
+    .swiper-wrapper {
+        display: contents;
+
+        @include max(tablet) {
+            display: flex;
+        }
+    }
+
+    &__controls {
+        display: none;
+
+        @include max(tablet) {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 40px;
+        }
     }
 
     &__card {

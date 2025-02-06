@@ -143,7 +143,7 @@
               <div class="section__container home-intro__container">
                 <div class="home-intro__bg">
                   <video autoplay muted loop playsinline webkit-playsinline data-js="autoplayVideo">
-                    <source src="public/video/home_intro.mp4" type="video/mp4">
+                    <source src="public/video/home_intro.mp4" media="(min-width: 1024px)" type="video/mp4">
                   </video>
                 </div>
                 <div class="home-intro__slider" data-js="homeIntroSlider">
@@ -186,14 +186,37 @@
                         </div>
                   </div>
                   <div class="home-intro__right">
-                    <div class="home-intro__info home-info" data-js="homeIntroInfo">
+                    <div class="home-intro__info home-info" data-js="homeIntroInfo"><a class="btn home-info__scroll btn--transparent-grey btn--link" href="javascript:void(0)" data-js="homeIntroSkipAll">
+                            <svg>
+                              <use xlink:href="img/sprites/sprite.svg#arrow_classic"></use>
+                            </svg><span class="btn__text">Вниз</span></a>
                       <div class="home-info__tabs" data-js="homeIntroTabs">
                         <div class="swiper-wrapper">
-                          <div class="swiper-slide home-info__tab" data-js="homeIntroTab">01</div>
-                          <div class="swiper-slide home-info__tab" data-js="homeIntroTab">02</div>
-                          <div class="swiper-slide home-info__tab" data-js="homeIntroTab">03</div>
-                          <div class="swiper-slide home-info__tab" data-js="homeIntroTab">04</div>
-                          <div class="swiper-slide home-info__tab" data-js="homeIntroTab">05</div>
+                          <div class="swiper-slide home-info__tab" data-js="homeIntroTab"> <span>01</span>
+                            <div class="tab-progress" data-js="tabProgress">
+                              <div class="tab-progress__overlay" data-js="tabProgressOverlay"></div>
+                            </div>
+                          </div>
+                          <div class="swiper-slide home-info__tab" data-js="homeIntroTab"> <span>02</span>
+                            <div class="tab-progress" data-js="tabProgress">
+                              <div class="tab-progress__overlay" data-js="tabProgressOverlay"></div>
+                            </div>
+                          </div>
+                          <div class="swiper-slide home-info__tab" data-js="homeIntroTab"> <span>03</span>
+                            <div class="tab-progress" data-js="tabProgress">
+                              <div class="tab-progress__overlay" data-js="tabProgressOverlay"></div>
+                            </div>
+                          </div>
+                          <div class="swiper-slide home-info__tab" data-js="homeIntroTab"> <span>04</span>
+                            <div class="tab-progress" data-js="tabProgress">
+                              <div class="tab-progress__overlay" data-js="tabProgressOverlay"></div>
+                            </div>
+                          </div>
+                          <div class="swiper-slide home-info__tab" data-js="homeIntroTab"> <span>05</span>
+                            <div class="tab-progress" data-js="tabProgress">
+                              <div class="tab-progress__overlay" data-js="tabProgressOverlay"></div>
+                            </div>
+                          </div>
                         </div>
                       </div>
                       <div class="home-info__slider" data-js="homeIntroInfoSlider">
@@ -263,59 +286,73 @@
                     <div class="section__subtitle">Разработка, производство и поставки оборудования для физико-механических испытаний. Производим и поставляем лабораторное оборудование</div>
                   </div>
                 </div>
-                <div class="h-advantages__cards">
-                  <div class="h-advantages__card">
-                    <div class="h-advantages__img"><img class="lazyload" src="img/lazy-placeholder.webp" data-src="img/home/card_1.svg" alt=""></div>
-                    <div class="h-advantages__subtitle title--32"><span class="title--67">3 200</span><span class="title--43">м<sup>2</sup></span></div>
-                    <div class="h-advantages__text text-editor">У нас имеются собственные помещения для производства продукции, общая площадь которых составляет свыше</div>
+                <div class="h-advantages__cards" data-js="hAdvantagesSlider">
+                  <div class="h-advantages__controls slider-controls">
+                    <button class="slider-control slider-control--prev" type="button" data-js="sliderPrev">
+                      <svg>
+                        <use xlink:href="img/sprites/sprite.svg#arrow_classic"></use>
+                      </svg>
+                    </button>
+                    <button class="slider-control slider-control--next" type="button" data-js="sliderNext">
+                      <svg>
+                        <use xlink:href="img/sprites/sprite.svg#arrow_classic"></use>
+                      </svg>
+                    </button>
                   </div>
-                  <div class="h-advantages__card">
-                    <div class="h-advantages__img"><img class="lazyload" src="img/lazy-placeholder.webp" data-src="img/home/card_2.svg" alt=""></div>
-                    <div class="h-advantages__subtitle title--32">Заключение Минпромторга</div>
-                    <div class="h-advantages__text text-editor">О производстве на территории РФ</div>
-                  </div>
-                  <div class="h-advantages__card">
-                    <div class="h-advantages__img"><img class="lazyload" src="img/lazy-placeholder.webp" data-src="img/home/card_3.svg" alt=""></div>
-                    <div class="h-advantages__subtitle title--32">Расширенная гарантия на оборудование</div>
-                  </div>
-                  <div class="h-advantages__card">
-                    <div class="h-advantages__img"><img class="lazyload" src="img/lazy-placeholder.webp" data-src="img/home/card_4.svg" alt=""></div>
-                    <div class="h-advantages__subtitle title--32">Собственное производство</div>
-                    <div class="h-advantages__text text-editor">Полного цикла</div>
-                  </div>
-                  <div class="h-advantages__card">
-                    <div class="h-advantages__img"><img class="lazyload" src="img/lazy-placeholder.webp" data-src="img/home/card_5.svg" alt=""></div>
-                    <div class="h-advantages__subtitle title--32"><span class="title--67">60+</span><span class="title--43">лет</span></div>
-                    <div class="h-advantages__text text-editor">Опыта разработки, производства и поставок испытательного оборудования</div>
-                  </div>
-                  <div class="h-advantages__card">
-                    <div class="h-advantages__img"><img class="lazyload" src="img/lazy-placeholder.webp" data-src="img/home/card_6.svg" alt=""></div>
-                    <div class="h-advantages__subtitle title--32">Лучшее соотношение цены и качества</div>
-                  </div>
-                  <div class="h-advantages__card">
-                    <div class="h-advantages__img"><img class="lazyload" src="img/lazy-placeholder.webp" data-src="img/home/card_7.svg" alt=""></div>
-                    <div class="h-advantages__subtitle title--32">Оказываем услуги</div>
-                    <div class="h-advantages__text text-editor"> 
-                      <ul>
-                        <li>по поверке СИ</li>
-                        <li>по металлообработке</li>
-                      </ul>
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide h-advantages__card">
+                      <div class="h-advantages__img"><img class="lazyload" src="img/lazy-placeholder.webp" data-src="img/home/card_1.svg" alt=""></div>
+                      <div class="h-advantages__subtitle title--32"><span class="title--67">3 200</span><span class="title--43">м<sup>2</sup></span></div>
+                      <div class="h-advantages__text text-editor">У нас имеются собственные помещения для производства продукции, общая площадь которых составляет свыше</div>
                     </div>
-                  </div>
-                  <div class="h-advantages__card">
-                    <div class="h-advantages__img"><img class="lazyload" src="img/lazy-placeholder.webp" data-src="img/home/card_8.svg" alt=""></div>
-                    <div class="h-advantages__subtitle title--32">Сертификат менеджмента</div>
-                    <div class="h-advantages__text text-editor">Качества производства <a href='#'>ISO 9001:2015</a></div>
-                  </div>
-                  <div class="h-advantages__card">
-                    <div class="h-advantages__img"><img class="lazyload" src="img/lazy-placeholder.webp" data-src="img/home/card_7.svg" alt=""></div>
-                    <div class="h-advantages__subtitle title--32">Официальный представитель</div>
-                    <div class="h-advantages__text text-editor">На территории РФ и ближнего зарубежья европейского производителя испытательного оборудования - компании Devotrans</div>
-                  </div>
-                  <div class="h-advantages__card">
-                    <div class="h-advantages__img"><img class="lazyload" src="img/lazy-placeholder.webp" data-src="img/home/card_8.svg" alt=""></div>
-                    <div class="h-advantages__subtitle title--32">Используем уникальные материалы</div>
-                    <div class="h-advantages__text text-editor">В ассортименте есть оборудование и материалы, которые в РФ изготавливает только наш завод</div>
+                    <div class="swiper-slide h-advantages__card">
+                      <div class="h-advantages__img"><img class="lazyload" src="img/lazy-placeholder.webp" data-src="img/home/card_2.svg" alt=""></div>
+                      <div class="h-advantages__subtitle title--32">Заключение Минпромторга</div>
+                      <div class="h-advantages__text text-editor">О производстве на территории РФ</div>
+                    </div>
+                    <div class="swiper-slide h-advantages__card">
+                      <div class="h-advantages__img"><img class="lazyload" src="img/lazy-placeholder.webp" data-src="img/home/card_3.svg" alt=""></div>
+                      <div class="h-advantages__subtitle title--32">Расширенная гарантия на оборудование</div>
+                    </div>
+                    <div class="swiper-slide h-advantages__card">
+                      <div class="h-advantages__img"><img class="lazyload" src="img/lazy-placeholder.webp" data-src="img/home/card_4.svg" alt=""></div>
+                      <div class="h-advantages__subtitle title--32">Собственное производство</div>
+                      <div class="h-advantages__text text-editor">Полного цикла</div>
+                    </div>
+                    <div class="swiper-slide h-advantages__card">
+                      <div class="h-advantages__img"><img class="lazyload" src="img/lazy-placeholder.webp" data-src="img/home/card_5.svg" alt=""></div>
+                      <div class="h-advantages__subtitle title--32"><span class="title--67">60+</span><span class="title--43">лет</span></div>
+                      <div class="h-advantages__text text-editor">Опыта разработки, производства и поставок испытательного оборудования</div>
+                    </div>
+                    <div class="swiper-slide h-advantages__card">
+                      <div class="h-advantages__img"><img class="lazyload" src="img/lazy-placeholder.webp" data-src="img/home/card_6.svg" alt=""></div>
+                      <div class="h-advantages__subtitle title--32">Лучшее соотношение цены и качества</div>
+                    </div>
+                    <div class="swiper-slide h-advantages__card">
+                      <div class="h-advantages__img"><img class="lazyload" src="img/lazy-placeholder.webp" data-src="img/home/card_7.svg" alt=""></div>
+                      <div class="h-advantages__subtitle title--32">Оказываем услуги</div>
+                      <div class="h-advantages__text text-editor"> 
+                        <ul>
+                          <li>по поверке СИ</li>
+                          <li>по металлообработке</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="swiper-slide h-advantages__card">
+                      <div class="h-advantages__img"><img class="lazyload" src="img/lazy-placeholder.webp" data-src="img/home/card_8.svg" alt=""></div>
+                      <div class="h-advantages__subtitle title--32">Сертификат менеджмента</div>
+                      <div class="h-advantages__text text-editor">Качества производства <a href='#'>ISO 9001:2015</a></div>
+                    </div>
+                    <div class="swiper-slide h-advantages__card">
+                      <div class="h-advantages__img"><img class="lazyload" src="img/lazy-placeholder.webp" data-src="img/home/card_7.svg" alt=""></div>
+                      <div class="h-advantages__subtitle title--32">Официальный представитель</div>
+                      <div class="h-advantages__text text-editor">На территории РФ и ближнего зарубежья европейского производителя испытательного оборудования - компании Devotrans</div>
+                    </div>
+                    <div class="swiper-slide h-advantages__card">
+                      <div class="h-advantages__img"><img class="lazyload" src="img/lazy-placeholder.webp" data-src="img/home/card_8.svg" alt=""></div>
+                      <div class="h-advantages__subtitle title--32">Используем уникальные материалы</div>
+                      <div class="h-advantages__text text-editor">В ассортименте есть оборудование и материалы, которые в РФ изготавливает только наш завод</div>
+                    </div>
                   </div>
                 </div>
               </div>
