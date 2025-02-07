@@ -5,6 +5,11 @@
             padding-left: 20px;
             padding-right: 20px;
         }
+
+        @include max(mobile) {
+            padding-left: 0;
+            padding-right: 0;
+        }
     }
 
     &__header {
@@ -12,6 +17,10 @@
 
         @include max(tablet) {
             padding-top: 24px;
+        }
+
+        @include max(xs) {
+            padding-top: 12px;
         }
     }
 
@@ -33,6 +42,11 @@
         @include max(tablet) {
             margin-top: 20px;
         }
+
+        @include max(mobile) {
+            grid-template-columns: 100%;
+            gap: 8px;
+        }
     }
 
     &__cards {
@@ -52,6 +66,16 @@
             padding-bottom: 40px;
             margin-top: 40px;
         }
+
+        @include max(mobile) {
+            margin-right: -15px;
+            padding-right: 15px;
+        }
+
+        @include max(xs) {
+            padding-bottom: 12px;
+            margin-top: 32px;
+        }
     }
 
     .swiper-wrapper {
@@ -70,6 +94,12 @@
             justify-content: flex-end;
             margin-bottom: 40px;
         }
+
+        @include max(xs) {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 24px;
+        }
     }
 
     &__card {
@@ -81,6 +111,11 @@
         padding: 16px 20px;
         background-color: $c-white;
         border-radius: 4px;
+
+        @include max(xs) {
+            padding: 12px 16px;
+            min-height: 290px;
+        }
     }
 
     &__subtitle {
@@ -95,6 +130,14 @@
         right: 0;
         top: 50%;
         transform: translateY(-50%);
+
+        @include max(xs) {
+            max-width: 120px;
+
+            img {
+                max-width: 100%;
+            }
+        }
     }
 
     &__text.text-editor {

@@ -1179,9 +1179,13 @@ body {
 				max-height: 472.5px;
 			}
 
+			@include max(tablet) {
+				max-width: 95vw;
+				max-height: none;
+			}
+
 			@include max(mobile) {
 				max-width: 335px;
-				max-height: none;
 			}
 		}
 

@@ -51,13 +51,23 @@ mixin home-intro(props= defaultHomeIntroProps)
                     })
                 .home-intro__right
                     .home-intro__info.home-info(data-js="homeIntroInfo")
-                        +btn({
-                            classes: 'home-info__scroll',
-                            name: 'Вниз',
-                            cMode: 'transparent-grey',
-                            size: 'link',
-                            icon: 'arrow_classic'
-                        })(data-js="homeIntroSkipAll")
+                        .home-info__controls
+                            +btn({
+                                classes: 'home-info__control home-info__control--video',
+                                name: 'Видео',
+                                link: 'public/video/home_intro.mp4',
+                                cMode: 'transparent-grey',
+                                size: 'link',
+                                icon: 'play'
+                            })(data-fancybox)
+                            +btn({
+                                classes: 'home-info__control',
+                                name: 'Далее',
+                                cMode: 'transparent-grey',
+                                size: 'link',
+                                icon: 'arrow_classic'
+                            })(data-js="homeIntroSkipAll")
+
                         .home-info__tabs(data-js="homeIntroTabs")
                             .swiper-wrapper
                                 .swiper-slide.home-info__tab(data-js="homeIntroTab") 

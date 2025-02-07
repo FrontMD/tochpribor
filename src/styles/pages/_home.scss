@@ -3,6 +3,10 @@
         @include max(tablet) {
             padding: 20px;
         }
+
+        @include max(mobile) {
+            padding: 0;
+        }
     }
 
     &__cards {
@@ -15,6 +19,11 @@
             margin-top: 40px;
             grid-template-columns: repeat(2, 1fr);
         }
+
+        @include max(xs) {
+            margin-top: 32px;
+            grid-template-columns: 1fr;
+        }
     }
 
     &__card--first {
@@ -23,6 +32,10 @@
         @include max(tablet) {
             grid-row: 1 / 1;
             grid-column: 1 / 3;
+        }
+
+        @include max(xs) {
+            grid-column: 1 / 1;
         }
     }
 

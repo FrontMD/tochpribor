@@ -9,6 +9,10 @@
     border-radius: 4px;
     height: 100%;
 
+    @include max(xs) {
+        padding: 12px 16px;
+    }
+
     &__icon {
         position: absolute;
         right: 8px;
@@ -51,6 +55,10 @@
         width: 189px;
         aspect-ratio: 1 / 1;
 
+        @include max(xs) {
+            width: 100px;
+        }
+
         img {
             position: absolute;
             right: 0;
@@ -74,6 +82,10 @@
 
     &__bottom {
         margin-top: 20px;
+
+        @include max(xs) {
+            margin-top: 12px;
+        }
     }
 
     &__desc {
@@ -82,6 +94,11 @@
         line-height: 1.4em;
         color: $c-text-light;
         padding-right: 50px;
+
+        @include max(xs) {
+            font-size: 14px;
+            margin-top: 8px;
+        }
     }
 
     &:hover {

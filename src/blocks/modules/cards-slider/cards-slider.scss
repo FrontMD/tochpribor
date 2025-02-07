@@ -16,6 +16,10 @@
         align-items: flex-end;
         gap: 32px;
         margin-bottom: 40px;
+
+        @include max(xs) {
+            margin-bottom: 24px;
+        }
     }
 
     &__controls {
@@ -117,6 +121,10 @@
         width: 130%;
         left: 0;
         bottom: 0;
+
+        @include max(mobile) {
+            width: 200%;
+        }
 
         img {
             width: 100%;

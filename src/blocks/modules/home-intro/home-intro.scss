@@ -64,6 +64,21 @@
             top: 50%;
             transform: translateY(-70%);
         }
+
+        @include max(mobile) {
+            min-width: 640px;
+            left: 50%;
+            transform: translate(-50%, -70%)
+        }
+
+        @include max(xs) {
+            min-width: auto;
+            aspect-ratio: auto;
+            width: calc((100vh - 500px) * 1.778);
+            height: calc(100vh - 500px);
+            top: 120px;
+            transform: translate(-50%, 0)
+        }
     }
 
     .home-chart {
@@ -81,12 +96,27 @@
         opacity: 0;
         visibility: hidden;
         transition: all $tr-time-long linear;
+        z-index: 3;
 
         @include max(laptop) {
             width: 200px;
             font-size: 12px;
             padding: 8px;
             border-radius: 2px;
+        }
+
+        @include max(mobile) {
+            width: 150px;
+            font-size: 9px;
+            padding: 4px;
+            right: calc((100% - 100vw) / 2 + 10px);
+            top: -120px;
+        }
+
+        @include max(xs) {
+            top: -10px;
+            width: 100px;
+            font-size: 8px;
         }
 
         &.active {
@@ -140,6 +170,10 @@
             @include max(laptop) {
                 max-width: 85px;
             }
+
+            @include max(mobile) {
+                max-width: 70px;
+            }
         }
 
         &__text--bottom {
@@ -151,8 +185,11 @@
             @include max(laptop) {
                 max-width: 60px;
             }
-        }
 
+            @include max(mobile) {
+                max-width: 45px;
+            }
+        }
 
         &__table {
             margin-top: 19px;
@@ -264,7 +301,7 @@
         transition: all $tr-time-long linear;
 
         @include max(tablet) {
-            max-width: 100%;
+            display: none;
         }
 
         &.active {
@@ -321,6 +358,9 @@
 
     @include max(tablet) {
         width: 100%;
+        opacity: 1;
+        left: 0;
+        visibility: visible;
     }
 
     &.active {
@@ -329,36 +369,48 @@
         visibility: visible;
     }
 
-    &__scroll {
+    &__controls {
         position: absolute;
+        display: flex;
+        align-items: center;
+        height: fit-content;
+        gap: 16px;
         bottom: 0;
         right: calc(100% + 16px);
+
+        @include max(tablet) {
+            right: 0;
+            top: -40px;
+        }
+
+        @include max(mobile) {
+            top: -30px;
+        }
+    }
+
+    &__control {
         flex-direction: row-reverse;
 
         @include max(tablet) {
-            .btn__text {
-                display: none;
-            }
-
-            right: 8px;
-            top: -40px;
-            width: 32px;
-            height: 32px;
-            z-index: 3;
             color: $c-white;
-            border: 1px solid $c-white;
-            border-radius: 50%;
-
-            svg {
-                width: 16px;
-                height: 16px;
-            }
         }
 
         svg {
             width: 12px;
             height: 12px;
             transform: rotate(90deg);
+        }
+    }
+
+    &__control--video {
+        display: none;
+
+        @include max(tablet) {
+            display: flex;
+        }
+
+        svg {
+            transform: rotate(0);
         }
     }
 
@@ -439,6 +491,10 @@
 
         @include max(tablet) {
             height: 60px;
+        }
+
+        @include max(mobile) {
+            height: 50px;
         }
 
         img {
