@@ -12,7 +12,7 @@ mixin home-intro(props= defaultHomeIntroProps)
     section.section.section--full.home-intro(class= checkProps.classes data-js="homeIntro")&attributes(attributes)
         .section__container.home-intro__container
             .home-intro__bg
-                video(autoplay muted loop playsinline webkit-playsinline data-js="autoplayVideo")
+                video(autoplay muted loop playsinline webkit-playsinline data-js="autoplayVideo" poster="img/home/home_intro.webp")
                     source(src="public/video/home_intro.mp4" media="(min-width: 1024px)" type="video/mp4")
             .home-intro__slider(data-js="homeIntroSlider")
                 .home-intro__chart.home-chart(data-js="homeIntroChart")
