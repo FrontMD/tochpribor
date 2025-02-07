@@ -1,0 +1,25 @@
+-
+    const defaultQuoteSectionProps = {
+        classes: '',
+        text: ''
+    }
+
+mixin quote-section(props= defaultImgIntroProps)
+    -
+        const checkProps = {
+            classes: props.classes ? props.classes : defaultQuoteSectionProps.classes,
+            text: props.text ? props.text : defaultQuoteSectionProps.text,
+        }
+
+
+
+    section.section.section--full.quote-section(class= checkProps.classes)&attributes(attributes)
+        .section__container.quote-section__container
+            .quote-section__author
+                .quote-section__photo
+                    img(class='lazyload' src='img/lazy-placeholder.webp' data-src='img/persons/person_1.webp' alt="")
+                .quote-section__name Долгов Игорь
+                .quote-section__position Генеральный директор и владелец завода ГК “Точприбор”
+
+            -if(checkProps.text.length > 0)
+                .quote-section__text.title--43!= checkProps.text

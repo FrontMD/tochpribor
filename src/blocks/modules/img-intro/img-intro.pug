@@ -1,0 +1,52 @@
+-
+    const defaultImgIntroProps = {
+        classes: '',
+        img: '',
+        breadcrumbs: {},
+        title: '',
+        tag: '',
+        text: '',
+        btns: []
+    }
+
+mixin img-intro(props= defaultImgIntroProps)
+    -
+        const checkProps = {
+            classes: props.classes ? props.classes : defaultImgIntroProps.classes,
+            img: props.img ? props.img : defaultImgIntroProps.img,
+            breadcrumbs: props.breadcrumbs ? props.breadcrumbs : defaultImgIntroProps.breadcrumbs,
+            title: props.title ? props.title : defaultImgIntroProps.title,
+            tag: props.tag ? props.tag : defaultImgIntroProps.tag,
+            text: props.text ? props.text : defaultImgIntroProps.text,
+            btns: props.btns ? props.btns : defaultImgIntroProps.btns,
+        }
+
+
+
+    section.section.section--full.section--transparent.img-intro(class= checkProps.classes)&attributes(attributes)
+        .img-intro__bg
+            img(class='lazyload' src='img/lazy-placeholder.webp' data-src= checkProps.img, alt="")
+        .section__container.img-intro__container
+            .img-intro__top
+                +breadcrumbs(checkProps.breadcrumbs)
+                +title({
+                    classes: "img-intro__title",
+                    tag: 'h2',
+                    size: '83',
+                    text: checkProps.title,
+                    cMode: 'light'
+                })
+                -if(checkProps.tag.length > 0)
+                    .section__tag.img-intro__tag!= checkProps.tag
+
+            .img-intro__bottom
+                -if(checkProps.text.length > 0)
+                    .img-intro__text!= checkProps.text
+                .img-intro__btns
+                    - let btnsList = checkProps.btns
+                    - let btnsCount = 0
+
+                    - while(btnsCount < btnsList.length)
+                        +btn(btnsList[btnsCount])
+
+                        - btnsCount++

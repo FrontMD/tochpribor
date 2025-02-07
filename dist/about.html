@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Страницы</title>
+    <title>О компании</title>
     <meta name="theme-color" content="#fff">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -138,143 +138,224 @@
       </div>
     </header>
     <main class="site-main">
-      <style type="text/css">
-        .pages-list {
-        	padding: 40px 0 60px;
-        }
-        
-        .pages-list__links {
-        	display: grid;
-        	grid-template-columns: repeat(2, minmax(0, 1fr));
-        	grid-gap: 20px;
-        	margin-top: 30px;
-        }
-        
-        .pages-list__subtitle {
-        	margin-top: 60px;
-        	font-size: 32px !important;
-        }
-        
-        .pages-list__link {
-        	position: relative;
-        	font-size: 26px;
-        	text-decoration: none;
-        	color: var(--c-text);
-        	transition: color 0.3s linear;
-        	line-height: 1.02em;
-        	min-height: 3.06em;
-        	padding-right: 160px;
-        
-        	span {
-        		font-size: 0.7em;
-        		opacity: 0.7;
-        	}
-        }
-        
-        .pages-list__link:after {
-        	content: '';
-        	position: absolute;
-        	right: 0;
-        	top: 0;
-        	font-size: 14px;
-        	line-height: 1.02em;
-        	padding: 5px 10px;
-        	border-radius: 3px;
-        	width: fit-content;
-        }
-        
-        .pages-list__link--check {
-        	padding-right: 155px;
-        }
-        
-        .pages-list__link--check:after {
-        	content: "проверка / правки";
-        	background-color: #ffffcc;
-        	color: #ff6a00;
-        }
-        
-        
-        .pages-list__link--postponed:after {
-        	content: "отложено / очередь";
-        	background-color: #dedede;
-        	color: #212121;
-        }
-        
-        .pages-list__link--work {
-        	padding-right: 85px;
-        }
-        
-        .pages-list__link--work:after {
-        	content: "в работе";
-        	background-color: #9FC5F8;
-        	color: #000044;
-        }
-        
-        .pages-list__link--ready {
-        	padding-right: 85px;
-        }
-        
-        .pages-list__link--ready:after {
-        	content: "натяжка";
-        	background-color: #93C47D;
-        	color: #04412B;
-        }
-        
-        .pages-list__link:hover {
-        	color: var(--c-accent);
-        }
-        
-        @media (max-width: 600px) {
-        	.pages-list__link {
-        		padding-right: 0;
-        		padding-top: 30px;
-        	}
-        
-        	.pages-list__link:after {
-        		left: 0;
-        		right: auto;
-        	}
-        }
-        
-        @media (max-width: 1340px) {
-        
-        	.pages-list__links {
-        		grid-gap: 15px;
-        		margin-top: 40px;
-        	}
-        
-        	.pages-list__link {
-        		font-size: 20px;
-        	}
-        }
-        
-        @media (max-width: 1023px) {
-        	.pages-list {
-        		padding: 85px 0 50px;
-        	}
-        
-        	.pages-list__links {
-        		grid-template-columns: 1fr;
-        		grid-gap: 20px;
-        		margin-top: 40px;
-        	}
-        
-        	.pages-list__link {
-        		min-height: auto;
-        	}
-        }
-        
-      </style>
-      <div class="page-layout page-layout--white">
-        <section class="section pages-list">
-          <div class="section__container">
-                <div class="title pages-list__title title--83 title--dark">
-                  <h1>Страницы
-                  </h1>
+      <div class="page-layout" data-js="pageLayout">
+            <section class="section section--full section--transparent img-intro">
+              <div class="img-intro__bg"><img class="lazyload" src="img/lazy-placeholder.webp" data-src="img/about/about_intro.webp" alt=""></div>
+              <div class="section__container img-intro__container">
+                <div class="img-intro__top">
+                      <div class="breadcrumbs  breadcrumbs--light">
+                        <ul class="breadcrumbs__list scrollbar scrollbar--small">
+                          <li class="breadcrumbs__item"><a href="javascript:void(0);">Главная</a><span class="breadcrumbs__separator">/</span>
+                          </li>
+                          <li class="breadcrumbs__item breadcrumbs__item--current"><span>О компании</span>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="title img-intro__title title--83 title--light">
+                        <h2>Завод с многолетней историей
+                        </h2>
+                      </div>
+                  <div class="section__tag img-intro__tag">[Основан в 1950 году]</div>
                 </div>
-            <div class="pages-list__links"><a class="pages-list__link pages-list__link--ready" href="home.html" target="_blank">Главная</a><a class="pages-list__link pages-list__link--ready" href="news-section.html" target="_blank">Новости (раздел)</a><a class="pages-list__link pages-list__link--ready" href="news-category.html" target="_blank">Новости (категория)</a><a class="pages-list__link pages-list__link--ready" href="news-detailed.html" target="_blank">Новости (детальная)</a><a class="pages-list__link pages-list__link--ready" href="glossary-list.html" target="_blank">Глоссарий (раздел)</a><a class="pages-list__link pages-list__link--ready" href="glossary-detailed.html" target="_blank">Глоссарий (детальная)</a><a class="pages-list__link pages-list__link--ready" href="catalog-common.html" target="_blank">Каталог (разводящая)</a><a class="pages-list__link pages-list__link--ready" href="catalog-category.html" target="_blank">Каталог (категория)</a><a class="pages-list__link pages-list__link--ready" href="product.html" target="_blank">Карточка товара детальная</a><a class="pages-list__link pages-list__link--ready" href="product-discontinued.html" target="_blank">Карточка товара детальная (снято с производства)</a><a class="pages-list__link pages-list__link--ready" href="compare.html" target="_blank">Сравнение товаров</a><a class="pages-list__link pages-list__link--ready" href="cart.html" target="_blank">Корзина</a><a class="pages-list__link pages-list__link--ready" href="cart-empty.html" target="_blank">Корзина (пустая)</a><a class="pages-list__link pages-list__link--ready" href="contacts.html" target="_blank">Контакты</a><a class="pages-list__link pages-list__link--ready" href="faq.html" target="_blank">Вопросы и ответы (FAQ)</a><a class="pages-list__link pages-list__link--postponed" href="references.html" target="_blank">Референции</a><a class="pages-list__link pages-list__link--ready" href="vacancy.html" target="_blank">Вакансия</a><a class="pages-list__link pages-list__link--work" href="about.html" target="_blank">О компании</a><a class="pages-list__link pages-list__link--ready" href="site-map.html" target="_blank">Карта сайта</a><a class="pages-list__link pages-list__link--ready" href="product-safety.html" target="_blank">Безопасность изделия</a><a class="pages-list__link pages-list__link--ready" href="services.html" target="_blank">Услуги</a><a class="pages-list__link pages-list__link--postponed" href="team.html" target="_blank">Наша команда</a><a class="pages-list__link pages-list__link--ready" href="404.html" target="_blank">404</a></div>
-          </div>
-        </section>
+                <div class="img-intro__bottom">
+                  <div class="img-intro__text">Мы – единственный в нашей стране завод полного цикла, производящий большое количество испытательной техники</div>
+                  <div class="img-intro__btns"><a class="btn  btn--red btn--middle" href="javascript:void(0)">
+                          <svg>
+                            <use xlink:href="img/sprites/sprite.svg#arrow_enter"></use>
+                          </svg><span class="btn__text">История завода</span></a>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section class="section section--full section--transparent h-advantages">
+              <div class="section__container">
+                <div class="h-advantages__header">
+                      <div class="title h-advantages__title title--53 title--dark">
+                        <h2>Разрабатываем, производим и&nbsp;поставляем лабораторное оборудование
+                        </h2>
+                      </div>
+                </div>
+                <div class="h-advantages__cards" data-js="hAdvantagesSlider">
+                  <div class="h-advantages__controls slider-controls">
+                    <button class="slider-control slider-control--prev" type="button" data-js="sliderPrev">
+                      <svg>
+                        <use xlink:href="img/sprites/sprite.svg#arrow_classic"></use>
+                      </svg>
+                    </button>
+                    <button class="slider-control slider-control--next" type="button" data-js="sliderNext">
+                      <svg>
+                        <use xlink:href="img/sprites/sprite.svg#arrow_classic"></use>
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide h-advantages__card">
+                      <div class="h-advantages__img"><img class="lazyload" src="img/lazy-placeholder.webp" data-src="img/home/card_1.svg" alt=""></div>
+                      <div class="h-advantages__subtitle title--32"><span class="title--67">3 200</span><span class="title--43">м<sup>2</sup></span></div>
+                      <div class="h-advantages__text text-editor">У нас имеются собственные помещения для производства продукции, общая площадь которых составляет свыше</div>
+                    </div>
+                    <div class="swiper-slide h-advantages__card">
+                      <div class="h-advantages__img"><img class="lazyload" src="img/lazy-placeholder.webp" data-src="img/home/card_2.svg" alt=""></div>
+                      <div class="h-advantages__subtitle title--32">Заключение Минпромторга</div>
+                      <div class="h-advantages__text text-editor">О производстве на территории РФ</div>
+                    </div>
+                    <div class="swiper-slide h-advantages__card">
+                      <div class="h-advantages__img"><img class="lazyload" src="img/lazy-placeholder.webp" data-src="img/home/card_3.svg" alt=""></div>
+                      <div class="h-advantages__subtitle title--32">Расширенная гарантия на оборудование</div>
+                    </div>
+                    <div class="swiper-slide h-advantages__card">
+                      <div class="h-advantages__img"><img class="lazyload" src="img/lazy-placeholder.webp" data-src="img/home/card_4.svg" alt=""></div>
+                      <div class="h-advantages__subtitle title--32">Собственное производство</div>
+                      <div class="h-advantages__text text-editor">Полного цикла</div>
+                    </div>
+                    <div class="swiper-slide h-advantages__card">
+                      <div class="h-advantages__img"><img class="lazyload" src="img/lazy-placeholder.webp" data-src="img/home/card_5.svg" alt=""></div>
+                      <div class="h-advantages__subtitle title--32"><span class="title--67">60+</span><span class="title--43">лет</span></div>
+                      <div class="h-advantages__text text-editor">Опыта разработки, производства и поставок испытательного оборудования</div>
+                    </div>
+                    <div class="swiper-slide h-advantages__card">
+                      <div class="h-advantages__img"><img class="lazyload" src="img/lazy-placeholder.webp" data-src="img/home/card_6.svg" alt=""></div>
+                      <div class="h-advantages__subtitle title--32">Лучшее соотношение цены и качества</div>
+                    </div>
+                    <div class="swiper-slide h-advantages__card">
+                      <div class="h-advantages__img"><img class="lazyload" src="img/lazy-placeholder.webp" data-src="img/home/card_7.svg" alt=""></div>
+                      <div class="h-advantages__subtitle title--32">Оказываем услуги</div>
+                      <div class="h-advantages__text text-editor"> 
+                        <ul>
+                          <li>по поверке СИ</li>
+                          <li>по металлообработке</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="swiper-slide h-advantages__card">
+                      <div class="h-advantages__img"><img class="lazyload" src="img/lazy-placeholder.webp" data-src="img/home/card_8.svg" alt=""></div>
+                      <div class="h-advantages__subtitle title--32">Сертификат менеджмента</div>
+                      <div class="h-advantages__text text-editor">Качества производства <a href='#'>ISO 9001:2015</a></div>
+                    </div>
+                    <div class="swiper-slide h-advantages__card">
+                      <div class="h-advantages__img"><img class="lazyload" src="img/lazy-placeholder.webp" data-src="img/home/card_7.svg" alt=""></div>
+                      <div class="h-advantages__subtitle title--32">Официальный представитель</div>
+                      <div class="h-advantages__text text-editor">На территории РФ и ближнего зарубежья европейского производителя испытательного оборудования - компании Devotrans</div>
+                    </div>
+                    <div class="swiper-slide h-advantages__card">
+                      <div class="h-advantages__img"><img class="lazyload" src="img/lazy-placeholder.webp" data-src="img/home/card_8.svg" alt=""></div>
+                      <div class="h-advantages__subtitle title--32">Используем уникальные материалы</div>
+                      <div class="h-advantages__text text-editor">В ассортименте есть оборудование и материалы, которые в РФ изготавливает только наш завод</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section class="section section--full quote-section">
+              <div class="section__container quote-section__container">
+                <div class="quote-section__author">
+                  <div class="quote-section__photo"><img class="lazyload" src="img/lazy-placeholder.webp" data-src="img/persons/person_1.webp" alt=""></div>
+                  <div class="quote-section__name">Долгов Игорь</div>
+                  <div class="quote-section__position">Генеральный директор и владелец завода ГК “Точприбор”</div>
+                </div>
+                <div class="quote-section__text title--43">Наша цель — разработать, произвести и обеспечить наших клиентов точным и надёжным оборудованием, которое поможет им в решении сложных задач и достижении высоких результатов. Мы стремимся к тому, чтобы наша продукция соответствовала самым высоким стандартам качества и безопасности!</div>
+              </div>
+            </section>
+            <section class="section section--full h-clients section--transparent">
+              <div class="section__container">
+                <div class="section-header">
+                  <div class="section__tag section-header__tag">[Наши клиенты]</div>
+                      <div class="title section-header__title title--53 title--dark">
+                        <h2>Нам доверяют госкорпорации и крупнейшие компании
+                        </h2>
+                      </div>
+                </div>
+                    <div class="cards-slider cards-slider--parallax" data-js="slider6Cards" data-parallax>
+                      <div class="cards-slider__header">
+                        <div class="cards-slider__controls slider-controls">
+                          <button class="slider-control slider-control--prev" type="button" data-js="sliderPrev">
+                            <svg>
+                              <use xlink:href="img/sprites/sprite.svg#arrow_classic"></use>
+                            </svg>
+                          </button>
+                          <button class="slider-control slider-control--next" type="button" data-js="sliderNext">
+                            <svg>
+                              <use xlink:href="img/sprites/sprite.svg#arrow_classic"></use>
+                            </svg>
+                          </button>
+                        </div>
+                      </div>
+                      <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                          <div class="h-clients__card">
+                            <div class="h-clients__img"><img class="lazyload" src="img/lazy-placeholder.webp" data-src="img/clients/client_1.svg" alt=""></div>
+                          </div>
+                        </div>
+                        <div class="swiper-slide">
+                          <div class="h-clients__card">
+                            <div class="h-clients__img"><img class="lazyload" src="img/lazy-placeholder.webp" data-src="img/clients/client_2.svg" alt=""></div>
+                          </div>
+                        </div>
+                        <div class="swiper-slide">
+                          <div class="h-clients__card">
+                            <div class="h-clients__img"><img class="lazyload" src="img/lazy-placeholder.webp" data-src="img/clients/client_3.svg" alt=""></div>
+                          </div>
+                        </div>
+                        <div class="swiper-slide">
+                          <div class="h-clients__card">
+                            <div class="h-clients__img"><img class="lazyload" src="img/lazy-placeholder.webp" data-src="img/clients/client_4.svg" alt=""></div>
+                          </div>
+                        </div>
+                        <div class="swiper-slide">
+                          <div class="h-clients__card">
+                            <div class="h-clients__img"><img class="lazyload" src="img/lazy-placeholder.webp" data-src="img/clients/client_5.svg" alt=""></div>
+                          </div>
+                        </div>
+                        <div class="swiper-slide">
+                          <div class="h-clients__card">
+                            <div class="h-clients__img"><img class="lazyload" src="img/lazy-placeholder.webp" data-src="img/clients/client_6.svg" alt=""></div>
+                          </div>
+                        </div>
+                        <div class="swiper-slide">
+                          <div class="h-clients__card">
+                            <div class="h-clients__img"><img class="lazyload" src="img/lazy-placeholder.webp" data-src="img/clients/client_7.svg" alt=""></div>
+                          </div>
+                        </div>
+                        <div class="swiper-slide">
+                          <div class="h-clients__card">
+                            <div class="h-clients__img"><img class="lazyload" src="img/lazy-placeholder.webp" data-src="img/clients/client_1.svg" alt=""></div>
+                          </div>
+                        </div>
+                        <div class="swiper-slide">
+                          <div class="h-clients__card">
+                            <div class="h-clients__img"><img class="lazyload" src="img/lazy-placeholder.webp" data-src="img/clients/client_2.svg" alt=""></div>
+                          </div>
+                        </div>
+                        <div class="swiper-slide">
+                          <div class="h-clients__card">
+                            <div class="h-clients__img"><img class="lazyload" src="img/lazy-placeholder.webp" data-src="img/clients/client_3.svg" alt=""></div>
+                          </div>
+                        </div>
+                        <div class="swiper-slide">
+                          <div class="h-clients__card">
+                            <div class="h-clients__img"><img class="lazyload" src="img/lazy-placeholder.webp" data-src="img/clients/client_4.svg" alt=""></div>
+                          </div>
+                        </div>
+                        <div class="swiper-slide">
+                          <div class="h-clients__card">
+                            <div class="h-clients__img"><img class="lazyload" src="img/lazy-placeholder.webp" data-src="img/clients/client_5.svg" alt=""></div>
+                          </div>
+                        </div>
+                        <div class="swiper-slide">
+                          <div class="h-clients__card">
+                            <div class="h-clients__img"><img class="lazyload" src="img/lazy-placeholder.webp" data-src="img/clients/client_6.svg" alt=""></div>
+                          </div>
+                        </div>
+                        <div class="swiper-slide">
+                          <div class="h-clients__card">
+                            <div class="h-clients__img"><img class="lazyload" src="img/lazy-placeholder.webp" data-src="img/clients/client_7.svg" alt=""></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="cards-slider__parallax" data-swiper-parallax="-23%"><img class="lazyload" src="img/lazy-placeholder.webp" data-src="img/slider_ruler.svg" alt=""></div>
+                    </div>
+              </div>
+            </section>
       </div>
     </main>
     <footer class="site-footer" data-js="siteFooter">

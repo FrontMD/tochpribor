@@ -1,6 +1,8 @@
 -
 	const defaultHclientsProps = {
 		classes: '',
+		title: '',
+		bg: ''
 	}
 
 mixin h-clients(props= defaultHclientsProps)
@@ -8,11 +10,12 @@ mixin h-clients(props= defaultHclientsProps)
 		const checkProps = {
 			classes: props.classes ? props.classes : defaultHclientsProps.classes,
 			title: props.title ? props.title : defaultHclientsProps.title,
-			tag: props.tag ? props.tag : defaultHclientsProps.tag,
-			subtitle: props.subtitle ? props.subtitle : defaultHclientsProps.subtitle
+			bg: props.bg ? props.bg : defaultHclientsProps.bg,
 		}
 
-	section.section.section--full.h-clients
+		let bgClass = checkProps.bg.length > 0 ? `section--${checkProps.bg}` : ''
+
+	section.section.section--full.h-clients(class = checkProps.classes + bgClass)
 		.section__container
 			.section-header
 				.section__tag.section-header__tag [Наши клиенты]
@@ -20,7 +23,7 @@ mixin h-clients(props= defaultHclientsProps)
 					classes: 'section-header__title',
 					tag: 'h2',
 					size: '53',
-					text: 'К нам обращаются госкорпорации и крупнейшие компании',
+					text: checkProps.title,
 				})
 
 			+cards-slider({

@@ -1,0 +1,49 @@
+extends ../layouts/default
+include ../helpers/mixins
+
+block variables
+    - const title = "О компании"
+
+block content
+    .page-layout(data-js="pageLayout")
+
+        +img-intro({
+            img: 'img/about/about_intro.webp',
+            breadcrumbs: {
+                cMode: 'light',
+                items: [
+                    {
+                        name: 'Главная',
+                        link: 'javascript:void(0);'
+                    },
+                    {
+                        name: 'О компании',
+                        link: 'javascript:void(0);'
+                    }
+                ]
+            },
+            title: 'Завод с многолетней историей',
+            tag: '[Основан в 1950 году]',
+            text: 'Мы – единственный в нашей стране завод полного цикла, производящий большое количество испытательной техники',
+            btns: [{
+                size: 'middle',
+                name: 'История завода',
+                link: '',
+                icon: 'arrow_enter'
+            }]
+        })
+
+        +h-advantages({
+            title: 'Разрабатываем, производим и&nbsp;поставляем лабораторное оборудование',
+            tag: '',
+            subtitle: ''
+        })
+
+        +quote-section({
+            text: 'Наша цель — разработать, произвести и обеспечить наших клиентов точным и надёжным оборудованием, которое поможет им в решении сложных задач и достижении высоких результатов. Мы стремимся к тому, чтобы наша продукция соответствовала самым высоким стандартам качества и безопасности!'
+        })
+
+        +h-clients({
+            title: 'Нам доверяют госкорпорации и крупнейшие компании',
+            bg: 'transparent'
+        })

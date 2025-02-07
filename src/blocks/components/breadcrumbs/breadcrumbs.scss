@@ -46,7 +46,14 @@
 }
 
 .breadcrumbs {
-    &--light &__list {
-        color: white;
+
+    &--light &__list,
+    &--light &__item--current,
+    &--light &__separator {
+        color: $c-white;
+    }
+
+    &--light &__item a:hover {
+        color: $c-bg;
     }
 }

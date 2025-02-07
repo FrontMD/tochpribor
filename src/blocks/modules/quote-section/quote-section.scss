@@ -1,0 +1,43 @@
+.quote-section {
+    &__container.section__container {
+        display: flex;
+        align-items: flex-start;
+        gap: 190px;
+        padding: 24px 40px 150px;
+        background-image: url('../img/quote_bg.svg');
+        background-repeat: no-repeat;
+        background-size: 478px;
+        background-position: right 2.778% bottom -196px;
+    }
+
+    &__author {
+        flex: 0 0 314px;
+    }
+
+    &__photo {
+        width: 100%;
+        aspect-ratio: 1 / 1.18;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__text {
+        position: relative;
+        margin-top: 130px;
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: -90px;
+            top: -17px;
+            width: 70px;
+            height: 70px;
+            background-image: url('../img/quote.svg');
+            background-size: 100% 100%;
+        }
+    }
+}
