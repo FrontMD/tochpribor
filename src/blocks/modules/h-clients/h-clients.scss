@@ -1,4 +1,10 @@
 .h-clients {
+    &.section--full {
+        @include max(tablet) {
+            padding: 0 20px;
+        }
+    }
+
     &__card {
         width: 100%;
         aspect-ratio: 1 / 1;

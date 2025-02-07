@@ -946,13 +946,14 @@ body {
 		}
 	}
 
-	.text-gallery-list {
-		width: 0;
-		height: 0;
-		opacity: 0;
-		overflow: hidden;
-		visibility: hidden;
-	}
+}
+
+.gallery-list {
+	width: 0;
+	height: 0;
+	opacity: 0;
+	overflow: hidden;
+	visibility: hidden;
 }
 
 .tags {

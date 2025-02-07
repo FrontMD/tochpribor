@@ -108,6 +108,14 @@
         gap: 52px;
         margin-top: 140px;
 
+        &+.product-safety-brand__list {
+            margin-top: 30px;
+
+            @include max(mobile) {
+                margin-top: 24px;
+            }
+        }
+
         @include max(laptop) {
             margin-top: 100px;
             flex-direction: column;
@@ -130,7 +138,7 @@
 
     &__cards {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 16px;
         flex: 0 0 920px;
         max-width: 920px;
@@ -142,6 +150,7 @@
 
         @include max(laptop) {
             max-width: 100%;
+            width: 100%;
             flex-basis: auto;
         }
 

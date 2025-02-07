@@ -1,22 +1,47 @@
 .quote-section {
-    &__container.section__container {
+    &.section &__container.section__container {
         display: flex;
         align-items: flex-start;
         gap: 190px;
-        padding: 24px 40px 150px;
+        padding: 20px 20px 150px;
         background-image: url('../img/quote_bg.svg');
         background-repeat: no-repeat;
         background-size: 478px;
         background-position: right 2.778% bottom -196px;
+        color: $c-text;
+
+        @include max(laptop) {
+            gap: 120px;
+            padding: 20px 20px 100px;
+            background-size: 340px;
+            background-position: right 2.778% bottom -140px;
+        }
+
+        @include max(tablet) {
+            flex-direction: column;
+            gap: 0;
+            padding: 20px 20px 50px;
+        }
     }
 
     &__author {
         flex: 0 0 314px;
+
+        @include max(laptop) {
+            flex-basis: 270px;
+        }
+
+        @include max(tablet) {
+            flex-basis: auto;
+            width: 314px;
+        }
     }
 
     &__photo {
         width: 100%;
         aspect-ratio: 1 / 1.18;
+        border-radius: 4px;
+        overflow: hidden;
 
         img {
             width: 100%;
@@ -25,9 +50,21 @@
         }
     }
 
+    &__name {
+        margin-top: 20px;
+    }
+
+    &__position {
+        margin-top: 10px;
+    }
+
     &__text {
         position: relative;
         margin-top: 130px;
+
+        @include max(tablet) {
+            margin-top: 120px;
+        }
 
         &::before {
             content: '';
@@ -38,6 +75,11 @@
             height: 70px;
             background-image: url('../img/quote.svg');
             background-size: 100% 100%;
+
+            @include max(tablet) {
+                left: 0;
+                top: -80px;
+            }
         }
     }
 }

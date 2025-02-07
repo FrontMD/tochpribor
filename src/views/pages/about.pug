@@ -40,10 +40,267 @@ block content
         })
 
         +quote-section({
-            text: 'Наша цель — разработать, произвести и обеспечить наших клиентов точным и надёжным оборудованием, которое поможет им в решении сложных задач и достижении высоких результатов. Мы стремимся к тому, чтобы наша продукция соответствовала самым высоким стандартам качества и безопасности!'
+            text: 'Наша цель&nbsp;— разработать, произвести и обеспечить наших клиентов точным и надёжным оборудованием, которое поможет им в решении сложных задач и достижении высоких результатов. Мы стремимся к тому, чтобы наша продукция соответствовала самым высоким стандартам качества и безопасности!'
         })
 
         +h-clients({
             title: 'Нам доверяют госкорпорации и крупнейшие компании',
             bg: 'transparent'
         })
+
+        .section.section--full.about-info
+            .section__container.about-info__container
+                .about-info__row
+                    .about-info__content
+                        +title({
+                            tag: 'h2',
+                            text: 'Наше производство',
+                            size: '53'
+                        })
+                        .about-info__text.text-editor
+                            p ООО «Завод испытательных приборов» – это единственный в стране производитель оборудования для физико-механических испытаний с полным циклом производства (от куска металла до готового изделия)
+                            p Оцифровали сохранившийся архив технической документации с 1962г  и сохранили рабочие места сотрудников, которые стояли у истоков стандартизации в стране
+                        .about-info__btns
+                            +btn({
+                                clasees: 'about-info__btn',
+                                name: '3D-модель завода'
+                            })
+                            +btn({
+                                clasees: 'about-info__btn',
+                                name: 'Подробнее',
+                                cMode: 'transparent-red',
+                                icon: "arrow_enter"
+                            })
+                    .about-info__img
+                        img(class="lazyload" src="img/lazy-placeholder.webp" data-src="img/about/about_production.webp")
+                .about-info__row.about-info__row--reverse
+                    .about-info__content
+                        +title({
+                            tag: 'h2',
+                            text: 'Наша команда',
+                            size: '53'
+                        })
+                        .about-info__text.text-editor
+                            p На нашем заводе работает слаженная команда профессионалов, которые ежедневно трудятся над созданием качественных продуктов. Каждый член команды вносит свой вклад в общее дело, стремится к постоянному развитию и совершенствованию своих навыков.
+
+                            p Мы ценим наших сотрудников и создаём все условия для их профессионального роста. Регулярно проводятся тренинги, семинары и мастер-классы, где специалисты могут обменяться опытом и узнать о новых тенденциях в своей области.
+
+                            p Наша команда — это не просто коллеги, это настоящие друзья, которые всегда готовы прийти на помощь и поддержать друг друга. Мы работаем в атмосфере взаимопонимания и доверия, что позволяет нам достигать новых высот и создавать продукты, которые соответствуют самым высоким стандартам качества.
+
+                        .about-info__btns
+                            +btn({
+                                clasees: 'about-info__btn',
+                                name: 'Подробнее про команду',
+                                cMode: 'transparent-red',
+                                icon: "arrow_enter"
+                            })
+                    .about-info__img
+                        img(class="lazyload" src="img/lazy-placeholder.webp" data-src="img/about/about_team.webp")
+                .about-info__row
+                    .about-info__content
+                        +title({
+                            tag: 'h2',
+                            text: 'Открыты к сотрудничеству',
+                            size: '53'
+                        })
+                        .about-info__text.text-editor
+                            p В октябре 2019 года Группой компаний “Точприбор” был подписан меморандум о сотрудничестве с несколькими иностранными предприятиями
+                            p Благодаря указанным договоренностям на производственной площадке в г.Иваново начался процесс локализации иностранного оборудования
+
+                        .about-info__btns
+                            +btn({
+                                clasees: 'about-info__btn',
+                                name: 'Смотреть фото',
+                                link: 'img/about/about_cooperation.webp'
+                            })(data-thumb="img/about/about_cooperation.webp" data-fancybox="aboutCooperation")
+                            +btn({
+                                clasees: 'about-info__btn',
+                                name: 'Подробнее',
+                                cMode: 'transparent-red',
+                                icon: "arrow_enter"
+                            })
+
+                            .gallery-list
+                                a(href="img/about/about_production.webp" data-fancybox="aboutCooperation" data-thumb="img/about/about_production.webp")
+                                a(href="img/about/about_team.webp" data-fancybox="aboutCooperation" data-thumb="img/about/about_team.webp")
+
+                    .about-info__img
+                        img(class="lazyload" src="img/lazy-placeholder.webp" data-src="img/about/about_cooperation.webp")
+
+        section.section.section--full.about-gk.product-safety-brand
+            .section__container
+                .section__columns
+                    +title({
+                        tag: 'h2',
+                        size: '53',
+                        text: 'Входим в альянс торгово-промышленной группы компаний'
+                    })
+                    .section__text.text-editor После реорганизации Акционерного общества «Точприбор» – на его базе была образована Группа компаний «Точприбор»
+                .product-safety-brand__list
+                    .product-safety-brand__title.title--32 Сбыт и продвижение продукции
+                    .product-safety-brand__cards
+                        .about-gk__card
+                            a.about-gk__link(href="javascript:void(0)")
+                            .about-gk__top
+                                .about-gk__subtitle.title--32 ООО «ЗИП»
+                                .about-gk__icon
+                                    svg
+                                        use(xlink:href=`img/sprites/sprite.svg#arrow_enter`)
+                            .about-gk__info Завод изготовитель, г. Иваново
+
+                        .about-gk__card
+                            a.about-gk__link(href="javascript:void(0)")
+                            .about-gk__top
+                                .about-gk__subtitle.title--32 ООО « ТД Точприбор»
+                                .about-gk__icon
+                                    svg
+                                        use(xlink:href=`img/sprites/sprite.svg#arrow_enter`)
+                            .about-gk__info Торговый дом, г. Санкт-Петербург
+
+                        .about-gk__card
+                            a.about-gk__link(href="javascript:void(0)")
+                            .about-gk__top
+                                .about-gk__subtitle.title--32 ООО «ГИРМАКС»
+                                .about-gk__icon
+                                    svg
+                                        use(xlink:href=`img/sprites/sprite.svg#arrow_enter`)
+                            .about-gk__info Завод изготовитель, г. Иваново
+
+                        .about-gk__card
+                            a.about-gk__link(href="javascript:void(0)")
+                            .about-gk__top
+                                .about-gk__subtitle.title--32 ООО « НПО Точприбор»
+                                .about-gk__icon
+                                    svg
+                                        use(xlink:href=`img/sprites/sprite.svg#arrow_enter`)
+                            .about-gk__info Торговый дом, г. Санкт-Петербург
+
+                        .about-gk__card
+                            a.about-gk__link(href="javascript:void(0)")
+                            .about-gk__top
+                                .about-gk__subtitle.title--32 ООО «Точприбор Северо-Запад»
+                                .about-gk__icon
+                                    svg
+                                        use(xlink:href=`img/sprites/sprite.svg#arrow_enter`)
+                            .about-gk__info Завод изготовитель, г. Иваново
+
+                .product-safety-brand__list
+                    .product-safety-brand__title.title--32 Торговые партнеры
+                    .product-safety-brand__cards
+                        .about-gk__card
+                            a.about-gk__link(href="javascript:void(0)")
+                            .about-gk__top
+                                .about-gk__subtitle.title--32 ООО «НамиЛекс»
+                                .about-gk__icon
+                                    svg
+                                        use(xlink:href=`img/sprites/sprite.svg#arrow_enter`)
+                            .about-gk__info Республика Беларусь
+
+        section.section.section--full.product-safety-fake
+            .section__container
+                .section__columns
+                    +title({
+                        tag: 'h2',
+                        size: '53',
+                        text: 'Предупреждение о&nbsp;контрафакте'
+                    })
+                    .section__text.text-editor В последнее время участились случаи появления на рынке как контрафактных приборов, так и позиционирование отдельными организациями себя на своих сайтах как производителей испытательной техники, которая на самом деле разработана и может быть произведена только на нашем заводе. 
+                .product-safety-fake__slider.safety-slider(data-js="productSafetySliderBlock")
+                    .safety-slider__header
+                        +btn({
+                            name: 'Проверить изделие',
+                            size: '246',
+                            cMode: 'red',
+                            icon: 'arrow_enter'
+                        })
+                        .slider-controls
+                            button.slider-control.slider-control--prev(type="button" data-js='sliderPrev')
+                                svg
+                                    use(xlink:href=`img/sprites/sprite.svg#arrow_classic`)
+                            button.slider-control.slider-control--next(type="button" data-js='sliderNext')
+                                svg
+                                    use(xlink:href=`img/sprites/sprite.svg#arrow_classic`)
+
+                    .safety-slider__slider(data-js="productSafetySlider")
+                        .swiper-wrapper
+                            .swiper-slide
+                                .safety-slider__card
+                                    .safety-slider__num.title--83 01
+                                    .safety-slider__title.title--32 Правообладатель 
+                                    .safety-slider__text ООО «ЗИП» никому не предоставлял прав на производство техники, представленной на этом сайте.
+                            .swiper-slide
+                                .safety-slider__card
+                                    .safety-slider__num.title--83 02
+                                    .safety-slider__title.title--32 Признаки обмана 
+                                    .safety-slider__text Все случаи расследования показали, что приборы прошлых лет выпуска, выведенные из эксплуатации по критериям предельного состояния или окончания срока службы, после проведения «косметического» ремонта и оформления поддельных паспортов предлагались покупателям по достаточно низким ценам. Такая продукция может быть только восстановленной или выпущенной нелегально.
+                            .swiper-slide
+                                .safety-slider__card
+                                    .safety-slider__num.title--83 03
+                                    .safety-slider__title.title--32 Проверка изделия 
+                                    .safety-slider__text Если у Вас возникли сомнения в подлинности документации или изделия, обратитесь на наше предприятие для получения полной информации о происхождении продукта.
+                            .swiper-slide
+                                .safety-slider__card
+                                    .safety-slider__num.title--83 04
+                                    .safety-slider__title.title--32 Правообладатель 
+                                    .safety-slider__text ООО «ЗИП» никому не предоставлял прав на производство техники, представленной на этом сайте.
+                            .swiper-slide
+                                .safety-slider__card
+                                    .safety-slider__num.title--83 05
+                                    .safety-slider__title.title--32 Признаки обмана 
+                                    .safety-slider__text Все случаи расследования показали, что приборы прошлых лет выпуска, выведенные из эксплуатации по критериям предельного состояния или окончания срока службы, после проведения «косметического» ремонта и оформления поддельных паспортов предлагались покупателям по достаточно низким ценам. Такая продукция может быть только восстановленной или выпущенной нелегально.
+                            .swiper-slide
+                                .safety-slider__card
+                                    .safety-slider__num.title--83 06
+                                    .safety-slider__title.title--32 Проверка изделия 
+                                    .safety-slider__text Если у Вас возникли сомнения в подлинности документации или изделия, обратитесь на наше предприятие для получения полной информации о происхождении продукта.
+
+        section.section.section--full.product-safety-brand
+            .section__container
+                .section__columns
+                    +title({
+                        tag: 'h2',
+                        size: '53',
+                        text: 'Бренд, которому можно доверять'
+                    })
+                    .section__text.text-editor Наши торговые знаки, знаки соответствия и обозначения на продукции
+
+                .product-safety-brand__list
+                    .product-safety-brand__title.title--32 Наши признаки
+                    .product-safety-brand__cards
+                        .product-safety-brand__card
+                            .product-safety-brand__icon
+                                img(src='img/product-safety/brand_1.webp')
+                            .product-safety-brand__subtitle.title--32 Товарный знак Tochline
+                            .product-safety-brand__text TOCHLINE — зарегистрированная торговая марка с идентификационным номером 605917
+                        .product-safety-brand__card
+                            .product-safety-brand__icon
+                                img(src='img/product-safety/brand_2.webp')
+                            .product-safety-brand__subtitle.title--32 ООО «ЗИП»
+                            .product-safety-brand__text
+                                p Товарный знак, используемый ООО «ЗИП», зарегистрирован в Государственном реестре товарных знаков и знаков обслуживания
+                                p Свидетельство на товарный знак № 756316 <br>Правообладатель – ООО «Завод испытательных приборов» (ООО «ЗИП»)
+                        .product-safety-brand__card
+                            .product-safety-brand__icon
+                                img(src='img/product-safety/brand_3.webp')
+                            .product-safety-brand__subtitle.title--32 Метрологическая лаборатория ООО «ЗИП»
+                            .product-safety-brand__text
+                                p Аккредитована Федеральной службой по аккредитации (Росакредитация) на право осуществлять деятельность по проведению работ и (или) оказанию услуг по поверке средств измерений.
+                                p Организация ООО «ЗИП» занесена в реестр аккредитованных лиц. <br><a href="javascript:void(0)">Аттестат аккредитации RA.RU.312915</a> <br>Правообладатель – ООО «Завод испытательных приборов» (ООО «ЗИП»).
+
+                        .product-safety-brand__card
+                            .product-safety-brand__icon
+                                img(src='img/product-safety/brand_4.webp')
+                            .product-safety-brand__subtitle.title--32 Сертификат соотвествия
+                            .product-safety-brand__text 
+                                p Знак соответствия требованиям ГОСТ Р ИСО 9001-2015 (ISO 9001:2015) системы менеджмента качества, распространяющейся на производство приборов и инструментов для испытания, выпускаемых предприятием ООО «ЗИП»
+                                p Сертификат соответствия №&nbsp;СДС.ФР.СМ.00504.21
+                                p Правообладатель – ООО «Завод испытательных приборов» (ООО «ЗИП»).
+
+                        .product-safety-brand__card
+                            .product-safety-brand__icon
+                                img(src='img/product-safety/brand_5.webp')
+                            .product-safety-brand__subtitle.title--32 Голограмма бренда
+                            .product-safety-brand__text
+                                p Голограммы с одним и тем же номером устанавливаются на оборудование, вклеиваются в Журнал регистрации готовой продукции ООО "ЗИП", а также в паспорт каждого выпускаемого изделия. 
+                                p Товарная марка Tochline, нанесённая на голограмму, зарегистрирована в Федеральной службе по интеллектуальной собственности (РОСПАТЕНТ) №605917.
+                                p При получении продукции без голограмм с датой выпуска после 26.02.2020г. продукцию считать контрафактной и обращаться по тел. <a href="tel:+78126123003">+7(812) 612-30-03</a>.
