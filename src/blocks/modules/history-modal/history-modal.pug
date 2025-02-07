@@ -1,0 +1,80 @@
+.history-modal(data-js='historyModal')
+    .history-modal__overlay(data-js='historyModalClose')
+    .history-modal__content
+        .history-modal__close(data-js='historyModalClose')
+            svg 
+                use(xlink:href=`img/sprites/sprite.svg#close`)
+        .history-modal__list.scrollbar(data-js='historyModalScroller')
+            .history-modal__row
+                .history-modal__year.title--83 1950
+                .history-modal__point.active
+                .history-modal__info.text-editor
+                    p В  г. Иваново основан завод по производству приборов для испытания металлов
+                    img(src="img/about/about_history.webp")
+
+            .history-modal__row
+                .history-modal__year.title--83 1956
+                .history-modal__point
+                .history-modal__info.text-editor
+                    p Начат выпуск простых приборов технологического назначения
+
+            .history-modal__row
+                .history-modal__year.title--83 1957
+                .history-modal__point
+                .history-modal__info.text-editor
+                    p Введён в эксплуатацию цех упаковочной тары
+
+            .history-modal__row
+                .history-modal__year.title--83 1958
+                .history-modal__point
+                .history-modal__info.text-editor
+                    p К управлению завода присоединились молодые, активные учредители, и завод начал возрождаться. На сегодняшний день на нем работает более 130 человек. Полностью обновлено конструкторское бюро. Предприятие имеет линию производства полного цикла.
+                    img(src="img/about/about_history.webp")
+
+            .history-modal__row
+                .history-modal__year.title--83 1959
+                .history-modal__point
+                .history-modal__info.text-editor
+                    p Образовано конструкторское бюро по разработке автоматических средств измерения масс и приборов испытательной техники
+                    +btn({
+                        name: 'Смотреть видео',
+                        icon: 'play_t',
+                        link: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                        cMode: 'transparent-red'
+                    })(data-fancybox data-type="iframe")
+
+            .history-modal__row
+                .history-modal__year.title--83 1965
+                .history-modal__point
+                .history-modal__info.text-editor
+                    p Завод переименован в «Завод испытательных приборов»
+
+            .history-modal__row
+                .history-modal__year.title--83 1970
+                .history-modal__point
+                .history-modal__info.text-editor
+                    p Завод переименован в ПО "Точприбор", в связи с переименованием зарегистрирован товарный знак №60992 с приоритетом от 27.07.1977 г.
+                    +btn({
+                        name: 'Смотреть видео',
+                        icon: 'play_t',
+                        link: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                        cMode: 'transparent-red'
+                    })(data-fancybox data-type="iframe")
+
+            .history-modal__row
+                .history-modal__year.title--83 1992
+                .history-modal__point
+                .history-modal__info.text-editor
+                    p Завод переименован в ОАО «Точприбор»
+
+            .history-modal__row
+                .history-modal__year.title--83 2011
+                .history-modal__point
+                .history-modal__info.text-editor
+                    p Реорганизация АО Точприбор в ООО ЗИП
+
+            .history-modal__row
+                .history-modal__year.title--83 2016
+                .history-modal__point
+                .history-modal__info.text-editor
+                    p К управлению завода присоединились молодые, активные учредители, и завод начал возрождаться. На сегодняшний день на нем работает более 130 человек. Полностью обновлено конструкторское бюро. Предприятие имеет линию производства полного цикла.

@@ -1,0 +1,122 @@
+.history-modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 30;
+    visibility: hidden;
+    opacity: 0.9;
+    transition: all $tr-time-long linear;
+    color: $c-text;
+
+    &__overlay {
+        position: absolute;
+        left: 0;
+        height: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        background-color: $c-text;
+        transition: opacity $tr-time-long linear;
+    }
+
+
+    &__close {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $c-text;
+        cursor: pointer;
+        border: 1px solid $c-border;
+        border-radius: 4px;
+        transition: color $tr-time-long;
+
+        @include max(xs) {
+            right: 15px;
+            top: 15px;
+        }
+
+        svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        &:hover {
+            color: $c-accent-hover;
+        }
+    }
+
+    &__content {
+        position: absolute;
+        right: -100vw;
+        width: 100%;
+        max-width: 940px;
+        height: 100vh;
+        overflow: hidden;
+        transition: right $tr-time-long;
+        background-color: $c-white;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 46px;
+        height: 100%;
+        padding: 50px 95px 50px 50px;
+        background-image: url(../img/burger_menu_bg.webp);
+        background-repeat: no-repeat;
+        background-position: right bottom;
+        background-size: 58%;
+        overflow-y: auto;
+    }
+
+    &__row {
+        display: flex;
+        align-items: flex-start;
+        gap: 90px;
+    }
+
+    &__year {
+        flex: 0 0 190px;
+        padding-bottom: 27px;
+    }
+
+    &__point {
+        flex: 0 0 17px;
+        width: 17px;
+        height: 17px;
+        border-radius: 100%;
+        border: 1px solid $c-bg;
+
+        &:active {
+            background-color: $c-accent;
+            border-color: $c-accent;
+        }
+    }
+
+    &__info {
+        max-width: 345px;
+        color: $c-text-light;
+    }
+}
+
+.history-modal {
+    &.active {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    &.active &__content {
+        right: 0;
+    }
+
+    &.active &__overlay {
+        opacity: 0.3;
+    }
+}

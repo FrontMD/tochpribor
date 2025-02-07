@@ -10,7 +10,7 @@
 @@include("../../blocks/modules/product-slider/product-slider.js")
 @@include("../../blocks/modules/product-page-intro/product-intro.js")
 @@include("../../blocks/modules/h-advantages/h-advantages.js")
-
+@@include("../../blocks/modules/history-modal/history-modal.js")
 
 document.addEventListener('DOMContentLoaded', () => {
     // Скрипты первого экрана главной страницы
@@ -39,4 +39,6 @@ document.addEventListener('DOMContentLoaded', () => {
     productIntro()
     // Слайдер карточек преимуществ
     hAdvantagesSlider()
+    // Управляет модалкой истории
+    historyModal()
 })
