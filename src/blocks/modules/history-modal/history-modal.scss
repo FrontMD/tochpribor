@@ -36,6 +36,8 @@
         border: 1px solid $c-border;
         border-radius: 4px;
         transition: color $tr-time-long;
+        z-index: 5;
+        background-color: $c-white;
 
         @include max(xs) {
             right: 15px;
@@ -64,6 +66,7 @@
     }
 
     &__list {
+        position: relative;
         display: flex;
         flex-direction: column;
         gap: 46px;
@@ -74,17 +77,34 @@
         background-position: right bottom;
         background-size: 58%;
         overflow-y: auto;
+
+        @include max(mobile) {
+            padding: 50px 16px 24px 24px;
+            gap: 32px;
+        }
     }
 
     &__row {
+        position: relative;
         display: flex;
         align-items: flex-start;
         gap: 90px;
+        z-index: 3;
+
+        @include max(mobile) {
+            flex-direction: column;
+            gap: 16px;
+        }
     }
 
     &__year {
-        flex: 0 0 190px;
+        flex: 0 0 205px;
         padding-bottom: 27px;
+
+        @include max(mobile) {
+            flex-basis: auto;
+            padding-bottom: 0;
+        }
     }
 
     &__point {
@@ -93,10 +113,61 @@
         height: 17px;
         border-radius: 100%;
         border: 1px solid $c-bg;
+        background-color: $c-white;
+        transition: all $tr-time linear;
 
-        &:active {
+        &.active {
             background-color: $c-accent;
             border-color: $c-accent;
+        }
+
+        @include max(mobile) {
+            position: absolute;
+            left: -16px;
+            top: 8px;
+            flex-basis: 0;
+            width: 9px;
+            height: 9px;
+        }
+    }
+
+    &__progress {
+        position: absolute;
+        top: 50px;
+        left: 353px;
+        bottom: 0;
+        width: 1px;
+        height: calc(100% - 55px);
+        z-index: 1;
+        background-color: $c-bg;
+        overflow: hidden;
+
+        @include max(mobile) {
+            left: 12px;
+            top: 58px;
+            height: calc(100% - 63px);
+        }
+
+        .line-color {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 0%;
+            z-index: 1;
+            background-color: $c-accent;
+        }
+
+        .line-dashed {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 3;
+            background-image: url(../img/history_scroll_bg.svg);
+            background-size: 100% auto;
+            background-repeat: repeat-y;
         }
     }
 

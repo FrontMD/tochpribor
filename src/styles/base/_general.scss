@@ -946,6 +946,75 @@ body {
 		}
 	}
 
+	.collapsible-text {
+		font-size: 16px;
+		margin-bottom: 1.4em;
+
+		@include max(xs) {
+			font-size: 14px;
+		}
+
+		p {
+			margin-bottom: 0;
+			overflow: hidden;
+			transition: all $tr-time linear;
+		}
+
+		&__btn {
+			display: flex;
+			align-items: center;
+			gap: 4px;
+			margin-top: 12px;
+			color: $c-text;
+			transition: all $tr-time linear;
+			font-size: 16px;
+			line-height: 1.4em;
+			padding: 1px 4px 2px;
+			background-color: $c-input-bg;
+			border-radius: 2px;
+
+			.show {
+				display: block;
+			}
+
+			.hide {
+				display: none;
+			}
+
+			svg {
+				width: 16px;
+				height: 16px;
+				color: $c-text-breadcrumbs;
+				transition: all $tr-time linear;
+				margin-bottom: 2px;
+			}
+
+			&:hover {
+				background-color: $c-accent-hover;
+				color: $c-white;
+
+				svg {
+					color: $c-white;
+				}
+			}
+		}
+
+		&--opened .collapsible-text__btn {
+			.show {
+				display: none;
+			}
+
+			.hide {
+				display: block;
+			}
+
+			svg {
+				transform: rotate(-180deg);
+				margin-bottom: -2px;
+			}
+		}
+	}
+
 }
 
 .gallery-list {
