@@ -3,7 +3,10 @@
         classes: '',
         img: '',
         title: '',
+        text: '',
         btnText: '',
+        isTransparent: false,
+        modalLink: '#'
     }
 
 mixin help-section(props= defaultHelpProps)
@@ -12,7 +15,10 @@ mixin help-section(props= defaultHelpProps)
             classes: props.classes ? props.classes : defaultHelpProps.classes,
             img: props.img ? props.img : defaultHelpProps.img,
             title: props.title ? props.title: defaultHelpProps.title,
+            text: props.text ? props.text: defaultHelpProps.text,
             btnText: props.btnText ? props.btnText : defaultHelpProps.btnText,
+            isTransparent: props.isTransparent ? props.isTransparent : defaultHelpProps.isTransparent,
+            modalLink: props.modalLink ? props.modalLink : defaultHelpProps.modalLink,
         }
 
         let transparentClass = checkProps.isTransparent === true ? ' section--transparent' : ''
@@ -30,12 +36,15 @@ mixin help-section(props= defaultHelpProps)
                     text: checkProps.title
                 })
 
+                if(checkProps.text.length > 0)
+                    .help-section__text!= checkProps.text
+
                 +btn({
                     classes: 'help-section__btn',
                     name: checkProps.btnText,
                     cMode: 'red',
-                    size: 'big',
+                    size: 'middle',
                     icon: 'arrow_enter'
-                })
+                })(data-modal=checkProps.modalLink)
 
 

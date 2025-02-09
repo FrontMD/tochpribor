@@ -1,0 +1,64 @@
+-
+    const defaultTeamSectionProps = {
+        classes: '',
+        tag: '',
+        title: '',
+        img: '',
+        noCards: false
+    }
+
+mixin team-section(props= defaultImgIntroProps)
+    -
+        const checkProps = {
+            classes: props.classes ? props.classes : defaultTeamSectionProps.classes,
+            tag: props.tag ? props.tag : defaultTeamSectionProps.tag,
+            title: props.title ? props.title : defaultTeamSectionProps.title,
+            img: props.img ? props.img : defaultTeamSectionProps.img,
+            noCards: props.noCards ? props.noCards : defaultTeamSectionProps.noCards
+        }
+
+    section.section.section--transparent.section--full.team-section
+        .section__container.team-section__container
+            .team-section__header
+                .team-section__bg
+                    img(class="lazyload" src="img/lazy-placeholder.webp" data-src= checkProps.img alt="")
+                .team-section__intro
+                    .team-section__tag!= checkProps.tag
+                    +title({
+                        tag: 'h2',
+                        text: checkProps.title,
+                        size: '53',
+                        cMode: 'light'
+                    })
+            if(checkProps.noCards == false)
+                .team-section__cards
+                    .team-section__card.person-card
+                        .person-card__photo
+                            img(class="lazyload" src="img/lazy-placeholder.webp" data-src="img/team/person_2.webp" alt="")
+                        .person-card__name.title--26 Константин Константинопольский
+                        .person-card__position Операционный директор
+                    .team-section__card.person-card
+                        .person-card__photo
+                            img(class="lazyload" src="img/lazy-placeholder.webp" data-src="img/team/person_3.webp" alt="")
+                        .person-card__name.title--26 Иван Иванов
+                        .person-card__position Коммерческий директор
+                    .team-section__card.person-card
+                        .person-card__photo
+                            img(class="lazyload" src="img/lazy-placeholder.webp" data-src="img/team/person_4.webp" alt="")
+                        .person-card__name.title--26 Петр Петров
+                        .person-card__position Креативный директор
+                    .team-section__card.person-card
+                        .person-card__photo
+                            img(class="lazyload" src="img/lazy-placeholder.webp" data-src="img/team/person_5.webp" alt="")
+                        .person-card__name.title--26 Петр Петров
+                        .person-card__position Операционный директор
+                    .team-section__card.person-card
+                        .person-card__photo
+                            img(class="lazyload" src="img/lazy-placeholder.webp" data-src="img/team/person_3.webp" alt="")
+                        .person-card__name.title--26 Иван Иванов
+                        .person-card__position Коммерческий директор
+                    .team-section__card.person-card
+                        .person-card__photo
+                            img(class="lazyload" src="img/lazy-placeholder.webp" data-src="img/team/person_2.webp" alt="")
+                        .person-card__name.title--26 Константин Константинопольский
+                        .person-card__position Операционный директор

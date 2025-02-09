@@ -1,0 +1,178 @@
+extends ../layouts/default
+include ../helpers/mixins
+
+block variables
+    - const title = "Наша команда"
+
+block content
+    .page-layout(data-js="pageLayout")
+
+        +img-intro({
+            img: 'img/about/about_intro.webp',
+            breadcrumbs: {
+                cMode: 'light',
+                items: [
+                    {
+                        name: 'Главная',
+                        link: 'javascript:void(0);'
+                    },
+                    {
+                        name: 'Наша команда',
+                        link: 'javascript:void(0);'
+                    }
+                ]
+            },
+            title: 'Наша команда',
+            tag: '[Надёжные руки, создающие будущее промышленности]',
+            text: 'Каждый из нас вносит свой вклад в создание качественных и надёжных продуктов',
+        })
+            +btn({
+                size: 'middle',
+                name: 'Фильм о заводе',
+                link: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239202&hd=2&autoplay=1',
+                icon: 'arrow_enter'
+            })(data-fancybox data-type='iframe')
+
+
+        section.section.section--transparent.section--full.team-photos
+            .section__container.team-photos__container
+                +title({
+                    classes: 'team-photos__title',
+                    tag: 'h2',
+                    text: 'Люди, которые делают больше, чем просто работу',
+                    size: '53',
+                })
+                .team-photos__cards
+                    .team-photos__card
+                        a.team-photos__img(href="img/team/team_1.webp" data-fancybox="teamPhotos" data-thumb="img/team/team_1.webp")
+                            img(src="img/team/team_1.webp" alt="")
+                    .team-photos__card.team-photos__card--center
+                        a.team-photos__img(href="img/team/team_2.webp" data-fancybox="teamPhotos" data-thumb="img/team/team_2.webp")
+                            img(src="img/team/team_2.webp" alt="")
+                        +btn({
+                            classes: 'team-photos__btn',
+                            size: 'middle',
+                            name: 'Все фото',
+                            link: 'img/team/team_1.webp',
+                            icon: 'arrow_enter'
+                        })(data-fancybox-trigger="teamPhotos")
+                    .team-photos__card
+                        a.team-photos__img(href="img/team/team_3.webp" data-fancybox="teamPhotos" data-thumb="img/team/team_3.webp")
+                            img(src="img/team/team_3.webp" alt="")
+                    .team-photos__card
+                        a.team-photos__img(href="img/team/team_4.webp" data-fancybox="teamPhotos" data-thumb="img/team/team_4.webp")
+                            img(src="img/team/team_4.webp" alt="")
+                    .team-photos__card
+                        a.team-photos__img(href="img/team/team_5.webp" data-fancybox="teamPhotos" data-thumb="img/team/team_5.webp")
+                            img(src="img/team/team_5.webp" alt="")
+                .gallery-list
+                    a(href="img/about/about_cooperation.webp" data-fancybox="teamPhotos" data-thumb="img/about/about_cooperation.webp")
+                    a(href="img/about/about_team.webp" data-fancybox="teamPhotos" data-thumb="img/about/about_team.webp")
+
+        +quote-section({
+            text: 'Наш коллектив — это команда единомышленников, которая движется к&nbsp;общей цели. Я благодарен каждому сотруднику за его вклад в&nbsp;развитие завода.'
+        })
+
+        +team-section({
+            tag: '[Руководящий состав завода]',
+            title: 'Топ-менеджмент',
+            img: 'img/team/team_6.webp'
+        })
+
+        +team-section({
+            tag: '[Менеджеры в торговых домах]',
+            title: 'Менеджмент',
+            img: 'img/team/team_7.webp'
+        })
+
+        +team-section({
+            tag: '[Линейные сотрудники завода]',
+            title: 'Производственная линия',
+            img: 'img/team/team_8.webp',
+            noCards: true
+        })
+
+        section.section.team-vacancies
+            .section__container.team-vacancies__container
+                +title({
+                    classes: 'team-vacancies__title',
+                    tag: 'h2',
+                    text: 'Вакансии',
+                    size: '53',
+                    note: ' (43)'
+                })
+
+                .team-vacancies__header
+                .team-vacancies__body
+                    .team-vacancies__cards
+                        +vacancy-card({
+                            media: 'img/news/news_2.webp',
+                            salary: 'от 60 000 ₽',
+                            title: 'Слесарь-ремонтник',
+                            category: 'Слесарь',
+                            date: '20.10.2024'
+                        })
+                        +vacancy-card({
+                            media: 'img/news/news_2.webp',
+                            salary: 'от 70 000 ₽',
+                            title: 'Слесарь механосборочных работ',
+                            category: 'Слесарь',
+                            date: '20.10.2024'
+                        })
+                        +vacancy-card({
+                            media: 'img/news/news_2.webp',
+                            salary: 'от 45 000 до 60 000 ₽',
+                            title: 'Контролер ОТК',
+                            category: 'Контролер',
+                            date: '20.10.2024'
+                        })
+                        +vacancy-card({
+                            media: 'img/news/news_2.webp',
+                            salary: 'от 60 000 ₽',
+                            title: 'Инженер КИПиА',
+                            category: 'Инженер',
+                            date: '20.10.2024'
+                        })
+                        +vacancy-card({
+                            media: 'img/news/news_2.webp',
+                            salary: 'от 60 000 ₽',
+                            title: 'Слесарь-ремонтник',
+                            category: 'Слесарь',
+                            date: '20.10.2024'
+                        })
+                        +vacancy-card({
+                            media: 'img/news/news_2.webp',
+                            salary: 'от 70 000 ₽',
+                            title: 'Слесарь механосборочных работ',
+                            category: 'Слесарь',
+                            date: '20.10.2024'
+                        })
+                        +vacancy-card({
+                            media: 'img/news/news_2.webp',
+                            salary: 'от 45 000 до 60 000 ₽',
+                            title: 'Контролер ОТК',
+                            category: 'Контролер',
+                            date: '20.10.2024'
+                        })
+                        +vacancy-card({
+                            media: 'img/news/news_2.webp',
+                            salary: 'от 60 000 ₽',
+                            title: 'Инженер КИПиА',
+                            category: 'Инженер',
+                            date: '20.10.2024'
+                        })
+                    +btn({
+                        classes: 'team-vacancies__more',
+                        cMode: 'transparent-red',
+                        name: 'Показать еще',
+                        icon: 'arrow_enter'
+                    })
+
+        +help-section({
+            img: 'img/home/bg_1.webp',
+            title: 'Не нашли <br>подходящую <br>вакансию?',
+            text: 'Отправьте нам резюме, мы всегда в&nbsp;поиске молодых и&nbsp;активных специалистов',
+            btnText: 'Отправить резюме',
+            isTransparent: true
+        })
+

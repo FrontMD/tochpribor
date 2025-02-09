@@ -3,12 +3,16 @@
         display: flex;
         align-items: flex-start;
         gap: 190px;
-        padding: 20px 20px 150px;
+        padding: 20px 40px 150px;
         background-image: url('../img/quote_bg.svg');
         background-repeat: no-repeat;
         background-size: 478px;
         background-position: right 2.778% bottom -196px;
         color: $c-text;
+
+        @include max(large) {
+            padding: 20px 20px 150px;
+        }
 
         @include max(laptop) {
             gap: 120px;
@@ -21,6 +25,12 @@
             flex-direction: column;
             gap: 0;
             padding: 20px 20px 50px;
+        }
+
+        @include max(mobile) {
+            flex-direction: column;
+            gap: 0;
+            padding: 20px 15px;
         }
     }
 
@@ -61,6 +71,7 @@
     &__text {
         position: relative;
         margin-top: 130px;
+        max-width: 860px;
 
         @include max(tablet) {
             margin-top: 120px;
