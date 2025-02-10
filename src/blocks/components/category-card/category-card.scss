@@ -82,6 +82,10 @@
         }
     }
 
+    &__sticker+&__sticker:not(.category-card__sticker--second) {
+        margin-top: 6px;
+    }
+
     &__sticker--blue {
         background-color: #E8F5FF;
         color: #1998FF;
@@ -99,8 +103,12 @@
         color: $c-white;
         padding: 8px 10px;
         background-color: $c-text-dark;
+        padding-top: 0;
+        padding-bottom: 0;
         opacity: 0;
         margin-top: 0;
+        max-height: 0;
+        overflow: hidden;
         visibility: hidden;
         transition: all $tr-time linear;
         z-index: 7;
@@ -126,6 +134,9 @@
     &__sticker--second:hover {
         opacity: 1;
         margin-top: 6px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        max-height: 100px;
         visibility: visible;
     }
 

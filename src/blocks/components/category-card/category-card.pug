@@ -1,44 +1,44 @@
 -
-	const defaultCategoryCardProps = {
-		classes: '',
-		title: '',
-		image: '',
-		count: '',
-		sticker: {
-			first: '',
-			second: '',
-			color: '',
-			icon: ''
-		}
-	}
+    const defaultCategoryCardProps = {
+        classes: '',
+        title: '',
+        image: '',
+        count: '',
+        sticker: {
+            first: '',
+            second: '',
+            color: '',
+            icon: ''
+        }
+    }
 
 mixin category-card(props = defaultCategoryCardProps)
-	-
-		const checkProps = {
-			classes: props.classes ? props.classes : defaultCategoryCardProps.classes,
-			title: props.title ? props.title : defaultCategoryCardProps.title,
-			image: props.image ? props.image : defaultCategoryCardProps.image,
-			count: props.count ? props.count : defaultCategoryCardProps.count,
-			sticker: props.sticker ? props.sticker : defaultCategoryCardProps.sticker
-		}
+    -
+        const checkProps = {
+            classes: props.classes ? props.classes : defaultCategoryCardProps.classes,
+            title: props.title ? props.title : defaultCategoryCardProps.title,
+            image: props.image ? props.image : defaultCategoryCardProps.image,
+            count: props.count ? props.count : defaultCategoryCardProps.count,
+            sticker: props.sticker ? props.sticker : defaultCategoryCardProps.sticker
+        }
 
-		let sticker =  checkProps.sticker
-		let stickerColorMode = sticker.color.length > 0 ? `category-card__sticker--${sticker.color}` : ''
+        let sticker =  checkProps.sticker
+        let stickerColorMode = sticker.color.length > 0 ? `category-card__sticker--${sticker.color}` : ''
 
-	.category-card(class= checkProps.classes)&attributes(attributes)
-		a.category-card__link(href="javascript:void(0);")
-		.category-card__header
-			- if(checkProps.count.length > 0)
-				.category-card__count!= checkProps.count
-			- if(sticker.first.length > 0)
-				.category-card__stickers
-					.category-card__sticker(class= stickerColorMode + `${sticker.second.length > 0 ? ' hovered' : ''}`)
-						- if(sticker.icon.length > 0)
-							img(src= sticker.icon)
-						!= sticker.first
-					- if(sticker.second.length > 0)
-						.category-card__sticker.category-card__sticker--second!= sticker.second
-		.category-card__body
-			.category-card__photo
-				img(class="lazyload" src="img/lazy-placeholder.webp" data-src= checkProps.image alt= checkProps.title)
-			.category-card__title!= checkProps.title
+    .category-card(class= checkProps.classes)&attributes(attributes)
+        a.category-card__link(href="javascript:void(0);")
+        .category-card__header
+            - if(checkProps.count.length > 0)
+                .category-card__count!= checkProps.count
+            - if(sticker.first.length > 0)
+                .category-card__stickers
+                    .category-card__sticker(class= stickerColorMode + `${sticker.second.length > 0 ? ' hovered' : ''}`)
+                        - if(sticker.icon.length > 0)
+                            img(src= sticker.icon)
+                        != sticker.first
+                    - if(sticker.second.length > 0)
+                        .category-card__sticker.category-card__sticker--second!= sticker.second
+        .category-card__body
+            .category-card__photo
+                img(class="lazyload" src="img/lazy-placeholder.webp" data-src= checkProps.image alt= checkProps.title)
+            .category-card__title!= checkProps.title

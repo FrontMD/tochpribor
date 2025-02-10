@@ -102,7 +102,39 @@ block content
                     note: ' (43)'
                 })
 
-                .team-vacancies__header
+                +form-filter({
+                    classes: 'team-vacancies__form'
+                })
+                    +field({
+                        classes: 'team-vacancies__search',
+                        placeholder: 'Поиск вакансии',
+                        resetBtn: true,
+                        isSearch: true
+                    })
+                    .filter-tab.filter-tab--select(data-js="filterTabSelect")
+                        .filter-tab__inner(data-js="filterTabSelectInner")
+                            span.filter-tab__text Фильтры
+                            span.filter-tab__icon
+                                svg
+                                    use(xlink:href=`img/sprites/sprite.svg#filter`)
+                            span.filter-tab__reset
+                                svg
+                                    use(xlink:href=`img/sprites/sprite.svg#close`)
+
+                        .filter-tab__list(data-js="filterTabSelectList")
+                            .form-filter__block
+                                .form-filter__subtitle Уровень зарплаты <span>руб</span>
+                                .filter-range(data-js="filterRange" data-min="45" data-max="2500" data-step="1000")
+                                    input.filter-range__input.filter-range__input--min(type='number' min="45" max="2500" data-js="filterRangeMin")
+                                    input.filter-range__input.filter-range__input--max(type='number' min="45" max="2500" data-js="filterRangeMax")
+                                    .filter-range__range(data-js="filterRangeSlider")
+
+                    +btn({
+                        name: 'Искать',
+                        icon: 'arrow_enter',
+                        type: 'button',
+                        buttonType: 'submit'
+                    })
                 .team-vacancies__body
                     .team-vacancies__cards
                         +vacancy-card({

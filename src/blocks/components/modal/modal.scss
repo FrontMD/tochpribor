@@ -92,9 +92,8 @@
             margin: 0 auto;
             max-height: 100vh;
             height: 100vh;
+            height: 100dvh;
         }
-
-        @include max(mobile) {}
     }
 
     &__inner {
