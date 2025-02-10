@@ -1,9 +1,26 @@
 .team-section {
+
+    &__container.section__container {
+        @include max(tablet) {
+            padding: 20px;
+        }
+
+        @include max(mobile) {
+            padding: 0 15px 20px;
+        }
+    }
+
     &__header {
         display: flex;
         align-items: flex-end;
         position: relative;
         aspect-ratio: 1 / 0.42857;
+
+        @include max(mobile) {
+            aspect-ratio: 1 / 0.65;
+            margin-left: -15px;
+            margin-right: -15px;
+        }
     }
 
     &__bg {
@@ -14,6 +31,10 @@
         height: 100%;
         border-radius: 4px;
         overflow: hidden;
+
+        @include max(mobile) {
+            border-radius: 0;
+        }
 
         img {
             width: 100%;
@@ -35,6 +56,10 @@
     &__intro {
         position: relative;
         padding: 40px;
+
+        @include max(tablet) {
+            padding: 15px;
+        }
     }
 
     &__tag {
@@ -42,6 +67,11 @@
         font-size: 16px;
         line-height: 1.4em;
         color: $c-white;
+
+        @include max(tablet) {
+            margin-bottom: 4px;
+            font-size: 12px;
+        }
     }
 
     &__cards {
@@ -51,10 +81,47 @@
         gap: 48px 16px;
         margin-top: 60px;
         margin-bottom: 76px;
+
+        @include max(mobile) {
+            display: block;
+            margin-bottom: 32px;
+            margin-top: 32px;
+        }
+
+    }
+
+    .swiper-wrapper {
+        display: contents;
+
+        @include max(mobile) {
+            display: flex;
+        }
+    }
+
+    &__controls {
+        display: none;
+
+        @include max(mobile) {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 24px;
+        }
     }
 
     &__card {
         flex: 0 0 calc((100% - 16px * 3) / 4);
+
+        @include max(laptop) {
+            flex: 0 0 calc((100% - 16px * 2) / 3);
+        }
+
+        @include max(tablet) {
+            flex: 0 0 calc((100% - 16px) / 2);
+        }
+
+        @include max(mobile) {
+            flex-basis: auto;
+        }
     }
 }
 
@@ -74,7 +141,7 @@
 
     &__name {
         margin-top: 16px;
-        letter-spacing: -2%;
+        letter-spacing: -0.02em;
         word-spacing: 100vw;
         color: $c-text;
     }

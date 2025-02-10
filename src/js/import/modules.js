@@ -11,6 +11,7 @@
 @@include("../../blocks/modules/product-page-intro/product-intro.js")
 @@include("../../blocks/modules/h-advantages/h-advantages.js")
 @@include("../../blocks/modules/history-modal/history-modal.js")
+@@include("../../blocks/modules/team-section/team-section.js")
 
 document.addEventListener('DOMContentLoaded', () => {
     // Скрипты первого экрана главной страницы
@@ -41,4 +42,6 @@ document.addEventListener('DOMContentLoaded', () => {
     hAdvantagesSlider()
     // Управляет модалкой истории
     historyModal()
+    // Управляет слайдером команды
+    teamSection()
 })

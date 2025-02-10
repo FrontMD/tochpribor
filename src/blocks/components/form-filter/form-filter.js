@@ -322,8 +322,6 @@ function formFilterController() {
 
         if(vacanciesFilter) {
             const vacanciesFilterInner = vacanciesFilter.querySelector('[data-js="vacanciesFilterInner"]')
-            const vacanciesFilterSet = vacanciesFilter.querySelector('[data-js="vacanciesFilterSet"]')
-            const vacanciesFilterClear = vacanciesFilter.querySelector('[data-js="vacanciesFilterClear"]')
 
             vacanciesFilterInner.addEventListener('click', function() {
                 if(vacanciesFilter.classList.contains('active')) {
@@ -333,42 +331,12 @@ function formFilterController() {
                 }
             })
 
-            if(vacanciesFilterSet) {
-                vacanciesFilterSet.addEventListener("click", function() {
-                    vacanciesFilterClose()
-                })
-            }
-
-            
-            if(vacanciesFilterClear) {
-                vacanciesFilterClear.addEventListener("click", function() {
-                    //const checkboxes = filterTabSelect.querySelectorAll("input[type=checkbox]:checked")
-
-                    /*checkboxes.forEach(checkbox => {
-                        checkbox.checked = false
-                    })*/
-
-                    vacanciesFilterClose()
-                })
-            }
-
             function vacanciesFilterClose() {
                 vacanciesFilter.classList.remove('active')
-                /*const checkboxes = currentItem.querySelectorAll("input[type=checkbox]:checked")
-
-                if(checkboxes.length > 0) {
-                    currentItem.classList.add('has-checked')
-                } else {
-                    currentItem.classList.remove('has-checked')
-                }*/
             }
 
             function vacanciesFilterOpen() {
-                /*filterTabSelects.forEach(item => {
-                    filterTabSelectClose(item)
-                })*/
                 vacanciesFilter.classList.add('active')
-                //currentItem.classList.remove('has-checked')
 
             }
 

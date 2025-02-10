@@ -142,7 +142,7 @@ block content
                                             label.filter-checkbox__inner
                                                 input(type="checkbox" name='education' value="Среднее (полное)")
                                                 span.filter-checkbox__fake
-                                                span.filter-checkbox__text Среднее (полное)
+                                                span.filter-checkbox__text Среднее общее
                                         .filter-checkbox(data-js="filterListItem")
                                             label.filter-checkbox__inner
                                                 input(type="checkbox" name='education' value="Среднее профессиональное")
@@ -154,17 +154,35 @@ block content
                                                 span.filter-checkbox__fake
                                                 span.filter-checkbox__text Высшее
 
-                            .vacancies-filter__btns
-                                +btn({
-                                    name: 'Применить',
-                                    cMode: 'red',
-                                    size: 'small'
-                                })(data-js="vacanciesFilterSet")
-                                +btn({
-                                    name: 'Сбросить',
-                                    cMode: 'grey',
-                                    size: 'small'
-                                })(data-js="vacanciesFilterClear")
+                            .form-filter__block
+                                .form-filter__subtitle Опыт работы
+                                .form-filter__list(data-js="filterList")
+                                    .form-filter__items(data-js="filterListItems")
+                                        .filter-radio(data-js="filterListItem")
+                                            label.filter-radio__inner
+                                                input(type="radio" checked name='experience' value="Не имеет значения")
+                                                span.filter-radio__fake
+                                                span.filter-radio__text Не имеет значения
+                                        .filter-radio(data-js="filterListItem")
+                                            label.filter-radio__inner
+                                                input(type="radio" name='experience' value="Нет опыта")
+                                                span.filter-radio__fake
+                                                span.filter-radio__text Нет опыта
+                                        .filter-radio(data-js="filterListItem")
+                                            label.filter-radio__inner
+                                                input(type="radio" name='experience' value="От 1 года до 3 лет")
+                                                span.filter-radio__fake
+                                                span.filter-radio__text От 1 года до 3 лет
+                                        .filter-radio(data-js="filterListItem")
+                                            label.filter-radio__inner
+                                                input(type="radio" name='experience' value="От 3 до 6 лет")
+                                                span.filter-radio__fake
+                                                span.filter-radio__text От 3 до 6 лет
+                                        .filter-radio(data-js="filterListItem")
+                                            label.filter-radio__inner
+                                                input(type="radio" name='experience' value="Более 6 лет")
+                                                span.filter-radio__fake
+                                                span.filter-radio__text Более 6 лет
 
                     +btn({
                         name: 'Искать',

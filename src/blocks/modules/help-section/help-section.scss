@@ -1,8 +1,12 @@
 .help-section {
 
     &__container.section__container {
+        @include max(tablet) {
+            padding: 20px;
+        }
+
         @include max(mobile) {
-            padding: 0;
+            padding: 20px 15px;
         }
     }
 
