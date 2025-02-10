@@ -111,23 +111,60 @@ block content
                         resetBtn: true,
                         isSearch: true
                     })
-                    .filter-tab.filter-tab--select(data-js="filterTabSelect")
-                        .filter-tab__inner(data-js="filterTabSelectInner")
-                            span.filter-tab__text Фильтры
-                            span.filter-tab__icon
+                    .vacancies-filter(data-js="vacanciesFilter")
+                        .vacancies-filter__inner(data-js="vacanciesFilterInner")
+                            span.vacancies-filter__text Фильтры
+                            span.vacancies-filter__icon
                                 svg
                                     use(xlink:href=`img/sprites/sprite.svg#filter`)
-                            span.filter-tab__reset
+                            span.vacancies-filter__reset
                                 svg
                                     use(xlink:href=`img/sprites/sprite.svg#close`)
 
-                        .filter-tab__list(data-js="filterTabSelectList")
+                        .vacancies-filter__list
                             .form-filter__block
-                                .form-filter__subtitle Уровень зарплаты <span>руб</span>
-                                .filter-range(data-js="filterRange" data-min="45" data-max="2500" data-step="1000")
-                                    input.filter-range__input.filter-range__input--min(type='number' min="45" max="2500" data-js="filterRangeMin")
-                                    input.filter-range__input.filter-range__input--max(type='number' min="45" max="2500" data-js="filterRangeMax")
+                                .form-filter__subtitle Зарплата <span>(руб)</span>
+                                .filter-range(data-js="filterRange" data-min="0" data-max="150000" data-step="1000")
+                                    input.filter-range__input.filter-range__input--min(type='number' min="0" max="150000" data-js="filterRangeMin")
+                                    input.filter-range__input.filter-range__input--max(type='number' min="0" max="150000" data-js="filterRangeMax")
                                     .filter-range__range(data-js="filterRangeSlider")
+
+                            .form-filter__block
+                                .form-filter__subtitle Образование
+                                .form-filter__list(data-js="filterList")
+                                    .form-filter__items(data-js="filterListItems")
+                                        .filter-checkbox(data-js="filterListItem")
+                                            label.filter-checkbox__inner
+                                                input(type="checkbox" name='education' value="Не требуется или не указано")
+                                                span.filter-checkbox__fake
+                                                span.filter-checkbox__text Не требуется или не указано
+                                        .filter-checkbox(data-js="filterListItem")
+                                            label.filter-checkbox__inner
+                                                input(type="checkbox" name='education' value="Среднее (полное)")
+                                                span.filter-checkbox__fake
+                                                span.filter-checkbox__text Среднее (полное)
+                                        .filter-checkbox(data-js="filterListItem")
+                                            label.filter-checkbox__inner
+                                                input(type="checkbox" name='education' value="Среднее профессиональное")
+                                                span.filter-checkbox__fake
+                                                span.filter-checkbox__text Среднее профессиональное
+                                        .filter-checkbox(data-js="filterListItem")
+                                            label.filter-checkbox__inner
+                                                input(type="checkbox" name='education' value="Высшее")
+                                                span.filter-checkbox__fake
+                                                span.filter-checkbox__text Высшее
+
+                            .vacancies-filter__btns
+                                +btn({
+                                    name: 'Применить',
+                                    cMode: 'red',
+                                    size: 'small'
+                                })(data-js="vacanciesFilterSet")
+                                +btn({
+                                    name: 'Сбросить',
+                                    cMode: 'grey',
+                                    size: 'small'
+                                })(data-js="vacanciesFilterClear")
 
                     +btn({
                         name: 'Искать',

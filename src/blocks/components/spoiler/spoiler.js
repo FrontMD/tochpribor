@@ -21,26 +21,64 @@ function spoilers() {
 					return
 				}
 
-				let spoilers = accordion.querySelectorAll('[data-js="spoiler"]')
+				let spoilers = accordion.querySelectorAll('[data-js="spoiler"].active')
+				let oldSpoilerHeight = $(spoilers[0]).find('[data-js="spoilerContent"]')[0].offsetHeight
 
 				spoilers.forEach(spoiler => {
 					closeSpoiler(spoiler)
 				})
 
-				openSpoiler(clickedSpoiler)
+				openSpoiler(clickedSpoiler, oldSpoilerHeight)
 			}
 		})
+
+		function openSpoiler(spoiler, oldSpoilerHeight = 0) {
+			const content = $(spoiler).find('[data-js="spoilerContent"]');
+			spoiler.classList.add("active");
+			$(content).slideDown(400, () => {
+				if(oldSpoilerHeight > window.innerHeight / 2) {
+					let scrollTopOffset = document.querySelector('[data-js="siteHeader"]') ? document.querySelector('[data-js="siteHeader"]').offsetHeight : '0'
+					let newPos = Math.ceil($(spoiler).offset().top - scrollTopOffset - 32)
+					let currentPos = window.scrollY
+					
+					if(spoiler == firstSpoiler){
+						newPos = 0;
+					}
+
+					let distance = currentPos - newPos;
+					let step = distance > 0 ? -20 : 20;
+					let counterStep = Math.abs(step)
+					let counter = 0
+					
+					let scrollInterval = setInterval(() => {
+
+						window.scrollBy({
+							top: step,
+							behavior: 'instant'
+						})
+
+						counter += counterStep
+
+						if(counter >= Math.abs(distance)) {
+							clearInterval(scrollInterval)
+						}
+
+					}, 10
+					)
+				} else {
+					return
+				}
+			});
+
+
+		};
+	
+		function closeSpoiler(spoiler) {
+			const content = $(spoiler).find('[data-js="spoilerContent"]');
+			spoiler.classList.remove("active");
+			$(content).slideUp(400);
+		};
+
 	})
 
-	function openSpoiler(spoiler) {
-		const content = $(spoiler).find('[data-js="spoilerContent"]');
-		spoiler.classList.add("active");
-		$(content).slideDown(400);
-	};
-
-	function closeSpoiler(spoiler) {
-		const content = $(spoiler).find('[data-js="spoilerContent"]');
-		spoiler.classList.remove("active");
-		$(content).slideUp(400);
-	};
 }

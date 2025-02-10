@@ -323,22 +323,51 @@
                             <use xlink:href="img/sprites/sprite.svg#close"></use>
                           </svg></span>
                       </div>
-                  <div class="filter-tab filter-tab--select" data-js="filterTabSelect">
-                    <div class="filter-tab__inner" data-js="filterTabSelectInner"><span class="filter-tab__text">Фильтры</span><span class="filter-tab__icon">
+                  <div class="vacancies-filter" data-js="vacanciesFilter">
+                    <div class="vacancies-filter__inner" data-js="vacanciesFilterInner"><span class="vacancies-filter__text">Фильтры</span><span class="vacancies-filter__icon">
                         <svg>
                           <use xlink:href="img/sprites/sprite.svg#filter"></use>
-                        </svg></span><span class="filter-tab__reset">
+                        </svg></span><span class="vacancies-filter__reset">
                         <svg>
                           <use xlink:href="img/sprites/sprite.svg#close"></use>
                         </svg></span></div>
-                    <div class="filter-tab__list" data-js="filterTabSelectList">
+                    <div class="vacancies-filter__list">
                       <div class="form-filter__block">
-                        <div class="form-filter__subtitle">Уровень зарплаты <span>руб</span></div>
-                        <div class="filter-range" data-js="filterRange" data-min="45" data-max="2500" data-step="1000">
-                          <input class="filter-range__input filter-range__input--min" type="number" min="45" max="2500" data-js="filterRangeMin">
-                          <input class="filter-range__input filter-range__input--max" type="number" min="45" max="2500" data-js="filterRangeMax">
+                        <div class="form-filter__subtitle">Зарплата <span>(руб)</span></div>
+                        <div class="filter-range" data-js="filterRange" data-min="0" data-max="150000" data-step="1000">
+                          <input class="filter-range__input filter-range__input--min" type="number" min="0" max="150000" data-js="filterRangeMin">
+                          <input class="filter-range__input filter-range__input--max" type="number" min="0" max="150000" data-js="filterRangeMax">
                           <div class="filter-range__range" data-js="filterRangeSlider"></div>
                         </div>
+                      </div>
+                      <div class="form-filter__block">
+                        <div class="form-filter__subtitle">Образование</div>
+                        <div class="form-filter__list" data-js="filterList">
+                          <div class="form-filter__items" data-js="filterListItems">
+                            <div class="filter-checkbox" data-js="filterListItem">
+                              <label class="filter-checkbox__inner">
+                                <input type="checkbox" name="education" value="Не требуется или не указано"><span class="filter-checkbox__fake"></span><span class="filter-checkbox__text">Не требуется или не указано</span>
+                              </label>
+                            </div>
+                            <div class="filter-checkbox" data-js="filterListItem">
+                              <label class="filter-checkbox__inner">
+                                <input type="checkbox" name="education" value="Среднее (полное)"><span class="filter-checkbox__fake"></span><span class="filter-checkbox__text">Среднее (полное)</span>
+                              </label>
+                            </div>
+                            <div class="filter-checkbox" data-js="filterListItem">
+                              <label class="filter-checkbox__inner">
+                                <input type="checkbox" name="education" value="Среднее профессиональное"><span class="filter-checkbox__fake"></span><span class="filter-checkbox__text">Среднее профессиональное</span>
+                              </label>
+                            </div>
+                            <div class="filter-checkbox" data-js="filterListItem">
+                              <label class="filter-checkbox__inner">
+                                <input type="checkbox" name="education" value="Высшее"><span class="filter-checkbox__fake"></span><span class="filter-checkbox__text">Высшее</span>
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="vacancies-filter__btns"><a class="btn  btn--red btn--small" href="javascript:void(0)" data-js="vacanciesFilterSet"><span class="btn__text">Применить</span></a><a class="btn  btn--grey btn--small" href="javascript:void(0)" data-js="vacanciesFilterClear"><span class="btn__text">Сбросить</span></a>
                       </div>
                     </div>
                   </div>
