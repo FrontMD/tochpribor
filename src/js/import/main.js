@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     compareSliderInit();
     textTableScrollInit();
     anchorsInit();
+    referencesController();
 })
 
 // Блокировка скролла при открытии модалок
@@ -437,4 +438,26 @@ function anchorsInit() {
     
         });
     });
+}
+
+// управление страницей Референции
+function referencesController() {
+    const refIntro  = document.querySelector('[data-js="refIntro"]')
+    const refMap = document.querySelector('[data-js="refMap"]')
+
+    if(!refIntro || !refMap) return
+
+    const map = refMap.querySelector('[data-js="refMapMap"]');
+
+    ymaps.ready(function () {
+            
+        let center = "60.247097, 104.132880"
+        let zoom = 4;
+    
+        mapEx = new ymaps.Map(map, {
+            center: center.replace(/\s/g, '').split(","),
+            zoom: zoom,
+            controls: []
+        });
+    })
 }
