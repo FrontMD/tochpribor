@@ -447,17 +447,125 @@ function referencesController() {
 
     if(!refIntro || !refMap) return
 
-    const map = refMap.querySelector('[data-js="refMapMap"]');
+    const dataAddress = 'https://raw.githubusercontent.com/FrontMD/tochpribor/refs/heads/master/dist/public/data/refereces.json';
+    let refData = {};
+    let refAllCategories = [];
+    let refAllCities = [];
+    let allRussiaPoints = {};
 
-    ymaps.ready(function () {
-            
+    const map = refMap.querySelector('[data-js="refMapMap"]');
+    const countriesSelect = refIntro.querySelector('[data-js="filterSelect"][data-name="country"]');
+    const regionsSelect = refIntro.querySelector('[data-js="filterSelect"][data-name="region"]');
+
+    ymaps.ready(async function () {
+        // строим карту
         let center = "60.247097, 104.132880"
         let zoom = 4;
     
-        mapEx = new ymaps.Map(map, {
+        let mapEx = new ymaps.Map(map, {
             center: center.replace(/\s/g, '').split(","),
             zoom: zoom,
             controls: []
         });
+
+        // получаем данные
+        try {
+            let response = await fetch(dataAddress, {
+                method: 'get'
+            })
+
+            refData = await response.json()
+            console.log(refData)
+
+        } catch (error) {
+            console.log('Данные не получены.')
+            console.log(error)
+            return
+        }
+
+        // получаем все категории и все города
+        refAllCategories = refData.categories;
+        refAllCities = refData.cities;
+
+        // заполняем выпадающие списки и вешаем обработчики
+        if(countriesSelect) {
+            let allCountries = getCountries();
+            setSelectOptions(countriesSelect, allCountries)
+
+            
+            console.log(countriesSelect)
+            console.log(allCountries)
+        }
+
+        if(regionsSelect) {
+            let allRegions = getRegions();
+            setSelectOptions(regionsSelect, allRegions)
+        }
+        
+
+        // выводим все категории
+
+        // отрисовываем все точки России
+        //allRussiaPoints = getPoints()
+       
     })
+
+    function getPoints(country = '', region = '', city = '') {
+        console.log('города получены')
+    }
+
+    function setPoints() {
+        
+    }
+
+    function getCountries() {
+        let arr = refAllCities.reduce((acc, item) => {
+            if(!acc.includes(item.country)) {
+                acc.push(item.country)
+            }
+            return acc
+        }, [])
+        return arr
+    }
+
+    function getRegions() {
+        let arr = refAllCities.reduce((acc, item) => {
+            if(item.region.length > 0 && !acc.includes(item.region)) {
+                acc.push(item.region)
+            }
+            return acc
+        }, [])
+        return arr
+    }
+
+    function setSelectOptions(select, options) {
+        let input = select.querySelector('[data-js="filterSelectInput"]');
+        let content = select.querySelector('[data-js="filterSelectContent"]');
+
+        input.innerHTML = '';
+        content.innerHTML = ''
+
+        options.forEach(option => {
+            let optionEl = document.createElement('option');
+            optionEl.setAttribute('value', option);
+            optionEl.innerHTML = option;
+            input.appendChild(optionEl);
+
+            let contentEl = document.createElement('div');
+            contentEl.classList.add('filter-select__option');
+            contentEl.setAttribute('data-js', 'filterSelectOption');
+            contentEl.setAttribute('data-value', option);
+            contentEl.innerHTML = option
+            content.appendChild(contentEl)
+        })
+    }
+
+    function countryOnChange() {
+        
+    }
+    
+    function regionOnChange() {
+
+    }
+
 }

@@ -35,204 +35,208 @@ block content
                             .filter-select(data-js='filterSelect' data-name="country")
                                 .filter-select__header(data-js="filterSelectHeader")
                                     select(data-js="filterSelectInput")
-                                        option(value="Россия") Россия
-                                        option(value="Беларусь") Беларусь
-                                        option(value="Казахстан") Казахстан
+                                        //-
+                                            option(value="Россия") Россия
+                                            option(value="Беларусь") Беларусь
+                                            option(value="Казахстан") Казахстан
                                     .filter-select__fake(data-js="filterSelectFake") Выбрать страну
                                     svg
                                         use(xlink:href=`img/sprites/sprite.svg#arrow_angle`)
-                                .filter-select__content
-                                    .filter-select__option(data-js="filterSelectOption" data-value="Россия") Россия
-                                    .filter-select__option(data-js="filterSelectOption" data-value="Беларусь") Беларусь
-                                    .filter-select__option(data-js="filterSelectOption" data-value="Беларусь") Казахстан
+                                .filter-select__content(data-js="filterSelectContent")
+                                    //-
+                                        .filter-select__option(data-js="filterSelectOption" data-value="Россия") Россия
+                                        .filter-select__option(data-js="filterSelectOption" data-value="Беларусь") Беларусь
+                                        .filter-select__option(data-js="filterSelectOption" data-value="Беларусь") Казахстан
 
                             .filter-select(data-js='filterSelect' data-name="region")
                                 .filter-select__header(data-js="filterSelectHeader")
                                     select(data-js="filterSelectInput")
-                                        option(value="Республика Адыгея") Республика Адыгея
-                                        option(value="Республика Башкортостан") Республика Башкортостан
-                                        option(value="Республика Бурятия") Республика Бурятия
-                                        option(value="Республика Алтай") Республика Алтай
-                                        option(value="Республика Дагестан") Республика Дагестан
-                                        option(value="Республика Ингушетия") Республика Ингушетия
-                                        option(value="Рабардино-Балкарская Республика") Рабардино-Балкарская Республика
-                                        option(value="Республика Калмыкия") Республика Калмыкия
-                                        option(value="Карачаево-Черкесская Республика") Карачаево-Черкесская Республика
-                                        option(value="Республика Карелия") Республика Карелия
-                                        option(value="Республика Коми") Республика Коми
-                                        option(value="Республика Марий Эл") Республика Марий Эл
-                                        option(value="Республика Мордовия") Республика Мордовия
-                                        option(value="Республика Саха (Якутия)") Республика Саха (Якутия)
-                                        option(value="Республика Северная Осетия - Алания") Республика Северная Осетия - Алания
-                                        option(value="Республика Татарстан") Республика Татарстан
-                                        option(value="Республика Тыва") Республика Тыва
-                                        option(value="Удмуртская Республика") Удмуртская Республика
-                                        option(value="Республика Хакасия") Республика Хакасия
-                                        option(value="Чеченская Республика") Чеченская Республика
-                                        option(value="Чувашская Республика - Чувашия") Чувашская Республика - Чувашия
-                                        option(value="Алтайский край") Алтайский край
-                                        option(value="Краснодарский край") Краснодарский край
-                                        option(value="Красноярский край") Красноярский край
-                                        option(value="Приморский край") Приморский край
-                                        option(value="Ставропольский край") Ставропольский край
-                                        option(value="Хабаровский край") Хабаровский край
-                                        option(value="Амурская область") Амурская область
-                                        option(value="Архангельская область") Архангельская область
-                                        option(value="Астраханская область") Астраханская область
-                                        option(value="Белгородская область") Белгородская область
-                                        option(value="Брянская область") Брянская область
-                                        option(value="Владимирская область") Владимирская область
-                                        option(value="Волгоградская область") Волгоградская область
-                                        option(value="Вологодская область") Вологодская область
-                                        option(value="Воронежская область") Воронежская область
-                                        option(value="Ивановская область") Ивановская область
-                                        option(value="Иркутская область") Иркутская область
-                                        option(value="Калининградская область") Калининградская область
-                                        option(value="Калужская область") Калужская область
-                                        option(value="Камчатский край") Камчатский край
-                                        option(value="Кемеровская область") Кемеровская область
-                                        option(value="Кировская область") Кировская область
-                                        option(value="Костромская область") Костромская область
-                                        option(value="Курганская область") Курганская область
-                                        option(value="Курская область") Курская область
-                                        option(value="Ленинградская область") Ленинградская область
-                                        option(value="Липецкая область") Липецкая область
-                                        option(value="Магаданская область") Магаданская область
-                                        option(value="Московская область") Московская область
-                                        option(value="Мурманская область") Мурманская область
-                                        option(value="Нижегородская область") Нижегородская область
-                                        option(value="Новгородская область") Новгородская область
-                                        option(value="Новосибирская область") Новосибирская область
-                                        option(value="Омская область") Омская область
-                                        option(value="Оренбургская область") Оренбургская область
-                                        option(value="Орловская область") Орловская область
-                                        option(value="Пензенская область") Пензенская область
-                                        option(value="Пермский край") Пермский край
-                                        option(value="Псковская область") Псковская область
-                                        option(value="Ростовская область") Ростовская область
-                                        option(value="Рязанская область") Рязанская область
-                                        option(value="Самарская область") Самарская область
-                                        option(value="Саратовская область") Саратовская область
-                                        option(value="Сахалинская область") Сахалинская область
-                                        option(value="Свердловская область") Свердловская область
-                                        option(value="Смоленская область") Смоленская область
-                                        option(value="Тамбовская область") Тамбовская область
-                                        option(value="Тверская область") Тверская область
-                                        option(value="Томская область") Томская область
-                                        option(value="Тульская область") Тульская область
-                                        option(value="Тюменская область") Тюменская область
-                                        option(value="Ульяновская область") Ульяновская область
-                                        option(value="Челябинская область") Челябинская область
-                                        option(value="Забайкальский край") Забайкальский край
-                                        option(value="Ярославская область") Ярославская область
-                                        option(value="г. Москва") г. Москва
-                                        option(value="г. Санкт-Петербург") г. Санкт-Петербург
-                                        option(value="Еврейская автономная область") Еврейская автономная область
-                                        option(value="Ненецкий автономный округ") Ненецкий автономный округ
-                                        option(value="Ханты-Мансийский АО - Югра") Ханты-Мансийский АО - Югра
-                                        option(value="Чукотский автономный округ") Чукотский автономный округ
-                                        option(value="Ямало-Ненецкий автономный округ") Ямало-Ненецкий автономный округ
-                                        option(value="Республика Крым") Республика Крым
-                                        option(value="г. Севастополь") г. Севастополь
-                                        option(value="Запорожская область") Запорожская область
-                                        option(value="Донецкая Народная Республика") Донецкая Народная Республика
-                                        option(value="Луганская Народная Республика") Луганская Народная Республика
-                                        option(value="Херсонская область") Херсонская область
+                                        //-
+                                            option(value="Республика Адыгея") Республика Адыгея
+                                            option(value="Республика Башкортостан") Республика Башкортостан
+                                            option(value="Республика Бурятия") Республика Бурятия
+                                            option(value="Республика Алтай") Республика Алтай
+                                            option(value="Республика Дагестан") Республика Дагестан
+                                            option(value="Республика Ингушетия") Республика Ингушетия
+                                            option(value="Рабардино-Балкарская Республика") Рабардино-Балкарская Республика
+                                            option(value="Республика Калмыкия") Республика Калмыкия
+                                            option(value="Карачаево-Черкесская Республика") Карачаево-Черкесская Республика
+                                            option(value="Республика Карелия") Республика Карелия
+                                            option(value="Республика Коми") Республика Коми
+                                            option(value="Республика Марий Эл") Республика Марий Эл
+                                            option(value="Республика Мордовия") Республика Мордовия
+                                            option(value="Республика Саха (Якутия)") Республика Саха (Якутия)
+                                            option(value="Республика Северная Осетия - Алания") Республика Северная Осетия - Алания
+                                            option(value="Республика Татарстан") Республика Татарстан
+                                            option(value="Республика Тыва") Республика Тыва
+                                            option(value="Удмуртская Республика") Удмуртская Республика
+                                            option(value="Республика Хакасия") Республика Хакасия
+                                            option(value="Чеченская Республика") Чеченская Республика
+                                            option(value="Чувашская Республика - Чувашия") Чувашская Республика - Чувашия
+                                            option(value="Алтайский край") Алтайский край
+                                            option(value="Краснодарский край") Краснодарский край
+                                            option(value="Красноярский край") Красноярский край
+                                            option(value="Приморский край") Приморский край
+                                            option(value="Ставропольский край") Ставропольский край
+                                            option(value="Хабаровский край") Хабаровский край
+                                            option(value="Амурская область") Амурская область
+                                            option(value="Архангельская область") Архангельская область
+                                            option(value="Астраханская область") Астраханская область
+                                            option(value="Белгородская область") Белгородская область
+                                            option(value="Брянская область") Брянская область
+                                            option(value="Владимирская область") Владимирская область
+                                            option(value="Волгоградская область") Волгоградская область
+                                            option(value="Вологодская область") Вологодская область
+                                            option(value="Воронежская область") Воронежская область
+                                            option(value="Ивановская область") Ивановская область
+                                            option(value="Иркутская область") Иркутская область
+                                            option(value="Калининградская область") Калининградская область
+                                            option(value="Калужская область") Калужская область
+                                            option(value="Камчатский край") Камчатский край
+                                            option(value="Кемеровская область") Кемеровская область
+                                            option(value="Кировская область") Кировская область
+                                            option(value="Костромская область") Костромская область
+                                            option(value="Курганская область") Курганская область
+                                            option(value="Курская область") Курская область
+                                            option(value="Ленинградская область") Ленинградская область
+                                            option(value="Липецкая область") Липецкая область
+                                            option(value="Магаданская область") Магаданская область
+                                            option(value="Московская область") Московская область
+                                            option(value="Мурманская область") Мурманская область
+                                            option(value="Нижегородская область") Нижегородская область
+                                            option(value="Новгородская область") Новгородская область
+                                            option(value="Новосибирская область") Новосибирская область
+                                            option(value="Омская область") Омская область
+                                            option(value="Оренбургская область") Оренбургская область
+                                            option(value="Орловская область") Орловская область
+                                            option(value="Пензенская область") Пензенская область
+                                            option(value="Пермский край") Пермский край
+                                            option(value="Псковская область") Псковская область
+                                            option(value="Ростовская область") Ростовская область
+                                            option(value="Рязанская область") Рязанская область
+                                            option(value="Самарская область") Самарская область
+                                            option(value="Саратовская область") Саратовская область
+                                            option(value="Сахалинская область") Сахалинская область
+                                            option(value="Свердловская область") Свердловская область
+                                            option(value="Смоленская область") Смоленская область
+                                            option(value="Тамбовская область") Тамбовская область
+                                            option(value="Тверская область") Тверская область
+                                            option(value="Томская область") Томская область
+                                            option(value="Тульская область") Тульская область
+                                            option(value="Тюменская область") Тюменская область
+                                            option(value="Ульяновская область") Ульяновская область
+                                            option(value="Челябинская область") Челябинская область
+                                            option(value="Забайкальский край") Забайкальский край
+                                            option(value="Ярославская область") Ярославская область
+                                            option(value="г. Москва") г. Москва
+                                            option(value="г. Санкт-Петербург") г. Санкт-Петербург
+                                            option(value="Еврейская автономная область") Еврейская автономная область
+                                            option(value="Ненецкий автономный округ") Ненецкий автономный округ
+                                            option(value="Ханты-Мансийский АО - Югра") Ханты-Мансийский АО - Югра
+                                            option(value="Чукотский автономный округ") Чукотский автономный округ
+                                            option(value="Ямало-Ненецкий автономный округ") Ямало-Ненецкий автономный округ
+                                            option(value="Республика Крым") Республика Крым
+                                            option(value="г. Севастополь") г. Севастополь
+                                            option(value="Запорожская область") Запорожская область
+                                            option(value="Донецкая Народная Республика") Донецкая Народная Республика
+                                            option(value="Луганская Народная Республика") Луганская Народная Республика
+                                            option(value="Херсонская область") Херсонская область
 
                                     .filter-select__fake(data-js="filterSelectFake") Выбрать субъект РФ
                                     svg
                                         use(xlink:href=`img/sprites/sprite.svg#arrow_angle`)
 
-                                .filter-select__content
-                                    .filter-select__option(data-js="filterSelectOption" data-value="Республика Адыгея") Республика Адыгея
-                                    .filter-select__option(data-js="filterSelectOption" data-value="Республика Башкортостан") Республика Башкортостан
-                                    .filter-select__option(data-js="filterSelectOption" data-value="Республика Бурятия") Республика Бурятия
-                                    .filter-select__option(data-js="filterSelectOption" data-value="Республика Алтай") Республика Алтай
-                                    .filter-select__option(data-js="filterSelectOption" data-value="Республика Дагестан") Республика Дагестан
-                                    .filter-select__option(data-js="filterSelectOption" data-value="Республика Ингушетия") Республика Ингушетия
-                                    .filter-select__option(data-js="filterSelectOption" data-value="Рабардино-Балкарская Республика") Рабардино-Балкарская Республика
-                                    .filter-select__option(data-js="filterSelectOption" data-value="Республика Калмыкия") Республика Калмыкия
-                                    .filter-select__option(data-js="filterSelectOption" data-value="Карачаево-Черкесская Республика") Карачаево-Черкесская Республика
-                                    .filter-select__option(data-js="filterSelectOption" data-value="Республика Карелия") Республика Карелия
-                                    .filter-select__option(data-js="filterSelectOption" data-value="Республика Коми") Республика Коми
-                                    .filter-select__option(data-js="filterSelectOption" data-value="Республика Марий Эл") Республика Марий Эл
-                                    .filter-select__option(data-js="filterSelectOption" data-value="Республика Мордовия") Республика Мордовия
-                                    .filter-select__option(data-js="filterSelectOption" data-value="Республика Саха (Якутия)") Республика Саха (Якутия)
-                                    .filter-select__option(data-js="filterSelectOption" data-value="Республика Северная Осетия - Алания") Республика Северная Осетия - Алания
-                                    .filter-select__option(data-js="filterSelectOption" data-value="Республика Татарстан") Республика Татарстан
-                                    .filter-select__option(data-js="filterSelectOption" data-value="Республика Тыва") Республика Тыва
-                                    .filter-select__option(data-js="filterSelectOption" data-value="Удмуртская Республика") Удмуртская Республика
-                                    .filter-select__option(data-js="filterSelectOption" data-value="Республика Хакасия") Республика Хакасия
-                                    .filter-select__option(data-js="filterSelectOption" data-value="Чеченская Республика") Чеченская Республика
-                                    .filter-select__option(data-js="filterSelectOption" data-value="Чувашская Республика - Чувашия") Чувашская Республика - Чувашия
-                                    .filter-select__option(data-js="filterSelectOption" data-value="Алтайский край") Алтайский край
-                                    .filter-select__option(data-js="filterSelectOption" data-value="Краснодарский край") Краснодарский край
-                                    .filter-select__option(data-js="filterSelectOption" data-value="Красноярский край") Красноярский край
-                                    .filter-select__option(data-js="filterSelectOption" data-value="Приморский край") Приморский край
-                                    .filter-select__option(data-js="filterSelectOption" data-value="Ставропольский край") Ставропольский край
-                                    .filter-select__option(data-js="filterSelectOption" data-value="Хабаровский край") Хабаровский край
-                                    .filter-select__option(data-js="filterSelectOption" data-value="Амурская область") Амурская область
-                                    .filter-select__option(data-js="filterSelectOption" data-value="Архангельская область") Архангельская область
-                                    .filter-select__option(data-js="filterSelectOption" data-value="Астраханская область") Астраханская область
-                                    .filter-select__option(data-js="filterSelectOption" data-value="Белгородская область") Белгородская область
-                                    .filter-select__option(data-js="filterSelectOption" data-value="Брянская область") Брянская область
-                                    .filter-select__option(data-js="filterSelectOption" data-value="Владимирская область") Владимирская область
-                                    .filter-select__option(data-js="filterSelectOption" data-value="Волгоградская область") Волгоградская область
-                                    .filter-select__option(data-js="filterSelectOption" data-value="Вологодская область") Вологодская область
-                                    .filter-select__option(data-js="filterSelectOption" data-value="Воронежская область") Воронежская область
-                                    .filter-select__option(data-js="filterSelectOption" data-value="Ивановская область") Ивановская область
-                                    .filter-select__option(data-js="filterSelectOption" data-value="Иркутская область") Иркутская область
-                                    .filter-select__option(data-js="filterSelectOption" data-value="Калининградская область") Калининградская область
-                                    .filter-select__option(data-js="filterSelectOption" data-value="Калужская область") Калужская область
-                                    .filter-select__option(data-js="filterSelectOption" data-value="Камчатский край") Камчатский край
-                                    .filter-select__option(data-js="filterSelectOption" data-value="Кемеровская область") Кемеровская область
-                                    .filter-select__option(data-js="filterSelectOption" data-value="Кировская область") Кировская область
-                                    .filter-select__option(data-js="filterSelectOption" data-value="Костромская область") Костромская область
-                                    .filter-select__option(data-js="filterSelectOption" data-value="Курганская область") Курганская область
-                                    .filter-select__option(data-js="filterSelectOption" data-value="Курская область") Курская область
-                                    .filter-select__option(data-js="filterSelectOption" data-value="Ленинградская область") Ленинградская область
-                                    .filter-select__option(data-js="filterSelectOption" data-value="Липецкая область") Липецкая область
-                                    .filter-select__option(data-js="filterSelectOption" data-value="Магаданская область") Магаданская область
-                                    .filter-select__option(data-js="filterSelectOption" data-value="Московская область") Московская область
-                                    .filter-select__option(data-js="filterSelectOption" data-value="Мурманская область") Мурманская область
-                                    .filter-select__option(data-js="filterSelectOption" data-value="Нижегородская область") Нижегородская область
-                                    .filter-select__option(data-js="filterSelectOption" data-value="Новгородская область") Новгородская область
-                                    .filter-select__option(data-js="filterSelectOption" data-value="Новосибирская область") Новосибирская область
-                                    .filter-select__option(data-js="filterSelectOption" data-value="Омская область") Омская область
-                                    .filter-select__option(data-js="filterSelectOption" data-value="Оренбургская область") Оренбургская область
-                                    .filter-select__option(data-js="filterSelectOption" data-value="Орловская область") Орловская область
-                                    .filter-select__option(data-js="filterSelectOption" data-value="Пензенская область") Пензенская область
-                                    .filter-select__option(data-js="filterSelectOption" data-value="Пермский край") Пермский край
-                                    .filter-select__option(data-js="filterSelectOption" data-value="Псковская область") Псковская область
-                                    .filter-select__option(data-js="filterSelectOption" data-value="Ростовская область") Ростовская область
-                                    .filter-select__option(data-js="filterSelectOption" data-value="Рязанская область") Рязанская область
-                                    .filter-select__option(data-js="filterSelectOption" data-value="Самарская область") Самарская область
-                                    .filter-select__option(data-js="filterSelectOption" data-value="Саратовская область") Саратовская область
-                                    .filter-select__option(data-js="filterSelectOption" data-value="Сахалинская область") Сахалинская область
-                                    .filter-select__option(data-js="filterSelectOption" data-value="Свердловская область") Свердловская область
-                                    .filter-select__option(data-js="filterSelectOption" data-value="Смоленская область") Смоленская область
-                                    .filter-select__option(data-js="filterSelectOption" data-value="Тамбовская область") Тамбовская область
-                                    .filter-select__option(data-js="filterSelectOption" data-value="Тверская область") Тверская область
-                                    .filter-select__option(data-js="filterSelectOption" data-value="Томская область") Томская область
-                                    .filter-select__option(data-js="filterSelectOption" data-value="Тульская область") Тульская область
-                                    .filter-select__option(data-js="filterSelectOption" data-value="Тюменская область") Тюменская область
-                                    .filter-select__option(data-js="filterSelectOption" data-value="Ульяновская область") Ульяновская область
-                                    .filter-select__option(data-js="filterSelectOption" data-value="Челябинская область") Челябинская область
-                                    .filter-select__option(data-js="filterSelectOption" data-value="Забайкальский край") Забайкальский край
-                                    .filter-select__option(data-js="filterSelectOption" data-value="Ярославская область") Ярославская область
-                                    .filter-select__option(data-js="filterSelectOption" data-value="г. Москва") г. Москва
-                                    .filter-select__option(data-js="filterSelectOption" data-value="г. Санкт-Петербург") г. Санкт-Петербург
-                                    .filter-select__option(data-js="filterSelectOption" data-value="Еврейская автономная область") Еврейская автономная область
-                                    .filter-select__option(data-js="filterSelectOption" data-value="Ненецкий автономный округ") Ненецкий автономный округ
-                                    .filter-select__option(data-js="filterSelectOption" data-value="Ханты-Мансийский АО - Югра") Ханты-Мансийский АО - Югра
-                                    .filter-select__option(data-js="filterSelectOption" data-value="Чукотский автономный округ") Чукотский автономный округ
-                                    .filter-select__option(data-js="filterSelectOption" data-value="Ямало-Ненецкий автономный округ") Ямало-Ненецкий автономный округ
-                                    .filter-select__option(data-js="filterSelectOption" data-value="Республика Крым") Республика Крым
-                                    .filter-select__option(data-js="filterSelectOption" data-value="г. Севастополь") г. Севастополь
-                                    .filter-select__option(data-js="filterSelectOption" data-value="Запорожская область") Запорожская область
-                                    .filter-select__option(data-js="filterSelectOption" data-value="Донецкая Народная Республика") Донецкая Народная Республика
-                                    .filter-select__option(data-js="filterSelectOption" data-value="Луганская Народная Республика") Луганская Народная Республика
-                                    .filter-select__option(data-js="filterSelectOption" data-value="Херсонская область") Херсонская область
+                                .filter-select__content(data-js="filterSelectContent")
+                                    //-
+                                        .filter-select__option(data-js="filterSelectOption" data-value="Республика Адыгея") Республика Адыгея
+                                        .filter-select__option(data-js="filterSelectOption" data-value="Республика Башкортостан") Республика Башкортостан
+                                        .filter-select__option(data-js="filterSelectOption" data-value="Республика Бурятия") Республика Бурятия
+                                        .filter-select__option(data-js="filterSelectOption" data-value="Республика Алтай") Республика Алтай
+                                        .filter-select__option(data-js="filterSelectOption" data-value="Республика Дагестан") Республика Дагестан
+                                        .filter-select__option(data-js="filterSelectOption" data-value="Республика Ингушетия") Республика Ингушетия
+                                        .filter-select__option(data-js="filterSelectOption" data-value="Рабардино-Балкарская Республика") Рабардино-Балкарская Республика
+                                        .filter-select__option(data-js="filterSelectOption" data-value="Республика Калмыкия") Республика Калмыкия
+                                        .filter-select__option(data-js="filterSelectOption" data-value="Карачаево-Черкесская Республика") Карачаево-Черкесская Республика
+                                        .filter-select__option(data-js="filterSelectOption" data-value="Республика Карелия") Республика Карелия
+                                        .filter-select__option(data-js="filterSelectOption" data-value="Республика Коми") Республика Коми
+                                        .filter-select__option(data-js="filterSelectOption" data-value="Республика Марий Эл") Республика Марий Эл
+                                        .filter-select__option(data-js="filterSelectOption" data-value="Республика Мордовия") Республика Мордовия
+                                        .filter-select__option(data-js="filterSelectOption" data-value="Республика Саха (Якутия)") Республика Саха (Якутия)
+                                        .filter-select__option(data-js="filterSelectOption" data-value="Республика Северная Осетия - Алания") Республика Северная Осетия - Алания
+                                        .filter-select__option(data-js="filterSelectOption" data-value="Республика Татарстан") Республика Татарстан
+                                        .filter-select__option(data-js="filterSelectOption" data-value="Республика Тыва") Республика Тыва
+                                        .filter-select__option(data-js="filterSelectOption" data-value="Удмуртская Республика") Удмуртская Республика
+                                        .filter-select__option(data-js="filterSelectOption" data-value="Республика Хакасия") Республика Хакасия
+                                        .filter-select__option(data-js="filterSelectOption" data-value="Чеченская Республика") Чеченская Республика
+                                        .filter-select__option(data-js="filterSelectOption" data-value="Чувашская Республика - Чувашия") Чувашская Республика - Чувашия
+                                        .filter-select__option(data-js="filterSelectOption" data-value="Алтайский край") Алтайский край
+                                        .filter-select__option(data-js="filterSelectOption" data-value="Краснодарский край") Краснодарский край
+                                        .filter-select__option(data-js="filterSelectOption" data-value="Красноярский край") Красноярский край
+                                        .filter-select__option(data-js="filterSelectOption" data-value="Приморский край") Приморский край
+                                        .filter-select__option(data-js="filterSelectOption" data-value="Ставропольский край") Ставропольский край
+                                        .filter-select__option(data-js="filterSelectOption" data-value="Хабаровский край") Хабаровский край
+                                        .filter-select__option(data-js="filterSelectOption" data-value="Амурская область") Амурская область
+                                        .filter-select__option(data-js="filterSelectOption" data-value="Архангельская область") Архангельская область
+                                        .filter-select__option(data-js="filterSelectOption" data-value="Астраханская область") Астраханская область
+                                        .filter-select__option(data-js="filterSelectOption" data-value="Белгородская область") Белгородская область
+                                        .filter-select__option(data-js="filterSelectOption" data-value="Брянская область") Брянская область
+                                        .filter-select__option(data-js="filterSelectOption" data-value="Владимирская область") Владимирская область
+                                        .filter-select__option(data-js="filterSelectOption" data-value="Волгоградская область") Волгоградская область
+                                        .filter-select__option(data-js="filterSelectOption" data-value="Вологодская область") Вологодская область
+                                        .filter-select__option(data-js="filterSelectOption" data-value="Воронежская область") Воронежская область
+                                        .filter-select__option(data-js="filterSelectOption" data-value="Ивановская область") Ивановская область
+                                        .filter-select__option(data-js="filterSelectOption" data-value="Иркутская область") Иркутская область
+                                        .filter-select__option(data-js="filterSelectOption" data-value="Калининградская область") Калининградская область
+                                        .filter-select__option(data-js="filterSelectOption" data-value="Калужская область") Калужская область
+                                        .filter-select__option(data-js="filterSelectOption" data-value="Камчатский край") Камчатский край
+                                        .filter-select__option(data-js="filterSelectOption" data-value="Кемеровская область") Кемеровская область
+                                        .filter-select__option(data-js="filterSelectOption" data-value="Кировская область") Кировская область
+                                        .filter-select__option(data-js="filterSelectOption" data-value="Костромская область") Костромская область
+                                        .filter-select__option(data-js="filterSelectOption" data-value="Курганская область") Курганская область
+                                        .filter-select__option(data-js="filterSelectOption" data-value="Курская область") Курская область
+                                        .filter-select__option(data-js="filterSelectOption" data-value="Ленинградская область") Ленинградская область
+                                        .filter-select__option(data-js="filterSelectOption" data-value="Липецкая область") Липецкая область
+                                        .filter-select__option(data-js="filterSelectOption" data-value="Магаданская область") Магаданская область
+                                        .filter-select__option(data-js="filterSelectOption" data-value="Московская область") Московская область
+                                        .filter-select__option(data-js="filterSelectOption" data-value="Мурманская область") Мурманская область
+                                        .filter-select__option(data-js="filterSelectOption" data-value="Нижегородская область") Нижегородская область
+                                        .filter-select__option(data-js="filterSelectOption" data-value="Новгородская область") Новгородская область
+                                        .filter-select__option(data-js="filterSelectOption" data-value="Новосибирская область") Новосибирская область
+                                        .filter-select__option(data-js="filterSelectOption" data-value="Омская область") Омская область
+                                        .filter-select__option(data-js="filterSelectOption" data-value="Оренбургская область") Оренбургская область
+                                        .filter-select__option(data-js="filterSelectOption" data-value="Орловская область") Орловская область
+                                        .filter-select__option(data-js="filterSelectOption" data-value="Пензенская область") Пензенская область
+                                        .filter-select__option(data-js="filterSelectOption" data-value="Пермский край") Пермский край
+                                        .filter-select__option(data-js="filterSelectOption" data-value="Псковская область") Псковская область
+                                        .filter-select__option(data-js="filterSelectOption" data-value="Ростовская область") Ростовская область
+                                        .filter-select__option(data-js="filterSelectOption" data-value="Рязанская область") Рязанская область
+                                        .filter-select__option(data-js="filterSelectOption" data-value="Самарская область") Самарская область
+                                        .filter-select__option(data-js="filterSelectOption" data-value="Саратовская область") Саратовская область
+                                        .filter-select__option(data-js="filterSelectOption" data-value="Сахалинская область") Сахалинская область
+                                        .filter-select__option(data-js="filterSelectOption" data-value="Свердловская область") Свердловская область
+                                        .filter-select__option(data-js="filterSelectOption" data-value="Смоленская область") Смоленская область
+                                        .filter-select__option(data-js="filterSelectOption" data-value="Тамбовская область") Тамбовская область
+                                        .filter-select__option(data-js="filterSelectOption" data-value="Тверская область") Тверская область
+                                        .filter-select__option(data-js="filterSelectOption" data-value="Томская область") Томская область
+                                        .filter-select__option(data-js="filterSelectOption" data-value="Тульская область") Тульская область
+                                        .filter-select__option(data-js="filterSelectOption" data-value="Тюменская область") Тюменская область
+                                        .filter-select__option(data-js="filterSelectOption" data-value="Ульяновская область") Ульяновская область
+                                        .filter-select__option(data-js="filterSelectOption" data-value="Челябинская область") Челябинская область
+                                        .filter-select__option(data-js="filterSelectOption" data-value="Забайкальский край") Забайкальский край
+                                        .filter-select__option(data-js="filterSelectOption" data-value="Ярославская область") Ярославская область
+                                        .filter-select__option(data-js="filterSelectOption" data-value="г. Москва") г. Москва
+                                        .filter-select__option(data-js="filterSelectOption" data-value="г. Санкт-Петербург") г. Санкт-Петербург
+                                        .filter-select__option(data-js="filterSelectOption" data-value="Еврейская автономная область") Еврейская автономная область
+                                        .filter-select__option(data-js="filterSelectOption" data-value="Ненецкий автономный округ") Ненецкий автономный округ
+                                        .filter-select__option(data-js="filterSelectOption" data-value="Ханты-Мансийский АО - Югра") Ханты-Мансийский АО - Югра
+                                        .filter-select__option(data-js="filterSelectOption" data-value="Чукотский автономный округ") Чукотский автономный округ
+                                        .filter-select__option(data-js="filterSelectOption" data-value="Ямало-Ненецкий автономный округ") Ямало-Ненецкий автономный округ
+                                        .filter-select__option(data-js="filterSelectOption" data-value="Республика Крым") Республика Крым
+                                        .filter-select__option(data-js="filterSelectOption" data-value="г. Севастополь") г. Севастополь
+                                        .filter-select__option(data-js="filterSelectOption" data-value="Запорожская область") Запорожская область
+                                        .filter-select__option(data-js="filterSelectOption" data-value="Донецкая Народная Республика") Донецкая Народная Республика
+                                        .filter-select__option(data-js="filterSelectOption" data-value="Луганская Народная Республика") Луганская Народная Республика
+                                        .filter-select__option(data-js="filterSelectOption" data-value="Херсонская область") Херсонская область
 
                     .ref-intro__tabs
                         .ref-intro__tab.ref-tab(data-js="refIntroTab")
