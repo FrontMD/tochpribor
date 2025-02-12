@@ -77,11 +77,10 @@ function formFilterController() {
         if(filterSelects.length > 0) {
             filterSelects.forEach(filterSelect => {
                 const filterSelectHeader = filterSelect.querySelector("[data-js='filterSelectHeader']")
-                const filterSelectOptions = filterSelect.querySelectorAll("[data-js='filterSelectOption']")
+                const filterSelectContent = filterSelect.querySelector(".filter-select__content")
                 const filterSelectFake = filterSelect.querySelector("[data-js='filterSelectFake']")
                 const filterSelectInput = filterSelect.querySelector("[data-js='filterSelectInput']")
-                const filterSelectRealOptions = filterSelectInput.querySelectorAll("option")
-
+                
                 filterSelectHeader.addEventListener('click', function() {
                     if(filterSelect.classList.contains('active')) {
                         filterSelectClose(filterSelect)
@@ -89,29 +88,35 @@ function formFilterController() {
                         filterSelectOpen(filterSelect)
                     }
                 })
+                
+                filterSelectContent.addEventListener('click', function(e) {
+                    const filterSelectOptions = filterSelect.querySelectorAll("[data-js='filterSelectOption']")
+                    const filterSelectRealOptions = filterSelectInput.querySelectorAll("option")
 
-                filterSelectOptions.forEach(filterSelectOption => {
-                    filterSelectOption.addEventListener('click', function() {
+                    let clickedOption = e.target.closest('[data-js="filterSelectOption"]');
+
+                    if(clickedOption) {
                         filterSelectOptions.forEach(item => {
                             item.classList.remove('active');
                         })
 
-                        let currentVal = this.dataset.value
+                        let currentVal = clickedOption.dataset.value
 
                         filterSelectFake.innerHTML = currentVal
 
                         filterSelectRealOptions.forEach(realOption => {
                             if(realOption.value == currentVal) {
-                                realOption.selected = true
+                                realOption.selected = true;
+                                filterSelectInput.dispatchEvent(new Event('change'));
                                 return
                             }
                         })
 
-                        this.classList.add('active')
+                        clickedOption.classList.add('active')
                         filterSelectClose(filterSelect)
-
-                    })
+                    }
                 })
+
             })
 
             function filterSelectClose(currentItem) {

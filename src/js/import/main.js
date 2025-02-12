@@ -491,17 +491,14 @@ function referencesController() {
         if(countriesSelect) {
             let allCountries = getCountries();
             setSelectOptions(countriesSelect, allCountries)
-
-            
-            console.log(countriesSelect)
-            console.log(allCountries)
+            countriesSelect.querySelector('[data-js="filterSelectInput"]').addEventListener('change', countryOnChange)
         }
 
         if(regionsSelect) {
             let allRegions = getRegions();
             setSelectOptions(regionsSelect, allRegions)
+            regionsSelect.querySelector('[data-js="filterSelectInput"]').addEventListener('change', regionOnChange)
         }
-        
 
         // выводим все категории
 
@@ -561,11 +558,13 @@ function referencesController() {
     }
 
     function countryOnChange() {
-        
+        console.log(this)
+        console.log('сменили страну')
     }
     
     function regionOnChange() {
-
+        console.log(this)
+        console.log('сменили регион')
     }
 
 }

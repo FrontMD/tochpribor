@@ -50,6 +50,26 @@
             align-items: stretch;
             gap: 8px;
         }
+
+        .filter-select__content {
+            max-height: 300px;
+            overflow-y: auto;
+
+            &::-webkit-scrollbar {
+                width: 3px;
+                height: 3px;
+            }
+
+            &::-webkit-scrollbar-track {
+                background-color: $c-text-light;
+                border-radius: 2px;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background-color: $c-bg;
+                border-radius: 2px;
+            }
+        }
     }
 
     &__tabs {
