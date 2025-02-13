@@ -87,7 +87,7 @@
                     "name": "ИР 5047-50 разрывная машина универсальная",
                     "img": "img/catalog/product_4.webp",
                     "link": "javascript:void(0)",
-                    "caregory": "0",
+                    "category": "0",
                     "companies": [
                         "Московская ГЭС",
                         "ООО «ЛКС»"
@@ -98,7 +98,7 @@
                     "name": "ИР 5047-50 разрывная машина универсальная",
                     "img": "img/catalog/product_4.webp",
                     "link": "javascript:void(0)",
-                    "caregory": "1",
+                    "category": "1",
                     "companies": [
                         "ООО «ЛКС»"
                     ],
@@ -108,7 +108,7 @@
                     "name": "FU DLC 50 кН Испытательная машина",
                     "img": "img/catalog/product_5.webp",
                     "link": "javascript:void(0)",
-                    "caregory": "0",
+                    "category": "2",
                     "companies": [
                         "ООО «ЛКС»"
                     ],
@@ -126,7 +126,7 @@
                     "name": "ИР 5047-50 разрывная машина универсальная",
                     "img": "img/catalog/product_4.webp",
                     "link": "javascript:void(0)",
-                    "caregory": "0",
+                    "category": "0",
                     "companies": [
                         "ООО «Город»"
                     ],
@@ -144,7 +144,7 @@
                     "name": "ИР 5047-50 разрывная машина универсальная",
                     "img": "img/catalog/product_4.webp",
                     "link": "javascript:void(0)",
-                    "caregory": "1",
+                    "category": "1",
                     "companies": [
                         "ЗАО «Завод»"
                     ],
@@ -154,7 +154,7 @@
                     "name": "FU DLC 50 кН Испытательная машина",
                     "img": "img/catalog/product_5.webp",
                     "link": "javascript:void(0)",
-                    "caregory": "2",
+                    "category": "3",
                     "companies": [
                         "ООО «Иваново»"
                     ],
@@ -172,7 +172,7 @@
                     "name": "ИР 5047-50 разрывная машина универсальная",
                     "img": "img/catalog/product_4.webp",
                     "link": "javascript:void(0)",
-                    "caregory": "3",
+                    "category": "4",
                     "companies": [
                         "Минская ТЭЦ"
                     ],
@@ -190,7 +190,7 @@
                     "name": "ИР 5047-50 разрывная машина универсальная",
                     "img": "img/catalog/product_4.webp",
                     "link": "javascript:void(0)",
-                    "caregory": "4",
+                    "category": "5",
                     "companies": [
                         "ООО «Компания»"
                     ],
@@ -208,7 +208,7 @@
                     "name": "FU DLC 50 кН Испытательная машина",
                     "img": "img/catalog/product_5.webp",
                     "link": "javascript:void(0)",
-                    "caregory": "5",
+                    "category": "6",
                     "companies": [
                         "ООО «Компания»"
                     ],

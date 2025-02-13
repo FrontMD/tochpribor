@@ -452,8 +452,17 @@ function referencesController() {
     let refAllCategories = [];
     let refAllCities = [];
     let allRussiaCities = [];
+    let mapEx;
 
     const map = refMap.querySelector('[data-js="refMapMap"]');
+
+    const refInfo = refMap.querySelector('[data-js="refInfo"]');
+    const refInfoRegion = refInfo.querySelector('[data-js="refInfoRegion"]'); 
+    const refInfoClose = refInfo.querySelector('[data-js="refInfoClose"]');
+    const refInfoCurrent = refInfo.querySelector('[data-js="refInfoCurrent"]');
+    const refInfoTabs = refInfo.querySelector('[data-js="refInfoTabs"]');
+    const refInfoItems = refInfo.querySelector('[data-js="refInfoItems"]');
+
     const countriesSelect = refIntro.querySelector('[data-js="filterSelect"][data-name="country"]');
     const regionsSelect = refIntro.querySelector('[data-js="filterSelect"][data-name="region"]');
     const refIntroTabs = refIntro.querySelector('[data-js="refIntroTabs"]');
@@ -463,7 +472,7 @@ function referencesController() {
         let center = "60.247097, 104.132880"
         let zoom = 4;
     
-        let mapEx = new ymaps.Map(map, {
+        mapEx = new ymaps.Map(map, {
             center: center.replace(/\s/g, '').split(","),
             zoom: zoom,
             controls: []
@@ -475,7 +484,7 @@ function referencesController() {
                 method: 'get'
             })
 
-            refData = await response.json()
+            refData = localData //await response.json()
             console.log(refData)
 
         } catch (error) {
@@ -503,14 +512,17 @@ function referencesController() {
 
         // получаем все стартовые точки (Россия)
         allRussiaCities = getPoints('Россия')
-        console.log(allRussiaCities)
-
 
         // выводим все категории
         renderCategories(allRussiaCities)
 
         // отрисовываем все точки России
-        //allRussiaPoints = getPoints()
+        renderPoints(allRussiaCities)
+
+        // Вешаем событие на закрытие info
+        refInfoClose.addEventListener('click', () => {
+            refInfo.classList.remove('active')
+        })
        
     })
 
@@ -533,8 +545,54 @@ function referencesController() {
     }
 
     // отрисовывает точки на карте на основании списка городов
-    function renderPoints() {
-        
+    function renderPoints(cities) {
+        let myGeoObjects = [];
+        let items = cities.map((item) => {
+            item.items.forEach((i, innerIndex) => {
+                i.cityIndex = item.id
+                i.innerIndex = innerIndex
+            })
+            return item = item.items
+        }).flat()
+        let coordsArr = items.map(item => item = item.coords);
+
+        console.log(items)
+        console.log(coordsArr)
+            
+        coordsArr.forEach((coordsItem, index) => {
+            let iconColor = refAllCategories[items[index].category].color.replace(/#/g, '');
+          
+            let iconHref = `data:image/svg+xml,%3Csvg width='53' height='63' viewBox='0 0 53 63' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.226562 2.24414C0.226562 1.13957 1.12199 0.244144 2.22656 0.244144L50.2266 0.244141C51.3311 0.244141 52.2266 1.13957 52.2266 2.24414V50.0537C52.2266 51.1582 51.3311 52.0537 50.2266 52.0537H34.8654C34.211 52.0537 33.5979 52.3739 33.224 52.911L28.3003 59.9835C27.5237 61.099 25.8845 61.1316 25.0642 60.0478L19.6138 52.8467C19.2357 52.3472 18.6455 52.0537 18.019 52.0537H2.22656C1.12199 52.0537 0.226562 51.1582 0.226562 50.0537V2.24414Z' fill='%23${iconColor}'/%3E%3Cpath d='M15.2266 32.0019V24.3407L29.2834 11.1251L27.2387 9.24414H35.6916V16.4879L33.6244 14.7642L15.2266 32.0019Z' fill='white'/%3E%3Cpath d='M24.5289 40.8124L15.2266 32.002L19.4537 27.6221L28.6632 36.4072L35.6916 29.8951V37.5563L32.1774 40.8124H24.5289Z' fill='white'/%3E%3Crect width='7.64682' height='7.64682' transform='matrix(0.73354 -0.679646 0.73354 0.679646 22.8359 28.1599)' fill='white'/%3E%3Cpath d='M32.7984 40.2374L28.6641 36.4068L35.6925 29.8948V37.556L32.7984 40.2374Z' fill='white'/%3E%3C/svg%3E%0A`
+
+            let currentPlacemark = new ymaps.Placemark(
+                coordsItem = coordsItem.replace(/[\[\]]/g, '').split(","),
+                {},
+                {
+                    hasBalloon: false,
+                    hasHint: false,
+                    iconLayout: 'default#image',
+                    iconImageHref: iconHref,
+                    iconImageSize: [52, 62],
+                    iconImageOffset: [-26, -31],
+                }
+            );
+
+            currentPlacemark.events.add('click', function (e) {
+                let currentItemIndex = '';
+                renderInfo(items[index].innerIndex, items[index].cityIndex);
+            })
+
+            myGeoObjects.push(currentPlacemark)
+        });
+
+        var clusterer = new ymaps.Clusterer({
+            gridSize: 120,
+            preset: 'islands#redClusterIcons'
+        });
+
+        clusterer.add(myGeoObjects);
+
+        mapEx.geoObjects.add(clusterer);
     }
 
     // отрисовывает категории на основании списка городов
@@ -551,10 +609,54 @@ function referencesController() {
                 return acc
             }, [])
 
-            console.log(categories)
+
+            categories.forEach(category => {
+                const tabEl = document.createElement('div')
+
+                tabEl.classList.add('ref-intro__tab', 'ref-tab')
+                tabEl.setAttribute('data-js', 'refIntroTab')
+
+                tabEl.innerHTML = `
+                                    <label>
+                                        <input class="ref-tab__input" type="checkbox">
+                                        <div class="ref-tab__inner">
+                                            <div class="ref-tab__icon" style="background-color: ${refAllCategories[category].color};")>
+                                                <img src="img/ref_logo.svg">
+                                            </div>
+                                            <div class="ref-tab__name">${refAllCategories[category].name}</div>
+                                            <div class="ref-tab__remove">
+                                                <svg>
+                                                    <use xlink:href="img/sprites/sprite.svg#close"></use>
+                                                </svg> 
+                                            </div>
+                                        </div>
+                                    </label>
+                                `
+                
+                refIntroTabs.appendChild(tabEl)
+            })
+
+            // ТУТ ЗАПУСТИТЬ ОБРАБОТЧИК КЛИКА ПО КАТЕГОРИЯМ
+
         } else {
             return
         }
+    }
+
+    // отрисовывает info и скроллит к нужному продукту
+    function renderInfo(itemIndex, cityId) {
+        const currentCity = refAllCities.filter(item => item.id == cityId)
+        const currentState = refInfo.dataset.state ? refInfo.dataset.state : false;
+        const newState = currentCity.region ? currentCity.region : currentCity.name;
+
+        if(currentState !== newState) {
+            // тут логика перерисовки
+
+        }
+
+        //тут скрол к нужному продукту
+
+        refInfo.classList.add('active')
     }
 
     // возращает список всех стран
@@ -614,4 +716,225 @@ function referencesController() {
         console.log('сменили регион')
     }
 
+}
+
+localData = {
+    "categories": [
+        {
+            "id": "0",
+            "name": "Универсальные испытательные машины",
+            "color": "#BDBDBD"
+        },
+        {
+            "id": "1",
+            "name": "Аксессуары для испытательных машин",
+            "color": "#FF3E41"
+        },
+        {
+            "id": "2",
+            "name": "Копры маятниковые и вертикальные",
+            "color": "#FFB906"
+        },
+        {
+            "id": "3",
+            "name": "Приборы для измерения твердости (твердомеры)",
+            "color": "#4495D1"
+        },
+        {
+            "id": "4",
+            "name": "Меры твердости эталонные",
+            "color": "#013220"
+        },
+        {
+            "id": "5",
+            "name": "Динамометры",
+            "color": "#F2994A"
+        },
+        {
+            "id": "6",
+            "name": "Оборудование для пробоподготовки",
+            "color": "#9B51E0"
+        },
+        {
+            "id": "7",
+            "name": "Оборудование для технолог. испытаний",
+            "color": "#9B51E0"
+        },
+        {
+            "id": "8",
+            "name": "Системы температурных испытаний",
+            "color": "#6FCF97"
+        },
+        {
+            "id": "9",
+            "name": "Машины трения",
+            "color": "#013220"
+        },
+        {
+            "id": "10",
+            "name": "Испытательные пресса",
+            "color": "#F2994A"
+        },
+        {
+            "id": "11",
+            "name": "Экстензометры",
+            "color": "#9B51E0"
+        },
+        {
+            "id": "12",
+            "name": "Видеоизмерительные системы Girmax",
+            "color": "#9B51E0"
+        },
+        {
+            "id": "13",
+            "name": "Приборы  для измерения цвета",
+            "color": "#6FCF97"
+        },
+        {
+            "id": "14",
+            "name": "Микроскопы",
+            "color": "#6FCF97"
+        }
+    ],
+    "cities": [
+        {
+            "id": "0",
+            "name": "Москва",
+            "country": "Россия",
+            "region": "Московская область",
+            "items": [
+                {
+                    "name": "ИР 5047-50 разрывная машина универсальная",
+                    "img": "img/catalog/product_4.webp",
+                    "link": "javascript:void(0)",
+                    "category": "0",
+                    "companies": [
+                        "Московская ГЭС",
+                        "ООО «ЛКС»"
+                    ],
+                    "coords": "55.658564, 37.596158"
+                },
+                {
+                    "name": "ИР 5047-50 разрывная машина универсальная",
+                    "img": "img/catalog/product_4.webp",
+                    "link": "javascript:void(0)",
+                    "category": "1",
+                    "companies": [
+                        "ООО «ЛКС»"
+                    ],
+                    "coords": "55.783385, 37.756334"
+                },
+                {
+                    "name": "FU DLC 50 кН Испытательная машина",
+                    "img": "img/catalog/product_5.webp",
+                    "link": "javascript:void(0)",
+                    "category": "2",
+                    "companies": [
+                        "ООО «ЛКС»"
+                    ],
+                    "coords": "55.831689, 37.458716"
+                }
+            ]
+        },
+        {
+            "id": "1",
+            "name": "Серпухов",
+            "country": "Россия",
+            "region": "Московская область",
+            "items": [
+                {
+                    "name": "ИР 5047-50 разрывная машина универсальная",
+                    "img": "img/catalog/product_4.webp",
+                    "link": "javascript:void(0)",
+                    "category": "0",
+                    "companies": [
+                        "ООО «Город»"
+                    ],
+                    "coords": "54.912940, 37.424694"
+                }
+            ]
+        },
+        {
+            "id": "2",
+            "name": "Иваново",
+            "country": "Россия",
+            "region": "Ивановская область",
+            "items": [
+                {
+                    "name": "ИР 5047-50 разрывная машина универсальная",
+                    "img": "img/catalog/product_4.webp",
+                    "link": "javascript:void(0)",
+                    "category": "1",
+                    "companies": [
+                        "ЗАО «Завод»"
+                    ],
+                    "coords": "56.985750, 40.966570"
+                },
+                {
+                    "name": "FU DLC 50 кН Испытательная машина",
+                    "img": "img/catalog/product_5.webp",
+                    "link": "javascript:void(0)",
+                    "category": "3",
+                    "companies": [
+                        "ООО «Иваново»"
+                    ],
+                    "coords": "57.057845, 40.966788"
+                }
+            ]
+        },
+        {
+            "id": "3",
+            "name": "Минск",
+            "country": "Беларусь",
+            "region": "",
+            "items": [
+                {
+                    "name": "ИР 5047-50 разрывная машина универсальная",
+                    "img": "img/catalog/product_4.webp",
+                    "link": "javascript:void(0)",
+                    "category": "4",
+                    "companies": [
+                        "Минская ТЭЦ"
+                    ],
+                    "coords": "53.920813, 27.505310"
+                }
+            ]
+        },
+        {
+            "id": "4",
+            "name": "Астана",
+            "country": "Казахстан",
+            "region": "",
+            "items": [
+                {
+                    "name": "ИР 5047-50 разрывная машина универсальная",
+                    "img": "img/catalog/product_4.webp",
+                    "link": "javascript:void(0)",
+                    "category": "5",
+                    "companies": [
+                        "ООО «Компания»"
+                    ],
+                    "coords": "51.121450, 71.378167"
+                }
+            ]
+        },
+        {
+            "id": "5",
+            "name": "Актобе",
+            "country": "Казахстан",
+            "region": "",
+            "items": [
+                {
+                    "name": "FU DLC 50 кН Испытательная машина",
+                    "img": "img/catalog/product_5.webp",
+                    "link": "javascript:void(0)",
+                    "category": "6",
+                    "companies": [
+                        "ООО «Компания»"
+                    ],
+                    "coords": "50.268616, 57.155667"
+                }
+            ]
+        }
+    ]
 }
