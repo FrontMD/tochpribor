@@ -451,11 +451,12 @@ function referencesController() {
     let refData = {};
     let refAllCategories = [];
     let refAllCities = [];
-    let allRussiaPoints = {};
+    let allRussiaCities = [];
 
     const map = refMap.querySelector('[data-js="refMapMap"]');
     const countriesSelect = refIntro.querySelector('[data-js="filterSelect"][data-name="country"]');
     const regionsSelect = refIntro.querySelector('[data-js="filterSelect"][data-name="region"]');
+    const refIntroTabs = refIntro.querySelector('[data-js="refIntroTabs"]');
 
     ymaps.ready(async function () {
         // строим карту
@@ -500,7 +501,13 @@ function referencesController() {
             regionsSelect.querySelector('[data-js="filterSelectInput"]').addEventListener('change', regionOnChange)
         }
 
+        // получаем все стартовые точки (Россия)
+        allRussiaCities = getPoints('Россия')
+        console.log(allRussiaCities)
+
+
         // выводим все категории
+        renderCategories(allRussiaCities)
 
         // отрисовываем все точки России
         //allRussiaPoints = getPoints()
@@ -508,13 +515,49 @@ function referencesController() {
     })
 
     function getPoints(country = '', region = '', city = '') {
-        console.log('города получены')
+        let arr = refAllCities
+
+        if(country) {
+            arr = arr.filter(item => item.country == country)
+        }
+
+        if(region) {
+            arr = arr.filter(item => item.region == region)
+        }
+
+        if(city) {
+            arr = arr.filter(item => item.city == city)
+        }
+
+        return arr;
     }
 
-    function setPoints() {
+    // отрисовывает точки на карте на основании списка городов
+    function renderPoints() {
         
     }
 
+    // отрисовывает категории на основании списка городов
+    function renderCategories(cities) {
+        if(refIntroTabs) {
+            let categories = cities.reduce((acc, city) => {
+
+                city.items.forEach(item => {
+                    if(!acc.includes(item.category)) {
+                        acc.push(item.category)
+                    }
+                })
+
+                return acc
+            }, [])
+
+            console.log(categories)
+        } else {
+            return
+        }
+    }
+
+    // возращает список всех стран
     function getCountries() {
         let arr = refAllCities.reduce((acc, item) => {
             if(!acc.includes(item.country)) {
@@ -525,6 +568,7 @@ function referencesController() {
         return arr
     }
 
+    // возвращает список всех регионов
     function getRegions() {
         let arr = refAllCities.reduce((acc, item) => {
             if(item.region.length > 0 && !acc.includes(item.region)) {
@@ -535,6 +579,7 @@ function referencesController() {
         return arr
     }
 
+    // заполняет выпадающие списки
     function setSelectOptions(select, options) {
         let input = select.querySelector('[data-js="filterSelectInput"]');
         let content = select.querySelector('[data-js="filterSelectContent"]');
@@ -557,11 +602,13 @@ function referencesController() {
         })
     }
 
+    // обрабатывает выбор страны 
     function countryOnChange() {
         console.log(this)
         console.log('сменили страну')
     }
     
+    // обрабатывает выбо региона
     function regionOnChange() {
         console.log(this)
         console.log('сменили регион')
