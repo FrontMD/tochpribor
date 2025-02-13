@@ -576,7 +576,6 @@ function referencesController() {
             );
 
             currentPlacemark.events.add('click', function (e) {
-                //let currentItemIndex = '';
                 renderInfo(items[index].cityIndex, items[index].innerIndex);
             })
 
@@ -591,6 +590,9 @@ function referencesController() {
         clusterer.add(myGeoObjects);
 
         mapEx.geoObjects.add(clusterer);
+
+        mapEx.setBounds(mapEx.geoObjects.getBounds());
+        mapEx.setZoom(mapEx.getZoom()-1);
     }
 
     // отрисовывает категории на основании списка городов
@@ -606,7 +608,6 @@ function referencesController() {
 
                 return acc
             }, [])
-
 
             categories.forEach(category => {
                 const tabEl = document.createElement('div')
@@ -656,19 +657,8 @@ function referencesController() {
         // получаем все города в регионе
         const citiesList = refAllCities.filter(item => item.region == newRegion || item.city == newRegion);
 
-        // отрисовываем фильтр категорий и вешаем обработчик
-        const regionCategoriesList = citiesList.reduce((arr, city) => {
-            city.items.forEach(item => {
-                if(!arr.includes(item.category)) {
-                    arr.push(item.category)
-                }
-            })
-            
-            return arr
-        }, [])
-
         // получаем все товары в регионе и определяем текущий товар
-        let itemsList = citiesList.map(city => {
+        const fullItemsList = citiesList.map(city => {
     
             city.items.forEach((item, index) => {
                 if(city.id == cityId && index == itemIndex) {
@@ -681,11 +671,50 @@ function referencesController() {
             return city.items
         }).flat()
 
-        itemsList = itemsList.filter(item => item.category == newCategoryId);
+        let itemsList = fullItemsList.filter(item => item.category == newCategoryId);
 
         // отрисовываем товары
-        refInfoItems.innerHTML = '';
         renderItemsList(itemsList)
+
+        // отрисовываем фильтр категорий и вешаем обработчик
+        const regionCategoriesIdList = citiesList.reduce((arr, city) => {
+            city.items.forEach(item => {
+                if(!arr.includes(item.category)) {
+                    arr.push(item.category)
+                }
+            })
+            
+            return arr
+        }, [newCategoryId])
+
+        let regionCategoriesList = refAllCategories.filter(item => regionCategoriesIdList.includes(item.id))
+        refInfoTabs.innerHTML = ''
+        regionCategoriesList.forEach((category, index) => {
+            let categoryEl = document.createElement('div');
+            categoryEl.classList.add('ref-info__tab');
+            categoryEl.setAttribute('data-js', 'refInfoTab');
+            categoryEl.setAttribute('data-category', category.id);
+            categoryEl.innerHTML = category.name;
+
+            if(index == 0) {
+                categoryEl.classList.add('active');
+            }
+
+            refInfoTabs.appendChild(categoryEl);
+
+            categoryEl.addEventListener('click', function () {
+                let allTabs = refInfoTabs.querySelectorAll('[data-js="refInfoTab"]');
+
+                allTabs.forEach(tab => {
+                    tab.classList.remove('active');
+                })
+
+                categoryEl.classList.add('active');
+                let newCatId = categoryEl.dataset.category
+
+                renderItemsList(fullItemsList.filter(item => item.category == newCatId))
+            })
+        })
 
         // показываем info
         refInfo.classList.add('active')
@@ -706,6 +735,7 @@ function referencesController() {
 
     // отрисовывает список товарок в info
     function renderItemsList(itemsList) {
+        refInfoItems.innerHTML = ''
         itemsList.forEach(item => {
             const el = document.createElement('div')
             let companiesLayout = ''
