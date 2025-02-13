@@ -239,15 +239,16 @@ function formFilterController() {
 
                 sliderEx.on("update", function (values, handle) {
                     inputsList[handle].value = values[handle]
+                    inputsList[handle].dispatchEvent(new Event('change'));
                 });
 
                 inputsList.forEach((currentInput, index) => {
                     if(index == 0) {
-                        currentInput.addEventListener('change', function() {
+                        currentInput.addEventListener('input', function() {
                             sliderEx.set([this.value, null])
                         })
                     } else if(index == 1) {
-                        currentInput.addEventListener('change', function() {
+                        currentInput.addEventListener('input', function() {
                             sliderEx.set([null, this.value])
                         })
                     }
@@ -258,12 +259,6 @@ function formFilterController() {
                             e.stopPropagation()
                             this.blur()
                         }
-                    })
-                })
-
-                inputsList.forEach(currentInput => {
-                    currentInput.addEventListener('input', function() {
-
                     })
                 })
                

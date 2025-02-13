@@ -58,57 +58,19 @@ block content
                 .ref-map__map(data-js='refMapMap')
                 .ref-map__content.ref-info(data-js='refInfo')
                     .ref-info__header
-                        .ref-info__region.title--26(data-js='refInfoRegion') Москва
+                        .ref-info__region.title--26(data-js='refInfoRegion')
                         .ref-info__close(data-js='refInfoClose')
                             svg 
                                 use(xlink:href=`img/sprites/sprite.svg#close`)
-                    .ref-info__body.scrollbar.scrollbar--small
-                        .ref-info__current(ata-js='refInfoCurrent')
-                            .icon(style="background-color: #BDBDBD;")
+                    .ref-info__body.scrollbar.scrollbar--small(data-js='refInfoBody')
+                        .ref-info__current(data-js='refInfoCurrent')
+                            .icon
                                 img(src="img/ref_logo.svg")
-                            .name Разрывные машины
+                            .name
                         .ref-info__tabs(data-js='refInfoTabs')
-                            .ref-info__tab.active Разрывные машины
-                            .ref-info__tab Микроскопы
-                            .ref-info__tab Меры твердости эталонные
-                            .ref-info__tab Экстензометры
+                            //-
+                                .ref-info__tab.active Разрывные машины
+                                .ref-info__tab Микроскопы
+                                .ref-info__tab Меры твердости эталонные
+                                .ref-info__tab Экстензометры
                         .ref-info__items(data-js='refInfoItems')
-                            .ref-item
-                                .ref-item__img
-                                    img(src="img/catalog/product_9.webp")
-                                .ref-item__info
-                                    .ref-item__name Разрывная машина ИР 5143-200
-                                    .ref-item__buyers
-                                        .ref-item__buyer Московская ГЭС
-                                        .ref-item__buyer ООО «ЛКС»
-                                +btn({
-                                    classes: 'ref-item__btn',
-                                    name: 'Подробнее',
-                                    cMode: 'transparent-red'
-                                })
-                            .ref-item
-                                .ref-item__img
-                                    img(src="img/catalog/product_8.webp")
-                                .ref-item__info
-                                    .ref-item__name Разрывная машина ИР 5143-201
-                                    .ref-item__buyers
-                                        .ref-item__buyer Московская ГЭС
-                                        .ref-item__buyer ООО «ЛКС»
-                                +btn({
-                                    classes: 'ref-item__btn',
-                                    name: 'Подробнее',
-                                    cMode: 'transparent-red'
-                                })
-                            .ref-item
-                                .ref-item__img
-                                    img(src="img/catalog/product_11.webp")
-                                .ref-item__info
-                                    .ref-item__name Разрывная машина ИР 5143-202
-                                    .ref-item__buyers
-                                        .ref-item__buyer Московская ГЭС
-                                        .ref-item__buyer ООО «ЛКС»
-                                +btn({
-                                    classes: 'ref-item__btn',
-                                    name: 'Подробнее',
-                                    cMode: 'transparent-red'
-                                })

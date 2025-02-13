@@ -457,6 +457,7 @@ function referencesController() {
     const map = refMap.querySelector('[data-js="refMapMap"]');
 
     const refInfo = refMap.querySelector('[data-js="refInfo"]');
+    const refInfoBody = refInfo.querySelector('[data-js="refInfoBody"]');
     const refInfoRegion = refInfo.querySelector('[data-js="refInfoRegion"]'); 
     const refInfoClose = refInfo.querySelector('[data-js="refInfoClose"]');
     const refInfoCurrent = refInfo.querySelector('[data-js="refInfoCurrent"]');
@@ -555,9 +556,6 @@ function referencesController() {
             return item = item.items
         }).flat()
         let coordsArr = items.map(item => item = item.coords);
-
-        console.log(items)
-        console.log(coordsArr)
             
         coordsArr.forEach((coordsItem, index) => {
             let iconColor = refAllCategories[items[index].category].color.replace(/#/g, '');
@@ -578,15 +576,15 @@ function referencesController() {
             );
 
             currentPlacemark.events.add('click', function (e) {
-                let currentItemIndex = '';
-                renderInfo(items[index].innerIndex, items[index].cityIndex);
+                //let currentItemIndex = '';
+                renderInfo(items[index].cityIndex, items[index].innerIndex);
             })
 
             myGeoObjects.push(currentPlacemark)
         });
 
         var clusterer = new ymaps.Clusterer({
-            gridSize: 120,
+            gridSize: 50,
             preset: 'islands#redClusterIcons'
         });
 
@@ -644,19 +642,99 @@ function referencesController() {
     }
 
     // отрисовывает info и скроллит к нужному продукту
-    function renderInfo(itemIndex, cityId) {
-        const currentCity = refAllCities.filter(item => item.id == cityId)
-        const currentState = refInfo.dataset.state ? refInfo.dataset.state : false;
-        const newState = currentCity.region ? currentCity.region : currentCity.name;
+    function renderInfo(cityId, itemIndex = false) {
+        const currentCity = refAllCities.filter(item => item.id == cityId)[0];
+        const newRegion = currentCity.region ? currentCity.region : currentCity.name;
+        const newCategoryId = currentCity.items[itemIndex].category;
+        const currentCategory = refAllCategories.filter(item => item.id == newCategoryId)[0];
+        
+        // отрисовываем регион и текущую категорию
+        refInfoRegion.innerHTML = newRegion
+        refInfoCurrent.querySelector('.icon').style.backgroundColor = currentCategory.color;
+        refInfoCurrent.querySelector('.name').innerHTML = currentCategory.name;
+        
+        // получаем все города в регионе
+        const citiesList = refAllCities.filter(item => item.region == newRegion || item.city == newRegion);
 
-        if(currentState !== newState) {
-            // тут логика перерисовки
+        // отрисовываем фильтр категорий и вешаем обработчик
+        const regionCategoriesList = citiesList.reduce((arr, city) => {
+            city.items.forEach(item => {
+                if(!arr.includes(item.category)) {
+                    arr.push(item.category)
+                }
+            })
+            
+            return arr
+        }, [])
 
-        }
+        // получаем все товары в регионе и определяем текущий товар
+        let itemsList = citiesList.map(city => {
+    
+            city.items.forEach((item, index) => {
+                if(city.id == cityId && index == itemIndex) {
+                    item.isCurrent = true
+                } else {
+                    item.isCurrent = false
+                }
+            })
 
-        //тут скрол к нужному продукту
+            return city.items
+        }).flat()
 
+        itemsList = itemsList.filter(item => item.category == newCategoryId);
+
+        // отрисовываем товары
+        refInfoItems.innerHTML = '';
+        renderItemsList(itemsList)
+
+        // показываем info
         refInfo.classList.add('active')
+
+        // скроллим к товару
+        let iHeight = refInfoBody.offsetHeight
+        let iScrollHeight = refInfoBody.scrollHeight
+
+        if(iScrollHeight > iHeight) {
+            let currentItem = refInfoItems.querySelector('[data-current]');
+
+            refInfoBody.scrollTo({
+                top: currentItem.offsetTop - 16,
+                behavior: 'smooth'
+            })
+        }
+    }
+
+    // отрисовывает список товарок в info
+    function renderItemsList(itemsList) {
+        itemsList.forEach(item => {
+            const el = document.createElement('div')
+            let companiesLayout = ''
+
+            item.companies.forEach(company => {
+                companiesLayout += `<div class="ref-item__buyer">${company}</div>`
+            })
+
+            el.classList.add('ref-item')
+            el.innerHTML = `                                
+                            <div class="ref-item__img">
+                                <img src="${item.img}">
+                            </div>
+                            <div class="ref-item__info">
+                            <div class="ref-item__name">${item.name}</div>
+                            <div class="ref-item__buyers">
+                                ${companiesLayout}
+                            </div>
+                            </div>
+                            <a class="btn ref-item__btn btn--transparent-red btn--full" href="${item.link}">
+                                <span class="btn__text">Подробнее</span>
+                            </a>
+                        `
+            if(item.isCurrent) {
+                el.setAttribute('data-current', '')
+            }
+
+            refInfoItems.appendChild(el)
+        })
     }
 
     // возращает список всех стран
@@ -805,7 +883,7 @@ localData = {
             "items": [
                 {
                     "name": "ИР 5047-50 разрывная машина универсальная",
-                    "img": "img/catalog/product_4.webp",
+                    "img": "img/catalog/product_1.webp",
                     "link": "javascript:void(0)",
                     "category": "0",
                     "companies": [
@@ -816,7 +894,7 @@ localData = {
                 },
                 {
                     "name": "ИР 5047-50 разрывная машина универсальная",
-                    "img": "img/catalog/product_4.webp",
+                    "img": "img/catalog/product_2.webp",
                     "link": "javascript:void(0)",
                     "category": "1",
                     "companies": [
@@ -826,13 +904,35 @@ localData = {
                 },
                 {
                     "name": "FU DLC 50 кН Испытательная машина",
-                    "img": "img/catalog/product_5.webp",
+                    "img": "img/catalog/product_3.webp",
                     "link": "javascript:void(0)",
                     "category": "2",
                     "companies": [
                         "ООО «ЛКС»"
                     ],
                     "coords": "55.831689, 37.458716"
+                },
+                {
+                    "name": "ИР 5047-50 разрывная машина универсальная",
+                    "img": "img/catalog/product_1.webp",
+                    "link": "javascript:void(0)",
+                    "category": "0",
+                    "companies": [
+                        "Московская ГЭС",
+                        "ООО «ЛКС»"
+                    ],
+                    "coords": "55.751502, 37.822214"
+                },
+                {
+                    "name": "ИР 5047-50 разрывная машина универсальная",
+                    "img": "img/catalog/product_1.webp",
+                    "link": "javascript:void(0)",
+                    "category": "0",
+                    "companies": [
+                        "Московская ГЭС",
+                        "ООО «ЛКС»"
+                    ],
+                    "coords": "55.906120, 37.576214"
                 }
             ]
         },
@@ -844,7 +944,7 @@ localData = {
             "items": [
                 {
                     "name": "ИР 5047-50 разрывная машина универсальная",
-                    "img": "img/catalog/product_4.webp",
+                    "img": "img/catalog/product_1.webp",
                     "link": "javascript:void(0)",
                     "category": "0",
                     "companies": [
@@ -862,7 +962,7 @@ localData = {
             "items": [
                 {
                     "name": "ИР 5047-50 разрывная машина универсальная",
-                    "img": "img/catalog/product_4.webp",
+                    "img": "img/catalog/product_2.webp",
                     "link": "javascript:void(0)",
                     "category": "1",
                     "companies": [
@@ -872,7 +972,7 @@ localData = {
                 },
                 {
                     "name": "FU DLC 50 кН Испытательная машина",
-                    "img": "img/catalog/product_5.webp",
+                    "img": "img/catalog/product_4.webp",
                     "link": "javascript:void(0)",
                     "category": "3",
                     "companies": [
@@ -890,7 +990,7 @@ localData = {
             "items": [
                 {
                     "name": "ИР 5047-50 разрывная машина универсальная",
-                    "img": "img/catalog/product_4.webp",
+                    "img": "img/catalog/product_5.webp",
                     "link": "javascript:void(0)",
                     "category": "4",
                     "companies": [
@@ -908,7 +1008,7 @@ localData = {
             "items": [
                 {
                     "name": "ИР 5047-50 разрывная машина универсальная",
-                    "img": "img/catalog/product_4.webp",
+                    "img": "img/catalog/product_6.webp",
                     "link": "javascript:void(0)",
                     "category": "5",
                     "companies": [
@@ -926,7 +1026,7 @@ localData = {
             "items": [
                 {
                     "name": "FU DLC 50 кН Испытательная машина",
-                    "img": "img/catalog/product_5.webp",
+                    "img": "img/catalog/product_7.webp",
                     "link": "javascript:void(0)",
                     "category": "6",
                     "companies": [
