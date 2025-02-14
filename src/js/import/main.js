@@ -492,7 +492,7 @@ function referencesController() {
                 method: 'get'
             })
 
-            refData = localData //await response.json()
+            refData = await response.json()
 
         } catch (error) {
             console.log('Данные не получены.')
@@ -503,6 +503,15 @@ function referencesController() {
         // получаем все категории и все города
         refAllCategories = refData.categories;
         refAllCities = refData.cities;
+
+        // дополняем цвета категорий, если не указаны
+        refAllCategories = refAllCategories.map(category => {
+            if(!category.color) {
+                category.color = getRandomColor()
+            }
+
+            return category
+        })
 
         // заполняем выпадающие списки и вешаем обработчики
         if(countriesSelect) {
@@ -565,12 +574,11 @@ function referencesController() {
             })
             return item = item.items
         }).flat()
-        //let coordsArr = items.map(item => item = item.coords);
             
         items.forEach((coordsItem, index) => {
-            let iconColor = refAllCategories[coordsItem.category].color.replace(/#/g, '');
+            let iconColor = encodeURIComponent(refAllCategories[coordsItem.category].color);
           
-            let iconHref = `data:image/svg+xml,%3Csvg width='53' height='63' viewBox='0 0 53 63' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.226562 2.24414C0.226562 1.13957 1.12199 0.244144 2.22656 0.244144L50.2266 0.244141C51.3311 0.244141 52.2266 1.13957 52.2266 2.24414V50.0537C52.2266 51.1582 51.3311 52.0537 50.2266 52.0537H34.8654C34.211 52.0537 33.5979 52.3739 33.224 52.911L28.3003 59.9835C27.5237 61.099 25.8845 61.1316 25.0642 60.0478L19.6138 52.8467C19.2357 52.3472 18.6455 52.0537 18.019 52.0537H2.22656C1.12199 52.0537 0.226562 51.1582 0.226562 50.0537V2.24414Z' fill='%23${iconColor}'/%3E%3Cpath d='M15.2266 32.0019V24.3407L29.2834 11.1251L27.2387 9.24414H35.6916V16.4879L33.6244 14.7642L15.2266 32.0019Z' fill='white'/%3E%3Cpath d='M24.5289 40.8124L15.2266 32.002L19.4537 27.6221L28.6632 36.4072L35.6916 29.8951V37.5563L32.1774 40.8124H24.5289Z' fill='white'/%3E%3Crect width='7.64682' height='7.64682' transform='matrix(0.73354 -0.679646 0.73354 0.679646 22.8359 28.1599)' fill='white'/%3E%3Cpath d='M32.7984 40.2374L28.6641 36.4068L35.6925 29.8948V37.556L32.7984 40.2374Z' fill='white'/%3E%3C/svg%3E%0A`
+            let iconHref = `data:image/svg+xml,%3Csvg width='53' height='63' viewBox='0 0 53 63' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.226562 2.24414C0.226562 1.13957 1.12199 0.244144 2.22656 0.244144L50.2266 0.244141C51.3311 0.244141 52.2266 1.13957 52.2266 2.24414V50.0537C52.2266 51.1582 51.3311 52.0537 50.2266 52.0537H34.8654C34.211 52.0537 33.5979 52.3739 33.224 52.911L28.3003 59.9835C27.5237 61.099 25.8845 61.1316 25.0642 60.0478L19.6138 52.8467C19.2357 52.3472 18.6455 52.0537 18.019 52.0537H2.22656C1.12199 52.0537 0.226562 51.1582 0.226562 50.0537V2.24414Z' fill='${iconColor}'/%3E%3Cpath d='M15.2266 32.0019V24.3407L29.2834 11.1251L27.2387 9.24414H35.6916V16.4879L33.6244 14.7642L15.2266 32.0019Z' fill='white'/%3E%3Cpath d='M24.5289 40.8124L15.2266 32.002L19.4537 27.6221L28.6632 36.4072L35.6916 29.8951V37.5563L32.1774 40.8124H24.5289Z' fill='white'/%3E%3Crect width='7.64682' height='7.64682' transform='matrix(0.73354 -0.679646 0.73354 0.679646 22.8359 28.1599)' fill='white'/%3E%3Cpath d='M32.7984 40.2374L28.6641 36.4068L35.6925 29.8948V37.556L32.7984 40.2374Z' fill='white'/%3E%3C/svg%3E%0A`
 
             let currentPlacemark = new ymaps.Placemark(
                 coordsItem.coords.replace(/[\[\]]/g, '').split(","),
@@ -921,9 +929,19 @@ function referencesController() {
         
     }
 
+    // генерирует случайный цвет
+    function getRandomColor() {
+        const letters = '0123456789ABCDEF';
+        let color = '#';
+        for (let i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
+
 }
 
-localData = {
+/*localData = {
     "categories": [
         {
             "id": "0",
@@ -959,46 +977,6 @@ localData = {
             "id": "6",
             "name": "Оборудование для пробоподготовки",
             "color": "#9B51E0"
-        },
-        {
-            "id": "7",
-            "name": "Оборудование для технолог. испытаний",
-            "color": "#9B51E0"
-        },
-        {
-            "id": "8",
-            "name": "Системы температурных испытаний",
-            "color": "#6FCF97"
-        },
-        {
-            "id": "9",
-            "name": "Машины трения",
-            "color": "#013220"
-        },
-        {
-            "id": "10",
-            "name": "Испытательные пресса",
-            "color": "#F2994A"
-        },
-        {
-            "id": "11",
-            "name": "Экстензометры",
-            "color": "#9B51E0"
-        },
-        {
-            "id": "12",
-            "name": "Видеоизмерительные системы Girmax",
-            "color": "#9B51E0"
-        },
-        {
-            "id": "13",
-            "name": "Приборы  для измерения цвета",
-            "color": "#6FCF97"
-        },
-        {
-            "id": "14",
-            "name": "Микроскопы",
-            "color": "#6FCF97"
         }
     ],
     "cities": [
@@ -1164,4 +1142,4 @@ localData = {
             ]
         }
     ]
-}
+}*/
