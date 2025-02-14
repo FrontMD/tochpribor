@@ -246,6 +246,9 @@ function productSafetyController() {
 
 // инициализация фансибокса
 function fancyboxInit() {
+    if (typeof window.distPath == 'undefined') {
+        window.distPath = '';
+    }
     Fancybox.bind("[data-fancybox]", {
         placeFocusBack: false,
         mainClass: 'my-fancybox',
@@ -253,8 +256,8 @@ function fancyboxInit() {
         Carousel: {
             transition: "crossfade",
             Navigation: {
-                prevTpl: '<svg><use xlink:href=img/sprites/sprite.svg#arrow_classic></use></svg>',
-                nextTpl: '<svg><use xlink:href=img/sprites/sprite.svg#arrow_classic></use></svg>',
+                prevTpl: `<svg><use xlink:href=${window.distPath}img/sprites/sprite.svg#arrow_classic></use></svg>`,
+                nextTpl: `<svg><use xlink:href=${window.distPath}img/sprites/sprite.svg#arrow_classic></use></svg>`,
               },
         },
         Thumbs: {
@@ -447,6 +450,10 @@ function referencesController() {
 
     if(!refIntro || !refMap) return
 
+    if (typeof window.distPath == 'undefined') {
+        window.distPath = '';
+    }
+
     const dataAddress = 'https://raw.githubusercontent.com/FrontMD/tochpribor/refs/heads/master/dist/public/data/refereces.json';
     let refData = {};
     let refAllCategories = [];
@@ -486,7 +493,6 @@ function referencesController() {
             })
 
             refData = localData //await response.json()
-            console.log(refData)
 
         } catch (error) {
             console.log('Данные не получены.')
@@ -501,13 +507,17 @@ function referencesController() {
         // заполняем выпадающие списки и вешаем обработчики
         if(countriesSelect) {
             let allCountries = getCountries();
-            setSelectOptions(countriesSelect, allCountries)
-            countriesSelect.querySelector('[data-js="filterSelectInput"]').addEventListener('change', countryOnChange)
+            setSelectOptions(countriesSelect, allCountries);
+            let fakeSelect = countriesSelect.querySelector('[data-js="filterSelectFake"]')
+            fakeSelect.setAttribute('data-empty', fakeSelect.innerHTML)
+            countriesSelect.querySelector('[data-js="filterSelectInput"]').addEventListener('change', countryOnChange);
         }
 
         if(regionsSelect) {
             let allRegions = getRegions();
             setSelectOptions(regionsSelect, allRegions)
+            let fakeSelect = regionsSelect.querySelector('[data-js="filterSelectFake"]')
+            fakeSelect.setAttribute('data-empty', fakeSelect.innerHTML)
             regionsSelect.querySelector('[data-js="filterSelectInput"]').addEventListener('change', regionOnChange)
         }
 
@@ -519,16 +529,18 @@ function referencesController() {
 
         // отрисовываем все точки России
         renderPoints(allRussiaCities)
+        refMap.setAttribute('data-type', 'country')
+        refMap.setAttribute('data-subject', 'Россия')
 
-        // Вешаем событие на закрытие info
+        // Вешаем обработчик на закрытие info
         refInfoClose.addEventListener('click', () => {
             refInfo.classList.remove('active')
         })
-       
+
     })
 
-    function getPoints(country = '', region = '', city = '') {
-        let arr = refAllCities
+    function getPoints(country = '', region = '') {
+        let arr = refAllCities.concat();
 
         if(country) {
             arr = arr.filter(item => item.country == country)
@@ -538,15 +550,13 @@ function referencesController() {
             arr = arr.filter(item => item.region == region)
         }
 
-        if(city) {
-            arr = arr.filter(item => item.city == city)
-        }
-
         return arr;
     }
 
     // отрисовывает точки на карте на основании списка городов
     function renderPoints(cities) {
+        mapEx.geoObjects.removeAll()
+
         let myGeoObjects = [];
         let items = cities.map((item) => {
             item.items.forEach((i, innerIndex) => {
@@ -555,15 +565,15 @@ function referencesController() {
             })
             return item = item.items
         }).flat()
-        let coordsArr = items.map(item => item = item.coords);
+        //let coordsArr = items.map(item => item = item.coords);
             
-        coordsArr.forEach((coordsItem, index) => {
-            let iconColor = refAllCategories[items[index].category].color.replace(/#/g, '');
+        items.forEach((coordsItem, index) => {
+            let iconColor = refAllCategories[coordsItem.category].color.replace(/#/g, '');
           
             let iconHref = `data:image/svg+xml,%3Csvg width='53' height='63' viewBox='0 0 53 63' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0.226562 2.24414C0.226562 1.13957 1.12199 0.244144 2.22656 0.244144L50.2266 0.244141C51.3311 0.244141 52.2266 1.13957 52.2266 2.24414V50.0537C52.2266 51.1582 51.3311 52.0537 50.2266 52.0537H34.8654C34.211 52.0537 33.5979 52.3739 33.224 52.911L28.3003 59.9835C27.5237 61.099 25.8845 61.1316 25.0642 60.0478L19.6138 52.8467C19.2357 52.3472 18.6455 52.0537 18.019 52.0537H2.22656C1.12199 52.0537 0.226562 51.1582 0.226562 50.0537V2.24414Z' fill='%23${iconColor}'/%3E%3Cpath d='M15.2266 32.0019V24.3407L29.2834 11.1251L27.2387 9.24414H35.6916V16.4879L33.6244 14.7642L15.2266 32.0019Z' fill='white'/%3E%3Cpath d='M24.5289 40.8124L15.2266 32.002L19.4537 27.6221L28.6632 36.4072L35.6916 29.8951V37.5563L32.1774 40.8124H24.5289Z' fill='white'/%3E%3Crect width='7.64682' height='7.64682' transform='matrix(0.73354 -0.679646 0.73354 0.679646 22.8359 28.1599)' fill='white'/%3E%3Cpath d='M32.7984 40.2374L28.6641 36.4068L35.6925 29.8948V37.556L32.7984 40.2374Z' fill='white'/%3E%3C/svg%3E%0A`
 
             let currentPlacemark = new ymaps.Placemark(
-                coordsItem = coordsItem.replace(/[\[\]]/g, '').split(","),
+                coordsItem.coords.replace(/[\[\]]/g, '').split(","),
                 {},
                 {
                     hasBalloon: false,
@@ -579,7 +589,9 @@ function referencesController() {
                 renderInfo(items[index].cityIndex, items[index].innerIndex);
             })
 
-            myGeoObjects.push(currentPlacemark)
+            if(!coordsItem.noRender) {
+                myGeoObjects.push(currentPlacemark)
+            }
         });
 
         var clusterer = new ymaps.Clusterer({
@@ -592,12 +604,14 @@ function referencesController() {
         mapEx.geoObjects.add(clusterer);
 
         mapEx.setBounds(mapEx.geoObjects.getBounds());
-        mapEx.setZoom(mapEx.getZoom()-1);
+        let currentZoom = mapEx.getZoom() > 11 ? 11 : mapEx.getZoom() - 1;
+        mapEx.setZoom(currentZoom);
     }
 
     // отрисовывает категории на основании списка городов
     function renderCategories(cities) {
         if(refIntroTabs) {
+            refIntroTabs.innerHTML = '';
             let categories = cities.reduce((acc, city) => {
 
                 city.items.forEach(item => {
@@ -617,15 +631,15 @@ function referencesController() {
 
                 tabEl.innerHTML = `
                                     <label>
-                                        <input class="ref-tab__input" type="checkbox">
+                                        <input class="ref-tab__input" type="checkbox" value="${refAllCategories[category].id}">
                                         <div class="ref-tab__inner">
                                             <div class="ref-tab__icon" style="background-color: ${refAllCategories[category].color};")>
-                                                <img src="img/ref_logo.svg">
+                                                <img src="${window.distPath}img/ref_logo.svg">
                                             </div>
                                             <div class="ref-tab__name">${refAllCategories[category].name}</div>
                                             <div class="ref-tab__remove">
                                                 <svg>
-                                                    <use xlink:href="img/sprites/sprite.svg#close"></use>
+                                                    <use xlink:href="${window.distPath}img/sprites/sprite.svg#close"></use>
                                                 </svg> 
                                             </div>
                                         </div>
@@ -633,9 +647,9 @@ function referencesController() {
                                 `
                 
                 refIntroTabs.appendChild(tabEl)
-            })
 
-            // ТУТ ЗАПУСТИТЬ ОБРАБОТЧИК КЛИКА ПО КАТЕГОРИЯМ
+                tabEl.addEventListener('change', tabsOnChange)
+            })
 
         } else {
             return
@@ -644,10 +658,10 @@ function referencesController() {
 
     // отрисовывает info и скроллит к нужному продукту
     function renderInfo(cityId, itemIndex = false) {
-        const currentCity = refAllCities.filter(item => item.id == cityId)[0];
+        const currentCity = refAllCities.find(item => item.id == cityId);
         const newRegion = currentCity.region ? currentCity.region : currentCity.name;
         const newCategoryId = currentCity.items[itemIndex].category;
-        const currentCategory = refAllCategories.filter(item => item.id == newCategoryId)[0];
+        const currentCategory = refAllCategories.find(item => item.id == newCategoryId);
         
         // отрисовываем регион и текущую категорию
         refInfoRegion.innerHTML = newRegion
@@ -655,7 +669,7 @@ function referencesController() {
         refInfoCurrent.querySelector('.name').innerHTML = currentCategory.name;
         
         // получаем все города в регионе
-        const citiesList = refAllCities.filter(item => item.region == newRegion || item.city == newRegion);
+        const citiesList = refAllCities.filter(item => item.region == newRegion || item.name == newRegion);
 
         // получаем все товары в регионе и определяем текущий товар
         const fullItemsList = citiesList.map(city => {
@@ -687,7 +701,15 @@ function referencesController() {
             return arr
         }, [newCategoryId])
 
-        let regionCategoriesList = refAllCategories.filter(item => regionCategoriesIdList.includes(item.id))
+        let regionCategoriesList = []
+    
+        regionCategoriesIdList.forEach(categoryId => {
+            let currentCategory = refAllCategories.filter(item => item.id == categoryId)
+            regionCategoriesList.push(currentCategory)
+        })
+
+        regionCategoriesList = regionCategoriesList.flat()
+
         refInfoTabs.innerHTML = ''
         regionCategoriesList.forEach((category, index) => {
             let categoryEl = document.createElement('div');
@@ -814,14 +836,89 @@ function referencesController() {
 
     // обрабатывает выбор страны 
     function countryOnChange() {
-        console.log(this)
-        console.log('сменили страну')
+        resetSelect(regionsSelect)
+        refInfo.classList.remove('active')
+
+        // получаем все стартовые точки страны
+        const allCountryCities = getPoints(this.value)
+
+        // выводим все категории
+        renderCategories(allCountryCities)
+
+        // отрисовываем все точки
+        renderPoints(allCountryCities)
+
+        refMap.setAttribute('data-type', 'country')
+        refMap.setAttribute('data-subject', this.value)
     }
     
-    // обрабатывает выбо региона
+    // обрабатывает выбор региона
     function regionOnChange() {
-        console.log(this)
-        console.log('сменили регион')
+        resetSelect(countriesSelect)
+        refInfo.classList.remove('active')
+
+        // получаем все стартовые точки региона
+        const allRegionCities = getPoints('Россия', this.value)
+
+        // выводим все категории
+        renderCategories(allRegionCities)
+
+        // отрисовываем все точки
+        renderPoints(allRegionCities)
+
+        refMap.setAttribute('data-type', 'region')
+        refMap.setAttribute('data-subject', this.value)
+    }
+
+    // Сбрасывает селект в исходное состояние
+    function resetSelect(select) {
+        let fakeSelect = select.querySelector('[data-js="filterSelectFake"]')
+        fakeSelect.innerHTML = fakeSelect.dataset.empty
+    }
+
+    // Обрабатывает фильтр категорий
+    function tabsOnChange() {
+        refInfo.classList.remove('active')
+
+        const currentType = refMap.dataset.type;
+        const currentSubject = refMap.dataset.subject;
+        const checkboxesList = refIntroTabs.querySelectorAll('[data-js="refIntroTab"] input:checked');
+        let currentCities = [];
+
+        let checkedList = [... checkboxesList].map(item => item = item.value)
+
+        if(currentType == 'country') {
+            currentCities = JSON.parse(JSON.stringify(getPoints(currentSubject)))
+        } else if(currentType == 'region') {
+            currentCities = JSON.parse(JSON.stringify(getPoints('Россия', currentSubject)))
+        } else {
+            currentCities = JSON.parse(JSON.stringify(getPoints('Россия')))
+        }
+
+        if(checkedList.length > 0) {
+            let filteredCities = currentCities.map(city => {
+                
+                let newItems = city.items.map(item => {
+                    if(!checkedList.includes(item.category)) {
+                        item.noRender = true
+                    }
+
+                    return item
+                })
+
+                city.items = newItems
+
+                return city
+            })
+
+            renderPoints(filteredCities)
+
+        } else {
+
+            renderPoints(currentCities)
+        }
+
+        
     }
 
 }

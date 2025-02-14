@@ -85,7 +85,7 @@
             "items": [
                 {
                     "name": "ИР 5047-50 разрывная машина универсальная",
-                    "img": "img/catalog/product_4.webp",
+                    "img": "img/catalog/product_1.webp",
                     "link": "javascript:void(0)",
                     "category": "0",
                     "companies": [
@@ -96,7 +96,7 @@
                 },
                 {
                     "name": "ИР 5047-50 разрывная машина универсальная",
-                    "img": "img/catalog/product_4.webp",
+                    "img": "img/catalog/product_2.webp",
                     "link": "javascript:void(0)",
                     "category": "1",
                     "companies": [
@@ -106,13 +106,35 @@
                 },
                 {
                     "name": "FU DLC 50 кН Испытательная машина",
-                    "img": "img/catalog/product_5.webp",
+                    "img": "img/catalog/product_3.webp",
                     "link": "javascript:void(0)",
                     "category": "2",
                     "companies": [
                         "ООО «ЛКС»"
                     ],
                     "coords": "55.831689, 37.458716"
+                },
+                {
+                    "name": "ИР 5047-50 разрывная машина универсальная",
+                    "img": "img/catalog/product_1.webp",
+                    "link": "javascript:void(0)",
+                    "category": "0",
+                    "companies": [
+                        "Московская ГЭС",
+                        "ООО «ЛКС»"
+                    ],
+                    "coords": "55.751502, 37.822214"
+                },
+                {
+                    "name": "ИР 5047-50 разрывная машина универсальная",
+                    "img": "img/catalog/product_1.webp",
+                    "link": "javascript:void(0)",
+                    "category": "0",
+                    "companies": [
+                        "Московская ГЭС",
+                        "ООО «ЛКС»"
+                    ],
+                    "coords": "55.906120, 37.576214"
                 }
             ]
         },
@@ -124,7 +146,7 @@
             "items": [
                 {
                     "name": "ИР 5047-50 разрывная машина универсальная",
-                    "img": "img/catalog/product_4.webp",
+                    "img": "img/catalog/product_1.webp",
                     "link": "javascript:void(0)",
                     "category": "0",
                     "companies": [
@@ -142,7 +164,7 @@
             "items": [
                 {
                     "name": "ИР 5047-50 разрывная машина универсальная",
-                    "img": "img/catalog/product_4.webp",
+                    "img": "img/catalog/product_2.webp",
                     "link": "javascript:void(0)",
                     "category": "1",
                     "companies": [
@@ -152,7 +174,7 @@
                 },
                 {
                     "name": "FU DLC 50 кН Испытательная машина",
-                    "img": "img/catalog/product_5.webp",
+                    "img": "img/catalog/product_4.webp",
                     "link": "javascript:void(0)",
                     "category": "3",
                     "companies": [
@@ -170,7 +192,7 @@
             "items": [
                 {
                     "name": "ИР 5047-50 разрывная машина универсальная",
-                    "img": "img/catalog/product_4.webp",
+                    "img": "img/catalog/product_5.webp",
                     "link": "javascript:void(0)",
                     "category": "4",
                     "companies": [
@@ -188,7 +210,7 @@
             "items": [
                 {
                     "name": "ИР 5047-50 разрывная машина универсальная",
-                    "img": "img/catalog/product_4.webp",
+                    "img": "img/catalog/product_6.webp",
                     "link": "javascript:void(0)",
                     "category": "5",
                     "companies": [
@@ -206,7 +228,7 @@
             "items": [
                 {
                     "name": "FU DLC 50 кН Испытательная машина",
-                    "img": "img/catalog/product_5.webp",
+                    "img": "img/catalog/product_7.webp",
                     "link": "javascript:void(0)",
                     "category": "6",
                     "companies": [
