@@ -53,6 +53,12 @@
         color: $c-white;
     }
 
+    &--grey &__list,
+    &--grey &__item--current,
+    &--grey &__separator {
+        color: $c-text-light;
+    }
+
     &--light &__item a:hover {
         color: $c-bg;
     }

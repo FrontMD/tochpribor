@@ -12,6 +12,7 @@
 @@include("../../blocks/modules/h-advantages/h-advantages.js")
 @@include("../../blocks/modules/history-modal/history-modal.js")
 @@include("../../blocks/modules/team-section/team-section.js")
+@@include("../../blocks/modules/f-factory/f-factory.js")
 
 document.addEventListener('DOMContentLoaded', () => {
     // Скрипты первого экрана главной страницы
@@ -44,4 +45,6 @@ document.addEventListener('DOMContentLoaded', () => {
     historyModal()
     // Управляет слайдером команды
     teamSection()
+    // управляет секцией Наше производство (О заводе)
+    fFactoryController()
 })

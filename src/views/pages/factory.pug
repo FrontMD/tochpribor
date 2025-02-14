@@ -5,11 +5,12 @@ block variables
     - const title = "О заводе"
 
 block content
-    .page-layout(data-js="pageLayout")
+    .page-layout.page-layout--bottom(data-js="pageLayout")
 
         +img-intro({
             img: 'img/factory/factory_intro_bg.webp',
             breadcrumbs: {
+                cMode: 'grey',
                 items: [
                     {
                         name: 'Главная',
@@ -34,7 +35,15 @@ block content
 
 
         +h-advantages({
-            title: 'Разрабатываем, производим и&nbsp;поставляем лабораторное оборудование',
-            tag: '',
-            subtitle: ''
+            title: 'На сегодняшний день предприятие имеет все необходимое оборудование и&nbsp;большой штат высококвалифицированных специалистов для осуществления полного цикла производства',
+            tag: '[Цифры и факты]',
+            subtitle: 'Профессионализм, индивидуальный подход, исключительные производственные и&nbsp;кадровые ресурсы позволяют нам выполнять любые предпочтения заказчика'
+        })
+
+        +f-factory
+
+        +help-section({
+            img: 'img/help_section_bg.webp',
+            title: 'Хотите стать партнером или заключить сотрудничество?',
+            btnText: 'Оставить заявку',
         })

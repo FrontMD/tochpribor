@@ -1,0 +1,15 @@
+-
+    const defaultFFactoryProps = {
+        classes: '',
+    }
+
+mixin f-factory(props= defaultFFactoryProps)
+    -
+        const checkProps = {
+            classes: props.classes ? props.classes : defaultFFactoryProps.classes,
+        }
+
+    section.section.section--full.f-factory(class= checkProps.classes data-js="fFactory")&attributes(attributes)
+        .section__container
+            .f-factory__header
+            .f-factory__body

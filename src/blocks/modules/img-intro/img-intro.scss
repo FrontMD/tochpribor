@@ -48,6 +48,10 @@
 
     }
 
+    &--dark &__bg::before {
+        display: none;
+    }
+
     &__container.section__container {
         position: relative;
         display: flex;
@@ -79,11 +83,19 @@
     }
 
     &__title {
-        max-width: 1050px;
+        max-width: 1120px;
+    }
+
+    &--dark &__title {
+        color: $c-text;
     }
 
     &__tag {
         color: #CCD0D1;
+    }
+
+    &--dark &__tag {
+        color: $c-text-breadcrumbs;
     }
 
     &__bottom {
@@ -102,6 +114,10 @@
     &__text {
         max-width: 440px;
         color: $c-white;
+    }
+
+    &--dark &__text {
+        color: $c-text;
     }
 
     &__btns {

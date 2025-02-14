@@ -23,7 +23,7 @@ mixin img-intro(props= defaultImgIntroProps)
 
         let cModeClass = checkProps.cMode ? `img-intro--${checkProps.cMode}` : ''
 
-    section.section.section--full.section--transparent.img-intro(class= checkProps.classes + cMode)&attributes(attributes)
+    section.section.section--full.section--transparent.img-intro(class= checkProps.classes + cModeClass)&attributes(attributes)
         .img-intro__bg
             img(class='lazyload' src='img/lazy-placeholder.webp' data-src= checkProps.img, alt="")
         .section__container.img-intro__container
@@ -34,7 +34,7 @@ mixin img-intro(props= defaultImgIntroProps)
                     tag: 'h2',
                     size: '83',
                     text: checkProps.title,
-                    cMode: checkProps.cMode
+                    cMode: 'light'
                 })
                 -if(checkProps.tag.length > 0)
                     .section__tag.img-intro__tag!= checkProps.tag
