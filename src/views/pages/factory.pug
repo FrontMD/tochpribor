@@ -1,0 +1,40 @@
+extends ../layouts/default
+include ../helpers/mixins
+
+block variables
+    - const title = "О заводе"
+
+block content
+    .page-layout(data-js="pageLayout")
+
+        +img-intro({
+            img: 'img/factory/factory_intro_bg.webp',
+            breadcrumbs: {
+                items: [
+                    {
+                        name: 'Главная',
+                        link: 'javascript:void(0);'
+                    },
+                    {
+                        name: 'О заводе',
+                        link: 'javascript:void(0);'
+                    }
+                ]
+            },
+            title: 'Производим и поставляем испытатальное оборудование',
+            tag: '[Основан в 1950 году]',
+            text: 'Основу производства Группы компаний “Точприбор” составляет ООО “Завод испытательных приборов” Мы являемся правоприемником известного завода ОАО “Точприбор” в г.Иваново',
+            cMode: 'dark'
+        })
+            +btn({
+                size: 'middle',
+                name: 'Советская кинохроника',
+                icon: 'play_t'
+            })(data-js="historyModalOpen")
+
+
+        +h-advantages({
+            title: 'Разрабатываем, производим и&nbsp;поставляем лабораторное оборудование',
+            tag: '',
+            subtitle: ''
+        })

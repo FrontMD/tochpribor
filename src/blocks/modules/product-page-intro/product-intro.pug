@@ -13,6 +13,14 @@ mixin product-intro(props= defaultProductIntroProps)
 
     section.section.product-intro(class= checkProps.classes)&attributes(attributes)
         .section__container.product-intro__container
+            .product-intro__notice(data-js="productCartNotice")
+                .add
+                    img(src="img/catalog/check_icon.svg")
+                    | Добавлено в корзину
+                .remove
+                    img(src="img/catalog/basket_icon.svg")
+                    | Удалено из корзины
+
             .product-intro__media
                 - if(checkProps.dc === false)
                     +product-tags({

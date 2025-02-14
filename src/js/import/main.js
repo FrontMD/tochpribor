@@ -712,11 +712,9 @@ function referencesController() {
         let regionCategoriesList = []
     
         regionCategoriesIdList.forEach(categoryId => {
-            let currentCategory = refAllCategories.filter(item => item.id == categoryId)
+            let currentCategory = refAllCategories.find(item => item.id == categoryId)
             regionCategoriesList.push(currentCategory)
         })
-
-        regionCategoriesList = regionCategoriesList.flat()
 
         refInfoTabs.innerHTML = ''
         regionCategoriesList.forEach((category, index) => {
@@ -741,6 +739,9 @@ function referencesController() {
 
                 categoryEl.classList.add('active');
                 let newCatId = categoryEl.dataset.category
+
+                refInfoCurrent.querySelector('.icon').style.backgroundColor = category.color;
+                refInfoCurrent.querySelector('.name').innerHTML = category.name;
 
                 renderItemsList(fullItemsList.filter(item => item.category == newCatId))
             })
@@ -940,206 +941,3 @@ function referencesController() {
     }
 
 }
-
-/*localData = {
-    "categories": [
-        {
-            "id": "0",
-            "name": "Универсальные испытательные машины",
-            "color": "#BDBDBD"
-        },
-        {
-            "id": "1",
-            "name": "Аксессуары для испытательных машин",
-            "color": "#FF3E41"
-        },
-        {
-            "id": "2",
-            "name": "Копры маятниковые и вертикальные",
-            "color": "#FFB906"
-        },
-        {
-            "id": "3",
-            "name": "Приборы для измерения твердости (твердомеры)",
-            "color": "#4495D1"
-        },
-        {
-            "id": "4",
-            "name": "Меры твердости эталонные",
-            "color": "#013220"
-        },
-        {
-            "id": "5",
-            "name": "Динамометры",
-            "color": "#F2994A"
-        },
-        {
-            "id": "6",
-            "name": "Оборудование для пробоподготовки",
-            "color": "#9B51E0"
-        }
-    ],
-    "cities": [
-        {
-            "id": "0",
-            "name": "Москва",
-            "country": "Россия",
-            "region": "Московская область",
-            "items": [
-                {
-                    "name": "ИР 5047-50 разрывная машина универсальная",
-                    "img": "img/catalog/product_1.webp",
-                    "link": "javascript:void(0)",
-                    "category": "0",
-                    "companies": [
-                        "Московская ГЭС",
-                        "ООО «ЛКС»"
-                    ],
-                    "coords": "55.658564, 37.596158"
-                },
-                {
-                    "name": "ИР 5047-50 разрывная машина универсальная",
-                    "img": "img/catalog/product_2.webp",
-                    "link": "javascript:void(0)",
-                    "category": "1",
-                    "companies": [
-                        "ООО «ЛКС»"
-                    ],
-                    "coords": "55.783385, 37.756334"
-                },
-                {
-                    "name": "FU DLC 50 кН Испытательная машина",
-                    "img": "img/catalog/product_3.webp",
-                    "link": "javascript:void(0)",
-                    "category": "2",
-                    "companies": [
-                        "ООО «ЛКС»"
-                    ],
-                    "coords": "55.831689, 37.458716"
-                },
-                {
-                    "name": "ИР 5047-50 разрывная машина универсальная",
-                    "img": "img/catalog/product_1.webp",
-                    "link": "javascript:void(0)",
-                    "category": "0",
-                    "companies": [
-                        "Московская ГЭС",
-                        "ООО «ЛКС»"
-                    ],
-                    "coords": "55.751502, 37.822214"
-                },
-                {
-                    "name": "ИР 5047-50 разрывная машина универсальная",
-                    "img": "img/catalog/product_1.webp",
-                    "link": "javascript:void(0)",
-                    "category": "0",
-                    "companies": [
-                        "Московская ГЭС",
-                        "ООО «ЛКС»"
-                    ],
-                    "coords": "55.906120, 37.576214"
-                }
-            ]
-        },
-        {
-            "id": "1",
-            "name": "Серпухов",
-            "country": "Россия",
-            "region": "Московская область",
-            "items": [
-                {
-                    "name": "ИР 5047-50 разрывная машина универсальная",
-                    "img": "img/catalog/product_1.webp",
-                    "link": "javascript:void(0)",
-                    "category": "0",
-                    "companies": [
-                        "ООО «Город»"
-                    ],
-                    "coords": "54.912940, 37.424694"
-                }
-            ]
-        },
-        {
-            "id": "2",
-            "name": "Иваново",
-            "country": "Россия",
-            "region": "Ивановская область",
-            "items": [
-                {
-                    "name": "ИР 5047-50 разрывная машина универсальная",
-                    "img": "img/catalog/product_2.webp",
-                    "link": "javascript:void(0)",
-                    "category": "1",
-                    "companies": [
-                        "ЗАО «Завод»"
-                    ],
-                    "coords": "56.985750, 40.966570"
-                },
-                {
-                    "name": "FU DLC 50 кН Испытательная машина",
-                    "img": "img/catalog/product_4.webp",
-                    "link": "javascript:void(0)",
-                    "category": "3",
-                    "companies": [
-                        "ООО «Иваново»"
-                    ],
-                    "coords": "57.057845, 40.966788"
-                }
-            ]
-        },
-        {
-            "id": "3",
-            "name": "Минск",
-            "country": "Беларусь",
-            "region": "",
-            "items": [
-                {
-                    "name": "ИР 5047-50 разрывная машина универсальная",
-                    "img": "img/catalog/product_5.webp",
-                    "link": "javascript:void(0)",
-                    "category": "4",
-                    "companies": [
-                        "Минская ТЭЦ"
-                    ],
-                    "coords": "53.920813, 27.505310"
-                }
-            ]
-        },
-        {
-            "id": "4",
-            "name": "Астана",
-            "country": "Казахстан",
-            "region": "",
-            "items": [
-                {
-                    "name": "ИР 5047-50 разрывная машина универсальная",
-                    "img": "img/catalog/product_6.webp",
-                    "link": "javascript:void(0)",
-                    "category": "5",
-                    "companies": [
-                        "ООО «Компания»"
-                    ],
-                    "coords": "51.121450, 71.378167"
-                }
-            ]
-        },
-        {
-            "id": "5",
-            "name": "Актобе",
-            "country": "Казахстан",
-            "region": "",
-            "items": [
-                {
-                    "name": "FU DLC 50 кН Испытательная машина",
-                    "img": "img/catalog/product_7.webp",
-                    "link": "javascript:void(0)",
-                    "category": "6",
-                    "companies": [
-                        "ООО «Компания»"
-                    ],
-                    "coords": "50.268616, 57.155667"
-                }
-            ]
-        }
-    ]
-}*/

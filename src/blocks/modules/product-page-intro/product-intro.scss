@@ -1,5 +1,6 @@
 .product-intro {
     &__container {
+        position: relative;
         display: flex;
         align-items: flex-start;
         gap: 32px;
@@ -10,6 +11,70 @@
 
         @include max(tablet) {
             flex-direction: column;
+        }
+    }
+
+    &__notice {
+        position: fixed;
+        right: 40px;
+        top: 87px;
+        background-color: $c-text-dark;
+        border-radius: 4px;
+        color: $c-white;
+        padding: 8px 10px;
+        z-index: 30;
+        font-size: 14px;
+        line-height: 1.4em;
+        opacity: 0;
+        visibility: hidden;
+        transition: all $tr-time linear;
+
+        @include max(large) {
+            right: 20px;
+        }
+
+        @include max(laptop) {
+            top: 70px;
+        }
+
+        @include max(mobile) {
+            right: 15px;
+            font-size: 12px;
+            padding: 4px 8px;
+        }
+
+        img {
+            width: 24px;
+            height: 24px;
+
+            @include max(mobile) {
+                width: 20px;
+                height: 20px;
+            }
+        }
+
+        .add,
+        .remove {
+            display: none;
+            align-items: center;
+            gap: 8px;
+
+            @include max(mobile) {
+                gap: 4px;
+            }
+        }
+
+        &.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        &--add .add {
+            display: flex;
+        }
+
+        &--remove .remove {
+            display: flex;
         }
     }
 

@@ -51,19 +51,33 @@ function productIntro() {
             const amountInputBlock = block.querySelector('[data-js="amountInput"]')
             const amountInputPlus = amountInputBlock.querySelector('.amount-input__change.amount-input__plus')
             const amountInput = amountInputBlock.querySelector('input')
+            const notice = document.querySelector('[data-js="productCartNotice"]')
 
             cartBtn.addEventListener('click', function() {
-                amountInputPlus.click()
+                amountInputPlus.click();
                 this.style.display = 'none';
-                amountInputBlock.classList.add('active')
+                amountInputBlock.classList.add('active');
+                notice.classList.remove('product-intro__notice--remove');
+                notice.classList.add('active', 'product-intro__notice--add');
+                noticeTimer()
+
             })
 
             amountInput.addEventListener('change', function() {
                 if(this.value < 1) {
                     cartBtn.style.display = 'flex';
-                    amountInputBlock.classList.remove('active')
+                    amountInputBlock.classList.remove('active');
+                    notice.classList.remove('product-intro__notice--add')
+                    notice.classList.add('active', 'product-intro__notice--remove')
+                    noticeTimer()
                 }
             })
+
+            function noticeTimer() {
+                setTimeout(() => {
+                    notice.classList.remove('active');
+                }, 3000)
+            }
 
         })
     }
