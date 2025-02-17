@@ -70,7 +70,7 @@ function spoilers() {
 				}
 			});
 
-
+			spoiler.dispatchEvent(new CustomEvent('spoilerExpand'))
 		};
 	
 		function closeSpoiler(spoiler) {

@@ -1,1 +1,121 @@
-.f-factory {}
+.f-factory {
+    &__container.section__container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto minmax(0, 100%);
+        height: calc(100vh - 80px);
+        min-height: calc(100vh - 80px);
+        max-height: calc(100vh - 80px);
+        height: calc(100dvh - 80px);
+        min-height: calc(100dvh - 80px);
+        max-height: calc(100dvh - 80px);
+
+        @include max(laptop) {
+            height: calc(100vh - 61px);
+            min-height: calc(100vh - 61px);
+            max-height: calc(100vh - 61px);
+            height: calc(100dvh - 61px);
+            min-height: calc(100dvh - 61px);
+            max-height: calc(100dvh - 61px);
+        }
+    }
+
+    &__grid {
+        display: grid;
+        justify-content: space-between;
+        grid-template-columns: minmax(0, 41%) minmax(0, 50%);
+        gap: 32px;
+    }
+
+    &__flex {
+        height: 100%;
+        display: flex;
+        align-items: stretch;
+        justify-content: space-between;
+    }
+
+    &__tabs {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 8px;
+        max-height: fit-content;
+
+        @include max(large) {
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+    }
+
+    &__tab {
+        height: 100%;
+        max-height: fit-content;
+        padding: 4px 8px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 1.4em;
+        color: $c-text;
+        border: 1px solid $c-bg;
+        border-radius: 4px;
+        transition: all $tr-time linear;
+        cursor: pointer;
+
+        &.active {
+            color: $c-accent;
+            border-color: $c-accent;
+
+            .number {
+                color: $c-accent-light3;
+            }
+        }
+
+        .number {
+            margin-top: 11px;
+            color: $c-border;
+            font-weight: 400;
+            font-size: 26px;
+            line-height: 1em;
+            letter-spacing: -2%;
+        }
+    }
+
+    &__body {
+        margin-top: 16px;
+        overflow: hidden;
+    }
+
+    &__slide {
+        display: none;
+        height: 100%;
+
+        &.active {
+            display: block;
+        }
+    }
+
+    &__side {
+        width: 41%;
+        flex: 0 0 41%;
+        height: 100%;
+    }
+
+    &__accordion {
+        flex: 0 0 50%;
+    }
+
+    .spoiler-side {
+        display: none;
+        height: 100%;
+        width: 100%;
+
+        &.active {
+            display: block;
+        }
+
+        &__slider {
+            height: 100%;
+
+            .media-slider__slide {
+                height: 100%;
+            }
+        }
+    }
+}

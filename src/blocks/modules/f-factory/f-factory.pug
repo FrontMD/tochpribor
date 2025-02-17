@@ -10,6 +10,1181 @@ mixin f-factory(props= defaultFFactoryProps)
         }
 
     section.section.section--full.f-factory(class= checkProps.classes data-js="fFactory")&attributes(attributes)
-        .section__container
-            .f-factory__header
+        .section__container.f-factory__container(data-js="tabsBlock")
+            .f-factory__header.f-factory__grid
+                +title({
+                    text: 'Наше производство',
+                    tag: 'h2',
+                    size: '53'
+                })
+                .f-factory__tabs
+                    .f-factory__tab.active(data-js="tabsBlockTab" data-index='0')
+                        .text Цеха и участки
+                        .number 14
+                    .f-factory__tab(data-js="tabsBlockTab" data-index='1')
+                        .text Инжиниринг
+                        .number 2
+                    .f-factory__tab(data-js="tabsBlockTab" data-index='2')
+                        .text Контроль качества
+                        .number 1
+                    .f-factory__tab(data-js="tabsBlockTab" data-index='3')
+                        .text Логистика
+                        .number 2
+                    .f-factory__tab(data-js="tabsBlockTab" data-index='4')
+                        .text Оборудование
+                        .number 2
             .f-factory__body
+                .f-factory__slide.active(data-js="tabsBlockSlide")
+                    .f-factory__flex
+                        .f-factory__side
+                            .spoiler-side.active(data-js="spoilerSide" data-id="0")
+                                +media-slider({
+                                    classes: 'spoiler-side__slider',
+                                    fancyGroup: 'factorySlide1Spoiler1',
+                                    slides: [
+                                        {
+                                            img: 'img/media-slider/slide_4.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_5.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_6.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_7.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_8.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_3.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_1.webp',
+                                            video: '',
+                                            videoType: ''
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_2.webp',
+                                            video: '',
+                                            videoType: ''
+                                        }
+                                    ],
+                                })
+
+                            .spoiler-side(data-js="spoilerSide" data-id="1")
+                                +media-slider({
+                                    classes: 'spoiler-side__slider',
+                                    fancyGroup: 'factorySlide1Spoiler2',
+                                    slides: [
+                                        {
+                                            img: 'img/media-slider/slide_5.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_4.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_6.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_7.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_8.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_3.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_1.webp',
+                                            video: '',
+                                            videoType: ''
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_2.webp',
+                                            video: '',
+                                            videoType: ''
+                                        }
+                                    ],
+                                })
+
+                            .spoiler-side(data-js="spoilerSide" data-id="2")
+                                +media-slider({
+                                    classes: 'spoiler-side__slider',
+                                    fancyGroup: 'factorySlide1Spoiler3',
+                                    slides: [
+                                        {
+                                            img: 'img/media-slider/slide_6.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_5.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_4.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_7.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_8.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_3.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_1.webp',
+                                            video: '',
+                                            videoType: ''
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_2.webp',
+                                            video: '',
+                                            videoType: ''
+                                        }
+                                    ],
+                                })
+
+                            .spoiler-side(data-js="spoilerSide" data-id="3")
+                                +media-slider({
+                                    classes: 'spoiler-side__slider',
+                                    fancyGroup: 'factorySlide1Spoiler4',
+                                    slides: [
+                                        {
+                                            img: 'img/media-slider/slide_7.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_6.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_5.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_4.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_8.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_3.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_1.webp',
+                                            video: '',
+                                            videoType: ''
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_2.webp',
+                                            video: '',
+                                            videoType: ''
+                                        }
+                                    ],
+                                })
+
+                            .spoiler-side(data-js="spoilerSide" data-id="4")
+                                +media-slider({
+                                    classes: 'spoiler-side__slider',
+                                    fancyGroup: 'factorySlide1Spoiler5',
+                                    slides: [
+                                        {
+                                            img: 'img/media-slider/slide_8.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_7.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_6.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_5.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_4.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_3.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_1.webp',
+                                            video: '',
+                                            videoType: ''
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_2.webp',
+                                            video: '',
+                                            videoType: ''
+                                        }
+                                    ],
+                                })
+
+                            .spoiler-side(data-js="spoilerSide" data-id="5")
+                                +media-slider({
+                                    classes: 'spoiler-side__slider',
+                                    fancyGroup: 'factorySlide1Spoiler6',
+                                    slides: [
+                                        {
+                                            img: 'img/media-slider/slide_1.webp',
+                                            video: '',
+                                            videoType: ''
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_8.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_7.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_6.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_5.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_4.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_3.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_2.webp',
+                                            video: '',
+                                            videoType: ''
+                                        }
+                                    ],
+                                })
+
+                            .spoiler-side(data-js="spoilerSide" data-id="6")
+                                +media-slider({
+                                    classes: 'spoiler-side__slider',
+                                    fancyGroup: 'factorySlide1Spoiler7',
+                                    slides: [
+                                        {
+                                            img: 'img/media-slider/slide_2.webp',
+                                            video: '',
+                                            videoType: ''
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_1.webp',
+                                            video: '',
+                                            videoType: ''
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_8.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_7.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_6.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_5.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_4.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_3.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        }
+                                    ],
+                                })
+
+                            .spoiler-side(data-js="spoilerSide" data-id="7")
+                                +media-slider({
+                                    classes: 'spoiler-side__slider',
+                                    fancyGroup: 'factorySlide1Spoiler8',
+                                    slides: [
+                                        {
+                                            img: 'img/media-slider/slide_3.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_2.webp',
+                                            video: '',
+                                            videoType: ''
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_1.webp',
+                                            video: '',
+                                            videoType: ''
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_8.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_7.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_6.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_5.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_4.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                    ],
+                                })
+
+                            .spoiler-side(data-js="spoilerSide" data-id="8")
+                                +media-slider({
+                                    classes: 'spoiler-side__slider',
+                                    fancyGroup: 'factorySlide1Spoiler9',
+                                    slides: [
+                                        {
+                                            img: 'img/media-slider/slide_4.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_3.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_2.webp',
+                                            video: '',
+                                            videoType: ''
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_1.webp',
+                                            video: '',
+                                            videoType: ''
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_8.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_7.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_6.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_5.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                    ],
+                                })
+
+                            .spoiler-side(data-js="spoilerSide" data-id="9")
+                                +media-slider({
+                                    classes: 'spoiler-side__slider',
+                                    fancyGroup: 'factorySlide1Spoiler10',
+                                    slides: [
+                                        {
+                                            img: 'img/media-slider/slide_5.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_4.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_3.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_2.webp',
+                                            video: '',
+                                            videoType: ''
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_1.webp',
+                                            video: '',
+                                            videoType: ''
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_8.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_7.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_6.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                    ],
+                                })
+
+                            .spoiler-side(data-js="spoilerSide" data-id="10")
+                                +media-slider({
+                                    classes: 'spoiler-side__slider',
+                                    fancyGroup: 'factorySlide1Spoiler11',
+                                    slides: [
+                                        {
+                                            img: 'img/media-slider/slide_6.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_5.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_4.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_3.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_2.webp',
+                                            video: '',
+                                            videoType: ''
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_1.webp',
+                                            video: '',
+                                            videoType: ''
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_8.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_7.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                    ],
+                                })
+
+                            .spoiler-side(data-js="spoilerSide" data-id="11")
+                                +media-slider({
+                                    classes: 'spoiler-side__slider',
+                                    fancyGroup: 'factorySlide1Spoiler12',
+                                    slides: [
+                                        {
+                                            img: 'img/media-slider/slide_7.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_6.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_5.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_4.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_3.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_2.webp',
+                                            video: '',
+                                            videoType: ''
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_1.webp',
+                                            video: '',
+                                            videoType: ''
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_8.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                    ],
+                                })
+
+                            .spoiler-side(data-js="spoilerSide" data-id="12")
+                                +media-slider({
+                                    classes: 'spoiler-side__slider',
+                                    fancyGroup: 'factorySlide1Spoiler13',
+                                    slides: [
+                                        {
+                                            img: 'img/media-slider/slide_8.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_7.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_6.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_5.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_4.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_3.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_2.webp',
+                                            video: '',
+                                            videoType: ''
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_1.webp',
+                                            video: '',
+                                            videoType: ''
+                                        },
+                                    ],
+                                })
+
+                            .spoiler-side(data-js="spoilerSide" data-id="13")
+                                +media-slider({
+                                    classes: 'spoiler-side__slider',
+                                    fancyGroup: 'factorySlide1Spoiler14',
+                                    slides: [
+                                        {
+                                            img: 'img/media-slider/slide_1.webp',
+                                            video: '',
+                                            videoType: ''
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_8.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_7.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_6.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_5.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_4.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_3.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_2.webp',
+                                            video: '',
+                                            videoType: ''
+                                        },
+                                    ],
+                                })
+
+                        .f-factory__accordion(data-js="accordion")
+                            +spoiler({
+                                title: 'Литейный цех'
+                            })(data-side="0")
+                                .f-factory__desc.text-editor
+                                    p Данный участок занимается изготовлением пластмассовой  упаковки на Термопласт-автомате для динамоментров ДПУ и упаковки для эталонных мер твердости. 
+                                    p На литьевой машине Л68 отливаются по форме корпусные заготовки для дигнанометров ДПУ из алюминия
+                            +spoiler({
+                                title: 'Заготовительный участок'
+                            })(data-side="1")
+                                .f-factory__desc.text-editor
+                                    p Данный участок занимается изготовлением пластмассовой  упаковки на Термопласт-автомате для динамоментров ДПУ и упаковки для эталонных мер твердости. 
+                                    p На литьевой машине Л68 отливаются по форме корпусные заготовки для дигнанометров ДПУ из алюминия
+                            +spoiler({
+                                title: 'Сварочный участок'
+                            })(data-side="2")
+                                .f-factory__desc.text-editor
+                                    p Данный участок занимается изготовлением пластмассовой  упаковки на Термопласт-автомате для динамоментров ДПУ и упаковки для эталонных мер твердости. 
+                                    p На литьевой машине Л68 отливаются по форме корпусные заготовки для дигнанометров ДПУ из алюминия
+                            +spoiler({
+                                title: 'Прессовый участок'
+                            })(data-side="3")
+                                .f-factory__desc.text-editor
+                                    p Данный участок занимается изготовлением пластмассовой  упаковки на Термопласт-автомате для динамоментров ДПУ и упаковки для эталонных мер твердости. 
+                                    p На литьевой машине Л68 отливаются по форме корпусные заготовки для дигнанометров ДПУ из алюминия
+                            +spoiler({
+                                title: 'Участок термической обработки'
+                            })(data-side="4")
+                                .f-factory__desc.text-editor
+                                    p Данный участок занимается изготовлением пластмассовой  упаковки на Термопласт-автомате для динамоментров ДПУ и упаковки для эталонных мер твердости. 
+                                    p На литьевой машине Л68 отливаются по форме корпусные заготовки для дигнанометров ДПУ из алюминия
+                            +spoiler({
+                                title: 'Участок химических покрытий'
+                            })(data-side="4")
+                                .f-factory__desc.text-editor
+                                    p Данный участок занимается изготовлением пластмассовой  упаковки на Термопласт-автомате для динамоментров ДПУ и упаковки для эталонных мер твердости. 
+                                    p На литьевой машине Л68 отливаются по форме корпусные заготовки для дигнанометров ДПУ из алюминия
+                            +spoiler({
+                                title: 'Участок сборки крупногабаритного оборудования'
+                            })(data-side="5")
+                                .f-factory__desc.text-editor
+                                    p Данный участок занимается изготовлением пластмассовой  упаковки на Термопласт-автомате для динамоментров ДПУ и упаковки для эталонных мер твердости. 
+                                    p На литьевой машине Л68 отливаются по форме корпусные заготовки для дигнанометров ДПУ из алюминия
+                            +spoiler({
+                                title: 'Участок порошковой окраски'
+                            })(data-side="6")
+                                .f-factory__desc.text-editor
+                                    p Данный участок занимается изготовлением пластмассовой  упаковки на Термопласт-автомате для динамоментров ДПУ и упаковки для эталонных мер твердости. 
+                                    p На литьевой машине Л68 отливаются по форме корпусные заготовки для дигнанометров ДПУ из алюминия
+                            +spoiler({
+                                title: 'Корпусной участок'
+                            })(data-side="7")
+                                .f-factory__desc.text-editor
+                                    p Данный участок занимается изготовлением пластмассовой  упаковки на Термопласт-автомате для динамоментров ДПУ и упаковки для эталонных мер твердости. 
+                                    p На литьевой машине Л68 отливаются по форме корпусные заготовки для дигнанометров ДПУ из алюминия
+                            +spoiler({
+                                title: 'Токарный участок'
+                            })(data-side="8")
+                                .f-factory__desc.text-editor
+                                    p Данный участок занимается изготовлением пластмассовой  упаковки на Термопласт-автомате для динамоментров ДПУ и упаковки для эталонных мер твердости. 
+                                    p На литьевой машине Л68 отливаются по форме корпусные заготовки для дигнанометров ДПУ из алюминия
+                            +spoiler({
+                                title: 'Слесарный участок'
+                            })(data-side="9")
+                                .f-factory__desc.text-editor
+                                    p Данный участок занимается изготовлением пластмассовой  упаковки на Термопласт-автомате для динамоментров ДПУ и упаковки для эталонных мер твердости. 
+                                    p На литьевой машине Л68 отливаются по форме корпусные заготовки для дигнанометров ДПУ из алюминия
+                            +spoiler({
+                                title: 'Участок шлифовальной обработки'
+                            })(data-side="10")
+                                .f-factory__desc.text-editor
+                                    p Данный участок занимается изготовлением пластмассовой  упаковки на Термопласт-автомате для динамоментров ДПУ и упаковки для эталонных мер твердости. 
+                                    p На литьевой машине Л68 отливаются по форме корпусные заготовки для дигнанометров ДПУ из алюминия
+                            +spoiler({
+                                title: 'Участок универсально-сборных приспособлений (УСП)'
+                            })(data-side="11")
+                                .f-factory__desc.text-editor
+                                    p Данный участок занимается изготовлением пластмассовой  упаковки на Термопласт-автомате для динамоментров ДПУ и упаковки для эталонных мер твердости. 
+                                    p На литьевой машине Л68 отливаются по форме корпусные заготовки для дигнанометров ДПУ из алюминия
+                            +spoiler({
+                                title: 'Участок сборки динамометров и портативных твердомеров'
+                            })(data-side="12")
+                                .f-factory__desc.text-editor
+                                    p Данный участок занимается изготовлением пластмассовой  упаковки на Термопласт-автомате для динамоментров ДПУ и упаковки для эталонных мер твердости. 
+                                    p На литьевой машине Л68 отливаются по форме корпусные заготовки для дигнанометров ДПУ из алюминия
+
+                .f-factory__slide(data-js="tabsBlockSlide")
+                    .f-factory__flex
+                        .f-factory__side
+                            .spoiler-side.active(data-js="spoilerSide" data-id="0")
+                                +media-slider({
+                                    classes: 'spoiler-side__slider',
+                                    fancyGroup: 'factorySlide2Spoiler1',
+                                    slides: [
+                                        {
+                                            img: 'img/media-slider/slide_6.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_5.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_4.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_7.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_8.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_3.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_1.webp',
+                                            video: '',
+                                            videoType: ''
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_2.webp',
+                                            video: '',
+                                            videoType: ''
+                                        }
+                                    ],
+                                })
+
+                            .spoiler-side(data-js="spoilerSide" data-id="1")
+                                +media-slider({
+                                    classes: 'spoiler-side__slider',
+                                    fancyGroup: 'factorySlide2Spoiler2',
+                                    slides: [
+                                        {
+                                            img: 'img/media-slider/slide_5.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_6.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_4.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_7.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_8.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_3.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_1.webp',
+                                            video: '',
+                                            videoType: ''
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_2.webp',
+                                            video: '',
+                                            videoType: ''
+                                        }
+                                    ],
+                                })
+
+                        .f-factory__accordion(data-js="accordion")
+                            +spoiler({
+                                title: 'Конструкторский отдел'
+                            })(data-side="0")
+                                .f-factory__desc.text-editor
+                                    p Наличие собственного конструкторского отдела позволяет разрабатывать изделия, в соответствии с ТЗ заказчика, соблюдая стандарты, нормы техники безопасности, требования наиболее экономической технологии производства.
+                                    p Помимо этого, отделом осуществляется соблюдение единой политики предприятия в области конструкторских разработок; подготовка предприятия к производству новой продукции; обеспечение высокой конкурентоспособности разрабатываемой продукции.
+                            +spoiler({
+                                title: 'Отдел технической документации'
+                            })(data-side="1")
+                                .f-factory__desc.text-editor
+                                    p Наличие собственного конструкторского отдела позволяет разрабатывать изделия, в соответствии с ТЗ заказчика, соблюдая стандарты, нормы техники безопасности, требования наиболее экономической технологии производства.
+                                    p Помимо этого, отделом осуществляется соблюдение единой политики предприятия в области конструкторских разработок; подготовка предприятия к производству новой продукции; обеспечение высокой конкурентоспособности разрабатываемой продукции.
+
+                .f-factory__slide(data-js="tabsBlockSlide")
+                    .f-factory__flex
+                        .f-factory__side
+                            .spoiler-side.active(data-js="spoilerSide" data-id="0")
+                                +media-slider({
+                                    classes: 'spoiler-side__slider',
+                                    fancyGroup: 'factorySlide3Spoiler1',
+                                    slides: [
+                                        {
+                                            img: 'img/media-slider/slide_5.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_6.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_4.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_7.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_8.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_3.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_1.webp',
+                                            video: '',
+                                            videoType: ''
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_2.webp',
+                                            video: '',
+                                            videoType: ''
+                                        }
+                                    ],
+                                })
+
+                        .f-factory__accordion(data-js="accordion")
+                            +spoiler({
+                                title: 'Лаборатория ОТК'
+                            })(data-side="0")
+                                .f-factory__desc.text-editor
+                                    p Лаборатория контроля качества для поверки и калибровки технологического оборудования и средств измерения
+                                    p Здесь осуществляется независимый контроль соответствия продукции установленным требованиям
+
+                .f-factory__slide(data-js="tabsBlockSlide")
+                    .f-factory__flex
+                        .f-factory__side
+                            .spoiler-side.active(data-js="spoilerSide" data-id="0")
+                                +media-slider({
+                                    classes: 'spoiler-side__slider',
+                                    fancyGroup: 'factorySlide4Spoiler1',
+                                    slides: [
+                                        {
+                                            img: 'img/media-slider/slide_8.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_7.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_6.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_5.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_4.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_3.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_1.webp',
+                                            video: '',
+                                            videoType: ''
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_2.webp',
+                                            video: '',
+                                            videoType: ''
+                                        }
+                                    ],
+                                })
+                            .spoiler-side(data-js="spoilerSide" data-id="1")
+                                +media-slider({
+                                    classes: 'spoiler-side__slider',
+                                    fancyGroup: 'factorySlide4Spoiler2',
+                                    slides: [
+                                        {
+                                            img: 'img/media-slider/slide_7.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_8.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_6.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_5.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_4.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_3.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_1.webp',
+                                            video: '',
+                                            videoType: ''
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_2.webp',
+                                            video: '',
+                                            videoType: ''
+                                        }
+                                    ],
+                                })
+
+                        .f-factory__accordion(data-js="accordion")
+                            +spoiler({
+                                title: 'Склад готовой продукции'
+                            })(data-side="0")
+                                .f-factory__desc.text-editor
+                                    p Готовая продукция - главный результат производственного процесса предприятия.
+                                    p На склад готовой продукции передаются изделия, соответствующие ТУ, стандартам, и принятым ОТК.
+                            +spoiler({
+                                title: 'Цех изготовления упаковки (деревообработка)'
+                            })(data-side="1")
+                                .f-factory__desc.text-editor
+                                    p Готовая продукция - главный результат производственного процесса предприятия.
+                                    p На склад готовой продукции передаются изделия, соответствующие ТУ, стандартам, и принятым ОТК.
+
+                .f-factory__slide(data-js="tabsBlockSlide")
+                    .f-factory__flex
+                        .f-factory__side
+                            .spoiler-side.active(data-js="spoilerSide" data-id="0")
+                                +media-slider({
+                                    classes: 'spoiler-side__slider',
+                                    fancyGroup: 'factorySlide5Spoiler1',
+                                    slides: [
+                                        {
+                                            img: 'img/media-slider/slide_4.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_8.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_7.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_6.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_5.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_3.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_1.webp',
+                                            video: '',
+                                            videoType: ''
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_2.webp',
+                                            video: '',
+                                            videoType: ''
+                                        }
+                                    ],
+                                })
+                            .spoiler-side(data-js="spoilerSide" data-id="1")
+                                +media-slider({
+                                    classes: 'spoiler-side__slider',
+                                    fancyGroup: 'factorySlide5Spoiler2',
+                                    slides: [
+                                        {
+                                            img: 'img/media-slider/slide_8.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_4.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_7.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_6.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_5.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_3.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_1.webp',
+                                            video: '',
+                                            videoType: ''
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_2.webp',
+                                            video: '',
+                                            videoType: ''
+                                        }
+                                    ],
+                                })
+
+                        .f-factory__accordion(data-js="accordion")
+                            +spoiler({
+                                title: 'Фрезерный станок'
+                            })(data-side="0")
+                                .f-factory__desc.text-editor
+                                    p Одним из этапов механической обработки являются фрезерные работы,  которые позволяют с высокой долей точности создание сложных объемных элементов по заданным параметрам и чертежу
+                            +spoiler({
+                                title: 'Зубонарезной участок'
+                            })(data-side="1")
+                                .f-factory__desc.text-editor
+                                    p Одним из этапов механической обработки являются фрезерные работы,  которые позволяют с высокой долей точности создание сложных объемных элементов по заданным параметрам и чертежу
