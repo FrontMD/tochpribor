@@ -1,0 +1,117 @@
+.factory-model {
+    position: absolute;
+    left: 0;
+    top: 80px;
+    width: 100%;
+    height: calc(100vh - 80px);
+    min-height: calc(100vh - 80px);
+    max-height: calc(100vh - 80px);
+    height: calc(100dvh - 80px);
+    min-height: calc(100dvh - 80px);
+    max-height: calc(100dvh - 80px);
+    z-index: -10;
+    opacity: 0;
+    visibility: hidden;
+    transition: all $tr-time linear;
+
+    @include max(laptop) {
+        height: calc(100vh - 61px);
+        min-height: calc(100vh - 61px);
+        max-height: calc(100vh - 61px);
+        height: calc(100dvh - 61px);
+        min-height: calc(100dvh - 61px);
+        max-height: calc(100dvh - 61px);
+        top: 61px;
+    }
+
+    &.active {
+        z-index: 5;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    &__open {
+        position: absolute;
+        right: 0;
+        bottom: calc(100% + 16px);
+        cursor: pointer;
+        animation-name: flicker;
+        animation-duration: 1.5s;
+        animation-iteration-count: infinite;
+        transition: all $tr-time linear;
+
+        &:hover {
+            color: $c-accent-hover;
+        }
+    }
+
+    &__close {
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        cursor: pointer;
+        transition: all $tr-time linear;
+        z-index: 7;
+
+        &:hover {
+            color: $c-accent-hover;
+        }
+    }
+
+    &__layer {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        z-index: -1;
+        visibility: hidden;
+
+        &.active {
+            visibility: visible;
+            opacity: 1;
+            z-index: 5;
+        }
+    }
+
+    &__container {
+        height: 100%;
+        background-color: #D5D2D3;
+    }
+
+    &__title {
+        margin-top: 6px;
+    }
+
+    &__tag {
+        margin-top: 24px;
+        color: $c-text;
+        opacity: 0.5;
+    }
+}
+
+@keyframes flicker {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    25% {
+        opacity: 0.8;
+    }
+
+    50% {
+        transform: scale(1.05);
+        opacity: 1;
+    }
+
+    75% {
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}

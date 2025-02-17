@@ -1,0 +1,27 @@
+-
+    const defaultFactoryModelProps = {
+        classes: '',
+    }
+
+mixin factory-model(props= defaultFactoryModelProps)
+    -
+        const checkProps = {
+            classes: props.classes ? props.classes : defaultFactoryModelProps.classes,
+        }
+
+    .factory-model(class= checkProps.classes data-js="factoryModel")&attributes(attributes)
+        .section__tag.factory-model__close(data-js="factoryModelClose") [Выйти]
+        .section.section--full.factory-model__layer.active(data-js="factoryModelLayer" data-id="0")
+            .section__container.factory-model__container
+                +title({
+                    classes: 'factory-model__title',
+                    tag: 'h2',
+                    text: 'Как устроен завод',
+                    size: '83',
+                })
+                .section__tag.factory-model__tag [Схема нашего производства]
+
+        .section.section--full.factory-model__layer(data-js="factoryModelLayer" data-id="1")
+        .section.section--full.factory-model__layer(data-js="factoryModelLayer" data-id="2")
+        .section.section--full.factory-model__layer(data-js="factoryModelLayer" data-id="3")
+        .section.section--full.factory-model__layer(data-js="factoryModelLayer" data-id="3")

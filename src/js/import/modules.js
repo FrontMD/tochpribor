@@ -13,6 +13,7 @@
 @@include("../../blocks/modules/history-modal/history-modal.js")
 @@include("../../blocks/modules/team-section/team-section.js")
 @@include("../../blocks/modules/f-factory/f-factory.js")
+@@include("../../blocks/modules/factory-model/factory-model.js")
 
 document.addEventListener('DOMContentLoaded', () => {
     // Скрипты первого экрана главной страницы
@@ -47,4 +48,6 @@ document.addEventListener('DOMContentLoaded', () => {
     teamSection()
     // управляет секцией Наше производство (О заводе)
     fFactoryController()
+    // управляет моделью завода
+    factoryModelController()
 })

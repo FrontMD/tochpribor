@@ -99,6 +99,9 @@
 
     &__accordion {
         flex: 0 0 50%;
+        overflow-y: auto;
+        margin-right: -5px;
+        padding-right: 5px;
     }
 
     .spoiler-side {

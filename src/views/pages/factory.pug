@@ -6,7 +6,7 @@ block variables
 
 block content
     .page-layout.page-layout--bottom(data-js="pageLayout")
-
+        +factory-model
         +img-intro({
             img: 'img/factory/factory_intro_bg.webp',
             breadcrumbs: {
@@ -32,7 +32,7 @@ block content
                 name: 'Советская кинохроника',
                 icon: 'play_t'
             })(data-js="historyModalOpen")
-
+            .factory-model__open.section__tag(data-js="factoryModelOpen") [3D-модель завода]
 
         +h-advantages({
             title: 'На сегодняшний день предприятие имеет все необходимое оборудование и&nbsp;большой штат высококвалифицированных специалистов для осуществления полного цикла производства',
