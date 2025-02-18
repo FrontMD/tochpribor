@@ -24,7 +24,7 @@ function mediaSliderInit() {
                 type: 'progressbar',
             },
         })
-    
+        
         mediaSliderEx.on('slideChange', function() {
             var current = mediaSliderEx.realIndex + 1;
             if (current > slidesNumber)
