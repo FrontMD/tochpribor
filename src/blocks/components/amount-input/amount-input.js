@@ -4,9 +4,9 @@ function amountInput() {
     if(amountFields.length < 1) return
 
     amountFields.forEach(item => {
-
         const inCartBlock =  item.hasAttribute('data-cart')
-        const minValue = inCartBlock ? 0 : 1
+        const minValue = item.querySelector('input').getAttribute('min') ? parseInt(item.querySelector('input').getAttribute('min')) : inCartBlock ? 0 : 1
+        const maxValue = item.querySelector('input').getAttribute('max') ? parseInt(item.querySelector('input').getAttribute('max')) : null
 
         item.addEventListener('click', function(e) {
             e.preventDefault();
@@ -14,7 +14,6 @@ function amountInput() {
         })
 
         item.querySelector('.amount-input__change.amount-input__plus').addEventListener('click', function(e) {
-
 
             let targetInput = item.querySelector('input')
             let currentValue = parseInt(targetInput.value);
@@ -27,9 +26,13 @@ function amountInput() {
                 item.querySelector('.amount-input__change.amount-input__minus').classList.remove('min');
             }
 
-            widthСalculation(targetInput, minValue, inCartBlock)
+            if (maxValue && currentValue < maxValue) {
+                item.querySelector('.amount-input__change.amount-input__plus').classList.remove('max');
+            }
 
-            let event = new Event('change');
+            widthСalculation(targetInput, minValue, maxValue, inCartBlock)
+
+            let event = new Event('input');
             targetInput.dispatchEvent(event);
     
         });
@@ -47,21 +50,25 @@ function amountInput() {
                 e.target.closest(".amount-input__change.amount-input__minus").classList.remove('min');
             }
 
-            widthСalculation(targetInput, minValue, inCartBlock)
-            let event = new Event('change');
+            if (maxValue && currentValue < maxValue) {
+                item.querySelector('.amount-input__change.amount-input__plus').classList.remove('max');
+            }
+
+            widthСalculation(targetInput, minValue, maxValue, inCartBlock)
+            let event = new Event('input');
             targetInput.dispatchEvent(event);
     
         });
 
 
-        item.querySelector('input').addEventListener('change', function(e) {
-            widthСalculation(e.target, minValue, inCartBlock)
+        item.querySelector('input').addEventListener('input', function(e) {
+            widthСalculation(e.target, minValue, maxValue, inCartBlock)
         })
     })
 
 }
 
-function widthСalculation(targetInput, minValue, inCartBlock) {
+function widthСalculation(targetInput, minValue, maxValue, inCartBlock) {
     let item = targetInput.closest('[data-js="amountInput"]')
     let currentValue = targetInput.value;
     let spanForWidth = item.querySelector('.amount-input__width');
@@ -75,10 +82,17 @@ function widthСalculation(targetInput, minValue, inCartBlock) {
     }
 
     if(currentValue < minValue) {
-        targetInput.value = 1
+        targetInput.value = minValue
         if(!inCartBlock) {
             item.querySelector(".amount-input__change.amount-input__minus").classList.add('min');
         }
+        return;
+    }
+
+    if(maxValue && currentValue > maxValue) {
+        targetInput.value = maxValue
+        item.querySelector(".amount-input__change.amount-input__plus").classList.add('max');
+        item.querySelector(".amount-input__change.amount-input__minus").classList.remove('min');
         return;
     }
 
@@ -86,6 +100,12 @@ function widthСalculation(targetInput, minValue, inCartBlock) {
         item.querySelector(".amount-input__change.amount-input__minus").classList.remove('min');
     } else {
         item.querySelector(".amount-input__change.amount-input__minus").classList.add('min');
+    }
+
+    if (maxValue && currentValue >= maxValue) {
+        item.querySelector(".amount-input__change.amount-input__plus").classList.add('max');
+    } else {
+        item.querySelector(".amount-input__change.amount-input__plus").classList.remove('max');
     }
 
     targetInput.value = currentValue.replace(/\D/g,'');

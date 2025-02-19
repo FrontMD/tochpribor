@@ -43,7 +43,7 @@ function productIntro() {
     }
 
     // добавление в корзину и удаление из корзины
-    const productCartBlocks = document.querySelectorAll('[data-js="productCartBlock"]');
+    /*const productCartBlocks = document.querySelectorAll('[data-js="productCartBlock"]');
 
     if(productCartBlocks.length > 0) {
         productCartBlocks.forEach(block => {
@@ -80,5 +80,5 @@ function productIntro() {
             }
 
         })
-    }
+    }*/
 }

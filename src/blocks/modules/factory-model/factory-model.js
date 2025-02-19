@@ -31,7 +31,6 @@ function factoryModelController() {
             const points = layer.querySelectorAll('[data-js="factoryModelPoint"]');
 
             if(points.length > 0) {
-                console.log(points)
                 if(isFirstLevel) {
                     // обработка на первом уровне
                     points.forEach(point => {
@@ -70,6 +69,26 @@ function factoryModelController() {
         pointInfoClose.addEventListener('click', closeInfo)
     }
 
+    // запрет скролла на модели
+    factoryModel.addEventListener('wheel', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        if(e.deltaY > 0) {
+            return
+        } else {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            })
+        }
+    })
+
+    let yDown = null 
+
+    factoryModel.addEventListener('touchstart', touchstartHandler)
+
+    factoryModel.addEventListener('touchmove', touchmoveHandler)
 
     // открывает модель
     function openModel() {
@@ -100,6 +119,7 @@ function factoryModelController() {
 
     // заполняет и открывает модалку
     function openInfo(modalId, currentPoint) {
+        // ТУТ НУЖНО ЗАПОЛНИТЬ МОДАЛКУ
         pointsInactivate();
         currentPoint.classList.add('active');
         pointInfo.classList.add("active");
@@ -120,5 +140,20 @@ function factoryModelController() {
                 activePoint.classList.remove('active')
             })
         }
+    }
+
+    // обработчик касания
+    function touchstartHandler(e) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        yDown = e.touches[0].clientY
+
+        console.log(yDown)
+    }
+
+    // обработчик свайпа
+    function touchmoveHandler(e) {
+        console.log(e)
     }
 }

@@ -25,7 +25,8 @@
         transition: all $tr-time linear;
         color: $c-accent;
 
-        &.min {
+        &.min,
+        &.max {
             pointer-events: none;
             color: $c-bg;
         }
