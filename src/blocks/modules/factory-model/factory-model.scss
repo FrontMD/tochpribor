@@ -173,20 +173,24 @@
 
     &__info {
         position: absolute;
+        overflow: hidden;
         max-width: 624px;
         min-height: 296px;
         z-index: 7;
-        left: 6px;
-        bottom: 6px;
+        left: 16px;
+        bottom: 16px;
         visibility: hidden;
         opacity: 0;
         transition: all $tr-time linear;
 
+        &.point-info--right {
+            left: auto;
+            right: 16px;
+        }
+
         &.active {
             visibility: visible;
             opacity: 1;
-            left: 16px;
-            bottom: 16px;
         }
     }
 }

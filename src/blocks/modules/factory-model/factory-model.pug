@@ -9,65 +9,8 @@ mixin factory-model(props= defaultFactoryModelProps)
             classes: props.classes ? props.classes : defaultFactoryModelProps.classes,
         }
 
-        const pointSvg = `
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="5" y="5" width="10" height="10" rx="2" fill="currentColor"/>
-                <path d="M1 7V1H7" stroke="currentColor"/>
-                <path d="M13 1L19 1L19 7" stroke="currentColor"/>
-                <path d="M19 13L19 19L13 19" stroke="currentColor"/>
-                <path d="M7 19L1 19L1 13" stroke="currentColor"/>
-            </svg>`
-
     .factory-model(class= checkProps.classes data-js="factoryModel")&attributes(attributes)
         .section__tag.factory-model__close(data-js="factoryModelClose") [Выйти]
-
-        .factory-model__info.point-info(data-js="pointInfo")
-            .point-info__close(data-js="pointInfoClose")
-                svg 
-                    use(xlink:href=`img/sprites/sprite.svg#close`)
-
-            .point-info__media
-                +media-slider({
-                    classes: 'point-info__slider',
-                    fancyGroup: 'factoryModelGroup',
-                    slides: [
-                        {
-                            img: 'img/media-slider/slide_1.webp',
-                            video: '',
-                            videoType: ''
-                        },
-                        {
-                            img: 'img/media-slider/slide_4.webp',
-                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
-                            videoType: 'iframe'
-                        },
-                        {
-                            img: 'img/media-slider/slide_2.webp',
-                            video: '',
-                            videoType: ''
-                        },
-                        {
-                            img: 'img/media-slider/slide_4.webp',
-                            video: 'public/video/news.mp4',
-                            videoType: 'video'
-                        },
-                        {
-                            img: 'img/media-slider/slide_3.webp',
-                            video: '',
-                            videoType: ''
-                        },
-                    ]
-                })
-
-            .point-info__desc
-                .point__info__title.title--26(data-js="pointInfoTitle") Шлифовальный участок
-                .point__info__text.text-editor(data-js="pointInfoText") На шлифовальном участке выполняется процесс окончательной обработки деталей путем снятия с них тонкого слоя материала вращающимся абразивным элементом
-                +btn({
-                    classes: "point-info__btn",
-                    name: 'Подробнее про участок',
-                    cMode: 'transparent-red',
-                    icon: 'arrow_enter'
-                })(data-js="pointInfoBtn")
 
         .section.section--full.factory-model__layer.factory-model__layer--first.active(data-js="factoryModelLayer" data-level="1" data-id="0")
             .section__container.factory-model__container
@@ -83,16 +26,20 @@ mixin factory-model(props= defaultFactoryModelProps)
                 .factory-model__points(data-js="factoryModelPoints")
                     .factory-model__point.factory-model__point--left(data-js="factoryModelPoint" data-layer="1" style="left: 56%; top: 24%;")
                         | Производственные участки
-                        != pointSvg
+                        svg 
+                            use(xlink:href=`img/sprites/sprite.svg#factory_model_point`)
                     .factory-model__point.factory-model__point--left(data-js="factoryModelPoint" data-layer="2" style="left: 57%; top: 56%;")
                         | Склады
-                        != pointSvg
+                        svg 
+                            use(xlink:href=`img/sprites/sprite.svg#factory_model_point`)
                     .factory-model__point.factory-model__point--left(data-js="factoryModelPoint" data-layer="3" style="left: 82%; top: 37%;")
                         | Упаковка и погрузка
-                        != pointSvg
+                        svg 
+                            use(xlink:href=`img/sprites/sprite.svg#factory_model_point`)
                     .factory-model__point.factory-model__point--right(data-js="factoryModelPoint" data-layer="4" style="right: 67%; top: 46%;")
                         | Инжиниринг и контроль качества
-                        != pointSvg
+                        svg 
+                            use(xlink:href=`img/sprites/sprite.svg#factory_model_point`)
 
         .section.section--full.factory-model__layer(data-js="factoryModelLayer" data-level="2" data-id="1")
             .section__container.factory-model__container
@@ -106,15 +53,211 @@ mixin factory-model(props= defaultFactoryModelProps)
                 })
                 .section__tag.factory-model__tag.factory-model__back(data-js="factoryModelBack") [Назад]
                 .factory-model__points(data-js="factoryModelPoints")
-                    .factory-model__point.factory-model__point--right(data-js="factoryModelPoint" data-info="0" style="right: 67%; top: 46%;")
-                        | Лаборатория мер твердости
-                        != pointSvg
-                    .factory-model__point.factory-model__point--right(data-js="factoryModelPoint" data-info="1" style="right: 67%; top: 56%;")
-                        | Участок сборки ДПУ
-                        != pointSvg
-                    .factory-model__point.factory-model__point--left(data-js="factoryModelPoint" data-info="2" style="left: 76%; top: 45%;")
-                        | Деревообрабатывающий участок
-                        != pointSvg
+                    .factory-model__point.factory-model__point--right(data-js="factoryModelPoint" data-info="0" style="right: 65%; top: 42%;")
+                        | Заготовительный участок
+                        svg 
+                            use(xlink:href=`img/sprites/sprite.svg#factory_model_point`)
+                    .factory-model__point.factory-model__point--left(data-js="factoryModelPoint" data-info="1" style="left: 66%; top: 17%;")
+                        | Участок сварки
+                        svg 
+                            use(xlink:href=`img/sprites/sprite.svg#factory_model_point`)
+                    .factory-model__point.factory-model__point--left(data-js="factoryModelPoint" data-info="2" style="left: 62%; top: 42%;")
+                        | Участок порошковой окраски
+                        svg 
+                            use(xlink:href=`img/sprites/sprite.svg#factory_model_point`)
+
+                .factory-model__modals
+                    .factory-model__info.point-info.point-info--right(data-js="pointInfo" data-id="0")
+                        .point-info__close(data-js="pointInfoClose")
+                            svg 
+                                use(xlink:href=`img/sprites/sprite.svg#close`)
+
+                        .point-info__media
+                            +media-slider({
+                                classes: 'point-info__slider',
+                                fancyGroup: 'factoryModelGroup1',
+                                    slides: [
+                                        {
+                                            img: 'img/media-slider/slide_5.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_4.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_6.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_7.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_8.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_3.webp',
+                                            video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                            videoType: 'iframe'
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_1.webp',
+                                            video: '',
+                                            videoType: ''
+                                        },
+                                        {
+                                            img: 'img/media-slider/slide_2.webp',
+                                            video: '',
+                                            videoType: ''
+                                        }
+                                    ],
+                                })
+
+                        .point-info__desc
+                            .point__info__title.title--26(data-js="pointInfoTitle") Заготовительный участок
+                            .point__info__text.text-editor(data-js="pointInfoText") На шлифовальном участке выполняется процесс окончательной обработки деталей путем снятия с них тонкого слоя материала вращающимся абразивным элементом
+                            +btn({
+                                classes: "point-info__btn",
+                                type: 'button',
+                                name: 'Подробнее про участок',
+                                cMode: 'transparent-red',
+                                icon: 'arrow_enter'
+                            })(data-js="pointInfoMore")
+
+                    .factory-model__info.point-info.point-info(data-js="pointInfo" data-id="1")
+                        .point-info__close(data-js="pointInfoClose")
+                            svg 
+                                use(xlink:href=`img/sprites/sprite.svg#close`)
+
+                        .point-info__media
+                            +media-slider({
+                                classes: 'point-info__slider',
+                                fancyGroup: 'factoryModelGroup2',
+                                slides: [
+                                    {
+                                        img: 'img/media-slider/slide_5.webp',
+                                        video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                        videoType: 'iframe'
+                                    },
+                                    {
+                                        img: 'img/media-slider/slide_4.webp',
+                                        video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                        videoType: 'iframe'
+                                    },
+                                    {
+                                        img: 'img/media-slider/slide_6.webp',
+                                        video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                        videoType: 'iframe'
+                                    },
+                                    {
+                                        img: 'img/media-slider/slide_7.webp',
+                                        video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                        videoType: 'iframe'
+                                    },
+                                    {
+                                        img: 'img/media-slider/slide_8.webp',
+                                        video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                        videoType: 'iframe'
+                                    },
+                                    {
+                                        img: 'img/media-slider/slide_3.webp',
+                                        video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                        videoType: 'iframe'
+                                    },
+                                    {
+                                        img: 'img/media-slider/slide_1.webp',
+                                        video: '',
+                                        videoType: ''
+                                    },
+                                    {
+                                        img: 'img/media-slider/slide_2.webp',
+                                        video: '',
+                                        videoType: ''
+                                    }
+                                ],
+                            })
+
+                        .point-info__desc
+                            .point__info__title.title--26(data-js="pointInfoTitle") Участок сварки
+                            .point__info__text.text-editor(data-js="pointInfoText") На шлифовальном участке выполняется процесс окончательной обработки деталей путем снятия с них тонкого слоя материала вращающимся абразивным элементом
+                            +btn({
+                                classes: "point-info__btn",
+                                type: 'button',
+                                name: 'Подробнее про участок',
+                                cMode: 'transparent-red',
+                                icon: 'arrow_enter'
+                            })(data-js="pointInfoMore")
+
+                    .factory-model__info.point-info(data-js="pointInfo" data-id="2")
+                        .point-info__close(data-js="pointInfoClose")
+                            svg 
+                                use(xlink:href=`img/sprites/sprite.svg#close`)
+
+                        .point-info__media
+                            +media-slider({
+                                classes: 'point-info__slider',
+                                fancyGroup: 'factoryModelGroup3',
+                                slides: [
+                                    {
+                                        img: 'img/media-slider/slide_5.webp',
+                                        video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                        videoType: 'iframe'
+                                    },
+                                    {
+                                        img: 'img/media-slider/slide_4.webp',
+                                        video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                        videoType: 'iframe'
+                                    },
+                                    {
+                                        img: 'img/media-slider/slide_6.webp',
+                                        video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                        videoType: 'iframe'
+                                    },
+                                    {
+                                        img: 'img/media-slider/slide_7.webp',
+                                        video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                        videoType: 'iframe'
+                                    },
+                                    {
+                                        img: 'img/media-slider/slide_8.webp',
+                                        video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                        videoType: 'iframe'
+                                    },
+                                    {
+                                        img: 'img/media-slider/slide_3.webp',
+                                        video: 'https://vkvideo.ru/video_ext.php?oid=-228066748&id=456239041&hd=3&autoplay=1&js_api=1',
+                                        videoType: 'iframe'
+                                    },
+                                    {
+                                        img: 'img/media-slider/slide_1.webp',
+                                        video: '',
+                                        videoType: ''
+                                    },
+                                    {
+                                        img: 'img/media-slider/slide_2.webp',
+                                        video: '',
+                                        videoType: ''
+                                    }
+                                ],
+                            })
+
+                        .point-info__desc
+                            .point__info__title.title--26(data-js="pointInfoTitle") Участок порошковой окраски
+                            .point__info__text.text-editor(data-js="pointInfoText") На шлифовальном участке выполняется процесс окончательной обработки деталей путем снятия с них тонкого слоя материала вращающимся абразивным элементом
+                            +btn({
+                                classes: "point-info__btn",
+                                type: 'button',
+                                name: 'Подробнее про участок',
+                                cMode: 'transparent-red',
+                                icon: 'arrow_enter'
+                            })(data-js="pointInfoMore")
 
         .section.section--full.factory-model__layer(data-js="factoryModelLayer" data-level="2" data-id="2")
             .section__container.factory-model__container

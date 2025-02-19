@@ -17,19 +17,18 @@ function factoryModelController() {
         factoryModelClose.addEventListener('click', function() {
             closeModel();
             closeInfo();
+            toggleLayers(0);
         })
     }
     
     //Клики по поинтам
     const factoryModelLayers = factoryModel.querySelectorAll('[data-js="factoryModelLayer"]');
-
-    const pointInfo = factoryModel.querySelector('[data-js="pointInfo"]')
-
+    
     if(factoryModelLayers.length > 0) {
         factoryModelLayers.forEach(layer => {
             let isFirstLevel = layer.dataset.level == 1 ? true : false;
             const points = layer.querySelectorAll('[data-js="factoryModelPoint"]');
-
+            
             if(points.length > 0) {
                 if(isFirstLevel) {
                     // обработка на первом уровне
@@ -62,11 +61,26 @@ function factoryModelController() {
         })
     }
 
-    // кнопка закрытия модалки
-    const pointInfoClose = pointInfo.querySelector('[data-js="pointInfoClose"]');
-    
-    if(pointInfoClose) {
-        pointInfoClose.addEventListener('click', closeInfo)
+    // кнопка закрытия модалки и кнопка Подробнее в модалке
+    const pointsInfoAll = factoryModel.querySelectorAll('[data-js="pointInfo"]');
+
+    if(pointsInfoAll.length > 0) {
+        pointsInfoAll.forEach(pointInfo => {
+            // закрытие
+            const pointInfoClose = pointInfo.querySelector('[data-js="pointInfoClose"]');
+
+            if(pointInfoClose) {
+                pointInfoClose.addEventListener('click', closeInfo)
+            }
+
+            // подробнее
+            const pointInfoMore = pointInfo.querySelector('[data-js="pointInfoMore"]');
+
+            if(pointInfoMore) {
+
+                pointInfoMore.addEventListener('click', scrollToSpoilers)
+            }
+        })
     }
 
     // запрет скролла на модели
@@ -85,9 +99,7 @@ function factoryModelController() {
     })
 
     let yDown = null 
-
     factoryModel.addEventListener('touchstart', touchstartHandler)
-
     factoryModel.addEventListener('touchmove', touchmoveHandler)
 
     // открывает модель
@@ -117,17 +129,57 @@ function factoryModelController() {
         })
     }
 
-    // заполняет и открывает модалку
-    function openInfo(modalId, currentPoint) {
-        // ТУТ НУЖНО ЗАПОЛНИТЬ МОДАЛКУ
-        pointsInactivate();
-        currentPoint.classList.add('active');
-        pointInfo.classList.add("active");
+    // открывает модалку
+    function openInfo(infoId, currentPoint) {
+        const targetInfo = factoryModel.querySelector(`[data-js="pointInfo"][data-id="${infoId}"]`);
+
+        if(targetInfo) {
+            pointsInactivate();
+            closeInfo()
+            currentPoint.classList.add('active');
+
+            const slider = targetInfo.querySelector('[data-js="mediaSlider"]')
+            if(slider) {
+                slider.swiper.update()
+            }
+
+            targetInfo.classList.add("active");
+        }
     }
 
-    // закрывает модалку
+    // открывает нужный споилер и прокручивает к нему
+    function scrollToSpoilers(e) {
+        const spoilersSection = document.querySelector('[data-js="fFactory"]');
+
+        if(!spoilersSection) return
+
+
+        // открытие нужной вкладки и споилера
+        const target = e.target
+        const targetId = target.closest('[data-js="pointInfo"]').dataset.id
+        const targetSpoiler = spoilersSection.querySelector(`[data-js="spoiler"][data-id="${targetId}"]`);
+        const targetSlideIndex = targetSpoiler.closest('[data-js="tabsBlockSlide"]').index();
+        const targetTab = spoilersSection.querySelector(`[data-js="tabsBlockTab"][data-index="${targetSlideIndex}"]`);
+
+        targetTab.click();
+        target.spoiler.querySelector('.spoiler__intro').click()
+
+        // скролл к секции спойлеров
+        const scrollTopOffset = document.querySelector('[data-js="siteHeader"]') ? document.querySelector('[data-js="siteHeader"]').offsetHeight : '0'
+        const targetScrollPos = Math.ceil($(spoilersSection).offset().top - scrollTopOffset)
+        window.scrollTo({
+            top: targetScrollPos,
+            behavior: 'smooth'
+        })
+
+    }
+
+    // закрывает модалки
     function closeInfo() {
-        pointInfo.classList.remove("active");
+        const activePointsInfo = factoryModel.querySelectorAll('.active[data-js="pointInfo"]');
+        activePointsInfo.forEach(currentPoint => {
+            currentPoint.classList.remove("active");
+        });
         pointsInactivate();
     }
 
@@ -148,12 +200,19 @@ function factoryModelController() {
         e.stopPropagation();
 
         yDown = e.touches[0].clientY
-
-        console.log(yDown)
     }
 
     // обработчик свайпа
     function touchmoveHandler(e) {
-        console.log(e)
+        let yDiff = yDown - e.touches[0].clientY;
+
+        if(yDiff > 0) {
+            return
+        } else {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            })
+        }
     }
 }
