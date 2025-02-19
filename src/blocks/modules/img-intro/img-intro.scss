@@ -22,6 +22,20 @@
         max-height: none;
     }
 
+    &--factory {
+        @include max(tablet) {
+            height: auto;
+            min-height: 51vw;
+            max-height: none;
+        }
+
+        @include max(mobile) {
+            height: auto;
+            min-height: 51vw;
+            max-height: none;
+        }
+    }
+
     &__bg {
         position: absolute;
         left: 0;
@@ -50,6 +64,13 @@
 
     &--dark &__bg::before {
         display: none;
+    }
+
+    &--factory &__bg::before {
+        @include max(tablet) {
+            display: block;
+            background: rgba(255, 255, 255, 0.3);
+        }
     }
 
     &__container.section__container {

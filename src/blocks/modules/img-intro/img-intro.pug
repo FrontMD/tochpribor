@@ -21,7 +21,7 @@ mixin img-intro(props= defaultImgIntroProps)
             cMode: props.cMode ? props.cMode : defaultImgIntroProps.cMode
         }
 
-        let cModeClass = checkProps.cMode ? `img-intro--${checkProps.cMode}` : ''
+        let cModeClass = checkProps.cMode ? ` img-intro--${checkProps.cMode}` : ''
 
     section.section.section--full.section--transparent.img-intro(class= checkProps.classes + cModeClass)&attributes(attributes)
         .img-intro__bg

@@ -9,7 +9,7 @@
     height: calc(100dvh - 80px);
     min-height: calc(100dvh - 80px);
     max-height: calc(100dvh - 80px);
-    z-index: -10;
+    z-index: -100;
     opacity: 0;
     visibility: hidden;
     transition: all $tr-time linear;
@@ -22,6 +22,12 @@
         min-height: calc(100dvh - 61px);
         max-height: calc(100dvh - 61px);
         top: 61px;
+    }
+
+    @include max(tablet) {
+        height: auto;
+        min-height: 51vw;
+        max-height: none;
     }
 
     &.active {
@@ -118,11 +124,10 @@
         display: flex;
         align-items: center;
         justify-content: flex-end;
-        gap: 16px;
+        gap: 1.11vw;
         padding: 6px;
         border-radius: 7px;
         background-color: $c-white;
-        color: $c-text;
         font-size: 1.111vw;
         line-height: 1.1em;
         letter-spacing: -0.01em;
@@ -131,6 +136,11 @@
         overflow: hidden;
         transition: all $tr-time linear;
         white-space: nowrap;
+        color: $c-accent;
+
+        @include max(tablet) {
+            max-width: 22.92vw;
+        }
 
         &:hover,
         &.active {
@@ -174,7 +184,7 @@
     &__info {
         position: absolute;
         overflow: hidden;
-        max-width: 624px;
+        max-width: 645px;
         min-height: 296px;
         z-index: 7;
         left: 16px;

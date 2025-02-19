@@ -8,6 +8,7 @@ block content
     .page-layout.page-layout--bottom(data-js="pageLayout")
         +factory-model
         +img-intro({
+            classes: 'img-intro--factory',
             img: 'img/factory/factory_intro_bg.webp',
             breadcrumbs: {
                 cMode: 'grey',
@@ -26,7 +27,7 @@ block content
             tag: '[Основан в 1950 году]',
             text: 'Основу производства Группы компаний “Точприбор” составляет ООО “Завод испытательных приборов” Мы являемся правоприемником известного завода ОАО “Точприбор” в г.Иваново',
             cMode: 'dark'
-        })
+        })(data-js="factoryIntro")
             +btn({
                 size: 'middle',
                 name: 'Советская кинохроника',

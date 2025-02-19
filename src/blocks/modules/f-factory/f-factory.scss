@@ -25,6 +25,10 @@
         justify-content: space-between;
         grid-template-columns: minmax(0, 41%) minmax(0, 50%);
         gap: 32px;
+
+        @include max(laptop) {
+            grid-template-columns: minmax(0, 41%) minmax(0, 58%);
+        }
     }
 
     &__flex {
@@ -32,6 +36,7 @@
         display: flex;
         align-items: stretch;
         justify-content: space-between;
+        gap: 32px;
     }
 
     &__tabs {
@@ -43,11 +48,19 @@
         @include max(large) {
             grid-template-columns: repeat(4, minmax(0, 1fr));
         }
+
+        @include max(laptop) {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
     }
 
     &__tab {
         height: 100%;
         max-height: fit-content;
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         padding: 4px 8px;
         font-weight: 400;
         font-size: 16px;
@@ -102,6 +115,10 @@
         overflow-y: auto;
         margin-right: -5px;
         padding-right: 5px;
+
+        @include max(laptop) {
+            flex: 0 1 58%;
+        }
     }
 
     .spoiler-side {
