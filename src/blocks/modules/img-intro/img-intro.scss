@@ -22,7 +22,7 @@
         max-height: none;
     }
 
-    &--factory {
+    /*&--factory {
         @include max(tablet) {
             height: auto;
             min-height: 51vw;
@@ -34,7 +34,7 @@
             min-height: 51vw;
             max-height: none;
         }
-    }
+    }*/
 
     &__bg {
         position: absolute;
@@ -67,9 +67,9 @@
     }
 
     &--factory &__bg::before {
-        @include max(tablet) {
+        @include max(mobile) {
             display: block;
-            background: rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.6);
         }
     }
 
@@ -105,6 +105,16 @@
 
     &__title {
         max-width: 1120px;
+    }
+
+    &--factory &__title {
+        @include max(tablet) {
+            font-size: 53px;
+        }
+
+        @include max(mobile) {
+            font-size: 40px;
+        }
     }
 
     &--dark &__title {

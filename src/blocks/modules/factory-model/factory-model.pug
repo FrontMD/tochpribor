@@ -12,6 +12,8 @@ mixin factory-model(props= defaultFactoryModelProps)
     .factory-model(class= checkProps.classes data-js="factoryModel")&attributes(attributes)
         .section__tag.factory-model__close(data-js="factoryModelClose") [Выйти]
 
+        .factory-model__overlay
+
         .section.section--full.factory-model__layer.factory-model__layer--first.active(data-js="factoryModelLayer" data-level="1" data-id="0")
             .section__container.factory-model__container
                 .factory-model__img
@@ -25,19 +27,19 @@ mixin factory-model(props= defaultFactoryModelProps)
                 .section__tag.factory-model__tag [Схема нашего производства]
                 .factory-model__points(data-js="factoryModelPoints")
                     .factory-model__point.factory-model__point--left(data-js="factoryModelPoint" data-layer="1" style="left: 56%; top: 24%;")
-                        | Производственные участки
+                        .text Производственные участки
                         svg 
                             use(xlink:href=`img/sprites/sprite.svg#factory_model_point`)
                     .factory-model__point.factory-model__point--left(data-js="factoryModelPoint" data-layer="2" style="left: 57%; top: 56%;")
-                        | Склады
+                        .text Склады
                         svg 
                             use(xlink:href=`img/sprites/sprite.svg#factory_model_point`)
-                    .factory-model__point.factory-model__point--left(data-js="factoryModelPoint" data-layer="3" style="left: 82%; top: 37%;")
-                        | Упаковка и погрузка
+                    .factory-model__point.factory-model__point--left(data-js="factoryModelPoint" data-layer="3" style="left: 81%; top: 37%;")
+                        .text Упаковка и погрузка
                         svg 
                             use(xlink:href=`img/sprites/sprite.svg#factory_model_point`)
                     .factory-model__point.factory-model__point--right(data-js="factoryModelPoint" data-layer="4" style="right: 67%; top: 46%;")
-                        | Инжиниринг и контроль качества
+                        .text Инжиниринг и контроль качества
                         svg 
                             use(xlink:href=`img/sprites/sprite.svg#factory_model_point`)
 
@@ -54,15 +56,15 @@ mixin factory-model(props= defaultFactoryModelProps)
                 .section__tag.factory-model__tag.factory-model__back(data-js="factoryModelBack") [Назад]
                 .factory-model__points(data-js="factoryModelPoints")
                     .factory-model__point.factory-model__point--right(data-js="factoryModelPoint" data-info="1" style="right: 65%; top: 42%;")
-                        | Заготовительный участок
+                        .text Заготовительный участок
                         svg 
                             use(xlink:href=`img/sprites/sprite.svg#factory_model_point`)
                     .factory-model__point.factory-model__point--left(data-js="factoryModelPoint" data-info="2" style="left: 66%; top: 17%;")
-                        | Участок сварки
+                        .text Участок сварки
                         svg 
                             use(xlink:href=`img/sprites/sprite.svg#factory_model_point`)
                     .factory-model__point.factory-model__point--left(data-js="factoryModelPoint" data-info="7" style="left: 62%; top: 42%;")
-                        | Участок порошковой окраски
+                        .text Участок порошковой окраски
                         svg 
                             use(xlink:href=`img/sprites/sprite.svg#factory_model_point`)
 
@@ -121,8 +123,8 @@ mixin factory-model(props= defaultFactoryModelProps)
                                 })
 
                         .point-info__desc
-                            .point__info__title.title--26(data-js="pointInfoTitle") Заготовительный участок
-                            .point__info__text.text-editor(data-js="pointInfoText") Заготовительный участок входит в&nbsp;структуру основных цехов завода, предназначен для обеспечения заготовками производства и является одним из первых этапов технологического процесса.
+                            .point-info__title.title--26 Заготовительный участок
+                            .point-info__text.text-editor Заготовительный участок входит в&nbsp;структуру основных цехов завода, предназначен для обеспечения заготовками производства и является одним из первых этапов технологического процесса.
                             +btn({
                                 classes: "point-info__btn",
                                 type: 'button',
@@ -185,8 +187,8 @@ mixin factory-model(props= defaultFactoryModelProps)
                             })
 
                         .point-info__desc
-                            .point__info__title.title--26(data-js="pointInfoTitle") Участок сварки
-                            .point__info__text.text-editor(data-js="pointInfoText") Сварочный участок организован в составе завода для изготовления определенной заданной продукции. В состав входят оборудование, посредством которого выполняют сборку и сварку сборочных единиц.
+                            .point-info__title.title--26 Участок сварки
+                            .point-info__text.text-editor Сварочный участок организован в составе завода для изготовления определенной заданной продукции. В состав входят оборудование, посредством которого выполняют сборку и сварку сборочных единиц.
                             +btn({
                                 classes: "point-info__btn",
                                 type: 'button',
@@ -249,8 +251,8 @@ mixin factory-model(props= defaultFactoryModelProps)
                             })
 
                         .point-info__desc
-                            .point__info__title.title--26(data-js="pointInfoTitle") Участок порошковой окраски
-                            .point__info__text.text-editor(data-js="pointInfoText") Для защитно-декоративной отделки изделий на предприятии выполняется порошковая окраска деталей. Камера порошковой окраски используется для горячего.
+                            .point-info__title.title--26 Участок порошковой окраски
+                            .point-info__text.text-editor Для защитно-декоративной отделки изделий на предприятии выполняется порошковая окраска деталей. Камера порошковой окраски используется для горячего.
                             +btn({
                                 classes: "point-info__btn",
                                 type: 'button',
@@ -272,7 +274,7 @@ mixin factory-model(props= defaultFactoryModelProps)
                 .section__tag.factory-model__tag.factory-model__back(data-js="factoryModelBack") [Назад]
                 .factory-model__points(data-js="factoryModelPoints")
                     .factory-model__point.factory-model__point--left(data-js="factoryModelPoint" data-info="17" style="left: 78%; top: 36%;")
-                        | Склад готовой продукции
+                        .text Склад готовой продукции
                         svg 
                             use(xlink:href=`img/sprites/sprite.svg#factory_model_point`)
 
@@ -331,8 +333,8 @@ mixin factory-model(props= defaultFactoryModelProps)
                             })
 
                         .point-info__desc
-                            .point__info__title.title--26(data-js="pointInfoTitle") Склад готовой продукции
-                            .point__info__text.text-editor(data-js="pointInfoText") Готовая продукция - главный результат производственного процесса предприятия. На склад готовой продукции передаются изделия, соответствующие ТУ, стандартам, и принятым ОТК.
+                            .point-info__title.title--26 Склад готовой продукции
+                            .point-info__text.text-editor Готовая продукция - главный результат производственного процесса предприятия. На склад готовой продукции передаются изделия, соответствующие ТУ, стандартам, и принятым ОТК.
                             +btn({
                                 classes: "point-info__btn",
                                 type: 'button',
@@ -353,8 +355,8 @@ mixin factory-model(props= defaultFactoryModelProps)
                 })
                 .section__tag.factory-model__tag.factory-model__back(data-js="factoryModelBack") [Назад]
                 .factory-model__points(data-js="factoryModelPoints")
-                    .factory-model__point.factory-model__point--left(data-js="factoryModelPoint" data-info="18" style="left: 78%; top: 46%;")
-                        | Деревообрабатывающий участок
+                    .factory-model__point.factory-model__point--left(data-js="factoryModelPoint" data-info="18" style="left: 77%; top: 46%;")
+                        .text Деревообрабатывающий участок
                         svg 
                             use(xlink:href=`img/sprites/sprite.svg#factory_model_point`)
 
@@ -413,8 +415,8 @@ mixin factory-model(props= defaultFactoryModelProps)
                             })
 
                         .point-info__desc
-                            .point__info__title.title--26(data-js="pointInfoTitle") Деревообрабатывающий участок
-                            .point__info__text.text-editor(data-js="pointInfoText") На нашем предприятии изготавливается абсолютно любая упаковка и тара для производимого оборудования
+                            .point-info__title.title--26 Деревообрабатывающий участок
+                            .point-info__text.text-editor На нашем предприятии изготавливается абсолютно любая упаковка и тара для производимого оборудования
                             +btn({
                                 classes: "point-info__btn",
                                 type: 'button',
@@ -436,15 +438,15 @@ mixin factory-model(props= defaultFactoryModelProps)
                 .section__tag.factory-model__tag.factory-model__back(data-js="factoryModelBack") [Назад]
                 .factory-model__points(data-js="factoryModelPoints")
                     .factory-model__point.factory-model__point--right(data-js="factoryModelPoint" data-info="14" style="right: 70%; top: 50%;")
-                        | Конструкторский отдел
+                        .text Конструкторский отдел
                         svg 
                             use(xlink:href=`img/sprites/sprite.svg#factory_model_point`)
                     .factory-model__point.factory-model__point--left(data-js="factoryModelPoint" data-info="15" style="left: 34%; top: 48%;")
-                        | Бюро технической документации
+                        .text Бюро технической документации
                         svg 
                             use(xlink:href=`img/sprites/sprite.svg#factory_model_point`)
                     .factory-model__point.factory-model__point--left(data-js="factoryModelPoint" data-info="16" style="left: 33%; top: 56%;")
-                        | Метрологическая служба. ОТК
+                        .text Метрологическая служба. ОТК
                         svg 
                             use(xlink:href=`img/sprites/sprite.svg#factory_model_point`)
 
@@ -503,8 +505,8 @@ mixin factory-model(props= defaultFactoryModelProps)
                             })
 
                         .point-info__desc
-                            .point__info__title.title--26(data-js="pointInfoTitle") Конструкторский отдел
-                            .point__info__text.text-editor(data-js="pointInfoText") На шлифовальном участке выполняется процесс окончательной обработки деталей путем снятия с них тонкого слоя материала вращающимся абразивным элементом
+                            .point-info__title.title--26 Конструкторский отдел
+                            .point-info__text.text-editor На шлифовальном участке выполняется процесс окончательной обработки деталей путем снятия с них тонкого слоя материала вращающимся абразивным элементом
                             +btn({
                                 classes: "point-info__btn",
                                 type: 'button',
@@ -567,8 +569,8 @@ mixin factory-model(props= defaultFactoryModelProps)
                             })
 
                         .point-info__desc
-                            .point__info__title.title--26(data-js="pointInfoTitle") Бюро технической документации
-                            .point__info__text.text-editor(data-js="pointInfoText") На шлифовальном участке выполняется процесс окончательной обработки деталей путем снятия с них тонкого слоя материала вращающимся абразивным элементом
+                            .point-info__title.title--26 Бюро технической документации
+                            .point-info__text.text-editor На шлифовальном участке выполняется процесс окончательной обработки деталей путем снятия с них тонкого слоя материала вращающимся абразивным элементом
                             +btn({
                                 classes: "point-info__btn",
                                 type: 'button',
@@ -631,8 +633,8 @@ mixin factory-model(props= defaultFactoryModelProps)
                             })
 
                         .point-info__desc
-                            .point__info__title.title--26(data-js="pointInfoTitle") Метрологическая служба. ОТК
-                            .point__info__text.text-editor(data-js="pointInfoText") На шлифовальном участке выполняется процесс окончательной обработки деталей путем снятия с них тонкого слоя материала вращающимся абразивным элементом
+                            .point-info__title.title--26 Метрологическая служба. ОТК
+                            .point-info__text.text-editor На шлифовальном участке выполняется процесс окончательной обработки деталей путем снятия с них тонкого слоя материала вращающимся абразивным элементом
                             +btn({
                                 classes: "point-info__btn",
                                 type: 'button',

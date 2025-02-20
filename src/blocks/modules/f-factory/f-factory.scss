@@ -29,6 +29,14 @@
         @include max(laptop) {
             grid-template-columns: minmax(0, 41%) minmax(0, 58%);
         }
+
+        @include max(tablet) {
+            grid-template-columns: minmax(0, 1fr);
+        }
+
+        @include max(mobile) {
+            gap: 16px;
+        }
     }
 
     &__flex {
@@ -37,6 +45,12 @@
         align-items: stretch;
         justify-content: space-between;
         gap: 32px;
+
+        @include max(tablet) {
+            flex-direction: column;
+            gap: 16px;
+            justify-content: flex-start;
+        }
     }
 
     &__tabs {
@@ -51,6 +65,22 @@
 
         @include max(laptop) {
             grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        @include max(tablet) {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            padding-left: 316px;
+            min-height: 300px;
+        }
+
+        @include max(mobile) {
+            display: flex;
+            align-items: stretch;
+            padding-left: 0;
+            min-height: auto;
+            overflow-x: auto;
+            padding-bottom: 5px;
+            margin-bottom: -5px;
         }
     }
 
@@ -86,13 +116,39 @@
             font-weight: 400;
             font-size: 26px;
             line-height: 1em;
-            letter-spacing: -2%;
+            letter-spacing: -0.02em;
+
+            @include max(mobile) {
+                margin-top: 0;
+                font-size: 16px;
+            }
+
+            @include max(xs) {
+                font-size: 12px;
+            }
+        }
+
+        @include max(mobile) {
+            white-space: nowrap;
+            flex-direction: row;
+            align-items: center;
+            line-height: 1em;
+            gap: 8px;
+        }
+
+        @include max(xs) {
+            font-size: 12px;
         }
     }
 
     &__body {
         margin-top: 16px;
         overflow: hidden;
+
+        @include max(tablet) {
+            position: relative;
+            overflow: visible;
+        }
     }
 
     &__slide {
@@ -108,6 +164,27 @@
         width: 41%;
         flex: 0 0 41%;
         height: 100%;
+
+        @include max(tablet) {
+            position: absolute;
+            bottom: calc(100% + 16px);
+            left: 0;
+            width: 300px;
+            height: 300px;
+        }
+
+        @include max(mobile) {
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            flex-basis: auto;
+        }
+
+        @include max(mobile) {
+            max-width: 250px;
+        }
     }
 
     &__accordion {
@@ -118,6 +195,20 @@
 
         @include max(laptop) {
             flex: 0 1 58%;
+        }
+
+        @include max(tablet) {
+            flex: 0 0 100%;
+        }
+
+        @include max(mobile) {
+            flex: 0 1 auto;
+        }
+
+        .spoiler .spoiler__title {
+            @include max(xs) {
+                font-size: 22px;
+            }
         }
     }
 
@@ -135,6 +226,54 @@
 
             .media-slider__slide {
                 height: 100%;
+            }
+
+            @include max(tablet) {
+                .media-slider__play {
+                    left: 6px;
+                    bottom: 6px;
+                    min-width: 169px;
+                    padding: 9px 16px;
+                    min-height: 40px;
+                }
+
+                .media-slider__pagination {
+                    top: 9px;
+                    left: 9px;
+                    width: calc(100% - 18px);
+                    padding-top: 9px;
+
+                    --swiper-pagination-progressbar-size: 1px;
+                }
+
+                .media-slider__fraction {
+                    font-size: 14px;
+                }
+
+                .slider-controls {
+                    gap: 6px;
+                    right: 6px;
+                    bottom: 6px;
+                }
+
+                .slider-control {
+                    width: 40px;
+                    height: 40px;
+                }
+            }
+
+            @include max(xs) {
+                .media-slider__play {
+                    min-width: 130px;
+                    padding: 6px 12px;
+                    min-height: 32px;
+                    font-size: 12px;
+                }
+
+                .slider-control {
+                    width: 32px;
+                    height: 32px;
+                }
             }
         }
     }

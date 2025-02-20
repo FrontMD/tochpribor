@@ -12,6 +12,7 @@
     z-index: -100;
     opacity: 0;
     visibility: hidden;
+    overflow: hidden;
     transition: all $tr-time linear;
 
     @include max(laptop) {
@@ -24,16 +25,24 @@
         top: 61px;
     }
 
-    @include max(tablet) {
-        height: auto;
-        min-height: 51vw;
-        max-height: none;
-    }
-
     &.active {
         z-index: 5;
         opacity: 1;
         visibility: visible;
+    }
+
+    &__overlay {
+        display: none;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+
+        @include max(tablet) {
+            display: block;
+        }
     }
 
     &__open {
@@ -49,6 +58,12 @@
         &:hover {
             color: $c-accent-hover;
         }
+
+        @include max(mobile) {
+            right: auto;
+            left: 0;
+            color: $c-accent-hover;
+        }
     }
 
     &__close {
@@ -62,6 +77,12 @@
         &:hover {
             color: $c-accent-hover;
         }
+
+        @include max(mobile) {
+            font-size: 12px;
+            right: 10px;
+            top: 10px;
+        }
     }
 
     &__layer {
@@ -74,6 +95,10 @@
         z-index: -1;
         visibility: hidden;
 
+        @include max(tablet) {
+            height: 60vw;
+        }
+
         &.active {
             visibility: visible;
             opacity: 1;
@@ -81,20 +106,47 @@
         }
     }
 
-    &__container {
+    &__container.section__container {
         height: 100%;
         background-color: #D5D2D3;
+
+        @include max(tablet) {
+            padding: 10px;
+        }
+
+        @include max(mobile) {
+            padding: 0 10px;
+        }
     }
 
     &__title {
         position: relative;
         margin-top: 6px;
+
+        @include max(tablet) {
+            font-size: 53px;
+        }
+
+        @include max(mobile) {
+            font-size: 40px;
+            margin-top: 3px;
+            max-width: calc(100% - 16px - 43px);
+        }
+
+        @include max(xs) {
+            font-size: 22px;
+        }
     }
 
     &__tag {
         margin-top: 24px;
         color: $c-text;
         opacity: 0.5;
+
+        @include max(mobile) {
+            margin-top: 8px;
+            font-size: 12px;
+        }
     }
 
     &__back {
@@ -133,13 +185,35 @@
         letter-spacing: -0.01em;
         cursor: pointer;
         max-width: calc(1.25vw + 12px);
-        overflow: hidden;
         transition: all $tr-time linear;
-        white-space: nowrap;
         color: $c-accent;
+        white-space: nowrap;
 
         @include max(tablet) {
             max-width: 22.92vw;
+        }
+
+        @include max(mobile) {
+            font-size: 8px;
+            padding: 3px;
+            max-width: 150px;
+            border-radius: 2px;
+            white-space: normal;
+        }
+
+        @include max(xs) {
+            font-size: 5px;
+        }
+
+        .text {
+            flex: 1 1 auto;
+            max-height: 1em;
+            overflow: hidden;
+            transition: max-height 0.2s linear $tr-time;
+
+            @include max(tablet) {
+                max-height: 3em;
+            }
         }
 
         &:hover,
@@ -147,10 +221,27 @@
             padding-left: 10px;
             padding-right: 10px;
             max-width: 22.92vw;
+
+            @include max(mobile) {
+                padding-left: 5px;
+                padding-right: 5px;
+                max-width: 150px;
+            }
+
+            .text {
+                flex: 1 1 auto;
+                max-height: 3em;
+                overflow: hidden;
+                transition: max-height 0.1s linear 0s;
+            }
         }
 
         &--left {
             flex-direction: row-reverse;
+        }
+
+        &--right {
+            text-align: right;
         }
 
         svg {
@@ -158,6 +249,11 @@
             width: 1.25vw;
             height: 1.25vw;
             color: $c-accent;
+
+            @include max(mobile) {
+                width: 9px;
+                height: 9px;
+            }
         }
     }
 
@@ -170,6 +266,18 @@
         backdrop-filter: blur(15px);
         color: $c-white;
         font-size: 1.389vw;
+
+        @include max(mobile) {
+            font-size: 8px;
+            padding: 3px 5px;
+            border-radius: 2px;
+        }
+
+        .text {
+            flex: 1 1 auto;
+            max-height: 3em;
+            overflow: hidden;
+        }
 
         svg {
             color: $c-white;
@@ -196,11 +304,25 @@
         &.point-info--right {
             left: auto;
             right: 16px;
+
+            @include max(tablet) {
+                right: 0;
+            }
         }
 
         &.active {
             visibility: visible;
             opacity: 1;
+        }
+
+        @include max(tablet) {
+            max-width: 100%;
+            height: calc(100vh - 60vw - 61px);
+            min-height: auto;
+            overflow: hidden;
+            left: 0;
+            bottom: auto;
+            top: 100%;
         }
     }
 }
@@ -212,6 +334,15 @@
     background-color: $c-white;
     padding: 10px 24px 10px 10px;
     border-radius: 4px;
+
+    @include max(tablet) {
+        border-radius: 0;
+    }
+
+    @include max(mobile) {
+        flex-direction: column;
+        gap: 16px;
+    }
 
     &__close {
         position: absolute;
@@ -234,6 +365,17 @@
     &__media {
         width: 276px;
         flex: 0 0 276px;
+
+        @include max(tablet) {
+            width: 50%;
+            flex: 0 0 50%;
+        }
+
+        @include max(mobile) {
+            width: 100%;
+            max-width: 300px;
+            flex-basis: auto;
+        }
     }
 
     &__slider {
@@ -281,6 +423,32 @@
         display: flex;
         flex-direction: column;
         gap: 16px;
+
+        @include max(mobile) {
+            gap: 8px;
+            max-height: calc(100% - 185px);
+        }
+    }
+
+    &__title {
+        @include max(mobile) {
+            -webkit-line-clamp: 2;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+    }
+
+    &__text {
+        @include max(tablet) {
+            max-height: calc(100% - 180px);
+            overflow: hidden;
+        }
+
+        @include max(mobile) {
+            max-height: calc(100% - 110px);
+            font-size: 14px;
+        }
     }
 
     &__btn {

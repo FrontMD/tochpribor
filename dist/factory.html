@@ -141,6 +141,7 @@
       <div class="page-layout page-layout--bottom" data-js="pageLayout">
             <div class="factory-model" data-js="factoryModel">
               <div class="section__tag factory-model__close" data-js="factoryModelClose">[Выйти]</div>
+              <div class="factory-model__overlay"></div>
               <div class="section section--full factory-model__layer factory-model__layer--first active" data-js="factoryModelLayer" data-level="1" data-id="0">
                 <div class="section__container factory-model__container">
                   <div class="factory-model__img"><img src="img/factory/factory_layer_1.webp" alt=""></div>
@@ -150,22 +151,26 @@
                       </div>
                   <div class="section__tag factory-model__tag">[Схема нашего производства]</div>
                   <div class="factory-model__points" data-js="factoryModelPoints">
-                    <div class="factory-model__point factory-model__point--left" data-js="factoryModelPoint" data-layer="1" style="left: 56%; top: 24%;">Производственные участки
+                    <div class="factory-model__point factory-model__point--left" data-js="factoryModelPoint" data-layer="1" style="left: 56%; top: 24%;">
+                      <div class="text">Производственные участки</div>
                       <svg> 
                         <use xlink:href="img/sprites/sprite.svg#factory_model_point"></use>
                       </svg>
                     </div>
-                    <div class="factory-model__point factory-model__point--left" data-js="factoryModelPoint" data-layer="2" style="left: 57%; top: 56%;">Склады
+                    <div class="factory-model__point factory-model__point--left" data-js="factoryModelPoint" data-layer="2" style="left: 57%; top: 56%;">
+                      <div class="text">Склады</div>
                       <svg> 
                         <use xlink:href="img/sprites/sprite.svg#factory_model_point"></use>
                       </svg>
                     </div>
-                    <div class="factory-model__point factory-model__point--left" data-js="factoryModelPoint" data-layer="3" style="left: 82%; top: 37%;">Упаковка и погрузка
+                    <div class="factory-model__point factory-model__point--left" data-js="factoryModelPoint" data-layer="3" style="left: 81%; top: 37%;">
+                      <div class="text">Упаковка и погрузка</div>
                       <svg> 
                         <use xlink:href="img/sprites/sprite.svg#factory_model_point"></use>
                       </svg>
                     </div>
-                    <div class="factory-model__point factory-model__point--right" data-js="factoryModelPoint" data-layer="4" style="right: 67%; top: 46%;">Инжиниринг и контроль качества
+                    <div class="factory-model__point factory-model__point--right" data-js="factoryModelPoint" data-layer="4" style="right: 67%; top: 46%;">
+                      <div class="text">Инжиниринг и контроль качества</div>
                       <svg> 
                         <use xlink:href="img/sprites/sprite.svg#factory_model_point"></use>
                       </svg>
@@ -182,17 +187,20 @@
                       </div>
                   <div class="section__tag factory-model__tag factory-model__back" data-js="factoryModelBack">[Назад]</div>
                   <div class="factory-model__points" data-js="factoryModelPoints">
-                    <div class="factory-model__point factory-model__point--right" data-js="factoryModelPoint" data-info="1" style="right: 65%; top: 42%;">Заготовительный участок
+                    <div class="factory-model__point factory-model__point--right" data-js="factoryModelPoint" data-info="1" style="right: 65%; top: 42%;">
+                      <div class="text">Заготовительный участок</div>
                       <svg> 
                         <use xlink:href="img/sprites/sprite.svg#factory_model_point"></use>
                       </svg>
                     </div>
-                    <div class="factory-model__point factory-model__point--left" data-js="factoryModelPoint" data-info="2" style="left: 66%; top: 17%;">Участок сварки
+                    <div class="factory-model__point factory-model__point--left" data-js="factoryModelPoint" data-info="2" style="left: 66%; top: 17%;">
+                      <div class="text">Участок сварки</div>
                       <svg> 
                         <use xlink:href="img/sprites/sprite.svg#factory_model_point"></use>
                       </svg>
                     </div>
-                    <div class="factory-model__point factory-model__point--left" data-js="factoryModelPoint" data-info="7" style="left: 62%; top: 42%;">Участок порошковой окраски
+                    <div class="factory-model__point factory-model__point--left" data-js="factoryModelPoint" data-info="7" style="left: 62%; top: 42%;">
+                      <div class="text">Участок порошковой окраски</div>
                       <svg> 
                         <use xlink:href="img/sprites/sprite.svg#factory_model_point"></use>
                       </svg>
@@ -280,8 +288,8 @@
                             </div>
                       </div>
                       <div class="point-info__desc">
-                        <div class="point__info__title title--26" data-js="pointInfoTitle">Заготовительный участок</div>
-                        <div class="point__info__text text-editor" data-js="pointInfoText">Заготовительный участок входит в&nbsp;структуру основных цехов завода, предназначен для обеспечения заготовками производства и является одним из первых этапов технологического процесса.</div>
+                        <div class="point-info__title title--26">Заготовительный участок</div>
+                        <div class="point-info__text text-editor">Заготовительный участок входит в&nbsp;структуру основных цехов завода, предназначен для обеспечения заготовками производства и является одним из первых этапов технологического процесса.</div>
                             <button class="btn point-info__btn btn--transparent-red btn--full" type="button" data-js="pointInfoMore">
                               <svg>
                                 <use xlink:href="img/sprites/sprite.svg#arrow_enter"></use>
@@ -370,8 +378,8 @@
                             </div>
                       </div>
                       <div class="point-info__desc">
-                        <div class="point__info__title title--26" data-js="pointInfoTitle">Участок сварки</div>
-                        <div class="point__info__text text-editor" data-js="pointInfoText">Сварочный участок организован в составе завода для изготовления определенной заданной продукции. В состав входят оборудование, посредством которого выполняют сборку и сварку сборочных единиц.</div>
+                        <div class="point-info__title title--26">Участок сварки</div>
+                        <div class="point-info__text text-editor">Сварочный участок организован в составе завода для изготовления определенной заданной продукции. В состав входят оборудование, посредством которого выполняют сборку и сварку сборочных единиц.</div>
                             <button class="btn point-info__btn btn--transparent-red btn--full" type="button" data-js="pointInfoMore">
                               <svg>
                                 <use xlink:href="img/sprites/sprite.svg#arrow_enter"></use>
@@ -460,8 +468,8 @@
                             </div>
                       </div>
                       <div class="point-info__desc">
-                        <div class="point__info__title title--26" data-js="pointInfoTitle">Участок порошковой окраски</div>
-                        <div class="point__info__text text-editor" data-js="pointInfoText">Для защитно-декоративной отделки изделий на предприятии выполняется порошковая окраска деталей. Камера порошковой окраски используется для горячего.</div>
+                        <div class="point-info__title title--26">Участок порошковой окраски</div>
+                        <div class="point-info__text text-editor">Для защитно-декоративной отделки изделий на предприятии выполняется порошковая окраска деталей. Камера порошковой окраски используется для горячего.</div>
                             <button class="btn point-info__btn btn--transparent-red btn--full" type="button" data-js="pointInfoMore">
                               <svg>
                                 <use xlink:href="img/sprites/sprite.svg#arrow_enter"></use>
@@ -481,7 +489,8 @@
                       </div>
                   <div class="section__tag factory-model__tag factory-model__back" data-js="factoryModelBack">[Назад]</div>
                   <div class="factory-model__points" data-js="factoryModelPoints">
-                    <div class="factory-model__point factory-model__point--left" data-js="factoryModelPoint" data-info="17" style="left: 78%; top: 36%;">Склад готовой продукции
+                    <div class="factory-model__point factory-model__point--left" data-js="factoryModelPoint" data-info="17" style="left: 78%; top: 36%;">
+                      <div class="text">Склад готовой продукции</div>
                       <svg> 
                         <use xlink:href="img/sprites/sprite.svg#factory_model_point"></use>
                       </svg>
@@ -569,8 +578,8 @@
                             </div>
                       </div>
                       <div class="point-info__desc">
-                        <div class="point__info__title title--26" data-js="pointInfoTitle">Склад готовой продукции</div>
-                        <div class="point__info__text text-editor" data-js="pointInfoText">Готовая продукция - главный результат производственного процесса предприятия. На склад готовой продукции передаются изделия, соответствующие ТУ, стандартам, и принятым ОТК.</div>
+                        <div class="point-info__title title--26">Склад готовой продукции</div>
+                        <div class="point-info__text text-editor">Готовая продукция - главный результат производственного процесса предприятия. На склад готовой продукции передаются изделия, соответствующие ТУ, стандартам, и принятым ОТК.</div>
                             <button class="btn point-info__btn btn--transparent-red btn--full" type="button" data-js="pointInfoMore">
                               <svg>
                                 <use xlink:href="img/sprites/sprite.svg#arrow_enter"></use>
@@ -590,7 +599,8 @@
                       </div>
                   <div class="section__tag factory-model__tag factory-model__back" data-js="factoryModelBack">[Назад]</div>
                   <div class="factory-model__points" data-js="factoryModelPoints">
-                    <div class="factory-model__point factory-model__point--left" data-js="factoryModelPoint" data-info="18" style="left: 78%; top: 46%;">Деревообрабатывающий участок
+                    <div class="factory-model__point factory-model__point--left" data-js="factoryModelPoint" data-info="18" style="left: 77%; top: 46%;">
+                      <div class="text">Деревообрабатывающий участок</div>
                       <svg> 
                         <use xlink:href="img/sprites/sprite.svg#factory_model_point"></use>
                       </svg>
@@ -678,8 +688,8 @@
                             </div>
                       </div>
                       <div class="point-info__desc">
-                        <div class="point__info__title title--26" data-js="pointInfoTitle">Деревообрабатывающий участок</div>
-                        <div class="point__info__text text-editor" data-js="pointInfoText">На нашем предприятии изготавливается абсолютно любая упаковка и тара для производимого оборудования</div>
+                        <div class="point-info__title title--26">Деревообрабатывающий участок</div>
+                        <div class="point-info__text text-editor">На нашем предприятии изготавливается абсолютно любая упаковка и тара для производимого оборудования</div>
                             <button class="btn point-info__btn btn--transparent-red btn--full" type="button" data-js="pointInfoMore">
                               <svg>
                                 <use xlink:href="img/sprites/sprite.svg#arrow_enter"></use>
@@ -699,17 +709,20 @@
                       </div>
                   <div class="section__tag factory-model__tag factory-model__back" data-js="factoryModelBack">[Назад]</div>
                   <div class="factory-model__points" data-js="factoryModelPoints">
-                    <div class="factory-model__point factory-model__point--right" data-js="factoryModelPoint" data-info="14" style="right: 70%; top: 50%;">Конструкторский отдел
+                    <div class="factory-model__point factory-model__point--right" data-js="factoryModelPoint" data-info="14" style="right: 70%; top: 50%;">
+                      <div class="text">Конструкторский отдел</div>
                       <svg> 
                         <use xlink:href="img/sprites/sprite.svg#factory_model_point"></use>
                       </svg>
                     </div>
-                    <div class="factory-model__point factory-model__point--left" data-js="factoryModelPoint" data-info="15" style="left: 34%; top: 48%;">Бюро технической документации
+                    <div class="factory-model__point factory-model__point--left" data-js="factoryModelPoint" data-info="15" style="left: 34%; top: 48%;">
+                      <div class="text">Бюро технической документации</div>
                       <svg> 
                         <use xlink:href="img/sprites/sprite.svg#factory_model_point"></use>
                       </svg>
                     </div>
-                    <div class="factory-model__point factory-model__point--left" data-js="factoryModelPoint" data-info="16" style="left: 33%; top: 56%;">Метрологическая служба. ОТК
+                    <div class="factory-model__point factory-model__point--left" data-js="factoryModelPoint" data-info="16" style="left: 33%; top: 56%;">
+                      <div class="text">Метрологическая служба. ОТК</div>
                       <svg> 
                         <use xlink:href="img/sprites/sprite.svg#factory_model_point"></use>
                       </svg>
@@ -797,8 +810,8 @@
                             </div>
                       </div>
                       <div class="point-info__desc">
-                        <div class="point__info__title title--26" data-js="pointInfoTitle">Конструкторский отдел</div>
-                        <div class="point__info__text text-editor" data-js="pointInfoText">На шлифовальном участке выполняется процесс окончательной обработки деталей путем снятия с них тонкого слоя материала вращающимся абразивным элементом</div>
+                        <div class="point-info__title title--26">Конструкторский отдел</div>
+                        <div class="point-info__text text-editor">На шлифовальном участке выполняется процесс окончательной обработки деталей путем снятия с них тонкого слоя материала вращающимся абразивным элементом</div>
                             <button class="btn point-info__btn btn--transparent-red btn--full" type="button" data-js="pointInfoMore">
                               <svg>
                                 <use xlink:href="img/sprites/sprite.svg#arrow_enter"></use>
@@ -887,8 +900,8 @@
                             </div>
                       </div>
                       <div class="point-info__desc">
-                        <div class="point__info__title title--26" data-js="pointInfoTitle">Бюро технической документации</div>
-                        <div class="point__info__text text-editor" data-js="pointInfoText">На шлифовальном участке выполняется процесс окончательной обработки деталей путем снятия с них тонкого слоя материала вращающимся абразивным элементом</div>
+                        <div class="point-info__title title--26">Бюро технической документации</div>
+                        <div class="point-info__text text-editor">На шлифовальном участке выполняется процесс окончательной обработки деталей путем снятия с них тонкого слоя материала вращающимся абразивным элементом</div>
                             <button class="btn point-info__btn btn--transparent-red btn--full" type="button" data-js="pointInfoMore">
                               <svg>
                                 <use xlink:href="img/sprites/sprite.svg#arrow_enter"></use>
@@ -977,8 +990,8 @@
                             </div>
                       </div>
                       <div class="point-info__desc">
-                        <div class="point__info__title title--26" data-js="pointInfoTitle">Метрологическая служба. ОТК</div>
-                        <div class="point__info__text text-editor" data-js="pointInfoText">На шлифовальном участке выполняется процесс окончательной обработки деталей путем снятия с них тонкого слоя материала вращающимся абразивным элементом</div>
+                        <div class="point-info__title title--26">Метрологическая служба. ОТК</div>
+                        <div class="point-info__text text-editor">На шлифовальном участке выполняется процесс окончательной обработки деталей путем снятия с них тонкого слоя материала вращающимся абразивным элементом</div>
                             <button class="btn point-info__btn btn--transparent-red btn--full" type="button" data-js="pointInfoMore">
                               <svg>
                                 <use xlink:href="img/sprites/sprite.svg#arrow_enter"></use>
@@ -1109,7 +1122,7 @@
                         <h2>Наше производство
                         </h2>
                       </div>
-                  <div class="f-factory__tabs">
+                  <div class="f-factory__tabs scrollbar scrollbar--small">
                     <div class="f-factory__tab active" data-js="tabsBlockTab" data-index="0">
                       <div class="text">Цеха и участки</div>
                       <div class="number">14</div>

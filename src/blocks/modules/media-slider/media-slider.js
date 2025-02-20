@@ -34,5 +34,7 @@ function mediaSliderInit() {
             sliderCurrentFraction.innerHTML = idx;
             sliderTotalFraction.innerHTML = tdx;
         });
+
+        mediaSliderEx.update()
     })
 }
