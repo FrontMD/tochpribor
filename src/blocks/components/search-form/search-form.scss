@@ -1,0 +1,31 @@
+.search-form {
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto 200px 200px;
+    gap: 16px;
+
+    &__input {
+        height: fit-content;
+        max-width: 416px;
+    }
+
+    &__input input.field__input {
+        min-height: 46px;
+        font-size: 16px;
+        padding-left: 36px;
+        padding-top: 7px;
+        padding-bottom: 7px;
+        padding-right: 36px;
+    }
+
+    &__input .field__search {
+        width: 16px;
+        height: 16px;
+        left: 12px;
+    }
+
+    &__select .filter-select__header {
+        min-width: 200px;
+        min-height: 46px;
+    }
+}

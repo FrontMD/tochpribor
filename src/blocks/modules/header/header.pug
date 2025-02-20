@@ -78,29 +78,9 @@ header.site-header(data-js="siteHeader")
                 svg
                     use(xlink:href=`img/sprites/sprite.svg#search`)
             .search__content(data-js="headerSearchContent")
-                form.search__form
-                    +field({
-                        placeholder: 'Поиск',
-                        inputAttr: {
-                            "data-js": "headerSearchInput"
-                        },
-                        resetBtn: true,
-                        isSearch: true
-                    })
-                    +field({
-                        classes: '',
-                        tag: 'select',
-                        selectOptions: [
-                            "По сайту",
-                            "По каталогу"
-                        ],
-                    })
-                    +btn({
-                        classes: '',
-                        size: "content",
-                        name: 'Поиск',
-                        icon: 'arrow_enter',
-                    })
+                +search-form({
+                    inHeader: true
+                })
 
         .site-header__shop.site-header__block.shop 
             a.shop__item(href="javascript:void(0)")

@@ -97,32 +97,40 @@
             </svg>
           </div>
           <div class="search__content" data-js="headerSearchContent">
-            <form class="search__form">
-                  <div class="field  field--search field--reset  " data-js="formField">
-                    <button class="field__search" type="submit">
-                      <svg> 
-                        <use xlink:href="img/sprites/sprite.svg#search"></use>
+                <form class="search-form  search-form--header" data-js="formFilter">
+                      <div class="field search-form__input field--search field--reset  " data-js="formField">
+                        <button class="field__search" type="submit">
+                          <svg> 
+                            <use xlink:href="img/sprites/sprite.svg#search"></use>
+                          </svg>
+                        </button>
+                        <label>
+                          <input class="field__input" type="text" placeholder="Поиск" data-js="searchFormInput"><span class="field__error" data-js="fieldError"></span>
+                        </label><span class="field__reset" data-js="fieldResetBtn">
+                          <svg> 
+                            <use xlink:href="img/sprites/sprite.svg#close"></use>
+                          </svg></span>
+                      </div>
+                  <div class="search-form__select filter-select" data-js="filterSelect">
+                    <div class="filter-select__header" data-js="filterSelectHeader">
+                      <select data-js="filterSelectInput">
+                        <option value="По сайту" selected>По сайту</option>
+                        <option value="По каталогу">По каталогу</option>
+                      </select>
+                      <div class="filter-select__fake" data-js="filterSelectFake">По сайту</div>
+                      <svg>
+                        <use xlink:href="img/sprites/sprite.svg#arrow_angle"></use>
                       </svg>
-                    </button>
-                    <label>
-                      <input class="field__input" type="text" placeholder="Поиск" data-js="headerSearchInput"><span class="field__error" data-js="fieldError"></span>
-                    </label><span class="field__reset" data-js="fieldResetBtn">
-                      <svg> 
-                        <use xlink:href="img/sprites/sprite.svg#close"></use>
-                      </svg></span>
-                  </div>
-                  <div class="field     " data-js="formField">
-                    <label>
-                    </label>
-                    <select class="field__select" placeholder="" data-js="formSelect">
-                      <option value="По сайту">По сайту</option>
-                      <option value="По каталогу">По каталогу</option>
-                    </select><span class="field__error" data-js="fieldError"></span>
-                  </div><a class="btn  btn--red btn--content" href="javascript:void(0)">
-                    <svg>
-                      <use xlink:href="img/sprites/sprite.svg#arrow_enter"></use>
-                    </svg><span class="btn__text">Поиск</span></a>
-            </form>
+                    </div>
+                    <div class="filter-select__content">
+                      <div class="filter-select__option active" data-js="filterSelectOption" data-value="По сайту">По сайту</div>
+                      <div class="filter-select__option" data-js="filterSelectOption" data-value="По каталогу">По каталогу</div>
+                    </div>
+                  </div><a class="btn search-form__submit btn--red btn--full" href="javascript:void(0)" data-js="searchSubmit">
+                        <svg>
+                          <use xlink:href="img/sprites/sprite.svg#arrow_enter"></use>
+                        </svg><span class="btn__text">Поиск</span></a>
+                </form>
           </div>
         </div>
         <div class="site-header__shop site-header__block shop"> <a class="shop__item" href="javascript:void(0)">

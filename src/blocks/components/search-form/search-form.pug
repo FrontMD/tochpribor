@@ -1,0 +1,45 @@
+-
+    const defaultSearchFormProps = {
+        classes: '',
+        inHeader: false,
+        btnText: 'Поиск'
+    }
+
+mixin search-form(props = defaultSearchFormProps)
+    -
+        const checkProps = {
+            classes: props.classes ? props.classes : defaultSearchFormProps.classes,
+            inHeader: props.inHeader ? props.inHeader : defaultSearchFormProps.inHeader,
+            btnText: props.btnText ? props.btnText : defaultSearchFormProps.btnText
+        }
+
+        let vClass = checkProps.inHeader == true ? ` search-form--header` : ''
+
+
+    form.search-form(class=checkProps.classes + vClass data-js="formFilter")&attributes(attributes)
+        +field({
+            classes: 'search-form__input',
+            placeholder: checkProps.inHeader == true ? 'Поиск' : 'Введите запрос',
+            inputAttr: {
+                "data-js": "searchFormInput"
+            },
+            resetBtn: true,
+            isSearch: true
+        })
+        .search-form__select.filter-select(data-js='filterSelect')
+            .filter-select__header(data-js="filterSelectHeader")
+                select(data-js="filterSelectInput")
+                    option(value="По сайту" selected) По сайту
+                    option(value="По каталогу") По каталогу
+                .filter-select__fake(data-js="filterSelectFake") По сайту
+                svg
+                    use(xlink:href=`img/sprites/sprite.svg#arrow_angle`)
+            .filter-select__content
+                .filter-select__option.active(data-js="filterSelectOption" data-value="По сайту") По сайту
+                .filter-select__option(data-js="filterSelectOption" data-value="По каталогу") По каталогу
+        +btn({
+            classes: 'search-form__submit',
+            size: "full",
+            name: checkProps.btnText,
+            icon: 'arrow_enter',
+        })(data-js="searchSubmit")
