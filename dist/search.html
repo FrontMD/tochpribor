@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Поиск</title>
+    <meta name="theme-color" content="#fff">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="shortcut icon" href="img/favicons/favicon.ico" type="image/x-icon">
+    <link rel="icon" sizes="16x16" href="img/favicons/favicon-16x16.png" type="image/png">
+    <link rel="icon" sizes="32x32" href="img/favicons/favicon-32x32.png" type="image/png">
+    <link rel="apple-touch-icon-precomposed" href="img/favicons/apple-touch-icon-precomposed.png">
+    <link rel="apple-touch-icon" href="img/favicons/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="img/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="img/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="img/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="img/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="img/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon-180x180.png">
+    <link rel="apple-touch-icon" sizes="1024x1024" href="img/favicons/apple-touch-icon-1024x1024.png">
+    <link rel="stylesheet" href="styles/main.min.css">
+    <!-- лучше добавлять только на те страницы где есть блок с картой-->
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=ec8353bc-e4c0-44ee-8f5b-822d005a189e&amp;lang=ru_RU"></script>
+    <!-- лучше добавлять только на те страницы где есть видео-->
+    <script src="https://vk.com/js/api/videoplayer.min.js"></script>
+  </head>
+  <body>
+    <header class="site-header" data-js="siteHeader">
+      <div class="site-header__overlay"></div>
+      <div class="site-header__container">
+        <div class="site-header__logo"><img src="img/logo_full.svg" alt="логотип"></div>
+        <div class="site-header__burger site-header__block" data-js="mainBurgerOpen">
+          <svg>
+            <use xlink:href="img/sprites/sprite.svg#burger"></use>
+          </svg>
+        </div>
+        <div class="site-header__location site-header__block user-city" data-js="userCity" data-default="Санкт-Петербург">
+          <div class="user-city__header" data-js="userCityHeader">
+            <svg>
+              <use xlink:href="img/sprites/sprite.svg#location"></use>
+            </svg><span data-js="userCityText">Город</span>
+          </div>
+          <div class="user-city__content" data-js="userCityContent">
+            <div class="user-city__question"><span data-js="userCityText">Санкт-Петербург</span> ваш город?</div>
+            <div class="user-city__btns">
+                  <button class="btn  btn--red btn--108" type="button" data-js="cityBtnYes"><span class="btn__text">Да</span>
+                  </button><a class="btn  btn--grey btn--108" href="javascript:void(0)" data-js="cityBtnNo"><span class="btn__text">Выбрать другой</span></a>
+            </div>
+          </div>
+        </div>
+        <nav class="site-header__menu site-header__block">
+          <ul class="nav-menu">
+            <li class="nav-menu__item"><a class="nav-menu__link" href="javascript:void(0)">Каталог продукции </a></li>
+            <li class="nav-menu__item"><a class="nav-menu__link" href="javascript:void(0)">Производство</a></li>
+            <li class="nav-menu__item"><a class="nav-menu__link" href="javascript:void(0)">
+                 Услуги
+                <svg>
+                  <use xlink:href="img/sprites/sprite.svg#arrow_angle"></use>
+                </svg></a>
+              <div class="nav-menu__sublist"><a class="nav-menu__link" href="javascript:void(0)">Металлообработка</a><a class="nav-menu__link" href="javascript:void(0)">Поверка инструментов измерений</a><a class="nav-menu__link" href="javascript:void(0)">Пуско-наладка</a><a class="nav-menu__link" href="javascript:void(0)">Наладка средств измерений</a><a class="nav-menu__link" href="javascript:void(0)">Доставка</a></div>
+            </li>
+          </ul>
+        </nav>
+        <div class="site-header__contacts">
+          <ul class="nav-menu">
+            <li class="nav-menu__item"><a class="nav-menu__link" href="mailto:info@tochpribor-nw.ru">
+                 info@tochpribor-nw.ru
+                <svg>
+                  <use xlink:href="img/sprites/sprite.svg#arrow_angle"></use>
+                </svg></a>
+              <div class="nav-menu__sublist"><a class="nav-menu__link" href="mailto:info@tochpribor-nw.ru">info@tochpribor-nw.ru</a></div>
+            </li>
+            <li class="nav-menu__item"><a class="nav-menu__link" href="tel:+78126123003">
+                 +7 (812) 612-30-03
+                <svg>
+                  <use xlink:href="img/sprites/sprite.svg#arrow_angle"></use>
+                </svg></a>
+              <div class="nav-menu__sublist"><a class="nav-menu__link" href="tel:+78126123003">+7 (812) 612-30-03</a></div>
+            </li>
+          </ul>
+        </div>
+        <div class="site-header__socials socials"><a class="socials__item" href="https://telegram.org/">
+            <svg>
+              <use xlink:href="img/sprites/sprite.svg#tg"></use>
+            </svg></a><a class="socials__item" href="https://vk.com/">
+            <svg>
+              <use xlink:href="img/sprites/sprite.svg#vk"></use>
+            </svg></a></div>
+        <div class="site-header__search search">
+          <div class="search__open" data-js="headerSearchOpen">
+            <svg>
+              <use xlink:href="img/sprites/sprite.svg#search"></use>
+            </svg>
+          </div>
+          <div class="search__content" data-js="headerSearchContent">
+            <form class="search__form">
+                  <div class="field  field--search field--reset  " data-js="formField">
+                    <button class="field__search" type="submit">
+                      <svg> 
+                        <use xlink:href="img/sprites/sprite.svg#search"></use>
+                      </svg>
+                    </button>
+                    <label>
+                      <input class="field__input" type="text" placeholder="Поиск" data-js="headerSearchInput"><span class="field__error" data-js="fieldError"></span>
+                    </label><span class="field__reset" data-js="fieldResetBtn">
+                      <svg> 
+                        <use xlink:href="img/sprites/sprite.svg#close"></use>
+                      </svg></span>
+                  </div>
+                  <div class="field     " data-js="formField">
+                    <label>
+                    </label>
+                    <select class="field__select" placeholder="" data-js="formSelect">
+                      <option value="По сайту">По сайту</option>
+                      <option value="По каталогу">По каталогу</option>
+                    </select><span class="field__error" data-js="fieldError"></span>
+                  </div><a class="btn  btn--red btn--content" href="javascript:void(0)">
+                    <svg>
+                      <use xlink:href="img/sprites/sprite.svg#arrow_enter"></use>
+                    </svg><span class="btn__text">Поиск</span></a>
+            </form>
+          </div>
+        </div>
+        <div class="site-header__shop site-header__block shop"> <a class="shop__item" href="javascript:void(0)">
+            <svg>
+              <use xlink:href="img/sprites/sprite.svg#compare"></use>
+            </svg><span>5</span></a><a class="shop__item" href="javascript:void(0)">
+            <svg>
+              <use xlink:href="img/sprites/sprite.svg#basket"></use>
+            </svg><span>5</span></a></div><a class="btn site-header__callback btn--red btn--content" href="javascript:void(0)">
+              <svg>
+                <use xlink:href="img/sprites/sprite.svg#arrow_enter"></use>
+              </svg><span class="btn__text">Заказать звонок</span></a>
+      </div>
+    </header>
+    <main class="site-main">
+      <div class="page-layout">
+        <div class="breadcrumbs-section section section--transparent">
+          <div class="section__container">
+                <div class="breadcrumbs  breadcrumbs--dark">
+                  <ul class="breadcrumbs__list scrollbar scrollbar--small">
+                    <li class="breadcrumbs__item"><a href="javascript:void(0);">Главная</a><span class="breadcrumbs__separator">/</span>
+                    </li>
+                    <li class="breadcrumbs__item breadcrumbs__item--current"><span>Поиск</span>
+                    </li>
+                  </ul>
+                </div>
+          </div>
+        </div>
+        <section class="section search-page">
+          <div class="section__container">
+            <div class="search-page__header">
+                  <div class="title  title--67 title--dark">
+                    <h1>Поиск
+                    </h1>
+                  </div>
+              <div class="glossary-list__desc">В этом словаре вы найдёте компактные и понятные пояснения терминов&nbsp;— из обозначений в товарах и в целом на нашем сайте. Используйте глоссарий в любое время&nbsp;— если столкнулись с незнакомыми словами во время изучения сайта или забыли значение термина при решении рабочих задач. Делитесь словарём со всеми, кому он будет полезен.</div>
+            </div>
+            <form class="glossary-list__filter">
+              <div class="glossary-list__block">
+                <div class="glossary-list__radios">
+                  <div class="glossary-list__radio">
+                    <label> 
+                      <input type="radio" name="glossary-list-section" value="Все направления" checked><span>Все направления</span>
+                    </label>
+                  </div>
+                  <div class="glossary-list__radio">
+                    <label> 
+                      <input type="radio" name="glossary-list-section" value="Универсальные испытательные машины (разрывные машины)"><span>Универсальные испытательные машины (разрывные машины)</span>
+                    </label>
+                  </div>
+                  <div class="glossary-list__radio">
+                    <label> 
+                      <input type="radio" name="glossary-list-section" value="Приборы для измерения твердости (твердомеры)"><span>Приборы для измерения твердости (твердомеры)</span>
+                    </label>
+                  </div>
+                  <div class="glossary-list__radio">
+                    <label> 
+                      <input type="radio" name="glossary-list-section" value="Меры твердости эталонные"><span>Меры твердости эталонные</span>
+                    </label>
+                  </div>
+                  <div class="glossary-list__radio">
+                    <label> 
+                      <input type="radio" name="glossary-list-section" value="Приборы для измерения цвета"><span>Приборы для измерения цвета</span>
+                    </label>
+                  </div>
+                  <div class="glossary-list__radio">
+                    <label> 
+                      <input type="radio" name="glossary-list-section" value="Микроскопы"><span>Микроскопы</span>
+                    </label>
+                  </div>
+                  <div class="glossary-list__radio">
+                    <label> 
+                      <input type="radio" name="glossary-list-section" value="Динамометры"><span>Динамометры</span>
+                    </label>
+                  </div>
+                  <div class="glossary-list__radio">
+                    <label> 
+                      <input type="radio" name="glossary-list-section" value="Видеоизмерительные системы Girmax"><span>Видеоизмерительные системы Girmax</span>
+                    </label>
+                  </div>
+                  <div class="glossary-list__radio">
+                    <label> 
+                      <input type="radio" name="glossary-list-section" value="Молотки Шмитта"><span>Молотки Шмитта</span>
+                    </label>
+                  </div>
+                  <div class="glossary-list__radio">
+                    <label> 
+                      <input type="radio" name="glossary-list-section" value="Гири Girmax"><span>Гири Girmax</span>
+                    </label>
+                  </div>
+                  <div class="glossary-list__radio">
+                    <label> 
+                      <input type="radio" name="glossary-list-section" value="Испытательные пресса"><span>Испытательные пресса</span>
+                    </label>
+                  </div>
+                  <div class="glossary-list__radio">
+                    <label> 
+                      <input type="radio" name="glossary-list-section" value="Копры маятниковые и вертикальные"><span>Копры маятниковые и вертикальные</span>
+                    </label>
+                  </div>
+                  <div class="glossary-list__radio">
+                    <label> 
+                      <input type="radio" name="glossary-list-section" value="Оборудование для технологических испытаний"><span>Оборудование для технологических испытаний</span>
+                    </label>
+                  </div>
+                  <div class="glossary-list__radio">
+                    <label> 
+                      <input type="radio" name="glossary-list-section" value="Экстензометры"><span>Экстензометры</span>
+                    </label>
+                  </div>
+                  <div class="glossary-list__radio">
+                    <label> 
+                      <input type="radio" name="glossary-list-section" value="Системы температурных испытаний"><span>Системы температурных испытаний</span>
+                    </label>
+                  </div>
+                  <div class="glossary-list__radio">
+                    <label> 
+                      <input type="radio" name="glossary-list-section" value="Машины трения (для испытания на трение и износ)"><span>Машины трения (для испытания на трение и износ)</span>
+                    </label>
+                  </div>
+                  <div class="glossary-list__radio">
+                    <label> 
+                      <input type="radio" name="glossary-list-section" value="Приборы для неразрушающего контроля"><span>Приборы для неразрушающего контроля</span>
+                    </label>
+                  </div>
+                  <div class="glossary-list__radio">
+                    <label> 
+                      <input type="radio" name="glossary-list-section" value="Оборудование для пробоподготовки (металлография и т.д.)"><span>Оборудование для пробоподготовки (металлография и т.д.)</span>
+                    </label>
+                  </div>
+                  <div class="glossary-list__radio">
+                    <label> 
+                      <input type="radio" name="glossary-list-section" value="Шлифовальные станки"><span>Шлифовальные станки</span>
+                    </label>
+                  </div>
+                  <div class="glossary-list__radio">
+                    <label> 
+                      <input type="radio" name="glossary-list-section" value="Полировальные станки"><span>Полировальные станки</span>
+                    </label>
+                  </div>
+                  <div class="glossary-list__radio">
+                    <label> 
+                      <input type="radio" name="glossary-list-section" value="Шлифовально-полировальные станки"><span>Шлифовально-полировальные станки</span>
+                    </label>
+                  </div>
+                  <div class="glossary-list__radio">
+                    <label> 
+                      <input type="radio" name="glossary-list-section" value="Станки для запрессовки"><span>Станки для запрессовки</span>
+                    </label>
+                  </div>
+                  <div class="glossary-list__radio">
+                    <label> 
+                      <input type="radio" name="glossary-list-section" value="Весы лабораторные, весы крановые"><span>Весы лабораторные, весы крановые</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="glossary-list__block">
+                <div class="glossary-list__left">
+                  <div class="glossary-list__search">
+                        <div class="field  field--search field--reset  " data-js="formField">
+                          <button class="field__search" type="submit">
+                            <svg> 
+                              <use xlink:href="img/sprites/sprite.svg#search"></use>
+                            </svg>
+                          </button>
+                          <label>
+                            <input class="field__input" type="text" placeholder="Поиск"><span class="field__error" data-js="fieldError"></span>
+                          </label><span class="field__reset" data-js="fieldResetBtn">
+                            <svg> 
+                              <use xlink:href="img/sprites/sprite.svg#close"></use>
+                            </svg></span>
+                        </div>
+                  </div>
+                  <div class="glossary-list__radios glossary-list__radios--letters">
+                    <div class="glossary-list__radio glossary-list__radio--letter">
+                      <label> 
+                        <input type="radio" name="glossary-list-letter" value="Все"><span>Все</span>
+                      </label>
+                    </div>
+                    <div class="glossary-list__radio glossary-list__radio--letter">
+                      <label> 
+                        <input type="radio" name="glossary-list-letter" value="А"><span>А</span>
+                      </label>
+                    </div>
+                    <div class="glossary-list__radio glossary-list__radio--letter">
+                      <label> 
+                        <input type="radio" name="glossary-list-letter" value="Б" checked><span>Б</span>
+                      </label>
+                    </div>
+                    <div class="glossary-list__radio glossary-list__radio--letter">
+                      <label> 
+                        <input type="radio" name="glossary-list-letter" value="В"><span>В</span>
+                      </label>
+                    </div>
+                    <div class="glossary-list__radio glossary-list__radio--letter">
+                      <label> 
+                        <input type="radio" name="glossary-list-letter" value="Г"><span>Г</span>
+                      </label>
+                    </div>
+                    <div class="glossary-list__radio glossary-list__radio--letter">
+                      <label> 
+                        <input type="radio" name="glossary-list-letter" value="Д"><span>Д</span>
+                      </label>
+                    </div>
+                    <div class="glossary-list__radio glossary-list__radio--letter">
+                      <label> 
+                        <input type="radio" name="glossary-list-letter" value="Е"><span>Е</span>
+                      </label>
+                    </div>
+                    <div class="glossary-list__radio glossary-list__radio--letter">
+                      <label> 
+                        <input type="radio" name="glossary-list-letter" value="Ж"><span>Ж</span>
+                      </label>
+                    </div>
+                    <div class="glossary-list__radio glossary-list__radio--letter">
+                      <label> 
+                        <input type="radio" name="glossary-list-letter" value="З"><span>З</span>
+                      </label>
+                    </div>
+                    <div class="glossary-list__radio glossary-list__radio--letter">
+                      <label> 
+                        <input type="radio" name="glossary-list-letter" value="И"><span>И</span>
+                      </label>
+                    </div>
+                    <div class="glossary-list__radio glossary-list__radio--letter">
+                      <label> 
+                        <input type="radio" name="glossary-list-letter" value="К"><span>К</span>
+                      </label>
+                    </div>
+                    <div class="glossary-list__radio glossary-list__radio--letter">
+                      <label> 
+                        <input type="radio" name="glossary-list-letter" value="Л"><span>Л</span>
+                      </label>
+                    </div>
+                    <div class="glossary-list__radio glossary-list__radio--letter">
+                      <label> 
+                        <input type="radio" name="glossary-list-letter" value="М"><span>М</span>
+                      </label>
+                    </div>
+                    <div class="glossary-list__radio glossary-list__radio--letter">
+                      <label> 
+                        <input type="radio" name="glossary-list-letter" value="Н"><span>Н</span>
+                      </label>
+                    </div>
+                    <div class="glossary-list__radio glossary-list__radio--letter">
+                      <label> 
+                        <input type="radio" name="glossary-list-letter" value="О"><span>О</span>
+                      </label>
+                    </div>
+                    <div class="glossary-list__radio glossary-list__radio--letter">
+                      <label> 
+                        <input type="radio" name="glossary-list-letter" value="П"><span>П</span>
+                      </label>
+                    </div>
+                    <div class="glossary-list__radio glossary-list__radio--letter">
+                      <label> 
+                        <input type="radio" name="glossary-list-letter" value="Р"><span>Р</span>
+                      </label>
+                    </div>
+                    <div class="glossary-list__radio glossary-list__radio--letter">
+                      <label> 
+                        <input type="radio" name="glossary-list-letter" value="С"><span>С</span>
+                      </label>
+                    </div>
+                    <div class="glossary-list__radio glossary-list__radio--letter">
+                      <label> 
+                        <input type="radio" name="glossary-list-letter" value="Т"><span>Т</span>
+                      </label>
+                    </div>
+                    <div class="glossary-list__radio glossary-list__radio--letter">
+                      <label> 
+                        <input type="radio" name="glossary-list-letter" value="У"><span>У</span>
+                      </label>
+                    </div>
+                    <div class="glossary-list__radio glossary-list__radio--letter">
+                      <label> 
+                        <input type="radio" name="glossary-list-letter" value="Ф"><span>Ф</span>
+                      </label>
+                    </div>
+                    <div class="glossary-list__radio glossary-list__radio--letter">
+                      <label> 
+                        <input type="radio" name="glossary-list-letter" value="Х"><span>Х</span>
+                      </label>
+                    </div>
+                    <div class="glossary-list__radio glossary-list__radio--letter">
+                      <label> 
+                        <input type="radio" name="glossary-list-letter" value="Ц"><span>Ц</span>
+                      </label>
+                    </div>
+                    <div class="glossary-list__radio glossary-list__radio--letter">
+                      <label> 
+                        <input type="radio" name="glossary-list-letter" value="Ч"><span>Ч</span>
+                      </label>
+                    </div>
+                    <div class="glossary-list__radio glossary-list__radio--letter">
+                      <label> 
+                        <input type="radio" name="glossary-list-letter" value="Ш"><span>Ш</span>
+                      </label>
+                    </div>
+                    <div class="glossary-list__radio glossary-list__radio--letter">
+                      <label> 
+                        <input type="radio" name="glossary-list-letter" value="Э"><span>Э</span>
+                      </label>
+                    </div>
+                    <div class="glossary-list__radio glossary-list__radio--letter">
+                      <label> 
+                        <input type="radio" name="glossary-list-letter" value="Ю"><span>Ю</span>
+                      </label>
+                    </div>
+                    <div class="glossary-list__radio glossary-list__radio--letter">
+                      <label> 
+                        <input type="radio" name="glossary-list-letter" value="Я"><span>Я</span>
+                      </label>
+                    </div>
+                    <div class="glossary-list__radio glossary-list__radio--letter">
+                      <label> 
+                        <input type="radio" name="glossary-list-letter" value="0-9"><span>0-9</span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="glossary-list__radios glossary-list__radios--letters">
+                    <div class="glossary-list__radio glossary-list__radio--letter">
+                      <label>
+                        <input type="radio" name="glossary-list-letter" value="A"><span>A</span>
+                      </label>
+                    </div>
+                    <div class="glossary-list__radio glossary-list__radio--letter">
+                      <label>
+                        <input type="radio" name="glossary-list-letter" value="B"><span>B</span>
+                      </label>
+                    </div>
+                    <div class="glossary-list__radio glossary-list__radio--letter">
+                      <label>
+                        <input type="radio" name="glossary-list-letter" value="C"><span>C</span>
+                      </label>
+                    </div>
+                    <div class="glossary-list__radio glossary-list__radio--letter">
+                      <label>
+                        <input type="radio" name="glossary-list-letter" value="D"><span>D</span>
+                      </label>
+                    </div>
+                    <div class="glossary-list__radio glossary-list__radio--letter">
+                      <label>
+                        <input type="radio" name="glossary-list-letter" value="E"><span>E</span>
+                      </label>
+                    </div>
+                    <div class="glossary-list__radio glossary-list__radio--letter">
+                      <label>
+                        <input type="radio" name="glossary-list-letter" value="F"><span>F</span>
+                      </label>
+                    </div>
+                    <div class="glossary-list__radio glossary-list__radio--letter">
+                      <label>
+                        <input type="radio" name="glossary-list-letter" value="G"><span>G</span>
+                      </label>
+                    </div>
+                    <div class="glossary-list__radio glossary-list__radio--letter">
+                      <label>
+                        <input type="radio" name="glossary-list-letter" value="H"><span>H</span>
+                      </label>
+                    </div>
+                    <div class="glossary-list__radio glossary-list__radio--letter">
+                      <label>
+                        <input type="radio" name="glossary-list-letter" value="I"><span>I</span>
+                      </label>
+                    </div>
+                    <div class="glossary-list__radio glossary-list__radio--letter">
+                      <label>
+                        <input type="radio" name="glossary-list-letter" value="J"><span>J</span>
+                      </label>
+                    </div>
+                    <div class="glossary-list__radio glossary-list__radio--letter">
+                      <label>
+                        <input type="radio" name="glossary-list-letter" value="K"><span>K</span>
+                      </label>
+                    </div>
+                    <div class="glossary-list__radio glossary-list__radio--letter">
+                      <label>
+                        <input type="radio" name="glossary-list-letter" value="L"><span>L</span>
+                      </label>
+                    </div>
+                    <div class="glossary-list__radio glossary-list__radio--letter">
+                      <label>
+                        <input type="radio" name="glossary-list-letter" value="V"><span>V</span>
+                      </label>
+                    </div>
+                    <div class="glossary-list__radio glossary-list__radio--letter">
+                      <label>
+                        <input type="radio" name="glossary-list-letter" value="N"><span>N</span>
+                      </label>
+                    </div>
+                    <div class="glossary-list__radio glossary-list__radio--letter">
+                      <label>
+                        <input type="radio" name="glossary-list-letter" value="O"><span>O</span>
+                      </label>
+                    </div>
+                    <div class="glossary-list__radio glossary-list__radio--letter">
+                      <label>
+                        <input type="radio" name="glossary-list-letter" value="P"><span>P</span>
+                      </label>
+                    </div>
+                    <div class="glossary-list__radio glossary-list__radio--letter">
+                      <label>
+                        <input type="radio" name="glossary-list-letter" value="Q"><span>Q</span>
+                      </label>
+                    </div>
+                    <div class="glossary-list__radio glossary-list__radio--letter">
+                      <label>
+                        <input type="radio" name="glossary-list-letter" value="R"><span>R</span>
+                      </label>
+                    </div>
+                    <div class="glossary-list__radio glossary-list__radio--letter">
+                      <label>
+                        <input type="radio" name="glossary-list-letter" value="S"><span>S</span>
+                      </label>
+                    </div>
+                    <div class="glossary-list__radio glossary-list__radio--letter">
+                      <label>
+                        <input type="radio" name="glossary-list-letter" value="T"><span>T</span>
+                      </label>
+                    </div>
+                    <div class="glossary-list__radio glossary-list__radio--letter">
+                      <label>
+                        <input type="radio" name="glossary-list-letter" value="U"><span>U</span>
+                      </label>
+                    </div>
+                    <div class="glossary-list__radio glossary-list__radio--letter">
+                      <label>
+                        <input type="radio" name="glossary-list-letter" value="V"><span>V</span>
+                      </label>
+                    </div>
+                    <div class="glossary-list__radio glossary-list__radio--letter">
+                      <label>
+                        <input type="radio" name="glossary-list-letter" value="W"><span>W</span>
+                      </label>
+                    </div>
+                    <div class="glossary-list__radio glossary-list__radio--letter">
+                      <label>
+                        <input type="radio" name="glossary-list-letter" value="X"><span>X</span>
+                      </label>
+                    </div>
+                    <div class="glossary-list__radio glossary-list__radio--letter">
+                      <label>
+                        <input type="radio" name="glossary-list-letter" value="Y"><span>Y</span>
+                      </label>
+                    </div>
+                    <div class="glossary-list__radio glossary-list__radio--letter">
+                      <label>
+                        <input type="radio" name="glossary-list-letter" value="Z"><span>Z</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="glossary-list__error banner">
+                  <div class="banner__bg"><img src="img/glossary/glossary_support.webp" alt=""></div>
+                  <div class="banner__content">
+                    <div class="banner__title title--26">Нашли ошибку? Есть слова которых нет в глоссарии?</div>
+                    <div class="banner__text">Напишите нам</div><a class="btn  btn--red btn--246" href="javascript:void(0)">
+                          <svg>
+                            <use xlink:href="img/sprites/sprite.svg#arrow_enter"></use>
+                          </svg><span class="btn__text">Написать в тех поддержку</span></a>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </section>
+        <section class="section">
+          <div class="section__container glossary-list__letters">
+            <div class="glossary-list__result">
+              <div class="glossary-list__letter title--67">Б</div>
+              <div class="glossary-list__links"><a class="glossary-list__link" href="javascript:void(0)">Баги</a><a class="glossary-list__link" href="javascript:void(0)">Бадди</a><a class="glossary-list__link" href="javascript:void(0)">Баден-Баден</a><a class="glossary-list__link" href="javascript:void(0)">База (для рассылок)</a><a class="glossary-list__link" href="javascript:void(0)">База данных (БД)</a><a class="glossary-list__link" href="javascript:void(0)">База ретаргетинга</a><a class="glossary-list__link" href="javascript:void(0)">Базовая динамика</a><a class="glossary-list__link" href="javascript:void(0)">Базовая частотность</a><a class="glossary-list__link" href="javascript:void(0)">Базовые классы</a><a class="glossary-list__link" href="javascript:void(0)">Базовые классы движка</a><a class="glossary-list__link" href="javascript:void(0)">Базовые компоненты Игровой Механики </a><a class="glossary-list__link" href="javascript:void(0)">Базовые моды</a><a class="glossary-list__link" href="javascript:void(0)">Базовые типы переменных</a><a class="glossary-list__link" href="javascript:void(0)">Базовые функции</a><a class="glossary-list__link" href="javascript:void(0)">Баланс</a><a class="glossary-list__link" href="javascript:void(0)">Баланс (BS)</a><a class="glossary-list__link" href="javascript:void(0)">Баланс игровой экономики</a><a class="glossary-list__link" href="javascript:void(0)">Баланс игры</a><a class="glossary-list__link" href="javascript:void(0)">Балансировать игру</a><a class="glossary-list__link" href="javascript:void(0)">Балансируемые сущности</a><a class="glossary-list__link" href="javascript:void(0)">Балансные значения</a><a class="glossary-list__link" href="javascript:void(0)">Балансные таблицы</a><a class="glossary-list__link" href="javascript:void(0)">Балансный</a><a class="glossary-list__link" href="javascript:void(0)">Бан</a><a class="glossary-list__link" href="javascript:void(0)">Банковская тайна</a><a class="glossary-list__link" href="javascript:void(0)">Баннер</a><a class="glossary-list__link" href="javascript:void(0)">Баннерная реклама</a><a class="glossary-list__link" href="javascript:void(0)">Баннерная слепота</a><a class="glossary-list__link" href="javascript:void(0)">Баннерообменная сеть</a><a class="glossary-list__link" href="javascript:void(0)">Барьер</a><a class="glossary-list__link" href="javascript:void(0)">Батл-пасс</a><a class="glossary-list__link" href="javascript:void(0)">Бегун</a><a class="glossary-list__link" href="javascript:void(0)">Безанкорные ссылки</a><a class="glossary-list__link" href="javascript:void(0)">Безопасность АС (автоматизированных систем)</a><a class="glossary-list__link" href="javascript:void(0)">Безопасность СВТ (средств вычислительной техники)</a><a class="glossary-list__link" href="javascript:void(0)">Безштамбовые деревья</a><a class="glossary-list__link" href="javascript:void(0)">Бейдж</a><a class="glossary-list__link" href="javascript:void(0)">Беседка</a><a class="glossary-list__link" href="javascript:void(0)">Бета-версия игры</a><a class="glossary-list__link" href="javascript:void(0)">Бета-тестирование</a><a class="glossary-list__link" href="javascript:void(0)">Библиотека (library)</a><a class="glossary-list__link" href="javascript:void(0)">Библиотека Scikit-learn (Sklearn)</a><a class="glossary-list__link" href="javascript:void(0)">Библия героев (паспорт персонажей)</a><a class="glossary-list__link" href="javascript:void(0)">Библия мира</a><a class="glossary-list__link" href="javascript:void(0)">Бид (Bid)</a><a class="glossary-list__link" href="javascript:void(0)">Бизнес-архитектура</a><a class="glossary-list__link" href="javascript:void(0)">Бизнес-модель</a><a class="glossary-list__link" href="javascript:void(0)">Бизнес-проблема</a><a class="glossary-list__link" href="javascript:void(0)">Бизнес-процесс</a><a class="glossary-list__link" href="javascript:void(0)">Бизнес-процессы</a><a class="glossary-list__link" href="javascript:void(0)">Бизнес-стратегия</a><a class="glossary-list__link" href="javascript:void(0)">Бизнес-эффект</a><a class="glossary-list__link" href="javascript:void(0)">Биллинг</a><a class="glossary-list__link" href="javascript:void(0)">Бинарный оператор</a><a class="glossary-list__link" href="javascript:void(0)">Биометрические персональные данные (биометрические ПДн)</a><a class="glossary-list__link" href="javascript:void(0)">Биометрия</a><a class="glossary-list__link" href="javascript:void(0)">Биоразнообразие</a><a class="glossary-list__link" href="javascript:void(0)">Биржа ссылок</a><a class="glossary-list__link" href="javascript:void(0)">Битмэт (Bitmap)</a><a class="glossary-list__link" href="javascript:void(0)">Битые ссылки</a><a class="glossary-list__link" href="javascript:void(0)">Блендинг (Blending)</a><a class="glossary-list__link" href="javascript:void(0)">Блог</a><a class="glossary-list__link" href="javascript:void(0)">Блог-платформа</a><a class="glossary-list__link" href="javascript:void(0)">Блогохостинг</a><a class="glossary-list__link" href="javascript:void(0)">Блок (в визуальном конструкторе)</a><a class="glossary-list__link" href="javascript:void(0)">Блок-схемы</a><a class="glossary-list__link" href="javascript:void(0)">Блокаут</a><a class="glossary-list__link" href="javascript:void(0)">Блокинг</a><a class="glossary-list__link" href="javascript:void(0)">Блокирование персональных данных</a><a class="glossary-list__link" href="javascript:void(0)">Блочная верстка</a><a class="glossary-list__link" href="javascript:void(0)">Блочная структура</a><a class="glossary-list__link" href="javascript:void(0)">Блочный тег</a><a class="glossary-list__link" href="javascript:void(0)">Блуперсы</a><a class="glossary-list__link" href="javascript:void(0)">Боковая панель, sidebar</a><a class="glossary-list__link" href="javascript:void(0)">Бокс Гача</a><a class="glossary-list__link" href="javascript:void(0)">Большая идея бренда или рекламной кампании</a><a class="glossary-list__link" href="javascript:void(0)">Большие значения</a><a class="glossary-list__link" href="javascript:void(0)">Бонус</a><a class="glossary-list__link" href="javascript:void(0)">Бот</a><a class="glossary-list__link" href="javascript:void(0)">Бот (сокращение от «робот»)</a><a class="glossary-list__link" href="javascript:void(0)">Браузер</a><a class="glossary-list__link" href="javascript:void(0)">Браузерные события</a><a class="glossary-list__link" href="javascript:void(0)">Бренд</a><a class="glossary-list__link" href="javascript:void(0)">Бренд-код</a><a class="glossary-list__link" href="javascript:void(0)">Бренд-лайн</a><a class="glossary-list__link" href="javascript:void(0)">Бренд-менеджер</a><a class="glossary-list__link" href="javascript:void(0)">Бренд-стратегия (стратегия бренда)</a><a class="glossary-list__link" href="javascript:void(0)">Бренд-трекинг, трекинг здоровья бренда</a><a class="glossary-list__link" href="javascript:void(0)">Брендбук</a><a class="glossary-list__link" href="javascript:void(0)">Брендинг</a><a class="glossary-list__link" href="javascript:void(0)">Брендированный трафик</a><a class="glossary-list__link" href="javascript:void(0)">Брендовые запросы</a><a class="glossary-list__link" href="javascript:void(0)">Бритком</a><a class="glossary-list__link" href="javascript:void(0)">Бриф</a><a class="glossary-list__link" href="javascript:void(0)">Бриф (логлайн)</a><a class="glossary-list__link" href="javascript:void(0)">Бриф (от англ. brief — задание)</a></div>
+            </div>
+            <div class="glossary-list__result">
+              <div class="glossary-list__letter title--67">Б</div>
+              <div class="glossary-list__links"><a class="glossary-list__link" href="javascript:void(0)">Баги</a><a class="glossary-list__link" href="javascript:void(0)">Бадди</a><a class="glossary-list__link" href="javascript:void(0)">Баден-Баден</a><a class="glossary-list__link" href="javascript:void(0)">База (для рассылок)</a><a class="glossary-list__link" href="javascript:void(0)">База данных (БД)</a><a class="glossary-list__link" href="javascript:void(0)">База ретаргетинга</a><a class="glossary-list__link" href="javascript:void(0)">Базовая динамика</a><a class="glossary-list__link" href="javascript:void(0)">Базовая частотность</a><a class="glossary-list__link" href="javascript:void(0)">Базовые классы</a><a class="glossary-list__link" href="javascript:void(0)">Базовые классы движка</a><a class="glossary-list__link" href="javascript:void(0)">Базовые компоненты Игровой Механики </a><a class="glossary-list__link" href="javascript:void(0)">Базовые моды</a><a class="glossary-list__link" href="javascript:void(0)">Базовые типы переменных</a><a class="glossary-list__link" href="javascript:void(0)">Базовые функции</a><a class="glossary-list__link" href="javascript:void(0)">Баланс</a><a class="glossary-list__link" href="javascript:void(0)">Баланс (BS)</a><a class="glossary-list__link" href="javascript:void(0)">Баланс игровой экономики</a><a class="glossary-list__link" href="javascript:void(0)">Баланс игры</a><a class="glossary-list__link" href="javascript:void(0)">Балансировать игру</a><a class="glossary-list__link" href="javascript:void(0)">Балансируемые сущности</a><a class="glossary-list__link" href="javascript:void(0)">Балансные значения</a><a class="glossary-list__link" href="javascript:void(0)">Балансные таблицы</a><a class="glossary-list__link" href="javascript:void(0)">Балансный</a><a class="glossary-list__link" href="javascript:void(0)">Бан</a><a class="glossary-list__link" href="javascript:void(0)">Банковская тайна</a><a class="glossary-list__link" href="javascript:void(0)">Баннер</a><a class="glossary-list__link" href="javascript:void(0)">Баннерная реклама</a><a class="glossary-list__link" href="javascript:void(0)">Баннерная слепота</a><a class="glossary-list__link" href="javascript:void(0)">Баннерообменная сеть</a><a class="glossary-list__link" href="javascript:void(0)">Барьер</a><a class="glossary-list__link" href="javascript:void(0)">Батл-пасс</a><a class="glossary-list__link" href="javascript:void(0)">Бегун</a><a class="glossary-list__link" href="javascript:void(0)">Безанкорные ссылки</a><a class="glossary-list__link" href="javascript:void(0)">Безопасность АС (автоматизированных систем)</a><a class="glossary-list__link" href="javascript:void(0)">Безопасность СВТ (средств вычислительной техники)</a><a class="glossary-list__link" href="javascript:void(0)">Безштамбовые деревья</a><a class="glossary-list__link" href="javascript:void(0)">Бейдж</a><a class="glossary-list__link" href="javascript:void(0)">Беседка</a><a class="glossary-list__link" href="javascript:void(0)">Бета-версия игры</a><a class="glossary-list__link" href="javascript:void(0)">Бета-тестирование</a><a class="glossary-list__link" href="javascript:void(0)">Библиотека (library)</a><a class="glossary-list__link" href="javascript:void(0)">Библиотека Scikit-learn (Sklearn)</a><a class="glossary-list__link" href="javascript:void(0)">Библия героев (паспорт персонажей)</a><a class="glossary-list__link" href="javascript:void(0)">Библия мира</a><a class="glossary-list__link" href="javascript:void(0)">Бид (Bid)</a><a class="glossary-list__link" href="javascript:void(0)">Бизнес-архитектура</a><a class="glossary-list__link" href="javascript:void(0)">Бизнес-модель</a><a class="glossary-list__link" href="javascript:void(0)">Бизнес-проблема</a><a class="glossary-list__link" href="javascript:void(0)">Бизнес-процесс</a><a class="glossary-list__link" href="javascript:void(0)">Бизнес-процессы</a><a class="glossary-list__link" href="javascript:void(0)">Бизнес-стратегия</a><a class="glossary-list__link" href="javascript:void(0)">Бизнес-эффект</a><a class="glossary-list__link" href="javascript:void(0)">Биллинг</a><a class="glossary-list__link" href="javascript:void(0)">Бинарный оператор</a><a class="glossary-list__link" href="javascript:void(0)">Биометрические персональные данные (биометрические ПДн)</a><a class="glossary-list__link" href="javascript:void(0)">Биометрия</a><a class="glossary-list__link" href="javascript:void(0)">Биоразнообразие</a><a class="glossary-list__link" href="javascript:void(0)">Биржа ссылок</a><a class="glossary-list__link" href="javascript:void(0)">Битмэт (Bitmap)</a><a class="glossary-list__link" href="javascript:void(0)">Битые ссылки</a><a class="glossary-list__link" href="javascript:void(0)">Блендинг (Blending)</a><a class="glossary-list__link" href="javascript:void(0)">Блог</a><a class="glossary-list__link" href="javascript:void(0)">Блог-платформа</a><a class="glossary-list__link" href="javascript:void(0)">Блогохостинг</a><a class="glossary-list__link" href="javascript:void(0)">Блок (в визуальном конструкторе)</a><a class="glossary-list__link" href="javascript:void(0)">Блок-схемы</a><a class="glossary-list__link" href="javascript:void(0)">Блокаут</a><a class="glossary-list__link" href="javascript:void(0)">Блокинг</a><a class="glossary-list__link" href="javascript:void(0)">Блокирование персональных данных</a><a class="glossary-list__link" href="javascript:void(0)">Блочная верстка</a><a class="glossary-list__link" href="javascript:void(0)">Блочная структура</a><a class="glossary-list__link" href="javascript:void(0)">Блочный тег</a><a class="glossary-list__link" href="javascript:void(0)">Блуперсы</a><a class="glossary-list__link" href="javascript:void(0)">Боковая панель, sidebar</a><a class="glossary-list__link" href="javascript:void(0)">Бокс Гача</a><a class="glossary-list__link" href="javascript:void(0)">Большая идея бренда или рекламной кампании</a><a class="glossary-list__link" href="javascript:void(0)">Большие значения</a><a class="glossary-list__link" href="javascript:void(0)">Бонус</a><a class="glossary-list__link" href="javascript:void(0)">Бот</a><a class="glossary-list__link" href="javascript:void(0)">Бот (сокращение от «робот»)</a><a class="glossary-list__link" href="javascript:void(0)">Браузер</a><a class="glossary-list__link" href="javascript:void(0)">Браузерные события</a><a class="glossary-list__link" href="javascript:void(0)">Бренд</a><a class="glossary-list__link" href="javascript:void(0)">Бренд-код</a><a class="glossary-list__link" href="javascript:void(0)">Бренд-лайн</a><a class="glossary-list__link" href="javascript:void(0)">Бренд-менеджер</a><a class="glossary-list__link" href="javascript:void(0)">Бренд-стратегия (стратегия бренда)</a><a class="glossary-list__link" href="javascript:void(0)">Бренд-трекинг, трекинг здоровья бренда</a><a class="glossary-list__link" href="javascript:void(0)">Брендбук</a><a class="glossary-list__link" href="javascript:void(0)">Брендинг</a><a class="glossary-list__link" href="javascript:void(0)">Брендированный трафик</a><a class="glossary-list__link" href="javascript:void(0)">Брендовые запросы</a><a class="glossary-list__link" href="javascript:void(0)">Бритком</a><a class="glossary-list__link" href="javascript:void(0)">Бриф</a><a class="glossary-list__link" href="javascript:void(0)">Бриф (логлайн)</a><a class="glossary-list__link" href="javascript:void(0)">Бриф (от англ. brief — задание)</a></div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+    <footer class="site-footer" data-js="siteFooter">
+      <div class="site-footer__container">
+        <div class="site-footer__word" data-js="footerText">производство
+          <svg>
+            <use xlink:href="img/sprites/sprite.svg#arrow_classic"></use>
+          </svg>модернизация
+          <svg>
+            <use xlink:href="img/sprites/sprite.svg#arrow_classic"></use>
+          </svg>ремонт
+        </div>
+        <div class="site-footer__left" data-js="footerLeft"><a class="btn  btn--red btn--big" href="javascript:void(0)">
+                <svg>
+                  <use xlink:href="img/sprites/sprite.svg#arrow_enter"></use>
+                </svg><span class="btn__text">Оставить заявку</span></a>
+          <div class="site-footer__docs"><a class="site-footer__doc" href="javascript:void()">Пользовательское соглашение</a><a class="site-footer__doc" href="javascript:void()">Политика обработки персональных данных и конфиденциальности</a></div>
+          <div class="site-footer__copyright">© 2010—2024 Точприбор</div>
+        </div>
+        <div class="site-footer__menu" data-js="footerMenu">
+              <div class="big-menu scrollbar">
+                <div class="big-menu__section">
+                  <div class="big-menu__title">Каталог</div>
+                  <div class="big-menu__list" data-js="bigMenuList">
+                    <ul class="big-menu__items" data-js="bigMenuItems">
+                      <li class="big-menu__item" data-js="bigMenuItem"><a href="javascript:void(0)">Разрывные машины</a></li>
+                      <li class="big-menu__item" data-js="bigMenuItem"><a href="javascript:void(0)">Твердомеры</a></li>
+                      <li class="big-menu__item" data-js="bigMenuItem"><a href="javascript:void(0)">Меры твердости</a></li>
+                      <li class="big-menu__item" data-js="bigMenuItem"><a href="javascript:void(0)">Приборы для измерения цвета</a></li>
+                      <li class="big-menu__item" data-js="bigMenuItem"><a href="javascript:void(0)">Микроскопы						</a></li>
+                      <li class="big-menu__item" data-js="bigMenuItem"><a class="big-menu__link" href="javascript:void(0)">Динамометры</a></li>
+                      <li class="big-menu__item" data-js="bigMenuItem"><a class="big-menu__link" href="javascript:void(0)">Разрывные машины</a></li>
+                      <li class="big-menu__item" data-js="bigMenuItem"><a class="big-menu__link" href="javascript:void(0)">Твердомеры</a></li>
+                      <li class="big-menu__item" data-js="bigMenuItem"><a class="big-menu__link" href="javascript:void(0)">Меры твердости</a></li>
+                      <li class="big-menu__item" data-js="bigMenuItem"><a class="big-menu__link" href="javascript:void(0)">Приборы для измерения цвета</a></li>
+                      <li class="big-menu__item" data-js="bigMenuItem"><a class="big-menu__link" href="javascript:void(0)">Микроскопы</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="big-menu__section">
+                  <div class="big-menu__title">О компании</div>
+                  <div class="big-menu__list" data-js="bigMenuList">
+                    <ul class="big-menu__items" data-js="bigMenuItems">
+                      <li class="big-menu__item" data-js="bigMenuItem"><a href="javascript:void(0)">Производство</a></li>
+                      <li class="big-menu__item" data-js="bigMenuItem"><a href="javascript:void(0)">Услуги</a></li>
+                      <li class="big-menu__item" data-js="bigMenuItem"><a href="javascript:void(0)">Документы</a></li>
+                      <li class="big-menu__item" data-js="bigMenuItem"><a href="javascript:void(0)">Карьера в Точприбор</a></li>
+                      <li class="big-menu__item" data-js="bigMenuItem"><a href="javascript:void(0)">Наша команда</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="big-menu__section">
+                  <div class="big-menu__title">Еще</div>
+                  <div class="big-menu__list" data-js="bigMenuList">
+                    <ul class="big-menu__items" data-js="bigMenuItems">
+                      <li class="big-menu__item" data-js="bigMenuItem"><a href="javascript:void(0)">Контакты</a></li>
+                      <li class="big-menu__item" data-js="bigMenuItem"><a href="javascript:void(0)">Новости</a></li>
+                      <li class="big-menu__item" data-js="bigMenuItem"><a href="javascript:void(0)">Вопросы и ответы (FAQ)</a></li>
+                      <li class="big-menu__item" data-js="bigMenuItem"><a href="javascript:void(0)">Карта сайта</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="big-menu__section">
+                  <div class="big-menu__title">Связаться</div>
+                  <div class="big-menu__list" data-js="bigMenuList">
+                    <ul class="big-menu__items" data-js="bigMenuItems">
+                      <li class="big-menu__item" data-js="bigMenuItem"><a href="mailto:info@tochpribor.ru">info@tochpribor.ru</a></li>
+                      <li class="big-menu__item" data-js="bigMenuItem"><a href="tel:+74922521233">+7 (4922) 52-12-33</a></li>
+                      <li class="big-menu__item" data-js="bigMenuItem"><span>Головной офис: 190121, г. Санкт-Петербург, пер. Дровяной, д. 20, пом. 4-Н Вопросы и ответы (FAQ)</span></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="big-menu__footer">
+                  <div class="socials"><a class="socials__item" href="https://telegram.org/">
+                      <svg>
+                        <use xlink:href="img/sprites/sprite.svg#tg"></use>
+                      </svg></a><a class="socials__item" href="https://vk.com/">
+                      <svg>
+                        <use xlink:href="img/sprites/sprite.svg#vk"></use>
+                      </svg></a><a class="socials__item" href="https://vkvideo.ru/@tochpribor">
+                      <svg>
+                        <use xlink:href="img/sprites/sprite.svg#vk_video"></use>
+                      </svg></a></div>
+                  <div class="big-menu__copyright">© 2010—2024 Точприбор</div>
+                </div>
+              </div>
+        </div>
+      </div>
+    </footer>
+    <div class="main-burger" data-js="mainBurger">
+      <div class="main-burger__overlay" data-js="mainBurgerClose"></div>
+      <div class="main-burger__content">
+        <div class="main-burger__close" data-js="mainBurgerClose">
+          <svg> 
+            <use xlink:href="img/sprites/sprite.svg#close"></use>
+          </svg>
+        </div>
+        <div class="main-burger__menu scrollbar">
+          <div class="burger-menu">
+            <div class="burger-menu__section">
+              <div class="burger-menu__title">Услуги</div>
+              <ul class="burger-menu__list">
+                <li class="burger-menu__item"><a class="burger-menu__link" href="javascript:void(0)">Проверка подлинности</a></li>
+                <li class="burger-menu__item"><a class="burger-menu__link" href="javascript:void(0)">Металлообработка</a></li>
+                <li class="burger-menu__item"><a class="burger-menu__link" href="javascript:void(0)">Поверка средств измерений</a></li>
+                <li class="burger-menu__item"><a class="burger-menu__link" href="javascript:void(0)">Пуско-наладка</a></li>
+                <li class="burger-menu__item"><a class="burger-menu__link" href="javascript:void(0)">Наладка средств измерений</a></li>
+                <li class="burger-menu__item"><a class="burger-menu__link" href="javascript:void(0)">Оборудование в Лизинг</a></li>
+                <li class="burger-menu__item"><a class="burger-menu__link" href="javascript:void(0)">Безопасность</a></li>
+              </ul>
+            </div>
+            <div class="burger-menu__section">
+              <div class="burger-menu__title">Компания</div>
+              <ul class="burger-menu__list">
+                <li class="burger-menu__item"><a class="burger-menu__link" href="javascript:void(0)">О компании</a></li>
+                <li class="burger-menu__item"><a class="burger-menu__link" href="javascript:void(0)">Производство</a></li>
+                <li class="burger-menu__item"><a class="burger-menu__link" href="javascript:void(0)">Карьера в Точприбор</a></li>
+                <li class="burger-menu__item"><a class="burger-menu__link" href="javascript:void(0)">Наша команда</a></li>
+              </ul>
+            </div>
+            <div class="burger-menu__section">
+              <div class="burger-menu__title">Еще</div>
+              <ul class="burger-menu__list">
+                <li class="burger-menu__item"><a class="burger-menu__link" href="javascript:void(0)">Контакты</a></li>
+                <li class="burger-menu__item"><a class="burger-menu__link" href="javascript:void(0)">Новости</a></li>
+                <li class="burger-menu__item"><a class="burger-menu__link" href="javascript:void(0)">Документы</a></li>
+                <li class="burger-menu__item"><a class="burger-menu__link" href="javascript:void(0)">Вопросы и ответы (FAQ)</a></li>
+                <li class="burger-menu__item"><a class="burger-menu__link" href="javascript:void(0)">Карта сайта</a></li>
+              </ul>
+            </div>
+            <div class="burger-menu__section burger-menu__section--contacts">
+              <div class="burger-menu__title">Связаться</div>
+              <ul class="burger-menu__list">
+                <li class="burger-menu__item"><a class="burger-menu__link" href="mailto:info@tochpribor.ru">info@tochpribor.ru</a></li>
+                <li class="burger-menu__item"><a class="burger-menu__link" href="tel:+78003500248">+7 (800) 350-02-48</a></li>
+              </ul>
+              <div class="burger-menu__list burger-menu__list--h">
+                <div class="burger-menu__row">
+                  <div class="burger-menu__subtitle">Адрес</div>
+                  <div class="burger-menu__item"><span>Головной офис: 190121, г. Санкт-Петербург, пер. Дровяной, д. 20, пом. 4-Н</span></div>
+                </div>
+                <div class="burger-menu__row">
+                  <div class="burger-menu__subtitle">Тел / факс</div>
+                  <div class="burger-menu__item"><a class="burger-menu__link" href="tel:+74922521233">+7 (4922) 52-12-33</a></div>
+                </div>
+              </div>
+              <div class="socials"><a class="socials__item" href="https://telegram.org/">
+                  <svg>
+                    <use xlink:href="img/sprites/sprite.svg#tg"></use>
+                  </svg></a><a class="socials__item" href="https://vk.com/">
+                  <svg>
+                    <use xlink:href="img/sprites/sprite.svg#vk"></use>
+                  </svg></a><a class="socials__item" href="https://vkvideo.ru/@tochpribor">
+                  <svg>
+                    <use xlink:href="img/sprites/sprite.svg#vk_video"></use>
+                  </svg></a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <noindex>
+      <div>
+            <div class="modal hystmodal city-modal" id="cityModal" aria-hidden="true" data-js="cityModal">
+              <div class="hystmodal__wrap">
+                <div class="hystmodal__window" role="dialog" aria-modal="true">
+                  <div class="modal__content scrollbar scrollbar--small">
+                    <div class="modal__title title--32">Укажите ваш город</div>
+                    <div class="modal__close" data-hystclose>
+                      <svg> 
+                        <use xlink:href="./img/sprites/sprite.svg#close"></use>
+                      </svg>
+                    </div>
+                    <div class="modal__inner" data-js="modalInner">
+                          <div class="field  field--search field--reset  " data-js="formField">
+                            <button class="field__search" type="submit">
+                              <svg> 
+                                <use xlink:href="img/sprites/sprite.svg#search"></use>
+                              </svg>
+                            </button>
+                            <label>
+                              <input class="field__input" type="text" placeholder="Поиск города" data-js="citySearchInput"><span class="field__error" data-js="fieldError"></span>
+                            </label><span class="field__reset" data-js="fieldResetBtn">
+                              <svg> 
+                                <use xlink:href="img/sprites/sprite.svg#close"></use>
+                              </svg></span>
+                          </div>
+                      <ul class="city-modal__list">
+                        <li class="city-modal__item" data-js="cityModalItem" data-value="Москва">Москва</li>
+                        <li class="city-modal__item" data-js="cityModalItem" data-value="Пермь">Пермь</li>
+                        <li class="city-modal__item" data-js="cityModalItem" data-value="Санкт-Петербург">Санкт-Петербург</li>
+                        <li class="city-modal__item" data-js="cityModalItem" data-value="Уфа">Уфа</li>
+                        <li class="city-modal__item" data-js="cityModalItem" data-value="Самара">Самара</li>
+                        <li class="city-modal__item" data-js="cityModalItem" data-value="Екатеринбург">Екатеринбург</li>
+                        <li class="city-modal__item" data-js="cityModalItem" data-value="Челябинск">Челябинск</li>
+                        <li class="city-modal__item" data-js="cityModalItem" data-value="Краснодар">Краснодар</li>
+                        <li class="city-modal__item" data-js="cityModalItem" data-value="Нижний Новгород">Нижний Новгород</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal hystmodal quick-view-modal" id="quickViewModal" aria-hidden="true">
+              <div class="hystmodal__wrap">
+                <div class="hystmodal__window" role="dialog" aria-modal="true">
+                  <div class="modal__content scrollbar scrollbar--small">
+                    <div class="modal__title title--32">Универсальная испытательная машина ТРМ-О 0,1 А0,5 Tochline</div>
+                    <div class="modal__close" data-hystclose>
+                      <svg> 
+                        <use xlink:href="./img/sprites/sprite.svg#close"></use>
+                      </svg>
+                    </div>
+                    <div class="modal__inner" data-js="modalInner">
+                      <div class="quick-view">
+                        <div class="quick-view__top"> <a class="btn  btn--noborder btn--link" href="javascript:void(0)">
+                                <svg>
+                                  <use xlink:href="img/sprites/sprite.svg#compare_2"></use>
+                                </svg><span class="btn__text">Сравнить</span></a><a class="btn  btn--noborder btn--link" href="javascript:void(0)">
+                                <svg>
+                                  <use xlink:href="img/sprites/sprite.svg#share"></use>
+                                </svg><span class="btn__text">Поделиться</span></a>
+                        </div>
+                        <div class="quick-view__grid">
+                          <div class="quick-view__photo">
+                                <div class="product-tags quick-view__tags">
+                                  <div class="product-tags__tagblock">
+                                    <div class="product-tags__tag product-tags__tag--green"><img src="img/catalog/check_icon.svg">В наличии
+                                    </div>
+                                  </div>
+                                  <div class="product-tags__tagblock">
+                                    <div class="product-tags__tag product-tags__tag--blue">Новинка
+                                    </div>
+                                  </div>
+                                  <div class="product-tags__tagblock">
+                                    <div class="product-tags__tag product-tags__tag--red">Скидка
+                                    </div>
+                                  </div>
+                                  <div class="product-tags__tagblock hovered">
+                                    <div class="product-tags__tag product-tags__tag--grey"><img src="img/catalog/arrow_circle.svg">Снято с производства
+                                    </div>
+                                    <div class="product-tags__note">Товар больше не производится. Смотрите аналоги в карточке товара</div>
+                                  </div>
+                                </div><img src="img/catalog/product_7.webp">
+                          </div>
+                          <div class="quick-view__info">
+                                <div class="product-articles quick-view__articles">
+                                  <div class="product-articles__logo"><img src="img/catalog/quick_view_logo.webp"></div>
+                                      <div class="copy-btn" data-js="copyBtn" data-text="32131376233-19"><span class="copy-btn__text">Артикул 32131376233-19</span><span class="copy-btn__icon">
+                                          <svg> 
+                                            <use xlink:href="img/sprites/sprite.svg#copy"></use>
+                                          </svg></span></div>
+                                      <div class="copy-btn" data-js="copyBtn" data-text="76233-19"><span class="copy-btn__text">Номер в си рф: 76233-19</span><span class="copy-btn__icon">
+                                          <svg> 
+                                            <use xlink:href="img/sprites/sprite.svg#copy"></use>
+                                          </svg></span></div>
+                                </div>
+                            <div class="quick-view__block">
+                              <div class="quick-view__subtitle">Применение</div>
+                              <div class="quick-view__text">Статические испытания образов из различных материалов на растяжение, сжатие, изгиб, сдвиг, срез, адгезию и прочее</div>
+                            </div>
+                            <div class="quick-view__block">
+                              <div class="quick-view__subtitle">Характеристики</div>
+                              <div class="chars-table">
+                                <div class="chars-table__row">
+                                  <div class="chars-table__title">Конструктивное исполнение</div>
+                                  <div class="chars-table__value">настольное</div>
+                                </div>
+                                <div class="chars-table__row">
+                                  <div class="chars-table__title">Напряжение питания</div>
+                                  <div class="chars-table__value"> 220В, 50Гц</div>
+                                </div>
+                                <div class="chars-table__row">
+                                  <div class="chars-table__title">Мин. нагрузка, Н</div>
+                                  <div class="chars-table__value">0,2</div>
+                                </div>
+                                <div class="chars-table__row">
+                                  <div class="chars-table__title">Макс. нагрузка, Н</div>
+                                  <div class="chars-table__value">100</div>
+                                </div>
+                                <div class="chars-table__row">
+                                  <div class="chars-table__title">Погрешность по нагрузке на данном диапазоне</div>
+                                  <div class="chars-table__value"> ±0.5%</div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="quick-view__block">
+                              <div class="quick-view__subtitle">Документы</div>
+                              <div class="quick-view__list"><a class="download-btn download-btn--small" href="javascript:void(0)"><span class="download-btn__img"><img src="img/docs-type/pdf.svg"></span><span class="download-btn__text">Свидетельство об утверждении типа средств измерений ОС.С. 28.070.А №75160</span><span class="download-btn__download">
+                                        <svg>
+                                          <use xlink:href="img/sprites/sprite.svg#download"></use>
+                                        </svg><span>Скачать</span></span></a><a class="download-btn download-btn--small" href="javascript:void(0)"><span class="download-btn__img"><img src="img/docs-type/pdf.svg"></span><span class="download-btn__text">Методика поверки</span><span class="download-btn__download">
+                                        <svg>
+                                          <use xlink:href="img/sprites/sprite.svg#download"></use>
+                                        </svg><span>Скачать</span></span></a>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="quick-view__controls">
+                            <div class="quick-view__order">
+                                  <div class="product-price quick-view__prices product-price--horizontal product-price--32">
+                                    <div class="product-price__price">550 000 ₽</div>
+                                    <div class="product-price__price product-price__price--old">680 000 ₽</div>
+                                  </div><a class="btn  btn--red btn--full" href="javascript:void(0)"><span class="btn__text">Подробнее о товаре</span></a><a class="btn  btn--light-red btn--full" href="javascript:void(0)"><span class="btn__text">Запросить техническое описание</span></a><a class="btn  btn--grey btn--full" href="javascript:void(0)">
+                                    <svg>
+                                      <use xlink:href="img/sprites/sprite.svg#question"></use>
+                                    </svg><span class="btn__text">Задать вопрос</span></a>
+                            </div><a class="btn quick-view__more btn--transparent-red btn--full" href="javascript:void(0)">
+                                  <svg>
+                                    <use xlink:href="img/sprites/sprite.svg#arrow_enter"></use>
+                                  </svg><span class="btn__text">Подробнее о товаре</span></a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+      </div>
+    </noindex>
+    <!-- по возможности добавить только на те страницы где есть история-->
+    <div class="history-modal" data-js="historyModal">
+      <div class="history-modal__overlay" data-js="historyModalClose"></div>
+      <div class="history-modal__content">
+        <div class="history-modal__close" data-js="historyModalClose">
+          <svg> 
+            <use xlink:href="img/sprites/sprite.svg#close"></use>
+          </svg>
+        </div>
+        <div class="history-modal__list scrollbar" data-js="historyModalScroller">
+          <div class="history-modal__progress" data-js="historyModalProgress">
+            <div class="line-color" data-js="historyModalProgressLine"></div>
+            <div class="line-dashed"></div>
+          </div>
+          <div class="history-modal__row" data-js="historyModalRow">
+            <div class="history-modal__year title--83">1950</div>
+            <div class="history-modal__point active" data-js="historyModalPoint"></div>
+            <div class="history-modal__info text-editor">
+              <p>В  г. Иваново основан завод по производству приборов для испытания металлов</p><img src="img/about/about_history.webp">
+            </div>
+          </div>
+          <div class="history-modal__row" data-js="historyModalRow">
+            <div class="history-modal__year title--83">1956</div>
+            <div class="history-modal__point" data-js="historyModalPoint"></div>
+            <div class="history-modal__info text-editor">
+              <p>Начат выпуск простых приборов технологического назначения</p>
+            </div>
+          </div>
+          <div class="history-modal__row" data-js="historyModalRow">
+            <div class="history-modal__year title--83">1957</div>
+            <div class="history-modal__point" data-js="historyModalPoint"></div>
+            <div class="history-modal__info text-editor">
+              <p>Введён в эксплуатацию цех упаковочной тары</p>
+            </div>
+          </div>
+          <div class="history-modal__row" data-js="historyModalRow">
+            <div class="history-modal__year title--83">1958</div>
+            <div class="history-modal__point" data-js="historyModalPoint"></div>
+            <div class="history-modal__info text-editor">
+              <p>К управлению завода присоединились молодые, активные учредители, и завод начал возрождаться. На сегодняшний день на нем работает более 130 человек. Полностью обновлено конструкторское бюро. Предприятие имеет линию производства полного цикла.</p><img src="img/about/about_history.webp">
+            </div>
+          </div>
+          <div class="history-modal__row" data-js="historyModalRow">
+            <div class="history-modal__year title--83">1959</div>
+            <div class="history-modal__point" data-js="historyModalPoint"></div>
+            <div class="history-modal__info text-editor">
+              <p>Образовано конструкторское бюро по разработке автоматических средств измерения масс и приборов испытательной техники</p><a class="btn  btn--transparent-red btn--full" href="https://vkvideo.ru/video_ext.php?oid=-228066748&amp;id=456239041&amp;hd=3&amp;autoplay=1&amp;js_api=1" data-fancybox data-type="iframe">
+                    <svg>
+                      <use xlink:href="img/sprites/sprite.svg#play_t"></use>
+                    </svg><span class="btn__text">Смотреть видео</span></a>
+            </div>
+          </div>
+          <div class="history-modal__row" data-js="historyModalRow">
+            <div class="history-modal__year title--83">1965</div>
+            <div class="history-modal__point" data-js="historyModalPoint"></div>
+            <div class="history-modal__info text-editor">
+              <p>Завод переименован в «Завод испытательных приборов»</p>
+            </div>
+          </div>
+          <div class="history-modal__row" data-js="historyModalRow">
+            <div class="history-modal__year title--83">1970</div>
+            <div class="history-modal__point" data-js="historyModalPoint"></div>
+            <div class="history-modal__info text-editor">
+              <p>Завод переименован в ПО "Точприбор", в связи с переименованием зарегистрирован товарный знак №60992 с приоритетом от 27.07.1977 г.</p><a class="btn  btn--transparent-red btn--full" href="https://vkvideo.ru/video_ext.php?oid=-228066748&amp;id=456239041&amp;hd=3&amp;autoplay=1&amp;js_api=1" data-fancybox data-type="iframe">
+                    <svg>
+                      <use xlink:href="img/sprites/sprite.svg#play_t"></use>
+                    </svg><span class="btn__text">Смотреть видео</span></a>
+            </div>
+          </div>
+          <div class="history-modal__row" data-js="historyModalRow">
+            <div class="history-modal__year title--83">1992</div>
+            <div class="history-modal__point" data-js="historyModalPoint"></div>
+            <div class="history-modal__info text-editor">
+              <p>Завод переименован в ОАО «Точприбор»</p>
+            </div>
+          </div>
+          <div class="history-modal__row" data-js="historyModalRow">
+            <div class="history-modal__year title--83">2011</div>
+            <div class="history-modal__point" data-js="historyModalPoint"></div>
+            <div class="history-modal__info text-editor">
+              <p>Реорганизация АО Точприбор в ООО ЗИП</p>
+            </div>
+          </div>
+          <div class="history-modal__row" data-js="historyModalRow">
+            <div class="history-modal__year title--83">2016</div>
+            <div class="history-modal__point" data-js="historyModalPoint"></div>
+            <div class="history-modal__info text-editor">
+              <p>К управлению завода присоединились молодые, активные учредители, и завод начал возрождаться. На сегодняшний день на нем работает более 130 человек. Полностью обновлено конструкторское бюро. Предприятие имеет линию производства полного цикла.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="js/main.min.js"></script>
+  </body>
+</html>

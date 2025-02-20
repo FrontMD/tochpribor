@@ -33,12 +33,25 @@
 }
 
 .quick-view-modal {
+    .hystmodal__window {
+        @include max(laptop) {
+            max-width: calc(100% - 32px);
+            min-width: calc(100% - 32px);
+        }
+
+        @include max(tablet) {
+            max-width: 100%;
+            min-width: 100%;
+        }
+    }
+
     .modal__content {
         max-width: 1408px;
         min-width: auto;
 
         @include max(laptop) {
-            max-width: calc(100% - 32px);
+            max-width: 100%;
+            width: 100%;
             margin: 0 auto;
         }
 
@@ -100,9 +113,14 @@
             border: 1px solid $c-border;
             border-radius: 4px;
             overflow: hidden;
+            min-width: 430px;
 
             @include max(laptop) {
                 aspect-ratio: 1 / 0.96;
+            }
+
+            @include max(1249) {
+                min-width: 495px;
             }
 
             @include max(tablet) {
@@ -111,6 +129,7 @@
 
             @include max(mobile) {
                 aspect-ratio: 1 / 0.9;
+                min-width: auto;
             }
 
             img {

@@ -317,7 +317,7 @@
 
         @include max(tablet) {
             max-width: 100%;
-            height: calc(100vh - 60vw - 61px);
+            height: calc(100dvh - 60vw - 61px);
             min-height: auto;
             overflow: hidden;
             left: 0;
