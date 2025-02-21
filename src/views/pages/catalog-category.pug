@@ -46,16 +46,16 @@ block content
                         .form-filter__select.filter-select(data-js='filterSelect')
                             .filter-select__header(data-js="filterSelectHeader")
                                 select(data-js="filterSelectInput")
-                                    option(value="По популярности" selected) По популярности
-                                    option(value="Сначала дешевле") Сначала дешевле
-                                    option(value="Сначала дороже") Сначала дороже
+                                    option(value="popular" selected) По популярности
+                                    option(value="price_asc") Сначала дешевле
+                                    option(value="price_desc") Сначала дороже
                                 .filter-select__fake(data-js="filterSelectFake") По популярности
                                 svg
                                     use(xlink:href=`img/sprites/sprite.svg#arrow_angle`)
                             .filter-select__content
-                                .filter-select__option.active(data-js="filterSelectOption" data-value="По популярности") По популярности
-                                .filter-select__option(data-js="filterSelectOption" data-value="Сначала дешевле") Сначала дешевле
-                                .filter-select__option(data-js="filterSelectOption" data-value="Сначала дороже") Сначала дороже
+                                .filter-select__option.active(data-js="filterSelectOption" data-name="По популярности" data-value="popular") По популярности
+                                .filter-select__option(data-js="filterSelectOption" data-name="Сначала дешевле" data-value="price_asc") Сначала дешевле
+                                .filter-select__option(data-js="filterSelectOption" data-name="Сначала дороже" data-value="price_desc") Сначала дороже
 
 
         section.section.section--transparent.catalog-category__section

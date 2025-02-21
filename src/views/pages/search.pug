@@ -57,3 +57,39 @@ block content
                                     .filter-select__option.active(data-js="filterSelectOption" data-value="По популярности") По популярности
                                     .filter-select__option(data-js="filterSelectOption" data-value="Сначала дешевле") Сначала дешевле
                                     .filter-select__option(data-js="filterSelectOption" data-value="Сначала дороже") Сначала дороже
+
+                .search-results__list
+                    +search-card({
+                        breadcrumbs: {
+                            items: [
+                                {
+                                    name: 'Главная',
+                                    link: 'javascript:void(0);'
+                                },
+                                {
+                                    name: 'Каталог',
+                                    link: 'javascript:void(0);'
+                                },
+                                {
+                                    name: 'Универсальные испытательные машины (Разрывные машины)',
+                                    link: 'javascript:void(0);'
+                                },
+                                {
+                                    name: 'Электромеханические',
+                                    link: 'javascript:void(0);'
+                                },
+                                {
+                                    name: 'Универсальные испытательные машины ТРМ-О Tochline',
+                                    link: 'javascript:void(0);'
+                                }
+                            ]
+                        },
+                        img: 'img/catalog/product_7.webp',
+                        title: 'Универсальная испытательная машина ТРМ-О Tochline ТРМ',
+                        tags: ['Товар', '52 модификации'],
+                        desc: `<p>Технические характеристики</p><ul><li>Конструктивное исполнение: установка на виброопоры</li><li>Наибольший предел измерений (НПИ): 50</li><li>Ход подвижной траверсы без захватов, мм: 800</li></ul>`,
+                        prices:{
+                            price: '999 550 000 ₽',
+                            oldPrice: '1 680 000 ₽'
+                        },
+                    })

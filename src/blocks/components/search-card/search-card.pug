@@ -1,0 +1,54 @@
+-
+	const defaultSearchCardProps = {
+		classes: '',
+		breadcrumbs: {},
+		img: '',
+		title: '',
+		tags: [],
+		desc: '',
+		prices: '',
+
+	}
+
+mixin search-card(props = defaultServiceCardProps)
+	-
+		const checkProps = {
+			classes: props.classes ? props.classes : defaultSearchCardProps.classes,
+			breadcrumbs: props.breadcrumbs ? props.breadcrumbs : defaultSearchCardProps.breadcrumbs,
+			img: props.img ? props.img : defaultSearchCardProps.img,
+			title: props.title ? props.title : defaultSearchCardProps.title,
+			tags: props.tags ? props.tags : defaultSearchCardProps.tags,
+			desc: props.desc ? props.desc : defaultSearchCardProps.desc,
+			prices: props.prices ? props.prices : defaultSearchCardProps.prices,
+		}
+
+	.search-card(class= checkProps.classes)&attributes(attributes)
+		+breadcrumbs(checkProps.breadcrumbs)
+		.search-card__content
+			.search-card__img
+				img(class="lazyload" src="img/lazy-placeholder.webp" data-src= checkProps.img alt= checkProps.title)
+			.search-card__column
+				.search-card__title.title--26!= checkProps.title
+				.search-card__tags
+					- let tagsList = checkProps.tags;
+					- let tagsCount = 0;
+
+					- while(tagsCount < tagsList.length)
+						.search-card__tag!= tagsList[tagsCount]
+						- tagsCount++
+
+			.search-card__desc.text-editor!= checkProps.desc
+			- if(checkProps.prices)
+				+product-price({
+					classes: 'search-card__price',
+					price: checkProps.prices.price,
+					oldPrice: checkProps.prices.oldPrice.length > 0 ? checkProps.prices.oldPrice : '',
+				})
+			+btn({
+				classes: 'search-card__btn',
+				name: 'Подробнее',
+				cMode: 'transparent',
+				size: 'middle2',
+				icon: 'arrow_enter'
+			})
+

@@ -1,0 +1,40 @@
+.search-card {
+    padding-top: 16px;
+    border-top: 1px solid $c-border;
+
+    &__content {
+        display: flex;
+        gap: 24px;
+        align-items: flex-start;
+        margin-top: 16px;
+    }
+
+    &__img {
+        flex: 0 0 12%;
+        aspect-ratio: 1 / 1;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__column {
+        align-self: stretch;
+        flex: 0 0 30%;
+    }
+
+    &__desc {
+        flex: 1 1 auto;
+    }
+
+    &__price {
+        flex: 0 0 13%;
+    }
+
+    &__btn {
+        margin-left: auto;
+        flex: 0 0 200px;
+    }
+}

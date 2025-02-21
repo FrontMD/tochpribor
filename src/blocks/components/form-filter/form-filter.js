@@ -101,8 +101,13 @@ function formFilterController() {
                         })
 
                         let currentVal = clickedOption.dataset.value
+                        let currentName = clickedOption.dataset.name
 
-                        filterSelectFake.innerHTML = currentVal
+                        if(!currentName) {
+                            currentName = currentVal;
+                        }
+
+                        filterSelectFake.innerHTML = currentName
 
                         filterSelectRealOptions.forEach(realOption => {
                             if(realOption.value == currentVal) {
