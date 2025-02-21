@@ -3,6 +3,18 @@
         margin-top: 112px;
         padding-top: 16px;
         border-top: 1px solid $c-border;
+
+        @include max(laptop) {
+            margin-top: 60px;
+        }
+
+        @include max(mobile) {
+            margin-top: 40px;
+        }
+
+        @include max(xs) {
+            margin-top: 24px;
+        }
     }
 
 }
@@ -12,6 +24,12 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+
+        @include max(xs) {
+            flex-direction: column;
+            gap: 16px;
+            align-items: flex-start;
+        }
     }
 
     &__list {

@@ -4,9 +4,23 @@
     grid-template-columns: auto 200px 200px;
     gap: 16px;
 
+    @include max(mobile) {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    @include max(xs) {
+        grid-template-columns: minmax(200px, 1fr) minmax(0, 1fr);
+        gap: 8px;
+    }
+
     &__input {
         height: fit-content;
         max-width: 416px;
+
+        @include max(mobile) {
+            max-width: 100%;
+            grid-column: 1 / 3;
+        }
     }
 
     &__input input.field__input {
@@ -16,16 +30,31 @@
         padding-top: 7px;
         padding-bottom: 7px;
         padding-right: 36px;
+
+        @include max(xs) {
+            font-size: 14px;
+            min-height: 36px;
+        }
     }
 
     &__input .field__search {
         width: 16px;
         height: 16px;
         left: 12px;
+
     }
 
     &__select .filter-select__header {
         min-width: 200px;
         min-height: 46px;
+
+        @include max(xs) {
+            min-height: 36px;
+        }
+    }
+
+    &__submit {
+        font-size: 12px;
+        padding: 6px;
     }
 }
