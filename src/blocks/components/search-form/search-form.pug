@@ -29,14 +29,14 @@ mixin search-form(props = defaultSearchFormProps)
         .search-form__select.filter-select(data-js='filterSelect')
             .filter-select__header(data-js="filterSelectHeader")
                 select(data-js="filterSelectInput")
-                    option(value="По сайту" selected) По сайту
-                    option(value="По каталогу") По каталогу
+                    option(value="site" selected) По сайту
+                    option(value="catalog") По каталогу
                 .filter-select__fake(data-js="filterSelectFake") По сайту
                 svg
                     use(xlink:href=`img/sprites/sprite.svg#arrow_angle`)
             .filter-select__content
-                .filter-select__option.active(data-js="filterSelectOption" data-value="По сайту") По сайту
-                .filter-select__option(data-js="filterSelectOption" data-value="По каталогу") По каталогу
+                .filter-select__option.active(data-js="filterSelectOption" data-value="site" data-name="По сайту") По сайту
+                .filter-select__option(data-js="filterSelectOption" data-value="catalog" data-name="По каталогу") По каталогу
         +btn({
             classes: 'search-form__submit',
             size: "full",

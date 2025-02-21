@@ -114,8 +114,8 @@
                   <div class="search-form__select filter-select" data-js="filterSelect">
                     <div class="filter-select__header" data-js="filterSelectHeader">
                       <select data-js="filterSelectInput">
-                        <option value="По сайту" selected>По сайту</option>
-                        <option value="По каталогу">По каталогу</option>
+                        <option value="site" selected>По сайту</option>
+                        <option value="catalog">По каталогу</option>
                       </select>
                       <div class="filter-select__fake" data-js="filterSelectFake">По сайту</div>
                       <svg>
@@ -123,8 +123,8 @@
                       </svg>
                     </div>
                     <div class="filter-select__content">
-                      <div class="filter-select__option active" data-js="filterSelectOption" data-value="По сайту">По сайту</div>
-                      <div class="filter-select__option" data-js="filterSelectOption" data-value="По каталогу">По каталогу</div>
+                      <div class="filter-select__option active" data-js="filterSelectOption" data-value="site" data-name="По сайту">По сайту</div>
+                      <div class="filter-select__option" data-js="filterSelectOption" data-value="catalog" data-name="По каталогу">По каталогу</div>
                     </div>
                   </div><a class="btn search-form__submit btn--red btn--full" href="javascript:void(0)" data-js="searchSubmit">
                         <svg>
@@ -183,8 +183,8 @@
                     <div class="search-form__select filter-select" data-js="filterSelect">
                       <div class="filter-select__header" data-js="filterSelectHeader">
                         <select data-js="filterSelectInput">
-                          <option value="По сайту" selected>По сайту</option>
-                          <option value="По каталогу">По каталогу</option>
+                          <option value="site" selected>По сайту</option>
+                          <option value="catalog">По каталогу</option>
                         </select>
                         <div class="filter-select__fake" data-js="filterSelectFake">По сайту</div>
                         <svg>
@@ -192,8 +192,8 @@
                         </svg>
                       </div>
                       <div class="filter-select__content">
-                        <div class="filter-select__option active" data-js="filterSelectOption" data-value="По сайту">По сайту</div>
-                        <div class="filter-select__option" data-js="filterSelectOption" data-value="По каталогу">По каталогу</div>
+                        <div class="filter-select__option active" data-js="filterSelectOption" data-value="site" data-name="По сайту">По сайту</div>
+                        <div class="filter-select__option" data-js="filterSelectOption" data-value="catalog" data-name="По каталогу">По каталогу</div>
                       </div>
                     </div><a class="btn search-form__submit btn--red btn--full" href="javascript:void(0)" data-js="searchSubmit">
                           <svg>
@@ -215,9 +215,9 @@
                       <div class="form-filter__select filter-select" data-js="filterSelect">
                         <div class="filter-select__header" data-js="filterSelectHeader">
                           <select data-js="filterSelectInput">
-                            <option value="По популярности" selected>По популярности</option>
-                            <option value="Сначала дешевле">Сначала дешевле</option>
-                            <option value="Сначала дороже">Сначала дороже</option>
+                            <option value="popular" selected>По популярности</option>
+                            <option value="price_asc">Сначала дешевле</option>
+                            <option value="price_desc">Сначала дороже</option>
                           </select>
                           <div class="filter-select__fake" data-js="filterSelectFake">По популярности</div>
                           <svg>
@@ -225,9 +225,9 @@
                           </svg>
                         </div>
                         <div class="filter-select__content">
-                          <div class="filter-select__option active" data-js="filterSelectOption" data-value="По популярности">По популярности</div>
-                          <div class="filter-select__option" data-js="filterSelectOption" data-value="Сначала дешевле">Сначала дешевле</div>
-                          <div class="filter-select__option" data-js="filterSelectOption" data-value="Сначала дороже">Сначала дороже</div>
+                          <div class="filter-select__option active" data-js="filterSelectOption" data-name="По популярности" data-value="popular">По популярности</div>
+                          <div class="filter-select__option" data-js="filterSelectOption" data-name="Сначала дешевле" data-value="price_asc">Сначала дешевле</div>
+                          <div class="filter-select__option" data-js="filterSelectOption" data-name="Сначала дороже" data-value="price_desc">Сначала дороже</div>
                         </div>
                       </div>
                     </form>
@@ -263,6 +263,134 @@
                             <div class="product-price__price">999 550 000 ₽</div>
                             <div class="product-price__price product-price__price--old">1 680 000 ₽</div>
                           </div><a class="btn search-card__btn btn--transparent btn--middle2" href="javascript:void(0)">
+                            <svg>
+                              <use xlink:href="img/sprites/sprite.svg#arrow_enter"></use>
+                            </svg><span class="btn__text">Подробнее</span></a>
+                    </div>
+                  </div>
+                  <div class="search-card search-card--cover-img">
+                        <div class="breadcrumbs  breadcrumbs--dark">
+                          <ul class="breadcrumbs__list scrollbar scrollbar--small">
+                            <li class="breadcrumbs__item"><a href="javascript:void(0);">Главная</a><span class="breadcrumbs__separator">/</span>
+                            </li>
+                            <li class="breadcrumbs__item"><a href="javascript:void(0);">Вакансии</a><span class="breadcrumbs__separator">/</span>
+                            </li>
+                            <li class="breadcrumbs__item breadcrumbs__item--current"><span>Специалист по сертификации разрывных машин</span>
+                            </li>
+                          </ul>
+                        </div>
+                    <div class="search-card__content">
+                      <div class="search-card__img"><img class="lazyload" src="img/lazy-placeholder.webp" data-src="img/news/news_2.webp" alt="Специалист по сертификации разрывных машин"></div>
+                      <div class="search-card__column">
+                        <div class="search-card__title title--26">Специалист по сертификации разрывных машин</div>
+                        <div class="search-card__tags">
+                          <div class="search-card__tag">Вакансия</div>
+                        </div>
+                      </div>
+                      <div class="search-card__desc text-editor">Центральный офис<br>г. Санкт-Петербург, пер.&nbsp;Дровяной, д.&nbsp;20,&nbsp;пом.&nbsp;4&#8209;Н</div>
+                          <div class="product-price search-card__price">
+                            <div class="product-price__price">от 59 000 ₽</div>
+                          </div><a class="btn search-card__btn btn--transparent btn--middle2" href="javascript:void(0)">
+                            <svg>
+                              <use xlink:href="img/sprites/sprite.svg#arrow_enter"></use>
+                            </svg><span class="btn__text">Подробнее</span></a>
+                    </div>
+                  </div>
+                  <div class="search-card">
+                        <div class="breadcrumbs  breadcrumbs--dark">
+                          <ul class="breadcrumbs__list scrollbar scrollbar--small">
+                            <li class="breadcrumbs__item"><a href="javascript:void(0);">Главная</a><span class="breadcrumbs__separator">/</span>
+                            </li>
+                            <li class="breadcrumbs__item"><a href="javascript:void(0);">Новости</a><span class="breadcrumbs__separator">/</span>
+                            </li>
+                            <li class="breadcrumbs__item breadcrumbs__item--current"><span>Новая разрывная машина ТРМ-О Tochline ТРМ 62</span>
+                            </li>
+                          </ul>
+                        </div>
+                    <div class="search-card__content">
+                      <div class="search-card__img"><img class="lazyload" src="img/lazy-placeholder.webp" data-src="img/catalog/product_7.webp" alt="Новая разрывная машина ТРМ-О Tochline ТРМ 62"></div>
+                      <div class="search-card__column">
+                        <div class="search-card__title title--26">Новая разрывная машина ТРМ-О Tochline ТРМ 62</div>
+                        <div class="search-card__tags">
+                          <div class="search-card__tag">Новость</div>
+                        </div>
+                      </div>
+                      <div class="search-card__desc text-editor">Добавили в реестр новую модификацию нашего популярного изделия</div><a class="btn search-card__btn btn--transparent btn--middle2" href="javascript:void(0)">
+                            <svg>
+                              <use xlink:href="img/sprites/sprite.svg#arrow_enter"></use>
+                            </svg><span class="btn__text">Подробнее</span></a>
+                    </div>
+                  </div>
+                  <div class="search-card">
+                        <div class="breadcrumbs  breadcrumbs--dark">
+                          <ul class="breadcrumbs__list scrollbar scrollbar--small">
+                            <li class="breadcrumbs__item"><a href="javascript:void(0);">Главная</a><span class="breadcrumbs__separator">/</span>
+                            </li>
+                            <li class="breadcrumbs__item"><a href="javascript:void(0);">Новости</a><span class="breadcrumbs__separator">/</span>
+                            </li>
+                            <li class="breadcrumbs__item breadcrumbs__item--current"><span>Разрывные машины: устройство, принципы работы и виды</span>
+                            </li>
+                          </ul>
+                        </div>
+                    <div class="search-card__content">
+                      <div class="search-card__img"><img class="lazyload" src="img/lazy-placeholder.webp" data-src="img/catalog/product_7.webp" alt="Разрывные машины: устройство, принципы работы и виды"></div>
+                      <div class="search-card__column">
+                        <div class="search-card__title title--26">Разрывные машины: устройство, принципы работы и виды</div>
+                        <div class="search-card__tags">
+                          <div class="search-card__tag">Новость</div>
+                        </div>
+                      </div>
+                      <div class="search-card__desc text-editor">Внутри машины имеется механизм соединенных друг с другом зубчатых колёс и пружин. Когда к машине прикладывается сила, она передается через зубчатые. Внутри машины имеется механизм соединенных друг с другом зубчатых колёс и пружин. Когда к машине прикладывается сила, она передается через зубчатые. Внутри машины имеется механизм соединенных друг с другом зубчатых колёс и пружин. Когда к машине прикладывается сила, она передается через зубчатые. Внутри машины имеется механизм соединенных друг с другом зубчатых колёс и пружин. Когда к машине прикладывается сила, она передается через зубчатые. Внутри машины имеется механизм соединенных друг с другом зубчатых колёс и пружин. Когда к машине прикладывается сила, она передается через зубчатые. Внутри машины имеется механизм соединенных друг с другом зубчатых колёс и пружин. Когда к машине прикладывается сила, она передается через зубчатые.</div><a class="btn search-card__btn btn--transparent btn--middle2" href="javascript:void(0)">
+                            <svg>
+                              <use xlink:href="img/sprites/sprite.svg#arrow_enter"></use>
+                            </svg><span class="btn__text">Подробнее</span></a>
+                    </div>
+                  </div>
+                  <div class="search-card">
+                        <div class="breadcrumbs  breadcrumbs--dark">
+                          <ul class="breadcrumbs__list scrollbar scrollbar--small">
+                            <li class="breadcrumbs__item"><a href="javascript:void(0);">Главная</a><span class="breadcrumbs__separator">/</span>
+                            </li>
+                            <li class="breadcrumbs__item"><a href="javascript:void(0);">Новости</a><span class="breadcrumbs__separator">/</span>
+                            </li>
+                            <li class="breadcrumbs__item breadcrumbs__item--current"><span>Презентовали на выставке  ТРМ-О Tochline</span>
+                            </li>
+                          </ul>
+                        </div>
+                    <div class="search-card__content">
+                      <div class="search-card__img"><img class="lazyload" src="img/lazy-placeholder.webp" data-src="img/catalog/product_7.webp" alt="Презентовали на выставке  ТРМ-О Tochline "></div>
+                      <div class="search-card__column">
+                        <div class="search-card__title title--26">Презентовали на выставке  ТРМ-О Tochline </div>
+                        <div class="search-card__tags">
+                          <div class="search-card__tag">Новость</div>
+                        </div>
+                      </div>
+                      <div class="search-card__desc text-editor">Презентовали на выставке  ТРМ-О Tochline </div><a class="btn search-card__btn btn--transparent btn--middle2" href="javascript:void(0)">
+                            <svg>
+                              <use xlink:href="img/sprites/sprite.svg#arrow_enter"></use>
+                            </svg><span class="btn__text">Подробнее</span></a>
+                    </div>
+                  </div>
+                  <div class="search-card">
+                        <div class="breadcrumbs  breadcrumbs--dark">
+                          <ul class="breadcrumbs__list scrollbar scrollbar--small">
+                            <li class="breadcrumbs__item"><a href="javascript:void(0);">Главная</a><span class="breadcrumbs__separator">/</span>
+                            </li>
+                            <li class="breadcrumbs__item"><a href="javascript:void(0);">Новости</a><span class="breadcrumbs__separator">/</span>
+                            </li>
+                            <li class="breadcrumbs__item breadcrumbs__item--current"><span>Подписан контракт на поставку универсальной испытательной машины ТРМ-О Tochline для нужд ОАО «Щегловский вал»</span>
+                            </li>
+                          </ul>
+                        </div>
+                    <div class="search-card__content">
+                      <div class="search-card__img"><img class="lazyload" src="img/lazy-placeholder.webp" data-src="img/catalog/product_7.webp" alt="Подписан контракт на поставку универсальной испытательной машины ТРМ-О Tochline для нужд ОАО «Щегловский вал»"></div>
+                      <div class="search-card__column">
+                        <div class="search-card__title title--26">Подписан контракт на поставку универсальной испытательной машины ТРМ-О Tochline для нужд ОАО «Щегловский вал»</div>
+                        <div class="search-card__tags">
+                          <div class="search-card__tag">Новость</div>
+                        </div>
+                      </div>
+                      <div class="search-card__desc text-editor">Подписан контракт на поставку универсальной испытательной машины ТРМ-О Tochline для нужд ОАО «Щегловский вал»</div><a class="btn search-card__btn btn--transparent btn--middle2" href="javascript:void(0)">
                             <svg>
                               <use xlink:href="img/sprites/sprite.svg#arrow_enter"></use>
                             </svg><span class="btn__text">Подробнее</span></a>

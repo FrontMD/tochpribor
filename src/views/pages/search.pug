@@ -47,16 +47,16 @@ block content
                             .form-filter__select.filter-select(data-js='filterSelect')
                                 .filter-select__header(data-js="filterSelectHeader")
                                     select(data-js="filterSelectInput")
-                                        option(value="По популярности" selected) По популярности
-                                        option(value="Сначала дешевле") Сначала дешевле
-                                        option(value="Сначала дороже") Сначала дороже
+                                        option(value="popular" selected) По популярности
+                                        option(value="price_asc") Сначала дешевле
+                                        option(value="price_desc") Сначала дороже
                                     .filter-select__fake(data-js="filterSelectFake") По популярности
                                     svg
                                         use(xlink:href=`img/sprites/sprite.svg#arrow_angle`)
                                 .filter-select__content
-                                    .filter-select__option.active(data-js="filterSelectOption" data-value="По популярности") По популярности
-                                    .filter-select__option(data-js="filterSelectOption" data-value="Сначала дешевле") Сначала дешевле
-                                    .filter-select__option(data-js="filterSelectOption" data-value="Сначала дороже") Сначала дороже
+                                    .filter-select__option.active(data-js="filterSelectOption" data-name="По популярности" data-value="popular") По популярности
+                                    .filter-select__option(data-js="filterSelectOption" data-name="Сначала дешевле" data-value="price_asc") Сначала дешевле
+                                    .filter-select__option(data-js="filterSelectOption" data-name="Сначала дороже" data-value="price_desc") Сначала дороже
 
                 .search-results__list
                     +search-card({
@@ -92,4 +92,124 @@ block content
                             price: '999 550 000 ₽',
                             oldPrice: '1 680 000 ₽'
                         },
+                    })
+
+                    +search-card({
+                        classes: 'search-card--cover-img',
+                        breadcrumbs: {
+                            items: [
+                                {
+                                    name: 'Главная',
+                                    link: 'javascript:void(0);'
+                                },
+                                {
+                                    name: 'Вакансии',
+                                    link: 'javascript:void(0);'
+                                },
+                                {
+                                    name: 'Специалист по сертификации разрывных машин',
+                                    link: 'javascript:void(0);'
+                                }
+                            ]
+                        },
+                        img: 'img/news/news_2.webp',
+                        title: 'Специалист по сертификации разрывных машин',
+                        tags: ['Вакансия'],
+                        desc: `Центральный офис<br>г. Санкт-Петербург, пер.&nbsp;Дровяной, д.&nbsp;20,&nbsp;пом.&nbsp;4&#8209;Н`,
+                        prices:{
+                            price: 'от 59 000 ₽',
+                            oldPrice: ''
+                        },
+                    })
+
+                    +search-card({
+                        breadcrumbs: {
+                            items: [
+                                {
+                                    name: 'Главная',
+                                    link: 'javascript:void(0);'
+                                },
+                                {
+                                    name: 'Новости',
+                                    link: 'javascript:void(0);'
+                                },
+                                {
+                                    name: 'Новая разрывная машина ТРМ-О Tochline ТРМ 62',
+                                    link: 'javascript:void(0);'
+                                }
+                            ]
+                        },
+                        img: 'img/catalog/product_7.webp',
+                        title: 'Новая разрывная машина ТРМ-О Tochline ТРМ 62',
+                        tags: ['Новость'],
+                        desc: `Добавили в реестр новую модификацию нашего популярного изделия`,
+                    })
+
+                    +search-card({
+                        breadcrumbs: {
+                            items: [
+                                {
+                                    name: 'Главная',
+                                    link: 'javascript:void(0);'
+                                },
+                                {
+                                    name: 'Новости',
+                                    link: 'javascript:void(0);'
+                                },
+                                {
+                                    name: 'Разрывные машины: устройство, принципы работы и виды',
+                                    link: 'javascript:void(0);'
+                                }
+                            ]
+                        },
+                        img: 'img/catalog/product_7.webp',
+                        title: 'Разрывные машины: устройство, принципы работы и виды',
+                        tags: ['Новость'],
+                        desc: `Внутри машины имеется механизм соединенных друг с другом зубчатых колёс и пружин. Когда к машине прикладывается сила, она передается через зубчатые. Внутри машины имеется механизм соединенных друг с другом зубчатых колёс и пружин. Когда к машине прикладывается сила, она передается через зубчатые. Внутри машины имеется механизм соединенных друг с другом зубчатых колёс и пружин. Когда к машине прикладывается сила, она передается через зубчатые. Внутри машины имеется механизм соединенных друг с другом зубчатых колёс и пружин. Когда к машине прикладывается сила, она передается через зубчатые. Внутри машины имеется механизм соединенных друг с другом зубчатых колёс и пружин. Когда к машине прикладывается сила, она передается через зубчатые. Внутри машины имеется механизм соединенных друг с другом зубчатых колёс и пружин. Когда к машине прикладывается сила, она передается через зубчатые.`,
+                    })
+
+                    +search-card({
+                        breadcrumbs: {
+                            items: [
+                                {
+                                    name: 'Главная',
+                                    link: 'javascript:void(0);'
+                                },
+                                {
+                                    name: 'Новости',
+                                    link: 'javascript:void(0);'
+                                },
+                                {
+                                    name: 'Презентовали на выставке  ТРМ-О Tochline',
+                                    link: 'javascript:void(0);'
+                                }
+                            ]
+                        },
+                        img: 'img/catalog/product_7.webp',
+                        title: 'Презентовали на выставке  ТРМ-О Tochline ',
+                        tags: ['Новость'],
+                        desc: `Презентовали на выставке  ТРМ-О Tochline `,
+                    })
+
+                    +search-card({
+                        breadcrumbs: {
+                            items: [
+                                {
+                                    name: 'Главная',
+                                    link: 'javascript:void(0);'
+                                },
+                                {
+                                    name: 'Новости',
+                                    link: 'javascript:void(0);'
+                                },
+                                {
+                                    name: 'Подписан контракт на поставку универсальной испытательной машины ТРМ-О Tochline для нужд ОАО «Щегловский вал»',
+                                    link: 'javascript:void(0);'
+                                }
+                            ]
+                        },
+                        img: 'img/catalog/product_7.webp',
+                        title: 'Подписан контракт на поставку универсальной испытательной машины ТРМ-О Tochline для нужд ОАО «Щегловский вал»',
+                        tags: ['Новость'],
+                        desc: `Подписан контракт на поставку универсальной испытательной машины ТРМ-О Tochline для нужд ОАО «Щегловский вал»`,
                     })
