@@ -332,21 +332,11 @@
             }
 
             @include max(mobile) {
-                width: calc(100% - 56px);
-                padding: 12px 6px 12px 15px;
+                width: 100%;
+                padding: 12px 15px;
                 height: auto;
-                right: auto;
+                right: 0;
                 left: 0;
-
-                &:after {
-                    content: '';
-                    position: absolute;
-                    left: 100%;
-                    bottom: 0;
-                    width: calc(100vw - 100%);
-                    background-color: $c-white;
-                    height: 50px;
-                }
             }
 
         }

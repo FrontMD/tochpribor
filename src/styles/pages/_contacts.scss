@@ -248,10 +248,20 @@
 
 .contacts-details {
     &__container {
+        position: relative;
         display: flex;
         flex-direction: column;
         gap: 32px;
 
+    }
+
+    &__header {
+        padding-right: 230px;
+
+        @include max(xs) {
+            padding-right: 0;
+            padding-bottom: 56px;
+        }
     }
 
     &__content {
@@ -300,5 +310,30 @@
 
     &__columns .contacts__subtitle {
         margin-bottom: 7px;
+    }
+
+    &__btn {
+        position: absolute;
+        top: 30px;
+        right: 24px;
+
+        @include max(laptop) {
+            top: 24px;
+        }
+
+        @include max(tablet) {
+            top: 20px;
+            right: 15px;
+        }
+
+        @include max(mobile) {
+            top: 16px;
+        }
+
+        @include max(xs) {
+            top: 65px;
+            right: auto;
+            left: 15px;
+        }
     }
 }

@@ -79,7 +79,8 @@ header.site-header(data-js="siteHeader")
                     use(xlink:href=`img/sprites/sprite.svg#search`)
             .search__content(data-js="headerSearchContent")
                 +search-form({
-                    inHeader: true
+                    inHeader: true,
+                    hasPrompt: true
                 })
 
         .site-header__shop.site-header__block.shop 
@@ -98,7 +99,7 @@ header.site-header(data-js="siteHeader")
             size: "content",
             name: 'Заказать звонок',
             icon: 'arrow_enter',
-        })
+        })(data-modal="callbackModal")
 
 
 

@@ -6,7 +6,6 @@
 @@include("../../blocks/components/spoiler/spoiler.js")
 @@include("../../blocks/components/form-filter/form-filter.js")
 @@include("../../blocks/components/copy-btn/copy-btn.js")
-@@include("../../blocks/components/search-form/search-form.js")
 
 document.addEventListener('DOMContentLoaded', () => {
     // управляет кнопками в полях форм
@@ -25,6 +24,4 @@ document.addEventListener('DOMContentLoaded', () => {
     copyBtn()
     // поле количества товара
     amountInput()
-    // форма поиска
-    searchFormController()
 })
