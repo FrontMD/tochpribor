@@ -8,6 +8,7 @@
         inputAttr: {},
         resetBtn: false,
         isSearch: false,
+        hasPrompt: false,
         selectOptions: [
             "вариант 1",
             "вариант 2"
@@ -25,6 +26,7 @@ mixin field(props = defaultFieldProps)
             inputAttr: props.inputAttr ? props.inputAttr : defaultFieldProps.inputAttr,
             resetBtn: props.resetBtn ? props.resetBtn : defaultFieldProps.resetBtn,
             isSearch: props.isSearch ? props.isSearch : defaultFieldProps.isSearch,
+            hasPrompt: props.hasPrompt ? props.hasPrompt : defaultFieldProps.hasPrompt,
             selectOptions: props.selectOptions ? props.selectOptions : defaultFieldProps.selectOptions,
         }
 
@@ -63,3 +65,115 @@ mixin field(props = defaultFieldProps)
             span.field__reset(data-js='fieldResetBtn')
                 svg 
                     use(xlink:href=`img/sprites/sprite.svg#close`)
+
+        - if(checkProps.hasPrompt == true)
+            .field__prompt.field-prompt(data-js='fieldPrompt')
+                .field-prompt__items.scrollbar.scrollbar--small
+                    .field-prompt__item
+                        a.field-prompt__link(href="javascript:void(0)")
+                        .field-prompt__icon
+                            svg 
+                                use(xlink:href=`img/sprites/sprite.svg#search`)
+                        .field-prompt__content
+                            .field-prompt__title Универсальная <span>испыт</span>ательная машина ТРМ-О 0,1 А1 Tochline
+                            .field-prompt__breadcrumbs Каталог / Испытательные машины
+                        .field-prompt__icon
+                            svg 
+                                use(xlink:href=`img/sprites/sprite.svg#arrow_link`)
+                    .field-prompt__item
+                        a.field-prompt__link(href="javascript:void(0)")
+                        .field-prompt__icon
+                            svg 
+                                use(xlink:href=`img/sprites/sprite.svg#search`)
+                        .field-prompt__content
+                            .field-prompt__title Универсальная <span>испыт</span>ательная машина ТРМ-О 0,1 А1 Tochline
+                            .field-prompt__breadcrumbs Каталог / Испытательные машины
+                        .field-prompt__icon
+                            svg 
+                                use(xlink:href=`img/sprites/sprite.svg#arrow_link`)
+                    .field-prompt__item
+                        a.field-prompt__link(href="javascript:void(0)")
+                        .field-prompt__icon
+                            svg 
+                                use(xlink:href=`img/sprites/sprite.svg#search`)
+                        .field-prompt__content
+                            .field-prompt__title Универсальная <span>испыт</span>ательная машина ТРМ-О 0,1 А1 Tochline
+                            .field-prompt__breadcrumbs Каталог / Испытательные машины
+                        .field-prompt__icon
+                            svg 
+                                use(xlink:href=`img/sprites/sprite.svg#arrow_link`)
+                    .field-prompt__item
+                        a.field-prompt__link(href="javascript:void(0)")
+                        .field-prompt__icon
+                            svg 
+                                use(xlink:href=`img/sprites/sprite.svg#search`)
+                        .field-prompt__content
+                            .field-prompt__title Универсальная <span>испыт</span>ательная машина ТРМ-О 0,1 А1 Tochline
+                            .field-prompt__breadcrumbs Каталог / Испытательные машины
+                        .field-prompt__icon
+                            svg 
+                                use(xlink:href=`img/sprites/sprite.svg#arrow_link`)
+                    .field-prompt__item
+                        a.field-prompt__link(href="javascript:void(0)")
+                        .field-prompt__icon
+                            svg 
+                                use(xlink:href=`img/sprites/sprite.svg#search`)
+                        .field-prompt__content
+                            .field-prompt__title Универсальная <span>испыт</span>ательная машина ТРМ-О 0,1 А1 Tochline
+                            .field-prompt__breadcrumbs Каталог / Испытательные машины
+                        .field-prompt__icon
+                            svg 
+                                use(xlink:href=`img/sprites/sprite.svg#arrow_link`)
+                    .field-prompt__item
+                        a.field-prompt__link(href="javascript:void(0)")
+                        .field-prompt__icon
+                            svg 
+                                use(xlink:href=`img/sprites/sprite.svg#search`)
+                        .field-prompt__content
+                            .field-prompt__title Универсальная <span>испыт</span>ательная машина ТРМ-О 0,1 А1 Tochline
+                            .field-prompt__breadcrumbs Каталог / Испытательные машины
+                        .field-prompt__icon
+                            svg 
+                                use(xlink:href=`img/sprites/sprite.svg#arrow_link`)
+                    .field-prompt__item
+                        a.field-prompt__link(href="javascript:void(0)")
+                        .field-prompt__icon
+                            svg 
+                                use(xlink:href=`img/sprites/sprite.svg#search`)
+                        .field-prompt__content
+                            .field-prompt__title Универсальная <span>испыт</span>ательная машина ТРМ-О 0,1 А1 Tochline
+                            .field-prompt__breadcrumbs Новости / Установка новой испытательной машины на производство
+                        .field-prompt__icon
+                            svg 
+                                use(xlink:href=`img/sprites/sprite.svg#arrow_link`)
+                    .field-prompt__item
+                        a.field-prompt__link(href="javascript:void(0)")
+                        .field-prompt__icon
+                            svg 
+                                use(xlink:href=`img/sprites/sprite.svg#search`)
+                        .field-prompt__content
+                            .field-prompt__title Универсальная <span>испыт</span>ательная машина ТРМ-О 0,1 А1 Tochline
+                            .field-prompt__breadcrumbs Новости / Установка новой испытательной машины на производство
+                        .field-prompt__icon
+                            svg 
+                                use(xlink:href=`img/sprites/sprite.svg#arrow_link`)
+                    .field-prompt__item
+                        a.field-prompt__link(href="javascript:void(0)")
+                        .field-prompt__icon
+                            svg 
+                                use(xlink:href=`img/sprites/sprite.svg#search`)
+                        .field-prompt__content
+                            .field-prompt__title Универсальная <span>испыт</span>ательная машина ТРМ-О 0,1 А1 Tochline
+                            .field-prompt__breadcrumbs Новости / Установка новой испытательной машины на производство
+                        .field-prompt__icon
+                            svg 
+                                use(xlink:href=`img/sprites/sprite.svg#arrow_link`)
+
+                +btn({
+                    classes: 'field-prompt__all',
+                    cMode: 'grey',
+                    name: 'Все результаты <span class="btn__note">(124)</span>',
+                })
+
+
+

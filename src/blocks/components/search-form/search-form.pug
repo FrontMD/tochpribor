@@ -17,15 +17,29 @@ mixin search-form(props = defaultSearchFormProps)
 
 
     form.search-form(class=checkProps.classes + vClass data-js="formFilter")&attributes(attributes)
-        +field({
-            classes: 'search-form__input',
-            placeholder: checkProps.inHeader == true ? 'Поиск' : 'Введите запрос',
-            inputAttr: {
-                "data-js": "searchFormInput"
-            },
-            resetBtn: true,
-            isSearch: true
-        })
+        -if(checkProps.inHeader == true)
+            +field({
+                classes: 'search-form__input',
+                placeholder: 'Поиск',
+                inputAttr: {
+                    "data-js": "searchFormInput",
+                },
+                resetBtn: true,
+                isSearch: true,
+                hasPrompt: true,
+            })(data-has-prompt)
+        - else
+            +field({
+                classes: 'search-form__input',
+                placeholder: 'Введите запрос',
+                inputAttr: {
+                    "data-js": "searchFormInput"
+                },
+                resetBtn: true,
+                isSearch: true,
+                hasPrompt: false,
+            })
+
         .search-form__select.filter-select(data-js='filterSelect')
             .filter-select__header(data-js="filterSelectHeader")
                 select(data-js="filterSelectInput")
