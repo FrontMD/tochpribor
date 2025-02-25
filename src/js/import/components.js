@@ -1,5 +1,6 @@
 
 @@include("../../blocks/components/field/field.js")
+@@include("../../blocks/components/field-file/field-file.js")
 @@include("../../blocks/components/form/form.js")
 @@include("../../blocks/components/amount-input/amount-input.js")
 @@include("../../blocks/components/video/video.js")
@@ -9,19 +10,21 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     // управляет кнопками в полях форм
-    selects()
+    selects();
     // инициализирует селекты
-    fieldsController()
+    fieldsController();
     // маски полей и валидация
-    validation()
+    validation();
     // видео
-    videos()
+    videos();
     // спойлеры
-    spoilers()
+    spoilers();
     // фильтр
-    formFilterController()
+    formFilterController();
     // кнопка копировать
-    copyBtn()
+    copyBtn();
     // поле количества товара
-    amountInput()
+    amountInput();
+    // поле файл
+    fileFieldInit();
 })

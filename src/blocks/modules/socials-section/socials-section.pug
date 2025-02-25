@@ -1,55 +1,55 @@
 -
-	const defaultSocialsSectionProps = {
-		classes: '',
-	}
+    const defaultSocialsSectionProps = {
+        classes: '',
+    }
 
 mixin socials-section(props = defaultSocialsSectionProps)
-	-
-		const checkProps = {
-			classes: props.classes ? props.classes : defaultSocialsSectionProps.classes,
-		}
+    -
+        const checkProps = {
+            classes: props.classes ? props.classes : defaultSocialsSectionProps.classes,
+        }
 
-	section.section.section--full.socials-section(class=checkProps.classes)
-		.socials-section__bg
-			img(class="lazyload" src="img/lazy-placeholder.webp" data-src="img/socials_section.webp" alt="")
-		.section__container.socials-section__container
-			+title({
-				tag: 'h2',
-				size: '53',
-				text: 'Мы в соц сетях',
-				cMode: 'light'
-			})
+    section.section.section--full.socials-section(class=checkProps.classes)
+        .socials-section__bg
+            img(class="lazyload" src="img/lazy-placeholder.webp" data-src="img/socials_section.webp" alt="")
+        .section__container.socials-section__container
+            +title({
+                tag: 'h2',
+                size: '53',
+                text: 'Мы в соц сетях',
+                cMode: 'light'
+            })
 
-			.socials-section__items
-				+btn({
-					classes: '',
-					name: 'Вконтакте',
-					link: 'https://vk.com/',
-					cMode: 'white',
-					size: 'social',
-					icon: 'vk',
-				})
-				+btn({
-					classes: '',
-					name: 'Телеграм',
-					link: 'https://telegram.org/',
-					cMode: 'white',
-					size: 'social',
-					icon: 'tg',
-				})
-				+btn({
-					classes: '',
-					name: 'ВК-видео',
-					link: 'https://vkvideo.ru/@tochpribor',
-					cMode: 'white',
-					size: 'social',
-					icon: 'vk_video',
-				})
-				+btn({
-					classes: 'socials-section__subscribe',
-					size: "big",
-					name: 'Подписаться на рассылку',
-					icon: 'arrow_enter',
-				})
+            .socials-section__items
+                +btn({
+                    classes: '',
+                    name: 'Вконтакте',
+                    link: 'https://vk.com/',
+                    cMode: 'white',
+                    size: 'social',
+                    icon: 'vk',
+                })
+                +btn({
+                    classes: '',
+                    name: 'Телеграм',
+                    link: 'https://telegram.org/',
+                    cMode: 'white',
+                    size: 'social',
+                    icon: 'tg',
+                })
+                +btn({
+                    classes: '',
+                    name: 'ВК-видео',
+                    link: 'https://vkvideo.ru/@tochpribor',
+                    cMode: 'white',
+                    size: 'social',
+                    icon: 'vk_video',
+                })
+                +btn({
+                    classes: 'socials-section__subscribe',
+                    size: "big",
+                    name: 'Подписаться на рассылку',
+                    icon: 'arrow_enter',
+                })(data-modal="#subscribeModal")
 
 

@@ -131,6 +131,11 @@ body {
 	height: 100%;
 }
 
+html.hystmodal__opened {
+	position: relative;
+	top: 0 !important;
+}
+
 *:focus {
 	outline: none;
 }

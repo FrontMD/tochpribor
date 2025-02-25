@@ -134,7 +134,7 @@ noindex
                                 size: 'full',
                                 cMode: 'grey',
                                 icon: 'question'
-                            })
+                            })(data-modal="#questionModal")
                         +btn({
                             classes: 'quick-view__more',
                             name: 'Подробнее о товаре',
@@ -143,11 +143,300 @@ noindex
                             icon: 'arrow_enter'
                         })
 
-        +modal({modalId:"callbackModal", modalTitle:"Укажите ваш город", classes:"form-modal"})
+        //- Заказать звонок в шапке
+        +modal({modalId:"callbackModal", modalTitle:"", classes:"form-modal"})
             +form({
-                classes: '',
-                title: '',
+                classes: 'form--modal',
+                title: 'Заказать звонок',
                 text: '',
                 btnText: 'Отправить',
-                innerThanks: false,
+                privacyText: 'Я согласен на обработку моих персональных данных согласно <a href="#" target="_blank">Политики конфиденциальности</a>',
+                successTitle: 'Ваша заявка отправлена',
+                successText: 'Менеджер свяжется с&nbsp;вами в&nbsp;ближайшее время',
+                successBtn: true
             })
+                +field({
+                    title: 'Имя <sup>*</sup>',
+                    inputAttr: {
+                        'required': '',
+                        'data-type': 'letters'
+                    },
+                })
+                +field({
+                    title: 'Номер телефона <sup>*</sup>',
+                    inputAttr: {
+                        'required': '',
+                        'data-v-name': 'phone',
+                        'data-type': 'phoneNumber'
+                    },
+                })
+                +field({
+                    title: 'Электронная почта <sup>*</sup>',
+                    inputAttr: {
+                        'required': '',
+                        'data-v-name': 'email'
+                    },
+                })
+                +field({
+                    tag: 'textarea',
+                    title: 'Комментарий',
+                    textareaRows: '1'
+                })
+                +field-file({
+                    placeholder: 'Прикрепить файл',
+                    inputAttr: {
+                        'data-v-name': 'file',
+                        'data-size': '10485760',
+                        'accept': 'image/*, text/plain, .docx, .pdf'
+                    }
+                })
+
+        //- Оставить заявку Футер, Услуги, О заводе
+        +modal({modalId:"requestModal", modalTitle:"", classes:"form-modal"})
+            +form({
+                classes: 'form--modal',
+                title: 'Оставить заявку',
+                text: '',
+                btnText: 'Отправить',
+                privacyText: 'Я согласен на обработку моих персональных данных согласно <a href="#" target="_blank">Политики конфиденциальности</a>',
+                successTitle: 'Ваша заявка отправлена',
+                successText: 'Менеджер свяжется с&nbsp;вами в&nbsp;ближайшее время',
+                successBtn: true
+            })
+                +field({
+                    title: 'Имя <sup>*</sup>',
+                    inputAttr: {
+                        'required': '',
+                        'data-type': 'letters'
+                    },
+                })
+                +field({
+                    title: 'Номер телефона <sup>*</sup>',
+                    inputAttr: {
+                        'required': '',
+                        'data-v-name': 'phone',
+                        'data-type': 'phoneNumber'
+                    },
+                })
+                +field({
+                    title: 'Электронная почта <sup>*</sup>',
+                    inputAttr: {
+                        'required': '',
+                        'data-v-name': 'email'
+                    },
+                })
+                +field({
+                    tag: 'textarea',
+                    title: 'Комментарий',
+                    textareaRows: '1'
+                })
+                +field-file({
+                    placeholder: 'Прикрепить файл',
+                    inputAttr: {
+                        'data-v-name': 'file',
+                        'data-size': '10485760',
+                        'accept': 'image/*, text/plain, .docx, .pdf'
+                    }
+                })
+
+        //- Подписаться на рассылку Новости каталог, Новости категория, Новости детальная, Контакты
+        +modal({modalId:"subscribeModal", modalTitle:"", classes:"form-modal"})
+            +form({
+                classes: 'form--modal',
+                title: 'Подписаться на&nbsp;рассылку',
+                text: '',
+                btnText: 'Оформить подписку',
+                privacyText: 'Я согласен на обработку моих персональных данных согласно <a href="#" target="_blank">Политики конфиденциальности</a>',
+                successTitle: 'Подписка оформлена',
+                successText: 'Письмо для подтверждения отправлено на указанный адрес электронной почты',
+                successBtn: true
+            })
+                +field({
+                    title: 'Имя <sup>*</sup>',
+                    inputAttr: {
+                        'required': '',
+                        'data-type': 'letters'
+                    },
+                })
+                +field({
+                    title: 'Электронная почта <sup>*</sup>',
+                    inputAttr: {
+                        'required': '',
+                        'data-v-name': 'email'
+                    },
+                })
+
+        //- Задать вопрос Карточка товара, Быстрый просмотр, Вопросы и ответы
+        +modal({modalId:"questionModal", modalTitle:"", classes:"form-modal"})
+            +form({
+                classes: 'form--modal',
+                title: 'Задать вопрос',
+                text: '',
+                btnText: 'Отправить',
+                privacyText: 'Я согласен на обработку моих персональных данных согласно <a href="#" target="_blank">Политики конфиденциальности</a>',
+                successTitle: 'Ваш вопрос отправлен',
+                successText: 'Менеджер свяжется с&nbsp;вами в&nbsp;ближайшее время',
+                successBtn: true
+            })
+                +field({
+                    title: 'Имя <sup>*</sup>',
+                    inputAttr: {
+                        'required': '',
+                        'data-type': 'letters'
+                    },
+                })
+                +field({
+                    title: 'Номер телефона <sup>*</sup>',
+                    inputAttr: {
+                        'required': '',
+                        'data-v-name': 'phone',
+                        'data-type': 'phoneNumber'
+                    },
+                })
+                +field({
+                    title: 'Электронная почта <sup>*</sup>',
+                    inputAttr: {
+                        'required': '',
+                        'data-v-name': 'email'
+                    },
+                })
+                +field({
+                    tag: 'textarea',
+                    title: 'Вопрос',
+                    textareaRows: '1',
+                    inputAttr: {
+                        'required': '',
+                    }
+                })
+                +field-file({
+                    placeholder: 'Прикрепить файл',
+                    inputAttr: {
+                        'data-v-name': 'file',
+                        'data-size': '10485760',
+                        'accept': 'image/*, text/plain, .docx, .pdf'
+                    }
+                })
+
+        //- Написать в тех. поддержку Глоссарий каталог, Глоссарий детальная
+        +modal({modalId:"supportModal", modalTitle:"", classes:"form-modal"})
+            +form({
+                classes: 'form--modal',
+                title: 'Написать в тех. поддержку',
+                text: '',
+                btnText: 'Отправить',
+                privacyText: 'Я согласен на обработку моих персональных данных согласно <a href="#" target="_blank">Политики конфиденциальности</a>',
+                successTitle: 'Ваше предложение отправлено',
+                successText: 'Менеджер свяжется с&nbsp;вами в&nbsp;ближайшее время',
+                successBtn: true
+            })
+                +field({
+                    title: 'Имя <sup>*</sup>',
+                    inputAttr: {
+                        'required': '',
+                        'data-type': 'letters'
+                    },
+                })
+                +field({
+                    title: 'Электронная почта <sup>*</sup>',
+                    inputAttr: {
+                        'required': '',
+                        'data-v-name': 'email'
+                    },
+                })
+                +field({
+                    tag: 'textarea',
+                    title: 'Предложение правки',
+                    textareaRows: '1',
+                    inputAttr: {
+                        'required': '',
+                    }
+                })
+
+        //- Получить консультацию и Подобрать оборудование Новости детальная, Карточка товара
+        +modal({modalId:"selectionModal", modalTitle:"", classes:"form-modal"})
+            +form({
+                classes: 'form--modal',
+                title: 'Не нашли подходящий товар? Поможем подобрать аналог',
+                text: '',
+                btnText: 'Отправить',
+                privacyText: 'Я согласен на обработку моих персональных данных согласно <a href="#" target="_blank">Политики конфиденциальности</a>',
+                successTitle: 'Ваша заявка отправлена',
+                successText: 'Менеджер свяжется с&nbsp;вами в&nbsp;ближайшее время',
+                successBtn: true
+            })
+                +field({
+                    title: 'Имя <sup>*</sup>',
+                    inputAttr: {
+                        'required': '',
+                        'data-type': 'letters'
+                    },
+                })
+                +field({
+                    title: 'Номер телефона <sup>*</sup>',
+                    inputAttr: {
+                        'required': '',
+                        'data-v-name': 'phone',
+                        'data-type': 'phoneNumber'
+                    },
+                })
+                +field({
+                    title: 'Электронная почта <sup>*</sup>',
+                    inputAttr: {
+                        'required': '',
+                        'data-v-name': 'email'
+                    },
+                })
+                +field({
+                    tag: 'textarea',
+                    title: 'Применение (комментарий)',
+                    textareaRows: '1'
+                })
+
+        //- Отправить резюме Вакансия, Наша команда
+        +modal({modalId:"vacancyModal", modalTitle:"", classes:"form-modal"})
+            +form({
+                classes: 'form--modal',
+                title: 'Стать частью команды Точприбор',
+                text: 'В поисках работы? Оставляй отклик! Рассмотрим, свяжемся.',
+                btnText: 'Отправить',
+                privacyText: 'Я согласен на обработку моих персональных данных согласно <a href="#" target="_blank">Политики конфиденциальности</a>',
+                successTitle: 'Ваше резюме отправлено',
+                successText: 'Менеджер свяжется с&nbsp;вами в&nbsp;ближайшее время',
+                successBtn: true
+            })
+                +field({
+                    title: 'ФИО <sup>*</sup>',
+                    inputAttr: {
+                        'required': '',
+                        'data-type': 'letters'
+                    },
+                })
+                +field({
+                    title: 'Номер телефона <sup>*</sup>',
+                    inputAttr: {
+                        'required': '',
+                        'data-v-name': 'phone',
+                        'data-type': 'phoneNumber'
+                    },
+                })
+                +field({
+                    title: 'Электронная почта <sup>*</sup>',
+                    inputAttr: {
+                        'required': '',
+                        'data-v-name': 'email'
+                    },
+                })
+                +field({
+                    tag: 'textarea',
+                    title: 'Комментарий / Сопроводительное письмо',
+                    textareaRows: '1'
+                })
+                +field-file({
+                    placeholder: 'Прикрепить резюме',
+                    inputAttr: {
+                        'required': '',
+                        'data-v-name': 'file',
+                        'data-size': '10485760',
+                        'accept': 'image/*, text/plain, .docx, .pdf'
+                    }
+                })

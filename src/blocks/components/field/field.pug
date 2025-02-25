@@ -3,6 +3,7 @@
         classes: '',
         tag: 'input',
         type: 'text',
+        textareaRows: '8',
         title: '',
         placeholder: '',
         inputAttr: {},
@@ -21,6 +22,7 @@ mixin field(props = defaultFieldProps)
             classes: props.classes ? props.classes : defaultFieldProps.classes,
             tag: props.tag ? props.tag : defaultFieldProps.tag,
             type: props.type ? props.type : defaultFieldProps.type,
+            textareaRows: props.textareaRows ? props.textareaRows : defaultFieldProps.textareaRows,
             title: props.title ? props.title : defaultFieldProps.title,
             placeholder: props.placeholder ? props.placeholder : defaultFieldProps.placeholder,
             inputAttr: props.inputAttr ? props.inputAttr : defaultFieldProps.inputAttr,
@@ -48,7 +50,7 @@ mixin field(props = defaultFieldProps)
                 - else
                 span.field__error(data-js='fieldError')
             - if(checkProps.tag === 'textarea')
-                textarea.field__textarea(rows="8" placeholder=checkProps.placeholder)&attributes(checkProps.inputAttr)
+                textarea.field__textarea(rows=checkProps.textareaRows placeholder=checkProps.placeholder)&attributes(checkProps.inputAttr)
                 span.field__error(data-js='fieldError')
         - if(checkProps.tag === 'select')
             select.field__select(placeholder=checkProps.placeholder data-js='formSelect')&attributes(checkProps.inputAttr)

@@ -31,7 +31,13 @@
     &__title {
         color: $c-text;
         letter-spacing: -0.02em;
-        margin-bottom: 10px;
+        text-align: center;
+        width: 100%;
+        padding: 0 48px;
+
+        @include max(xs) {
+            padding: 0 40px;
+        }
     }
 
     &__text {
@@ -53,7 +59,7 @@
     &__title+&__fields,
     &__text+&__fields,
     &__fields+&__fields {
-        margin-top: 50px;
+        margin-top: 24px;
     }
 
     &__fields {
@@ -67,12 +73,6 @@
             gap: 16px;
         }
     }
-
-    /*&__block {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-    }*/
 
     &__flex {
         display: flex;
@@ -226,5 +226,52 @@
         opacity: 1;
         height: auto;
         visibility: visible;
+    }
+}
+
+.form {
+    &--modal &__fields {
+        gap: 16px;
+    }
+
+    &--modal &__title {
+        @include max(laptop) {
+            font-size: 32px;
+        }
+
+        @include max(tablet) {
+            font-size: 32px;
+        }
+
+        @include max(xs) {
+            font-size: 24px;
+        }
+    }
+
+    &-modal &__text {
+        margin: 16px auto 0;
+        text-align: center;
+    }
+
+    &--modal .field {
+        margin-bottom: 0;
+        transition: margin-bottom $tr-time linear;
+    }
+
+    &--modal .field.field--invalid {
+        margin-bottom: 21px;
+    }
+
+    &--modal .form__thanks {
+        gap: 50px;
+    }
+
+    &--modal .form__image-success {
+        margin-top: 16px;
+    }
+
+    &--modal .form__thanks .form__text {
+        max-width: 300px;
+        margin-top: 0;
     }
 }

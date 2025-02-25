@@ -1,0 +1,115 @@
+.field-file {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 100%;
+    padding: 0;
+    border: none;
+
+    &.field--invalid {
+        .field-file__error {
+            display: block;
+        }
+    }
+
+    &--full {
+        .field-file__fakeinput {
+            .icon-empty {
+                display: none;
+            }
+
+            .icon-full {
+                display: block;
+            }
+        }
+    }
+
+    &__fakeinput {
+        display: flex;
+        align-items: center;
+        width: fit-content;
+        gap: 8px;
+        color: $c-text;
+        font-size: 16px;
+        line-height: 1.4em;
+        font-weight: 400;
+        outline: none;
+        cursor: pointer;
+        transition: color $tr-time linear;
+        word-break: break-all;
+
+        &:hover {
+            color: $c-accent-hover;
+
+            .icon-empty svg {
+                color: $c-accent-hover;
+
+            }
+        }
+
+        .icon-empty {
+            width: 24px;
+            height: 24px;
+            display: block;
+            flex-shrink: 0;
+
+            svg {
+                width: 24px;
+                height: 24px;
+                color: $c-text-breadcrumbs;
+                transition: color $tr-time linear;
+            }
+        }
+
+        .icon-full {
+            display: none;
+            width: 24px;
+            height: 24px;
+            flex-shrink: 0;
+
+            &:hover svg {
+                color: $c-accent-hover;
+            }
+
+            &:hover~span {
+                color: $c-text;
+            }
+
+            svg {
+                width: 24px;
+                height: 24px;
+                transition: color $tr-time linear;
+                color: $c-text-breadcrumbs;
+            }
+        }
+    }
+
+    &__error {
+        position: absolute;
+        top: calc(100% + 4px);
+        left: 0;
+        width: 100%;
+        font-size: 12px;
+        line-height: 1.4em;
+        color: $c-error;
+        display: none;
+    }
+
+    &__note {
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 1.02em;
+        color: #B0B2B7;
+        font-size: 11px;
+    }
+
+    &__input {
+        position: absolute;
+        width: 0;
+        height: 0;
+        overflow: hidden;
+        opacity: 0;
+        z-index: -10;
+    }
+}

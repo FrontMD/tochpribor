@@ -4,10 +4,12 @@
         title: '',
         text: '',
         btnText: '',
+        submitSize: 'full',
         innerThanks: true,
         privacyText: 'Согласен на обработку моих персональных данных в соответствии с <a href="#" target="_blank">Политикой в отношении обработки персональных данных</a>',
         successTitle: 'Ваш вопрос отправлен.',
-        successText: 'С Вами свяжется ответственный сотрудник по&nbsp;указанным контактным данным.' 
+        successText: 'С Вами свяжется ответственный сотрудник по&nbsp;указанным контактным данным.',
+        successBtn: false
     }
 
 mixin form(props = defaultFormProps)
@@ -17,16 +19,18 @@ mixin form(props = defaultFormProps)
             title: props.title ? props.title : defaultFormProps.title,
             text: props.text ? props.text : defaultFormProps.text,
             btnText: props.btnText ? props.btnText : defaultFormProps.btnText,
+            submitSize: props.submitSize ? props.submitSize : defaultFormProps.submitSize,
             innerThanks: props.innerThanks ? props.innerThanks : defaultFormProps.innerThanks,
             privacyText: props.privacyText ? props.privacyText : defaultFormProps.privacyText,
             successTitle: props.successTitle ? props.successTitle : defaultFormProps.successTitle,
             successText: props.successText ? props.successText : defaultFormProps.successText,
+            successBtn: props.successBtn ? props.successBtn : defaultFormProps.successBtn,
         }
 
     form.form(action="#" class= checkProps.classes data-validate novalidate)&attributes(attributes)
         .form__content(data-js='form-content')
             - if(checkProps.title.length > 0)
-                .h2.form__title!= checkProps.title 
+                .form__title.title--32!= checkProps.title 
             - if(checkProps.text.length > 0)
                 .form__text!= checkProps.text
             .form__fields
@@ -37,7 +41,7 @@ mixin form(props = defaultFormProps)
                 buttonType: 'submit',
                 name: checkProps.btnText,
                 cMode: 'red',
-                size: '246'
+                size: checkProps.submitSize
             })
             .form__privacy.form-privacy(data-js="formField")
                 label
@@ -52,3 +56,9 @@ mixin form(props = defaultFormProps)
                     svg
                         use(xlink:href=`img/sprites/sprite.svg#form_success`)
                 .form__text!= checkProps.successText
+                - if(checkProps.successBtn == true)
+                    +btn({
+                        classes: 'form__btn',
+                        name: 'На главную',
+                        icon: 'arrow_enter'
+                    })

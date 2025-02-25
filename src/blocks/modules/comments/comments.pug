@@ -182,11 +182,12 @@ section.section.section--full.comments-form
         +form({
             classes: 'comments-form__form',
             btnText: 'Отправить',
+            submitSize: '246',
             innerThanks: true,
             privacyText: 'Согласен на обработку моих персональных данных в соответствии с <a href="#" target="_blank">Политикой в отношении обработки персональных данных</a>',
             successTitle: 'Ваш комментарий отправлен',
             successText: 'Скоро он появится на сайте.' 
-        })
+        })(data-fixed-height)
             .form__flex
                 +field({
                     title: 'Имя',
