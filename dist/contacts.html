@@ -1115,7 +1115,7 @@
                                   <div class="product-price quick-view__prices product-price--horizontal product-price--32">
                                     <div class="product-price__price">550 000 ₽</div>
                                     <div class="product-price__price product-price__price--old">680 000 ₽</div>
-                                  </div><a class="btn  btn--red btn--full" href="javascript:void(0)"><span class="btn__text">Подробнее о товаре</span></a><a class="btn  btn--light-red btn--full" href="javascript:void(0)"><span class="btn__text">Запросить техническое описание</span></a><a class="btn  btn--grey btn--full" href="javascript:void(0)" data-modal="#questionModal">
+                                  </div><a class="btn  btn--red btn--full" href="javascript:void(0)"><span class="btn__text">Подробнее о товаре</span></a><a class="btn  btn--light-red btn--full" href="javascript:void(0)" data-modal="#techDescModal"><span class="btn__text">Запросить техническое описание</span></a><a class="btn  btn--grey btn--full" href="javascript:void(0)" data-modal="#questionModal">
                                     <svg>
                                       <use xlink:href="img/sprites/sprite.svg#question"></use>
                                     </svg><span class="btn__text">Задать вопрос</span></a>
@@ -1564,6 +1564,262 @@
                             </div>
                             <div class="form__thanks" data-js="form-thanks">
                               <div class="title--32 form__title">Ваше резюме отправлено</div>
+                              <div class="form__image-success">
+                                <svg>
+                                  <use xlink:href="img/sprites/sprite.svg#form_success"></use>
+                                </svg>
+                              </div>
+                              <div class="form__text">Менеджер свяжется с&nbsp;вами в&nbsp;ближайшее время</div><a class="btn form__btn btn--red btn--full" href="javascript:void(0)">
+                                    <svg>
+                                      <use xlink:href="img/sprites/sprite.svg#arrow_enter"></use>
+                                    </svg><span class="btn__text">На главную</span></a>
+                            </div>
+                          </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal hystmodal form-modal" id="oneClickOrderModal" aria-hidden="true">
+              <div class="hystmodal__wrap">
+                <div class="hystmodal__window" role="dialog" aria-modal="true">
+                  <div class="modal__content scrollbar scrollbar--small">
+                    <div class="modal__close" data-hystclose>
+                      <svg> 
+                        <use xlink:href="./img/sprites/sprite.svg#close"></use>
+                      </svg>
+                    </div>
+                    <div class="modal__inner" data-js="modalInner">
+                          <form class="form form--modal" action="#" data-validate novalidate>
+                            <div class="form__content" data-js="form-content">
+                              <div class="form__title title--32">Получить коммерческое предложение</div>
+                              <div class="form__fields">
+                                <div class="form-product-card">
+                                  <div class="form-product-card__photo"><img src="img/catalog/product_9.webp" alt=""></div>
+                                  <div class="form-product-card__title">Разрывная машина ИР 5143-200</div>
+                                  <div class="form-product-card__order">
+                                        <div class="product-price form-product-card__price product-price--18">
+                                          <div class="product-price__price">1 550 000 ₽</div>
+                                          <div class="product-price__price product-price__price--old">1 680 000 ₽</div>
+                                        </div>
+                                        <div class="amount-input amount-input--white" data-js="amountInput"><span class="amount-input__width"></span><span class="amount-input__change amount-input__minus min">
+                                            <svg> 
+                                              <use xlink:href="img/sprites/sprite.svg#minus"></use>
+                                            </svg></span>
+                                          <input class="amount-input__value" type="number" name="amount" value="1" autocomplete="off"><span class="amount-input__change amount-input__plus">
+                                            <svg> 
+                                              <use xlink:href="img/sprites/sprite.svg#plus"></use>
+                                            </svg></span>
+                                        </div>
+                                  </div>
+                                </div>
+                                    <div class="field     " data-js="formField">
+                                      <label><span class="field__title">Имя <sup>*</sup></span>
+                                        <input class="field__input" type="text" placeholder="" required="" data-type="letters"><span class="field__error" data-js="fieldError"></span>
+                                      </label>
+                                    </div>
+                                    <div class="field     " data-js="formField">
+                                      <label><span class="field__title">Номер телефона <sup>*</sup></span>
+                                        <input class="field__input" type="text" placeholder="" required="" data-v-name="phone" data-type="phoneNumber"><span class="field__error" data-js="fieldError"></span>
+                                      </label>
+                                    </div>
+                                    <div class="field     " data-js="formField">
+                                      <label><span class="field__title">Электронная почта <sup>*</sup></span>
+                                        <input class="field__input" type="text" placeholder="" required="" data-v-name="email"><span class="field__error" data-js="fieldError"></span>
+                                      </label>
+                                    </div>
+                                    <div class="field     " data-js="formField">
+                                      <label><span class="field__title">Комментарий к заказу</span>
+                                        <textarea class="field__textarea" rows="1" placeholder=""></textarea><span class="field__error" data-js="fieldError"></span>
+                                      </label>
+                                    </div>
+                                    <label class="field-file" data-js="formField" data-placeholder="Прикрепить файл"><span class="field-file__fakeinput"><span class="icon-empty">
+                                          <svg>
+                                            <use xlink:href="img/sprites/sprite.svg#clip"></use>
+                                          </svg></span><span class="icon-full" data-js="iconFull">
+                                          <svg>
+                                            <use xlink:href="img/sprites/sprite.svg#close"></use>
+                                          </svg></span><span data-js="fileName">Прикрепить файл</span></span><span class="field-file__error" data-js="fieldError"></span>
+                                      <input class="field-file__input" type="file" data-v-name="file" data-size="10485760" accept="image/*, text/plain, .docx, .pdf">
+                                    </label>
+                              </div>
+                                  <button class="btn form__submit btn--red btn--full" type="submit"><span class="btn__text">Отправить</span>
+                                  </button>
+                              <div class="form__privacy form-privacy" data-js="formField">
+                                <label>
+                                  <input type="checkbox" data-v-name="checkbox" required><span class="form-privacy__fake"></span>
+                                </label><span class="form-privacy__text">Я согласен на обработку моих персональных данных согласно <a href="#" target="_blank">Политики конфиденциальности</a></span><span class="field__error" data-js="fieldError"></span>
+                              </div>
+                            </div>
+                            <div class="form__thanks" data-js="form-thanks">
+                              <div class="title--32 form__title">Ваша заявка отправлена</div>
+                              <div class="form__image-success">
+                                <svg>
+                                  <use xlink:href="img/sprites/sprite.svg#form_success"></use>
+                                </svg>
+                              </div>
+                              <div class="form__text">Менеджер свяжется с&nbsp;вами в&nbsp;ближайшее время</div><a class="btn form__btn btn--red btn--full" href="javascript:void(0)">
+                                    <svg>
+                                      <use xlink:href="img/sprites/sprite.svg#arrow_enter"></use>
+                                    </svg><span class="btn__text">На главную</span></a>
+                            </div>
+                          </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal hystmodal form-modal" id="techDescModal" aria-hidden="true">
+              <div class="hystmodal__wrap">
+                <div class="hystmodal__window" role="dialog" aria-modal="true">
+                  <div class="modal__content scrollbar scrollbar--small">
+                    <div class="modal__close" data-hystclose>
+                      <svg> 
+                        <use xlink:href="./img/sprites/sprite.svg#close"></use>
+                      </svg>
+                    </div>
+                    <div class="modal__inner" data-js="modalInner">
+                          <form class="form form--modal" action="#" data-validate novalidate>
+                            <div class="form__content" data-js="form-content">
+                              <div class="form__title title--32">Запросить техническое описание</div>
+                              <div class="form__fields">
+                                <div class="form-product-card">
+                                  <div class="form-product-card__photo"><img src="img/catalog/product_9.webp" alt=""></div>
+                                  <div class="form-product-card__title">Разрывная машина ИР 5143-200</div>
+                                  <div class="form-product-card__order">
+                                        <div class="product-price form-product-card__price product-price--18">
+                                          <div class="product-price__price">1 550 000 ₽</div>
+                                          <div class="product-price__price product-price__price--old">1 680 000 ₽</div>
+                                        </div>
+                                  </div>
+                                </div>
+                                    <div class="field     " data-js="formField">
+                                      <label><span class="field__title">Имя <sup>*</sup></span>
+                                        <input class="field__input" type="text" placeholder="" required="" data-type="letters"><span class="field__error" data-js="fieldError"></span>
+                                      </label>
+                                    </div>
+                                    <div class="field     " data-js="formField">
+                                      <label><span class="field__title">Номер телефона <sup>*</sup></span>
+                                        <input class="field__input" type="text" placeholder="" required="" data-v-name="phone" data-type="phoneNumber"><span class="field__error" data-js="fieldError"></span>
+                                      </label>
+                                    </div>
+                                    <div class="field     " data-js="formField">
+                                      <label><span class="field__title">Электронная почта <sup>*</sup></span>
+                                        <input class="field__input" type="text" placeholder="" required="" data-v-name="email"><span class="field__error" data-js="fieldError"></span>
+                                      </label>
+                                    </div>
+                                    <label class="field-file" data-js="formField" data-placeholder="Прикрепить файл"><span class="field-file__fakeinput"><span class="icon-empty">
+                                          <svg>
+                                            <use xlink:href="img/sprites/sprite.svg#clip"></use>
+                                          </svg></span><span class="icon-full" data-js="iconFull">
+                                          <svg>
+                                            <use xlink:href="img/sprites/sprite.svg#close"></use>
+                                          </svg></span><span data-js="fileName">Прикрепить файл</span></span><span class="field-file__error" data-js="fieldError"></span>
+                                      <input class="field-file__input" type="file" data-v-name="file" data-size="10485760" accept="image/*, text/plain, .docx, .pdf">
+                                    </label>
+                              </div>
+                                  <button class="btn form__submit btn--red btn--full" type="submit"><span class="btn__text">Отправить</span>
+                                  </button>
+                              <div class="form__privacy form-privacy" data-js="formField">
+                                <label>
+                                  <input type="checkbox" data-v-name="checkbox" required><span class="form-privacy__fake"></span>
+                                </label><span class="form-privacy__text">Я согласен на обработку моих персональных данных согласно <a href="#" target="_blank">Политики конфиденциальности</a></span><span class="field__error" data-js="fieldError"></span>
+                              </div>
+                            </div>
+                            <div class="form__thanks" data-js="form-thanks">
+                              <div class="title--32 form__title">Ваша заявка отправлена</div>
+                              <div class="form__image-success">
+                                <svg>
+                                  <use xlink:href="img/sprites/sprite.svg#form_success"></use>
+                                </svg>
+                              </div>
+                              <div class="form__text">Менеджер свяжется с&nbsp;вами в&nbsp;ближайшее время</div><a class="btn form__btn btn--red btn--full" href="javascript:void(0)">
+                                    <svg>
+                                      <use xlink:href="img/sprites/sprite.svg#arrow_enter"></use>
+                                    </svg><span class="btn__text">На главную</span></a>
+                            </div>
+                          </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal hystmodal form-modal" id="getOfferModal" aria-hidden="true">
+              <div class="hystmodal__wrap">
+                <div class="hystmodal__window" role="dialog" aria-modal="true">
+                  <div class="modal__content scrollbar scrollbar--small">
+                    <div class="modal__close" data-hystclose>
+                      <svg> 
+                        <use xlink:href="./img/sprites/sprite.svg#close"></use>
+                      </svg>
+                    </div>
+                    <div class="modal__inner" data-js="modalInner">
+                          <form class="form form--modal" action="#" data-validate novalidate>
+                            <div class="form__content" data-js="form-content">
+                              <div class="form__title title--32">Получить коммерческое предложение</div>
+                              <div class="form__fields">
+                                <div class="form-spoiler">
+                                  <div class="form-spoiler"></div>
+                                </div>
+                                <div class="form-product-card">
+                                  <div class="form-product-card__photo"><img src="img/catalog/product_9.webp" alt=""></div>
+                                  <div class="form-product-card__title">Разрывная машина ИР 5143-200</div>
+                                  <div class="form-product-card__order">
+                                        <div class="product-price form-product-card__price product-price--18">
+                                          <div class="product-price__price">1 550 000 ₽</div>
+                                          <div class="product-price__price product-price__price--old">1 680 000 ₽</div>
+                                        </div>
+                                        <div class="amount-input amount-input--white" data-js="amountInput"><span class="amount-input__width"></span><span class="amount-input__change amount-input__minus min">
+                                            <svg> 
+                                              <use xlink:href="img/sprites/sprite.svg#minus"></use>
+                                            </svg></span>
+                                          <input class="amount-input__value" type="number" name="amount" value="1" autocomplete="off"><span class="amount-input__change amount-input__plus">
+                                            <svg> 
+                                              <use xlink:href="img/sprites/sprite.svg#plus"></use>
+                                            </svg></span>
+                                        </div>
+                                  </div>
+                                </div>
+                                    <div class="field     " data-js="formField">
+                                      <label><span class="field__title">Имя <sup>*</sup></span>
+                                        <input class="field__input" type="text" placeholder="" required="" data-type="letters"><span class="field__error" data-js="fieldError"></span>
+                                      </label>
+                                    </div>
+                                    <div class="field     " data-js="formField">
+                                      <label><span class="field__title">Номер телефона <sup>*</sup></span>
+                                        <input class="field__input" type="text" placeholder="" required="" data-v-name="phone" data-type="phoneNumber"><span class="field__error" data-js="fieldError"></span>
+                                      </label>
+                                    </div>
+                                    <div class="field     " data-js="formField">
+                                      <label><span class="field__title">Электронная почта <sup>*</sup></span>
+                                        <input class="field__input" type="text" placeholder="" required="" data-v-name="email"><span class="field__error" data-js="fieldError"></span>
+                                      </label>
+                                    </div>
+                                    <div class="field     " data-js="formField">
+                                      <label><span class="field__title">Комментарий к заказу</span>
+                                        <textarea class="field__textarea" rows="1" placeholder=""></textarea><span class="field__error" data-js="fieldError"></span>
+                                      </label>
+                                    </div>
+                                    <label class="field-file" data-js="formField" data-placeholder="Прикрепить файл"><span class="field-file__fakeinput"><span class="icon-empty">
+                                          <svg>
+                                            <use xlink:href="img/sprites/sprite.svg#clip"></use>
+                                          </svg></span><span class="icon-full" data-js="iconFull">
+                                          <svg>
+                                            <use xlink:href="img/sprites/sprite.svg#close"></use>
+                                          </svg></span><span data-js="fileName">Прикрепить файл</span></span><span class="field-file__error" data-js="fieldError"></span>
+                                      <input class="field-file__input" type="file" data-v-name="file" data-size="10485760" accept="image/*, text/plain, .docx, .pdf">
+                                    </label>
+                              </div>
+                                  <button class="btn form__submit btn--red btn--full" type="submit"><span class="btn__text">Отправить</span>
+                                  </button>
+                              <div class="form__privacy form-privacy" data-js="formField">
+                                <label>
+                                  <input type="checkbox" data-v-name="checkbox" required><span class="form-privacy__fake"></span>
+                                </label><span class="form-privacy__text">Я согласен на обработку моих персональных данных согласно <a href="#" target="_blank">Политики конфиденциальности</a></span><span class="field__error" data-js="fieldError"></span>
+                              </div>
+                            </div>
+                            <div class="form__thanks" data-js="form-thanks">
+                              <div class="title--32 form__title">Ваша заявка отправлена</div>
                               <div class="form__image-success">
                                 <svg>
                                   <use xlink:href="img/sprites/sprite.svg#form_success"></use>

@@ -12,12 +12,14 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 // Блокировка скролла при открытии модалок
-function lockBody() {
-	$('body').addClass('no-scroll');
-
+function lockBody(onlyHeaderPadding = false) {
     let scrollbarWidth = getScrollbarWidth()
 
-    $('body').css('padding-right', scrollbarWidth)
+    if(!onlyHeaderPadding) {
+        $('body').addClass('no-scroll');
+        $('body').css('padding-right', scrollbarWidth)
+    }
+
     $('[data-js="siteHeader"]').css('padding-right', scrollbarWidth)
 }
 
@@ -454,7 +456,11 @@ function referencesController() {
         window.distPath = '';
     }
 
-    const dataAddress = 'https://raw.githubusercontent.com/FrontMD/tochpribor/refs/heads/master/dist/public/data/refereces.json';
+    if (typeof window.dataAddress == 'undefined') {
+        window.dataAddress = 'https://raw.githubusercontent.com/FrontMD/tochpribor/refs/heads/master/dist/public/data/refereces.json';
+    }
+
+    const dataAddress = window.dataAddress;
     let refData = {};
     let refAllCategories = [];
     let refAllCities = [];

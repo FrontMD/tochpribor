@@ -89,6 +89,10 @@
 }
 
 .amount-input {
+    &--white {
+        background: $c-white;
+    }
+
     &--cartblock {
         display: none;
         max-width: 100%;

@@ -72,7 +72,7 @@ mixin catalog-card(props = defaultCatalogCardProps)
 				+btn({
 					name: 'Заказать в 1 клик',
 					cMode: 'red'
-				})
+				})(data-modal="#oneClickOrderModal")
 				- if(checkProps.vMode == 'catalog')
 					+btn({
 						name: 'Смотреть модели',
