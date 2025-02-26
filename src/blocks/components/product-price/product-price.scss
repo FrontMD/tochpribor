@@ -73,6 +73,10 @@
 
     &--18 {
         font-size: 18px;
+
+        @include max(xs) {
+            font-size: 18px;
+        }
     }
 
 }

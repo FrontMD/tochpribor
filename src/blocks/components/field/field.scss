@@ -208,7 +208,7 @@
     align-items: center;
     width: 100% !important;
     border: 1px solid $c-border;
-    padding: 11.5px 15px;
+    padding: 15px;
     border-radius: 4px;
 
     .selection {
@@ -225,9 +225,10 @@
             align-items: center;
             justify-content: space-between;
             color: $c-text;
-            font-size: 18px;
+            font-size: 16px;
             border-radius: 0;
             width: 100%;
+            height: auto;
             border: none;
             background: transparent;
             cursor: pointer;
@@ -241,7 +242,8 @@
             .select2-selection__placeholder {
                 width: 100%;
                 padding: 0;
-
+                line-height: 1.4em;
+                color: $c-text;
             }
 
             .select2-selection__arrow {
@@ -299,19 +301,33 @@
 
         .select2-results {
             &__options {
-                max-height: 100%;
+                max-height: 230px;
                 padding-left: 0;
                 padding-right: 0;
+
+                &::-webkit-scrollbar {
+                    width: 3px;
+                    height: 3px;
+                }
+
+                &::-webkit-scrollbar-track {
+                    background-color: $c-text-light;
+                    border-radius: 2px;
+                }
+
+                &::-webkit-scrollbar-thumb {
+                    background-color: $c-bg;
+                    border-radius: 2px;
+                }
             }
 
             &__option {
                 color: $c-text;
                 font-size: 16px;
-                line-height: 1.4;
+                line-height: 1.4em;
                 display: flex;
                 justify-content: flex-start;
                 align-items: center;
-                white-space: nowrap;
                 width: 100%;
                 background: transparent;
                 padding-left: 15px;

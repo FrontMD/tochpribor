@@ -2,168 +2,168 @@ extends ../layouts/default
 include ../helpers/mixins
 
 block variables
-	- const title = "Корзина"
+    - const title = "Корзина"
 
 block content
-	.page-layout
-		section.breadcrumbs-section.section.section--transparent
-			.section__container
-				+breadcrumbs({
-					items: [
-						{
-							name: 'Главная',
-							link: 'javascript:void(0);'
-						},
-						{
-							name: 'Корзина',
-							link: 'javascript:void(0);'
-						}
-					],
-				})
+    .page-layout
+        section.breadcrumbs-section.section.section--transparent.no-print
+            .section__container
+                +breadcrumbs({
+                    items: [
+                        {
+                            name: 'Главная',
+                            link: 'javascript:void(0);'
+                        },
+                        {
+                            name: 'Корзина',
+                            link: 'javascript:void(0);'
+                        }
+                    ],
+                })
 
-		// Чтобы показать пустую корзину, нужно вместо этого sidebar-layout положить cart-empty из файла cart-empty.html
-		.sidebar-layout
-			.sidebar-layout__content
-				section.section.section--full.cart
-					.section__container
-						.section__header.cart__header
-							+title({
-								tag: 'h1',
-								size: '67',
-								text: 'Корзина'
-							})
-							.cart__actions
-								+btn({
-									name: 'Распечатать',
-									icon: 'print',
-									cMode: 'noborder',
-									size: 'link'
-								})
-								+btn({
-									name: 'Скачать',
-									icon: 'download',
-									cMode: 'noborder',
-									size: 'link'
-								})
-								+btn({
-									name: 'Очистить все',
-									icon: 'close',
-									cMode: 'noborder',
-									size: 'link'
-								})
+        // Чтобы показать пустую корзину, нужно вместо этого sidebar-layout положить cart-empty из файла cart-empty.html
+        .sidebar-layout
+            .sidebar-layout__content
+                section.section.section--full.cart
+                    .section__container
+                        .section__header.cart__header
+                            +title({
+                                tag: 'h1',
+                                size: '67',
+                                text: 'Корзина'
+                            })
+                            .cart__actions
+                                +btn({
+                                    name: 'Распечатать',
+                                    icon: 'print',
+                                    cMode: 'noborder',
+                                    size: 'link'
+                                })(data-js="printBtn")
+                                +btn({
+                                    name: 'Скачать',
+                                    icon: 'download',
+                                    cMode: 'noborder',
+                                    size: 'link'
+                                })
+                                +btn({
+                                    name: 'Очистить все',
+                                    icon: 'close',
+                                    cMode: 'noborder',
+                                    size: 'link'
+                                })
 
-						.cart__list
-							+cart-card({
-								title: "Разрывная машина ИР 5143&#8209;200",
-								image: "img/catalog/product_8.webp",
-								tags: [
-									{
-										img: 'img/catalog/check_icon.svg',
-										text: 'В наличии',
-										color: 'green'
-									},
-									{
-										img: '',
-										text: 'Скидка',
-										color: 'red'
-									}
-								],
-								prices: [
-									'1 550 000 ₽',
-									'1 680 000 ₽'
-								]
-							})
-							+cart-card({
-								title: "FU DLC 200 кН испытательная машина",
-								image: "img/catalog/product_9.webp",
-								tags: [
-									{
-										img: 'img/catalog/check_icon.svg',
-										text: 'В наличии',
-										color: 'green'
-									}
-								],
-								prices: [
-									'1 550 000 ₽',
-									''
-								]
-							})
-							+cart-card({
-								title: "Испытательная машина для пневморессор (пневмобаллоннов) DVT LZ",
-								image: "img/catalog/product_10.webp",
-								tags: [
-									{
-										img: 'img/catalog/check_icon.svg',
-										text: 'В наличии',
-										color: 'green'
-									},
-									{
-										img: '',
-										text: 'Скидка',
-										color: 'red'
-									}
-								],
-								prices: [
-									'1 550 000 ₽',
-									'1 680 000 ₽'
-								]
-							})
-							+cart-card({
-								title: "ИР 5061-0,05",
-								image: "img/catalog/product_11.webp",
-								tags: [
-									{
-										img: 'img/catalog/arrow_circle.svg',
-										text: 'Под заказ',
-										color: 'grey',
-										note: 'Изготавливаем по индивидуальному заказу'
-									}
-								],
-								prices: [
-									'1 550 000 ₽',
-									''
-								]
-							})
-							+cart-card({
-								title: "ИХ 5111",
-								image: "img/catalog/product_12.webp",
-								tags: [
-									{
-										img: 'img/catalog/arrow_circle.svg',
-										text: 'Под заказ',
-										color: 'grey',
-										note: 'Изготавливаем по индивидуальному заказу'
-									}
-								],
-								prices: [
-									'1 550 000 ₽',
-									''
-								]
-							})
+                        .cart__list
+                            +cart-card({
+                                title: "Разрывная машина ИР 5143&#8209;200",
+                                image: "img/catalog/product_8.webp",
+                                tags: [
+                                    {
+                                        img: 'img/catalog/check_icon.svg',
+                                        text: 'В наличии',
+                                        color: 'green'
+                                    },
+                                    {
+                                        img: '',
+                                        text: 'Скидка',
+                                        color: 'red'
+                                    }
+                                ],
+                                prices: [
+                                    '1 550 000 ₽',
+                                    '1 680 000 ₽'
+                                ]
+                            })
+                            +cart-card({
+                                title: "FU DLC 200 кН испытательная машина",
+                                image: "img/catalog/product_9.webp",
+                                tags: [
+                                    {
+                                        img: 'img/catalog/check_icon.svg',
+                                        text: 'В наличии',
+                                        color: 'green'
+                                    }
+                                ],
+                                prices: [
+                                    '1 550 000 ₽',
+                                    ''
+                                ]
+                            })
+                            +cart-card({
+                                title: "Испытательная машина для пневморессор (пневмобаллоннов) DVT LZ",
+                                image: "img/catalog/product_10.webp",
+                                tags: [
+                                    {
+                                        img: 'img/catalog/check_icon.svg',
+                                        text: 'В наличии',
+                                        color: 'green'
+                                    },
+                                    {
+                                        img: '',
+                                        text: 'Скидка',
+                                        color: 'red'
+                                    }
+                                ],
+                                prices: [
+                                    '1 550 000 ₽',
+                                    '1 680 000 ₽'
+                                ]
+                            })
+                            +cart-card({
+                                title: "ИР 5061-0,05",
+                                image: "img/catalog/product_11.webp",
+                                tags: [
+                                    {
+                                        img: 'img/catalog/arrow_circle.svg',
+                                        text: 'Под заказ',
+                                        color: 'grey',
+                                        note: 'Изготавливаем по индивидуальному заказу'
+                                    }
+                                ],
+                                prices: [
+                                    '1 550 000 ₽',
+                                    ''
+                                ]
+                            })
+                            +cart-card({
+                                title: "ИХ 5111",
+                                image: "img/catalog/product_12.webp",
+                                tags: [
+                                    {
+                                        img: 'img/catalog/arrow_circle.svg',
+                                        text: 'Под заказ',
+                                        color: 'grey',
+                                        note: 'Изготавливаем по индивидуальному заказу'
+                                    }
+                                ],
+                                prices: [
+                                    '1 550 000 ₽',
+                                    ''
+                                ]
+                            })
 
-			.sidebar-layout__sidebar
-				.section.section--full.section--transparent.cart-sidebar
-					.cart-sidebar__container
-						.cart-sidebar__order
-							.cart-sidebar__title Ваш заказ
-							.cart-sidebar__detail
-								.cart-sidebar__row
-									.cart-sidebar__name 5 товаров
-									.cart-sidebar__value 9 999 999 ₽
-								.cart-sidebar__row
-									.cart-sidebar__name Скидка
-									.cart-sidebar__value.cart-sidebar__value--red – 1 559 955 ₽
-							.cart-sidebar__total
-								.cart-sidebar__row
-									.cart-sidebar__name Итого
-									.cart-sidebar__value.title--32 12 550 000 ₽
-							+btn({
-								classes: '',
-								size: "full",
-								name: 'Запросить коммерческое предложение',
-								cMode: 'red'
-							})
-						.cart-sidebar__note
-							svg
-								use(xlink:href=`img/sprites/sprite.svg#warning`)
-							span Не оферта. Отправив заявку Вы получите персональные условия сделки. В ближайшее время с Вами свяжется наш менеджер.
+            .sidebar-layout__sidebar.no-print
+                .section.section--full.section--transparent.cart-sidebar
+                    .cart-sidebar__container
+                        .cart-sidebar__order
+                            .cart-sidebar__title Ваш заказ
+                            .cart-sidebar__detail
+                                .cart-sidebar__row
+                                    .cart-sidebar__name 5 товаров
+                                    .cart-sidebar__value 8 010 000 ₽
+                                .cart-sidebar__row
+                                    .cart-sidebar__name Скидка
+                                    .cart-sidebar__value.cart-sidebar__value--red – 260 000 ₽
+                            .cart-sidebar__total
+                                .cart-sidebar__row
+                                    .cart-sidebar__name Итого
+                                    .cart-sidebar__value.title--32 7 750 000 ₽
+                            +btn({
+                                classes: '',
+                                size: "full",
+                                name: 'Запросить коммерческое предложение',
+                                cMode: 'red'
+                            })(data-modal="#getOfferModal")
+                        .cart-sidebar__note
+                            svg
+                                use(xlink:href=`img/sprites/sprite.svg#warning`)
+                            span Не оферта. Отправив заявку Вы получите персональные условия сделки. В ближайшее время с Вами свяжется наш менеджер.

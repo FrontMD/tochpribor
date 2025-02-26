@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     textTableScrollInit();
     anchorsInit();
     referencesController();
+    printBtnsInit();
 })
 
 // Блокировка скролла при открытии модалок
@@ -946,4 +947,17 @@ function referencesController() {
         return color;
     }
 
+}
+
+// кнопки Распечатать
+function printBtnsInit() {
+    const printBtns = document.querySelectorAll('[data-js="printBtn"]');
+
+    if(printBtns.length < 1) return
+
+    printBtns.forEach(printBtn => {
+        printBtn.addEventListener('click', function() {
+            window.print();
+        })
+    })
 }

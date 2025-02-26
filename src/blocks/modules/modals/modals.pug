@@ -571,23 +571,74 @@ noindex
                 successText: 'Менеджер свяжется с&nbsp;вами в&nbsp;ближайшее время',
                 successBtn: true
             })
-                .form-spoiler
-                    .form-spoiler
-                .form-product-card
-                    .form-product-card__photo
-                        img(src="img/catalog/product_9.webp" alt="")
-                    .form-product-card__title Разрывная машина ИР 5143-200
-                    .form-product-card__order
-                        +product-price({
-                            classes: 'form-product-card__price',
-                            size: '18',
-                            price: '1 550 000 ₽',
-                            oldPrice: '1 680 000 ₽'
-                        })
-                        +amount-input({
-                            classes: 'amount-input--white'
-                        })
+                +field({
+                    title: 'Имя <sup>*</sup>',
+                    inputAttr: {
+                        'required': '',
+                        'data-type': 'letters'
+                    },
+                })
+                +field({
+                    title: 'Номер телефона <sup>*</sup>',
+                    inputAttr: {
+                        'required': '',
+                        'data-v-name': 'phone',
+                        'data-type': 'phoneNumber'
+                    },
+                })
+                +field({
+                    title: 'Электронная почта <sup>*</sup>',
+                    inputAttr: {
+                        'required': '',
+                        'data-v-name': 'email'
+                    },
+                })
 
+                .form-spoiler(data-js="formSpoiler")
+                    .form-spoiler__header(data-js="formSpoilerHeader")
+                        .form-spoiler__title Список товаров
+                        .form-spoiler__icon
+                            svg
+                                use(xlink:href="img/sprites/sprite.svg#arrow_angle")
+                    .form-spoiler__content(data-js="formSpoilerContent")
+                        .form-spoiler__items
+                            .form-spoiler__item
+                                .form-spoiler__name Разрывная машина ИР 5143‑200
+                                .form-spoiler__amount 1шт
+                            .form-spoiler__item
+                                .form-spoiler__name FU DLC 200 кН испытательная машина
+                                .form-spoiler__amount 1шт
+                            .form-spoiler__item
+                                .form-spoiler__name Испытательная машина для пневморессор (пневмобаллоннов) DVT LZ
+                                .form-spoiler__amount 1шт
+                            .form-spoiler__item
+                                .form-spoiler__name ИР 5061-0,05
+                                .form-spoiler__amount 1шт
+                            .form-spoiler__item
+                                .form-spoiler__name ИХ 5111
+                                .form-spoiler__amount 1шт
+                        .form-spoiler__item.form-spoiler__item--total
+                            span Итого:
+                            span 7 750 000 ₽
+
+                +field({
+                    tag: 'textarea',
+                    title: 'Комментарий к заказу',
+                    textareaRows: '1'
+                })
+
+        //- Проверить изделие О компании, Безопасность изделия
+        +modal({modalId:"checkModal", modalTitle:"", classes:"form-modal"})
+            +form({
+                classes: 'form--modal',
+                title: 'Проверить изделие',
+                text: '',
+                btnText: 'Отправить',
+                privacyText: 'Я согласен на обработку моих персональных данных согласно <a href="#" target="_blank">Политики конфиденциальности</a>',
+                successTitle: 'Ваша заявка отправлена',
+                successText: 'Менеджер свяжется с&nbsp;вами в&nbsp;ближайшее время',
+                successBtn: true
+            })
                 +field({
                     title: 'Имя <sup>*</sup>',
                     inputAttr: {
@@ -611,8 +662,23 @@ noindex
                     },
                 })
                 +field({
+                    tag: 'select',
+                    placeholder: 'Выбрать товар',
+                    inputAttr: {
+                        'required': '',
+                    },
+                    selectOptions: [
+                        "",
+                        "Разрывная машина ИР 5143‑200",
+                        "FU DLC 200 кН испытательная машина",
+                        "Испытательная машина для пневморессор (пневмобаллоннов) DVT LZ",
+                        "ИР 5061-0,05",
+                        "ИХ 5111",
+                    ]
+                })
+                +field({
                     tag: 'textarea',
-                    title: 'Комментарий к заказу',
+                    title: 'Уникальный номер товара',
                     textareaRows: '1'
                 })
                 +field-file({

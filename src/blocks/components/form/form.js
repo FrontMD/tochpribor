@@ -7,6 +7,7 @@ function validation() {
     forms.forEach(form => {
 
         inputMasksInit(form);
+        formSpoilerInit(form);
 
         form.addEventListener('submit', event => {
             event.preventDefault()
@@ -292,4 +293,25 @@ function inputMasksInit(form) {
         
         this.value = val;
     }
+}
+
+function formSpoilerInit(form) {
+    const spoilers = form.querySelectorAll('[data-js="formSpoiler"]')
+
+    if(spoilers.length < 1) return
+
+    spoilers.forEach(spoiler => {
+        const content = spoiler.querySelector('[data-js="formSpoilerContent"]');
+        const header = spoiler.querySelector('[data-js="formSpoilerHeader"]');
+
+        header.addEventListener('click', function() {
+            if(spoiler.classList.contains('active')) {
+                spoiler.classList.remove('active');
+			    $(content).slideUp(300);
+            } else {
+                spoiler.classList.add('active');
+			    $(content).slideDown(300);
+            }
+        })
+    })
 }

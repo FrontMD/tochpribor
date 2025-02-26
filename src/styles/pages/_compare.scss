@@ -281,11 +281,11 @@
         font-size: 18px;
         line-height: 1.4em;
         color: $c-text;
-        height: 4.2em;
+        /*height: 4.2em;
         -webkit-line-clamp: 3;
         display: -webkit-box;
         -webkit-box-orient: vertical;
-        overflow: hidden;
+        overflow: hidden;*/
 
         @include max(laptop) {
             font-size: 16px;

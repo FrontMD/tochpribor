@@ -285,12 +285,21 @@
     background-color: $c-main-bg;
     margin-bottom: 4px;
 
+    @include max(xs) {
+        flex-wrap: wrap;
+        gap: 16px 8px;
+    }
+
     &__photo {
         flex: 0 0 98px;
         aspect-ratio: 1 / 1;
         padding: 12px;
         border-radius: 2px;
         background-color: $c-white;
+
+        @include max(xs) {
+            flex-basis: 60px;
+        }
 
         img {
             width: 100%;
@@ -303,6 +312,10 @@
         flex: 0 1 194px;
         font-size: 18px;
         line-height: 1.4em;
+
+        @include max(xs) {
+            flex-basis: calc(100% - 8px - 60px);
+        }
     }
 
     &__order {
@@ -312,10 +325,79 @@
         align-items: flex-end;
         flex: 0 0 auto;
         margin-left: auto;
+
+        @include max(xs) {
+            flex-basis: 100%;
+            flex-direction: row;
+        }
     }
 
     &__price.product-price {
         align-items: flex-end;
         gap: 4px;
+
+        @include max(xs) {
+            align-items: flex-start;
+            gap: 4px;
+        }
     }
+}
+
+.form-spoiler {
+    padding: 15px 0;
+    color: $c-text;
+    font-size: 16px;
+    line-height: 1.4em;
+
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        cursor: pointer;
+    }
+
+    &__icon {
+        flex: 0 0 16px;
+        height: 16px;
+        transition: all $tr-time linear;
+
+        svg {
+            width: 16px;
+            height: 16px;
+        }
+    }
+
+    &.active &__header &__icon {
+        transform: rotate(-180deg);
+    }
+
+    &__title {
+        flex: 1 1 auto;
+    }
+
+    &__items {
+        padding-top: 8px;
+    }
+
+    &__item {
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        border-top: 1px solid $c-border;
+    }
+
+    &__item--total {
+        color: $c-text-dark;
+        font-weight: 600;
+    }
+
+    &__content {
+        display: none;
+    }
+
 }

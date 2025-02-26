@@ -1516,3 +1516,18 @@ html.hystmodal__opened {
 .air-datepicker-global-container {
 	z-index: 99;
 }
+
+/* стили для печати */
+.only-print {
+	display: none;
+}
+
+@media print {
+	.only-print {
+		display: block;
+	}
+
+	.no-print {
+		display: none;
+	}
+}
