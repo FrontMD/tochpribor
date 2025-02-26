@@ -498,6 +498,10 @@
             padding: 4px;
         }
 
+        &--bg {
+            background-color: $c-border;
+        }
+
         img {
             width: 100%;
             height: 100%;

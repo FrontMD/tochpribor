@@ -500,6 +500,7 @@ function referencesController() {
             })
 
             refData = await response.json()
+            console.log(refData)
 
         } catch (error) {
             console.log('Данные не получены.')

@@ -1,10 +1,1 @@
-<svg width="243" height="229" viewBox="0 0 243 229" fill="none" xmlns="http://www.w3.org/2000/svg">
-<line x1="3.88253" y1="62.9941" x2="3.88254" y2="160.603" stroke="#C8C8C8" stroke-width="2.30803" stroke-dasharray="9.23 9.23"/>
-<line x1="239.688" y1="64.5547" x2="239.688" y2="162.164" stroke="#C8C8C8" stroke-width="2.30803" stroke-dasharray="9.23 9.23"/>
-<path d="M173.22 129.159L122.5 101.513L4.12793 162.888L54.8477 190.534M173.22 129.159L172.876 125.281M173.22 129.159L165.936 128.879" stroke="#C8C8C8" stroke-width="2.30803"/>
-<path d="M70.1037 198.846L120.823 226.492L239.195 165.117L188.476 137.471M70.1037 198.846L70.447 202.724M70.1037 198.846L77.3874 199.126" stroke="#C8C8C8" stroke-width="2.30803"/>
-<path d="M172.559 29.4456L121.84 1.79974L3.46777 63.1748L54.1875 90.8207M172.559 29.4456L172.216 25.5677M172.559 29.4456L165.276 29.1663" stroke="#CA0001" stroke-width="2.30803"/>
-<path d="M69.4436 99.1335L120.163 126.779L238.535 65.4043L187.815 37.7584M69.4436 99.1335L69.7869 103.011M69.4436 99.1335L76.7273 99.4128" stroke="#CA0001" stroke-width="2.30803"/>
-<path d="M130.356 38.946L130.239 79.256L104.398 79.005" stroke="#CA0001" stroke-width="3" stroke-linecap="square" stroke-linejoin="round"/>
-<path d="M130.356 139.461L130.239 179.771L104.398 179.52" stroke="#C8C8C8" stroke-width="3" stroke-linecap="square" stroke-linejoin="round"/>
-</svg>
+<svg width="243" height="229" viewBox="0 0 243 229" fill="none" xmlns="http://www.w3.org/2000/svg"><path stroke="#C8C8C8" stroke-width="2.308" stroke-dasharray="9.23 9.23" d="M3.883 62.994v97.609m235.805-96.048v97.609"/><path d="M173.22 129.159l-50.72-27.646L4.128 162.888l50.72 27.646m118.372-61.375l-.344-3.878m.344 3.878l-7.284-.28m-95.832 69.967l50.719 27.646 118.372-61.375-50.719-27.646M70.104 198.846l.343 3.878m-.343-3.878l7.283.28" stroke="#C8C8C8" stroke-width="2.308"/><path d="M172.559 29.446L121.84 1.8 3.468 63.175l50.72 27.646m118.371-61.375l-.343-3.878m.343 3.878l-7.283-.28M69.444 99.133l50.719 27.646 118.372-61.375-50.72-27.646M69.444 99.133l.343 3.878m-.343-3.877l7.283.279" stroke="#CA0001" stroke-width="2.308"/><path d="M130.356 38.946l-.117 40.31-25.841-.251" stroke="#CA0001" stroke-width="3" stroke-linecap="square" stroke-linejoin="round"/><path d="M130.356 139.461l-.117 40.31-25.841-.251" stroke="#C8C8C8" stroke-width="3" stroke-linecap="square" stroke-linejoin="round"/></svg>
