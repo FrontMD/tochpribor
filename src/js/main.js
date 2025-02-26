@@ -22,6 +22,7 @@
 
 
 //my files
+@@include("../blocks/modules/preloader/preloader.js")
 @@include("./import/main.js")
 @@include("./import/components.js")
 @@include("./import/modules.js")

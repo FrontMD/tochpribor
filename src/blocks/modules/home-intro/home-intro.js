@@ -80,7 +80,7 @@ function homeIntro() {
 
         if(index == 0) {
             // пока запускаем первую вручную, потом будет после прелоадера
-            item.play()
+            //item.play()
 
             const vw = window.innerWidth;
             const tabletBreakpoint = 1023;

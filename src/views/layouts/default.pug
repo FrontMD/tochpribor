@@ -32,9 +32,12 @@ html(lang="ru")
 		// лучше добавлять только на те страницы где есть видео
 		script(src="https://vk.com/js/api/videoplayer.js")
 
-	body
+	body(class=`${title == 'Главная' ? 'no-scroll' : ''}`)
 		include ../helpers/mixins
 		+mixins
+
+		//- if(title == 'Главная')
+			+preloader
 
 		block header
 			include ../../blocks/modules/header/header
