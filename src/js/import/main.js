@@ -774,6 +774,8 @@ function referencesController() {
     // отрисовывает список товарок в info
     function renderItemsList(itemsList) {
         refInfoItems.innerHTML = ''
+        const defaultImg = window.distPath + 'img/default_logo.webp'
+
         itemsList.forEach(item => {
             const el = document.createElement('div')
             let companiesLayout = ''
@@ -784,8 +786,8 @@ function referencesController() {
 
             el.classList.add('ref-item')
             el.innerHTML = `                                
-                            <div class="ref-item__img">
-                                <img src="${item.img}">
+                            <div class="ref-item__img ${item.img.length > 0 ? '' : 'ref-item__img--bg'}">
+                                <img src="${item.img.length > 0 ? item.img : defaultImg}">
                             </div>
                             <div class="ref-item__info">
                             <div class="ref-item__name">${item.name}</div>
