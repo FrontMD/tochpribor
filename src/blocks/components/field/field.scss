@@ -234,8 +234,8 @@
             cursor: pointer;
             transition: all 0.3s;
 
-            @include max(mobile) {
-                font-size: 16px;
+            @include max(tablet) {
+                font-size: 14px;
             }
 
             .select2-selection__rendered,
@@ -334,6 +334,10 @@
                 padding-right: 15px;
                 cursor: pointer;
                 transition: all 0.3s;
+
+                @include max(tablet) {
+                    font-size: 14px;
+                }
 
                 &:hover {
                     transition: all 0.3s;
