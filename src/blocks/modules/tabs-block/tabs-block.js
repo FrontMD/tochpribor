@@ -6,6 +6,8 @@ function tabsBlockInit() {
     const slidesList = tabsBlock.querySelectorAll('[data-js="tabsBlockSlide"]')
     const tabsList = tabsBlock.querySelectorAll('[data-js="tabsBlockTab"]')
 
+    let tabsHeight = tabsBlock.offsetHeight
+
     tabsList.forEach(tab => {
         tab.addEventListener('click', e => {
 
@@ -25,6 +27,17 @@ function tabsBlockInit() {
                     slide.classList.remove('active')
                 }
             })
+
+            setTimeout(() => {
+                if(tabsHeight !== tabsBlock.offsetHeight) {
+                    tabsHeight = tabsBlock.offsetHeight;
+                    tabsBlock.dispatchEvent(new CustomEvent('tabChange'));
+                    if(footerScrollTriggerObj) {
+                        footerScrollTriggerObj.refresh()
+                    }
+                }
+            }, 400)
+
         })
     })
 

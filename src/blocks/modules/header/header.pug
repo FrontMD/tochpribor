@@ -2,7 +2,8 @@
 header.site-header(data-js="siteHeader")
     .site-header__container
         .site-header__logo
-            img(src="img/logo_full.svg" alt="логотип")
+            a(href="/")
+                img(src="img/logo_full.svg" alt="логотип")
         .site-header__burger.site-header__block(data-js="mainBurgerOpen")
             svg
                 use(xlink:href=`img/sprites/sprite.svg#burger`)

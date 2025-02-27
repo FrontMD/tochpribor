@@ -86,6 +86,11 @@
         color: $c-white;
         opacity: 0.3;
         cursor: pointer;
+        transition: all $tr-time linear;
+
+        &:hover {
+            opacity: 1;
+        }
 
         .show {
             display: block;
