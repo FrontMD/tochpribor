@@ -3,11 +3,12 @@ gsap.registerPlugin(ScrollTrigger);
 const animationBreakpoint = 767;
 const vh = window.innerHeight;
 let footerScrollTriggerObj;
-let footerTimeline = gsap.timeline();
+const footerTimeline = gsap.timeline();
 
-document.addEventListener('DOMContentLoaded', () => {
+$(document).ready(function (){
+    console.log('ready')
     if (window.innerWidth > animationBreakpoint) {
-        initScrollAnimations()
+        //initScrollAnimations()
     }
 })
 
@@ -19,45 +20,53 @@ function footerScrollAnimation() {
     const footer = document.querySelector('[data-js="siteFooter"]')
 
     if(!footer) return
-    
-    const footerHeight = footer.offsetHeight
-    const addTimeFooter = 400;
+
+    const topOffset = window.innerWidth > 1420 ? '80px' : '61px';
+
+    addFooterAnimation()
 
     footerScrollTriggerObj = ScrollTrigger.create({
-        trigger: footer,
+        trigger: '[data-js="siteFooter"]',
         pin: true,
-        start: "bottom bottom",
-        end: () => "+=" + addTimeFooter + '%',
+        start: () => "top " + topOffset,
+        end: "+=200%",
         scrub: 1.5,
+        anticipatePin: 1,
+        pinSpacing: false,
         animation: footerTimeline,
+        invalidateOnRefresh: true,
         markers: true
     });
 
-    footerTimeline.fromTo('[data-js="footerText"]', {
-        x: '74%',
-    }, {
-        x: "0",
-        duration: 0.6,
-        ease: "none",
-    }, "0");
+    function addFooterAnimation() {
+        footerTimeline.fromTo('[data-js="footerText"]', {
+            right: '-120%',
+        }, {
+            right: "30%",
+            duration: 1,
+            ease: "none",
+            onComplete: () => {
+                console.log("text")
+            },
+            onUpdate: () => {
+                console.log("text updt")
+            }
+        }, "0")
 
-    footerTimeline.fromTo('[data-js="footerMenu"]', {
-        x: '120%',
-    }, {
-        x: "0",
-        duration: 0.1,
-        ease: "none",
-    }, ">");
-
-    //пересчёт скроллтриггера после переключения табов
-    /*const tabsBlocks = document.querySelectorAll('[data-js="tabsBlock"]');
-
-    if(tabsBlocks.length > 0) {
-        tabsBlocks.forEach(tabsBlock => {
-            tabsBlock.addEventListener("tabChange", function() {
-                console.log(this)
-            })
-        })
-    }*/
+        footerTimeline.fromTo('[data-js="footerMenu"]', {
+            x: '120%',
+        }, {
+            x: "0",
+            duration: 0.1,
+            ease: "none",
+            onComplete: () => {
+                console.log("menu")
+            },
+            onUpdate: () => {
+                console.log("menu updt")
+            }
+        }, ">-=0.2");
+    
+    }
 
 }

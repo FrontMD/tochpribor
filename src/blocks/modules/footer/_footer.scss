@@ -10,6 +10,7 @@
     background-repeat: no-repeat;
     padding: 16px 0;
     color: $c-white;
+    overflow-x: hidden;
 
     @include max(laptop) {
         height: calc(100vh - 61px);
