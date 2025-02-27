@@ -9,6 +9,8 @@ mixin preloader(props= defaultPreloaderProps)
 			classes: props.classes ? props.classes : defaultPreloaderProps.classes,
 		}
 
-	section.section.section--full.preloader(data-js="preloader" style="position: fixed; width: 100vw; height: 100dvh; background-color: #000;")
+	section.section.section--full.preloader.active(data-js="preloader" style="position: fixed; width: 100vw; height: 100dvh; background-color: #000;")
 		.preloader__anim(data-js="preloaderAnim")
-
+		.preloader__progress
+			span(data-js="preloaderProgress") 0
+			span %

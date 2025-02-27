@@ -21,17 +21,32 @@ function preloader() {
             path: 'public/preloader/preloader.json'
         });
 
-        preloaderAnimEx.setSpeed(1)
+		preloaderAnimEx.addEventListener('config_ready', () => {
+			preloaderAnimEx.setSpeed(0.35)
+			preloaderAnimEx.play()
+		})
+		
+		preloaderAnimEx.addEventListener('complete', () => {
+			setTimeout(removePreloader, 300)
+		})
+		
+		const preloaderProgress = preloaderSection.querySelector('[data-js="preloaderProgress"]')
 
-		preloaderAnimEx.play()
+		if(preloaderProgress) {
+			preloaderAnimEx.addEventListener('drawnFrame', (e) => {
+				preloaderProgress.innerHTML = Math.ceil(e.currentTime / e.totalTime * 100)
+			})
+		}
 
-		console.log(preloaderAnimEx)
 
 	} else {
 		removePreloader()
 	}
 
 	function removePreloader() {
-		preloaderSection.remove()
+		preloaderSection.classList.remove('active');
+		setTimeout(() => {preloaderSection.dispatchEvent(new CustomEvent('preloaderComplete'))}, 500);
 	}
+
+	preloaderSection.addEventListener('preloaderComplete', unlockBody)
 }

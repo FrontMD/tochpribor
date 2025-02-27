@@ -1,8 +1,43 @@
 .preloader {
 	z-index: 30;
+	opacity: 0;
+	visibility: hidden;
+	transition: all $tr-time linear;
+
+	&.active {
+		opacity: 1;
+		visibility: visible;
+	}
 
 	&__anim {
+		position: absolute;
+		left: 50%;
+		top: 0;
+		transform: translateX(-50%);
 		width: 100%;
 		height: 100%;
+
+		@include max(laptop) {
+			width: 200%;
+		}
+
+		@include max(xs) {
+			width: 280%;
+		}
+	}
+
+	&__progress {
+		position: absolute;
+		left: 2.778vw;
+		bottom: 2.778vw;
+		font-size: 5.764vw;
+		line-height: 1em;
+		letter-spacing: -0.03em;
+		color: $c-white;
+		z-index: 10;
+
+		@include max(xs) {
+			font-size: 10vw;
+		}
 	}
 }

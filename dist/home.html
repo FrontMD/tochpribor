@@ -28,7 +28,12 @@
     <!-- лучше добавлять только на те страницы где есть видео-->
     <script src="https://vk.com/js/api/videoplayer.min.js"></script>
   </head>
+  <!-- если на странице есть прелоадер, то добавляем body class="no-scroll"-->
   <body class="no-scroll">
+        <section class="section section--full preloader active" data-js="preloader" style="position: fixed; width: 100vw; height: 100dvh; background-color: #000;">
+          <div class="preloader__anim" data-js="preloaderAnim"></div>
+          <div class="preloader__progress"><span data-js="preloaderProgress">0</span><span>%</span></div>
+        </section>
     <div class="site-header__overlay" data-js="siteHeaderOverlay" data-role="headerSearchClose"></div>
     <header class="site-header" data-js="siteHeader">
       <div class="site-header__container">

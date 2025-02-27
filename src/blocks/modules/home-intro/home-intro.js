@@ -3,15 +3,19 @@ function homeIntro() {
 
     if(!homeIntro) return
 
-    if(window.scrollY < vh / 3) {
-        lockBody()
-        window.scrollTo({
-            top: 0,
-            left: 0,
-            behavior: 'smooth'
-        })
-    } else {
-        unlockBody()
+    const preloader = document.querySelector('[data-js="preloader"]')
+
+    if(!preloader) {
+        if(window.scrollY < vh / 3) {
+            lockBody()
+            window.scrollTo({
+                top: 0,
+                left: 0,
+                behavior: 'smooth'
+            })
+        } else {
+            unlockBody()
+        }
     }
 
     const homeIntroSlider = homeIntro.querySelector('[data-js="homeIntroSlider"]');
@@ -79,8 +83,25 @@ function homeIntro() {
     renders.forEach((item, index) => {
 
         if(index == 0) {
-            // пока запускаем первую вручную, потом будет после прелоадера
-            //item.play()
+            if(preloader && preloader.classList.contains('active')) {
+                console.log("после")
+                preloader.addEventListener('preloaderComplete', function() {
+                    if(window.scrollY < vh / 3) {
+                        lockBody()
+                        window.scrollTo({
+                            top: 0,
+                            left: 0,
+                            behavior: 'smooth'
+                        })
+                    } else {
+                        unlockBody()
+                    }
+                    item.play()
+                })
+            } else {
+                item.play()
+                console.log("сразу")
+            }
 
             const vw = window.innerWidth;
             const tabletBreakpoint = 1023;
