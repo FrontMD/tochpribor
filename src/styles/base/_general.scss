@@ -1554,7 +1554,7 @@ html.hystmodal__opened {
 /* стили для печати */
 @media print {
 
-	.no-print,
+	.breadcrumbs-section,
 	body>:not(main) {
 		display: none;
 	}
