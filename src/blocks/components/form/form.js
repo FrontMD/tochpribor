@@ -61,46 +61,6 @@ function validation() {
                                 } else {
                                     error(input, 'Необходимо ввести корректный номер телефона').set()
                                 }
-                                break                              
-                            case 'date':
-                                /*Этот кейс не нужен*/
-                                if (valueField.length === 10 && valueField.match(dataReqexp.date)) {
-                                    error(input).remove()
-                                } else {
-                                    error(input, 'Дата введена неверно').set()
-                                }
-                                break
-                            case 'inn':
-                                /*Этот кейс не нужен*/
-                                if (valueField.length === 10 || valueField.length === 12) {
-                                    error(input).remove()
-                                } else {
-                                    error(input, 'ИНН введен неверно').set()
-                                }
-                                break
-                            case 'kpp':
-                                /*Этот кейс не нужен*/
-                                if (valueField.length === 9) {
-                                    error(input).remove()
-                                } else {
-                                    error(input, 'КПП введен неверно').set()
-                                }
-                                break
-                            case 'bik':
-                                /*Этот кейс не нужен*/
-                                if (valueField.length === 9) {
-                                    error(input).remove()
-                                } else {
-                                    error(input, 'БИК введен неверно').set()
-                                }
-                                break
-                            case 'account':
-                                /*Этот кейс не нужен*/
-                                if (valueField.length === 20) {
-                                    error(input).remove()
-                                } else {
-                                    error(input, 'Номер счёта введен неверно').set()
-                                }
                                 break
                             case 'file':
                                 if (valueField.length > 0) {

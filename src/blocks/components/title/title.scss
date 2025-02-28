@@ -63,6 +63,10 @@
         @include max(xs) {
             font-size: 32px;
         }
+
+        @media print {
+            font-size: 38pt;
+        }
     }
 
     &--53 {

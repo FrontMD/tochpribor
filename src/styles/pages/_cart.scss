@@ -6,6 +6,10 @@
         margin-top: 16px;
         flex: 0 0 auto;
 
+        @media print {
+            display: none;
+        }
+
         @include max(tablet) {
             align-self: flex-end;
             margin-top: 0;

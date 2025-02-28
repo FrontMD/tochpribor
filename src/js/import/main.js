@@ -136,10 +136,9 @@ function contactsController() {
         })
     }
 
-    $(select).on('change', function() {
+    $(select).on('select2:close', function() {
         let currentOptionIndex = select.selectedIndex
         contactsSwitch(options[currentOptionIndex])
-
     })
 
     function contactsSwitch(tab) {

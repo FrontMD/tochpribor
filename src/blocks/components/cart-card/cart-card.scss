@@ -22,6 +22,11 @@
         padding: 16px 0;
     }
 
+    @media print {
+        grid-template-columns: minmax(113pt, 113pt) minmax(150pt, auto) minmax(130pt, 130pt);
+
+    }
+
     &__col {
         display: flex;
         justify-content: space-between;
@@ -53,10 +58,12 @@
         }
     }
 
-    &__info {}
-
     &__title {
         max-width: 520px;
+
+        @media print {
+            font-size: 18pt;
+        }
 
         @include max(mobile) {
             max-width: 100%;
@@ -73,6 +80,16 @@
     }
 
     &__order {
+
+        @media print {
+            align-items: flex-end;
+
+            .product-price {
+                align-items: flex-end;
+                font-size: 18pt;
+            }
+        }
+
         @include max(mobile) {
             flex-direction: row;
             align-items: flex-end;
@@ -107,6 +124,11 @@
         @include max(laptop) {
             padding: 2px 4px;
         }
+
+        @media print {
+            display: none;
+        }
+
     }
 
     &__btn {

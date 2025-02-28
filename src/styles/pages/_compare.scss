@@ -1,4 +1,11 @@
 .compare {
+
+    @media print {
+        .section__container {
+            padding: 0;
+        }
+    }
+
     &__actions {
         display: flex;
         align-items: center;
@@ -13,6 +20,10 @@
 
         @include max(mobile) {
             flex-wrap: wrap;
+        }
+
+        @media print {
+            display: none;
         }
     }
 
@@ -30,7 +41,17 @@
         @include max(tablet) {
             margin-top: 16px;
         }
+
+        @media print {
+            margin: 18pt 0 0;
+            width: 100%;
+
+            .tabs-block__tabs {
+                display: none;
+            }
+        }
     }
+
 
 }
 
@@ -44,6 +65,10 @@
 
         @include max(mobile) {
             padding: 12px 15px;
+        }
+
+        @media print {
+            display: none;
         }
     }
 
@@ -68,6 +93,10 @@
         @include max(tablet) {
             margin-left: 0;
             padding-left: 12px;
+        }
+
+        @media print {
+            margin-left: 0;
         }
 
     }
@@ -123,6 +152,10 @@
             @include max(tablet) {
                 background-color: $c-white;
             }
+
+            @media print {
+                background-color: $c-white;
+            }
         }
 
         @include max(laptop) {
@@ -130,6 +163,11 @@
         }
 
         @include max(tablet) {
+            flex-direction: column;
+            gap: 0;
+        }
+
+        @media print {
             flex-direction: column;
             gap: 0;
         }
@@ -151,6 +189,13 @@
             flex-basis: auto;
             max-width: 100%;
         }
+
+        @media print {
+            margin-right: 0;
+            padding-right: 0;
+            flex-basis: auto;
+            max-width: 100%;
+        }
     }
 
     &__prod,
@@ -166,6 +211,11 @@
         @include max(mobile) {
             flex-basis: 120px;
             width: 120px;
+        }
+
+        @media print {
+            flex-basis: 129pt;
+            width: 129pt;
         }
     }
 
@@ -188,11 +238,23 @@
             font-size: 12px;
         }
 
+        @media print {
+            font-size: 10pt;
+        }
+
         &--title {
             flex-basis: 312px;
             font-size: 14px;
             color: $c-text-breadcrumbs;
             padding-left: 16px;
+
+            @media print {
+                flex-basis: auto;
+                width: 100%;
+                padding-left: 0;
+                background-color: $c-main-bg;
+                font-size: 9pt;
+            }
 
             @include max(laptop) {
                 flex-basis: 270px;
@@ -245,6 +307,10 @@
         @include max(laptop) {
             padding: 2px 4px;
         }
+
+        @media print {
+            display: none;
+        }
     }
 
     &__control {
@@ -281,14 +347,14 @@
         font-size: 18px;
         line-height: 1.4em;
         color: $c-text;
-        /*height: 4.2em;
-        -webkit-line-clamp: 3;
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        overflow: hidden;*/
 
         @include max(laptop) {
             font-size: 16px;
+        }
+
+        @media print {
+            font-size: 10.5pt;
+            margin-top: 6pt;
         }
 
         @include max(mobile) {

@@ -18,11 +18,6 @@ mixin field-file(props = defaultFieldFileProps)
         }
 
     label.field-file(class= checkProps.classes + "" data-js="formField" data-placeholder= checkProps.placeholder)&attributes(attributes)
-        //- if(checkProps.title)
-            span.field-file__title
-                != checkProps.title
-                - if(checkProps.isRequired)
-                    span!= "*"
         span.field-file__fakeinput
             span.icon-empty
                 svg

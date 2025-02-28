@@ -149,6 +149,10 @@ html.hystmodal__opened {
 	background-color: $c-main-bg;
 	padding: 80px 0 20px;
 
+	@media print {
+		background-color: #fff;
+	}
+
 	@include max(laptop) {
 		padding: 61px 0 20px;
 	}
@@ -215,6 +219,10 @@ html.hystmodal__opened {
 
 	@include max(mobile) {
 		padding: 0;
+	}
+
+	@media print {
+		padding: 0 10px;
 	}
 
 	&__container {
@@ -355,6 +363,10 @@ html.hystmodal__opened {
 	gap: 16px;
 	padding: 16px 40px 0;
 
+	@media print {
+		padding: 0 10px;
+	}
+
 	@include max(large) {
 		padding: 16px 20px 0;
 	}
@@ -370,6 +382,14 @@ html.hystmodal__opened {
 	&__content {
 		flex: 1 1 auto;
 		max-width: calc(100% - 375px - 16px);
+
+		@media print {
+			max-width: 100%;
+
+			.section__container {
+				padding: 0;
+			}
+		}
 
 		@include max(laptop) {
 			max-width: calc(100% - 300px - 16px);
@@ -393,6 +413,10 @@ html.hystmodal__opened {
 
 	&__sidebar {
 		flex: 0 0 375px;
+
+		@media print {
+			display: none;
+		}
 
 		@include max(laptop) {
 			flex-basis: 300px;
@@ -1521,19 +1545,21 @@ html.hystmodal__opened {
 	opacity: 0 !important;
 	visibility: hidden !important;
 	z-index: -10 !important;
+
+	@media print {
+		display: none !important;
+	}
 }
 
 /* стили для печати */
-.only-print {
-	display: none;
-}
-
 @media print {
-	.only-print {
-		display: block;
-	}
 
-	.no-print {
+	.no-print,
+	body>:not(main) {
 		display: none;
 	}
+}
+
+@page {
+	margin: 1cm;
 }

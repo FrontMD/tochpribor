@@ -33,7 +33,7 @@ block content
 					.contacts-intro__tabs
 						.field.contacts-intro__select.active(data-js="contactsTabsSelect")
 							select.field__select(data-js="formSelect")
-								option(data-js='contactsTabsOption' data-coords="59.938784,30.314997" data-id="0" value="г. Санкт-Петербург") г. Санкт-Петербург
+								option(data-js='contactsTabsOption' data-coords="59.938784,30.314997" data-id="0" value="г. Санкт-Петербург" selected) г. Санкт-Петербург
 								option(data-js='contactsTabsOption' data-coords="55.755864,37.617698" data-id="1" value="г. Москва") г. Москва
 								option(data-js='contactsTabsOption' data-coords="56.838011,60.597474" data-id="2" value="г. Екатеринбург") г. Екатеринбург
 								option(data-js='contactsTabsOption' data-coords="53.195878,50.100202" data-id="3" value="г. Самара") г. Самара
@@ -357,12 +357,6 @@ block content
 						size: '53',
 						text: 'Реквизиты'
 					})
-					//-+btn({
-						name: 'Карточка организации',
-						size: '182',
-						icon: 'arrow_enter',
-						cMode: 'transparent-red'
-					//-})
 
 				+tabs-block({
 					classes: 'contacts-details__tabs',

@@ -22,20 +22,6 @@
         max-height: none;
     }
 
-    /*&--factory {
-        @include max(tablet) {
-            height: auto;
-            min-height: 51vw;
-            max-height: none;
-        }
-
-        @include max(mobile) {
-            height: auto;
-            min-height: 51vw;
-            max-height: none;
-        }
-    }*/
-
     &__bg {
         position: absolute;
         left: 0;

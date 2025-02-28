@@ -12,15 +12,6 @@
 @@include("./libs/nouislider.min.js")
 @@include("./libs/inputmask.min.js")
 
-//если желаете подключить библиотеку - раскомментируйте и добавьте @@
-// include("./libs/wNumb.min.js")
-// include("./libs/autosize.min.js")
-// include("./libs/debounce.js")
-// include("./libs/simplebar.min.js")
-// include("./libs/js.cookie.min.js")
-// include("./libs/url.js")
-
-
 //my files
 @@include("../blocks/modules/preloader/preloader.js")
 @@include("./import/main.js")

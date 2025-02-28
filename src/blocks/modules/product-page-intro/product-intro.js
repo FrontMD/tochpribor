@@ -42,7 +42,7 @@ function productIntro() {
          
     }
 
-    // добавление в корзину и удаление из корзины
+    // добавление в корзину и удаление из корзины (реализовано на бэке)
     /*const productCartBlocks = document.querySelectorAll('[data-js="productCartBlock"]');
 
     if(productCartBlocks.length > 0) {
