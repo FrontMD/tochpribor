@@ -4,6 +4,7 @@ function homeIntro() {
     if(!homeIntro) return
 
     const preloader = document.querySelector('[data-js="preloader"]')
+    const vh = window.innerHeight
 
     if(!preloader) {
         if(window.scrollY < vh / 3) {
@@ -84,8 +85,9 @@ function homeIntro() {
 
         if(index == 0) {
             if(preloader && preloader.classList.contains('active')) {
-                console.log("после")
+               
                 preloader.addEventListener('preloaderComplete', function() {
+                   
                     if(window.scrollY < vh / 3) {
                         lockBody()
                         window.scrollTo({
@@ -100,7 +102,6 @@ function homeIntro() {
                 })
             } else {
                 item.play()
-                console.log("сразу")
             }
 
             const vw = window.innerWidth;

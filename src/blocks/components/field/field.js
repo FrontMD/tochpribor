@@ -44,10 +44,6 @@ function selects() {
 			placeholder: placeholder,
 			allowClear: true
 		});
-
-        formSelect.addEventListener("click", (e) => {
-            console.log(e)
-        })
 	}) 
 
 	$("[data-js='formSelect']").on('select2:open', () => {

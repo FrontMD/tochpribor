@@ -1517,6 +1517,12 @@ html.hystmodal__opened {
 	z-index: 99;
 }
 
+[class^="gsap-marker-"] {
+	opacity: 0 !important;
+	visibility: hidden !important;
+	z-index: -10 !important;
+}
+
 /* стили для печати */
 .only-print {
 	display: none;

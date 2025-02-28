@@ -1,4 +1,6 @@
 .site-footer {
+    display: flex;
+    flex-flow: column nowrap;
     position: relative;
     height: calc(100vh - 80px);
     min-height: calc(100vh - 80px);
@@ -10,7 +12,6 @@
     background-repeat: no-repeat;
     padding: 16px 0;
     color: $c-white;
-    overflow-x: hidden;
 
     @include max(laptop) {
         height: calc(100vh - 61px);
@@ -40,6 +41,7 @@
 
         @include max(mobile) {
             padding-top: 0 15px;
+            padding-top: 174px;
             flex-direction: column-reverse;
             align-items: flex-start;
         }
@@ -155,13 +157,46 @@
             font-size: 150px;
         }
 
+        @include max(tablet) {
+            font-size: 70px;
+            gap: 23px;
+        }
+
         @include max(mobile) {
-            display: none;
+            font-size: 95.56px;
+            top: 24px;
+            transform: translateX(100vw);
+            right: auto;
+            left: 0;
+            animation-name: footerWord;
+            animation-duration: 8s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
         }
 
         svg {
             width: 102px;
             height: 102px;
+
+            @include max(tablet) {
+                width: 45px;
+                height: 45px;
+            }
+
+            @include max(mobile) {
+                width: 54px;
+                height: 54px;
+            }
         }
+    }
+}
+
+@keyframes footerWord {
+    0% {
+        transform: translateX(100vw);
+    }
+
+    100% {
+        transform: translateX(-100%);
     }
 }

@@ -33,9 +33,16 @@ function spoilers() {
 		})
 
 		function openSpoiler(spoiler, oldSpoilerHeight = 0) {
+			if(footerScrollTriggerObj) {
+				footerScrollTriggerObj.disable()
+			}
 			const content = $(spoiler).find('[data-js="spoilerContent"]');
 			spoiler.classList.add("active");
 			$(content).slideDown(400, () => {
+				if(footerScrollTriggerObj) {
+					footerScrollTriggerObj.enable()
+					footerScrollTriggerObj.refresh()
+				}
 				if(oldSpoilerHeight > window.innerHeight / 2) {
 					let scrollTopOffset = document.querySelector('[data-js="siteHeader"]') ? document.querySelector('[data-js="siteHeader"]').offsetHeight : '0'
 					let newPos = Math.ceil($(spoiler).offset().top - scrollTopOffset - 32)

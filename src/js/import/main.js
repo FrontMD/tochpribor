@@ -963,3 +963,19 @@ function printBtnsInit() {
         })
     })
 }
+
+function scrollTriggerRefresh(timeout = 0) {
+    if(footerScrollTriggerObj) {
+
+        if(timeout > 0) {
+            setTimeout(() => {
+                footerScrollTriggerObj.refresh()
+            }, timeout)
+
+        } else {
+            footerScrollTriggerObj.refresh()
+        }
+    } else {
+        return
+    }
+}

@@ -28,15 +28,11 @@ function tabsBlockInit() {
                 }
             })
 
-            setTimeout(() => {
-                if(tabsHeight !== tabsBlock.offsetHeight) {
-                    tabsHeight = tabsBlock.offsetHeight;
-                    tabsBlock.dispatchEvent(new CustomEvent('tabChange'));
-                    if(footerScrollTriggerObj) {
-                        footerScrollTriggerObj.refresh()
-                    }
-                }
-            }, 400)
+            if(tabsHeight !== tabsBlock.offsetHeight) {
+                tabsHeight = tabsBlock.offsetHeight;
+
+                scrollTriggerRefresh(400)
+            }
 
         })
     })

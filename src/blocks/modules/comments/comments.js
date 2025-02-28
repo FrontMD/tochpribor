@@ -42,6 +42,9 @@ function commentsHeight() {
                 this.classList.add('opened')
                 itemsBlock.style.maxHeight = fullHeight + 'px'
             }
+
+            scrollTriggerRefresh(600);
+
         })
     }
 }
