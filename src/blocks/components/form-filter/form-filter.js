@@ -80,47 +80,53 @@ function formFilterController() {
                 const filterSelectContent = filterSelect.querySelector(".filter-select__content")
                 const filterSelectFake = filterSelect.querySelector("[data-js='filterSelectFake']")
                 const filterSelectInput = filterSelect.querySelector("[data-js='filterSelectInput']")
-                
-                filterSelectHeader.addEventListener('click', function() {
-                    if(filterSelect.classList.contains('active')) {
-                        filterSelectClose(filterSelect)
-                    } else {
-                        filterSelectOpen(filterSelect)
-                    }
-                })
-                
-                filterSelectContent.addEventListener('click', function(e) {
-                    const filterSelectOptions = filterSelect.querySelectorAll("[data-js='filterSelectOption']")
-                    const filterSelectRealOptions = filterSelectInput.querySelectorAll("option")
+                const selectInitialized = filterSelect.dataset.initialized == 'true' ? true : false
 
-                    let clickedOption = e.target.closest('[data-js="filterSelectOption"]');
-
-                    if(clickedOption) {
-                        filterSelectOptions.forEach(item => {
-                            item.classList.remove('active');
-                        })
-
-                        let currentVal = clickedOption.dataset.value
-                        let currentName = clickedOption.dataset.name
-
-                        if(!currentName) {
-                            currentName = currentVal;
+                if(!selectInitialized) {
+                    filterSelectHeader.addEventListener('click', function() {
+                        if(filterSelect.classList.contains('active')) {
+                            filterSelectClose(filterSelect)
+                        } else {
+                            filterSelectOpen(filterSelect)
                         }
-
-                        filterSelectFake.innerHTML = currentName
-
-                        filterSelectRealOptions.forEach(realOption => {
-                            if(realOption.value == currentVal) {
-                                realOption.selected = true;
-                                filterSelectInput.dispatchEvent(new Event('change'));
-                                return
+                    })
+                    
+                    filterSelectContent.addEventListener('click', function(e) {
+                        const filterSelectOptions = filterSelect.querySelectorAll("[data-js='filterSelectOption']")
+                        const filterSelectRealOptions = filterSelectInput.querySelectorAll("option")
+    
+                        let clickedOption = e.target.closest('[data-js="filterSelectOption"]');
+    
+                        if(clickedOption) {
+                            filterSelectOptions.forEach(item => {
+                                item.classList.remove('active');
+                            })
+    
+                            let currentVal = clickedOption.dataset.value
+                            let currentName = clickedOption.dataset.name
+    
+                            if(!currentName) {
+                                currentName = currentVal;
                             }
-                        })
+    
+                            filterSelectFake.innerHTML = currentName
+    
+                            filterSelectRealOptions.forEach(realOption => {
+                                if(realOption.value == currentVal) {
+                                    realOption.selected = true;
+                                    filterSelectInput.dispatchEvent(new Event('change'));
+                                    return
+                                }
+                            })
+    
+                            clickedOption.classList.add('active')
+                            filterSelectClose(filterSelect)
+                        }
+                    })
 
-                        clickedOption.classList.add('active')
-                        filterSelectClose(filterSelect)
-                    }
-                })
+                    filterSelect.setAttribute('data-initialized', 'true')
+                }
+                
 
             })
 
