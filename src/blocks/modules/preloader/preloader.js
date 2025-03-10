@@ -11,6 +11,10 @@ function preloader() {
 
 	const preloaderAnim = preloaderSection.querySelector('[data-js="preloaderAnim"]')
 
+	if (typeof window.distPath == 'undefined') {
+        window.distPath = '';
+    }
+
 	if(preloaderAnim) {
 		const preloaderAnimEx = lottie.loadAnimation({
             name: 'preloader',
@@ -18,7 +22,7 @@ function preloader() {
             animType: 'svg',
             loop: false,
             autoplay: false,
-            path: 'public/preloader/preloader.json'
+            path: `${window.distPath}public/preloader/preloader.json`
         });
 
 		preloaderAnimEx.addEventListener('config_ready', () => {
