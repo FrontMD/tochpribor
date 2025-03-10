@@ -67,6 +67,10 @@ function homeIntro() {
     const animContainers = homeIntroSlider.querySelectorAll('[data-js="homeIntroAnim"]');
     let renders = []
 
+    if (typeof window.distPath == 'undefined') {
+        window.distPath = '';
+    }
+
     animContainers.forEach((item, index) => {
         const animItem = lottie.loadAnimation({
             name: 'render' + index,
@@ -74,7 +78,7 @@ function homeIntro() {
             animType: 'canvas',
             loop: false,
             autoplay: false,
-            path: 'public/renders/render-' + index + '/render.json'
+            path: `${window.distPath}public/renders/render-` + index + '/render.json'
         });
         animItem.setSpeed(1)
 
