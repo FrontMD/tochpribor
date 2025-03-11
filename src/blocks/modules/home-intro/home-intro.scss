@@ -219,26 +219,62 @@
         }
     }
 
-    &__seq {
+    &__slide {
+        position: relative;
         height: 100%;
         opacity: 0;
         visibility: hidden;
         transition: all $tr-time linear;
+
+        &.swiper-slide-active {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+
+    &__seq {
+        height: 100%;
 
         canvas {
             width: 100%;
             height: 100%;
         }
 
-        &.swiper-slide-active {
-            visibility: visible;
-            opacity: 1;
-        }
-
         img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+        }
+    }
+
+    &__left {
+        position: absolute;
+        bottom: 24px;
+        left: 40px;
+        max-width: 670px;
+
+        @include max(large) {
+            left: 20px;
+        }
+
+        @include max(laptop) {
+            max-width: 560px;
+        }
+
+        @include max(tablet) {
+            bottom: auto;
+            top: calc((100dvh - 100%) / -2 + 82px + 13%);
+            display: flex;
+            flex-direction: column-reverse;
+            width: calc(100vw - 30px);
+        }
+
+        @include max(mobile) {
+            left: calc((100% - 100vw) / 2 + 15px);
+        }
+
+        @include max(xs) {
+            top: -100px;
         }
     }
 
@@ -249,27 +285,15 @@
         justify-content: space-between;
         align-items: flex-end;
         gap: 90px;
+        width: fit-content;
+        margin-left: auto;
 
         @include max(tablet) {
             flex-direction: column;
-            align-items: flex-start;
+            align-items: stretch;
+            justify-content: flex-end;
             height: 100%;
-        }
-    }
-
-    &__left {
-        max-width: 670px;
-        flex: 0 0 670px;
-
-        @include max(laptop) {
-            max-width: 560px;
-            flex-basis: 560px;
-        }
-
-        @include max(tablet) {
-            flex-basis: auto;
-            display: flex;
-            flex-direction: column-reverse;
+            width: 100%;
         }
     }
 
@@ -284,11 +308,10 @@
 
     &__right {
         position: relative;
-        flex: 1 1 auto;
+        flex: 0 0 auto;
 
         @include max(tablet) {
             flex: 0 0 auto;
-            align-self: stretch;
         }
     }
 

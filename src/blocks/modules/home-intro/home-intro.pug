@@ -34,21 +34,62 @@ mixin home-intro(props= defaultHomeIntroProps)
                             .home-chart__param Скорость
                             .home-chart__value -20.4 мм/мин
                 .swiper-wrapper
-                    .swiper-slide.home-intro__seq(data-js="homeIntroAnim")
-                    .swiper-slide.home-intro__seq(data-js="homeIntroAnim")
-                    .swiper-slide.home-intro__seq(data-js="homeIntroAnim")
-                    .swiper-slide.home-intro__seq(data-js="homeIntroAnim")
-                    .swiper-slide.home-intro__seq(data-js="homeIntroAnim")
+                    .swiper-slide.home-intro__slide
+                        .home-intro__seq(data-js="homeIntroAnim")
+                        .home-intro__left
+                            .section__tag.home-intro__tag [Производим с 1958 года]
+                            +title({
+                                classes: 'home-intro__title',
+                                tag: 'h1',
+                                size: '83',
+                                text: 'Ведущий завод приборостроения',
+                                cMode: 'light'
+                            })
+                    .swiper-slide.home-intro__slide
+                        .home-intro__seq(data-js="homeIntroAnim")
+                        .home-intro__left
+                            .section__tag.home-intro__tag [Производим с 1958 года]
+                            +title({
+                                classes: 'home-intro__title',
+                                tag: 'h1',
+                                size: '83',
+                                text: 'Ведущий завод приборостроения 2',
+                                cMode: 'light'
+                            })
+                    .swiper-slide.home-intro__slide
+                        .home-intro__seq(data-js="homeIntroAnim")
+                        .home-intro__left
+                            .section__tag.home-intro__tag [Производим с 1958 года]
+                            +title({
+                                classes: 'home-intro__title',
+                                tag: 'h1',
+                                size: '83',
+                                text: 'Ведущий завод приборостроения 3',
+                                cMode: 'light'
+                            })
+                    .swiper-slide.home-intro__slide
+                        .home-intro__seq(data-js="homeIntroAnim")
+                        .home-intro__left
+                            .section__tag.home-intro__tag [Производим с 1958 года]
+                            +title({
+                                classes: 'home-intro__title',
+                                tag: 'h1',
+                                size: '83',
+                                text: 'Ведущий завод приборостроения 4',
+                                cMode: 'light'
+                            })
+                    .swiper-slide.home-intro__slide
+                        .home-intro__seq(data-js="homeIntroAnim")
+                        .home-intro__left
+                            .section__tag.home-intro__tag [Производим с 1958 года]
+                            +title({
+                                classes: 'home-intro__title',
+                                tag: 'h1',
+                                size: '83',
+                                text: 'Ведущий завод приборостроения 5',
+                                cMode: 'light'
+                            })
             .home-intro__content
-                .home-intro__left
-                    .section__tag.home-intro__tag [Производим с 1958 года]
-                    +title({
-                        classes: 'home-intro__title',
-                        tag: 'h1',
-                        size: '83',
-                        text: 'Ведущий завод приборостроения',
-                        cMode: 'light'
-                    })
                 .home-intro__right
                     .home-intro__info.home-info(data-js="homeIntroInfo")
                         .home-info__controls
