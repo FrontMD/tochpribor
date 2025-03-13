@@ -130,8 +130,8 @@ function validation() {
 
                 // тут отправляем данные
                 if (errors === 0) {
-                    const formData = new FormData(form);
-                    afterFormSubmit(form)
+                    form.classList.add('form--ready')
+                    //afterFormSubmit(form)
                 }
             }
 
@@ -255,6 +255,7 @@ function formSpoilerInit(form) {
 function afterFormSubmit(form) {
     let fileFields = form.querySelectorAll('.field-file[data-js="formField"]')
     form.reset();
+    form.classList.remove('form--ready')
 
     //сбрасываем поле ФАЙЛ
     if(fileFields.length > 0) {
