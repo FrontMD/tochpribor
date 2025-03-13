@@ -131,31 +131,7 @@ function validation() {
                 // тут отправляем данные
                 if (errors === 0) {
                     const formData = new FormData(form);
-                    let fileFields = form.querySelectorAll('.field-file[data-js="formField"]')
-                    form.reset();
-
-                    //сбрасываем поле ФАЙЛ
-                    if(fileFields.length > 0) {
-    
-                        fileFields.forEach(fileField => {
-                            let placeholderText = fileField.getAttribute('data-placeholder');
-                            let fileName = fileField.querySelector('[data-js="fileName"]');
-    
-                            fileField.classList.remove('field-file--full');
-                            fileName.innerHTML = placeholderText;
-    
-                        })
-                    }
-
-                    //порверяем какой тип благодарности в форме и показываем его
-                    if(form.querySelector("[data-js='form-thanks']") !== null) {
-                        if(form.hasAttribute('data-fixed-height')) {
-                            form.style.minHeight = form.offsetHeight + 'px'
-                        }
-                        form.classList.add("form--sent")
-                    } else {
-                        thanksMessageShow();
-                    }
+                    afterFormSubmit(form)
                 }
             }
 
@@ -274,4 +250,32 @@ function formSpoilerInit(form) {
             }
         })
     })
+}
+
+function afterFormSubmit(form) {
+    let fileFields = form.querySelectorAll('.field-file[data-js="formField"]')
+    form.reset();
+
+    //сбрасываем поле ФАЙЛ
+    if(fileFields.length > 0) {
+
+        fileFields.forEach(fileField => {
+            let placeholderText = fileField.getAttribute('data-placeholder');
+            let fileName = fileField.querySelector('[data-js="fileName"]');
+
+            fileField.classList.remove('field-file--full');
+            fileName.innerHTML = placeholderText;
+
+        })
+    }
+
+    //порверяем какой тип благодарности в форме и показываем его
+    if(form.querySelector("[data-js='form-thanks']") !== null) {
+        if(form.hasAttribute('data-fixed-height')) {
+            form.style.minHeight = form.offsetHeight + 'px'
+        }
+        form.classList.add("form--sent")
+    } else {
+        thanksMessageShow();
+    }
 }
