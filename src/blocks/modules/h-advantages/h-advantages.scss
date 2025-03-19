@@ -148,13 +148,15 @@
         color: $c-text-light;
     }
 
-    &__text.text-editor ul li::before {
+    &__text.text-editor ul li::before,
+    &__text.text-editor ol li::before {
         background-color: $c-text-light;
     }
 
     &__text.text-editor,
     &__text.text-editor p,
-    &__text.text-editor ul {
+    &__text.text-editor ul,
+    &__text.text-editor ol {
         font-size: 14px;
     }
 

@@ -745,12 +745,40 @@ html.hystmodal__opened {
 	}
 
 	p,
-	ul {
+	ul,
+	ol {
 		font-size: 16px;
 		margin-bottom: 1.4em;
 
 		@include max(xs) {
 			font-size: 14px;
+		}
+	}
+
+	ol {
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+		counter-reset: num;
+		list-style-type: none;
+
+		@include max(mobile) {
+			gap: 4px;
+		}
+	}
+
+	ol li {
+		position: relative;
+		padding-left: 1.5em;
+		line-height: 1.4em;
+
+		&:before {
+			content: counter(num) '.';
+			counter-increment: num;
+			position: absolute;
+			left: auto;
+			right: calc(100% - 1em);
+			font-weight: 500;
 		}
 	}
 
