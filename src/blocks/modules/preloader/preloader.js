@@ -26,7 +26,7 @@ function preloader() {
         });
 
 		preloaderAnimEx.addEventListener('config_ready', () => {
-			preloaderAnimEx.setSpeed(0.28)
+			preloaderAnimEx.setSpeed(0.32)
 			preloaderAnimEx.play()
 		})
 		
