@@ -44,10 +44,15 @@
         table {
             min-width: auto;
 
+            @include max(mobile) {
+                margin: 24px 0;
+            }
+
             tr th,
             tr td {
                 border-radius: 0 !important;
                 background-color: transparent;
+                min-width: 150px;
             }
 
             thead {
@@ -90,6 +95,11 @@
             tr td:first-child {
                 padding-left: 0;
                 padding-right: 35px;
+                min-width: 250px;
+
+                @include max(mobile) {
+                    padding-right: 16px;
+                }
             }
 
             tr th:last-child,
