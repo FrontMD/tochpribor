@@ -227,7 +227,7 @@
     &__inner {
         position: relative;
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         gap: 8px;
         width: fit-content;
         cursor: pointer;
@@ -244,6 +244,8 @@
     }
 
     &__fake {
+        flex-shrink: 0;
+        margin-top: 2px;
         height: 16px;
         width: 16px;
         border: 1px solid $c-bg;
