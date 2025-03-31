@@ -147,12 +147,14 @@ function factoryModelController() {
     function openInfo(infoId, currentPoint) {
         const targetInfo = factoryModel.querySelector(`[data-js="pointInfo"][data-id="${infoId}"]`);
 
+        pointsInactivate();
+        closeInfo()
+        
         if(targetInfo) {
-            pointsInactivate();
-            closeInfo()
             currentPoint.classList.add('active');
 
             const slider = targetInfo.querySelector('[data-js="mediaSlider"]')
+
             if(slider) {
                 slider.swiper.update()
             }
