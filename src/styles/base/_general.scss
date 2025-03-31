@@ -1579,6 +1579,23 @@ html.hystmodal__opened {
 	}
 }
 
+.image-not-found-block {
+	display: flex;
+	width: 100%;
+	height: 100%;
+	justify-content: center;
+	align-items: center;
+	background: #e9e9e9;
+	pointer-events: none;
+	user-select: none;
+}
+
+.image-not-found-block img {
+	max-width: 60% !important;
+	width: 60%;
+	object-fit: contain !important;
+}
+
 /* стили для печати */
 @media print {
 

@@ -41,19 +41,17 @@
         justify-content: center;
         align-self: flex-start;
         aspect-ratio: 1 / 1;
-        padding: 18px;
         border: 1px solid $c-border;
         border-radius: 4px;
 
         @include max(mobile) {
             height: 200px;
             aspect-ratio: auto;
-            padding: 10px;
         }
 
         img {
-            max-width: 100%;
-            max-height: 100%;
+            max-width: 83.256%;
+            max-height: 83.256%;
             object-fit: contain;
         }
     }

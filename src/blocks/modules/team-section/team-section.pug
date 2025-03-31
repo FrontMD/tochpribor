@@ -47,7 +47,8 @@ mixin team-section(props= defaultImgIntroProps)
               .person-card__position Операционный директор
             .swiper-slide.team-section__card.person-card
               .person-card__photo
-                img(class="lazyload" src="img/lazy-placeholder.webp" data-src="img/team/person_3.webp" alt="")
+                .image-not-found-block
+                  img(class="lazyload" src="img/lazy-placeholder.webp" data-src="img/default_logo.svg" alt="")
               .person-card__name.title--26 Иван Иванов
               .person-card__position Коммерческий директор
             .swiper-slide.team-section__card.person-card
