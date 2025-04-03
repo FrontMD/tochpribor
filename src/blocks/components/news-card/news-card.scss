@@ -127,6 +127,16 @@
             height: 100%;
             aspect-ratio: auto;
         }
+
+        .video__btn {
+            z-index: 1;
+        }
+
+        &:has(.video)::after {
+            display: none;
+        }
+
+
     }
 
     &__btn {
