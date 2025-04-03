@@ -542,6 +542,11 @@
         content: none;
     }
 
+    &--video-h &__media .video {
+        height: auto;
+        aspect-ratio: 16 / 9;
+    }
+
     &--video-h &__content {
         flex: 1 1 auto;
         width: 48%;
