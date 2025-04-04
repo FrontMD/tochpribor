@@ -17,10 +17,10 @@
         @include max(xs) {
             font-size: 14px;
         }
+    }
 
-        &a:hover {
-            color: $c-accent-hover;
-        }
+    a.news-card__title:hover {
+        color: $c-accent-hover;
     }
 
     &__text {
