@@ -5,6 +5,7 @@
 		media: '',
 		poster: '',
 		mediaType: 'img',
+		videoSrcType: 'video', 
 		title: '',
 		text: '',
 		category: '',
@@ -20,6 +21,7 @@ mixin news-card(props = defaultNewsCardProps)
 			media: props.media ? props.media : defaultNewsCardProps.media,
 			poster: props.poster ? props.poster : defaultNewsCardProps.poster,
 			mediaType: props.mediaType ? props.mediaType : defaultNewsCardProps.mediaType,
+			videoSrcType: props.videoSrcType ? props.videoSrcType : defaultNewsCardProps.videoSrcType,
 			title: props.title ? props.title : defaultNewsCardProps.title,
 			text: props.text ? props.text : defaultNewsCardProps.text,
 			category: props.category ? props.category : defaultNewsCardProps.category,
@@ -30,19 +32,28 @@ mixin news-card(props = defaultNewsCardProps)
 		let vModeClass = ` news-card--${checkProps.vMode}`
 
 	.news-card(class= checkProps.classes + vModeClass)&attributes(attributes)
-		-if(checkProps.mediaType === 'img' && checkProps.media.length > 0)
+		-if(checkProps.media.length > 0)
 			.news-card__media
-				- if(checkProps.noLazy === true)
-					img(src= checkProps.media)
-				-else
-					img(class="lazyload" src="img/lazy-placeholder.webp" data-src= checkProps.media)
-		-if(checkProps.mediaType === 'video' && checkProps.media.length > 0)
-			.news-card__media
-				+video({
-					video: checkProps.media,
-					poster: checkProps.poster,
-					noLazy: checkProps.noLazy
-				})
+				-if(checkProps.mediaType === 'img')
+					- if(checkProps.noLazy === true)
+						img(src= checkProps.media)
+					-else
+						img(class="lazyload" src="img/lazy-placeholder.webp" data-src= checkProps.media)
+
+				-else if(checkProps.mediaType === 'video')
+					- if(checkProps.noLazy === true)
+						img(src= checkProps.poster)
+					-else
+						img(class="lazyload" src="img/lazy-placeholder.webp" data-src= checkProps.poster)
+
+					-if(checkProps.videoSrcType === 'iframe')
+						a.news-card__video(href=checkProps.media data-type='iframe' data-fancybox)
+							svg
+								use(xlink:href=`img/sprites/sprite.svg#play`)
+					-else
+						a.news-card__video(href=checkProps.media data-fancybox)
+							svg
+								use(xlink:href=`img/sprites/sprite.svg#play`)
 
 		.news-card__content
 			a.news-card__title(href="javascript:void(0)")!= checkProps.title

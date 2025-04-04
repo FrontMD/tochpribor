@@ -2,6 +2,7 @@ function homeIntro() {
     const homeIntro = document.querySelector('[data-js="homeIntro"]');
 
     if(!homeIntro) return
+    console.log('интро есть')
 
     const preloader = document.querySelector('[data-js="preloader"]')
     const vh = window.innerHeight
@@ -32,6 +33,13 @@ function homeIntro() {
     const homeIntroChart = homeIntro.querySelector('[data-js="homeIntroChart"]');
     const homeIntroChartLine = homeIntroChart.querySelector('[data-js="homeIntroChartLine"]');
     const homeIntroChartVals = homeIntroChart.querySelectorAll('[data-js="homeIntroChartVal"]');
+
+    console.log('вкладки')
+    console.log(homeIntroTabs)
+    сonsole.log('слайдер')
+    console.log(homeIntroTabs)
+    сonsole.log('инфо')
+    console.log(homeIntroInfoSlider)
 
     const homeIntroTabsEx = new Swiper(homeIntroTabs, {
         slidesPerView: 5,
