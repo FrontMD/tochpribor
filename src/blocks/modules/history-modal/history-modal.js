@@ -28,7 +28,7 @@ function historyModal() {
     }
 
     // развернуть/свернуть текст
-    const textItems = historyModal.querySelectorAll('.history-modal__info p')
+    textItems = historyModal.querySelectorAll('[data-js="collapsibleTextWrapper"]')
 
     if(textItems.length > 0) {
         
