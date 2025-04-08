@@ -18,6 +18,7 @@
             padding: 2px 24px 2px 6px;
             background-color: $c-input-bg;
             transition: color $tr-time linear;
+            color: $c-text;
 
             &::after {
                 content: '';

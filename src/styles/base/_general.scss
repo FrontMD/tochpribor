@@ -800,6 +800,15 @@ html.hystmodal__opened {
 		}
 	}
 
+	a {
+		color: $c-accent;
+		transition: all $tr-time linear;
+
+		&:hover {
+			color: $c-accent-hover;
+		}
+	}
+
 	img,
 	video,
 	iframe {
