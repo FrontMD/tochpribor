@@ -95,6 +95,77 @@
         color: $c-text-light;
         padding-right: 50px;
 
+        *:first-child {
+            margin-top: 0;
+        }
+
+        *:last-child {
+            margin-bottom: 0;
+        }
+
+        p,
+        ul,
+        ol {
+            font-size: 16px;
+            margin-bottom: 1.4em;
+
+            @include max(xs) {
+                font-size: 14px;
+            }
+        }
+
+        ol {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            counter-reset: num;
+            list-style-type: none;
+
+            @include max(mobile) {
+                gap: 4px;
+            }
+        }
+
+        ol li {
+            position: relative;
+            padding-left: 1.5em;
+            line-height: 1.4em;
+
+            &:before {
+                content: counter(num) '.';
+                counter-increment: num;
+                position: absolute;
+                left: auto;
+                right: calc(100% - 1em);
+                font-weight: 500;
+            }
+        }
+
+        ul li {
+            position: relative;
+            padding-left: 1.5em;
+            line-height: 1.4em;
+
+            &:before {
+                content: '';
+                position: absolute;
+                left: 0.5625em;
+                top: 0.65em;
+                width: 0.375em;
+                height: 0.375em;
+                transform: translateY(-50%);
+                border-radius: 100%;
+                background-color: $c-text-light;
+            }
+        }
+
+        hr {
+            margin: 32px 0;
+            height: 0;
+            border: none;
+            border-top: 1px solid $c-border;
+        }
+
         @include max(xs) {
             font-size: 14px;
             margin-top: 8px;
