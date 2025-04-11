@@ -522,7 +522,7 @@ function referencesController() {
         // заполняем выпадающие списки и вешаем обработчики
         if(countriesSelect) {
             let allCountries = getCountries();
-            setSelectOptions(countriesSelect, allCountries);
+            setSelectOptions(countriesSelect, allCountries.sort());
             let fakeSelect = countriesSelect.querySelector('[data-js="filterSelectFake"]')
             fakeSelect.setAttribute('data-empty', fakeSelect.innerHTML)
             countriesSelect.querySelector('[data-js="filterSelectInput"]').addEventListener('change', countryOnChange);
@@ -530,7 +530,7 @@ function referencesController() {
 
         if(regionsSelect) {
             let allRegions = getRegions();
-            setSelectOptions(regionsSelect, allRegions)
+            setSelectOptions(regionsSelect, allRegions.sort())
             let fakeSelect = regionsSelect.querySelector('[data-js="filterSelectFake"]')
             fakeSelect.setAttribute('data-empty', fakeSelect.innerHTML)
             regionsSelect.querySelector('[data-js="filterSelectInput"]').addEventListener('change', regionOnChange)
@@ -834,7 +834,7 @@ function referencesController() {
         let content = select.querySelector('[data-js="filterSelectContent"]');
 
         input.innerHTML = '';
-        content.innerHTML = ''
+        content.innerHTML = '';
 
         options.forEach(option => {
             let optionEl = document.createElement('option');
