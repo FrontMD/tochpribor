@@ -21,7 +21,7 @@ mixin product-intro(props= defaultProductIntroProps)
                     img(src="img/catalog/basket_icon.svg")
                     | Удалено из корзины
 
-            .product-intro__media
+            .product-intro__media.fade-in.fade-in--hidden(data-js="fadeIn")
                 - if(checkProps.dc === false)
                     +product-tags({
                         classes: 'product-intro__tags--mob',
@@ -56,7 +56,7 @@ mixin product-intro(props= defaultProductIntroProps)
                         ]
                     })
                 +product-slider
-            .product-intro__info
+            .product-intro__info.fade-in.fade-in--hidden(data-js="fadeIn")
                 +title({
                     classes: 'product-intro__title',
                     tag: 'h1',

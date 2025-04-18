@@ -1621,3 +1621,12 @@ html.hystmodal__opened {
 @page {
 	margin: 1cm;
 }
+
+.fade-in {
+	opacity: 1;
+	transition: all $tr-time linear;
+
+	&--hidden {
+		opacity: 0;
+	}
+}

@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     $('img.lazyload').lazyload();
+    fadeIn();
     newsSmiSliderInit();
     contactsController();
     productSafetyController();
@@ -11,6 +12,17 @@ document.addEventListener('DOMContentLoaded', () => {
     referencesController();
     printBtnsInit();
 })
+
+// Плавное появление элементов
+function fadeIn() {
+    const hiddenElems = document.querySelectorAll('[data-js="fadeIn"]');
+
+    if(hiddenElems.length < 1) return
+
+    hiddenElems.forEach(elem => {
+        elem.classList.remove('fade-in--hidden');
+    })
+}
 
 // Блокировка скролла при открытии модалок
 function lockBody(onlyHeaderPadding = false) {
