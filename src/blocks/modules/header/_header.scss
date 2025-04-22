@@ -75,6 +75,10 @@
     }
 
     &__burger {
+        /*Удалить, чтобы вернуть локацию пользователя*/
+        border-right: 1px solid $c-border;
+        /****/
+
         cursor: pointer;
         transition: color $tr-time linear;
 
@@ -99,6 +103,10 @@
     }
 
     &__location {
+        /*Удалить, чтобы вернуть локацию пользователя*/
+        display: none;
+        /****/
+
         margin-right: auto;
 
         @media print {
@@ -167,6 +175,10 @@
     }
 
     &__menu {
+        /*Удалить, чтобы вернуть локацию пользователя*/
+        margin-left: auto;
+        /***/
+
         @include max(laptop) {
             display: none;
         }
