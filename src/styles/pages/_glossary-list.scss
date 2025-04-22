@@ -173,6 +173,7 @@
         margin-bottom: 16px;
         color: $c-text;
         transition: color $tr-time linear;
+        break-inside: avoid;
 
         @include max(mobile) {
             margin-bottom: 8px;
