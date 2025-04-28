@@ -168,4 +168,24 @@
             display: none;
         }
     }
+
+    &__developer {
+        padding-top: 7px;
+        margin-top: 7px;
+        border-top: 1px solid $c-white;
+        display: flex;
+        gap: 5px;
+
+        a {
+            display: block;
+            padding: 0;
+            margin: 0;
+            line-height: 0;
+        }
+
+        svg {
+            width: 90px;
+            height: 18px;
+        }
+    }
 }

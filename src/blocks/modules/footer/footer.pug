@@ -19,7 +19,13 @@ footer.site-footer(data-js="siteFooter")
                 a.site-footer__doc(href="javascript:void()") Пользовательское соглашение
                 a.site-footer__doc(href="javascript:void()") Политика обработки персональных данных и конфиденциальности
 
-            .site-footer__copyright © 2010—2024 Точприбор
+            .site-footer__copyright 
+                span © 2010—2024 Точприбор
+                .site-footer__developer
+                    | Разработка сайта
+                    a(href="https://itspace.group/")
+                        svg
+                            use(xlink:href=`img/sprites/sprite.svg#its`)
 
         .site-footer__menu(data-js='footerMenu')
             +big-menu
