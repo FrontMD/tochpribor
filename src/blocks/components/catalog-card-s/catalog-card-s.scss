@@ -49,7 +49,7 @@
 
         img {
             max-width: 70%;
-            max-height: 100%;
+            max-height: calc(100% - 70px);
             object-fit: contain;
             aspect-ratio: 0.7 / 1;
         }
@@ -116,6 +116,7 @@
         grid-template-columns: minmax(0, auto) minmax(60px, 80px);
         gap: 10px;
         padding-top: 32px;
+        min-height: 78px;
         opacity: 0;
         transition: opacity $tr-time linear;
 

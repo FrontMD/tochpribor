@@ -88,6 +88,7 @@
 
         @include max(mobile) {
             border-left: none;
+            border-right: none;
             padding-right: 0;
             order: 2;
         }
@@ -399,6 +400,13 @@
         @media print {
             display: none;
         }
+
+        /*Удалить, чтобы вернуть локацию пользователя*/
+        @include max(laptop) {
+            margin-left: auto;
+        }
+
+        /***/
 
         @include max(mobile) {
             margin-left: auto;

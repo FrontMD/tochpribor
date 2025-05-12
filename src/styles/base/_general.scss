@@ -198,14 +198,14 @@ html.hystmodal__opened {
 
 	.section__container {
 		padding: 16px 0;
+
+		@include max(mobile) {
+			padding: 16px 15px;
+		}
 	}
 
 	&+.section {
 		margin-top: 0;
-	}
-
-	@include max(mobile) {
-		display: none;
 	}
 }
 

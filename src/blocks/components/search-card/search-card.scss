@@ -21,7 +21,6 @@
 
         @include max(mobile) {
             grid-template-columns: 1fr auto;
-            margin-top: 0;
         }
     }
 

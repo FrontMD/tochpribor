@@ -145,4 +145,10 @@
         justify-content: flex-end;
         gap: 16px;
     }
+
+    .breadcrumbs {
+        @include max(mobile) {
+            order: 1;
+        }
+    }
 }

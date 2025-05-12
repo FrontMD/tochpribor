@@ -1,6 +1,8 @@
 .team-section {
 
     &__container.section__container {
+        overflow: hidden;
+
         @include max(tablet) {
             padding: 20px;
         }
