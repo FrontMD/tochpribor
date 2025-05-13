@@ -57,12 +57,16 @@
         padding-bottom: 74px;
         margin-top: 145px;
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(5, 1fr);
         gap: 8px;
         overflow: hidden;
 
+        @include max(large) {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
         @include max(laptop) {
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(4, 1fr);
         }
 
         @include max(tablet) {

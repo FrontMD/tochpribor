@@ -8,13 +8,14 @@ function cardsSlidersInit() {
             const sliderPrev = slider2Cards.querySelector('[data-js="sliderPrev"]')
             const sliderNext = slider2Cards.querySelector('[data-js="sliderNext"]')
             const parallax = slider2Cards.hasAttribute('data-parallax') 
+            const loopVal = !parallax
             
             const slider2CardsEx = new Swiper(slider2Cards, {
                 slidesPerView: 1.1,
                 allowTouchMove: true,
                 spaceBetween: 8,
                 parallax: parallax, 
-                loop: false,
+                loop: loopVal,
                 navigation: {
                     nextEl: sliderNext,
                     prevEl: sliderPrev,
@@ -46,14 +47,15 @@ function cardsSlidersInit() {
             sliders3Cards.forEach(slider3Cards => {
                 const sliderPrev = slider3Cards.querySelector('[data-js="sliderPrev"]')
                 const sliderNext = slider3Cards.querySelector('[data-js="sliderNext"]')
-                const parallax = slider3Cards.hasAttribute('data-parallax') 
+                const parallax = slider3Cards.hasAttribute('data-parallax')
+                const loopVal = !parallax
                 
                 const slider3CardsEx = new Swiper(slider3Cards, {
                     slidesPerView: 1.2,
                     allowTouchMove: true,
                     spaceBetween: 16,
                     parallax: parallax, 
-                    loop: false,
+                    loop: loopVal,
                     navigation: {
                         nextEl: sliderNext,
                         prevEl: sliderPrev,
@@ -85,14 +87,15 @@ function cardsSlidersInit() {
         sliders4Cards.forEach(slider4Cards => {
             const sliderPrev = slider4Cards.querySelector('[data-js="sliderPrev"]')
             const sliderNext = slider4Cards.querySelector('[data-js="sliderNext"]')
-            const parallax = slider4Cards.hasAttribute('data-parallax') 
+            const parallax = slider4Cards.hasAttribute('data-parallax')
+            const loopVal = !parallax
         
             const slider4CardsEx = new Swiper(slider4Cards, {
                 slidesPerView: 1.1,
                 allowTouchMove: true,
                 spaceBetween: 8,
                 parallax: parallax,
-                loop: false,
+                loop: loopVal,
                 navigation: {
                     nextEl: sliderNext,
                     prevEl: sliderPrev,
@@ -129,13 +132,14 @@ function cardsSlidersInit() {
             const sliderPrev = slider6Cards.querySelector('[data-js="sliderPrev"]')
             const sliderNext = slider6Cards.querySelector('[data-js="sliderNext"]')
             const parallax = slider6Cards.hasAttribute('data-parallax')
+            const loopVal = !parallax
         
             const slider6CardsEx = new Swiper(slider6Cards, {
                 slidesPerView: 2,
                 allowTouchMove: true,
                 spaceBetween: 8,
                 parallax: parallax,
-                loop: false,
+                loop: loopVal,
                 navigation: {
                     nextEl: sliderNext,
                     prevEl: sliderPrev,

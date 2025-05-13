@@ -39,6 +39,6 @@ mixin img-section(props= defaultImgSectionProps)
                 - let btnsCount = 0
 
                 - while(btnsCount < btnsList.length)
-                    +btn(btnsList[btnsCount])
+                    +btn(btnsList[btnsCount])(target="_blank")
 
                     - btnsCount++

@@ -315,6 +315,15 @@
         }
     }
 
+    &__tag {
+        font-size: 32px;
+        color: $c-white;
+
+        @include max(mobile) {
+            font-size: 16px;
+        }
+    }
+
     .progressbar {
         width: 100%;
         max-width: 625px;
@@ -339,7 +348,7 @@
         }
 
         &__skip {
-            font-size: 14px;
+            font-size: 28px;
             line-height: 1.2em;
             letter-spacing: -0.02em;
             color: rgba(255, 255, 255, 0.4);
@@ -424,10 +433,25 @@
             color: $c-white;
         }
 
+        &.btn--link {
+            font-size: 28px;
+            gap: 12px;
+
+            @include max(mobile) {
+                font-size: 14px;
+                gap: 6px;
+            }
+        }
+
         svg {
-            width: 12px;
-            height: 12px;
+            width: 24px;
+            height: 24px;
             transform: rotate(90deg);
+
+            @include max(mobile) {
+                width: 12px;
+                height: 12px;
+            }
         }
     }
 

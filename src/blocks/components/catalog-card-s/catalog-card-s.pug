@@ -20,7 +20,7 @@ mixin catalog-card-s(props = defaultCatalogCardSProps)
         }
 
     .catalog-card-s(class= checkProps.classes)&attributes(attributes)
-        a.catalog-card-s__link(href="javascript:void(0);")
+        a.catalog-card-s__link(href="javascript:void(0);" target="_blank")
         .catalog-card-s__header
             - if(checkProps.tags.length > 0)
                 +product-tags({

@@ -11,7 +11,7 @@ function hAdvantagesSlider() {
         slidesPerView: 1.2,
         allowTouchMove: true,
         spaceBetween: 8,
-        loop: false,
+        loop: true,
         navigation: {
             nextEl: sliderNext,
             prevEl: sliderPrev,

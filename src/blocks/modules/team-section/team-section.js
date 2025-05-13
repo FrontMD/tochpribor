@@ -12,7 +12,7 @@ function teamSection() {
             slidesPerView: 1.4,
             allowTouchMove: true,
             spaceBetween: 8,
-            loop: false,
+            loop: true,
             navigation: {
                 nextEl: sliderNext,
                 prevEl: sliderPrev,

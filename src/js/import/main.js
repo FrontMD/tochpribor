@@ -66,7 +66,9 @@ function newsSmiSliderInit() {
     sliders.forEach(slider => {
         let sliderEx = new Swiper(slider, {
             slidesPerView: 'auto',
-            spaceBetween: 16
+            spaceBetween: 16,
+            loop: true
+
         })
     })
 }
@@ -250,6 +252,7 @@ function productSafetyController() {
     const safetySliderEx = new Swiper(safetySlider, {
         slidesPerView: 'auto',
         spaceBetween: 16,
+        loop: true,
         navigation: {
             nextEl: sliderNext,
             prevEl: sliderPrev,

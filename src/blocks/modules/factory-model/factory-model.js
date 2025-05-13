@@ -98,7 +98,7 @@ function factoryModelController() {
     }
 
     // запрет скролла на модели
-    factoryModel.addEventListener('wheel', function(e) {
+    /*factoryModel.addEventListener('wheel', function(e) {
         e.preventDefault();
         e.stopPropagation();
 
@@ -114,7 +114,7 @@ function factoryModelController() {
 
     let yDown = null 
     factoryModel.addEventListener('touchstart', touchstartHandler)
-    factoryModel.addEventListener('touchmove', touchmoveHandler)
+    factoryModel.addEventListener('touchmove', touchmoveHandler)*/
 
     // открывает модель
     function openModel() {

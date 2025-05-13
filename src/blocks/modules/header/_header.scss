@@ -69,6 +69,10 @@
         padding-right: 12px;
         flex: 0 0 156px;
 
+        @include max(mobile) {
+            flex-basis: 130px;
+        }
+
         img {
             height: auto;
         }
@@ -421,9 +425,18 @@
             display: none;
         }
 
+        @include max(mobile) {
+            padding-right: 12px;
+        }
+
         &__item {
             position: relative;
             transition: color $tr-time linear;
+
+            @include max(mobile) {
+                height: 100%;
+                padding-top: 4px;
+            }
 
             &:hover {
                 color: $c-accent-hover;
@@ -449,11 +462,14 @@
             font-size: 12px;
             border-radius: 100%;
 
+            @include max(mobile) {
+                top: -7px;
+            }
+
         }
     }
 
     &__location,
-    &__shop.shop,
     &__callback {
         @include max(mobile) {
             display: none;
