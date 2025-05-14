@@ -158,16 +158,16 @@
         grid-template-columns: minmax(0, 47%) minmax(0, 53%);
         gap: 10px;
         padding-bottom: 16px;
-        border-bottom: 1px solid $c-border;
+        //border-bottom: 1px solid $c-border;
         flex-grow: 1;
         flex-basis: auto;
 
-        @include max(mobile) {
+        @include max(large) {
             grid-template-columns: minmax(0, 35%) minmax(0, 65%);
         }
 
-        @include max(xs) {
-            grid-template-columns: 1fr;
+        @include max(mobile) {
+            grid-template-columns: minmax(0, 1fr);
         }
     }
 
@@ -253,6 +253,8 @@
         line-height: 1em;
         font-size: 26px;
         line-height: 1em;
+        padding-top: 16px;
+        border-top: 1px solid $c-border;
 
         @include max(laptop) {
             font-size: 24px;

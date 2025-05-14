@@ -21,7 +21,11 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        max-height: 700px;
+        max-height: 610px;
+
+        @include min(2001) {
+            max-height: 550px;
+        }
 
         @include max(large) {
             max-height: none;

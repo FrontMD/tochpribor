@@ -31,7 +31,8 @@
     }
 
     &__filter {
-        flex: 0 0 340px;
+        //flex: 0 0 340px;
+        flex: 0 0 300px;
         padding: 16px;
         border-radius: 4px;
         background-color: $c-white;
@@ -61,10 +62,15 @@
 
     &__cards {
         display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        //grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 16px;
 
-        @include max(1300) {
+        @include max(laptop) {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        @include max(xs) {
             grid-template-columns: minmax(0, 1fr);
         }
     }
