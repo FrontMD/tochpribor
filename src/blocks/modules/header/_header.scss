@@ -50,7 +50,7 @@
         }
 
         @include max(mobile) {
-            padding-top: 0 15px;
+            padding: 0 15px;
         }
     }
 
@@ -71,6 +71,10 @@
 
         @include max(mobile) {
             flex-basis: 130px;
+        }
+
+        @include max(xs) {
+            flex-basis: 120px;
         }
 
         img {

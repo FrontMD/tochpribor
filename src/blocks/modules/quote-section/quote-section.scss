@@ -45,6 +45,11 @@
             flex-basis: auto;
             width: 314px;
         }
+
+        @include max(xs) {
+            flex-basis: auto;
+            width: 100%;
+        }
     }
 
     &__photo {
