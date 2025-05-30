@@ -402,7 +402,7 @@ function compareSliderInit() {
     })
 } 
 
-// горизонтальный скролл таблиц в текстовом редакторе
+// скролл таблиц в текстовом редакторе
 function textTableScrollInit() {
     const tables = document.querySelectorAll(".text-editor table")
 
@@ -413,9 +413,25 @@ function textTableScrollInit() {
             const wrapper = document.createElement('div');
             wrapper.classList.add('text-scroll-h')
 
+
+            let maxHeight = window.innerHeight - 64;
+            const header = document.querySelector('[data-js="siteHeader"]')
+            const tabs = table.closest('[data-js="tabsBlock"]')
+
+            if(header) {
+                maxHeight = maxHeight - header.offsetHeight
+            }
+
+            if(tabs) {
+                maxHeight = maxHeight - tabs.querySelector('[data-js="tabsBlockList"]').offsetHeight
+            }
+            
+            wrapper.style.maxHeight = maxHeight + 'px'
+            
             table.parentNode.insertBefore(wrapper, table);
-            wrapper.appendChild(table);
+            wrapper.appendChild(table);     
         }
+        
         
     })
 }

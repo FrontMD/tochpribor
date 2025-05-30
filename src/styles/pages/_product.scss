@@ -54,6 +54,10 @@
                 border-radius: 0 !important;
                 background-color: transparent;
                 min-width: 150px;
+
+                @include max(mobile) {
+                    min-width: 120px;
+                }
             }
 
             thead {
@@ -72,6 +76,10 @@
                 letter-spacing: -0.01em;
                 font-weight: 400;
                 color: $c-text;
+
+                @include max(mobile) {
+                    font-size: 18px;
+                }
             }
 
             thead th b {
@@ -90,6 +98,10 @@
                 padding: 14px 5px 7px;
                 font-size: 16px;
                 font-weight: 400;
+
+                @include max(mobile) {
+                    font-size: 14px;
+                }
             }
 
             tr th:first-child,
@@ -100,6 +112,7 @@
 
                 @include max(mobile) {
                     padding-right: 16px;
+                    min-width: 160px;
                 }
             }
 

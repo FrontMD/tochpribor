@@ -907,7 +907,7 @@ html.hystmodal__opened {
 
 	.text-scroll-h {
 		width: 100%;
-		overflow-x: auto;
+		overflow: auto;
 		margin-bottom: 26px;
 		padding-bottom: 6px;
 
@@ -941,6 +941,31 @@ html.hystmodal__opened {
 
 		&:last-child {
 			margin-bottom: 0;
+		}
+
+		table {
+			tr {
+				position: relative;
+			}
+
+			tr th:first-child {
+				position: sticky;
+				left: 0;
+				background-color: $c-white;
+			}
+
+			thead tr:first-child {
+				position: sticky;
+				top: 0;
+				background-color: $c-white;
+				z-index: 2;
+			}
+
+			thead tr:first-child th:first-child {
+				position: sticky;
+				left: 0;
+				background-color: $c-white;
+			}
 		}
 	}
 
