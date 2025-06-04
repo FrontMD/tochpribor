@@ -223,6 +223,11 @@
             }
         }
     }
+
+    .section__columns {
+        grid-template-columns: repeat(2, minmax(0, calc((100% - 60px - 119px) / 2)));
+        gap: 60px;
+    }
 }
 
 .product-safety-cases {
