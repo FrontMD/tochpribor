@@ -57,6 +57,38 @@ block content
                                 .filter-select__option(data-js="filterSelectOption" data-name="Сначала дешевле" data-value="price_asc") Сначала дешевле
                                 .filter-select__option(data-js="filterSelectOption" data-name="Сначала дороже" data-value="price_desc") Сначала дороже
 
+                .catalog-category__sort
+                    +form-filter
+                        .form-filter__block
+                            .form-filter__list.form-filter__list--horizontal
+                                .filter-checkbox.filter-checkbox--image
+                                    label.filter-checkbox__inner
+                                        input(type="checkbox" name='execution' value="Одноколонные")
+                                        span.filter-checkbox__fake
+                                            span.filter-checkbox__img 
+                                                img(src="img/catalog/product_1.webp")
+                                            span.filter-checkbox__text Одноколонные <span>(23)</span>
+                                .filter-checkbox.filter-checkbox--image
+                                    label.filter-checkbox__inner
+                                        input(type="checkbox" name='execution' value="2-х колонные настольные")
+                                        span.filter-checkbox__fake
+                                            span.filter-checkbox__img 
+                                                img(src="img/catalog/product_1.webp")
+                                            span.filter-checkbox__text 2-х колонные настольные <span>(15)</span>
+                                .filter-checkbox.filter-checkbox--image
+                                    label.filter-checkbox__inner
+                                        input(type="checkbox" name='execution' value="2-х колонные напольные")
+                                        span.filter-checkbox__fake
+                                            span.filter-checkbox__img 
+                                                img(src="img/catalog/product_1.webp")
+                                            span.filter-checkbox__text 2-х колонные напольные <span>(11)</span>
+                                .filter-checkbox.filter-checkbox--image
+                                    label.filter-checkbox__inner
+                                        input(type="checkbox" name='execution' value="4-х колонные напольные")
+                                        span.filter-checkbox__fake
+                                            span.filter-checkbox__img 
+                                                img(src="img/catalog/product_1.webp")
+                                            span.filter-checkbox__text 4-х колонные напольные <span>(9)</span>
 
         section.section.section--transparent.catalog-category__section
             .section__container.catalog-category__layout

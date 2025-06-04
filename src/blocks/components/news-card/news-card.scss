@@ -322,6 +322,7 @@
 
 .news-card {
     &--small {
+        position: relative;
         flex-direction: column;
         padding: 14px;
         background-color: $c-white;
@@ -332,19 +333,48 @@
     }
 
     &--small &__title {
+        color: $c-white;
         -webkit-line-clamp: 3;
         display: -webkit-box;
         -webkit-box-orient: vertical;
         overflow: hidden;
+
+        &:hover {
+            color: $c-bg;
+        }
     }
 
     &--small &__media {
-        display: none;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
     }
 
     &--small &__tags {
         flex-direction: column-reverse;
         align-items: flex-start;
+    }
+
+    &--small &__content {
+        z-index: 3;
+    }
+
+    &--small &__category {
+        background-color: $c-white;
+        color: $c-text;
+
+        &:hover {
+            background-color: $c-accent-hover;
+            color: $c-white;
+        }
+    }
+
+    &--small &__date {
+        background-color: $c-white;
+        color: $c-text;
     }
 }
 

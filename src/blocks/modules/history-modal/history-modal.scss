@@ -90,7 +90,7 @@
         position: relative;
         display: flex;
         align-items: flex-start;
-        gap: 90px;
+        gap: 46px;
         z-index: 3;
 
         @include max(mobile) {
@@ -100,8 +100,13 @@
     }
 
     &__year {
-        flex: 0 0 205px;
+        flex: 0 0 250px;
         padding-bottom: 27px;
+        font-size: 44px;
+
+        @include max(laptop) {
+            font-size: 44px;
+        }
 
         @include max(mobile) {
             flex-basis: auto;
@@ -136,7 +141,7 @@
     &__progress {
         position: absolute;
         top: 50px;
-        left: 353px;
+        left: 354px;
         bottom: 0;
         width: 1px;
         height: calc(100% - 55px);

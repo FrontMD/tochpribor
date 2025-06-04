@@ -101,6 +101,11 @@
             }
         }
     }
+
+    &--horizontal {
+        flex-direction: row;
+        align-items: stretch;
+    }
 }
 
 .filter-tab {
