@@ -1307,6 +1307,58 @@ html.hystmodal__opened {
 		border-color: $c-accent-hover;
 		color: $c-accent-hover;
 	}
+
+	&--scroll {
+		opacity: 0;
+		visibility: hidden;
+		position: absolute;
+		z-index: 3;
+		transition: all $tr-time linear;
+
+		@include max(tablet) {
+			width: 32px;
+			height: 32px;
+		}
+
+		&.active {
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+
+	&--scroll.slider-control--prev {
+		left: 42px;
+
+		@include max(tablet) {
+			left: 30px;
+		}
+
+		@include max(mobile) {
+			left: 20px;
+		}
+	}
+
+	&--scroll.slider-control--next {
+		right: 42px;
+
+		@include max(tablet) {
+			right: 30px;
+		}
+
+		@include max(mobile) {
+			right: 20px;
+		}
+	}
+
+	&--scroll svg {
+		width: 24px;
+		height: 24px;
+
+		@include max(tablet) {
+			width: 16px;
+			height: 16px;
+		}
+	}
 }
 
 .scrollbar {

@@ -23,6 +23,7 @@ function tabsBlockInit() {
             slidesList.forEach((slide, index) => {
                 if(index == currentIndex) {
                     slide.classList.add('active')
+                    slide.dispatchEvent(new CustomEvent("activatedSlide"))
                 } else {
                     slide.classList.remove('active')
                 }
