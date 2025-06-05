@@ -15,6 +15,14 @@
         gap: 40px;
     }
 
+    &--top {
+        width: 100%;
+    }
+
+    &__block {
+        width: 100%;
+    }
+
     &__side {
         display: flex;
         align-items: center;
@@ -72,6 +80,14 @@
         gap: 8px;
     }
 
+    &__list--horizontal {
+        flex-direction: row;
+        align-items: stretch;
+        display: grid;
+        gap: 8px;
+        grid-template-columns: repeat(7, 1fr);
+    }
+
     &__items {
         overflow: hidden;
         transition: max-height $tr-time linear;
@@ -102,10 +118,6 @@
         }
     }
 
-    &--horizontal {
-        flex-direction: row;
-        align-items: stretch;
-    }
 }
 
 .filter-tab {
@@ -277,6 +289,55 @@
         span {
             color: $c-bg;
         }
+    }
+}
+
+.filter-checkbox {
+    width: 100%;
+
+    &--image &__inner {
+        width: 100%;
+        height: 100%;
+    }
+
+    &--image &__fake {
+        margin-top: 0;
+        width: 100%;
+        height: 100%;
+        padding: 8px;
+        border-radius: 4px;
+
+        &:hover {
+            border-color: $c-accent-light;
+        }
+    }
+
+    &--image input:checked+&__fake {
+        background-color: $c-white;
+    }
+
+    &--image &__img {
+        display: block;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1 / 0.5;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: center;
+        }
+    }
+
+    &--image &__text {
+        display: block;
+        text-align: center;
+        font-weight: 500;
+        line-height: 1.2em;
+        padding-top: 8px;
+        margin-top: 8px;
+        border-top: 1px solid $c-border;
     }
 }
 

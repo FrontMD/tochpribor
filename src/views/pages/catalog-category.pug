@@ -58,37 +58,60 @@ block content
                                 .filter-select__option(data-js="filterSelectOption" data-name="Сначала дороже" data-value="price_desc") Сначала дороже
 
                 .catalog-category__sort
-                    +form-filter
+                    +form-filter({
+                        classes: 'form-filter--top'
+                    })
                         .form-filter__block
                             .form-filter__list.form-filter__list--horizontal
                                 .filter-checkbox.filter-checkbox--image
                                     label.filter-checkbox__inner
-                                        input(type="checkbox" name='execution' value="Одноколонные")
+                                        input(type="checkbox" name='series' value="Серия ТРМ Универсальные испытательные машины")
                                         span.filter-checkbox__fake
                                             span.filter-checkbox__img 
-                                                img(src="img/catalog/product_1.webp")
-                                            span.filter-checkbox__text Одноколонные <span>(23)</span>
+                                                img(src="img/catalog/series_1.webp")
+                                            span.filter-checkbox__text Серия ТРМ Универсальные испытательные машины (производство «ЗИП»)
                                 .filter-checkbox.filter-checkbox--image
                                     label.filter-checkbox__inner
-                                        input(type="checkbox" name='execution' value="2-х колонные настольные")
+                                        input(type="checkbox" name='series' value="Серия ТРМЦ Машины для динамических испытаний")
                                         span.filter-checkbox__fake
                                             span.filter-checkbox__img 
-                                                img(src="img/catalog/product_1.webp")
-                                            span.filter-checkbox__text 2-х колонные настольные <span>(15)</span>
+                                                img(src="img/catalog/series_2.webp")
+                                            span.filter-checkbox__text Серия ТРМЦ Машины для динамических испытаний (производство «ЗИП»)
                                 .filter-checkbox.filter-checkbox--image
                                     label.filter-checkbox__inner
-                                        input(type="checkbox" name='execution' value="2-х колонные напольные")
+                                        input(type="checkbox" name='series' value="Серия ТРМП-Э, ТРМП-П Машины на длительную прочность")
                                         span.filter-checkbox__fake
                                             span.filter-checkbox__img 
-                                                img(src="img/catalog/product_1.webp")
-                                            span.filter-checkbox__text 2-х колонные напольные <span>(11)</span>
+                                                img(src="img/catalog/series_3.webp")
+                                            span.filter-checkbox__text Серия ТРМП-Э, ТРМП-П Машины на длительную прочность (ползучесть) (производство «ЗИП»)
                                 .filter-checkbox.filter-checkbox--image
                                     label.filter-checkbox__inner
-                                        input(type="checkbox" name='execution' value="4-х колонные напольные")
+                                        input(type="checkbox" name='series' value="Серия DVT Универсальные испытательные машины")
                                         span.filter-checkbox__fake
                                             span.filter-checkbox__img 
-                                                img(src="img/catalog/product_1.webp")
-                                            span.filter-checkbox__text 4-х колонные напольные <span>(9)</span>
+                                                img(src="img/catalog/series_4.webp")
+                                            span.filter-checkbox__text Серия DVT Универсальные испытательные машины  (производство «Devotrans»)
+                                .filter-checkbox.filter-checkbox--image
+                                    label.filter-checkbox__inner
+                                        input(type="checkbox" name='series' value="Серия МИП Машины для испытания пружин")
+                                        span.filter-checkbox__fake
+                                            span.filter-checkbox__img 
+                                                img(src="img/catalog/series_5.webp")
+                                            span.filter-checkbox__text Серия МИП Машины для испытания пружин
+                                .filter-checkbox.filter-checkbox--image
+                                    label.filter-checkbox__inner
+                                        input(type="checkbox" name='series' value="Серия ИР Универсальные испытательные машины")
+                                        span.filter-checkbox__fake
+                                            span.filter-checkbox__img 
+                                                img(src="img/catalog/series_6.webp")
+                                            span.filter-checkbox__text Серия ИР Универсальные испытательные машины
+                                .filter-checkbox.filter-checkbox--image
+                                    label.filter-checkbox__inner
+                                        input(type="checkbox" name='series' value="Серия ИП Универсальные испытательные машины")
+                                        span.filter-checkbox__fake
+                                            span.filter-checkbox__img 
+                                                img(src="img/catalog/series_7.webp")
+                                            span.filter-checkbox__text Серия ИП Универсальные испытательные машины
 
         section.section.section--transparent.catalog-category__section
             .section__container.catalog-category__layout

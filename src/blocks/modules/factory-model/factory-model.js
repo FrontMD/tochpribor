@@ -67,7 +67,7 @@ function factoryModelController() {
 
             if(backBtn) {
                 backBtn.addEventListener('click', function() {
-                    let targetId = factoryModel.querySelector('[data-js="factoryModelLayer"][data-level="1"]').dataset.id;
+                    let targetId = factoryModel.querySelector('[data-js="factoryModelLayer"][data-level="1"]').dataset.number;
                     toggleLayers(targetId);
                     closeInfo();
                 })
@@ -133,7 +133,7 @@ function factoryModelController() {
     // переключает слои
     function toggleLayers(targetId) {
         factoryModelLayers.forEach(layer => {
-            const currentId = layer.dataset.id;
+            const currentId = layer.dataset.number;
 
             if(currentId == targetId) {
                 layer.classList.add('active');
