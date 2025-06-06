@@ -1327,26 +1327,26 @@ html.hystmodal__opened {
 	}
 
 	&--scroll.slider-control--prev {
-		left: 42px;
+		left: 32px;
 
 		@include max(tablet) {
-			left: 30px;
+			left: 20px;
 		}
 
 		@include max(mobile) {
-			left: 20px;
+			left: 15px;
 		}
 	}
 
 	&--scroll.slider-control--next {
-		right: 42px;
+		right: 32px;
 
 		@include max(tablet) {
-			right: 30px;
+			right: 20px;
 		}
 
 		@include max(mobile) {
-			right: 20px;
+			right: 15px;
 		}
 	}
 
