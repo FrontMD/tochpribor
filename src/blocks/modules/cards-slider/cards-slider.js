@@ -93,6 +93,7 @@ function cardsSlidersInit() {
             const slider4CardsEx = new Swiper(slider4Cards, {
                 slidesPerView: 1.1,
                 allowTouchMove: true,
+                //loopAddBlankSlides: true,
                 spaceBetween: 8,
                 parallax: parallax,
                 loop: loopVal,

@@ -308,6 +308,9 @@
         }
 
         &__item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
             transition: color $tr-time linear;
 
             &:hover {
