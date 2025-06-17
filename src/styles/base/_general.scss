@@ -147,25 +147,25 @@ html.hystmodal__opened {
 .page-layout {
 	position: relative;
 	background-color: $c-main-bg;
-	padding: 80px 0 20px;
+	padding: 73px 0 20px;
 
 	@media print {
 		background-color: #fff;
 	}
 
 	@include max(laptop) {
-		padding: 61px 0 20px;
+		padding: 62px 0 20px;
 	}
 
 	@include max(mobile) {
-		padding: 61px 0 0;
+		padding: 60px 0 0;
 	}
 
 	&--white {
 		background-color: $c-white;
 
 		@include max(mobile) {
-			padding: 61px 0 20px;
+			padding: 60px 0 20px;
 		}
 	}
 
