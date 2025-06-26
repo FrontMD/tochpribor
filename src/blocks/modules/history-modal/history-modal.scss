@@ -73,7 +73,7 @@
         flex-direction: column;
         gap: 46px;
         height: 100%;
-        padding: 50px 95px 50px 50px;
+        padding: 50px 95px 50px 30px;
         background-image: url(../img/burger_menu_bg.webp);
         background-repeat: no-repeat;
         background-position: right bottom;
@@ -92,10 +92,18 @@
         align-items: flex-start;
         gap: 46px;
         z-index: 3;
+        padding: 20px;
+        background-color: transparent;
+        transition: all $tr-time linear;
+
+        &.active {
+            background-color: rgba(250, 230, 230, 0.8);
+        }
 
         @include max(mobile) {
             flex-direction: column;
             gap: 16px;
+            padding: 10px;
         }
     }
 
@@ -140,7 +148,7 @@
 
     &__progress {
         position: absolute;
-        top: 50px;
+        top: 70px;
         left: 354px;
         bottom: 0;
         width: 1px;

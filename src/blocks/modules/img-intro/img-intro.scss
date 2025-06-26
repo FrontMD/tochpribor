@@ -1,11 +1,11 @@
 .img-intro {
     position: relative;
-    height: calc(100vh - 80px);
-    min-height: calc(100vh - 80px);
-    max-height: calc(100vh - 80px);
-    height: calc(100dvh - 80px);
-    min-height: calc(100dvh - 80px);
-    max-height: calc(100dvh - 80px);
+    height: calc(100vh - 73px);
+    min-height: calc(100vh - 73px);
+    max-height: calc(100vh - 73px);
+    height: calc(100dvh - 73px);
+    min-height: calc(100dvh - 73px);
+    max-height: calc(100dvh - 73px);
 
     @include max(laptop) {
         height: calc(100vh - 61px);
