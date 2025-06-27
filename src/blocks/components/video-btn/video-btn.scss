@@ -8,6 +8,15 @@
     border-radius: 2px;
     overflow: hidden;
 
+    &__link {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        z-index: 3;
+    }
+
     &__poster {
         position: relative;
         display: block;
@@ -47,12 +56,17 @@
         cursor: pointer;
         color: $c-white;
         transition: background-color $tr-time;
+        z-index: 1;
 
         svg {
             width: 66.667%;
             aspect-ratio: 1 / 1;
         }
 
+    }
+
+    &:hover {
+        cursor: pointer;
     }
 
     &:hover &__play {

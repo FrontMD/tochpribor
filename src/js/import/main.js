@@ -339,9 +339,6 @@ function fancyboxInit() {
 
               }
 
-              /*
-              }*/
-
             },
             "Carousel.ready Carousel.change": (fancybox, event) => {
                 let currentSlide = fancybox.getSlide()

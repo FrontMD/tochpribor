@@ -186,6 +186,10 @@
             max-width: 100%;
             max-height: 100%;
             object-fit: contain;
+
+            @include max(mobile) {
+                height: 100%;
+            }
         }
     }
 

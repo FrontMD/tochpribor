@@ -648,6 +648,12 @@ html.hystmodal__opened {
 	.btn {
 		margin-top: auto;
 	}
+
+	@include min(tablet) {
+		&--small &__content {
+			min-height: auto;
+		}
+	}
 }
 
 .social-link {

@@ -13,7 +13,8 @@ mixin video-btn(props = defaultVideoProps)
 			poster: props.poster ? props.poster : defaultVideoBtnProps.poster,
 		}
 
-	a.video-btn(class= checkProps.classes href= checkProps.video data-js='videoBtn' data-fancybox)
+	.video-btn(class= checkProps.classes)
+		a.video-btn__link(href= checkProps.video data-js='videoBtn' data-fancybox)
 		span.video-btn__poster(data-js='videoBtnPoster')
 			img(src=checkProps.poster alt="")
 		span.video-btn__play(data-js="videoBtnPlay")

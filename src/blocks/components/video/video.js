@@ -30,7 +30,7 @@ function videos() {
                     }
                 } else {
                     const videoLayout = `
-                                            <video controls="controls" poster="${videoPosterSrc}">
+                                            <video controls="controls" poster="">
                                                 <source src="${videoFrame.dataset.video}" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
                                             </video>
                                         `
