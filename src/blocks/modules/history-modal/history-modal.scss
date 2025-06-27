@@ -96,7 +96,7 @@
         background-color: transparent;
         transition: all $tr-time linear;
 
-        &.active {
+        &:hover {
             background-color: rgba(250, 230, 230, 0.8);
         }
 

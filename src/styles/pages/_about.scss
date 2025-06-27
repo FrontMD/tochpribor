@@ -92,6 +92,10 @@
 .about-gk {
     overflow: hidden;
 
+    .title {
+        max-width: 1500px;
+    }
+
     &__card {
         position: relative;
         min-height: 196px;

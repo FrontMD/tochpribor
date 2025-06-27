@@ -124,10 +124,10 @@ function historyModal() {
             pointPercentsArr.forEach((pointPercent, index) => {
                 if(currentProgress >= pointPercent) {
                     points[index].classList.add('active')
-                    rows.forEach(row => {
+                    /*rows.forEach(row => {
                         row.classList.remove('active')
                     })
-                    rows[index].classList.add('active')
+                    rows[index].classList.add('active')*/
                 } else {
                     points[index].classList.remove('active')
                 }
