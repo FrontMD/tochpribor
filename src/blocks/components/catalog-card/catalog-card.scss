@@ -178,9 +178,14 @@
         aspect-ratio: 1 / 1;
         height: auto;
 
+        @include max(mobile) {
+            height: 44vw;
+        }
+
         @include max(xs) {
             max-width: 160px;
             margin: 0 auto;
+            height: 160px;
         }
 
         img {
