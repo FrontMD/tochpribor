@@ -680,7 +680,7 @@ function referencesController() {
         renderCategories(allWorldCities)
 
         // отрисовываем все точки мира
-        renderPoints(allWorldCities)
+        renderPoints(allWorldCities, true)
         //refMap.setAttribute('data-type', 'country')
         //refMap.setAttribute('data-subject', 'Россия')
 
@@ -706,7 +706,7 @@ function referencesController() {
     }
 
     // отрисовывает точки на карте на основании списка городов
-    function renderPoints(cities) {
+    function renderPoints(cities, isFirst = false) {
         mapEx.geoObjects.removeAll()
 
         let myGeoObjects = [];
@@ -756,7 +756,13 @@ function referencesController() {
 
         mapEx.setBounds(mapEx.geoObjects.getBounds());
         let currentZoom = mapEx.getZoom() > 11 ? 11 : mapEx.getZoom() - 1;
-        mapEx.setZoom(currentZoom);
+
+        if(isFirst) {
+            mapEx.setZoom(3);    
+        } else {
+            mapEx.setZoom(currentZoom);
+        }
+
     }
 
     // отрисовывает категории на основании списка городов
