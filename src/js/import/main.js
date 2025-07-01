@@ -758,7 +758,16 @@ function referencesController() {
         let currentZoom = mapEx.getZoom() > 11 ? 11 : mapEx.getZoom() - 1;
 
         if(isFirst) {
-            mapEx.setZoom(3);    
+            let cZoom = 3
+            let ww = window.innerWidth
+
+            if(ww < 450) {
+                cZoom = 1
+            }else if(ww < 1100) {
+                cZoom = 2
+            }
+
+            console.log("zoom: " + mapEx.getZoom())
         } else {
             mapEx.setZoom(currentZoom);
         }
