@@ -766,8 +766,6 @@ function referencesController() {
             }else if(ww < 1100) {
                 cZoom = 2
             }
-
-            console.log("zoom: " + mapEx.getZoom())
         } else {
             mapEx.setZoom(currentZoom);
         }

@@ -84,7 +84,7 @@
         gap: 24px;
 
         @include max(mobile) {
-            flex-direction: column-reverse;
+            //flex-direction: column-reverse;
             gap: 8px;
         }
     }
@@ -146,9 +146,9 @@
         gap: 16px;
     }
 
-    .breadcrumbs {
+    /*.breadcrumbs {
         @include max(mobile) {
             order: 1;
         }
-    }
+    }*/
 }
