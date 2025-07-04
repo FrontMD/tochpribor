@@ -62,12 +62,19 @@ function newsSmiSliderInit() {
     const sliders = document.querySelectorAll('[data-js="newsSmiSlider"]')
 
     if(sliders.length < 1) return
-
+    
     sliders.forEach(slider => {
+        const sliderPrev = slider.querySelector('[data-js="sliderPrev"]')
+        const sliderNext = slider.querySelector('[data-js="sliderNext"]')
+
         let sliderEx = new Swiper(slider, {
             slidesPerView: 'auto',
             spaceBetween: 16,
-            loop: true
+            loop: true,
+            navigation: {
+                nextEl: sliderNext,
+                prevEl: sliderPrev,
+            },
 
         })
     })

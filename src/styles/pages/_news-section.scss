@@ -75,7 +75,7 @@
 
 .s-news-smi {
     &__slider {
-        margin-top: 100px;
+        margin-top: 60px;
         overflow: hidden;
         padding-right: 24px;
         padding-left: 24px;
@@ -102,6 +102,20 @@
                 width: 250px;
                 height: 386px;
             }
+
+        }
+    }
+
+    &__controls {
+        justify-content: flex-end;
+        margin-bottom: 40px;
+
+        @include max(mobile) {
+            justify-content: flex-start;
+        }
+
+        @include max(xs) {
+            margin-bottom: 24px;
         }
     }
 }

@@ -188,8 +188,8 @@
     }
 
     &:hover {
-        background-color: #FDF7F7;
-        border-color: #FDF7F7;
+        background-color: $c-pink-hover;
+        border-color: $c-pink-hover;
 
         .service-card__icon {
             opacity: 1;

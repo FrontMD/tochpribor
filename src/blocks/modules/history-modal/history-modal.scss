@@ -191,6 +191,29 @@
         max-width: 345px;
         color: $c-text-light;
     }
+
+    &__video {
+        position: relative;
+        width: 100%;
+        margin: 32px auto;
+
+        img {
+            margin-bottom: 0;
+            width: 100%;
+        }
+    }
+
+    a.history-modal__play {
+        position: absolute;
+        left: 10px;
+        bottom: 10px;
+        z-index: 1;
+        color: $c-white;
+    }
+
+    a.history-modal__play:hover {
+        color: $c-white;
+    }
 }
 
 .history-modal {
