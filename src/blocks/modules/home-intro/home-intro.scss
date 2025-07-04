@@ -89,8 +89,8 @@
         @include max(xs) {
             min-width: auto;
             aspect-ratio: auto;
-            width: calc((100vh - 500px) * 1.778);
-            height: calc(100vh - 500px);
+            width: calc((100vh - 440px) * 1.778);
+            height: calc(100vh - 440px);
             top: 120px;
             transform: translate(-50%, 0)
         }
@@ -557,6 +557,7 @@
 
         @include max(mobile) {
             height: 50px;
+            display: none;
         }
 
         img {
