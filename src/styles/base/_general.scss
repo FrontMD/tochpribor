@@ -932,12 +932,12 @@ html.hystmodal__opened {
 		}
 
 		&::-webkit-scrollbar-track {
-			background-color: $c-text-light;
+			background-color: $c-bg;
 			border-radius: 2px;
 		}
 
 		&::-webkit-scrollbar-thumb {
-			background-color: $c-bg;
+			background-color: $c-text-light;
 			border-radius: 2px;
 		}
 

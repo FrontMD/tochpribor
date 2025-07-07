@@ -1,0 +1,49 @@
+-
+    const defaultAboutIntroProps = {
+        classes: '',
+        img: '',
+        breadcrumbs: {},
+        title: '',
+        text: '',
+        cMode: ''
+    }
+
+mixin about-intro(props= defaultAboutIntroProps)
+    -
+        const checkProps = {
+            classes: props.classes ? props.classes : defaultAboutIntroProps.classes,
+            img: props.img ? props.img : defaultAboutIntroProps.img,
+            breadcrumbs: props.breadcrumbs ? props.breadcrumbs : defaultAboutIntroProps.breadcrumbs,
+            title: props.title ? props.title : defaultAboutIntroProps.title,
+            text: props.text ? props.text : defaultAboutIntroProps.text,
+            cMode: props.cMode ? props.cMode : defaultAboutIntroProps.cMode
+        }
+
+        let cModeClass = checkProps.cMode ? ` img-intro--${checkProps.cMode}` : ''
+
+    section.section.section--full.section--transparent.about-intro(class= checkProps.classes + cModeClass)&attributes(attributes)
+        .about-intro__bg
+            img(class='lazyload' src='img/lazy-placeholder.webp' data-src= checkProps.img, alt="")
+        .section__container.about-intro__container
+            .about-intro__top
+                .about-intro__left
+                    +breadcrumbs(checkProps.breadcrumbs)
+                    +title({
+                        classes: "img-intro__title",
+                        tag: 'h2',
+                        size: '83',
+                        text: checkProps.title,
+                        cMode: 'light'
+                    })
+
+                +btn({
+                    size: 'middle',
+                    name: 'История завода',
+                    icon: 'arrow_enter'
+                })(data-js="historyModalOpen")
+
+            .about-intro__bottom
+                -if(checkProps.text.length > 0)
+                    .about-intro__text!= checkProps.text
+                .about-intro__btns
+                    block

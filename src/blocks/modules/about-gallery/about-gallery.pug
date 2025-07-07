@@ -1,0 +1,22 @@
+-
+    const defaultAboutGalleryProps = {
+        classes: '',
+        images: [],
+        right: false
+    }
+
+mixin about-gallery(props= defaultAboutGalleryProps)
+    -
+        const checkProps = {
+            classes: props.classes ? props.classes : defaultAboutGalleryProps.classes,
+            images: props.images ? props.images : defaultAboutGalleryProps.images,
+            right: props.right ? props.right : defaultAboutGalleryProps.right,
+        }
+
+        let positionClass = checkProps.right === true ? ` about-gallery--right` : ''
+
+    .about-gallery(class= checkProps.classes + positionClass)&attributes(attributes)
+        - let images = checkProps.images
+        - let counter = 0
+        - while(images.length > counter)
+            img(class='lazyload' src='img/lazy-placeholder.webp' data-src= images[counter], alt="")
