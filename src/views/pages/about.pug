@@ -7,6 +7,25 @@ block variables
 block content
     .page-layout(data-js="pageLayout")
 
+        //-+about-intro({
+            img: 'img/factory/factory_intro_bg.png',
+            breadcrumbs: {
+                cMode: 'dark',
+                items: [
+                    {
+                        name: 'Главная',
+                        link: 'javascript:void(0);'
+                    },
+                    {
+                        name: 'О компании',
+                        link: 'javascript:void(0);'
+                    }
+                ]
+            },
+            title: 'Завод с многолетней историей, основан в 1950г.',
+            text: 'Мы – единственный в нашей стране завод полного цикла, производящий большое количество испытательной техники',
+            })
+
         +img-intro({
             img: 'img/about/about_intro.webp',
             breadcrumbs: {
@@ -25,12 +44,12 @@ block content
             title: 'Завод с многолетней историей',
             tag: '[Основан в 1950 году]',
             text: 'Мы – единственный в нашей стране завод полного цикла, производящий большое количество испытательной техники',
-        })
-            +btn({
-                size: 'middle',
-                name: 'История завода',
-                icon: 'arrow_enter'
-            })(data-js="historyModalOpen")
+            })
+                +btn({
+                    size: 'middle',
+                    name: 'История завода',
+                    icon: 'arrow_enter'
+                })(data-js="historyModalOpen")
 
         +h-advantages({
             title: 'Разрабатываем, производим и&nbsp;поставляем лабораторное оборудование',

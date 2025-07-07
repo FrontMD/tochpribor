@@ -2,7 +2,7 @@
     const defaultAboutGalleryProps = {
         classes: '',
         images: [],
-        right: false
+        rowLength: '3'
     }
 
 mixin about-gallery(props= defaultAboutGalleryProps)
@@ -10,13 +10,24 @@ mixin about-gallery(props= defaultAboutGalleryProps)
         const checkProps = {
             classes: props.classes ? props.classes : defaultAboutGalleryProps.classes,
             images: props.images ? props.images : defaultAboutGalleryProps.images,
-            right: props.right ? props.right : defaultAboutGalleryProps.right,
+            rowLength: props.rowLength ? props.rowLength : defaultAboutGalleryProps.rowLength,
         }
 
-        let positionClass = checkProps.right === true ? ` about-gallery--right` : ''
+        let rowLengthClass = ` about-gallery--${checkProps.rowLength}`
 
-    .about-gallery(class= checkProps.classes + positionClass)&attributes(attributes)
+    .about-gallery(class= checkProps.classes + rowLengthClass)&attributes(attributes)
         - let images = checkProps.images
         - let counter = 0
         - while(images.length > counter)
-            img(class='lazyload' src='img/lazy-placeholder.webp' data-src= images[counter], alt="")
+            - let imagesInner = images[counter]
+            - let counterInner = 0
+
+            .about-gallery__row
+                - while(imagesInner.length > counterInner)
+                    .about-gallery__item
+                        img(class='lazyload' src='img/lazy-placeholder.webp' data-src= imagesInner[counterInner])
+
+                    - counterInner++
+
+            - counter++
+

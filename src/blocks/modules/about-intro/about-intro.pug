@@ -5,7 +5,7 @@
         breadcrumbs: {},
         title: '',
         text: '',
-        cMode: ''
+        cMode: 'dark'
     }
 
 mixin about-intro(props= defaultAboutIntroProps)
@@ -19,7 +19,7 @@ mixin about-intro(props= defaultAboutIntroProps)
             cMode: props.cMode ? props.cMode : defaultAboutIntroProps.cMode
         }
 
-        let cModeClass = checkProps.cMode ? ` img-intro--${checkProps.cMode}` : ''
+        let cModeClass = checkProps.cMode ? ` about-intro--${checkProps.cMode}` : ''
 
     section.section.section--full.section--transparent.about-intro(class= checkProps.classes + cModeClass)&attributes(attributes)
         .about-intro__bg
@@ -29,11 +29,27 @@ mixin about-intro(props= defaultAboutIntroProps)
                 .about-intro__left
                     +breadcrumbs(checkProps.breadcrumbs)
                     +title({
-                        classes: "img-intro__title",
-                        tag: 'h2',
-                        size: '83',
+                        classes: "about-intro__title",
+                        tag: 'h1',
+                        size: '53',
                         text: checkProps.title,
                         cMode: 'light'
+                    })
+                    +about-gallery({
+                        images: [
+                            [
+                                'img/about/about_history.webp',
+                                'img/about/about_history.webp',
+                                'img/about/about_history.webp'
+                            ],
+                            [
+                                'img/about/about_history.webp',
+                                'img/about/about_history.webp'
+                            ],
+                            [
+                                'img/about/about_history.webp'
+                            ]
+                        ]
                     })
 
                 +btn({
@@ -45,5 +61,28 @@ mixin about-intro(props= defaultAboutIntroProps)
             .about-intro__bottom
                 -if(checkProps.text.length > 0)
                     .about-intro__text!= checkProps.text
-                .about-intro__btns
-                    block
+                +about-gallery({
+                    classes: 'about-gallery--right about-gallery--bottom',
+                    rowLength: '4',
+                    right: true,
+                    images: [
+                        [
+                            'img/about/about_history.webp'
+                        ],
+                        [
+                            'img/about/about_history.webp',
+                            'img/about/about_history.webp'
+                        ],
+                        [
+                            'img/about/about_history.webp',
+                            'img/about/about_history.webp',
+                            'img/about/about_history.webp'
+                        ],
+                        [
+                            'img/about/about_history.webp',
+                            'img/about/about_history.webp',
+                            'img/about/about_history.webp',
+                            'img/about/about_history.webp'
+                        ]
+                    ]
+                    })
