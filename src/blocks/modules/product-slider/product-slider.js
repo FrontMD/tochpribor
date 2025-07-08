@@ -10,7 +10,6 @@ function productSlider() {
     
     let productSliderTabsEx = new Swiper(productSliderTabs, {
         slidesPerView: 'auto',
-        spaceBetween: 8,
         loop: true,
         navigation: {
             nextEl: thumbsNext,
