@@ -15,7 +15,7 @@ function productIntro() {
             const gap = window.innerWidth > 500 ? 8 : 4;
             const startRows = 3
             const modelsItemHeight = modelsItem.offsetHeight;
-            const fullHeight = modelsItemsList.offsetHeight;
+            const fullHeight = modelsItemsList.scrollHeight;
             const maxHeight = modelsItemHeight * startRows + gap * (startRows - 1)
         
             if(maxHeight < fullHeight) {

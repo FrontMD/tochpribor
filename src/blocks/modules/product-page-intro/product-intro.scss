@@ -155,7 +155,9 @@
     }
 
     &__block {
+        position: relative;
         padding-top: 16px;
+        padding-bottom: 31px;
         border-top: 1px solid $c-border;
 
         &--noborder {
@@ -190,9 +192,15 @@
         gap: 8px;
         overflow: hidden;
         transition: max-height $tr-time linear;
+        max-height: 115px;
+
+        @include max(mobile) {
+            min-height: 109px;
+        }
 
         @include max(xs) {
             gap: 4px;
+            min-height: 95px;
         }
     }
 
@@ -232,6 +240,9 @@
     }
 
     &__more {
+        position: absolute;
+        left: 0;
+        bottom: 0;
         font-size: 16px;
         line-height: 1.4em;
         margin-top: 8px;
