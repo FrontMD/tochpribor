@@ -364,6 +364,7 @@
 
             &:hover {
                 border-color: $c-accent;
+                background-color: $c-pink-hover;
             }
         }
 
@@ -373,6 +374,7 @@
 
         &--image input:checked+&__fake {
             border-color: $c-accent-hover;
+            background-color: $c-pink-hover;
         }
 
         &--image &__img {
