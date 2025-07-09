@@ -22,6 +22,7 @@
         align-items: center;
         justify-content: center;
         height: 610px;
+        padding: 24px;
 
         @include min(2001) {
             height: 550px;
@@ -34,6 +35,10 @@
 
         @include max(tablet) {
             aspect-ratio: 1 / 0.45;
+        }
+
+        @include max(mobile) {
+            padding: 15px;
         }
 
         @include max(xs) {
@@ -138,4 +143,12 @@
 
     }
 
+}
+
+.f-thumbs__slide__img {
+    object-fit: contain;
+}
+
+.f-thumbs__slide {
+    background-color: #fff;
 }

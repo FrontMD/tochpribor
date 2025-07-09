@@ -197,6 +197,42 @@
                     "coords": "50.268616, 57.155667"
                 }
             ]
+        },
+        {
+            "id": "1",
+            "name": "Находка",
+            "country": "Россия",
+            "region": "Приморский край",
+            "items": [
+                {
+                    "name": "ИР 5047-50 разрывная машина универсальная",
+                    "img": "img/catalog/product_1.webp",
+                    "link": "javascript:void(0)",
+                    "category": "0",
+                    "companies": [
+                        "ООО «Город»"
+                    ],
+                    "coords": "42.836979, 132.875489"
+                }
+            ]
+        },
+        {
+            "id": "5",
+            "name": "Сиэтл",
+            "country": "США",
+            "region": "",
+            "items": [
+                {
+                    "name": "FU DLC 50 кН Испытательная машина",
+                    "img": "img/catalog/product_7.webp",
+                    "link": "javascript:void(0)",
+                    "category": "6",
+                    "companies": [
+                        "ООО «Компания»"
+                    ],
+                    "coords": "47.612962, -122.346502"
+                }
+            ]
         }
     ]
 }

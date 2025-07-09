@@ -1409,11 +1409,14 @@ html.hystmodal__opened {
 		}
 
 		.fancybox__content {
-			max-width: 1200px;
-			max-height: 675px;
 			border-radius: 4px;
 			overflow: hidden;
 			padding: 0;
+
+			@include max(2000) {
+				max-width: 1200px;
+				max-height: 675px;
+			}
 
 			@include max(laptop) {
 				max-width: 840px;

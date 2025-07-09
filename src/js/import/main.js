@@ -634,12 +634,22 @@ function referencesController() {
     ymaps.ready(async function () {
         // строим карту
         let center = "60.247097, 104.132880"
-        let zoom = 4;
+
+        let ww = window.innerWidth
+        let zoom = 3;
+                
+        if(ww < 750) {
+            zoom = 1
+        }else if(ww < 1600) {
+            zoom = 2
+        }
     
         mapEx = new ymaps.Map(map, {
             center: center.replace(/\s/g, '').split(","),
             zoom: zoom,
             controls: []
+        }, {
+            minZoom: zoom
         });
 
         // получаем данные
@@ -773,8 +783,8 @@ function referencesController() {
         mapEx.setBounds(mapEx.geoObjects.getBounds());
         let currentZoom = mapEx.getZoom() > 11 ? 11 : mapEx.getZoom() - 1;
 
-        if(isFirst) {
-            let cZoom = 3
+        /*if(isFirst) {
+            /*let cZoom = 3
             let ww = window.innerWidth
 
             if(ww < 450) {
@@ -782,7 +792,13 @@ function referencesController() {
             }else if(ww < 1100) {
                 cZoom = 2
             }
+            mapEx.setZoom(cZoom);
+            mapEx.setBounds(mapEx.geoObjects.getBounds());
         } else {
+            mapEx.setZoom(currentZoom);
+        }*/
+
+        if(!isFirst) {
             mapEx.setZoom(currentZoom);
         }
 

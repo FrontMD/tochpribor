@@ -80,7 +80,7 @@ function homeIntro() {
             autoplay: false,
             path: `${window.distPath}public/renders/render-` + index + '/render.json'
         });
-        animItem.setSpeed(0.5)
+        animItem.setSpeed(0.7)
 
         renders.push(animItem)
     })
@@ -132,7 +132,7 @@ function homeIntro() {
                         }
     
                         if(parseInt(item.currentFrame) === endProgress + 1) {
-                            item.setSpeed(0.35)
+                            item.setSpeed(0.49)
                         }
                     } else {
                         currentOverlay.style.width = Math.ceil(currentRealFrame / totalFrames * 100) + '%';
@@ -240,7 +240,7 @@ function homeIntro() {
 
         // если первый слайд, то возвращаем прогрессбар и нормальную скорость анимации
         if(currentSlideIndex == 0) {
-            renders[0].setSpeed(0.5)
+            renders[0].setSpeed(0.7)
             progressBarToggle(true)
         } else {
             // если не первый то убираем
