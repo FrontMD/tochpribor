@@ -94,6 +94,15 @@ function cardsSlidersInit() {
             const sliderNext = slider4Cards.querySelector('[data-js="sliderNext"]')
             const parallax = slider4Cards.hasAttribute('data-parallax')
             const loopVal = !parallax
+
+            const isHomeCatalog = slider4Cards.closest('.home-catalog') ? true : false
+            let autoplay = false
+
+            if(isHomeCatalog) {
+                autoplay = {
+                     delay: 2000
+                }
+            }
         
             const slider4CardsEx = new Swiper(slider4Cards, {
                 slidesPerView: 1.1,
@@ -102,6 +111,7 @@ function cardsSlidersInit() {
                 spaceBetween: 8,
                 parallax: parallax,
                 loop: loopVal,
+                autoplay: autoplay,
                 navigation: {
                     nextEl: sliderNext,
                     prevEl: sliderPrev,

@@ -303,7 +303,7 @@ function fancyboxInit() {
         },
 
         on: {
-            "Carousel.change": (fancybox, event) => {
+            /*"Carousel.change": (fancybox, event) => {
                 let currentSlide = fancybox.getSlide()
                 let prevSlide = event.slides[event.prevPage]
 
@@ -355,8 +355,8 @@ function fancyboxInit() {
                     }
                 }
 
-            },
-            "Carousel.ready": (fancybox, event) => {
+            },*/
+            "Carousel.ready Carousel.change": (fancybox, event) => {
                 let currentSlide = fancybox.getSlide()
 
                 if(currentSlide.type == 'html5video') {

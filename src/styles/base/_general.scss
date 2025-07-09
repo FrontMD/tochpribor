@@ -1483,8 +1483,9 @@ html.hystmodal__opened {
 
 			&__img {
 				border-radius: 2px;
-
+				object-fit: contain;
 			}
+
 		}
 
 		.f-thumbs__slide.is-nav-selected {
