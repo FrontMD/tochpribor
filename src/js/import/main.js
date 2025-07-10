@@ -285,7 +285,7 @@ function fancyboxInit() {
                 nextTpl: `<svg><use xlink:href=${window.distPath}img/sprites/sprite.svg#arrow_classic></use></svg>`,
               },
               Video: {
-                  loop: true,
+                  autoplay: false,
               },
         },
         Thumbs: {
@@ -358,6 +358,8 @@ function fancyboxInit() {
             },*/
             "Carousel.ready Carousel.change": (fancybox, event) => {
                 let currentSlide = fancybox.getSlide()
+
+                console.log(event)
 
                 if(currentSlide.type == 'html5video') {
                     let videoEl = currentSlide.el.querySelector('video')

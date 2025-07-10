@@ -6,7 +6,7 @@ function factoryModelController() {
     // на экранах меньше 1024 подстраиваем под размер первой секции
     const introSection = document.querySelector('[data-js="factoryIntro"]')
     if(introSection) {
-        factoryModel.style.height = introSection.offsetHeight + 'px'
+        //factoryModel.style.height = introSection.offsetHeight + 'px'
     }
 
 

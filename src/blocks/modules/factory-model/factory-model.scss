@@ -25,6 +25,17 @@
         top: 61px;
     }
 
+    @include max(tablet) {
+        max-height: none;
+        height: calc(60vw + 300px);
+        min-height: auto;
+        min-height: auto;
+    }
+
+    @include max(mobile) {
+        height: calc(60vw + 440px);
+    }
+
     &.active {
         z-index: 5;
         opacity: 1;
@@ -165,6 +176,10 @@
         top: 0;
         width: 100%;
         height: 100%;
+
+        @include max(tablet) {
+            height: 60vw;
+        }
 
         img {
             width: 100%;
@@ -318,12 +333,16 @@
 
         @include max(tablet) {
             max-width: 100%;
-            height: calc(100dvh - 60vw - 61px);
+            height: 300px;
             min-height: auto;
             overflow: hidden;
             left: 0;
             bottom: auto;
             top: 100%;
+        }
+
+        @include max(mobile) {
+            height: 440px;
         }
     }
 }
@@ -442,7 +461,7 @@
 
     &__text {
         @include max(tablet) {
-            max-height: calc(100% - 180px);
+            max-height: calc(100% - 105px);
             overflow: hidden;
         }
 
