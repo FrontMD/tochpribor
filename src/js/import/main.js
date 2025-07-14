@@ -366,7 +366,14 @@ function fancyboxInit() {
                         videoEl.setAttribute('loop', '')
                     }
                 }
-            }
+            },
+            close: () => {
+                const articleMediaSlider = document.querySelector('.article-layout__body [data-js="mediaSlider"]')
+
+                if(articleMediaSlider) {
+                    mediaSliderInit()
+                }
+            },
             
         },
 
