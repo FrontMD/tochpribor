@@ -371,7 +371,10 @@ function fancyboxInit() {
                 const articleMediaSlider = document.querySelector('.article-layout__body [data-js="mediaSlider"]')
 
                 if(articleMediaSlider) {
-                    mediaSliderInit()
+                    console.log(articleMediaSlider)
+                    setTimeout(() => {
+                        mediaSliderInit()
+                    }, 100)
                 }
             },
             
