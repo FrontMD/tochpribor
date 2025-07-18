@@ -41,7 +41,7 @@ block content
                         classes: 'section-header__title',
                         tag: 'h2',
                         size: '53',
-                        text: 'Каталог оборудования',
+                        text: 'Популярные товары',
                         sup: ''
                     })
                     +btn({
@@ -211,6 +211,99 @@ block content
                                 ''
                             ],
                         })
+
+        section.section.section--full.home-catalog
+            .section__container
+                .section-header
+                    +title({
+                        classes: 'section-header__title',
+                        tag: 'h2',
+                        size: '53',
+                        text: 'Популярные категории',
+                        sup: ''
+                    })
+                    +btn({
+                        classes: 'section-header__btn',
+                        name: 'Перейти в каталог',
+                        cMode: 'transparent-red',
+                        icon: 'arrow_enter',
+                        size: '272'
+                    })(target="_blank")
+
+                +cards-slider({
+                    title: '',
+                    slidesCount: '4'
+                })
+                    .swiper-slide
+                        +catalog-card-s({
+                            title: 'Универсальные испытательные <br>машины (разрывные машины)',
+                            image: 'img/catalog/category_1.webp',
+                            tags: [],
+                            prices: [],
+                            mds: '5 моделей'
+                        })
+                    .swiper-slide
+                        +catalog-card-s({
+                            title: 'Аксессуары для испытательных машин',
+                            image: 'img/catalog/category_2.webp',
+                            tags: [ ],
+                            prices: [],
+                            mds: '3 модели'
+                        })
+
+                    .swiper-slide
+                        +catalog-card-s({
+                            title: 'Копры маятниковые и&nbsp;вертикальные',
+                            image: 'img/catalog/category_3.webp',
+                            tags: [],
+                            prices: [],
+                            mds: '3 модели'
+                        })
+
+                    .swiper-slide
+                        +catalog-card-s({
+                            title: 'Приборы для измерения твердости (твердомеры)',
+                            image: 'img/catalog/category_4.webp',
+                            tags: [],
+                            prices: [],
+                            mds: '3 модели'
+                        })
+
+                    .swiper-slide
+                        +catalog-card-s({
+                            title: 'Меры твердости эталонные',
+                            image: 'img/catalog/category_5.webp',
+                            tags: [],
+                            prices: [],
+                            mds: '16 моделей'
+                        })
+
+                    .swiper-slide
+                        +catalog-card-s({
+                            title: 'Динамометры',
+                            image: 'img/catalog/category_6.webp',
+                            tags: [],
+                            prices: [],
+                            mds: '3 модели'
+                        })
+
+                    .swiper-slide
+                        +catalog-card-s({
+                            title: 'Оборудование для пробоподготовки (металлография и т.д.)',
+                            image: 'img/catalog/category_7.webp',
+                            tags: [],
+                            prices: [],
+                            mds: '5 моделей'
+                        })
+
+                    .swiper-slide
+                        +catalog-card-s({
+                            title: 'Оборудование для технологических испытаний',
+                            image: 'img/catalog/category_8.webp',
+                            tags: [],
+                            prices: [],
+                            mds: '5 моделей'
+                        })                        
 
         +h-clients({
             title: 'К нам обращаются госкорпорации и крупнейшие компании'
