@@ -44,7 +44,6 @@
     }
 
     &__text {
-        margin-top: 32px;
         max-width: 400px;
         color: $c-text-dark;
 
@@ -52,6 +51,10 @@
             max-width: 360px;
         }
     }
+
+    &__title + &__text {
+        margin-top: 32px;
+    } 
 
     &__btns {
         margin-top: 15.3vw;
