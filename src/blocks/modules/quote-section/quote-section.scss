@@ -77,9 +77,16 @@
         position: relative;
         margin-top: 130px;
         max-width: 860px;
+        padding-right: 40px;
+
+        @include max(laptop) {
+            padding-right: 50px;
+        }
 
         @include max(tablet) {
             margin-top: 120px;
+            padding-right: 0;
+            margin-bottom: 120px;
         }
 
         &::before {
@@ -95,6 +102,27 @@
             @include max(tablet) {
                 left: 0;
                 top: -80px;
+            }
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            right: -35px;
+            bottom: -10px;
+            width: 70px;
+            height: 70px;
+            background-image: url('../img/quote.svg');
+            background-size: 100% 100%;
+            transform: rotate(180deg);
+
+            @include max(laptop) {
+                right: -20px;
+            }
+
+            @include max(tablet) {
+                right: 0;
+                bottom: -80px;
             }
         }
     }
