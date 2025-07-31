@@ -7,8 +7,11 @@
 @@include("../../blocks/components/spoiler/spoiler.js")
 @@include("../../blocks/components/form-filter/form-filter.js")
 @@include("../../blocks/components/copy-btn/copy-btn.js")
+@@include("../../blocks/components/cookie/cookie.js")
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Cookie
+    cookieInit()
     // управляет кнопками в полях форм
     selects();
     // инициализирует селекты

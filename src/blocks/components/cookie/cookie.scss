@@ -1,0 +1,77 @@
+.cookie {
+    display: none;
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    width: calc(100% - 500px);
+    max-width: 840px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    background-color: $c-white;
+    border-radius: 4px;
+    padding: 12px 24px;
+    z-index: 99;
+    box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.5);
+
+    @include max(laptop) {
+        padding: 12px;
+        bottom: 20px;
+        left: 20px;
+        gap: 16px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    @include max(mobile) {
+        padding: 10px;
+        bottom: 10px;
+        left: 10px;
+        gap: 16px;
+        flex-direction: column;
+        align-items: flex-start;
+        width: calc(100% - 150px);
+    }
+
+    &__text,
+    &__text p,
+    &__text a {
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 1.2em;
+
+        @include max(laptop) {
+            font-size: 14px;
+        }
+
+        @include max(tablet) {
+            font-size: 12px;
+        }
+
+        @include max(mobile) {
+            font-size: 12px;
+        }
+
+        @include max(xs) {
+            font-size: 12px;
+        }
+    }
+
+    .cookie__text a {
+        display: inline;
+        color: $c-accent;
+        transition: color $tr-time;
+    }
+
+    &__btn {
+        min-width: 170px;
+
+        @include max(mobile) {
+            min-width: 100%;
+        }
+    }
+
+    &.active {
+        display: flex;
+    }
+}
