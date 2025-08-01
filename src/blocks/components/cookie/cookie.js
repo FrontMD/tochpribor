@@ -3,8 +3,6 @@ function cookieInit() {
 
     if(!cookieMessage) return
 
-    console.log(cookieMessage)
-
     const cookieBtn = cookieMessage.querySelector('[data-js="cookieBtn"]');
     const cookieName = 'cookie_policy'
 

@@ -474,6 +474,34 @@ function textTableScrollInit() {
     
     tables.forEach(table => {
         if(table.parentElement.closest('table') === null) {
+
+            // выделяем цветом модель
+            const activeModel = document.querySelector('[data-js="productModelsList"] .active[data-js="productModelsItem"]')
+            const charsList = table.querySelectorAll('th[data-model]')
+            let activeChar = false
+
+            if(activeModel && charsList.length > 0) {
+                const activeModelName = activeModel.dataset.model
+                let activeCharIndex = false 
+
+                activeChar = [... charsList].find((item, index) => {
+                    activeCharIndex = index
+                    return item.dataset.model == activeModelName
+                })
+
+                if(activeChar) {
+                    activeChar.classList.add('active')
+
+                    table.querySelectorAll('tbody tr').forEach(tr => {
+                        tr.querySelectorAll('td').forEach((td, index) => {
+                            if(index == activeCharIndex) {
+                                td.classList.add('active')
+                            }
+                        })
+                    })
+                }
+            }
+
             const wrapper = document.createElement('div');
             wrapper.classList.add('text-scroll-h')
 
@@ -523,6 +551,31 @@ function textTableScrollInit() {
                 
                 if(isScrollable) {
                     parent.style.paddingTop = "34px";
+                    const stepWidth = table.querySelector('tr td').offsetWidth
+
+                    // ищем активную характеристику и скроллим к ней
+                    const titlesWidth = table.querySelector('tr th').offsetWidth
+                    const visibleCharsCount = Math.round((wrapper.offsetWidth - titlesWidth) / stepWidth)
+                    const activeCharOffset = Math.abs(Math.round((wrapper.getBoundingClientRect().left + titlesWidth - activeChar.getBoundingClientRect().left) / stepWidth))
+                    const targetStepsCount = activeCharOffset - Math.floor(visibleCharsCount / 2)
+
+                    console.log(visibleCharsCount)
+                    console.log(activeCharOffset)
+                    console.log(targetStepsCount)
+
+                    if(targetStepsCount > 0) {
+                        let current = wrapper.scrollLeft + stepWidth * targetStepsCount
+                        wrapper.scrollTo({
+                            left: current,
+                            top: 0,
+                            behavior: "smooth"
+                        })
+                    }
+                    
+
+
+
+
                     let currentPos =  wrapper.scrollLeft;
                     
                     if(currentPos < maxScroll) {
@@ -537,9 +590,10 @@ function textTableScrollInit() {
                         prev.classList.remove("active")
                     }
                        
-                    const stepWidth = table.querySelector('tr td').offsetWidth
 
-                    prev.addEventListener('click', function() {
+                    prev.addEventListener('click', function(event) {
+                        event.preventDefault()
+                        event.stopPropagation()
                         let current = wrapper.scrollLeft - stepWidth
                         wrapper.scrollTo({
                             left: current,
@@ -548,7 +602,9 @@ function textTableScrollInit() {
                         })
                     })
 
-                    next.addEventListener('click', function() {
+                    next.addEventListener('click', function(event) {
+                        event.preventDefault()
+                        event.stopPropagation()
                         let current = wrapper.scrollLeft + stepWidth
                         wrapper.scrollTo({
                             left: current,
@@ -572,6 +628,21 @@ function textTableScrollInit() {
                             prev.classList.remove("active")
                         }
                     })
+
+                    // запрет выделения текста кликом
+                    prev.addEventListener('mousedown', (event) => {  
+                        if(event.detail > 1) {  
+                            event.preventDefault();
+                            event.stopPropagation(); 
+                        }  
+                    });
+
+                    next.addEventListener('mousedown', (event) => {  
+                        if(event.detail > 1) {  
+                            event.preventDefault();
+                            event.stopPropagation(); 
+                        }  
+                    });
         
                 }
                 

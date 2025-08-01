@@ -94,6 +94,11 @@
                 font-weight: 400;
             }
 
+            th.active,
+            td.active {
+                background-color: $c-pink-hover;
+            }
+
             tbody th,
             tbody td {
                 border-width: 0 0 1px 0;
