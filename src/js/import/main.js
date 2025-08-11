@@ -571,10 +571,6 @@ function textTableScrollInit() {
                             behavior: "smooth"
                         })
                     }
-                    
-
-
-
 
                     let currentPos =  wrapper.scrollLeft;
                     

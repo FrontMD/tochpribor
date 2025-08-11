@@ -6,7 +6,8 @@
         title: '',
         tag: '',
         text: '',
-        cMode: ''
+        cMode: '',
+        imagesMiddle: []
     }
 
 mixin img-intro(props= defaultImgIntroProps)
@@ -18,7 +19,8 @@ mixin img-intro(props= defaultImgIntroProps)
             title: props.title ? props.title : defaultImgIntroProps.title,
             tag: props.tag ? props.tag : defaultImgIntroProps.tag,
             text: props.text ? props.text : defaultImgIntroProps.text,
-            cMode: props.cMode ? props.cMode : defaultImgIntroProps.cMode
+            cMode: props.cMode ? props.cMode : defaultImgIntroProps.cMode,
+            imagesMiddle: props.imagesMiddle ? props.imagesMiddle : defaultImgIntroProps.imagesMiddle
         }
 
         let cModeClass = checkProps.cMode ? ` img-intro--${checkProps.cMode}` : ''
@@ -38,6 +40,14 @@ mixin img-intro(props= defaultImgIntroProps)
                 })
                 -if(checkProps.tag.length > 0)
                     .section__tag.img-intro__tag!= checkProps.tag
+
+            -if(checkProps.imagesMiddle.length > 0)
+                .img-intro__middle
+                    - let imagesCounter = 0
+                    - while(imagesCounter < checkProps.imagesMiddle.length)
+                        img(src=checkProps.imagesMiddle[imagesCounter], alt="")
+
+                        -imagesCounter++
 
             .img-intro__bottom
                 -if(checkProps.text.length > 0)
