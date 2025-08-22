@@ -7,26 +7,8 @@ block variables
 block content
     .page-layout(data-js="pageLayout")
 
-        //-+about-intro({
-            img: 'img/factory/factory_intro_bg.png',
-            breadcrumbs: {
-                cMode: 'dark',
-                items: [
-                    {
-                        name: 'Главная',
-                        link: 'javascript:void(0);'
-                    },
-                    {
-                        name: 'О компании',
-                        link: 'javascript:void(0);'
-                    }
-                ]
-            },
-            title: 'Завод с многолетней историей, основан в 1950г.',
-            text: 'Мы – единственный в нашей стране завод полного цикла, производящий большое количество испытательной техники',
-            })
-
         +img-intro({
+            classes: 'about-intro',
             img: 'img/about/about_intro.webp',
             breadcrumbs: {
                 cMode: 'light',

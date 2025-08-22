@@ -1,3 +1,20 @@
+.about-intro {
+    max-height: none;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+
+    @include max(laptop) {
+        max-height: none;
+        height: auto;
+    }
+
+    .img-intro__container {
+        width: 100%;
+        flex-grow: 1;
+    }
+}
+
 .about-info {
     &__container {
         display: flex;
