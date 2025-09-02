@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // инициализирует селекты
     fieldsController();
     // маски полей и валидация
-    validation();
+    //validation();
     // видео
     videos();
     // спойлеры
@@ -31,3 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // поле файл
     fileFieldInit();
 })
+
+window.onload = function() { 
+    validation();
+};
