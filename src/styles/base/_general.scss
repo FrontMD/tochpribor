@@ -1713,6 +1713,21 @@ html.hystmodal__opened {
 	object-fit: contain !important;
 }
 
+.comment-success-message {
+	padding: 6px;
+	border-radius: 4px;
+	color: $c-white;
+	background: #ca0001;
+	width: fit-content;
+	font-size: 18px;
+	margin: 16px 0;
+
+	@include max(mobile) {
+		font-size: 14px;
+		margin: 12px 0;
+	}
+}
+
 /* стили для печати */
 @media print {
 
