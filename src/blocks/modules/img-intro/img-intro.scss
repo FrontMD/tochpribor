@@ -209,6 +209,30 @@
         align-items: stretch;
         justify-content: flex-end;
         gap: 16px;
+
+        @include max(tablet) {
+            flex-wrap: wrap;
+            min-width: 416px;
+
+            .btn.btn--middle {
+                max-width: calc((100% - 16px) / 2);
+            }
+        }
+
+        @include max(mobile) {
+            justify-content: flex-start;
+            min-width: 340px;
+            width: 340px;
+        }
+
+        @include max(xs) {
+            width: 100%;
+
+            .btn.btn--middle {
+                max-width: calc((100% - 16px) / 2);
+                flex: 1 1 100%;
+            }
+        }
     }
 
     /*.breadcrumbs {

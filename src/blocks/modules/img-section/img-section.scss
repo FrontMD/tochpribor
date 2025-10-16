@@ -52,9 +52,9 @@
         }
     }
 
-    &__title + &__text {
+    &__title+&__text {
         margin-top: 32px;
-    } 
+    }
 
     &__btns {
         margin-top: 15.3vw;
@@ -65,10 +65,22 @@
 
         @include max(mobile) {
             margin-top: 40vw;
+            flex-wrap: wrap;
+        }
+
+        @include max(xs) {
+            .btn.btn--middle {
+                flex: 1 1 100%;
+                max-width: calc((100% - 16px) / 2);
+            }
         }
 
         &--right {
             justify-content: flex-end;
+
+            @include max(xs) {
+                justify-content: flex-start;
+            }
         }
     }
 }

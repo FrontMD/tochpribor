@@ -43,6 +43,9 @@ mixin img-section(props= defaultImgSectionProps)
                 - let btnsCount = 0
 
                 - while(btnsCount < btnsList.length)
-                    +btn(btnsList[btnsCount])(target="_blank")
+                    - if(btnsList[btnsCount].name === "Фильм о заводе")
+                        +btn(btnsList[btnsCount])(data-fancybox)
+                    - else
+                        +btn(btnsList[btnsCount])(target="_blank")
 
                     - btnsCount++
