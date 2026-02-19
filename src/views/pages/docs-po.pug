@@ -1,0 +1,23 @@
+extends ../layouts/default
+include ../helpers/mixins
+
+block variables
+	- const title = "ДОКУМЕНТАЦИЯ НА ПО"
+
+block content
+	.page-layout.page-layout--white
+		section.section.section--full.docs-po
+			.section__container.docs-po__container
+				+title({
+					classes: 'docs-po__title',
+					tag: 'h1',
+					size: '67',
+					text: 'Такой страницы не <br>существует'
+				})
+				.docs-po__content
+					+btn({
+						classes: 'docs-po__btn',
+						size: "big",
+						name: 'ДОКУМЕНТАЦИЯ НА ПО',
+						icon: '',
+					})

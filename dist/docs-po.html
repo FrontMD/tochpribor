@@ -1,0 +1,1597 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>ДОКУМЕНТАЦИЯ НА ПО</title>
+    <meta name="theme-color" content="#fff">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="shortcut icon" href="img/favicons/favicon.ico" type="image/x-icon">
+    <link rel="icon" sizes="16x16" href="img/favicons/favicon-16x16.png" type="image/png">
+    <link rel="icon" sizes="32x32" href="img/favicons/favicon-32x32.png" type="image/png">
+    <link rel="apple-touch-icon-precomposed" href="img/favicons/apple-touch-icon-precomposed.png">
+    <link rel="apple-touch-icon" href="img/favicons/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="img/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="img/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="img/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="img/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="img/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon-180x180.png">
+    <link rel="apple-touch-icon" sizes="1024x1024" href="img/favicons/apple-touch-icon-1024x1024.png">
+    <link rel="stylesheet" href="styles/main.min.css">
+    <script src="js/preloadAnimImages.min.js"></script>
+    <!-- лучше добавлять только на те страницы где есть блок с картой-->
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=ec8353bc-e4c0-44ee-8f5b-822d005a189e&amp;lang=ru_RU"></script>
+    <!-- лучше добавлять только на те страницы где есть видео-->
+    <script src="https://vk.com/js/api/videoplayer.min.js"></script>
+  </head>
+  <body>
+    <div class="site-header__overlay" data-js="siteHeaderOverlay" data-role="headerSearchClose"></div>
+    <header class="site-header" data-js="siteHeader">
+      <div class="site-header__container">
+        <div class="site-header__logo"><a href="/" target="_blank"><img src="img/logo_full.svg" alt="логотип"></a></div>
+        <div class="site-header__burger site-header__block" data-js="mainBurgerOpen">
+          <svg>
+            <use xlink:href="img/sprites/sprite.svg#burger"></use>
+          </svg>
+        </div>
+        <div class="site-header__location site-header__block user-city" data-js="userCity" data-default="Санкт-Петербург">
+          <div class="user-city__header" data-js="userCityHeader">
+            <svg>
+              <use xlink:href="img/sprites/sprite.svg#location"></use>
+            </svg><span data-js="userCityText">Город</span>
+          </div>
+          <div class="user-city__content" data-js="userCityContent">
+            <div class="user-city__question"><span data-js="userCityText">Санкт-Петербург</span> ваш город?</div>
+            <div class="user-city__btns">
+                  <button class="btn  btn--red btn--108" type="button" data-js="cityBtnYes"><span class="btn__text">Да</span>
+                  </button><a class="btn  btn--grey btn--108" href="javascript:void(0)" data-js="cityBtnNo"><span class="btn__text">Выбрать другой</span></a>
+            </div>
+          </div>
+        </div>
+        <nav class="site-header__menu site-header__block">
+          <ul class="nav-menu">
+            <li class="nav-menu__item"><a class="nav-menu__link" href="javascript:void(0)" target="_blank">Каталог продукции </a></li>
+            <li class="nav-menu__item"><a class="nav-menu__link" href="javascript:void(0)" target="_blank">Производство</a></li>
+            <li class="nav-menu__item"><a class="nav-menu__link" href="javascript:void(0)" target="_blank">
+                 Услуги
+                <svg>
+                  <use xlink:href="img/sprites/sprite.svg#arrow_angle"></use>
+                </svg></a>
+              <div class="nav-menu__sublist"><a class="nav-menu__link" href="javascript:void(0)" target="_blank">Металлообработка</a><a class="nav-menu__link" href="javascript:void(0)" target="_blank">Поверка инструментов измерений</a><a class="nav-menu__link" href="javascript:void(0)" target="_blank">Пуско-наладка</a><a class="nav-menu__link" href="javascript:void(0)" target="_blank">Наладка средств измерений</a><a class="nav-menu__link" href="javascript:void(0)" target="_blank">Доставка</a></div>
+            </li>
+          </ul>
+        </nav>
+        <div class="site-header__contacts">
+          <ul class="nav-menu">
+            <li class="nav-menu__item"><a class="nav-menu__link" href="mailto:info@tochpribor-nw.ru" target="_blank">
+                 info@tochpribor-nw.ru
+                <svg>
+                  <use xlink:href="img/sprites/sprite.svg#arrow_angle"></use>
+                </svg></a>
+              <div class="nav-menu__sublist"><a class="nav-menu__link" href="mailto:info@tochpribor-nw.ru" target="_blank">info@tochpribor-nw.ru</a></div>
+            </li>
+            <li class="nav-menu__item"><a class="nav-menu__link" href="tel:+78126123003">
+                 +7 (812) 612-30-03
+                <svg>
+                  <use xlink:href="img/sprites/sprite.svg#arrow_angle"></use>
+                </svg></a>
+              <div class="nav-menu__sublist"><a class="nav-menu__link" href="tel:+78126123003" target="_blank">+7 (812) 612-30-03</a></div>
+            </li>
+          </ul>
+        </div>
+        <div class="site-header__socials socials"><a class="socials__item" href="https://telegram.org/" target="_blank">
+            <svg>
+              <use xlink:href="img/sprites/sprite.svg#tg"></use>
+            </svg></a><a class="socials__item" href="https://vk.com/" target="_blank">
+            <svg>
+              <use xlink:href="img/sprites/sprite.svg#vk"></use>
+            </svg></a></div>
+        <div class="site-header__search search">
+          <div class="search__open" data-js="headerSearchOpen">
+            <svg>
+              <use xlink:href="img/sprites/sprite.svg#search"></use>
+            </svg>
+          </div>
+          <div class="search__content" data-js="headerSearchContent">
+                <form class="search-form  search-form--header" data-js="formFilter">
+                      <div class="field search-form__input field--search field--reset  " data-js="formField" data-has-prompt>
+                        <button class="field__search" type="submit">
+                          <svg> 
+                            <use xlink:href="img/sprites/sprite.svg#search"></use>
+                          </svg>
+                        </button>
+                        <label>
+                          <input class="field__input" type="text" placeholder="Поиск" data-js="searchFormInput"><span class="field__error" data-js="fieldError"></span>
+                        </label><span class="field__reset" data-js="fieldResetBtn">
+                          <svg> 
+                            <use xlink:href="img/sprites/sprite.svg#close"></use>
+                          </svg></span>
+                        <div class="field__prompt field-prompt" data-js="fieldPrompt">
+                          <div class="field-prompt__items scrollbar scrollbar--small">
+                            <div class="field-prompt__item"><a class="field-prompt__link" href="javascript:void(0)"></a>
+                              <div class="field-prompt__icon">
+                                <svg> 
+                                  <use xlink:href="img/sprites/sprite.svg#search"></use>
+                                </svg>
+                              </div>
+                              <div class="field-prompt__content">
+                                <div class="field-prompt__title">Универсальная <span>испыт</span>ательная машина ТРМ-О 0,1 А1 Tochline</div>
+                                <div class="field-prompt__breadcrumbs">Каталог / Испытательные машины</div>
+                              </div>
+                              <div class="field-prompt__icon">
+                                <svg> 
+                                  <use xlink:href="img/sprites/sprite.svg#arrow_link"></use>
+                                </svg>
+                              </div>
+                            </div>
+                            <div class="field-prompt__item"><a class="field-prompt__link" href="javascript:void(0)"></a>
+                              <div class="field-prompt__icon">
+                                <svg> 
+                                  <use xlink:href="img/sprites/sprite.svg#search"></use>
+                                </svg>
+                              </div>
+                              <div class="field-prompt__content">
+                                <div class="field-prompt__title">Универсальная <span>испыт</span>ательная машина ТРМ-О 0,1 А1 Tochline</div>
+                                <div class="field-prompt__breadcrumbs">Каталог / Испытательные машины</div>
+                              </div>
+                              <div class="field-prompt__icon">
+                                <svg> 
+                                  <use xlink:href="img/sprites/sprite.svg#arrow_link"></use>
+                                </svg>
+                              </div>
+                            </div>
+                            <div class="field-prompt__item"><a class="field-prompt__link" href="javascript:void(0)"></a>
+                              <div class="field-prompt__icon">
+                                <svg> 
+                                  <use xlink:href="img/sprites/sprite.svg#search"></use>
+                                </svg>
+                              </div>
+                              <div class="field-prompt__content">
+                                <div class="field-prompt__title">Универсальная <span>испыт</span>ательная машина ТРМ-О 0,1 А1 Tochline</div>
+                                <div class="field-prompt__breadcrumbs">Каталог / Испытательные машины</div>
+                              </div>
+                              <div class="field-prompt__icon">
+                                <svg> 
+                                  <use xlink:href="img/sprites/sprite.svg#arrow_link"></use>
+                                </svg>
+                              </div>
+                            </div>
+                            <div class="field-prompt__item"><a class="field-prompt__link" href="javascript:void(0)"></a>
+                              <div class="field-prompt__icon">
+                                <svg> 
+                                  <use xlink:href="img/sprites/sprite.svg#search"></use>
+                                </svg>
+                              </div>
+                              <div class="field-prompt__content">
+                                <div class="field-prompt__title">Универсальная <span>испыт</span>ательная машина ТРМ-О 0,1 А1 Tochline</div>
+                                <div class="field-prompt__breadcrumbs">Каталог / Испытательные машины</div>
+                              </div>
+                              <div class="field-prompt__icon">
+                                <svg> 
+                                  <use xlink:href="img/sprites/sprite.svg#arrow_link"></use>
+                                </svg>
+                              </div>
+                            </div>
+                            <div class="field-prompt__item"><a class="field-prompt__link" href="javascript:void(0)"></a>
+                              <div class="field-prompt__icon">
+                                <svg> 
+                                  <use xlink:href="img/sprites/sprite.svg#search"></use>
+                                </svg>
+                              </div>
+                              <div class="field-prompt__content">
+                                <div class="field-prompt__title">Универсальная <span>испыт</span>ательная машина ТРМ-О 0,1 А1 Tochline</div>
+                                <div class="field-prompt__breadcrumbs">Каталог / Испытательные машины</div>
+                              </div>
+                              <div class="field-prompt__icon">
+                                <svg> 
+                                  <use xlink:href="img/sprites/sprite.svg#arrow_link"></use>
+                                </svg>
+                              </div>
+                            </div>
+                            <div class="field-prompt__item"><a class="field-prompt__link" href="javascript:void(0)"></a>
+                              <div class="field-prompt__icon">
+                                <svg> 
+                                  <use xlink:href="img/sprites/sprite.svg#search"></use>
+                                </svg>
+                              </div>
+                              <div class="field-prompt__content">
+                                <div class="field-prompt__title">Универсальная <span>испыт</span>ательная машина ТРМ-О 0,1 А1 Tochline</div>
+                                <div class="field-prompt__breadcrumbs">Каталог / Испытательные машины</div>
+                              </div>
+                              <div class="field-prompt__icon">
+                                <svg> 
+                                  <use xlink:href="img/sprites/sprite.svg#arrow_link"></use>
+                                </svg>
+                              </div>
+                            </div>
+                            <div class="field-prompt__item"><a class="field-prompt__link" href="javascript:void(0)"></a>
+                              <div class="field-prompt__icon">
+                                <svg> 
+                                  <use xlink:href="img/sprites/sprite.svg#search"></use>
+                                </svg>
+                              </div>
+                              <div class="field-prompt__content">
+                                <div class="field-prompt__title">Универсальная <span>испыт</span>ательная машина ТРМ-О 0,1 А1 Tochline</div>
+                                <div class="field-prompt__breadcrumbs">Новости / Установка новой испытательной машины на производство</div>
+                              </div>
+                              <div class="field-prompt__icon">
+                                <svg> 
+                                  <use xlink:href="img/sprites/sprite.svg#arrow_link"></use>
+                                </svg>
+                              </div>
+                            </div>
+                            <div class="field-prompt__item"><a class="field-prompt__link" href="javascript:void(0)"></a>
+                              <div class="field-prompt__icon">
+                                <svg> 
+                                  <use xlink:href="img/sprites/sprite.svg#search"></use>
+                                </svg>
+                              </div>
+                              <div class="field-prompt__content">
+                                <div class="field-prompt__title">Универсальная <span>испыт</span>ательная машина ТРМ-О 0,1 А1 Tochline</div>
+                                <div class="field-prompt__breadcrumbs">Новости / Установка новой испытательной машины на производство</div>
+                              </div>
+                              <div class="field-prompt__icon">
+                                <svg> 
+                                  <use xlink:href="img/sprites/sprite.svg#arrow_link"></use>
+                                </svg>
+                              </div>
+                            </div>
+                            <div class="field-prompt__item"><a class="field-prompt__link" href="javascript:void(0)"></a>
+                              <div class="field-prompt__icon">
+                                <svg> 
+                                  <use xlink:href="img/sprites/sprite.svg#search"></use>
+                                </svg>
+                              </div>
+                              <div class="field-prompt__content">
+                                <div class="field-prompt__title">Универсальная <span>испыт</span>ательная машина ТРМ-О 0,1 А1 Tochline</div>
+                                <div class="field-prompt__breadcrumbs">Новости / Установка новой испытательной машины на производство</div>
+                              </div>
+                              <div class="field-prompt__icon">
+                                <svg> 
+                                  <use xlink:href="img/sprites/sprite.svg#arrow_link"></use>
+                                </svg>
+                              </div>
+                            </div>
+                          </div><a class="btn field-prompt__all btn--grey btn--full" href="javascript:void(0)"><span class="btn__text">Все результаты <span class="btn__note">(124)</span></span></a>
+                        </div>
+                      </div>
+                  <div class="search-form__select filter-select" data-js="filterSelect">
+                    <div class="filter-select__header" data-js="filterSelectHeader">
+                      <select data-js="filterSelectInput">
+                        <option value="site" selected>По сайту</option>
+                        <option value="catalog">По каталогу</option>
+                      </select>
+                      <div class="filter-select__fake" data-js="filterSelectFake">По сайту</div>
+                      <svg>
+                        <use xlink:href="img/sprites/sprite.svg#arrow_angle"></use>
+                      </svg>
+                    </div>
+                    <div class="filter-select__content">
+                      <div class="filter-select__option active" data-js="filterSelectOption" data-value="site" data-name="По сайту">По сайту</div>
+                      <div class="filter-select__option" data-js="filterSelectOption" data-value="catalog" data-name="По каталогу">По каталогу</div>
+                    </div>
+                  </div><a class="btn search-form__submit btn--red btn--full" href="javascript:void(0)" data-js="searchSubmit">
+                        <svg>
+                          <use xlink:href="img/sprites/sprite.svg#arrow_enter"></use>
+                        </svg><span class="btn__text">Поиск</span></a>
+                </form>
+          </div>
+        </div>
+        <div class="site-header__shop site-header__block shop"> <a class="shop__item" href="javascript:void(0)" target="_blank">
+            <svg>
+              <use xlink:href="img/sprites/sprite.svg#compare"></use>
+            </svg><span>5</span></a><a class="shop__item" href="javascript:void(0)" target="_blank">
+            <svg>
+              <use xlink:href="img/sprites/sprite.svg#basket"></use>
+            </svg><span>5</span></a></div><a class="btn site-header__callback btn--red btn--content" href="javascript:void(0)" data-modal="#callbackModal">
+              <svg>
+                <use xlink:href="img/sprites/sprite.svg#arrow_enter"></use>
+              </svg><span class="btn__text">Заказать звонок</span></a>
+      </div>
+    </header>
+    <main class="site-main">
+      <div class="page-layout page-layout--white">
+        <section class="section section--full docs-po">
+          <div class="section__container docs-po__container">
+                <div class="title docs-po__title title--67 title--dark">
+                  <h1>Такой страницы не <br>существует
+                  </h1>
+                </div>
+            <div class="docs-po__content"><a class="btn docs-po__btn btn--red btn--big" href="javascript:void(0)"><span class="btn__text">ДОКУМЕНТАЦИЯ НА ПО</span></a>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+    <footer class="site-footer" data-js="siteFooter">
+      <div class="site-footer__container">
+        <div class="site-footer__word" data-js="footerText">производство
+          <svg>
+            <use xlink:href="img/sprites/sprite.svg#arrow_classic"></use>
+          </svg>модернизация
+          <svg>
+            <use xlink:href="img/sprites/sprite.svg#arrow_classic"></use>
+          </svg>ремонт
+        </div>
+        <div class="site-footer__left" data-js="footerLeft"><a class="btn  btn--red btn--big" href="javascript:void(0)" data-modal="#requestModal">
+                <svg>
+                  <use xlink:href="img/sprites/sprite.svg#arrow_enter"></use>
+                </svg><span class="btn__text">Оставить заявку</span></a>
+          <div class="site-footer__docs"><a class="site-footer__doc" href="javascript:void()" target="_blank">Пользовательское соглашение</a><a class="site-footer__doc" href="javascript:void()" target="_blank">Политика обработки персональных данных и конфиденциальности</a></div>
+          <div class="site-footer__copyright"> <span>© 2010—2024 Точприбор</span>
+            <div class="site-footer__developer">Разработка сайта<a href="https://itspace.group/" target="_blank">
+                <svg>
+                  <use xlink:href="img/sprites/sprite.svg#its"></use>
+                </svg></a></div>
+          </div>
+        </div>
+        <div class="site-footer__menu" data-js="footerMenu">
+              <div class="big-menu scrollbar">
+                <div class="big-menu__section">
+                  <div class="big-menu__title">Каталог</div>
+                  <div class="big-menu__list" data-js="bigMenuList">
+                    <ul class="big-menu__items" data-js="bigMenuItems">
+                      <li class="big-menu__item" data-js="bigMenuItem"><a href="javascript:void(0)" target="_blank">Разрывные машины</a></li>
+                      <li class="big-menu__item" data-js="bigMenuItem"><a href="javascript:void(0)" target="_blank">Твердомеры</a></li>
+                      <li class="big-menu__item" data-js="bigMenuItem"><a href="javascript:void(0)" target="_blank">Меры твердости</a></li>
+                      <li class="big-menu__item" data-js="bigMenuItem"><a href="javascript:void(0)" target="_blank">Приборы для измерения цвета</a></li>
+                      <li class="big-menu__item" data-js="bigMenuItem"><a href="javascript:void(0)" target="_blank">Микроскопы						</a></li>
+                      <li class="big-menu__item" data-js="bigMenuItem"><a class="big-menu__link" href="javascript:void(0)" target="_blank">Динамометры</a></li>
+                      <li class="big-menu__item" data-js="bigMenuItem"><a class="big-menu__link" href="javascript:void(0)" target="_blank">Разрывные машины</a></li>
+                      <li class="big-menu__item" data-js="bigMenuItem"><a class="big-menu__link" href="javascript:void(0)" target="_blank">Твердомеры</a></li>
+                      <li class="big-menu__item" data-js="bigMenuItem"><a class="big-menu__link" href="javascript:void(0)" target="_blank">Меры твердости</a></li>
+                      <li class="big-menu__item" data-js="bigMenuItem"><a class="big-menu__link" href="javascript:void(0)" target="_blank">Приборы для измерения цвета</a></li>
+                      <li class="big-menu__item" data-js="bigMenuItem"><a class="big-menu__link" href="javascript:void(0)" target="_blank">Микроскопы</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="big-menu__section">
+                  <div class="big-menu__title">О компании</div>
+                  <div class="big-menu__list" data-js="bigMenuList">
+                    <ul class="big-menu__items" data-js="bigMenuItems">
+                      <li class="big-menu__item" data-js="bigMenuItem"><a href="javascript:void(0)" target="_blank">Производство</a></li>
+                      <li class="big-menu__item" data-js="bigMenuItem"><a href="javascript:void(0)" target="_blank">Услуги</a></li>
+                      <li class="big-menu__item" data-js="bigMenuItem"><a href="javascript:void(0)" target="_blank">Документы</a></li>
+                      <li class="big-menu__item" data-js="bigMenuItem"><a href="javascript:void(0)" target="_blank">Карьера в Точприбор</a></li>
+                      <li class="big-menu__item" data-js="bigMenuItem"><a href="javascript:void(0)" target="_blank">Наша команда</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="big-menu__section">
+                  <div class="big-menu__title">Еще</div>
+                  <div class="big-menu__list" data-js="bigMenuList">
+                    <ul class="big-menu__items" data-js="bigMenuItems">
+                      <li class="big-menu__item" data-js="bigMenuItem"><a href="javascript:void(0)" target="_blank">Контакты</a></li>
+                      <li class="big-menu__item" data-js="bigMenuItem"><a href="javascript:void(0)" target="_blank">Новости</a></li>
+                      <li class="big-menu__item" data-js="bigMenuItem"><a href="javascript:void(0)" target="_blank">Вопросы и ответы (FAQ)</a></li>
+                      <li class="big-menu__item" data-js="bigMenuItem"><a href="javascript:void(0)" target="_blank">Карта сайта</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="big-menu__section">
+                  <div class="big-menu__title">Связаться</div>
+                  <div class="big-menu__list" data-js="bigMenuList">
+                    <ul class="big-menu__items" data-js="bigMenuItems">
+                      <li class="big-menu__item" data-js="bigMenuItem"><a href="mailto:info@tochpribor.ru" target="_blank">info@tochpribor.ru</a></li>
+                      <li class="big-menu__item" data-js="bigMenuItem"><a href="tel:+74922521233" target="_blank">+7 (4922) 52-12-33</a></li>
+                      <li class="big-menu__item" data-js="bigMenuItem"><span>Головной офис: 190121, г. Санкт-Петербург, пер. Дровяной, д. 20, пом. 4-Н Вопросы и ответы (FAQ)</span></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="big-menu__footer">
+                  <div class="socials"><a class="socials__item" href="https://telegram.org/" target="_blank">
+                      <svg>
+                        <use xlink:href="img/sprites/sprite.svg#tg"></use>
+                      </svg></a><a class="socials__item" href="https://vk.com/" target="_blank">
+                      <svg>
+                        <use xlink:href="img/sprites/sprite.svg#vk"></use>
+                      </svg></a><a class="socials__item" href="https://vkvideo.ru/@tochpribor" target="_blank">
+                      <svg>
+                        <use xlink:href="img/sprites/sprite.svg#vk_video"></use>
+                      </svg></a></div>
+                  <div class="big-menu__copyright"> <span>© 2010—2024 Точприбор</span>
+                    <div class="big-menu__developer">
+                       Разработка сайта<a href="https://itspace.group/" target="_blank">
+                        <svg>
+                          <use xlink:href="img/sprites/sprite.svg#its"></use>
+                        </svg></a></div>
+                  </div>
+                </div>
+              </div>
+        </div>
+      </div>
+    </footer>
+        <div class="cookie" data-js="cookie">
+          <div class="cookie__text text-editor"> 
+            <p>
+              Мы используем файлы cookie для&nbsp;улучшения качества обслуживания.<br> Продолжая использовать сайт, вы&nbsp;соглашаетесь на&nbsp;обработку файлов cookie в&nbsp;соответствии с <a href="/privacy/">Политикой в отношении обработки персональных данных</a>.
+<br> Вы&nbsp;можете самостоятельно изменить настройки cookies в&nbsp;любой момент
+            </p>
+          </div><a class="btn cookie__btn btn--red btn--content" href="javascript:void(0)" data-js="cookieBtn"><span class="btn__text">Понятно</span></a>
+        </div>
+    <div class="main-burger" data-js="mainBurger">
+      <div class="main-burger__overlay" data-js="mainBurgerClose"></div>
+      <div class="main-burger__content">
+        <div class="main-burger__close" data-js="mainBurgerClose">
+          <svg> 
+            <use xlink:href="img/sprites/sprite.svg#close"></use>
+          </svg>
+        </div>
+        <div class="main-burger__menu scrollbar">
+          <div class="burger-menu">
+            <div class="burger-menu__section" data-js="bigMenuList">
+              <div class="burger-menu__title">Каталог</div>
+              <ul class="burger-menu__list" data-js="bigMenuItems">
+                <li class="burger-menu__item" data-js="bigMenuItem"><a class="burger-menu__link" href="javascript:void(0)" target="_blank">Универсальные испытательные машины (разрывные машины)</a></li>
+                <li class="burger-menu__item" data-js="bigMenuItem"><a class="burger-menu__link" href="javascript:void(0)" target="_blank">Аксессуары для испытательных машин</a></li>
+                <li class="burger-menu__item" data-js="bigMenuItem"><a class="burger-menu__link" href="javascript:void(0)" target="_blank">Копры маятниковые и вертикальные</a></li>
+                <li class="burger-menu__item" data-js="bigMenuItem"><a class="burger-menu__link" href="javascript:void(0)" target="_blank">Приборы для измерения твердости (твердомеры)</a></li>
+                <li class="burger-menu__item" data-js="bigMenuItem"><a class="burger-menu__link" href="javascript:void(0)" target="_blank">Меры твердости эталонные</a></li>
+                <li class="burger-menu__item" data-js="bigMenuItem"><a class="burger-menu__link" href="javascript:void(0)" target="_blank">Системы температурных  испытаний</a></li>
+                <li class="burger-menu__item" data-js="bigMenuItem"><a class="burger-menu__link" href="javascript:void(0)" target="_blank">Машины трения (для испытания на трение и износ)</a></li>
+                <li class="burger-menu__item" data-js="bigMenuItem"><a class="burger-menu__link" href="javascript:void(0)" target="_blank">Испытательные пресса</a></li>
+                <li class="burger-menu__item" data-js="bigMenuItem"><a class="burger-menu__link" href="javascript:void(0)" target="_blank">Экстензометры</a></li>
+                <li class="burger-menu__item" data-js="bigMenuItem"><a class="burger-menu__link" href="javascript:void(0)" target="_blank">Видеоизмерительные системы Girmax</a></li>
+                <li class="burger-menu__item" data-js="bigMenuItem"><a class="burger-menu__link" href="javascript:void(0)" target="_blank">Приборы  для измерения цвета</a></li>
+                <li class="burger-menu__item" data-js="bigMenuItem"><a class="burger-menu__link" href="javascript:void(0)" target="_blank">Микроскопы</a></li>
+                <li class="burger-menu__item" data-js="bigMenuItem"><a class="burger-menu__link" href="javascript:void(0)" target="_blank">Динамометры</a></li>
+                <li class="burger-menu__item" data-js="bigMenuItem"><a class="burger-menu__link" href="javascript:void(0)" target="_blank">Оборудование для пробоподготовки (металлография и т.д.)</a></li>
+                <li class="burger-menu__item" data-js="bigMenuItem"><a class="burger-menu__link" href="javascript:void(0)" target="_blank">Оборудование для технологических испытаний</a></li>
+              </ul>
+            </div>
+            <div class="burger-menu__section">
+              <div class="burger-menu__title">Услуги</div>
+              <ul class="burger-menu__list">
+                <li class="burger-menu__item"><a class="burger-menu__link" href="javascript:void(0)" target="_blank">Проверка подлинности</a></li>
+                <li class="burger-menu__item"><a class="burger-menu__link" href="javascript:void(0)" target="_blank">Металлообработка</a></li>
+                <li class="burger-menu__item"><a class="burger-menu__link" href="javascript:void(0)" target="_blank">Поверка средств измерений</a></li>
+                <li class="burger-menu__item"><a class="burger-menu__link" href="javascript:void(0)" target="_blank">Пуско-наладка</a></li>
+                <li class="burger-menu__item"><a class="burger-menu__link" href="javascript:void(0)" target="_blank">Наладка средств измерений</a></li>
+                <li class="burger-menu__item"><a class="burger-menu__link" href="javascript:void(0)" target="_blank">Оборудование в Лизинг</a></li>
+                <li class="burger-menu__item"><a class="burger-menu__link" href="javascript:void(0)" target="_blank">Безопасность</a></li>
+              </ul>
+            </div>
+            <div class="burger-menu__section">
+              <div class="burger-menu__title">Компания</div>
+              <ul class="burger-menu__list">
+                <li class="burger-menu__item"><a class="burger-menu__link" href="javascript:void(0)" target="_blank">О компании</a></li>
+                <li class="burger-menu__item"><a class="burger-menu__link" href="javascript:void(0)" target="_blank">Производство</a></li>
+                <li class="burger-menu__item"><a class="burger-menu__link" href="javascript:void(0)" target="_blank">Карьера в Точприбор</a></li>
+                <li class="burger-menu__item"><a class="burger-menu__link" href="javascript:void(0)" target="_blank">Наша команда</a></li>
+              </ul>
+            </div>
+            <div class="burger-menu__section">
+              <div class="burger-menu__title">Еще</div>
+              <ul class="burger-menu__list">
+                <li class="burger-menu__item"><a class="burger-menu__link" href="javascript:void(0)" target="_blank">Контакты</a></li>
+                <li class="burger-menu__item"><a class="burger-menu__link" href="javascript:void(0)" target="_blank">Новости</a></li>
+                <li class="burger-menu__item"><a class="burger-menu__link" href="javascript:void(0)" target="_blank">Документы</a></li>
+                <li class="burger-menu__item"><a class="burger-menu__link" href="javascript:void(0)" target="_blank">Вопросы и ответы (FAQ)</a></li>
+                <li class="burger-menu__item"><a class="burger-menu__link" href="javascript:void(0)" target="_blank">Карта сайта</a></li>
+              </ul>
+            </div>
+            <div class="burger-menu__section burger-menu__section--contacts">
+              <div class="burger-menu__title">Связаться</div>
+              <ul class="burger-menu__list">
+                <li class="burger-menu__item"><a class="burger-menu__link" href="mailto:info@tochpribor.ru" target="_blank">info@tochpribor.ru</a></li>
+                <li class="burger-menu__item"><a class="burger-menu__link" href="tel:+78003500248" target="_blank">+7 (800) 350-02-48</a></li>
+              </ul>
+              <div class="burger-menu__list burger-menu__list--h">
+                <div class="burger-menu__row">
+                  <div class="burger-menu__subtitle">Адрес</div>
+                  <div class="burger-menu__item"><span>Головной офис: 190121, г. Санкт-Петербург, пер. Дровяной, д. 20, пом. 4-Н</span></div>
+                </div>
+                <div class="burger-menu__row">
+                  <div class="burger-menu__subtitle">Тел / факс</div>
+                  <div class="burger-menu__item"><a class="burger-menu__link" href="tel:+74922521233" target="_blank">+7 (4922) 52-12-33</a></div>
+                </div>
+              </div>
+              <div class="socials"><a class="socials__item" href="https://telegram.org/" target="_blank">
+                  <svg>
+                    <use xlink:href="img/sprites/sprite.svg#tg"></use>
+                  </svg></a><a class="socials__item" href="https://vk.com/" target="_blank">
+                  <svg>
+                    <use xlink:href="img/sprites/sprite.svg#vk"></use>
+                  </svg></a><a class="socials__item" href="https://vkvideo.ru/@tochpribor" target="_blank">
+                  <svg>
+                    <use xlink:href="img/sprites/sprite.svg#vk_video"></use>
+                  </svg></a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <noindex>
+      <div>
+            <div class="modal hystmodal city-modal" id="cityModal" aria-hidden="true" data-js="cityModal">
+              <div class="hystmodal__wrap">
+                <div class="hystmodal__window" role="dialog" aria-modal="true">
+                  <div class="modal__content scrollbar scrollbar--small">
+                    <div class="modal__title title--32">Укажите ваш город</div>
+                    <div class="modal__close" data-hystclose>
+                      <svg> 
+                        <use xlink:href="./img/sprites/sprite.svg#close"></use>
+                      </svg>
+                    </div>
+                    <div class="modal__inner" data-js="modalInner">
+                          <div class="field  field--search field--reset  " data-js="formField">
+                            <button class="field__search" type="submit">
+                              <svg> 
+                                <use xlink:href="img/sprites/sprite.svg#search"></use>
+                              </svg>
+                            </button>
+                            <label>
+                              <input class="field__input" type="text" placeholder="Поиск города" data-js="citySearchInput"><span class="field__error" data-js="fieldError"></span>
+                            </label><span class="field__reset" data-js="fieldResetBtn">
+                              <svg> 
+                                <use xlink:href="img/sprites/sprite.svg#close"></use>
+                              </svg></span>
+                          </div>
+                      <ul class="city-modal__list">
+                        <li class="city-modal__item" data-js="cityModalItem" data-value="Москва">Москва</li>
+                        <li class="city-modal__item" data-js="cityModalItem" data-value="Пермь">Пермь</li>
+                        <li class="city-modal__item" data-js="cityModalItem" data-value="Санкт-Петербург">Санкт-Петербург</li>
+                        <li class="city-modal__item" data-js="cityModalItem" data-value="Уфа">Уфа</li>
+                        <li class="city-modal__item" data-js="cityModalItem" data-value="Самара">Самара</li>
+                        <li class="city-modal__item" data-js="cityModalItem" data-value="Екатеринбург">Екатеринбург</li>
+                        <li class="city-modal__item" data-js="cityModalItem" data-value="Челябинск">Челябинск</li>
+                        <li class="city-modal__item" data-js="cityModalItem" data-value="Краснодар">Краснодар</li>
+                        <li class="city-modal__item" data-js="cityModalItem" data-value="Нижний Новгород">Нижний Новгород</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal hystmodal quick-view-modal" id="quickViewModal" aria-hidden="true">
+              <div class="hystmodal__wrap">
+                <div class="hystmodal__window" role="dialog" aria-modal="true">
+                  <div class="modal__content scrollbar scrollbar--small">
+                    <div class="modal__title title--32">Универсальная испытательная машина ТРМ-О 0,1 А0,5 Tochline</div>
+                    <div class="modal__close" data-hystclose>
+                      <svg> 
+                        <use xlink:href="./img/sprites/sprite.svg#close"></use>
+                      </svg>
+                    </div>
+                    <div class="modal__inner" data-js="modalInner">
+                      <div class="quick-view">
+                        <div class="quick-view__top"> <a class="btn  btn--noborder btn--link" href="javascript:void(0)">
+                                <svg>
+                                  <use xlink:href="img/sprites/sprite.svg#compare_2"></use>
+                                </svg><span class="btn__text">Сравнить</span></a><a class="btn  btn--noborder btn--link" href="javascript:void(0)">
+                                <svg>
+                                  <use xlink:href="img/sprites/sprite.svg#share"></use>
+                                </svg><span class="btn__text">Поделиться</span></a>
+                        </div>
+                        <div class="quick-view__grid">
+                          <div class="quick-view__photo">
+                                <div class="product-tags quick-view__tags">
+                                  <div class="product-tags__tagblock">
+                                    <div class="product-tags__tag product-tags__tag--green"><img src="img/catalog/check_icon.svg">В наличии
+                                    </div>
+                                  </div>
+                                  <div class="product-tags__tagblock">
+                                    <div class="product-tags__tag product-tags__tag--blue">Новинка
+                                    </div>
+                                  </div>
+                                  <div class="product-tags__tagblock">
+                                    <div class="product-tags__tag product-tags__tag--red">Скидка
+                                    </div>
+                                  </div>
+                                  <div class="product-tags__tagblock hovered">
+                                    <div class="product-tags__tag product-tags__tag--grey"><img src="img/catalog/arrow_circle.svg">Снято с производства
+                                    </div>
+                                    <div class="product-tags__note">Товар больше не производится. Смотрите аналоги в карточке товара</div>
+                                  </div>
+                                </div><img src="img/catalog/product_7.webp">
+                          </div>
+                          <div class="quick-view__info">
+                                <div class="product-articles quick-view__articles">
+                                  <div class="product-articles__logo"><img src="img/catalog/quick_view_logo.webp"></div>
+                                      <div class="copy-btn" data-js="copyBtn" data-text="32131376233-19"><span class="copy-btn__text">Артикул 32131376233-19</span><span class="copy-btn__icon">
+                                          <svg> 
+                                            <use xlink:href="img/sprites/sprite.svg#copy"></use>
+                                          </svg></span></div>
+                                      <div class="copy-btn" data-js="copyBtn" data-text="76233-19"><span class="copy-btn__text">Номер в си рф: 76233-19</span><span class="copy-btn__icon">
+                                          <svg> 
+                                            <use xlink:href="img/sprites/sprite.svg#copy"></use>
+                                          </svg></span></div>
+                                </div>
+                            <div class="quick-view__block">
+                              <div class="quick-view__subtitle">Применение</div>
+                              <div class="quick-view__text">Статические испытания образов из различных материалов на растяжение, сжатие, изгиб, сдвиг, срез, адгезию и прочее</div>
+                            </div>
+                            <div class="quick-view__block">
+                              <div class="quick-view__subtitle">Характеристики</div>
+                              <div class="chars-table">
+                                <div class="chars-table__row">
+                                  <div class="chars-table__title">Конструктивное исполнение</div>
+                                  <div class="chars-table__value">настольное</div>
+                                </div>
+                                <div class="chars-table__row">
+                                  <div class="chars-table__title">Напряжение питания</div>
+                                  <div class="chars-table__value"> 220В, 50Гц</div>
+                                </div>
+                                <div class="chars-table__row">
+                                  <div class="chars-table__title">Мин. нагрузка, Н</div>
+                                  <div class="chars-table__value">0,2</div>
+                                </div>
+                                <div class="chars-table__row">
+                                  <div class="chars-table__title">Макс. нагрузка, Н</div>
+                                  <div class="chars-table__value">100</div>
+                                </div>
+                                <div class="chars-table__row">
+                                  <div class="chars-table__title">Погрешность по нагрузке на данном диапазоне</div>
+                                  <div class="chars-table__value"> ±0.5%</div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="quick-view__block">
+                              <div class="quick-view__subtitle">Документы</div>
+                              <div class="quick-view__list"><a class="download-btn download-btn--small" href="javascript:void(0)"><span class="download-btn__img"><img src="img/docs-type/pdf.svg"></span><span class="download-btn__text">Свидетельство об утверждении типа средств измерений ОС.С. 28.070.А №75160</span><span class="download-btn__download">
+                                        <svg>
+                                          <use xlink:href="img/sprites/sprite.svg#download"></use>
+                                        </svg><span>Скачать</span></span></a><a class="download-btn download-btn--small" href="javascript:void(0)"><span class="download-btn__img"><img src="img/docs-type/pdf.svg"></span><span class="download-btn__text">Методика поверки</span><span class="download-btn__download">
+                                        <svg>
+                                          <use xlink:href="img/sprites/sprite.svg#download"></use>
+                                        </svg><span>Скачать</span></span></a>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="quick-view__controls">
+                            <div class="quick-view__order">
+                                  <div class="product-price quick-view__prices product-price--horizontal product-price--32">
+                                    <div class="product-price__price">550 000 ₽</div>
+                                    <div class="product-price__price product-price__price--old">680 000 ₽</div>
+                                  </div><a class="btn  btn--red btn--full" href="javascript:void(0)"><span class="btn__text">Подробнее о товаре</span></a><a class="btn  btn--light-red btn--full" href="javascript:void(0)" data-modal="#techDescModal"><span class="btn__text">Запросить техническое описание</span></a><a class="btn  btn--grey btn--full" href="javascript:void(0)" data-modal="#questionModal">
+                                    <svg>
+                                      <use xlink:href="img/sprites/sprite.svg#question"></use>
+                                    </svg><span class="btn__text">Задать вопрос</span></a>
+                            </div><a class="btn quick-view__more btn--transparent-red btn--full" href="javascript:void(0)">
+                                  <svg>
+                                    <use xlink:href="img/sprites/sprite.svg#arrow_enter"></use>
+                                  </svg><span class="btn__text">Подробнее о товаре</span></a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal hystmodal form-modal" id="callbackModal" aria-hidden="true">
+              <div class="hystmodal__wrap">
+                <div class="hystmodal__window" role="dialog" aria-modal="true">
+                  <div class="modal__content scrollbar scrollbar--small">
+                    <div class="modal__close" data-hystclose>
+                      <svg> 
+                        <use xlink:href="./img/sprites/sprite.svg#close"></use>
+                      </svg>
+                    </div>
+                    <div class="modal__inner" data-js="modalInner">
+                          <form class="form form--modal" action="#" data-validate novalidate>
+                            <div class="form__content" data-js="form-content">
+                              <div class="form__title title--32">Заказать звонок</div>
+                              <div class="form__fields">
+                                    <div class="field     " data-js="formField">
+                                      <label><span class="field__title">Имя <sup>*</sup></span>
+                                        <input class="field__input" type="text" placeholder="" required="" data-type="letters"><span class="field__error" data-js="fieldError"></span>
+                                      </label>
+                                    </div>
+                                    <div class="field     " data-js="formField">
+                                      <label><span class="field__title">Номер телефона <sup>*</sup></span>
+                                        <input class="field__input" type="text" placeholder="" required="" data-v-name="phone" data-type="phoneNumber"><span class="field__error" data-js="fieldError"></span>
+                                      </label>
+                                    </div>
+                                    <div class="field     " data-js="formField">
+                                      <label><span class="field__title">Электронная почта <sup>*</sup></span>
+                                        <input class="field__input" type="text" placeholder="" required="" data-v-name="email"><span class="field__error" data-js="fieldError"></span>
+                                      </label>
+                                    </div>
+                                    <div class="field     " data-js="formField">
+                                      <label><span class="field__title">Комментарий</span>
+                                        <textarea class="field__textarea" rows="1" placeholder=""></textarea><span class="field__error" data-js="fieldError"></span>
+                                      </label>
+                                    </div>
+                                    <label class="field-file" data-js="formField" data-placeholder="Прикрепить файл"><span class="field-file__fakeinput"><span class="icon-empty">
+                                          <svg>
+                                            <use xlink:href="img/sprites/sprite.svg#clip"></use>
+                                          </svg></span><span class="icon-full" data-js="iconFull">
+                                          <svg>
+                                            <use xlink:href="img/sprites/sprite.svg#close"></use>
+                                          </svg></span><span data-js="fileName">Прикрепить файл</span></span><span class="field-file__error" data-js="fieldError"></span>
+                                      <input class="field-file__input" type="file" data-v-name="file" data-size="10485760" accept="image/*, text/plain, .docx, .pdf">
+                                    </label>
+                              </div>
+                                  <button class="btn form__submit btn--red btn--full" type="submit"><span class="btn__text">Отправить</span>
+                                  </button>
+                              <div class="form__privacy form-privacy" data-js="formField">
+                                <label>
+                                  <input type="checkbox" data-v-name="checkbox" required><span class="form-privacy__fake"></span>
+                                </label><span class="form-privacy__text">Я согласен на обработку моих персональных данных согласно <a href="#" target="_blank">Политики конфиденциальности</a></span><span class="field__error" data-js="fieldError"></span>
+                              </div>
+                            </div>
+                            <div class="form__thanks" data-js="form-thanks">
+                              <div class="title--32 form__title">Ваша заявка отправлена</div>
+                              <div class="form__image-success">
+                                <svg>
+                                  <use xlink:href="img/sprites/sprite.svg#form_success"></use>
+                                </svg>
+                              </div>
+                              <div class="form__text">Менеджер свяжется с&nbsp;вами в&nbsp;ближайшее время</div><a class="btn form__btn btn--red btn--full" href="javascript:void(0)">
+                                    <svg>
+                                      <use xlink:href="img/sprites/sprite.svg#arrow_enter"></use>
+                                    </svg><span class="btn__text">На главную</span></a>
+                            </div>
+                          </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal hystmodal form-modal" id="requestModal" aria-hidden="true">
+              <div class="hystmodal__wrap">
+                <div class="hystmodal__window" role="dialog" aria-modal="true">
+                  <div class="modal__content scrollbar scrollbar--small">
+                    <div class="modal__close" data-hystclose>
+                      <svg> 
+                        <use xlink:href="./img/sprites/sprite.svg#close"></use>
+                      </svg>
+                    </div>
+                    <div class="modal__inner" data-js="modalInner">
+                          <form class="form form--modal" action="#" data-validate novalidate>
+                            <div class="form__content" data-js="form-content">
+                              <div class="form__title title--32">Оставить заявку</div>
+                              <div class="form__fields">
+                                    <div class="field     " data-js="formField">
+                                      <label><span class="field__title">Имя <sup>*</sup></span>
+                                        <input class="field__input" type="text" placeholder="" required="" data-type="letters"><span class="field__error" data-js="fieldError"></span>
+                                      </label>
+                                    </div>
+                                    <div class="field     " data-js="formField">
+                                      <label><span class="field__title">Номер телефона <sup>*</sup></span>
+                                        <input class="field__input" type="text" placeholder="" required="" data-v-name="phone" data-type="phoneNumber"><span class="field__error" data-js="fieldError"></span>
+                                      </label>
+                                    </div>
+                                    <div class="field     " data-js="formField">
+                                      <label><span class="field__title">Электронная почта <sup>*</sup></span>
+                                        <input class="field__input" type="text" placeholder="" required="" data-v-name="email"><span class="field__error" data-js="fieldError"></span>
+                                      </label>
+                                    </div>
+                                    <div class="field     " data-js="formField">
+                                      <label><span class="field__title">Комментарий</span>
+                                        <textarea class="field__textarea" rows="1" placeholder=""></textarea><span class="field__error" data-js="fieldError"></span>
+                                      </label>
+                                    </div>
+                                    <label class="field-file" data-js="formField" data-placeholder="Прикрепить файл"><span class="field-file__fakeinput"><span class="icon-empty">
+                                          <svg>
+                                            <use xlink:href="img/sprites/sprite.svg#clip"></use>
+                                          </svg></span><span class="icon-full" data-js="iconFull">
+                                          <svg>
+                                            <use xlink:href="img/sprites/sprite.svg#close"></use>
+                                          </svg></span><span data-js="fileName">Прикрепить файл</span></span><span class="field-file__error" data-js="fieldError"></span>
+                                      <input class="field-file__input" type="file" data-v-name="file" data-size="10485760" accept="image/*, text/plain, .docx, .pdf">
+                                    </label>
+                              </div>
+                                  <button class="btn form__submit btn--red btn--full" type="submit"><span class="btn__text">Отправить</span>
+                                  </button>
+                              <div class="form__privacy form-privacy" data-js="formField">
+                                <label>
+                                  <input type="checkbox" data-v-name="checkbox" required><span class="form-privacy__fake"></span>
+                                </label><span class="form-privacy__text">Я согласен на обработку моих персональных данных согласно <a href="#" target="_blank">Политики конфиденциальности</a></span><span class="field__error" data-js="fieldError"></span>
+                              </div>
+                            </div>
+                            <div class="form__thanks" data-js="form-thanks">
+                              <div class="title--32 form__title">Ваша заявка отправлена</div>
+                              <div class="form__image-success">
+                                <svg>
+                                  <use xlink:href="img/sprites/sprite.svg#form_success"></use>
+                                </svg>
+                              </div>
+                              <div class="form__text">Менеджер свяжется с&nbsp;вами в&nbsp;ближайшее время</div><a class="btn form__btn btn--red btn--full" href="javascript:void(0)">
+                                    <svg>
+                                      <use xlink:href="img/sprites/sprite.svg#arrow_enter"></use>
+                                    </svg><span class="btn__text">На главную</span></a>
+                            </div>
+                          </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal hystmodal form-modal" id="subscribeModal" aria-hidden="true">
+              <div class="hystmodal__wrap">
+                <div class="hystmodal__window" role="dialog" aria-modal="true">
+                  <div class="modal__content scrollbar scrollbar--small">
+                    <div class="modal__close" data-hystclose>
+                      <svg> 
+                        <use xlink:href="./img/sprites/sprite.svg#close"></use>
+                      </svg>
+                    </div>
+                    <div class="modal__inner" data-js="modalInner">
+                          <form class="form form--modal" action="#" data-validate novalidate>
+                            <div class="form__content" data-js="form-content">
+                              <div class="form__title title--32">Подписаться на&nbsp;рассылку</div>
+                              <div class="form__fields">
+                                    <div class="field     " data-js="formField">
+                                      <label><span class="field__title">Имя <sup>*</sup></span>
+                                        <input class="field__input" type="text" placeholder="" required="" data-type="letters"><span class="field__error" data-js="fieldError"></span>
+                                      </label>
+                                    </div>
+                                    <div class="field     " data-js="formField">
+                                      <label><span class="field__title">Электронная почта <sup>*</sup></span>
+                                        <input class="field__input" type="text" placeholder="" required="" data-v-name="email"><span class="field__error" data-js="fieldError"></span>
+                                      </label>
+                                    </div>
+                              </div>
+                                  <button class="btn form__submit btn--red btn--full" type="submit"><span class="btn__text">Оформить подписку</span>
+                                  </button>
+                              <div class="form__privacy form-privacy" data-js="formField">
+                                <label>
+                                  <input type="checkbox" data-v-name="checkbox" required><span class="form-privacy__fake"></span>
+                                </label><span class="form-privacy__text">Я согласен на обработку моих персональных данных согласно <a href="#" target="_blank">Политики конфиденциальности</a></span><span class="field__error" data-js="fieldError"></span>
+                              </div>
+                            </div>
+                            <div class="form__thanks" data-js="form-thanks">
+                              <div class="title--32 form__title">Подписка оформлена</div>
+                              <div class="form__image-success">
+                                <svg>
+                                  <use xlink:href="img/sprites/sprite.svg#form_success"></use>
+                                </svg>
+                              </div>
+                              <div class="form__text">Письмо для подтверждения отправлено на указанный адрес электронной почты</div><a class="btn form__btn btn--red btn--full" href="javascript:void(0)">
+                                    <svg>
+                                      <use xlink:href="img/sprites/sprite.svg#arrow_enter"></use>
+                                    </svg><span class="btn__text">На главную</span></a>
+                            </div>
+                          </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal hystmodal form-modal" id="questionModal" aria-hidden="true">
+              <div class="hystmodal__wrap">
+                <div class="hystmodal__window" role="dialog" aria-modal="true">
+                  <div class="modal__content scrollbar scrollbar--small">
+                    <div class="modal__close" data-hystclose>
+                      <svg> 
+                        <use xlink:href="./img/sprites/sprite.svg#close"></use>
+                      </svg>
+                    </div>
+                    <div class="modal__inner" data-js="modalInner">
+                          <form class="form form--modal" action="#" data-validate novalidate>
+                            <div class="form__content" data-js="form-content">
+                              <div class="form__title title--32">Задать вопрос</div>
+                              <div class="form__fields">
+                                    <div class="field     " data-js="formField">
+                                      <label><span class="field__title">Имя <sup>*</sup></span>
+                                        <input class="field__input" type="text" placeholder="" required="" data-type="letters"><span class="field__error" data-js="fieldError"></span>
+                                      </label>
+                                    </div>
+                                    <div class="field     " data-js="formField">
+                                      <label><span class="field__title">Номер телефона <sup>*</sup></span>
+                                        <input class="field__input" type="text" placeholder="" required="" data-v-name="phone" data-type="phoneNumber"><span class="field__error" data-js="fieldError"></span>
+                                      </label>
+                                    </div>
+                                    <div class="field     " data-js="formField">
+                                      <label><span class="field__title">Электронная почта <sup>*</sup></span>
+                                        <input class="field__input" type="text" placeholder="" required="" data-v-name="email"><span class="field__error" data-js="fieldError"></span>
+                                      </label>
+                                    </div>
+                                    <div class="field     " data-js="formField">
+                                      <label><span class="field__title">Вопрос</span>
+                                        <textarea class="field__textarea" rows="1" placeholder="" required=""></textarea><span class="field__error" data-js="fieldError"></span>
+                                      </label>
+                                    </div>
+                                    <label class="field-file" data-js="formField" data-placeholder="Прикрепить файл"><span class="field-file__fakeinput"><span class="icon-empty">
+                                          <svg>
+                                            <use xlink:href="img/sprites/sprite.svg#clip"></use>
+                                          </svg></span><span class="icon-full" data-js="iconFull">
+                                          <svg>
+                                            <use xlink:href="img/sprites/sprite.svg#close"></use>
+                                          </svg></span><span data-js="fileName">Прикрепить файл</span></span><span class="field-file__error" data-js="fieldError"></span>
+                                      <input class="field-file__input" type="file" data-v-name="file" data-size="10485760" accept="image/*, text/plain, .docx, .pdf">
+                                    </label>
+                              </div>
+                                  <button class="btn form__submit btn--red btn--full" type="submit"><span class="btn__text">Отправить</span>
+                                  </button>
+                              <div class="form__privacy form-privacy" data-js="formField">
+                                <label>
+                                  <input type="checkbox" data-v-name="checkbox" required><span class="form-privacy__fake"></span>
+                                </label><span class="form-privacy__text">Я согласен на обработку моих персональных данных согласно <a href="#" target="_blank">Политики конфиденциальности</a></span><span class="field__error" data-js="fieldError"></span>
+                              </div>
+                            </div>
+                            <div class="form__thanks" data-js="form-thanks">
+                              <div class="title--32 form__title">Ваш вопрос отправлен</div>
+                              <div class="form__image-success">
+                                <svg>
+                                  <use xlink:href="img/sprites/sprite.svg#form_success"></use>
+                                </svg>
+                              </div>
+                              <div class="form__text">Менеджер свяжется с&nbsp;вами в&nbsp;ближайшее время</div><a class="btn form__btn btn--red btn--full" href="javascript:void(0)">
+                                    <svg>
+                                      <use xlink:href="img/sprites/sprite.svg#arrow_enter"></use>
+                                    </svg><span class="btn__text">На главную</span></a>
+                            </div>
+                          </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal hystmodal form-modal" id="supportModal" aria-hidden="true">
+              <div class="hystmodal__wrap">
+                <div class="hystmodal__window" role="dialog" aria-modal="true">
+                  <div class="modal__content scrollbar scrollbar--small">
+                    <div class="modal__close" data-hystclose>
+                      <svg> 
+                        <use xlink:href="./img/sprites/sprite.svg#close"></use>
+                      </svg>
+                    </div>
+                    <div class="modal__inner" data-js="modalInner">
+                          <form class="form form--modal" action="#" data-validate novalidate>
+                            <div class="form__content" data-js="form-content">
+                              <div class="form__title title--32">Написать в тех. поддержку</div>
+                              <div class="form__fields">
+                                    <div class="field     " data-js="formField">
+                                      <label><span class="field__title">Имя <sup>*</sup></span>
+                                        <input class="field__input" type="text" placeholder="" required="" data-type="letters"><span class="field__error" data-js="fieldError"></span>
+                                      </label>
+                                    </div>
+                                    <div class="field     " data-js="formField">
+                                      <label><span class="field__title">Электронная почта <sup>*</sup></span>
+                                        <input class="field__input" type="text" placeholder="" required="" data-v-name="email"><span class="field__error" data-js="fieldError"></span>
+                                      </label>
+                                    </div>
+                                    <div class="field     " data-js="formField">
+                                      <label><span class="field__title">Предложение правки</span>
+                                        <textarea class="field__textarea" rows="1" placeholder="" required=""></textarea><span class="field__error" data-js="fieldError"></span>
+                                      </label>
+                                    </div>
+                              </div>
+                                  <button class="btn form__submit btn--red btn--full" type="submit"><span class="btn__text">Отправить</span>
+                                  </button>
+                              <div class="form__privacy form-privacy" data-js="formField">
+                                <label>
+                                  <input type="checkbox" data-v-name="checkbox" required><span class="form-privacy__fake"></span>
+                                </label><span class="form-privacy__text">Я согласен на обработку моих персональных данных согласно <a href="#" target="_blank">Политики конфиденциальности</a></span><span class="field__error" data-js="fieldError"></span>
+                              </div>
+                            </div>
+                            <div class="form__thanks" data-js="form-thanks">
+                              <div class="title--32 form__title">Ваше предложение отправлено</div>
+                              <div class="form__image-success">
+                                <svg>
+                                  <use xlink:href="img/sprites/sprite.svg#form_success"></use>
+                                </svg>
+                              </div>
+                              <div class="form__text">Менеджер свяжется с&nbsp;вами в&nbsp;ближайшее время</div><a class="btn form__btn btn--red btn--full" href="javascript:void(0)">
+                                    <svg>
+                                      <use xlink:href="img/sprites/sprite.svg#arrow_enter"></use>
+                                    </svg><span class="btn__text">На главную</span></a>
+                            </div>
+                          </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal hystmodal form-modal" id="selectionModal" aria-hidden="true">
+              <div class="hystmodal__wrap">
+                <div class="hystmodal__window" role="dialog" aria-modal="true">
+                  <div class="modal__content scrollbar scrollbar--small">
+                    <div class="modal__close" data-hystclose>
+                      <svg> 
+                        <use xlink:href="./img/sprites/sprite.svg#close"></use>
+                      </svg>
+                    </div>
+                    <div class="modal__inner" data-js="modalInner">
+                          <form class="form form--modal" action="#" data-validate novalidate>
+                            <div class="form__content" data-js="form-content">
+                              <div class="form__title title--32">Не нашли подходящий товар? Поможем подобрать аналог</div>
+                              <div class="form__fields">
+                                    <div class="field     " data-js="formField">
+                                      <label><span class="field__title">Имя <sup>*</sup></span>
+                                        <input class="field__input" type="text" placeholder="" required="" data-type="letters"><span class="field__error" data-js="fieldError"></span>
+                                      </label>
+                                    </div>
+                                    <div class="field     " data-js="formField">
+                                      <label><span class="field__title">Номер телефона <sup>*</sup></span>
+                                        <input class="field__input" type="text" placeholder="" required="" data-v-name="phone" data-type="phoneNumber"><span class="field__error" data-js="fieldError"></span>
+                                      </label>
+                                    </div>
+                                    <div class="field     " data-js="formField">
+                                      <label><span class="field__title">Электронная почта <sup>*</sup></span>
+                                        <input class="field__input" type="text" placeholder="" required="" data-v-name="email"><span class="field__error" data-js="fieldError"></span>
+                                      </label>
+                                    </div>
+                                    <div class="field     " data-js="formField">
+                                      <label><span class="field__title">Применение (комментарий)</span>
+                                        <textarea class="field__textarea" rows="1" placeholder=""></textarea><span class="field__error" data-js="fieldError"></span>
+                                      </label>
+                                    </div>
+                              </div>
+                                  <button class="btn form__submit btn--red btn--full" type="submit"><span class="btn__text">Отправить</span>
+                                  </button>
+                              <div class="form__privacy form-privacy" data-js="formField">
+                                <label>
+                                  <input type="checkbox" data-v-name="checkbox" required><span class="form-privacy__fake"></span>
+                                </label><span class="form-privacy__text">Я согласен на обработку моих персональных данных согласно <a href="#" target="_blank">Политики конфиденциальности</a></span><span class="field__error" data-js="fieldError"></span>
+                              </div>
+                            </div>
+                            <div class="form__thanks" data-js="form-thanks">
+                              <div class="title--32 form__title">Ваша заявка отправлена</div>
+                              <div class="form__image-success">
+                                <svg>
+                                  <use xlink:href="img/sprites/sprite.svg#form_success"></use>
+                                </svg>
+                              </div>
+                              <div class="form__text">Менеджер свяжется с&nbsp;вами в&nbsp;ближайшее время</div><a class="btn form__btn btn--red btn--full" href="javascript:void(0)">
+                                    <svg>
+                                      <use xlink:href="img/sprites/sprite.svg#arrow_enter"></use>
+                                    </svg><span class="btn__text">На главную</span></a>
+                            </div>
+                          </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal hystmodal form-modal" id="vacancyModal" aria-hidden="true">
+              <div class="hystmodal__wrap">
+                <div class="hystmodal__window" role="dialog" aria-modal="true">
+                  <div class="modal__content scrollbar scrollbar--small">
+                    <div class="modal__close" data-hystclose>
+                      <svg> 
+                        <use xlink:href="./img/sprites/sprite.svg#close"></use>
+                      </svg>
+                    </div>
+                    <div class="modal__inner" data-js="modalInner">
+                          <form class="form form--modal" action="#" data-validate novalidate>
+                            <div class="form__content" data-js="form-content">
+                              <div class="form__title title--32">Стать частью команды Точприбор</div>
+                              <div class="form__text">В поисках работы? Оставляй отклик! Рассмотрим, свяжемся.</div>
+                              <div class="form__fields">
+                                    <div class="field     " data-js="formField">
+                                      <label><span class="field__title">ФИО <sup>*</sup></span>
+                                        <input class="field__input" type="text" placeholder="" required="" data-type="letters"><span class="field__error" data-js="fieldError"></span>
+                                      </label>
+                                    </div>
+                                    <div class="field     " data-js="formField">
+                                      <label><span class="field__title">Номер телефона <sup>*</sup></span>
+                                        <input class="field__input" type="text" placeholder="" required="" data-v-name="phone" data-type="phoneNumber"><span class="field__error" data-js="fieldError"></span>
+                                      </label>
+                                    </div>
+                                    <div class="field     " data-js="formField">
+                                      <label><span class="field__title">Электронная почта <sup>*</sup></span>
+                                        <input class="field__input" type="text" placeholder="" required="" data-v-name="email"><span class="field__error" data-js="fieldError"></span>
+                                      </label>
+                                    </div>
+                                    <div class="field     " data-js="formField">
+                                      <label><span class="field__title">Комментарий / Сопроводительное письмо</span>
+                                        <textarea class="field__textarea" rows="1" placeholder=""></textarea><span class="field__error" data-js="fieldError"></span>
+                                      </label>
+                                    </div>
+                                    <label class="field-file" data-js="formField" data-placeholder="Прикрепить резюме"><span class="field-file__fakeinput"><span class="icon-empty">
+                                          <svg>
+                                            <use xlink:href="img/sprites/sprite.svg#clip"></use>
+                                          </svg></span><span class="icon-full" data-js="iconFull">
+                                          <svg>
+                                            <use xlink:href="img/sprites/sprite.svg#close"></use>
+                                          </svg></span><span data-js="fileName">Прикрепить резюме</span></span><span class="field-file__error" data-js="fieldError"></span>
+                                      <input class="field-file__input" type="file" required="" data-v-name="file" data-size="10485760" accept="image/*, text/plain, .docx, .pdf">
+                                    </label>
+                              </div>
+                                  <button class="btn form__submit btn--red btn--full" type="submit"><span class="btn__text">Отправить</span>
+                                  </button>
+                              <div class="form__privacy form-privacy" data-js="formField">
+                                <label>
+                                  <input type="checkbox" data-v-name="checkbox" required><span class="form-privacy__fake"></span>
+                                </label><span class="form-privacy__text">Я согласен на обработку моих персональных данных согласно <a href="#" target="_blank">Политики конфиденциальности</a></span><span class="field__error" data-js="fieldError"></span>
+                              </div>
+                            </div>
+                            <div class="form__thanks" data-js="form-thanks">
+                              <div class="title--32 form__title">Ваше резюме отправлено</div>
+                              <div class="form__image-success">
+                                <svg>
+                                  <use xlink:href="img/sprites/sprite.svg#form_success"></use>
+                                </svg>
+                              </div>
+                              <div class="form__text">Менеджер свяжется с&nbsp;вами в&nbsp;ближайшее время</div><a class="btn form__btn btn--red btn--full" href="javascript:void(0)">
+                                    <svg>
+                                      <use xlink:href="img/sprites/sprite.svg#arrow_enter"></use>
+                                    </svg><span class="btn__text">На главную</span></a>
+                            </div>
+                          </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal hystmodal form-modal" id="oneClickOrderModal" aria-hidden="true">
+              <div class="hystmodal__wrap">
+                <div class="hystmodal__window" role="dialog" aria-modal="true">
+                  <div class="modal__content scrollbar scrollbar--small">
+                    <div class="modal__close" data-hystclose>
+                      <svg> 
+                        <use xlink:href="./img/sprites/sprite.svg#close"></use>
+                      </svg>
+                    </div>
+                    <div class="modal__inner" data-js="modalInner">
+                          <form class="form form--modal" action="#" data-validate novalidate>
+                            <div class="form__content" data-js="form-content">
+                              <div class="form__title title--32">Получить коммерческое предложение</div>
+                              <div class="form__fields">
+                                <div class="form-product-card">
+                                  <div class="form-product-card__photo"><img src="img/catalog/product_9.webp" alt=""></div>
+                                  <div class="form-product-card__title">Разрывная машина ИР 5143-200</div>
+                                  <div class="form-product-card__order">
+                                        <div class="product-price form-product-card__price product-price--18">
+                                          <div class="product-price__price">1 550 000 ₽</div>
+                                          <div class="product-price__price product-price__price--old">1 680 000 ₽</div>
+                                        </div>
+                                        <div class="amount-input amount-input--white" data-js="amountInput"><span class="amount-input__width"></span><span class="amount-input__change amount-input__minus min">
+                                            <svg> 
+                                              <use xlink:href="img/sprites/sprite.svg#minus"></use>
+                                            </svg></span>
+                                          <input class="amount-input__value" type="number" name="amount" value="1" autocomplete="off"><span class="amount-input__change amount-input__plus">
+                                            <svg> 
+                                              <use xlink:href="img/sprites/sprite.svg#plus"></use>
+                                            </svg></span>
+                                        </div>
+                                  </div>
+                                </div>
+                                    <div class="field     " data-js="formField">
+                                      <label><span class="field__title">Имя <sup>*</sup></span>
+                                        <input class="field__input" type="text" placeholder="" required="" data-type="letters"><span class="field__error" data-js="fieldError"></span>
+                                      </label>
+                                    </div>
+                                    <div class="field     " data-js="formField">
+                                      <label><span class="field__title">Номер телефона <sup>*</sup></span>
+                                        <input class="field__input" type="text" placeholder="" required="" data-v-name="phone" data-type="phoneNumber"><span class="field__error" data-js="fieldError"></span>
+                                      </label>
+                                    </div>
+                                    <div class="field     " data-js="formField">
+                                      <label><span class="field__title">Электронная почта <sup>*</sup></span>
+                                        <input class="field__input" type="text" placeholder="" required="" data-v-name="email"><span class="field__error" data-js="fieldError"></span>
+                                      </label>
+                                    </div>
+                                    <div class="field     " data-js="formField">
+                                      <label><span class="field__title">Комментарий к заказу</span>
+                                        <textarea class="field__textarea" rows="1" placeholder=""></textarea><span class="field__error" data-js="fieldError"></span>
+                                      </label>
+                                    </div>
+                                    <label class="field-file" data-js="formField" data-placeholder="Прикрепить файл"><span class="field-file__fakeinput"><span class="icon-empty">
+                                          <svg>
+                                            <use xlink:href="img/sprites/sprite.svg#clip"></use>
+                                          </svg></span><span class="icon-full" data-js="iconFull">
+                                          <svg>
+                                            <use xlink:href="img/sprites/sprite.svg#close"></use>
+                                          </svg></span><span data-js="fileName">Прикрепить файл</span></span><span class="field-file__error" data-js="fieldError"></span>
+                                      <input class="field-file__input" type="file" data-v-name="file" data-size="10485760" accept="image/*, text/plain, .docx, .pdf">
+                                    </label>
+                              </div>
+                                  <button class="btn form__submit btn--red btn--full" type="submit"><span class="btn__text">Отправить</span>
+                                  </button>
+                              <div class="form__privacy form-privacy" data-js="formField">
+                                <label>
+                                  <input type="checkbox" data-v-name="checkbox" required><span class="form-privacy__fake"></span>
+                                </label><span class="form-privacy__text">Я согласен на обработку моих персональных данных согласно <a href="#" target="_blank">Политики конфиденциальности</a></span><span class="field__error" data-js="fieldError"></span>
+                              </div>
+                            </div>
+                            <div class="form__thanks" data-js="form-thanks">
+                              <div class="title--32 form__title">Ваша заявка отправлена</div>
+                              <div class="form__image-success">
+                                <svg>
+                                  <use xlink:href="img/sprites/sprite.svg#form_success"></use>
+                                </svg>
+                              </div>
+                              <div class="form__text">Менеджер свяжется с&nbsp;вами в&nbsp;ближайшее время</div><a class="btn form__btn btn--red btn--full" href="javascript:void(0)">
+                                    <svg>
+                                      <use xlink:href="img/sprites/sprite.svg#arrow_enter"></use>
+                                    </svg><span class="btn__text">На главную</span></a>
+                            </div>
+                          </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal hystmodal form-modal" id="techDescModal" aria-hidden="true">
+              <div class="hystmodal__wrap">
+                <div class="hystmodal__window" role="dialog" aria-modal="true">
+                  <div class="modal__content scrollbar scrollbar--small">
+                    <div class="modal__close" data-hystclose>
+                      <svg> 
+                        <use xlink:href="./img/sprites/sprite.svg#close"></use>
+                      </svg>
+                    </div>
+                    <div class="modal__inner" data-js="modalInner">
+                          <form class="form form--modal" action="#" data-validate novalidate>
+                            <div class="form__content" data-js="form-content">
+                              <div class="form__title title--32">Запросить техническое описание</div>
+                              <div class="form__fields">
+                                <div class="form-product-card">
+                                  <div class="form-product-card__photo"><img src="img/catalog/product_9.webp" alt=""></div>
+                                  <div class="form-product-card__title">Разрывная машина ИР 5143-200</div>
+                                  <div class="form-product-card__order">
+                                        <div class="product-price form-product-card__price product-price--18">
+                                          <div class="product-price__price">1 550 000 ₽</div>
+                                          <div class="product-price__price product-price__price--old">1 680 000 ₽</div>
+                                        </div>
+                                  </div>
+                                </div>
+                                    <div class="field     " data-js="formField">
+                                      <label><span class="field__title">Имя <sup>*</sup></span>
+                                        <input class="field__input" type="text" placeholder="" required="" data-type="letters"><span class="field__error" data-js="fieldError"></span>
+                                      </label>
+                                    </div>
+                                    <div class="field     " data-js="formField">
+                                      <label><span class="field__title">Номер телефона <sup>*</sup></span>
+                                        <input class="field__input" type="text" placeholder="" required="" data-v-name="phone" data-type="phoneNumber"><span class="field__error" data-js="fieldError"></span>
+                                      </label>
+                                    </div>
+                                    <div class="field     " data-js="formField">
+                                      <label><span class="field__title">Электронная почта <sup>*</sup></span>
+                                        <input class="field__input" type="text" placeholder="" required="" data-v-name="email"><span class="field__error" data-js="fieldError"></span>
+                                      </label>
+                                    </div>
+                                    <label class="field-file" data-js="formField" data-placeholder="Прикрепить файл"><span class="field-file__fakeinput"><span class="icon-empty">
+                                          <svg>
+                                            <use xlink:href="img/sprites/sprite.svg#clip"></use>
+                                          </svg></span><span class="icon-full" data-js="iconFull">
+                                          <svg>
+                                            <use xlink:href="img/sprites/sprite.svg#close"></use>
+                                          </svg></span><span data-js="fileName">Прикрепить файл</span></span><span class="field-file__error" data-js="fieldError"></span>
+                                      <input class="field-file__input" type="file" data-v-name="file" data-size="10485760" accept="image/*, text/plain, .docx, .pdf">
+                                    </label>
+                              </div>
+                                  <button class="btn form__submit btn--red btn--full" type="submit"><span class="btn__text">Отправить</span>
+                                  </button>
+                              <div class="form__privacy form-privacy" data-js="formField">
+                                <label>
+                                  <input type="checkbox" data-v-name="checkbox" required><span class="form-privacy__fake"></span>
+                                </label><span class="form-privacy__text">Я согласен на обработку моих персональных данных согласно <a href="#" target="_blank">Политики конфиденциальности</a></span><span class="field__error" data-js="fieldError"></span>
+                              </div>
+                            </div>
+                            <div class="form__thanks" data-js="form-thanks">
+                              <div class="title--32 form__title">Ваша заявка отправлена</div>
+                              <div class="form__image-success">
+                                <svg>
+                                  <use xlink:href="img/sprites/sprite.svg#form_success"></use>
+                                </svg>
+                              </div>
+                              <div class="form__text">Менеджер свяжется с&nbsp;вами в&nbsp;ближайшее время</div><a class="btn form__btn btn--red btn--full" href="javascript:void(0)">
+                                    <svg>
+                                      <use xlink:href="img/sprites/sprite.svg#arrow_enter"></use>
+                                    </svg><span class="btn__text">На главную</span></a>
+                            </div>
+                          </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal hystmodal form-modal" id="getOfferModal" aria-hidden="true">
+              <div class="hystmodal__wrap">
+                <div class="hystmodal__window" role="dialog" aria-modal="true">
+                  <div class="modal__content scrollbar scrollbar--small">
+                    <div class="modal__close" data-hystclose>
+                      <svg> 
+                        <use xlink:href="./img/sprites/sprite.svg#close"></use>
+                      </svg>
+                    </div>
+                    <div class="modal__inner" data-js="modalInner">
+                          <form class="form form--modal" action="#" data-validate novalidate>
+                            <div class="form__content" data-js="form-content">
+                              <div class="form__title title--32">Получить коммерческое предложение</div>
+                              <div class="form__fields">
+                                    <div class="field     " data-js="formField">
+                                      <label><span class="field__title">Имя <sup>*</sup></span>
+                                        <input class="field__input" type="text" placeholder="" required="" data-type="letters"><span class="field__error" data-js="fieldError"></span>
+                                      </label>
+                                    </div>
+                                    <div class="field     " data-js="formField">
+                                      <label><span class="field__title">Номер телефона <sup>*</sup></span>
+                                        <input class="field__input" type="text" placeholder="" required="" data-v-name="phone" data-type="phoneNumber"><span class="field__error" data-js="fieldError"></span>
+                                      </label>
+                                    </div>
+                                    <div class="field     " data-js="formField">
+                                      <label><span class="field__title">Электронная почта <sup>*</sup></span>
+                                        <input class="field__input" type="text" placeholder="" required="" data-v-name="email"><span class="field__error" data-js="fieldError"></span>
+                                      </label>
+                                    </div>
+                                <div class="form-spoiler" data-js="formSpoiler">
+                                  <div class="form-spoiler__header" data-js="formSpoilerHeader">
+                                    <div class="form-spoiler__title">Список товаров</div>
+                                    <div class="form-spoiler__icon">
+                                      <svg>
+                                        <use xlink:href="img/sprites/sprite.svg#arrow_angle"></use>
+                                      </svg>
+                                    </div>
+                                  </div>
+                                  <div class="form-spoiler__content" data-js="formSpoilerContent">
+                                    <div class="form-spoiler__items">
+                                      <div class="form-spoiler__item">
+                                        <div class="form-spoiler__name">Разрывная машина ИР 5143‑200</div>
+                                        <div class="form-spoiler__amount">1шт</div>
+                                      </div>
+                                      <div class="form-spoiler__item">
+                                        <div class="form-spoiler__name">FU DLC 200 кН испытательная машина</div>
+                                        <div class="form-spoiler__amount">1шт</div>
+                                      </div>
+                                      <div class="form-spoiler__item">
+                                        <div class="form-spoiler__name">Испытательная машина для пневморессор (пневмобаллоннов) DVT LZ</div>
+                                        <div class="form-spoiler__amount">1шт</div>
+                                      </div>
+                                      <div class="form-spoiler__item">
+                                        <div class="form-spoiler__name">ИР 5061-0,05</div>
+                                        <div class="form-spoiler__amount">1шт</div>
+                                      </div>
+                                      <div class="form-spoiler__item">
+                                        <div class="form-spoiler__name">ИХ 5111</div>
+                                        <div class="form-spoiler__amount">1шт</div>
+                                      </div>
+                                    </div>
+                                    <div class="form-spoiler__item form-spoiler__item--total"><span>Итого:</span><span>7 750 000 ₽</span></div>
+                                  </div>
+                                </div>
+                                    <div class="field     " data-js="formField">
+                                      <label><span class="field__title">Комментарий к заказу</span>
+                                        <textarea class="field__textarea" rows="1" placeholder=""></textarea><span class="field__error" data-js="fieldError"></span>
+                                      </label>
+                                    </div>
+                              </div>
+                                  <button class="btn form__submit btn--red btn--full" type="submit"><span class="btn__text">Отправить</span>
+                                  </button>
+                              <div class="form__privacy form-privacy" data-js="formField">
+                                <label>
+                                  <input type="checkbox" data-v-name="checkbox" required><span class="form-privacy__fake"></span>
+                                </label><span class="form-privacy__text">Я согласен на обработку моих персональных данных согласно <a href="#" target="_blank">Политики конфиденциальности</a></span><span class="field__error" data-js="fieldError"></span>
+                              </div>
+                            </div>
+                            <div class="form__thanks" data-js="form-thanks">
+                              <div class="title--32 form__title">Ваша заявка отправлена</div>
+                              <div class="form__image-success">
+                                <svg>
+                                  <use xlink:href="img/sprites/sprite.svg#form_success"></use>
+                                </svg>
+                              </div>
+                              <div class="form__text">Менеджер свяжется с&nbsp;вами в&nbsp;ближайшее время</div><a class="btn form__btn btn--red btn--full" href="javascript:void(0)">
+                                    <svg>
+                                      <use xlink:href="img/sprites/sprite.svg#arrow_enter"></use>
+                                    </svg><span class="btn__text">На главную</span></a>
+                            </div>
+                          </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal hystmodal form-modal" id="checkModal" aria-hidden="true">
+              <div class="hystmodal__wrap">
+                <div class="hystmodal__window" role="dialog" aria-modal="true">
+                  <div class="modal__content scrollbar scrollbar--small">
+                    <div class="modal__close" data-hystclose>
+                      <svg> 
+                        <use xlink:href="./img/sprites/sprite.svg#close"></use>
+                      </svg>
+                    </div>
+                    <div class="modal__inner" data-js="modalInner">
+                          <form class="form form--modal" action="#" data-validate novalidate>
+                            <div class="form__content" data-js="form-content">
+                              <div class="form__title title--32">Проверить изделие</div>
+                              <div class="form__fields">
+                                    <div class="field     " data-js="formField">
+                                      <label><span class="field__title">Имя <sup>*</sup></span>
+                                        <input class="field__input" type="text" placeholder="" required="" data-type="letters"><span class="field__error" data-js="fieldError"></span>
+                                      </label>
+                                    </div>
+                                    <div class="field     " data-js="formField">
+                                      <label><span class="field__title">Номер телефона <sup>*</sup></span>
+                                        <input class="field__input" type="text" placeholder="" required="" data-v-name="phone" data-type="phoneNumber"><span class="field__error" data-js="fieldError"></span>
+                                      </label>
+                                    </div>
+                                    <div class="field     " data-js="formField">
+                                      <label><span class="field__title">Электронная почта <sup>*</sup></span>
+                                        <input class="field__input" type="text" placeholder="" required="" data-v-name="email"><span class="field__error" data-js="fieldError"></span>
+                                      </label>
+                                    </div>
+                                    <div class="field     " data-js="formField">
+                                      <label>
+                                      </label>
+                                      <select class="field__select" placeholder="Выбрать товар" data-js="formSelect" required="">
+                                        <option></option>
+                                        <option value="Разрывная машина ИР 5143‑200">Разрывная машина ИР 5143‑200</option>
+                                        <option value="FU DLC 200 кН испытательная машина">FU DLC 200 кН испытательная машина</option>
+                                        <option value="Испытательная машина для пневморессор (пневмобаллоннов) DVT LZ">Испытательная машина для пневморессор (пневмобаллоннов) DVT LZ</option>
+                                        <option value="ИР 5113-100 универсальная разрывная машина">ИР 5113-100 универсальная разрывная машина</option>
+                                        <option value="Твердомер Бринелля ТБ 5005А">Твердомер Бринелля ТБ 5005А</option>
+                                        <option value="ИР 5061-0,05">ИР 5061-0,05</option>
+                                        <option value="ИХ 5111">ИХ 5111</option>
+                                      </select><span class="field__error" data-js="fieldError"></span>
+                                    </div>
+                                    <div class="field     " data-js="formField">
+                                      <label><span class="field__title">Уникальный номер товара</span>
+                                        <textarea class="field__textarea" rows="1" placeholder="" required=""></textarea><span class="field__error" data-js="fieldError"></span>
+                                      </label>
+                                    </div>
+                                    <label class="field-file" data-js="formField" data-placeholder="Прикрепить файл"><span class="field-file__fakeinput"><span class="icon-empty">
+                                          <svg>
+                                            <use xlink:href="img/sprites/sprite.svg#clip"></use>
+                                          </svg></span><span class="icon-full" data-js="iconFull">
+                                          <svg>
+                                            <use xlink:href="img/sprites/sprite.svg#close"></use>
+                                          </svg></span><span data-js="fileName">Прикрепить файл</span></span><span class="field-file__error" data-js="fieldError"></span>
+                                      <input class="field-file__input" type="file" data-v-name="file" data-size="10485760" accept="image/*, text/plain, .docx, .pdf">
+                                    </label>
+                              </div>
+                                  <button class="btn form__submit btn--red btn--full" type="submit"><span class="btn__text">Отправить</span>
+                                  </button>
+                              <div class="form__privacy form-privacy" data-js="formField">
+                                <label>
+                                  <input type="checkbox" data-v-name="checkbox" required><span class="form-privacy__fake"></span>
+                                </label><span class="form-privacy__text">Я согласен на обработку моих персональных данных согласно <a href="#" target="_blank">Политики конфиденциальности</a></span><span class="field__error" data-js="fieldError"></span>
+                              </div>
+                            </div>
+                            <div class="form__thanks" data-js="form-thanks">
+                              <div class="title--32 form__title">Ваша заявка отправлена</div>
+                              <div class="form__image-success">
+                                <svg>
+                                  <use xlink:href="img/sprites/sprite.svg#form_success"></use>
+                                </svg>
+                              </div>
+                              <div class="form__text">Менеджер свяжется с&nbsp;вами в&nbsp;ближайшее время</div><a class="btn form__btn btn--red btn--full" href="javascript:void(0)">
+                                    <svg>
+                                      <use xlink:href="img/sprites/sprite.svg#arrow_enter"></use>
+                                    </svg><span class="btn__text">На главную</span></a>
+                            </div>
+                          </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+      </div>
+    </noindex>
+    <!-- по возможности добавить только на те страницы где есть история-->
+    <div class="history-modal" data-js="historyModal">
+      <div class="history-modal__overlay" data-js="historyModalClose"></div>
+      <div class="history-modal__content">
+        <div class="history-modal__close" data-js="historyModalClose">
+          <svg> 
+            <use xlink:href="img/sprites/sprite.svg#close"></use>
+          </svg>
+        </div>
+        <div class="history-modal__list scrollbar" data-js="historyModalScroller">
+          <div class="history-modal__progress" data-js="historyModalProgress">
+            <div class="line-color" data-js="historyModalProgressLine"></div>
+            <div class="line-dashed"></div>
+          </div>
+          <div class="history-modal__row" data-js="historyModalRow">
+            <div class="history-modal__year title--83">1950 - 1956</div>
+            <div class="history-modal__point active" data-js="historyModalPoint"></div>
+            <div class="history-modal__info text-editor">
+              <div class="collapsible-text__wrapper" data-js="collapsibleTextWrapper">
+                <p>В г. Иваново основан завод по производству приборов для испытания металлов</p>
+                <ul>
+                  <li>подъём и расцвет в советскую эпоху</li>
+                  <li>закалился в трудностях перестроечной России</li>
+                  <li>испытал на себе воровство, развал, попытки рейдерского захвата и банкротство когда-то одного из ведущих предприятий отрасли в стране</li>
+                </ul>
+              </div><img src="img/about/about_history.webp">
+              <p>В г. Иваново основан завод по производству приборов для испытания металлов</p><img src="img/about/about_history.webp">
+              <p>В г. Иваново основан завод по производству приборов для испытания металлов</p><img src="img/about/about_history.webp">
+              <p>В г. Иваново основан завод по производству приборов для испытания металлов</p>
+              <div class="history-modal__video"><img src="img/about/about_history.webp"><a class="btn history-modal__play btn--red btn--content" href="https://vkvideo.ru/video_ext.php?oid=-228066748&amp;id=456239041&amp;hd=3&amp;autoplay=1&amp;js_api=1" data-fancybox data-type="iframe">
+                      <svg>
+                        <use xlink:href="img/sprites/sprite.svg#play_t"></use>
+                      </svg><span class="btn__text">Смотреть видео</span></a>
+              </div>
+              <p>В г. Иваново основан завод по производству приборов для испытания металлов</p>
+              <div class="history-modal__video"><img src="img/about/about_history.webp"><a class="btn history-modal__play btn--red btn--content" href="https://vkvideo.ru/video_ext.php?oid=-228066748&amp;id=456239041&amp;hd=3&amp;autoplay=1&amp;js_api=1" data-fancybox data-type="iframe">
+                      <svg>
+                        <use xlink:href="img/sprites/sprite.svg#play_t"></use>
+                      </svg><span class="btn__text">Смотреть видео</span></a>
+              </div>
+              <p>В г. Иваново основан завод по производству приборов для испытания металлов</p>
+              <div class="history-modal__video"><img src="img/about/about_history.webp"><a class="btn history-modal__play btn--red btn--content" href="https://vkvideo.ru/video_ext.php?oid=-228066748&amp;id=456239041&amp;hd=3&amp;autoplay=1&amp;js_api=1" data-fancybox data-type="iframe">
+                      <svg>
+                        <use xlink:href="img/sprites/sprite.svg#play_t"></use>
+                      </svg><span class="btn__text">Смотреть видео</span></a>
+              </div>
+              <p>В г. Иваново основан завод по производству приборов для испытания металлов</p>
+            </div>
+          </div>
+          <div class="history-modal__row" data-js="historyModalRow">
+            <div class="history-modal__year title--83">1956</div>
+            <div class="history-modal__point" data-js="historyModalPoint"></div>
+            <div class="history-modal__info text-editor">
+              <div class="collapsible-text__wrapper" data-js="collapsibleTextWrapper">
+                <p>Начат выпуск простых приборов технологического назначения</p>
+              </div>
+            </div>
+          </div>
+          <div class="history-modal__row" data-js="historyModalRow">
+            <div class="history-modal__year title--83">1957</div>
+            <div class="history-modal__point" data-js="historyModalPoint"></div>
+            <div class="history-modal__info text-editor">
+              <div class="collapsible-text__wrapper" data-js="collapsibleTextWrapper">
+                <p>Введён в эксплуатацию цех упаковочной тары</p>
+              </div>
+            </div>
+          </div>
+          <div class="history-modal__row" data-js="historyModalRow">
+            <div class="history-modal__year title--83">1958</div>
+            <div class="history-modal__point" data-js="historyModalPoint"></div>
+            <div class="history-modal__info text-editor">
+              <div class="collapsible-text__wrapper" data-js="collapsibleTextWrapper">
+                <p>К управлению завода присоединились молодые, активные учредители, и завод начал возрождаться. На сегодняшний день на нем работает более 130 человек. Полностью обновлено конструкторское бюро. Предприятие имеет линию производства полного цикла.</p>
+              </div><img src="img/about/about_history.webp">
+            </div>
+          </div>
+          <div class="history-modal__row" data-js="historyModalRow">
+            <div class="history-modal__year title--83">1959</div>
+            <div class="history-modal__point" data-js="historyModalPoint"></div>
+            <div class="history-modal__info text-editor">
+              <div class="collapsible-text__wrapper" data-js="collapsibleTextWrapper">
+                <p>Образовано конструкторское бюро по разработке автоматических средств измерения масс и приборов испытательной техники</p>
+              </div><img src="img/about/about_history.webp">
+            </div>
+          </div>
+          <div class="history-modal__row" data-js="historyModalRow">
+            <div class="history-modal__year title--83">1965</div>
+            <div class="history-modal__point" data-js="historyModalPoint"></div>
+            <div class="history-modal__info text-editor">
+              <div class="collapsible-text__wrapper" data-js="collapsibleTextWrapper">
+                <p>Завод переименован в «Завод испытательных приборов»</p>
+              </div>
+            </div>
+          </div>
+          <div class="history-modal__row" data-js="historyModalRow">
+            <div class="history-modal__year title--83">1970</div>
+            <div class="history-modal__point" data-js="historyModalPoint"></div>
+            <div class="history-modal__info text-editor">
+              <div class="collapsible-text__wrapper" data-js="collapsibleTextWrapper">
+                <p>Завод переименован в ПО "Точприбор", в связи с переименованием зарегистрирован товарный знак №60992 с приоритетом от 27.07.1977 г.</p>
+              </div>
+            </div>
+          </div>
+          <div class="history-modal__row" data-js="historyModalRow">
+            <div class="history-modal__year title--83">1992</div>
+            <div class="history-modal__point" data-js="historyModalPoint"></div>
+            <div class="history-modal__info text-editor">
+              <div class="collapsible-text__wrapper" data-js="collapsibleTextWrapper">
+                <p>Завод переименован в ОАО «Точприбор»</p>
+              </div>
+            </div>
+          </div>
+          <div class="history-modal__row" data-js="historyModalRow">
+            <div class="history-modal__year title--83">2011</div>
+            <div class="history-modal__point" data-js="historyModalPoint"></div>
+            <div class="history-modal__info text-editor">
+              <div class="collapsible-text__wrapper" data-js="collapsibleTextWrapper">
+                <p>Реорганизация АО Точприбор в ООО ЗИП</p>
+              </div>
+            </div>
+          </div>
+          <div class="history-modal__row" data-js="historyModalRow">
+            <div class="history-modal__year title--83">2016</div>
+            <div class="history-modal__point" data-js="historyModalPoint"></div>
+            <div class="history-modal__info text-editor">
+              <div class="collapsible-text__wrapper" data-js="collapsibleTextWrapper">
+                <p>К управлению завода присоединились молодые, активные учредители, и завод начал возрождаться. На сегодняшний день на нем работает более 130 человек. Полностью обновлено конструкторское бюро. Предприятие имеет линию производства полного цикла.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="js/main.min.js"></script>
+  </body>
+</html>
